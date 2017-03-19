@@ -2,7 +2,7 @@ Under 105-website, let us look at how to create a Dockerfile which set up a simp
 
 First, we will build a Docker Image shown below:
 
-
+<pre>
 master==>cd 105-website/
 master==>ls
 Dockerfile  html  wrapper.sh
@@ -29,11 +29,11 @@ Step 4/4 : CMD ./wrapper.sh
  ---> c6c187264fad
 Removing intermediate container f4721b3f6421
 Successfully built c6c187264fad
-
+</pre>
 
 Let us verify if Docker Image is built or NOT:
-
+<pre>
 master==>docker images
 REPOSITORY                        TAG                 IMAGE ID            CREATED             SIZE
 ajeetraina/nginx_105_demo         latest              c6c187264fad        7 seconds ago       182 MB
-
+</pre>
