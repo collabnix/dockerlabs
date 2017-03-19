@@ -74,3 +74,16 @@ master==>docker port d3090
 </pre>
 
 You can open http://localhost:32769 in your browser. 
+
+If you want to run Nginx in your desired port, here is the way:
+
+<pre>
+master==>docker run -d -p   8888:80 ajeetraina/nginx-demo-105
+beb4fa77b033fb46e9f772110cfcd65e9656af0212931e674a1f2bd34422d478
+master==>docker ps
+CONTAINER ID        IMAGE                       COMMAND             CREATED             STATUS              PORTS                           
+NAMES
+beb4fa77b033        ajeetraina/nginx-demo-105   "./wrapper.sh"      7 seconds ago       Up 5 seconds        443/tcp, 0.0.0.0:8888->80/tcp   
+gifted_almeida
+</pre>
+master==>
