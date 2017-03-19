@@ -62,3 +62,10 @@ rmission denied".
 
 This is due to permission issue. The wrapper.sh script possibly doesn't have executable permission. Run chmod +x wrapper.sh and re-build the Docker Image.
 
+Displaying Container Ports:
+<pre>
+
+master==>docker port d3090
+80/tcp -> 0.0.0.0:32782
+443/tcp -> 0.0.0.0:32781
+</pre>
