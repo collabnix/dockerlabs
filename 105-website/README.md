@@ -3,10 +3,7 @@ Under 105-website, let us look at how to create a Dockerfile which set up a simp
 First, we will build a Docker Image shown below:
 
 <pre>
-master==>cd 105-website/
-master==>ls
-Dockerfile  html  wrapper.sh
-master==>vi Dockerfile 
+ 
 master==>docker build -t ajeetraina/nginx_105_demo .
 Sending build context to Docker daemon 30.21 kB
 Step 1/4 : FROM nginx
