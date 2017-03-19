@@ -7,7 +7,7 @@ First, we will build a Docker Image shown below:
 master==> git clone https://github.com/ajeetraina/docker101/tree/master/105-website
 master==> cd 105-website
  
-master==>docker build -t ajeetraina/nginx_105_demo .
+master==>docker build -t ajeetraina/nginx-demo-105 .
 Sending build context to Docker daemon 30.21 kB
 Step 1/4 : FROM nginx
 latest: Pulling from library/nginx
