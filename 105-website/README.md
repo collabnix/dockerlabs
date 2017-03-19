@@ -72,3 +72,5 @@ master==>docker port d3090
 80/tcp -> 0.0.0.0:32782
 443/tcp -> 0.0.0.0:32781
 </pre>
+
+You can open http://localhost:32769 in your browser. 
