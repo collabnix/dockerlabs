@@ -34,3 +34,31 @@ master==>docker images
 REPOSITORY                        TAG                 IMAGE ID            CREATED             SIZE
 ajeetraina/nginx_105_demo         latest              c6c187264fad        7 seconds ago       182 MB
 </pre>
+
+Running the Container:
+<pre>
+master==>docker run -d -P --name myweb ajeetraina/nginx-demo-105
+d30904aa94a4615045a2962c3fd15f02bcd82c1b7371f927f77923d60f014645
+
+</pre>
+
+Verifying if Container is running or not:
+<pre>
+master==>docker ps
+CONTAINER ID        IMAGE                       COMMAND             CREATED             STATUS              PORTS                           
+                NAMES
+d30904aa94a4        ajeetraina/nginx-demo-105   "./wrapper.sh"      3 seconds ago       Up 2 seconds        0.0.0.0:32782->80/tcp, 0.0.0.0:3
+2781->443/tcp   myweb
+</pre>
+
+Note:
+
+Did you encounter this error while cloning and building the Docker Image:
+
+<pre>
+docker: Error response from daemon: oci runtime error: container_linux.go:247: starting container process caused "exec: \"./wrapper.sh\": pe
+rmission denied".
+</pre>
+
+This is due to permission issue. The wrapper.sh script possibly doesn't have executable permission. Run chmod +x wrapper.sh and re-build the Docker Image.
+
