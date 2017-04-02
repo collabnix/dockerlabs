@@ -1,0 +1,6 @@
+tr
+  td.table-icon= team_scope_icon(team)
+  td= link_to team.name, team
+  td= role_within_team(team)
+  td= team.users.enabled.count
+  td= team.namespaces.count

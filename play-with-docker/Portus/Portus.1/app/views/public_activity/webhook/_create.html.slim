@@ -1,0 +1,23 @@
+li
+  .activitie-container
+    .activity-type.create-webhook
+      i.fa.fa-server
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        strong
+          = "#{activity_owner(activity)} created webhook "
+        - if activity.trackable
+          = link_to activity.trackable.host, [activity.trackable.namespace, activity.trackable]
+        - else
+          = activity.parameters[:webhook_host]
+        = " under the "
+        - if activity.trackable
+          = link_to activity.trackable.namespace.name, activity.trackable.namespace
+        - else
+          = link_to activity.parameters[:namespace_name], namespace_path(activity.parameters[:namespace_id])
+        = " namespace"
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at

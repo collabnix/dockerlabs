@@ -1,0 +1,75 @@
+#add_webhook_form.collapse
+  = form_for :webhook, url: namespace_webhooks_path(@namespace), remote: true, html: {id: 'new-webhook-form', class: 'form-horizontal', role: 'form'} do |f|
+      .form-group
+        = f.label :url, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.text_field(:url, class: 'form-control', required: true, placeholder: "URL")
+      .form-group
+        = f.label :request_method, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.select(:request_method, Webhook.request_methods.keys, {}, {class: 'form-control'})
+      .form-group
+        = f.label :content_type, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.select(:content_type, Webhook.content_types.keys, {}, {class: 'form-control'})
+      .form-group
+        = f.label :username, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.text_field(:username, class: 'form-control', required: false, placeholder: "Username for authentication")
+      .form-group
+        = f.label :password, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.text_field(:password, class: 'form-control', required: false, placeholder: "Password for authentication")
+      .form-group
+        .col-md-offset-2.col-md-7
+          = f.submit('Create', class: 'btn btn-primary')
+
+.panel.panel-default
+  .panel-heading
+    .row
+      .col-sm-6
+        h5
+          small
+            a[data-placement="right"
+              data-toggle="popover"
+              data-container=".panel-heading"
+              data-content="<p>A webhook is an HTTP callback which is triggered after an event, e.g. a push event, occurs.</p>"
+              data-original-title="What's this?"
+              tabindex="0" data-html="true"]
+                i.fa.fa-info-circle
+          ' Webhooks for
+          - if @namespace.name == "portus_global_namespace_1"
+            strong
+             = link_to " global namespace", @namespace
+          - else
+            ' namespace
+            strong
+              = link_to @namespace.name, @namespace
+      .col-sm-6.text-right
+        - if can_manage_namespace?(@namespace)
+          a#add_webhook_btn.btn.btn-xs.btn-link.js-toggle-button[role="button"]
+            i.fa.fa-plus-circle
+            | Create new webhook
+  .panel-body
+    .table-responsive
+      table.table.table-stripped.table-hover
+        col.col-40
+        col.col-20
+        col.col-20
+        - if can_manage_namespace?(@namespace)
+          col.col-10
+          col.col-10
+        -else
+          col.col-20
+        thead
+          tr
+            th URL
+            th Request method
+            th Content type
+            th Enabled
+            - if can_manage_namespace?(@namespace)
+              th Remove
+        tbody#webhooks
+          - @webhooks.each do |webhook|
+            = render partial: 'webhooks/webhook', locals: {namespace: @namespace, webhook: webhook}
+  .panel-footer= paginate(@webhooks)

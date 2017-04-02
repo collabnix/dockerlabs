@@ -1,0 +1,18 @@
+tr id="webhook_header_#{webhook_header.id}"
+  td= webhook_header.name
+  - if can_manage_namespace?(@namespace)
+    td= webhook_header.value
+  - else
+    td= '*' * webhook_header.value.length
+  - if can_manage_namespace?(@namespace)
+    td
+      a[class="btn btn-default"
+        data-placement="left"
+        data-toggle="popover"
+        data-title="Please confirm"
+        data-content='<p>Are you sure you want to remove this webhook header?</p><a class="btn btn-default">No</a> <a class="btn btn-primary" data-method="delete" rel="nofollow" data-remote="true" href="#{namespace_webhook_header_path(namespace, webhook, webhook_header)}">Yes</a>'
+        data-html="true"
+        tabindex="0"
+        role="button"
+        ]
+        i.fa.fa-trash.fa-lg

@@ -1,0 +1,4 @@
+- if activity.parameters[:repository_name]
+  = CSV.generate_line(['repository', "#{activity.trackable.clean_name}", 'delete repository', "#{activity.parameters[:repository_name]}", activity_owner(activity), activity.created_at, "-"])
+- else
+  = CSV.generate_line(['repository', "#{activity.trackable.clean_name}", 'delete repository', "-", activity_owner(activity), activity.created_at, "-"])

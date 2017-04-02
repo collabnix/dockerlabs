@@ -1,0 +1,15 @@
+li
+  .activitie-container
+    .activity-type.change-namespace-visibility
+      i.fa.fa-unlock
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        strong
+          = "#{activity_owner(activity)} set the "
+        = link_to activity.trackable.name, activity.trackable
+        = " namespace as public"
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at

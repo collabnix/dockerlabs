@@ -1,0 +1,46 @@
+#add_team_form.collapse
+  = form_for :team, url: teams_path, remote: true, html: {id: 'new-team-form', class: 'form-horizontal', role: 'form'} do |f|
+      .form-group
+        = f.label :name, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.text_field(:name, class: 'form-control', required: true, placeholder: "New team's name")
+      .form-group
+        = f.label :description, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.text_area(:description, class: 'form-control fixed-size', required: false, placeholder: "A short description of your team")
+      .form-group
+        .col-md-offset-2.col-md-7
+          = f.submit('Add', class: 'btn btn-primary')
+
+.panel.panel-default
+  .panel-heading
+    .row
+      .col-sm-6
+        h5
+          ' Teams you are member of
+      .col-sm-6.text-right
+        - if can_create_team?
+          a#add_team_btn.btn.btn-xs.btn-link.js-toggle-button[role="button"]
+            i.fa.fa-plus-circle
+            | Create new team
+
+  .panel-body
+    .table-responsive
+      table.table.table-striped.table-hover
+        colgroup
+          col.col-5
+          col.col-30
+          col.col-25
+          col.col-20
+          col.col-20
+        thead
+          tr
+            th
+            th Team
+            th Role
+            th Number of members
+            th Number of namespaces
+        tbody#teams
+          - @teams.each do |team|
+            = render team
+  .panel-footer= paginate(@teams)

@@ -1,0 +1,18 @@
+li
+  .activitie-container
+    .activity-type.change-description
+      i.fa.fa-list-alt
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        - if activity.parameters[:new].blank?
+          strong
+            ="#{activity_owner(activity)} deleted the description of the team "
+        - else
+          strong
+            = "#{activity_owner(activity)} edited the description of the team "
+        =  link_to activity_team(activity), activity.trackable
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at

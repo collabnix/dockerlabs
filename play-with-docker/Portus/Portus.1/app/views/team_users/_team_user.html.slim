@@ -1,0 +1,30 @@
+tr id="team_user_#{team_user.id}"
+  td.table-icon= team_user_role_icon(team_user)
+  td= team_user.user.display_username
+  td
+    .role= team_user.role.titleize
+    .collapse id="change_role_team_user_#{team_user.id}"
+      = form_for team_user, remote: true, html: {class: 'form-inline', role: 'form'} do |f|
+        = f.select(:role, TeamUser.roles.keys.map {|role| [role.titleize,role]}, {}, {class: 'form-control'})
+        = button_tag(type: 'submit', class: 'btn btn-primary pull-right') do
+          i.fa.fa-check
+          |Save
+
+        .errors
+  - if can_manage_team?(team_user.team)
+    td
+      button.btn.btn-default.btn-edit-role[
+        value="#{team_user.id}"
+        class="add"]
+        i.fa.fa-pencil.fa-lg
+    td
+      a[class="btn btn-default"
+        data-placement="left"
+        data-toggle="popover"
+        data-title="Please confirm"
+        data-content='<p>Are you sure you want to remove this team member?</p><a class="btn btn-default">No</a> <a class="btn btn-primary" data-method="delete" rel="nofollow" data-remote="true" href="#{url_for(team_user)}">Yes</a>'
+        data-html="true"
+        tabindex="0"
+        role="button"
+        ]
+        i.fa.fa-trash.fa-lg

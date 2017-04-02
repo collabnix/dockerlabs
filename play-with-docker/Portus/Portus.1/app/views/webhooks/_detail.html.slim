@@ -1,0 +1,26 @@
+.table-responsive
+  table.table
+    colgroup
+        col.col-20
+        col.col-80
+    tbody
+      tr
+        th Request method
+        td= webhook.request_method
+      tr
+        th Content type
+        td= webhook.content_type
+      tr
+        th Username
+        td
+          - if webhook.username.present?
+            = webhook.username
+          - else
+            ' &mdash;
+      tr
+        th Password
+        td
+          - if webhook.password.present?
+            = '*' * 11
+          - else
+            ' &mdash;

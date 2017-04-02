@@ -1,0 +1,13 @@
+ul.nav.nav-tabs
+  li[class="category #{params[:type] == "repositories" ? 'active-cetegory' : ''}"]
+    a href="#{build_search_category_url params, 'repositories'}"
+      | Repositories
+      span.result-counter = @repositories.count
+  li[class="category #{params[:type] == "namespaces" ? 'active-cetegory' : ''}"]
+    a href="#{build_search_category_url params, 'namespaces'}"
+      | Namespaces
+      span.result-counter = @namespaces.count
+  li[class="category #{params[:type] == "teams" ? 'active-cetegory' : ''}"]
+    a href="#{build_search_category_url params, 'teams'}"
+      | Teams
+      span.result-counter = @teams.count

@@ -1,0 +1,18 @@
+li
+  .activitie-container
+    .activity-type.change-webhook-visibility
+      i.fa.fa-lock
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        strong
+          = "#{activity.owner.username} set the "
+        - if activity.trackable.nil?
+          = activity.parameters[:webhook_host]
+        - else
+          = link_to activity.trackable.host, [activity.trackable.namespace, activity.trackable]
+        = " webhook as disabled"
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at

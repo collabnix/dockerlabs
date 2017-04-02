@@ -1,0 +1,14 @@
+install missing packages
+
+bundle install --local --retry=3 --without test development --system
+
+zypper in rubygem-passenger-apache2
+
+mkdir /var/run/passenger
+chmow -R wwwrun /var/run/passenger
+sed -i 's/PassengerInstanceRegistryDir \/run\/passenger/PassengerInstanceRegistryDir \/var\/run\/passenger/' /etc/apache2/conf.d/mod_passenger.conf
+
+a2enmod passenger
+
+chown -R wwwrun /srv/www/portus/
+

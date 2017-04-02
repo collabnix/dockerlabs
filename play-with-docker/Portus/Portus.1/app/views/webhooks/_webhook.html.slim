@@ -1,0 +1,32 @@
+tr id="webhook_#{webhook.id}"
+  td= link_to webhook.url, [namespace, webhook]
+  td= webhook.request_method
+  td= webhook.content_type
+  td
+    - if can_manage_namespace?(@namespace)
+      a.btn.btn-default[data-remote="true"
+        data-method="put"
+        rel="nofollow"
+        href=url_for(toggle_enabled_namespace_webhook_path(namespace, webhook))
+        ]
+        - if webhook.enabled?
+          i.fa.fa-lg class="fa-toggle-on"
+        - else
+          i.fa.fa-lg class="fa-toggle-off" title="Click so this webhook gets enabled"
+    - else
+      - if webhook.enabled?
+        i.fa.fa-lg class="fa-toggle-on"
+      - else
+        i.fa.fa-lg class="fa-toggle-off"
+  - if can_manage_namespace?(@namespace)
+    td
+      a[class="btn btn-default"
+        data-placement="left"
+        data-toggle="popover"
+        data-title="Please confirm"
+        data-content='<p>Are you sure you want to remove this webhook?</p><a class="btn btn-default">No</a> <a class="btn btn-primary" data-method="delete" rel="nofollow" data-remote="true" href="#{namespace_webhook_path(namespace, webhook)}">Yes</a>'
+        data-html="true"
+        tabindex="0"
+        role="button"
+        ]
+        i.fa.fa-trash.fa-lg

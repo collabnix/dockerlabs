@@ -1,0 +1,35 @@
+@media (max-width: $screen-tablet) {
+  body.login {
+    .create-new-account {
+      text-align: center;
+    }
+    .forgot-password {
+      text-align: center;
+    }
+  }
+  .shared-search {
+    input {
+      border-left: 1px solid $gray-light;
+      border-top: 1px solid $gray-light;
+      border-bottom: 1px solid $gray-light;
+      border-right: 0px solid $gray-light;
+      color: $gray-light;
+    }
+    button.btn.btn-default {
+      border-left: 0px solid $gray-light;
+      border-top: 1px solid $gray-light;
+      border-bottom: 1px solid $gray-light;
+      border-right: 1px solid $gray-light;
+      color: $gray-mid;
+    }
+  }
+}
+
+@media (max-width: $screen-phone) {
+  .activity {
+    .description {
+      margin-top: 2em;
+    }
+  }
+}
+

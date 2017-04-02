@@ -1,0 +1,4 @@
+- if activity.trackable
+  = CSV.generate_line(['webhook', activity.trackable.url, 'make enabled', '-', activity_owner(activity), activity.created_at, '-'])
+- else
+  = CSV.generate_line(['webhook', activity.parameters[:webhook_host] , 'make enabled', '-', activity_owner(activity), activity.created_at, '-'])

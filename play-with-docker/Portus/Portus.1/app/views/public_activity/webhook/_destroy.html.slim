@@ -1,0 +1,17 @@
+li
+  .activitie-container
+    .activity-type.application-webhook-destroyed
+      i.fa.fa-trash
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        strong
+          = "#{activity.owner.username} removed webhook "
+        = activity.parameters[:webhook_host]
+        = " from the "
+        = link_to activity.parameters[:namespace_name], controller: "namespaces", id: activity.parameters[:namespace_id]
+        = " namespace"
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at

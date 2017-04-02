@@ -1,0 +1,8 @@
+release.sh automates the creation of a project in the open suse build service
+for a new release and it copies all the dependencies.
+
+To be more specific, it creates a subproject in Virtualization:containers:Portus
+and it copies all packages. Then, it will set the version in the spec file and
+get the tarball for that specific version (it assumes you have tagged git)
+
+

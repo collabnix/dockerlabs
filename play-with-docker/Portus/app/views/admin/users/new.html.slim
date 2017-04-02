@@ -1,0 +1,26 @@
+.panel.panel-default
+  .panel-heading
+    h5 New User
+  .panel-body
+    = form_for [:admin, @user], html: {class: 'form-horizontal', role: 'form'} do |f|
+      .form-group
+        = f.label :username, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.text_field(:username, class: 'form-control', required: true, autofocus: true)
+      .form-group
+        = f.label :email, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.email_field(:email, class: 'form-control', required: true)
+      .form-group
+        = f.label :password, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.password_field(:password, class: 'form-control', required: true)
+      .form-group
+        = f.label :password_confirmation, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.password_field(:password_confirmation, class: 'form-control', required: true)
+
+      .form-group
+        .col-md-offset-2.col-md-7
+          = f.submit('Create', class: 'btn btn-primary')
+

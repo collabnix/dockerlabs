@@ -1,0 +1,12 @@
+li
+  .activitie-container
+    .activity-type.repo-pushed
+      i.fa.fa-forward.fa-fw
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        = render_push_activity(activity)
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at

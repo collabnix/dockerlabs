@@ -1,0 +1,4 @@
+- if activity.trackable
+  = CSV.generate_line(['webhook', activity.trackable.url, 'create', '-', activity_owner(activity), activity.created_at, "owned by namespace #{activity.trackable.namespace.name}"])
+- else
+  = CSV.generate_line(['webhook', activity.parameters[:webhook_host], 'create', '-', activity_owner(activity), activity.created_at, "owned by namespace #{activity.parameters[:namespace_name]}"])

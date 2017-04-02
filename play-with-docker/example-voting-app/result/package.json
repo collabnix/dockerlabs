@@ -1,0 +1,20 @@
+{
+  "name": "result",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "async": "^1.5.0",
+    "pg": "^4.4.3",
+    "socket.io": "^1.3.7"
+  }
+}

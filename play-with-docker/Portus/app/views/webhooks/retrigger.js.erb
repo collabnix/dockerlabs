@@ -1,0 +1,13 @@
+var ns = $('#webhook_delivery_<%= webhook_delivery.id %> td i').first();
+
+<% if webhook_delivery.success? %>
+  ns.addClass("fa-check");
+  ns.addClass("text-success");
+  ns.removeClass("fa-close");
+  ns.removeClass("text-danger");
+<% else %>
+  ns.addClass("fa-close");
+  ns.addClass("text-danger");
+  ns.removeClass("fa-check");
+  ns.removeClass("text-success");
+<% end %>

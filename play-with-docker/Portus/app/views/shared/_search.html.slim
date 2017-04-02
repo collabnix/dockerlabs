@@ -1,0 +1,9 @@
+.row
+  .col-xs-12.visible-xs
+    = form_tag search_index_path, method: 'get', class: 'input-group shared-search' do
+      .input-group.shared-search
+        = search_field_tag 'search', params[:search], class: 'form-control', placeholder: 'Search'
+        = hidden_field_tag 'type', 'repositories'
+        span.input-group-btn
+          button.btn.btn-default
+            i.fa.fa-search

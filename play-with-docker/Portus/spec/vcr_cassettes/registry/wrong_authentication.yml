@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://registry.test.lan/v2/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - registry.test.lan
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Docker-Distribution-Api-Version:
+      - registry/2.0
+      Www-Authenticate:
+      - Bearer realm="http://portus.test.lan/v2/token",service="registry.test.lan"
+      Date:
+      - Mon, 20 Apr 2015 09:49:56 GMT
+      Content-Length:
+      - '114'
+    body:
+      encoding: UTF-8
+      string: |
+        {"errors":[{"code":"UNAUTHORIZED","message":"access to the requested resource is not authorized","detail":null}]}
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 09:49:56 GMT
+- request:
+    method: get
+    uri: http://portus.test.lan/v2/token?account=flavio&service=registry.test.lan
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portus.test.lan
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Mon, 20 Apr 2015 09:49:56 GMT
+      Server:
+      - Apache
+      Cache-Control:
+      - no-cache
+      X-Runtime:
+      - '0.086172'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Www-Authenticate:
+      - Basic realm="Application"
+      X-Request-Id:
+      - d02be261-0671-4a97-864c-9648121dee2b
+      Connection:
+      - close
+      X-Powered-By:
+      - Phusion Passenger 5.0.6
+      Status:
+      - 401 Unauthorized
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"error":"Invalid username or password."}'
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 09:49:57 GMT
+recorded_with: VCR 2.9.3

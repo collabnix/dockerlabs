@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://registry.test.lan/v2/foo/busybox/manifests/2.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - registry.test.lan
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Docker-Distribution-Api-Version:
+      - registry/2.0
+      Www-Authenticate:
+      - Bearer realm="http://portus.test.lan/v2/token",service="registry.test.lan",scope="repository:foo/busybox:pull"
+      Date:
+      - Mon, 20 Apr 2015 10:11:01 GMT
+      Content-Length:
+      - '170'
+    body:
+      encoding: UTF-8
+      string: |
+        {"errors":[{"code":"UNAUTHORIZED","message":"access to the requested resource is not authorized","detail":[{"Type":"repository","Name":"foo/busybox","Action":"pull"}]}]}
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 10:11:01 GMT
+- request:
+    method: get
+    uri: http://portus.test.lan/v2/token?account=flavio&scope=repository:foo/busybox:pull&service=registry.test.lan
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portus.test.lan
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 20 Apr 2015 10:11:01 GMT
+      Server:
+      - Apache
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.158316'
+      X-Request-Id:
+      - 03b8ee44-3dee-4506-9236-495bb9e901b4
+      Connection:
+      - close
+      X-Powered-By:
+      - Phusion Passenger 5.0.6
+      Set-Cookie:
+      - _portus_session=K2RkaUU3V0RCWjJMUVBDaGhRTG9jUXBBbk5rL2lZZG5YOTZmY3ZpMEE5M2hRU01HOXFxcGhsckxSandVNlRSMkd6QVNNM0tJd2FyVFJvRnVDNHlYRHc9PS0tQ0ZFV0pRSHBjR1RuSWdFN1N1NHI5UT09--b166fb80ecc5d0f214f2d4a8217c73f436c5619f;
+        path=/; HttpOnly
+      Etag:
+      - W/"0894f6876bc8e50af7444c78d307b20e"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlBUV1Q6Rk5KRTo3VFc3OlVMSTc6RFpRQTpKSkpJOlJESlE6Mk03NjpIRDZHOlpSU0M6VlBJRjpPNUJVIn0.eyJpc3MiOiJwb3J0dXMudGVzdC5sYW4iLCJzdWIiOiJmbGF2aW8iLCJhdWQiOiJyZWdpc3RyeS50ZXN0LmxhbiIsImV4cCI6MTQyOTUyNDk2MSwibmJmIjoxNDI5NTI0NjYxLCJpYXQiOjE0Mjk1MjQ2NjEsImp0aSI6Ijl4ak16VEJ1YnFZRDJKM1JzcHlLWVJkZWFGcWVEUllRRlk0R1BlajdabSIsImFjY2VzcyI6W3sidHlwZSI6InJlcG9zaXRvcnkiLCJuYW1lIjoiZm9vL2J1c3lib3giLCJhY3Rpb25zIjpbInB1bGwiXX1dfQ.o5oDGAeMSsmjVBaCK0JAfBheH7lPlR0HvjCq5pV-i6pDvcZ3V5thMBLBxaxxMJ0oX2WB3U9tjjQs7nSnYaGu-4-WFHBOYnDYHIB0tAQUBryelPc_bfwbp85Jkg4IDXhxDvOjJUkmZOcLhRW1saQSs4Y55rpHDKSb8W2R4JfZCxIBD0FlFh5Wl2ypj3zddVqO__SN4vSv9s70xLJFI-4Dk4XWU5mV0m4rHfZjpG4bplmfdmeEww_bnnZ0AN6AaW3KR-wk_6jsQzK_HVE9BiB9GlZT7okvpjJQlgNM1k2MBg4A-Ecc2KdbqEokN9t5KOGAqN6UZKHE9gVbOsYQvR-xJeUOGB3xFQAF6INRZkyk8CTbsNTFcTOslRAMt_dTVcKeDnRheZY9aTNgI7WxthNu93-zt8O9jbOpfQphjylAI-gtKulbDPmKChhSJglX6rkKaEDhhJzGbnGYYLXRroFHhbnuKRh7uJrBYdDEVJqyk8hE6iQp2ON2ZEvQTjpYd_ZX8rMeFrraCaxcKm-zQdjqfx0co3kB8YdF6ujRnQdXssPqHF4IXvfE5DKY9Uo2brhqFmoCYaDta9uRRiy19MYwVCiMKpDYHs_NrygLVnbtr8ECJ9sol7x1yyH06Dw6boJET9DEIy4aH1bdkY5WPoKCM2qdbODC7MBgpY2sTJfzEZY"}'
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 10:11:01 GMT
+- request:
+    method: get
+    uri: http://registry.test.lan/v2/foo/busybox/manifests/2.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - registry.test.lan
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlBUV1Q6Rk5KRTo3VFc3OlVMSTc6RFpRQTpKSkpJOlJESlE6Mk03NjpIRDZHOlpSU0M6VlBJRjpPNUJVIn0.eyJpc3MiOiJwb3J0dXMudGVzdC5sYW4iLCJzdWIiOiJmbGF2aW8iLCJhdWQiOiJyZWdpc3RyeS50ZXN0LmxhbiIsImV4cCI6MTQyOTUyNDk2MSwibmJmIjoxNDI5NTI0NjYxLCJpYXQiOjE0Mjk1MjQ2NjEsImp0aSI6Ijl4ak16VEJ1YnFZRDJKM1JzcHlLWVJkZWFGcWVEUllRRlk0R1BlajdabSIsImFjY2VzcyI6W3sidHlwZSI6InJlcG9zaXRvcnkiLCJuYW1lIjoiZm9vL2J1c3lib3giLCJhY3Rpb25zIjpbInB1bGwiXX1dfQ.o5oDGAeMSsmjVBaCK0JAfBheH7lPlR0HvjCq5pV-i6pDvcZ3V5thMBLBxaxxMJ0oX2WB3U9tjjQs7nSnYaGu-4-WFHBOYnDYHIB0tAQUBryelPc_bfwbp85Jkg4IDXhxDvOjJUkmZOcLhRW1saQSs4Y55rpHDKSb8W2R4JfZCxIBD0FlFh5Wl2ypj3zddVqO__SN4vSv9s70xLJFI-4Dk4XWU5mV0m4rHfZjpG4bplmfdmeEww_bnnZ0AN6AaW3KR-wk_6jsQzK_HVE9BiB9GlZT7okvpjJQlgNM1k2MBg4A-Ecc2KdbqEokN9t5KOGAqN6UZKHE9gVbOsYQvR-xJeUOGB3xFQAF6INRZkyk8CTbsNTFcTOslRAMt_dTVcKeDnRheZY9aTNgI7WxthNu93-zt8O9jbOpfQphjylAI-gtKulbDPmKChhSJglX6rkKaEDhhJzGbnGYYLXRroFHhbnuKRh7uJrBYdDEVJqyk8hE6iQp2ON2ZEvQTjpYd_ZX8rMeFrraCaxcKm-zQdjqfx0co3kB8YdF6ujRnQdXssPqHF4IXvfE5DKY9Uo2brhqFmoCYaDta9uRRiy19MYwVCiMKpDYHs_NrygLVnbtr8ECJ9sol7x1yyH06Dw6boJET9DEIy4aH1bdkY5WPoKCM2qdbODC7MBgpY2sTJfzEZY
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Docker-Distribution-Api-Version:
+      - registry/2.0
+      Date:
+      - Mon, 20 Apr 2015 10:11:01 GMT
+      Content-Length:
+      - '125'
+      Content-Type:
+      - text/plain; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: |
+        {"errors":[{"code":"MANIFEST_UNKNOWN","message":"manifest unknown","detail":"unknown manifest name=foo/busybox tag=2.0.0"}]}
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 10:11:01 GMT
+recorded_with: VCR 2.9.3

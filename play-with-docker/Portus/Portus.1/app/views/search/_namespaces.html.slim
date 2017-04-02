@@ -1,0 +1,21 @@
+- if @namespaces.empty?
+  p No match found.
+- else
+  .table-responsive
+    table.table.table-stripped.table-hover
+      thead
+        tr
+          th Name
+          th Repositories
+          th Webhooks
+          th Created at
+      tbody
+        - @namespaces.each do |namespace|
+          tr id="namespace_#{namespace.id}"
+            td= link_to namespace.clean_name, namespace
+            td= namespace.repositories.count
+            - if current_user.admin? || namespace.team.users.include?(current_user)
+              td= link_to namespace.webhooks.count, namespace_webhooks_path(namespace)
+            - else
+              td= namespace.webhooks.count
+            td= time_tag namespace.created_at

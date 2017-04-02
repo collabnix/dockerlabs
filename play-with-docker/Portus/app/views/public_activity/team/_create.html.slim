@@ -1,0 +1,14 @@
+li
+  .activitie-container
+    .activity-type.team-created
+      i.fa.fa-users
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        strong
+          = "#{activity_owner(activity)} created team "
+        = link_to activity_team(activity), activity.trackable
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at

@@ -1,0 +1,21 @@
+.logo-header.col-xs-12
+  a[href="#{url_for root_path}"]
+    = image_tag 'layout/portus-logo-dashboard.png'
+  i#open_main_menu.fa.fa-bars.fa-lg.pull-left.visible-xs
+
+.text-right.user-header
+  .search-header.hidden-xs
+    .header-search-form
+      = form_tag search_index_path, method: 'get', class: 'navbar-form' do
+        = search_field_tag 'search', params[:search], class: 'form-control search-field', placeholder: 'Search'
+        = hidden_field_tag 'type', 'repositories'
+        button[type="submit" class="btn btn-default"]
+          i.fa.fa-search
+  .button-container
+    .username-logout
+      .hidden-xs
+        = link_to edit_user_registration_path, class: 'btn-inline-header', data: {placement: 'bottom', toggle: 'tooltip'}, title: 'My profile' do
+          = user_image_tag(current_user)
+          span.username = current_user.display_username
+      = link_to destroy_user_session_path, method: :delete, class: 'topbar btn btn-default', id: 'logout', data: {placement: 'bottom', toggle: 'tooltip'}, title: 'Logout' do
+        i.fa.fa-sign-out

@@ -1,0 +1,52 @@
+version: '2'
+
+services:
+  web:
+    build: .
+    command: pumactl -F /portus/config/puma.rb start
+    environment:
+      - PORTUS_MACHINE_FQDN_VALUE=${EXTERNAL_IP}
+      - PORTUS_DB_HOST=db
+      - PORTUS_DB_PASSWORD=portus
+      - PORTUS_PUMA_HOST=0.0.0.0:3000
+      - PORTUS_PUMA_WORKERS=2
+      - PORTUS_PUMA_MAX_THREADS=4
+    volumes:
+      - .:/portus
+    ports:
+      - 3000:3000
+    links:
+      - db
+
+  crono:
+    image: portus_web
+    entrypoint: bin/crono
+    environment:
+      - PORTUS_MACHINE_FQDN_VALUE=${EXTERNAL_IP}
+      - PORTUS_DB_HOST=db
+      - PORTUS_DB_PASSWORD=portus
+    volumes:
+      - .:/portus
+    links:
+      - db
+
+  db:
+    image: library/mariadb:10.0.23
+    environment:
+      MYSQL_ROOT_PASSWORD: portus
+
+  registry:
+    image: library/registry:2.3.1
+    environment:
+      - REGISTRY_AUTH_TOKEN_REALM=http://${EXTERNAL_IP}:3000/v2/token
+      - REGISTRY_AUTH_TOKEN_SERVICE=${EXTERNAL_IP}:${REGISTRY_PORT}
+      - REGISTRY_AUTH_TOKEN_ISSUER=${EXTERNAL_IP}
+    volumes:
+      - /registry_data
+      - ./compose/registry/portus.crt:/etc/docker/registry/portus.crt:ro
+      - ./compose/registry/config.yml:/etc/docker/registry/config.yml:ro
+    ports:
+      - ${REGISTRY_PORT}:5000
+      - 5001:5001 # required to access debug service
+    links:
+      - web

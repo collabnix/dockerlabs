@@ -1,0 +1,6 @@
+.git*
+tmp
+vagrant
+packaging
+log/*
+.DS_Store

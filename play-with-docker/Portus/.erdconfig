@@ -1,0 +1,18 @@
+attributes:
+  - content
+  - primary_keys
+  - foreign_key
+  - inheritance
+  - timestamps
+disconnected: true
+filename: doc/database
+filetype: png
+indirect: true
+inheritance: true
+markup: true
+notation: simple
+orientation: vertical
+polymorphism: false
+sort: false
+warn: true
+title: Portus

@@ -1,0 +1,41 @@
+
+inherit_from:
+  - ./config/rubocop-suse.yml
+
+# TODO: (mssola) only the LDAP class and portusctl require this.
+Metrics/ClassLength:
+  Max: 200
+
+# TODO: (mssola) Some methods are offending this cop. In the SUSE's style guide
+# the approach is to use Rubocop's default value. In the near future I will
+# fix this.
+Metrics/MethodLength:
+  Max: 252
+
+# It's convenient to mix both. This is something that SUSE's style guide does
+# not specify, so we take the approach that we were following already.
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# NOTE: (mssola) This would be nice, but there are too many errors on this for
+# now and it's not urgent. I will fix this in the near future.
+Style/Documentation:
+  Enabled: false
+
+# NOTE: (mssola) In versions of Ruby higher than 2.1.x, we get
+# Lint/ShadowedException in some cases where in 2.1.x it complains if we remove
+# such guards. Therefore, we have to disable this cop until we update the
+# version of Ruby to be officially supported.
+Lint/UnneededDisable:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+AllCops:
+  Exclude:
+    # Files that are out of our control and that are not excluded in the
+    # default config of rubocop.
+    - db/schema.rb
+    - db/migrate/*
+    - vendor/**/*

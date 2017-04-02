@@ -1,0 +1,16 @@
+- if @repositories.empty?
+  p No match found.
+- else
+  .table-responsive
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th Namespace
+          th Repository
+          th Updated at
+      tbody
+        - @repositories.each do |repository|
+          tr
+            td= link_to repository.namespace.clean_name, repository.namespace
+            td= link_to repository.name, repository
+            td= time_tag repository.updated_at

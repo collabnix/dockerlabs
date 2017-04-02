@@ -1,0 +1,181 @@
+.panel-group
+  - if can_manage_team?(@team)
+    .collapse id="update_team_#{@team.id}"
+      = form_for @team, remote: true, html: {role: 'form'} do |f|
+        .panel.panel-default
+          .panel-heading
+            .input-group
+              = f.text_field(:name,
+                             class: 'form-control',
+                             placeholder: html_escape(@team.name),
+                             required: true,
+                             input_html: { tabindex: 1 })
+              .input-group-btn
+                button.btn.btn-link.btn-xs.btn-edit-role[
+                  value="#{@team.id}"
+                  type="button"
+                  class="button_edit_team"]
+                  i.fa.fa-close
+                  | Edit team
+          .panel-body
+            = f.text_area(:description,
+                          class: 'form-control',
+                          placeholder: html_escape(@team.description),
+                          input_html: { tabindex: 2 })
+            br
+            = button_tag(type: 'submit', class: 'btn btn-primary pull-right') do
+              i.fa.fa-check
+              | Save
+          .panel-footer
+  .panel.panel-default.team_information
+    .panel-heading
+      .row
+        .col-sm-6
+          h5
+            small
+              a[data-placement="right"
+                data-toggle="popover"
+                data-container=".panel-heading"
+                data-content="<p>Information about the team.</p>"
+                data-original-title="What's this?"
+                tabindex="0" data-html="true"]
+                  i.fa.fa-info-circle
+            strong
+              span class="team_name"
+                '#{@team.name}
+            |&nbsp;team description
+
+        .col-sm-6.text-right
+          - if can_manage_team?(@team)
+            button.btn.btn-link.btn-xs.btn-edit-role[
+              value="#{@team.id}"
+              class="button_edit_team"]
+              i.fa.fa-pencil
+              | Edit team
+    .panel-body
+      .description
+        - if @team.description.blank?
+          p
+            'No description has been posted yet.
+        - else
+          = markdown(@team.description)
+
+      .errors
+    .panel-footer
+
+- if can_manage_team?(@team)
+  #add_team_user_form.collapse
+    = form_for :team_user, url: team_users_path, remote: true, html: {id: 'new-team-user-form', class: 'form-horizontal', role: 'form'} do |f|
+      = f.hidden_field(:team, value: @team.name)
+      .form-group
+        = f.label :role, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.select(:role, TeamUser.roles.keys.map {|role| [role.titleize,role]}, {}, {class: 'form-control'})
+      .form-group
+        = f.label :user, {class: 'control-label col-md-2'}
+        .col-md-7
+          .remote id="#{@team.id}"
+            = f.text_field(:user, class: 'form-control typeahead', placeholder: 'Name', required: true)
+      .form-group
+        .col-md-offset-2.col-md-7
+          = f.submit('Add', class: 'btn btn-primary')
+
+.panel.panel-default
+  .panel-heading
+    .row
+      .col-sm-6
+        h5
+          small
+            a[data-placement="right"
+              data-toggle="popover"
+              data-container=".panel-heading"
+              data-content="<p>There are three types of users inside of a team:<br><strong>Viewer:</strong> has read only access. Only pull operations are permitted.<br/><strong>Contributor:</strong> has read and write access. Both pull and push operations are permitted.<br/><strong>Owner:</strong> like 'contributor', but can also manage the team.</p>"
+              data-original-title="What's this?"
+              tabindex="0" data-html="true"]
+              i.fa.fa-info-circle
+          ' Members
+      .col-sm-6.text-right
+        - if can_manage_team?(@team)
+          a#add_team_user_btn.btn.btn-xs.btn-link.js-toggle-button role="button"
+            i.fa.fa-user-plus
+            | Add members
+
+
+  .panel-body
+    .table-responsive
+      table.table.table-striped.table-hover
+        colgroup
+          - if can_manage_team?(@team)
+            col.col-5
+            col.col-40
+            col.col-35
+            col.col-10
+            col.col-10
+          - else
+            col.col-5
+            col.col-50
+            col.col-45
+        thead
+          tr
+            th
+            th User
+            th Role
+            - if can_manage_team?(@team)
+              th Edit
+              th Remove
+        tbody#team_users
+          - @team_users.each do |tu|
+            = render(tu)
+  .panel-footer= paginate(@team_users, param_name: 'users_page')
+
+- if can_manage_team?(@team)
+  #add_namespace_form.collapse
+    = form_for :namespace, url: namespaces_path, remote: true, html: {id: 'new-namespace-form', class: 'form-horizontal', role: 'form'} do |f|
+      = f.hidden_field(:team, value: @team.name)
+      .form-group
+        = f.label :namespace, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.text_field(:namespace, class: 'form-control', placeholder: 'Name', required: true)
+      .form-group
+        = f.label :description, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.text_area(:description, class: 'form-control', required: false, placeholder: "A short description of your namespace")
+      .form-group
+        .col-md-offset-2.col-md-7
+          = f.submit('Add', class: 'btn btn-primary')
+
+.panel.panel-default
+  .panel-heading
+    .row
+      .col-sm-6
+        h5
+          small
+            a[data-placement="right" data-toggle="popover" data-container=".panel-heading" data-content='<p>A team can own one or more namespaces. By default all the namespaces can be accessed only by the members of the team.</p><p>It is possible to add read only (pull) access to logged-in users or all Portus users by changing the visibility to "protected" or "public" respectively.</p>' data-original-title="What's this?" tabindex="0" data-html="true"]
+              i.fa.fa-info-circle
+          ' Namespaces owned
+      .col-sm-6.text-right
+        - if can_manage_team?(@team) && Registry.any?
+          a#add_namespace_btn.btn.btn-xs.btn-link.js-toggle-button role="button"
+            i.fa.fa-plus-circle
+            | Add namespace
+
+  .panel-body
+    .table-responsive
+      table.table.table-striped.table-hover
+        colgroup
+          col.col-50
+          col.col-15
+          col.col-15
+          col.col-20
+          col.col-10
+        thead
+          tr
+            th Namespace
+            th Repositories
+            th Webhooks
+            th Created At
+            th Visibility
+        tbody#namespaces
+          - @team_namespaces.each do |namespace|
+            = render(namespace)
+  .panel-footer= paginate(@team_namespaces, param_name: 'namespaces_page')

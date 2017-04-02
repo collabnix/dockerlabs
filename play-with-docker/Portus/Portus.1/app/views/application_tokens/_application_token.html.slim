@@ -1,0 +1,13 @@
+tr id="application_token_#{application_token.id}"
+  td= application_token.application
+  td
+    a[class="btn btn-default"
+      data-placement="left"
+      data-toggle="popover"
+      data-title="Please confirm"
+      data-content='<p>Are you sure you want to remove this token?</p><a class="btn btn-default">No</a> <a class="btn btn-primary" data-method="delete" rel="nofollow" data-remote="true" href="#{url_for(application_token)}">Yes</a>'
+      data-html="true"
+      tabindex="0"
+      role="button"
+      ]
+      i.fa.fa-trash.fa-lg

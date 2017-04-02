@@ -1,0 +1,196 @@
+#
+# spec file for package portus
+#
+# Copyright (c) __CURRENT_YEAR__ SUSE LINUX Products GmbH, Nuernberg, Germany.
+#
+# All modifications and additions to the file contributed by third parties
+# remain the property of their copyright owners, unless otherwise agreed
+# upon. The license for this file, and modifications and additions to the
+# file, is the same license as for the pristine package itself (unless the
+# license for the pristine package is not an Open Source License, in which
+# case the license is the MIT License). An "Open Source License" is a
+# license that conforms to the Open Source Definition (Version 1.9)
+# published by the Open Source Initiative.
+
+# Please submit bugfixes or comments via http://bugs.opensuse.org/
+#
+
+Name:           portus
+
+# When you release a new version, set Version and branch accordingly.
+# For example:
+# Version:      1.0.0
+# %define branch 1.0.0
+
+Version:        __VERSION__
+%define branch __BRANCH__
+Release:        0.0.1
+License:        Apache-2.0
+Summary:        Authorization service and fronted for Docker registry (v2)
+Url:            https://github.com/SUSE/Portus
+Source0:        %{branch}.tar.gz
+
+# Generated with `yarn install` which produces a reproduceable `node_modules`
+# directory thanks to the yarn.lock file defined in the Portus repo.
+Source1:        node_modules.tar.gz
+
+# Dynamically defined patches.
+__PATCHSOURCES__
+
+Group:          System/Management
+%define portusdir /srv/Portus
+
+Requires:       ruby >= 2.1
+Requires:       timezone
+Requires:       net-tools
+%if 0%{?suse_version} >= 1210
+BuildRequires: systemd-rpm-macros
+%endif
+BuildRequires:  fdupes
+BuildRequires:  ruby-macros >= 5
+%{?systemd_requires}
+Provides:       Portus = %{version}
+Obsoletes:      Portus < %{version}
+# Portus-20151120162040 was accidentaly released when it should have been Portus-2.0
+# This is the reason why we are obsoleting it
+Obsoletes:      Portus = 20151120162040
+
+# Javascript engine to build assets
+BuildRequires:  nodejs6
+BuildRequires:  yarn
+
+%define rb_build_versions %{rb_default_ruby}
+BuildRequires:  %{rubydevel}
+BuildRequires:  %{rubygem gem2rpm}
+BuildRequires:  %{rubygem bundler} >= 1.3.0
+
+__RUBYGEMS_BUILD_REQUIRES__
+
+
+
+BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+
+%description
+Portus targets version 2 of the Docker registry API. It aims to act both as an authoritzation server and as a user interface for the next generation of the Docker registry.
+
+This package has been built with commit __COMMIT__ from branch __BRANCH__ on date __DATE__
+
+%prep
+%setup -q -n Portus-%{branch}
+%setup -q -T -D -a 1
+__PATCHEXECS__
+
+%build
+# Untar Javascript dependencies
+cp %{SOURCE1} .
+tar xzvf node_modules.tar.xz
+
+# Deal with Ruby gems.
+install -d vendor/cache
+cp %{_libdir}/ruby/gems/%{rb_ver}/cache/*.gem vendor/cache
+
+# Compile assets
+export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
+export PACKAGING=yes
+SKIP_MIGRATION="yes" PORTUS_SECRET_KEY_BASE="assets_precompilation" RAILS_ENV=production bundle exec rake portus:assets:compile
+export IGNORE_ASSETS=yes
+export PORTUS_PUMA_DEPLOYMENT=yes
+
+# Patch landing_page
+APPLICATION_CSS=$(find . -name application-*.css 2>/dev/null)
+cp $APPLICATION_CSS public/landing.css
+
+# Run bundle list to redo the Gemfile.lock
+bundle list
+
+# Deploy gems
+bundle install --retry=3 --local --deployment
+
+# Install bundler
+gem install --no-rdoc --no-ri --install-dir vendor/bundle/ruby/%{rb_ver}/ vendor/cache/bundler-*.gem
+
+# Remove unneeded directories/files
+rm -rf \
+   vendor/cache \
+   node_modules \
+   public/assets/application-*.js* \
+   vendor/assets \
+   *.orig
+
+%install
+install -d %{buildroot}/%{portusdir}
+
+cp -av . %{buildroot}/%{portusdir}
+
+rm -rf %{buildroot}/%{portusdir}/log
+mkdir %{buildroot}/%{portusdir}/log
+rm -rf %{buildroot}/%{portusdir}/tmp
+mkdir %{buildroot}/%{portusdir}/tmp
+
+install -d %{buildroot}/%{_sbindir}
+cp packaging/suse/bin/portus_crono %{buildroot}/%{_sbindir}/
+cp packaging/suse/bin/portusctl %{buildroot}/%{_sbindir}/
+%__install -D -m 444 packaging/suse/conf/portus_crono.service %{buildroot}%{_unitdir}/portus_crono.service
+
+# Man pages
+install -d %{buildroot}%{_mandir}/man1
+install -p -m 644 packaging/suse/portusctl/man/man1/*.1 %{buildroot}%{_mandir}/man1
+
+%fdupes %{buildroot}/%{portusdir}
+
+%pre
+%service_add_pre portus_crono.service
+
+%post
+if [ -d /srv/Portus/tmp ];then
+  chown -R wwwrun:www /srv/Portus/tmp
+fi
+%service_add_post portus_crono.service
+
+if [ \! -e "/srv/Portus/config/config-local.yml" ]; then
+  # First installation of Portus
+  cat %{portusdir}/packaging/suse/README.install
+fi
+
+%preun
+%service_del_preun portus_crono.service
+
+%postun
+%service_del_postun portus_crono.service
+
+%files
+%defattr(-,root,root)
+%{portusdir}
+%exclude %{portusdir}/spec
+%exclude %{portusdir}/vagrant
+%exclude %{portusdir}/Vagrantfile
+%exclude %{portusdir}/Dockerfile
+%exclude %{portusdir}/compose
+%exclude %{portusdir}/compose-setup.sh
+%exclude %{portusdir}/lib/man_pages.rb
+%exclude %{portusdir}/lib/tasks/man.rake
+%exclude %{portusdir}/packaging/suse/.gitignore
+%exclude %{portusdir}/packaging/suse/package_and_push_to_obs.sh
+%exclude %{portusdir}/packaging/suse/portus.spec.in
+%exclude %{portusdir}/packaging/suse/README.md
+%exclude %{portusdir}/packaging/suse/conf
+%exclude %{portusdir}/packaging/suse/make_spec.sh
+%exclude %{portusdir}/packaging/suse/patches
+%exclude %{portusdir}/packaging/suse/portus.spec.in
+%exclude %{portusdir}/packaging/suse/release
+%doc %{portusdir}/README.md
+%doc %{portusdir}/CONTRIBUTING.md
+%doc %{portusdir}/LICENSE
+%defattr(0640, root, www)
+%config(noreplace) %{portusdir}/config/environment.rb
+%defattr(-, root, www, 1770)
+%{portusdir}/log/
+%{portusdir}/tmp/
+%{portusdir}/db/
+%{_sbindir}/portus_crono
+%{_sbindir}/portusctl
+%{_unitdir}/portus_crono.service
+%{_mandir}/man1/portusctl-*.1.gz
+%{_mandir}/man1/portusctl.1.gz
+
+%changelog

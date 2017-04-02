@@ -1,0 +1,22 @@
+div [id="#{float == true ? 'float' : 'fixed'}-alert" class="#{messages && messages.first ? '' : 'collapse'}"]
+  .alert.alert-dismissible.fade.in.text-left[class="alert-#{alert == 'alert' ? 'danger' : 'info'} #{float == true ? 'float-alert' : ''}"]
+    button.close class="alert-hide" type="button"
+      span aria-hidden="true" &times;
+      span.sr-only Close
+    .alert-message
+      .alert-icon.pull-left
+        i.fa.fa-3x class=(alert == 'alert' ? 'fa-exclamation-circle' : 'fa-info-circle')
+      p
+        - if messages.is_a?(String)
+          = messages
+        - elsif messages.is_a?(Array)
+          - if messages.size == 1
+            = messages[0]
+          - else
+            ul
+              - messages.each do |c|
+                li
+                  = c
+
+javascript:
+  refreshFloatAlertPosition()

@@ -1,0 +1,24 @@
+- if current_user && !current_page?(url_for new_admin_registry_path) && !Registry.any?
+  .alert.alert-danger.fade.in.text-left.alert-dismissible
+    button.close data-dismiss="alert" type="button"
+      span aria-hidden="true" &times;
+      span.sr-only Close
+    .alert-message
+      .alert-icon.pull-left
+        i.fa.fa-exclamation-circle.fa-3x
+      p
+        | No registry found.
+      - if current_user.admin?
+        p
+          = link_to 'Click here', new_admin_registry_path
+          |  to complete configuration.
+      - else
+        p Ask an administrator to complete configuration.
+
+- flash.each do |key, value|
+  - if key == 'notice' || key == 'alert'
+    = render template: 'shared/_notification.html.slim',
+        locals: { messages: value, alert: key, float: flash[:float] }
+
+= render template: 'shared/_notification.html.slim',
+    locals: { messages: nil, alert: 'info', float: true }

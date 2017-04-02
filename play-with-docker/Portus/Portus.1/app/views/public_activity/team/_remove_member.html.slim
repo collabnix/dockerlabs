@@ -1,0 +1,19 @@
+li
+  .activitie-container
+    .activity-type.remove-member-team
+      i.fa.fa-user-times
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        strong
+          - if activity.owner == activity.recipient
+            = "#{activity_owner(activity)} removed itself "
+          - else
+            = "#{activity_owner(activity)} removed user #{activity.recipient.display_username} "
+        = "from the "
+        = link_to activity_team(activity), activity.trackable
+        |  team
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at

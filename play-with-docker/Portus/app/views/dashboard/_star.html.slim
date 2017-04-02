@@ -1,0 +1,8 @@
+tr
+  td
+    = link_to star.repository.namespace.clean_name, star.repository.namespace
+    | /
+    = link_to star.repository.name, star.repository
+  td= star.repository.stars.count
+  td
+    i.fa.fa-star

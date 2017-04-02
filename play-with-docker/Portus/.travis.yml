@@ -1,0 +1,66 @@
+language: ruby
+rvm:
+  # The version used at SLE12
+  - 2.1.2
+
+  # Stable versions
+  - 2.1.10
+  - 2.2.6
+  - 2.3.3
+  - 2.4.0
+
+  # Future versions
+  - ruby-head
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+
+before_install:
+  - gem update --system
+
+  # Use the latest stable Node.js
+  - nvm install stable
+  - nvm use stable
+
+  # Install Yarn
+  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - sudo apt-get update
+  - sudo apt-get install yarn
+  - yarn install
+
+before_script:
+  - mysql -e 'create database portus_test;'
+
+script:
+  # Compile assets
+  - bundle exec rake portus:assets:compile
+
+  # Ruby tests
+  - bundle exec rspec spec packaging/suse/portusctl/spec
+
+  # Style and security checks
+  - bundle exec rubocop -V
+  - bundle exec rubocop -F
+  - bundle exec brakeman -z -A -x CheckUnscopedFind,CheckRender
+
+  # Javascript style
+  - yarn run eslint
+
+env:
+  global:
+  # OSC_CREDENTIALS are kept secret
+  # In order to update them, run:
+  #   travis encrypt OSC_CREDENTIALS=user:password
+  # more info at: http://docs.travis-ci.com/user/environment-variables/#Secure-Variables
+  - OBS_REPO=Virtualization:containers:Portus
+  - OBS_BRANCH=master
+  - secure: "Umlxpe6wARqVCB4MmQj9MpjGy7Q8odYEohwi4kxOj2hp/uCrqrl1HIoAd7mgB0ylpcbri5HVuBg4EpBoT5VC4NYILnSRPxr3dvHcsK8K7ZO3fuxHnQ666s8P19NSVmDf+K0mlHKv5J6dKIPTFIO1e1Ynbbj97CPo4b2mUJjPq/g="
+
+after_success:
+  - packaging/suse/package_and_push_to_obs.sh
+
+addons:
+  code_climate:
+    repo_token: 18a0cf6c35e0c801678f12f444051c33e0390ce0efa91ec06a2aa5068b10c19e
+  mariadb: '10.0'

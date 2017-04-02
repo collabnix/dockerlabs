@@ -1,0 +1,26 @@
+.TH PORTUSCTL 1 "portusctl User manuals" "SUSE LLC." "AUGUST 2016"
+.SH NAME
+.PP
+portusctl make_admin \- Grant a user administrator privileges
+.SH SYNOPSIS
+.PP
+\fBportusctl make_admin\fP [arguments...]
+.SH DESCRIPTION
+.PP
+The \fBmake_admin\fP command allows administrators to grant administrator
+privileges to a user. That being said, you can perform this command without
+specifying any user name. If you do that, then you will get a list of users in
+the system. If you pass a user name, it will grant administrator privileges to
+this selected user. Note that \fBmake_admin\fP is \fIequivalent\fP of doing:
+.PP
+.RS
+.nf
+$ portusctl rake make_admin[username]
+.fi
+.RE
+.PP
+We are providing this command for the convenience of avoiding rake\-specific
+syntax to users that are not experience with either Ruby or Ruby on Rails.
+.SH HISTORY
+.PP
+August 2016, created by Miquel Sabaté Solà \[la]msabate@suse.com\[ra]

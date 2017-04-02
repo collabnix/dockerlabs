@@ -1,0 +1,14 @@
+<% if @team_user.errors.any? %>
+  $('#float-alert p').html("<%= escape_javascript(@team_user.errors.full_messages.join('<br/>')) %>");
+<% else %>
+  $("<%= escape_javascript(render @team_user) %>").appendTo("#team_users");
+  <% if @promoted_role %>
+    $('#float-alert p').html("User '<%= escape_javascript(@team_user.user.username) %>' was added to the team (promoted to owner because it is a Portus admin).");
+  <% else %>
+    $('#float-alert p').html("User '<%= escape_javascript(@team_user.user.username) %>' was added to the team");
+  <% end %>
+  $('#add_team_user_form').fadeOut();
+  $('#add_team_user_btn i').addClass("fa-chevron-down")
+  $('#add_team_user_btn i').removeClass("fa-chevron-up")
+<% end %>
+$('#float-alert').fadeIn(setTimeOutAlertDelay());

@@ -1,0 +1,57 @@
+.float-alert {
+  position: fixed;
+  z-index: 999;
+  top: 12px;
+  right: 12px;
+  width: 450px;
+  @media only screen and (max-width : 768px) {
+    width: 350px;
+  }
+  @media only screen and (max-width : 480px) {
+    width: calc(100% - 24px);
+  }
+}
+.alert {
+  box-shadow: 0px 3px 0px $panel-shadow;
+  border-radius: $border-radious;
+  border-width: 2px;
+  &.alert-dismissible {
+    padding: $alert-padding;
+    .close {
+      right: 0
+    }
+  }
+  .alert-message {
+    margin-right: 2em;
+    min-height: 2.5em;
+  }
+  .alert-icon {
+    margin-right: 1em;
+  }
+}
+.alert-info {
+  .alert-icon {
+    color: $alert-info-border;
+  }
+}
+.alert-danger {
+  .alert-icon {
+    color: $alert-danger-border;
+  }
+}
+.alert-success {
+  .alert-icon {
+    color: $alert-success-border;
+  }
+}
+.alert-warning {
+  .alert-icon {
+    color: $alert-warning-border;
+  }
+}
+
+.login {
+  .alert {
+    box-shadow: 0px 3px 0px $panel-shadow-login;
+  }
+}

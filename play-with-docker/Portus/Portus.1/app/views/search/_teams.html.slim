@@ -1,0 +1,18 @@
+- if @teams.empty?
+  p No match found.
+- else
+  .table-responsive
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th
+          th Team
+          th Number of members
+          th Number of namespaces
+      tbody#teams
+        - @teams.each do |team|
+          tr
+            td.table-icon= team_scope_icon(team)
+            td= link_to team.name, team
+            td= team.users.enabled.count
+            td= team.namespaces.count

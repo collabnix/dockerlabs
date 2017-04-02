@@ -1,0 +1,34 @@
+{
+  "env": {
+    "jquery": true,
+    "browser": true
+  },
+  "extends": "airbnb-base",
+  "globals": {
+    "Bloodhound": false,
+    "layout_resizer": false,
+    "set_typeahead": false,
+    "open_close_icon": false
+  },
+  "plugins": [
+    "import"
+  ],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack.js"
+      }
+    }
+  },
+  "rules": {
+    "camelcase": 0,
+    "func-names": 0,
+    "prefer-arrow-callback": 0,
+    "no-var": 0,
+    "prefer-template": 0,
+    "no-unused-vars": [2, {"args": "all", "argsIgnorePattern": "^_"}],
+    "object-shorthand": 0,
+    "no-plusplus": 0,
+    "no-void": 0
+  }
+}

@@ -1,0 +1,31 @@
+aside
+  ul
+    li.active
+      a[href="#{url_for root_path}"]
+        i[class="fa fa-dashboard"]
+        | Dashboard
+      - if current_page?(url_for root_path) || current_page?(root_path)
+        .list-selected
+    li.active
+      a[href="#{url_for namespaces_path}"]
+        i[class="fa fa-ship"]
+        | Namespaces
+      - if current_page?(url_for namespaces_path)
+        .list-selected
+    li.active
+      a[href="#{url_for teams_path}"]
+        i[class="fa fa-users"]
+        | Teams
+      - if current_page?(url_for teams_path)
+        .list-selected
+    - if current_user.admin?
+      li.active
+        a[href="#{url_for controller: 'admin/dashboard', action: 'index'}"]
+          i[class="fa fa-cogs"]
+          | Admin
+        - if current_page?(url_for controller: 'admin/dashboard', action: 'index')
+          .list-selected
+    li.active
+      a[href="http://port.us.org/documentation" target="_blank"]
+        i[class="fa fa-life-ring"]
+        | Help

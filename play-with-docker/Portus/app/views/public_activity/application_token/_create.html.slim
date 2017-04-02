@@ -1,0 +1,16 @@
+li
+  .activitie-container
+    .activity-type.application-token-created
+      i.fa.fa-key
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        strong
+          = "#{activity_owner(activity)} created a token"
+        = " for the application "
+        strong
+          = activity.parameters[:application]
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at

@@ -1,0 +1,6 @@
+Add here patches to be included in the package in OBS.
+
+gem related patches (Gemfile|Gemfile.lock) need to end with `.gem.patch`
+app related patches need to end with `.rpm.patch`
+
+also the numbering prefix needs to be ascending

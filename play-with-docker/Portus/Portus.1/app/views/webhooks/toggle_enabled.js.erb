@@ -1,0 +1,14 @@
+var ns = $('#webhook_<%= webhook.id %> td a i').first();
+
+<% if webhook.enabled? %>
+  ns.prop("title", "This webhook is enabled and will be triggered");
+  ns.addClass("fa-toggle-on");
+  ns.removeClass("fa-toggle-off");
+<% else %>
+  ns.removeAttr("title");
+  ns.addClass("fa-toggle-off");
+  ns.removeClass("fa-toggle-on");
+<% end %>
+
+$('#alert p').html("Webhook '<%= webhook.url %>' is now <%= webhook.enabled? ? 'enabled' : 'disabled' %>");
+$('#alert').fadeIn();

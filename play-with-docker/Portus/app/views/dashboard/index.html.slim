@@ -1,0 +1,43 @@
+.row
+  .col-md-8
+    .panel.panel-default
+      .panel-heading
+        h5 Recent activities
+      .panel-body
+        ul.activity
+          - @recent_activities.each do |activity|
+            = render_activity(activity)
+  .col-md-4
+    #repositories_sidebar.panel.panel-default
+      .panel-heading
+        h5 Repositories
+
+        ul.nav.nav-tabs{role="tablist"}
+          li.active{role="presentation"}
+            a{href="#all" aria-controls="all" role="tab" data-toggle="tab"} All
+          li{role="presentation"}
+            a{href="#starred" aria-controls="starred" role="tab" data-toggle="tab"} Starred
+          li{role="presentation"}
+            a{href="#personal" aria-controls="personal" role="tab" data-toggle="tab"} Personal
+      .panel-body.table-responsive
+        .tab-content
+          #all.tab-pane.active{role="tabpanel"}
+            table.table.table-stripped.table-hover
+              tbody
+                - @repositories.each do |repository|
+                  = render partial: 'dashboard/repository', locals: {repository: repository}
+          #starred.tab-pane{role="tabpanel"}
+            table.table.table-stripped.table-hover
+              colgroup
+                col.col-80
+                col.col-10
+                col.col-10
+              tbody
+                - @stars.each do |star|
+                  = render partial: 'dashboard/star', locals: {star: star}
+          #personal.tab-pane{role="tabpanel"}
+            table.table.table-stripped.table-hover.starred
+              tbody
+                - @personal_repositories.each do |repository|
+                  = render partial: 'dashboard/repository', locals: {repository: repository}
+

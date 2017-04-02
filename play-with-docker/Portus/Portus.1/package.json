@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "scripts": {
+    "eslint": "eslint --max-warnings 0 --ext .js .",
+    "webpack": "webpack --watch --config config/webpack.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.0",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.2.0",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "compression-webpack-plugin": "^0.3.2",
+    "jquery": "^2.2.1",
+    "jquery-ujs": "^1.2.1",
+    "stats-webpack-plugin": "^0.4.3",
+    "webpack": "^2.2.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}

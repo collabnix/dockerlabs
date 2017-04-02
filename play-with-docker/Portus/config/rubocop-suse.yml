@@ -1,0 +1,60 @@
+# This is the shared Rubocop configuration for SUSE projects. It is maintained
+# at https://github.com/SUSE/style-guides/blob/master/rubocop-suse.yml
+#
+# The configuration is tested and used with the Rubocop version used by Hound
+# (http://hound-ci.com).
+#
+# We use the default Hound config as a baseline:
+#
+#   https://raw.githubusercontent.com/thoughtbot/hound/master/config/style_guides/ruby.yml
+#
+# This file contains the rules with derive from this.
+
+Lint/EndAlignment:
+  AlignWith: variable
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 100
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # contaning a URI to be longer than Max.
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+
+Style/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Style/AlignParameters:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: false
+
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/WordArray:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Style/NumericLiterals:
+  Enabled: false

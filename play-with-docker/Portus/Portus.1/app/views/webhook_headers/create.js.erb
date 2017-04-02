@@ -1,0 +1,15 @@
+<% if @webhook_header.errors.any? %>
+  $('#alert p').html("<%= escape_javascript(@webhook_header.errors.full_messages.join('<br/>')) %>");
+  $('#alert').fadeIn();
+<% else %>
+  $('#alert p').html("Header '<%= @webhook_header.name %>' was created successfully");
+  $('#alert').fadeIn();
+
+  $('#add_webhook_header_form').fadeOut();
+  $('#add_webhook_header_btn i').addClass("fa-plus-circle")
+  $('#add_webhook_header_btn i').removeClass("fa-minus-circle")
+
+  if ($('#webhook_headers').length > 0) {
+    $("<%= escape_javascript(render partial: "webhook_header", locals: {namespace: @namespace, webhook: @webhook, webhook_header: @webhook_header}) %>").appendTo("#webhook_headers");
+  }
+<% end %>

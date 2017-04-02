@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export RAILS_ENV=production
+
+bundle="/srv/Portus/vendor/bundle/ruby/2.1.0/bin/bundler.ruby2.1"
+export GEM_PATH=/srv/Portus/vendor/bundle/ruby/2.1.0/
+pushd /srv/Portus
+exec $bundle exec crono
+

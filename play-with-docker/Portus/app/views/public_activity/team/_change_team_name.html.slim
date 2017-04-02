@@ -1,0 +1,14 @@
+li
+  .activitie-container
+    .activity-type.change-name
+      i.fa.fa-list-alt
+    .user-image
+      = user_image_tag(activity.owner)
+    .description
+      h6
+        strong
+          = "#{activity_owner(activity)} renamed the team #{activity.parameters[:old]} to "
+        =  link_to activity.parameters[:new], activity.trackable
+      small
+        i.fa.fa-clock-o
+        = activity_time_tag activity.created_at
