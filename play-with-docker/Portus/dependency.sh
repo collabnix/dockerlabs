@@ -20,7 +20,6 @@ yarn install
 apt add --update nodejs nodejs-npm && npm install npm@latest -g
 npm install npm@latest -gyarn add global webpack
 yarn add global webpack
-webpack --watch --config config/webpack.js
 npm install webpack -g
 apt add --update nodejs nodejs-npm && npm install npm@latest -g
 npm install npm@latest -g
