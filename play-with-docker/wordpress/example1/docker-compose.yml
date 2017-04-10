@@ -17,7 +17,7 @@ services:
           cpus: '.5'
           memory: 512M
         reservations:
-          cpus: '.5
+          cpus: '.5'
           memory: 512M
         replicas: 1
         placement:
@@ -40,7 +40,7 @@ services:
           cpus: '.5'
           memory: 512M
         reservations:
-          cpus: '.5
+          cpus: '.5'
           memory: 512M
         replicas: 1
         placement:
