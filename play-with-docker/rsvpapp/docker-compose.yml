@@ -8,8 +8,15 @@ services:
      - db_data:/data/db
    environment:    
     MONGODB_DATABASE: rsvpdata
-   networks:
-    - rsvpnet
+   deploy:
+     replicas: 5
+     restart_policy:
+     condition: on-failure
+     delay: 10s
+     max_attempts: 3
+     window: 120s
+   placement:
+     constraints: [node.role == manager]
 
  web:
    image: teamcloudyuga/rsvpapp:mooc
@@ -22,8 +29,16 @@ services:
     TEXT2: Garage RSVP!
     LOGO: https://raw.githubusercontent.com/cloudyuga/rsvpapp/master/static/cloudyuga.png
     COMPANY: CloudYuga Technology Pvt. Ltd.
-   networks:
-    - rsvpnet
+   deploy:
+     replicas: 1
+     restart_policy:
+     condition: on-failure
+     delay: 10s
+     max_attempts: 3
+     window: 120s
+   placement:
+     constraints: [node.role == worker]
+
 
 networks:
   rsvpnet:
