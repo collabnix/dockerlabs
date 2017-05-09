@@ -9,7 +9,7 @@
 
 apk update
 apk add make git 
-curl -LO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.23-r3/glibc-2.23-r3.apk && apk add --allow-untrusted glibc-2.23-r3.apk force
+curl -LO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.23-r3/glibc-2.23-r3.apk && apk add --allow-untrusted glibc-2.23-r3.apk -force
 curl -sSL https://dl.bintray.com/emccode/rexray/install | INSECURE=1 sh
 
 tee -a  /etc/rexray/config.yml << EOF 
