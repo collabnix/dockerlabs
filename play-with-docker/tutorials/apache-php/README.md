@@ -14,3 +14,5 @@ cat index.html
 docker run -d -p 80:80 -v /root/index.html:/var/www/html/index.html eboraas/apache-php
 
 ```
+
+Access the page with port 80 and you will see Hello Page.
