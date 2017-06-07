@@ -1,4 +1,4 @@
-### Getting started with GITHUB
+## Getting started with GITHUB
 
 
 
