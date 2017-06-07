@@ -66,3 +66,4 @@ To https://github.com/ajeetraina/docker101
    8f89e98..2bc6e75  master -> master
    ```
    
+   Go to GITHUB repository and you will see required files reflected.
