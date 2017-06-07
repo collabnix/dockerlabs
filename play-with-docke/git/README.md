@@ -1,9 +1,9 @@
-## Getting started with GITHUB
+<h1> Getting started with GITHUB</h1>
 
 
 
 
-<h1>Step:1 : Clone the Repository</h1>
+## Step:1 : Clone the Repository
 
 
 ```
