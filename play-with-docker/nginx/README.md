@@ -1,5 +1,5 @@
 <pre>
-Under 105-website, let us look at how to create a Dockerfile which set up a simple webpage for us.
+Creating a Dockerfile which set up a simple webpage.
 
 First, we will build a Docker Image shown below:
 
