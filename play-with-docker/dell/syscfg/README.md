@@ -22,3 +22,5 @@ docker run --privileged  ajeetraina/dell-syscfg:v1.0 /opt/dell/toolkit/bin/syscf
 ```
 docker run --privileged -v /mnt:/mnt ajeetraina/dell-syscfg:v1.0 /opt/dell/toolkit/bin/syscfg --ox /mnt/test.txt
 ```
+
+Please remember that even if /mnt directory is not present on the host and in the container, it will create it.
