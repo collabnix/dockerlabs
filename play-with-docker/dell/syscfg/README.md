@@ -16,3 +16,9 @@ docker run --privileged  ajeetraina/dell-syscfg:v1.0 /opt/dell/toolkit/bin/syscf
 ```
 docker run --privileged  ajeetraina/dell-syscfg:v1.0 /opt/dell/toolkit/bin/syscfg --mem
 ```
+
+## How to import under Docker SYSCFG Container
+
+```
+docker run --privileged -v /mnt:/mnt ajeetraina/dell-syscfg:v1.0 /opt/dell/toolkit/bin/syscfg --ox /mnt/test.txt
+```
