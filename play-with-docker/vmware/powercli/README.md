@@ -1,6 +1,6 @@
 
 ## Using Photon Container
-
+<pre>
 
 PS /root> Connect-VIServer 172.17.40.78
 
@@ -46,7 +46,7 @@ Test_04              PoweredOn  4        8.000
 Ajeet
 
 
-
+</pre>
 ## How to setup VM using Docker Machine?
 
 
