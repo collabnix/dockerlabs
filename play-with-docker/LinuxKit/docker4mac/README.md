@@ -32,6 +32,8 @@ ctr exec -t -exec-id <id> docker sh
 
 # Run the Nginx container
 
+docker run -d -p 80:80 nginx
+
 # How to connect from other terminal to this service container
 
 docker -H unix://docker4mac-state/guest.00000948 images
