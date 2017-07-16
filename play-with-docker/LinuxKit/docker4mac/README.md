@@ -30,3 +30,13 @@ ctr tasks ls
 
 ctr exec -t -exec-id <id> docker sh
 
+# Run the Nginx container
+
+# How to connect from other terminal to this service container
+
+docker -H unix://docker4mac-state/guest.00000948 images
+
+# If you want to enter into nginx container running inside LinuxKitOS from outside MacOS terminal
+
+docker -H unix://docker4mac-state/guest.00000948 exec -it 1d9 /bin/bash
+
