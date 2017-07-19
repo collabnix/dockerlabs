@@ -12,17 +12,14 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     deploy:
-      resources:
-        limits:
-          cpus: '.5'
-          memory: 512M
-        reservations:
-          cpus: '.5'
-          memory: 512M
-        replicas: 1
-        placement:
-          constraints:
-            - "node.role == worker"
+      placement:
+          constraints: [node.role == worker]
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
 
   wordpress:
     depends_on:
@@ -35,17 +32,14 @@ services:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_PASSWORD: wordpress
     deploy:
-      resources:
-        limits:
-          cpus: '.5'
-          memory: 512M
-        reservations:
-          cpus: '.5'
-          memory: 512M
-        replicas: 1
-        placement:
-          constraints:
-            - "node.role == worker"
+      placement:
+          constraints: [node.role == worker]
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
 
 volumes:
     db_data:
