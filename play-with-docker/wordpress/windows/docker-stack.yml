@@ -1,6 +1,4 @@
 version: "3.3"
-
-
 services:
 
   backend:
@@ -29,7 +27,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: backend:3306
       WORDPRESS_DB_USER: root
-WORDPRESS_DB_PASSWORD: Password123
+      WORDPRESS_DB_PASSWORD: Password123
     ports:
       - mode: host
         target: 80
@@ -41,10 +39,6 @@ WORDPRESS_DB_PASSWORD: Password123
       placement:
         constraints:
           - 'node.platform.os == linux'
-
-  
-
-
 
 networks:
   collabnet:
