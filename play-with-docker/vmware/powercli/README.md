@@ -1,4 +1,63 @@
 
+## Starting Photon Container
+
+```
+$docker pull vmware/powerclicore
+```
+
+## Verify the Docker Image
+
+```
+$ docker images
+REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+vmware/powerclicore   latest              a8e3349371c5        4 months ago        610MB
+[node1] (local) root@10.0.37.3 ~
+$
+```
+
+## Entering into Photon OS container
+
+```
+$docker run -itd a8e33 /bin/bash
+$docker attach <containerid>
+```
+
+
+
+## Verify the Photon OS version
+
+```
+root [ /powershell ]# cat /etc/os-release
+NAME="VMware Photon"
+VERSION="1.0"
+ID=photon
+VERSION_ID=1.0
+PRETTY_NAME="VMware Photon/Linux"
+ANSI_COLOR="1;34"
+HOME_URL="https://vmware.github.io/photon/"
+BUG_REPORT_URL="https://github.com/vmware/photon/issues"root [ /powershell ]#
+
+```
+
+## Initiating the powershell inside Photon OS
+
+```
+root [ /powershell ]# powershell
+PowerShellCopyright (C) Microsoft Corporation. All rights reserved.
+
+          Welcome to VMware vSphere PowerCLI!
+
+Log in to a vCenter Server or ESX host:              Connect-VIServer
+To find out what commands are available, type:       Get-VICommand
+Once you've connected, display all virtual machines: Get-VM
+
+       Copyright (C) VMware, Inc. All rights reserved.
+
+
+Loading personal and system profiles took 4247ms.
+PS /powershell>
+```
+
 ## Using Photon Container
 <pre>
 
