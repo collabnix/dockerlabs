@@ -106,9 +106,14 @@ Ajeet
 
 
 </pre>
-## How to setup VM using Docker Machine?
+
+## Ready-Made PowerCLI scripts
+
+```
+PS /powershell> ls
+PowerCLI-Example-Scripts  PowerCLI.Vds.zip     README.md   open_source_license.txt
+PowerCLI.Cis              PowerCLI.ViCore.zip  __MACOSX    powernsx-master
+PowerCLI.Cis.zip          PowerCLI_Core.zip    master.zip
+```
 
 
-docker-machine -D create -d vmwarevsphere –vmwarevsphere-vcenter “172.17.40.78” –vmwarevsphere-cpu-count “2”   –vmwarevsphere-datastore “datastore1”  –vmwarevsphere-memory-size
-“4098” –vmwarevsphere-compute-ip “172.17.40.78” –vmwarevsphere-username “root” –vmwarevsphere-password “Dell@123” –vmwarevsphere-network=”VM
-Network” docker-from-machine-1
