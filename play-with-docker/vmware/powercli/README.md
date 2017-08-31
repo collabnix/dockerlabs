@@ -1,5 +1,5 @@
 
-## Starting Photon Container
+## Pulling Photon OS Docker Image
 
 ```
 $docker pull vmware/powerclicore
