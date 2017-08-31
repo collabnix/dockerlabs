@@ -116,4 +116,26 @@ PowerCLI.Cis              PowerCLI.ViCore.zip  __MACOSX    powernsx-master
 PowerCLI.Cis.zip          PowerCLI_Core.zip    master.zip
 ```
 
+## List of overall PowerCLI Script
 
+```
+PS /powershell/PowerCLI-Example-Scripts/Scripts> ls
+AutomaticVMFSUnmap.ps1                     New-ClusterVmGroup.ps1
+Check-VMwareTools.ps1                      New-ClusterVmHostRule.ps1
+DatastoreSIOCStatistics.ps1                README.md
+ESXInstallDate.ps1                         Remove-HostClient.ps1
+ESXInstalledVIBs.ps1                       Remove-IPPool.ps1
+ExportImportTags.ps1                       Report-LUNPath-ESXCLI.ps1
+Get-BiosBootStatus.ps1                     SecureBoot.ps1
+Get-DatastoreProvisioned.ps1               Set-LockdownLevel.ps1
+Get-VMID.ps1                               Start-VMHostSsh.ps1
+Get-VsanHclDatabase.ps1                    Stop-VMHostSsh.ps1
+'Home Lab'                                 Sysprep_Automation_Script.ps1
+'Horizon View Example Desktop Script.ps1'  Update_PowerCLI_Scripts.ps1
+Horizon-GetUsageStats.ps1                  VSANSmartsData.ps1
+Host_Memory_Assessment_Tool.ps1            VSANVersion.ps1
+Install-HostClient.ps1                     modules.sh
+Invoke-BiosBoot.ps1                        'vRealize Operations Maintenance Mode.ps1'
+'NVME Info.ps1'                            vSphereLogins.ps1
+New-ClusterHostGroup.ps1                   vTool_2016aug.ps1
+```
