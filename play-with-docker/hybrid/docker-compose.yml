@@ -1,0 +1,16 @@
+version: "3"
+services:
+
+  redis:
+    image: redis:3.2.100-nanoserver
+    deploy:
+      placement:
+        constraints: [node.platform.os == windows]
+
+  web:
+    image: radumatei/python-web
+    deploy:
+      placement:
+        constraints: [node.platform.os == linux]
+    ports:
+      - "80:80"
