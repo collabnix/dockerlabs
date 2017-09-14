@@ -6,6 +6,7 @@
 # Step 1: Setup Elasticsearch container
 
 docker run -d -p 9200:9200 -p 9300:9300 -it -h elasticsearch --name elasticsearch elasticsearch
+
 curl http://localhost:9200/
 
 # Step 2: Setup Kibana container
@@ -80,4 +81,19 @@ September 14th 2017, 08:45:37.510	@timestamp:September 14th 2017, 08:45:37.510 p
 	September 14th 2017, 08:45:14.529	@timestamp:September 14th 2017, 08:45:14.529 port:60360 @version:1 host:10.0.43.2 message:Referer: http://host4.labs.play-with-docker.com/p/abf1ba23-7fb8-49c0-98e8-e414f52d1b6d _id:AV5-YiP0R2tqeamsYNY8 _type:logs _index:logstash-2017.09.14 _score: -
    ```
 
-Reference: https://gist.github.com/shreyu86/735f2871460a2b068080
+# Setting up FileBeat
+
+Say, you want to collect logs from /var/log/nginx/access.log to logstash.
+First run the below command:
+
+
+```
+docker run -d -p 80:80 nginx -v /var/log:/var/log --name mynginx
+```
+
+Now run the below command to collect logs from mynginx container as shown below:
+
+```
+docker run -d --volumes-from mynginx -v /config-dir/filebeat.yml:/usr/share/filebeat/filebeat.yml --name myfilebeat docker.elastic.co/beats/filebeat:5.6.0
+```
+
