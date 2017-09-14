@@ -80,3 +80,4 @@ September 14th 2017, 08:45:37.510	@timestamp:September 14th 2017, 08:45:37.510 p
 	September 14th 2017, 08:45:14.529	@timestamp:September 14th 2017, 08:45:14.529 port:60360 @version:1 host:10.0.43.2 message:Referer: http://host4.labs.play-with-docker.com/p/abf1ba23-7fb8-49c0-98e8-e414f52d1b6d _id:AV5-YiP0R2tqeamsYNY8 _type:logs _index:logstash-2017.09.14 _score: -
    ```
 
+Reference: https://gist.github.com/shreyu86/735f2871460a2b068080
