@@ -12,6 +12,7 @@ curl http://localhost:9200/
 # Step 2: Setup Kibana container
 
 docker run -d  -p 5601:5601 -h kibana --name kibana --link elasticsearch:elasticsearch kibana
+
 curl http://localhost:9200/_cat/indices
 
 Open up Kibana. As of now, you will not see any timestamp entry.
