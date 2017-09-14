@@ -95,5 +95,9 @@ Now run the below command to collect logs from mynginx container as shown below:
 
 ```
 docker run -d --volumes-from mynginx -v /config-dir/filebeat.yml:/usr/share/filebeat/filebeat.yml --name myfilebeat docker.elastic.co/beats/filebeat:5.6.0
+
 ```
+
+This will use volume from mynginx container and then push it to filebeat container to push it to elasticsearch to be displayed under Kibana.
+
 
