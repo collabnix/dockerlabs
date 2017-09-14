@@ -3,7 +3,7 @@
 
 
 
-# Step 1: Setup Elasticsearch container and verify elastic its working
+# Step 1: Setup Elasticsearch container
 
 docker run -d -p 9200:9200 -p 9300:9300 -it -h elasticsearch --name elasticsearch elasticsearch
 curl http://localhost:9200/
@@ -15,7 +15,13 @@ curl http://localhost:9200/_cat/indices
 
 Open up Kibana. As of now, you will not see any timestamp entry.
 
-# Step 3: Create logstash config file under newly created /config-dir/ directory
+# Step 3: Create logstash config file 
+
+
+```
+$mkdir /config-dir
+```
+Add the below entry:
 
 ```
 $ cat logstash.conf
