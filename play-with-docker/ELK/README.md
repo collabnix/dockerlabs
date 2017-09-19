@@ -88,6 +88,9 @@ telnet hostname 8500
 ehlo
 
 ```
+
+Soon you will see the below logs under Kibana UI:
+```
 September 14th 2017, 08:45:37.510	@timestamp:September 14th 2017, 08:45:37.510 port:55144 @version:1 host:10.0.43.3 message:ehlo _id:AV5-Yn2vR2tqeamsYNY_ _type:logs _index:logstash-2017.09.14 _score: -
 	September 14th 2017, 08:45:33.955	@timestamp:September 14th 2017, 08:45:33.955 port:55144 @version:1 host:10.0.43.3 message: _id:AV5-Ym_TR2tqeamsYNY- _type:logs _index:logstash-2017.09.14 _score: -
 	September 14th 2017, 08:45:14.530	@timestamp:September 14th 2017, 08:45:14.530 port:60360 @version:1 host:10.0.43.2 message: _id:AV5-YiP0R2tqeamsYNY9 _type:logs _index:logstash-2017.09.14 _score: -
