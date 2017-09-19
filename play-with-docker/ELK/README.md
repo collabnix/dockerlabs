@@ -1,5 +1,5 @@
 
-# Single Docker Host Setup
+# Setting up Elasticsearch, Logstash , Kibana & Filebeat on a Docker Host
 
 
 
