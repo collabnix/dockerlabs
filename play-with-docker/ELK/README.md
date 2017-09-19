@@ -3,21 +3,33 @@
 
 
 
-## Step 1: Setup Elasticsearch container
+## Step 1: Setting up Elasticsearch container
 
+```
 docker run -d -p 9200:9200 -p 9300:9300 -it -h elasticsearch --name elasticsearch elasticsearch
+```
 
+Verify the functionality:
+
+```
 curl http://localhost:9200/
+```
 
-## Step 2: Setup Kibana container
+## Step 2: Setting up Kibana container
 
+```
 docker run -d  -p 5601:5601 -h kibana --name kibana --link elasticsearch:elasticsearch kibana
+```
 
+Verifying the functionality
+
+```
 curl http://localhost:9200/_cat/indices
+```
 
 Open up Kibana. As of now, you will not see any timestamp entry.
 
-# Step 3: Create logstash config file 
+## Step 3: Createing a sample logstash config file 
 
 
 ```
@@ -44,7 +56,7 @@ docker run -h logstash --name logstash --link elasticsearch:elasticsearch -it --
 curl http://localhost:9200/_cat/indices
 ```
 
-Now keep typing random inputs like try1, try2 try3
+Try out random inputs like try1, try2 try3
 
 Open up Kibana console and refresh. You will see a timestamp get added. Click on Discover to see the log entry try1,2,3
 
@@ -80,9 +92,10 @@ September 14th 2017, 08:45:37.510	@timestamp:September 14th 2017, 08:45:37.510 p
 	September 14th 2017, 08:45:33.955	@timestamp:September 14th 2017, 08:45:33.955 port:55144 @version:1 host:10.0.43.3 message: _id:AV5-Ym_TR2tqeamsYNY- _type:logs _index:logstash-2017.09.14 _score: -
 	September 14th 2017, 08:45:14.530	@timestamp:September 14th 2017, 08:45:14.530 port:60360 @version:1 host:10.0.43.2 message: _id:AV5-YiP0R2tqeamsYNY9 _type:logs _index:logstash-2017.09.14 _score: -
 	September 14th 2017, 08:45:14.529	@timestamp:September 14th 2017, 08:45:14.529 port:60360 @version:1 host:10.0.43.2 message:Referer: http://host4.labs.play-with-docker.com/p/abf1ba23-7fb8-49c0-98e8-e414f52d1b6d _id:AV5-YiP0R2tqeamsYNY8 _type:logs _index:logstash-2017.09.14 _score: -
-   ```
+  </pre>
+```
 
-# Setting up FileBeat
+## Setting up FileBeat
 
 Say, you want to collect logs from /var/log/nginx/access.log to logstash.
 First run the below command:
