@@ -3,13 +3,13 @@
 
 
 
-# Step 1: Setup Elasticsearch container
+## Step 1: Setup Elasticsearch container
 
 docker run -d -p 9200:9200 -p 9300:9300 -it -h elasticsearch --name elasticsearch elasticsearch
 
 curl http://localhost:9200/
 
-# Step 2: Setup Kibana container
+## Step 2: Setup Kibana container
 
 docker run -d  -p 5601:5601 -h kibana --name kibana --link elasticsearch:elasticsearch kibana
 
