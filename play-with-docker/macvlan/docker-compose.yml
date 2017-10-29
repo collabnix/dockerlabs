@@ -1,0 +1,41 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    networks:
+      - myvlan
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    restart: always
+    networks:
+      - myvlan
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_PASSWORD: wordpress
+
+volumes:
+  db_data:
+
+networks:
+  private:
+  myvlan:
+    driver: macvlan
+    driver_opts:
+      parent: ens160.30
+    ipam:
+      config:
+        - subnet: 100.98.26.0/24
