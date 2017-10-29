@@ -1,4 +1,4 @@
-# Working Docker Applications for Demos & Webinars
+# Getting Started
 
 ## Step-1:  Login to PWD Playground
 
