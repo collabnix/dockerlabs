@@ -9,3 +9,9 @@
 
 ## Getting Swarm Visualizer Up and Running 
 
+Follow the steps below:
+
+```
+cd docker101/visualizer/
+docker-compose up -d
+```
