@@ -5,7 +5,9 @@
 - Open http://play-with-docker on your browser
 - Click on Icon near to Instance to choose 3 Managers & 2 Worker Nodes
 
-![Image](../blob/master/images/pwd_1.png)
+
+![My image]../blob/master/images/pwd_1.png)
+
 
 - Wait for few seconds to bring up 5-Node Swarm Cluster
 
