@@ -22,3 +22,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 # Run Redis with persistent Storage and Password
 
 docker run -d -p 6379:6379 -v <data-dir>:/data --name redis redis redis-server /etc/redis/redis.conf --requirepass <password>
+
+#Run redis-cli
+
+docker run -it --rm --link redis:redis dockerfile/redis bash -c 'redis-cli -h redis'
