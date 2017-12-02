@@ -32,7 +32,7 @@ CONTAINER ID        IMAGE                   COMMAND                  CREATED    
 bbe04e98fb2c        postgres:9.6.6-alpine   "docker-entrypoint..."   5 seconds ago       Up 4 seconds        0.0.0.0:5432->5432/tcp   test_db_1
 [node1] (local) root@192.168.0.48 ~/test
 
-``
+```
 
 ```
 $ docker logs -f bbe
