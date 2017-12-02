@@ -18,6 +18,6 @@
 Follow the steps below:
 
 ```
-cd docker101/visualizer/
+cd docker101/play-with-docker/visualizer/
 docker-compose up -d
 ```
