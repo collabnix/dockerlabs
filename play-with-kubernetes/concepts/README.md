@@ -30,5 +30,89 @@ data-processing workloads.If an application can run in a container, it should ru
 - Allows users to choose their logging, monitoring, and alerting systems. (It provides some integrations as proof of concept.)
 - Kubernetes is designed to serve as a platform for building an ecosystem of components and tools to make it easier to deploy,
  scale, and manage applications.
+- Kubernetes is not a traditional, all-inclusive PaaS (Platform as a Service) system
+
+## A Look at High Level Kubernetes Architecture
+
+- There is a kubernetes Client called Kubectl which talks to Kube API which is running on your master node.
+- All states and configuration are stored in etcd. The etcd can be run on master or outside the cluster.
+- You have nodes where you run workloads on
+
+# Kubernetes Master:
+
+It consists of -
+
+- Kube-apiserver
+- kube-controller-manager
+- kube-scheduler
+
+Whenever you run command through kubectl, it always hits the API server which then goes to etcd store.
+Kube-controller manager will always look after your cluster and runs new command which you run against the API server
+Ensures that any workload you schedule it finds free nodes and then schedule workload on that node.
+
+All Kubernetes nodes have kubelet that ensures that any pod assigned to it are running and configured in desired state.
+
+# Pod: 
+- consits of one or more container
+- MOst Pods are single container to make it simple
+
+# Services:
+
+- Helps us in finding out more pods.
+- You don't need to go to Pods using IP address, instead you go to service, and service route to specifc Pod.
+Services are more stable, pods keeping changing
+
+# Volume
+- Allow to maintain state in the cluster
+- keep any info we want
+
+# namespace
+- seperating different workload from each other
+You can have 10 developers, give them each namespace...each namespace which shoudnt consume mroe than 2GB RAM.
+
+
+Advance Features:
+
+
+
+# ReplicataSet
+
+- 
+
+- Both allows to ensure when you launch pods, I want 5 pods in a cluster, it will ensure we hae 5 pods in a cluster
+- Superseded Replication Controller
+- More Regex way of selecting the Pods
+
+We usually dont 
+
+# Deployments:
+
+- Combines ReplicataSets 
+- Roll out new images and ROll back Images
+- Nice Continuous Deployment scenarios
+
+# Statefulset:
+
+- Databases in a cluster
+
+# DaemonSets:
+
+- Ensure that there is atleast 1 Pod running in a cluster
+
+# Jobs
+
+- Cron jobs or one of job you want to run
+- Batch Processing..it finishes up..
+
+
+
+
+
+
+
+
+
+
+
 
 
