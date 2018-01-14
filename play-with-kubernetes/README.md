@@ -119,3 +119,48 @@ NAME          DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 hello-world   2         2         2            0           1m
 nginx         1         1         1            1           29m
 ```
+
+# Display information about the Service:
+
+```
+kubectl describe services example-service
+```
+
+```
+Ajeets-MacBook-Air:~ ajeetraina$ kubectl describe services example-service
+Name:                     example-service
+Namespace:                default
+Labels:                   run=load-balancer-example
+Annotations:              <none>
+Selector:                 run=load-balancer-example
+Type:                     NodePort
+IP:                       10.106.252.68
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  31477/TCP
+Endpoints:                10.1.0.10:8080,10.1.0.9:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+```
+
+Make a note of the NodePort value for the service. For example, in the preceding output, the NodePort value is 31496.
+
+# List the pods that are running the Hello World application:
+
+```
+kubectl get pods --selector="run=load-balancer-example" --output=wide
+```
+
+```
+kubectl get pods --selector="run=load-balancer-example" --output=wide
+NAME                           READY     STATUS    RESTARTS   AGE       IP          NODE
+hello-world-85f98cf8c9-gplbf   1/1       Running   0          24m       10.1.0.10   docker-for-desktop
+hello-world-85f98cf8c9-qgbs2   1/1   
+```
+# Verify it on Web Browser
+
+```
+Ajeets-MacBook-Air:~ ajeetraina$ curl http://localhost:31477
+Hello Kubernetes!
+```
