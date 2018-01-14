@@ -1,4 +1,4 @@
-# Getting Started with Kubernetes
+# Getting Started with Kubernetes on Docker for Mac 17.12
 
 ## Pre-requisites
 
