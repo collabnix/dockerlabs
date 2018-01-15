@@ -209,8 +209,25 @@ Ajeets-MacBook-Air:example1 ajeetraina$ curl localhost:30990
 
 In order to access your nginx landing page, you also have to make sure that traffic from external IPs is allowed. Do this by opening a firewall to allow traffic on port 80.
  
- 
- 
+ ```
+ Ajeets-MacBook-Air:~ ajeetraina$ docker ps | head -n 2
+CONTAINER ID        IMAGE                                                    COMMAND                  CREATED             STATUS              PORTS                    NAMES
+eb6312309518        ajeetraina/webdemo                                       "ruby webtest.rb -p …"   9 hours ago         Up 9 hours                                   k8s_webdemo_webdemo-85f56bc5d5-np9qh_default_eae29f0d-f9bf-11e7-994c-025000000001_0
+Ajeets-MacBook-Air:~ ajeetraina$ docker exec -it eb631 ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1
+    link/ipip 0.0.0.0 brd 0.0.0.0
+3: ip6tnl0@NONE: <NOARP> mtu 1452 qdisc noop state DOWN group default qlen 1
+    link/tunnel6 :: brd ::
+5: eth0@if36: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 0a:58:0a:01:00:2b brd ff:ff:ff:ff:ff:ff
+    inet 10.1.0.43/16 scope global eth0
+       valid_lft forever preferred_lft forever
+Ajeets-MacBook-Air:~ ajeetraina$ 
+ ```
  =============================
  
 # Building By Type: Deployment if we want replicas of the same container     
