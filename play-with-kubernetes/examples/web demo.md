@@ -1,4 +1,4 @@
-# Demonstrating Web Demo Test 
+# Demonstrating Web Demo Test on Kubernetes Powered Docker for Mac 17.12 Platform
 
 # Starting up with Clean System
 
@@ -29,7 +29,7 @@ spec:
       - containerPort: 8080
  ```
  
- # Launching a pod using the container image ajeetraina/webdemo and exposing a HTTP API on port 8080, execute:
+ # Launching a pod using the container image ajeetraina/webdemo and exposing a HTTP API on port 8080
  
  ```
  $kubectl create -f webdemo.yml
@@ -93,6 +93,7 @@ Events:
   Normal  Created                1m    kubelet, docker-for-desktop  Created container
   Normal  Started                1m    kubelet, docker-for-desktop  Started container
 ```
+
 # Fetching the Pod IP
 
 ```
@@ -107,7 +108,7 @@ Ajeets-MacBook-Air:example1 ajeetraina$
 NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
  ```
  
- # Exposing the 
+ # Exposing the pods for accessing it through Browser
  
  Exposing your pods to the internet.
 
@@ -123,14 +124,12 @@ NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
  can be retrieved by running the below command:
  
  ```
-
 kubectl get services
 ```
 
-In our case on Docker for Mac 17.12, Let;s run the below command:
+In our case, Let's run the below command:
 
 ```
-
 Ajeets-MacBook-Air:example1 ajeetraina$ kubectl get services
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
 kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP          2d
@@ -138,6 +137,7 @@ webdemo      NodePort    10.99.125.85   <none>        8080:30990/TCP   5m
 
 ```
 
+Now we should be able to access the Webdemo Test Page using the below command:
 ```
 
 Ajeets-MacBook-Air:example1 ajeetraina$ curl localhost:30990
