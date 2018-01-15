@@ -104,8 +104,11 @@ Ajeets-MacBook-Air:example1 ajeetraina$
  
  # Fetching the deployment details
  ```
- Ajeets-MacBook-Air:example1 ajeetraina$ kubectl get deployment
-NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+
+Ajeets-MacBook-Air:example1 ajeetraina$ kubectl get deployment -o wide
+NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE       CONTAINERS   IMAGES               SELECTOR
+webdemo   1         1         1            1           7h        webdemo      ajeetraina/webdemo   run=webdemo
+
  ```
  
  # Exposing the pods for accessing it through Browser
