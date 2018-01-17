@@ -3,7 +3,7 @@
 # Writing a Docker Compose File
 
 ```
-Ajeets-MacBook-Air:testenviron ajeetraina$ cat docker-compse.yml 
+Ajeets-MacBook-Air:testenviron ajeetraina$ cat docker-compose.yml 
 version: '3.4'
 services:
   web:
