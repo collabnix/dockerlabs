@@ -245,7 +245,7 @@ Ajeets-MacBook-Air:~ ajeetraina$
 # Building By Type: Deployment if we want replicas of the same container     
 
 It creates a ReplicaSet to bring up three nginx Pods:
-
+```
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
@@ -267,7 +267,7 @@ spec:
         image: nginx:1.7.9
         ports:
         - containerPort: 80
-        
+  ```      
         
     What does the above deployment.yaml mean?
     
@@ -286,12 +286,13 @@ The Pods are labeled app: nginx
 Create one container and name it nginx.
 Run the nginx image at version 1.7.9.
 Open port 80 so that the container can send and accept traffic.
-
+```
 # creating Deployment
 
+```
 #kubectl create -f webdemo.yml
 
 To see the ReplicaSet (rs) created by the deployment, run kubectl get rs:
 NAME                          DESIRED   CURRENT   READY   AGE
 nginx-deployment-2035384211   3         3         3       18s
-
+```
