@@ -269,7 +269,7 @@ spec:
         - containerPort: 80
   ```      
         
-    What does the above deployment.yaml mean?
+ # What does the above deployment.yaml mean?
     
 A Deployment named nginx-deployment is created, indicated by the metadata: name field.
 The Deployment creates three replicated Pods, indicated by the replicas field.
@@ -286,13 +286,14 @@ The Pods are labeled app: nginx
 Create one container and name it nginx.
 Run the nginx image at version 1.7.9.
 Open port 80 so that the container can send and accept traffic.
-```
-# creating Deployment
+
+# Creating Deployment
 
 ```
-#kubectl create -f webdemo.yml
+$kubectl create -f webdemo.yml
 
 To see the ReplicaSet (rs) created by the deployment, run kubectl get rs:
 NAME                          DESIRED   CURRENT   READY   AGE
 nginx-deployment-2035384211   3         3         3       18s
+
 ```
