@@ -100,8 +100,20 @@ Events:
 Ajeets-MacBook-Air:example1 ajeetraina$ kubectl describe pod collabweb | grep IP:
 IP:           10.1.0.42
 Ajeets-MacBook-Air:example1 ajeetraina$
- ```
+```
+
+# Creating a Deployment
  
+```
+$kubectl run webdemo --image=ajeetraina/webdemo --port=8080 
+```
+
+# Verifying the Deployment
+
+```
+kubectl get deployment webdemo -o wide
+
+```
  # Fetching the deployment details
  ```
 
