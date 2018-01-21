@@ -95,7 +95,7 @@ pod "default-cpu-demo" created
 ```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pods
 No resources found.
-``
+```
 
 ```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pod default-cpu-demo --output=yaml --namespace=collabnix
