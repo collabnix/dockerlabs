@@ -25,5 +25,5 @@ docker-compose up -d
 ```
 # List of Applications for the demonstration 
 
-[WordPress under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/wordpress/example1)
+[WordPress under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/wordpress/example1)<br>
 [ELK under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ELK)
