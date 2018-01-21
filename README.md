@@ -15,9 +15,15 @@
 
 ## Getting Swarm Visualizer Up and Running 
 
+Swarm Visualizer is a fancy tool which visualized the Swarm Cluster setup. It displays containers running on each node.
+
 Follow the steps below:
 
 ```
 cd docker101/play-with-docker/visualizer/
 docker-compose up -d
 ```
+# List of Applications for the demonstration 
+
+[WordPress under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/wordpress/example1)
+[ELK under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ELK)
