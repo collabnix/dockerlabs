@@ -261,11 +261,10 @@ status:
   podIP: 10.1.0.163
   qosClass: Burstable
   startTime: 2018-01-21T08:10:57Z
-  ```
+  ```
 
 
 # Displaying the Namespace
-
 
 
 ```
