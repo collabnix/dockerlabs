@@ -1,7 +1,7 @@
 # Setting up Kubernetes Dashboard under Docker for Mac 18.01
 
 ```
-Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl create -f ./kubernetes-dashboard.yaml
 ```
 
 ```
