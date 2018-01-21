@@ -23,12 +23,7 @@ kind: Namespace
 metadata:
   name: collabnix
 ```
-Ajeets-MacBook-Air:testenviron ajeetraina$ vi cpu-collabnix.yml
-```
 
-```
-kubectl create -f cpu-collabnix.yaml --namespace=collabnix
-```
 
 ## Displaying Namespace
 
@@ -57,7 +52,6 @@ spec:
 ```
 
 ```
-
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl create -f ./cpu-collabnix.yml --namespace=collabnix
 limitrange "cpu-limit-range" created
 ```
@@ -93,7 +87,7 @@ Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pods
 No resources found.
 ```
 
-
+```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pod default-cpu-demo --output=yaml --namespace=collabnix
 apiVersion: v1
 kind: Pod
@@ -175,6 +169,7 @@ status:
   podIP: 10.1.0.163
   qosClass: Burstable
   startTime: 2018-01-21T08:10:57Z
+  ```
 
 # Creating Namespace with CPU Limits
 
