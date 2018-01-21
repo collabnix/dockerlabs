@@ -24,6 +24,9 @@ metadata:
   name: collabnix
 ```
 
+```
+kubectl create -f ./collabnix-namespace.yml
+```
 
 ## Displaying Namespace
 
