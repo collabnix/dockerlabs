@@ -12,6 +12,14 @@ Kubernetes supports multiple virtual clusters backed by the same physical cluste
 
 # Displaying Namespace
 
+```
+$ kubectl get namespaces
+NAME          STATUS    AGE
+default       Active    1d
+kube-system   Active    1d
+kube-public   Active    1d
+```
+
 
 # Creating Namespace
 
@@ -71,24 +79,23 @@ spec:
   - name: default-cpu-demo-ctr
     image: nginx
 ```
-## Creating Namespace
+
+## Creating Namespace with CPU Limit
 
 ```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl create -f ./cpu-collabnix-pods.yml --namespace=collabnix
 pod "default-cpu-demo" created
 ```
 
-# Displaying 
+## Displaying 
+
+
+
 
 ```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pods
 No resources found.
-```
-
-```
-Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pods
-No resources found.
-```
+``
 
 ```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pod default-cpu-demo --output=yaml --namespace=collabnix
