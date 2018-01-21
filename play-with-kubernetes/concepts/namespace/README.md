@@ -18,23 +18,20 @@ Ajeets-MacBook-Air:testenviron ajeetraina$ vi cpu-collabnix.yml
 ```
 
 ```
-
-# How to build Pods
-
-```
-Ajeets-MacBook-Air:testenviron ajeetraina$ cat cpu-collabnix-pods.yml 
-apiVersion: v1
-kind: Pod
-metadata:
-  name: default-cpu-demo
-spec:
-  containers:
-  - name: default-cpu-demo-ctr
-    image: nginx
+kubectl create -f cpu-collabnix.yaml --namespace=collabnix
 ```
 
-Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl create -f ./cpu-collabnix.yml --namespace=collabnix
-limitrange "cpu-limit-range" created
+## Displaying Namespace
+
+```
+Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get namespace
+NAME          STATUS    AGE
+collabnix     Active    29m
+```
+
+# How to build Namespace with CPU Limit
+
+```
 Ajeets-MacBook-Air:testenviron ajeetraina$ cat cpu-collabnix.yml 
 apiVersion: v1
 kind: LimitRange
@@ -47,16 +44,47 @@ spec:
     defaultRequest:
       cpu: 0.5
     type: Container
-Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl create -f ./cpu-defaults-pod.yaml --namespace=collabnix
-Ajeets-MacBook-Air:testenviron ajeetraina$ ls
-collabnix-namespace.yml	cpu-collabnix.yml	docker-compose.yml
-Ajeets-MacBook-Air:testenviron ajeetraina$ vi cpu-collabnix-pods.yml
+
+```
+
+```
+
+Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl create -f ./cpu-collabnix.yml --namespace=collabnix
+limitrange "cpu-limit-range" created
+```
+
+
+```
+Ajeets-MacBook-Air:testenviron ajeetraina$ cat cpu-collabnix-pods.yml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: default-cpu-demo
+spec:
+  containers:
+  - name: default-cpu-demo-ctr
+    image: nginx
+```
+## Creating Namespace
+
+```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl create -f ./cpu-collabnix-pods.yml --namespace=collabnix
 pod "default-cpu-demo" created
+```
+
+# Displaying 
+
+```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pods
 No resources found.
+```
+
+```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pods
 No resources found.
+```
+
+
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pod default-cpu-demo --output=yaml --namespace=collabnix
 apiVersion: v1
 kind: Pod
