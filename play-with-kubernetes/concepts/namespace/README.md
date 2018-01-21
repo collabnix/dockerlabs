@@ -179,7 +179,8 @@ status:
   podIP: 10.1.0.163
   qosClass: Burstable
   startTime: 2018-01-21T08:10:57Z
-  ```
+  
+  ```
 
 # Creating Namespace with CPU Limits
 
@@ -187,6 +188,7 @@ status:
 # Displaying Pods
 
 ```
+
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get pod default-cpu-demo --output=yaml --namespace=collabnix
 apiVersion: v1
 kind: Pod
@@ -268,8 +270,8 @@ status:
   podIP: 10.1.0.163
   qosClass: Burstable
   startTime: 2018-01-21T08:10:57Z
+ 
  ```
-
 
 # Displaying the Namespace
 
