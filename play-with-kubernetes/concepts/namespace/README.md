@@ -1,4 +1,4 @@
-# Introduction to Namespace
+# Introduction to Kubernetes Namespace
 
 Namespaces are intended for use in environments with many users spread across multiple teams, or projects. For clusters with a few to tens of users, you should not need to create or think about namespaces at all. Start using namespaces when you need the features they provide.
 
@@ -10,7 +10,7 @@ It is not necessary to use multiple namespaces just to separate slightly differe
 Kubernetes supports multiple virtual clusters backed by the same physical cluster. These virtual clusters are called namespaces.
 
 
-# Displaying Namespace
+## Displaying the default Namespace
 
 ```
 $ kubectl get namespaces
@@ -21,7 +21,7 @@ kube-public   Active    1d
 ```
 
 
-# Creating Namespace
+## Creating User-defined Namespace
 
 
 ```
@@ -36,7 +36,7 @@ metadata:
 kubectl create -f ./collabnix-namespace.yml
 ```
 
-## Displaying Namespace
+## Displaying the Namespace
 
 ```
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl get namespace
@@ -44,7 +44,7 @@ NAME          STATUS    AGE
 collabnix     Active    29m
 ```
 
-# How to build Namespace with CPU Limit
+## How to build Namespace with CPU Limit
 
 ```
 Ajeets-MacBook-Air:testenviron ajeetraina$ cat cpu-collabnix.yml 
@@ -66,7 +66,7 @@ spec:
 Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl create -f ./cpu-collabnix.yml --namespace=collabnix
 limitrange "cpu-limit-range" created
 ```
-
+## Creating Pod
 
 ```
 Ajeets-MacBook-Air:testenviron ajeetraina$ cat cpu-collabnix-pods.yml 
@@ -182,10 +182,9 @@ status:
   
   ```
 
-# Creating Namespace with CPU Limits
 
 
-# Displaying Pods
+## Displaying Pods
 
 ```
 
@@ -273,7 +272,7 @@ status:
  
  ```
 
-# Displaying the Namespace
+# Describing the Namespace
 
 
 ```
