@@ -1,4 +1,4 @@
-# Demonstrating Context Selection for Minikube & K8s powered Docker for Mac 18.02 RC
+# Demonstrating Context Selection Switching between Minikube & K8s powered Docker for Mac 18.02 RC
 
 Under this tutorial, we will first install minikube on plain Docker for Mac 18.02 RC1 build. We can go ahead and run Docker Swarm on top of it. Then we will switch the context to docker-for-desktop and then enable Kubernetes to get kubernetes cluster up and running
 
