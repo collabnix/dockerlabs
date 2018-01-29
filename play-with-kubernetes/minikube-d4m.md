@@ -92,6 +92,18 @@ Ajeets-MacBook-Air:testenviron ajeetraina$ kubectl config use-context docker-for
 Switched to context "docker-for-desktop".
 ```
 
+# Verifying through Pane UI
+
+Open up whale icon under D4M and see if the context switched successfully
+
+# Enabling Kubernetes
+
+Go to whale icon > Click on Preference > Click on Kubernetes > Enable Kubernetes > Show Systems Containers
+
+It will take few minutes to get Kubernetes up and running
+
+
+
 
  
 
