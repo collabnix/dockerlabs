@@ -34,4 +34,12 @@ Starting cluster components...
 Kubectl is now configured to use the cluster.
 Loading cached images from config file.
  ```
+ 
+ # Viewing Kubernetes context selection pane
+ 
+ By now, you should see minikube context appear 
+ 
+ # Verifying it using CLI
+ 
+ 
 
