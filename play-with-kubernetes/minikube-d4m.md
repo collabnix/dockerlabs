@@ -41,5 +41,15 @@ Loading cached images from config file.
  
  # Verifying it using CLI
  
+ ```
+ Ajeets-MacBook-Air:~ ajeetraina$ kubectl config get-contexts
+CURRENT   NAME                          CLUSTER                      AUTHINFO             NAMESPACE
+          docker-for-desktop            docker-for-desktop-cluster   docker-for-desktop
+          gce                                                        cluster-admin
+          kubernetes-admin@kubernetes   kubernetes                   kubernetes-admin
+*         minikube                      minikube                     minikube
+```
+
+
  
 
