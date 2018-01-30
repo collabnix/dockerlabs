@@ -36,28 +36,25 @@ Disabled
 Total size	
 3
 Master zone	
-asia-east1-a
-Node zones	
-asia-east1-a
-Network	
-default
-Alias IP ranges	
-Disabled
-Container address range	
-10.12.0.0/14
-Stackdriver Logging	
-Enabled
-Stackdriver Monitoring	
-Enabled
-Master authorized networks	
-Disabled
-Network policy	
-Disabled
-Legacy authorization	
-Enabled
-Maintenance window	
-Any time
-Labels
-None
+...
 ```
 
+## Connecting to Your GKE Cluster 
+
+You can connect to your cluster via command-line or using a dashboard.
+
+```
+Ajeets-MacBook-Air:~ ajeetraina$ gcloud container clusters get-credentials k8s-lab1 --zone asia-east1-a --project spheric-temple-187614
+```
+
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for k8s-lab1.
+
+## 
+
+Ajeets-MacBook-Air:~ ajeetraina$ kubectl get nodes
+NAME                                      STATUS    ROLES     AGE       VERSION
+gke-k8s-lab1-default-pool-042d2598-591g   Ready     <none>    7m        v1.7.11-gke.1
+gke-k8s-lab1-default-pool-042d2598-c633   Ready     <none>    7m        v1.7.11-gke.1
+gke-k8s-lab1-default-pool-042d2598-q603   Ready     <none>    7m        v1.7.11-gke.1
+  
