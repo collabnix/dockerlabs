@@ -1,8 +1,8 @@
-# Getting Started
+# Getting Started with Play With Docker Platform
 
-## Step-1:  Login to PWD Playground
+## Login to PWD Playground
 
-- Open http://play-with-docker on your browser
+- Open http://www.play-with-docker on your browser
 - Click on Icon near to Instance to choose 3 Managers & 2 Worker Nodes
 
 
@@ -13,11 +13,17 @@
 
 
 
-## Getting Swarm Visualizer Up and Running 
+## Time to build Swarm Cluster Visualizer tool 
 
 Swarm Visualizer is a fancy tool which visualized the Swarm Cluster setup. It displays containers running on each node.
 
-Follow the steps below:
+## Clone the Repository
+
+```
+git clone https://github.com/ajeetraina/docker101
+```
+
+
 
 ```
 cd docker101/play-with-docker/visualizer/
