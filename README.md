@@ -36,6 +36,6 @@ docker-compose up -d
 [Playing around with Photon OS](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/vmware/powercli)<br>
 [Playing around with MacVLAN](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/macvlan)<br>
 [IPv6 & Docker Compose](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ipv6)<br>
-[Trying out Gitlab](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/gitlab)
-
+[Trying out Gitlab](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/gitlab)<br>
+[Getting Started with Nginx](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/nginx)<br>
 
