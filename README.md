@@ -23,7 +23,14 @@ Follow the steps below:
 cd docker101/play-with-docker/visualizer/
 docker-compose up -d
 ```
+
+![My image](https://github.com/ajeetraina/docker101/blob/master/images/visualizer.png)
+
 # List of Applications for the demonstration 
 
 [WordPress under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/wordpress/example1)<br>
 [ELK under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ELK)
+[Prometheus Stack under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/docker-prometheus-swarm)
+[Voting App Example](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/example-voting-app)
+[Playing around with Photon OS](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/vmware/powercli)
+
