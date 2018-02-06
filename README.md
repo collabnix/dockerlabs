@@ -33,4 +33,5 @@ docker-compose up -d
 [Prometheus Stack under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/docker-prometheus-swarm)<br>
 [Voting App Example](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/example-voting-app)<br>
 [Playing around with Photon OS](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/vmware/powercli)<br>
+[Playing around with MacVLAN](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/macvlan)<br>
 
