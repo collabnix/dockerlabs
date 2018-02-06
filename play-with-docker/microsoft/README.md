@@ -1,6 +1,13 @@
 
+# How to install Docker for Windows on your Laptop?
 
-# Question -  How to Keep Windows Container Running?
+Open up Powershell as administrator and run the below command to enable HyperV.
+
+```
+Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
+```
+
+#  How to Keep Windows Container Running?
 
 ## Scenario: I created a new container however as soon as its created its status is stopped, why?
 
