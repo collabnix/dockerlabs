@@ -2,7 +2,7 @@
 
 ## Login to PWD Playground
 
-- Open http://www.play-with-docker on your browser
+- Open https://labs.play-with-docker.com on your browser
 - Click on Icon near to Instance to choose 3 Managers & 2 Worker Nodes
 
 
