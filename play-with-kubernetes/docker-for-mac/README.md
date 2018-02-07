@@ -1,5 +1,30 @@
 # Kubernetes powered Docker for Mac 17.12 CE Edition
 
+## How ```docker stack deploy``` manage to deploy to K8s? Does it convert docker-compose files to k8s manifests (something like kompose) before deployment ?
+
+It’s a custom apiserver that is in charge of keeping your stack up and running. Basically converting services to k8s objets and maintaining them (if you remove a deployment of a stack, the compose controller will recreate it)
+
+One can do kubectl get stacks for instance and scale it by hand.
+
+## How you add things to K8s API?
+
+Docker use api aggregation. In Kubernetes, you can add new things to the api with this mechanism.
+https://kubernetes.io/docs/concepts/api-extension/apiserver-aggregation/
+
+## What happens behind the scene while you run ```docker stack deploy```?
+
+Docker introduced a new type : Stack, under compose.docker.com. This object, that you can create with kubectl or more easily with docker stack deploy, contains the compose file.
+
+Behind the scene, a controller watches for stacks and create/update corresponding kubernetes objets (deployments, services, etc).
+The job of the controller is to reconcile the stacks (stored in the api-server or crd) with k8s native object
+
+kubectl has a discovery mechanism, nothing more. You can list all apis available with `kubectl api-versions`
+[Learn more](https://github.com/docker/cli/blob/master/kubernetes/compose/v1beta1/stack_types.go#L24)
+
+
+
+
+
 Basic Commands:
 
 ```
