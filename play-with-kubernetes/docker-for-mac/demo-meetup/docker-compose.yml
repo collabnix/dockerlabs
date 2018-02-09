@@ -1,0 +1,8 @@
+version: '3.4'
+services:
+  web1:
+    image: nginx:alpine
+    ports:
+      - 8082:80
+  db1:
+    image: nginx:alpine
