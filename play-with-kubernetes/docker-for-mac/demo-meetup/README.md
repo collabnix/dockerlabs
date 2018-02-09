@@ -1,25 +1,41 @@
-# How to view the current context?
+# Demonstrating K8s powered Docker for Mac 
+
+## Demo-1: Using Docker Stack to build Kubernetes Cluster
+
+### Verifying the current Orchestrator
 
 ```
-[Captains-Bay]🚩 >  kubectl config get-contexts
-CURRENT   NAME                                              CLUSTER                                           AUTHINFO                                          NAMESPACE
-kubernetes-admin@kubernetes                       kubernetes                                        kubernetes-admin
-minikube                                          minikube                                          minikube
-docker-for-desktop                                docker-for-desktop-cluster                        docker-for-desktop
-gke_spheric-temple-187614_asia-east1-a_k8s-lab1   gke_spheric-temple-187614_asia-east1-a_k8s-lab1   gke_spheric-temple-187614_asia-east1-a_k8s-lab1
+docker version
+```
+
+```
+docker stack deploy -c docker-compose.yml stack1
+```
+
+## Verifying
+
+```
+docker stack ls
+```
+
+## To confirm that it is K8s cluster and NOT Swarm
+
+```
+kubectl get po,svc,deploy
+```
+
+```
+DOCKER_ORCHESTRATOR=swarm docker swarm init
+DOCKER_OCHESTRATOR=swarm docker service ls
+```
+No Swarm services has been running.
+
+# Accessing the WebPage
+
+```
+open http://localhost:8082
 ```
 
 
-# How to delete the specific context?
 
-```
-[Captains-Bay]🚩 >  kubectl config delete-context gce
-deleted context gce from /Users/ajeetraina/.kube/config
-```
 
-# How to switch from one context to another?
-
-```
-[Captains-Bay]🚩 >  kubectl config use-context minikube
-Switched to context "minikube".
-```
