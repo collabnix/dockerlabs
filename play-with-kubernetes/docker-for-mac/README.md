@@ -8,6 +8,8 @@ One can do kubectl get stacks for instance and scale it by hand.
 
 ## How you add things to K8s API?
 
+The Kubernetes API server validates and configures data for the api objects which include pods, services, replicationcontrollers, and others. The API Server services REST operations and provides the frontend to the cluster’s shared state through which all other components interact.
+
 Docker use api aggregation. In Kubernetes, you can add new things to the api with this mechanism.
 https://kubernetes.io/docs/concepts/api-extension/apiserver-aggregation/
 
