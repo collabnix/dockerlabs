@@ -1,6 +1,6 @@
 # Kubernetes & CI-CD on Docker for Mac 18.02 CE
 
-Select "minikube' under whale icon > kubernetes & run the below command:
+Select "Minikube' under whale icon > kubernetes & run the below command:
 
 ## Start the Minikube
 
@@ -41,7 +41,18 @@ kubectl rollout status deployment/jenkins
 deployment "jenkins" successfully rolled out
 ```
 
+## Verify the Namespaces
 
+```
+kubectl get pods --all-namespaces
+```
 
+## Accessing the Jenkins UI in a web browser.
+
+```
+minikube service jenkins
+```
+
+## 
 
 
