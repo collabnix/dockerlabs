@@ -56,3 +56,4 @@ minikube service jenkins
 ## 
 
 
+![Alt Text](https://github.com/ajeetraina/docker101/blob/master/play-with-kubernetes/images/jenkins1.png)
