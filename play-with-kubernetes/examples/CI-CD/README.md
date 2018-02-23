@@ -33,7 +33,7 @@ default       jenkins-774bf687f9-kwg2f                1/1       Running   0     
 ## Installing Jenkins using jenkins.yml, which we’ll use to create our automated CI/CD pipeline. It will take the pod a minute or two to roll out.
 
 ```
-kubectl apply -f manifests/jenkins.yml
+kubectl apply -f jenkins.yml
 ```
 
 ```
