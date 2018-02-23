@@ -1,4 +1,4 @@
-# Kubernetes & CI-CD on Docker for Mac 18.02 CE
+# Kubernetes & Jenkins on Docker for Mac 18.02 CE
 
 Select "Minikube' under whale icon > kubernetes & run the below command:
 
