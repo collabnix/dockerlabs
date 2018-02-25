@@ -25,3 +25,11 @@ echo "-master http://192.168.0.119 -password admin -username admin"|docker secre
 ```
 docker service create --mode=global --name jenkins-swarm-agent -e LABELS=docker-test --mount "type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock" --mount "type=bind,source=/tmp/,target=/tmp/" --secret source=jenkins-v1,target=jenkins vipconsult/jenkins-swarm-agent
 ```
+
+Login to one of instance running the above service and get the password using the below command:
+
+```
+cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+## 
