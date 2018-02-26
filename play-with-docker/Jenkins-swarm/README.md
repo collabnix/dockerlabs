@@ -88,3 +88,8 @@ Finished: FAILURE
 
 This error is expected as we don't have Docker plugin added yet.
 
+Go to Manage Plugin , Search for Docker and then select all options related to Docker.
+Re-run the build. You will see that it gets successfully built this time.
+
+TBD
+
