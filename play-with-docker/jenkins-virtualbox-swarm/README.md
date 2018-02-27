@@ -1,4 +1,4 @@
-# Demonstratin CI-CD Pipeline using Jenkins, Docker Swarm Mode and Virtualbox running on Docker for Mac
+# Demonstrating CI-CD Pipeline using Jenkins, Docker Swarm Mode and Virtualbox running on Docker for Mac
 
 ## Pre-requisite:
 
