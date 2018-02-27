@@ -28,21 +28,16 @@ node01   -        virtualbox   Running   tcp://192.168.99.104:2376           v18
 node02   -        virtualbox   Running   tcp://192.168.99.102:2376           v18.02.0-ce
 ```
 
+## Installing Jenkins on the Manager node
+
 ```
-docker@master:~/jenkins-demo/cd/swarm$ sh init.sh
-w8da93f54kt7oxfgqlb93bjeu
-owzna0aaq7dadlvs603roakez
-overall progress: 1 out of 1 tasks
-1/1: running
-verify: Service converged
-b1r3m1t1tsetni9ltek721d9h
-jhuqlikixksxm2dwbxy6dg8ru
-zwvggk1j32h9vzqwdhrvfq5s7
-docker@master:~/jenkins-demo/cd/swarm$ docker service ls
-ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
-owzna0aaq7da        db                  replicated          1/1                 mysql:5.7.17
-docker@master:~/jenkins-demo/cd/swarm$ docker service ps db
-ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
-bytzyuwd2mpt        db.1                mysql:5.7.17        master              Running             Running 22 seconds ago
-docker@master:~/jenkins-demo/cd/swarm$
+docker service create --mode=global --name jenkins-swarm-agent -e LABELS=docker-test --mount "type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock" --mount "type=bind,source=/tmp/,target=/tmp/" --secret source=jenkins-v1,target=jenkins vipconsult/jenkins-swarm-agent
 ```
+
+Login to one of instance running the above service and get the password using the below command:
+
+```
+cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+## 
