@@ -1,12 +1,17 @@
-FROM jenkins:2.32.3
-
+FROM jenkins/jenkins:alpine
 USER root
-RUN apt-get -qq update \
-   && apt-get -qq -y install \
-   curl
 
-RUN curl -sSL https://get.docker.com/ | sh
+# set version label
+LABEL maintainer="Ajeet Raina"
 
-RUN usermod -a -G staff jenkins
+# Install the latest Docker CE binaries
+RUN \
+echo "**** install runtime packages ****" && \
+apk add --no-cache \
+    docker && \
+echo "**** cleanup ****" && \
+rm -rf \
+    /tmp/*
 
+# set default user
 USER jenkins
