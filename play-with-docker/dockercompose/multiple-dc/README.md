@@ -10,7 +10,9 @@ Using multiple Compose files enables you to customize a Compose application for 
 
 By default, Compose reads two files, a docker-compose.yml and an optional docker-compose.override.yml file. By convention, the docker-compose.yml contains your base configuration. The override file, as its name implies, can contain configuration overrides for existing services or entirely new services.
 If a service is defined in both files, Compose merges the configurations using the rules described in Adding and overriding configuration.
-To use multiple override files, or an override file with a different name, you can use the -f option to specify the list of files. Compose merges files in the order they’re specified on the command line. See the docker-compose command reference for more information about using -f.
+
+To use multiple override files, or an override file with a different name, you can use the -f option to specify the list of files. Compose merges files in the order they’re specified on the command line. 
+
 When you use multiple configuration files, you must make sure all paths in the files are relative to the base Compose file (the first Compose file specified with -f). This is required because override files need not be valid Compose files. Override files can contain small fragments of configuration. Tracking which fragment of a service is relative to which path is difficult and confusing, so to keep paths easier to understand, all paths must be defined relative to the base file.
 
 ## Example use case
