@@ -1,5 +1,5 @@
 web:
-  build: .
+  build: ./nginx
   volumes:
     - '.:/code'
   ports:
