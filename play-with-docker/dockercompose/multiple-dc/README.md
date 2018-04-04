@@ -1,4 +1,4 @@
-# Using Docker Compose File for Dev, Staging & Production
+# Support of Multiple Compose File under Docker 18.03 CE Release
 
 Under Docker 18.03 Release, there is a support for multiple composefile when deploying.
 
