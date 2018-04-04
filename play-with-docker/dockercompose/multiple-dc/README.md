@@ -40,4 +40,13 @@ Starting multipledc_db_1 ... done
 Starting multipledc_web_1 ... done
 ```
 
+## Run the below command for Dev Environment
 
+```
+
+$ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+Starting multipledc_cache_1 ...
+Starting multipledc_db_1 ... done
+Starting multipledc_web_1 ... done
+
+```
