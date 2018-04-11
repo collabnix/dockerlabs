@@ -117,3 +117,7 @@ Events:
   Normal  Created                5m    kubelet, docker-for-desktop  Created container
   Normal  Started                5m    kubelet, docker-for-desktop  Started container
   ```
+
+
+Reference:
+- https://github.com/firepress-org/Docker-For-Mac-with-Native-NFS
