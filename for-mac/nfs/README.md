@@ -32,3 +32,9 @@ Starting the nfsd service
 
 SUCCESS! Now go run your containers 🐳
 ```
+
+# Bringing up Your Application
+
+```
+docker-compose up -d
+```
