@@ -1,8 +1,24 @@
 version: '2'
+
 services:
-  api:
+  a:
+    image: alpine:3.6
+    command: ping 127.0.0.1
+    networks:
+      - docknet
     volumes:
       - "nfsmount:#{CONTAINER_DIR}"
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+
+
+
+networks:
+  docknet:
+    external: true
+
 
 volumes:
   nfsmount:
