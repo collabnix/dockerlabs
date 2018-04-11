@@ -1,4 +1,4 @@
-# Docker for Mac 18.03 comes with NFS Functionality for Kubernetes
+# Docker for Mac 18.03 comes with NFS Volume Sharing Support for Kubernetes
 
 # Pre-requisite:
 
