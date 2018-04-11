@@ -10,6 +10,10 @@
 ## Execute the below script on your macOS system
 
 ```
+sh env_vars.sh
+```
+
+```
 sh setup_native_nfs_docker_osx.sh
 
  +-----------------------------+
@@ -36,5 +40,18 @@ SUCCESS! Now go run your containers 🐳
 # Bringing up Your Application
 
 ```
-docker-compose up -d
+docker stack deploy -c docker-compose.yml myapp2
+ docker stack ls
+NAME                SERVICES
+myapp2                1
+```
+
+```
+[Captains-Bay]🚩 >  kubectl get po
+NAME      READY     STATUS    RESTARTS   AGE
+web-0     1/1       Running   0          3m
+[Captains-Bay]🚩 >  kubectl get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)     AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP     1d
+web          ClusterIP   None         <none>        55555/TCP   3m
 ```
