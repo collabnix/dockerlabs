@@ -7,7 +7,7 @@
 
 # Getting Started
 
-## Execute the below script on your 
+## Execute the below script on your macOS system
 
 ```
 sh setup_native_nfs_docker_osx.sh
