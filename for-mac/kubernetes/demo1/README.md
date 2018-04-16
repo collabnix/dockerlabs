@@ -1,4 +1,4 @@
-# Demo #1: How to Build Kubernetes Cluster using Swarm CLI
+# Demo #1: How to Build Your First Kubernetes Cluster using Swarm CLI
 
 ## Clone this Repository
 
