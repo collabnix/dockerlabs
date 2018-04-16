@@ -76,6 +76,7 @@ Status:
 Events:     <none>
 ```
 
+## Verifying if Nginx is Up and running
 ```
  curl localhost:8082
 <!DOCTYPE html>
