@@ -1,5 +1,10 @@
 # Demo #1: How to Build Your First Kubernetes Cluster using Swarm CLI
 
+## Pre-requisite
+
+- Docker 18.04 CE running on your MacOS
+- Kubernetes up and running
+
 ## Clone this Repository
 
 ```
