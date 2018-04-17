@@ -20,19 +20,16 @@ Bring up your first k8s instance by clicking on "New Instance".
  
  Wait for a minute to get it completely intiliazed. This will start up API server
  
- ```
+ 
+ ## Start Using Your Cluster
+ 
  To start using your cluster, you need to run (as a regular user):
 
+```
   mkdir -p $HOME/.kube
   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-You should now deploy a pod network to the cluster.
-Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
-  http://kubernetes.io/docs/admin/addons/
-
 ```
-
 
  ## Initialize cluster networking:
 
