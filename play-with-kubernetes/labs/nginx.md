@@ -17,3 +17,5 @@ kubernetes     ClusterIP      10.96.0.1        <none>        443/TCP        28mm
 ```
 
 You will see port appeared on the top of the screen, click on it and you have NGINX page displayed.
+
+Proceed to [Lab #2: Demonstrating WordPress Application on K8s Cluster0]()
