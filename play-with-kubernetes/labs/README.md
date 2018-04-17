@@ -5,7 +5,7 @@ Using personal credentials is HIGHLY! discouraged.
 
 ## Pre-requisite
 
-- Open up play-with-kubernetes.com on your browser
+- Open up [play-with-kubernetes.com](http://play-with-kubernetes.com) on your browser
 
 
 ## Bootstrapping the K8s Cluster:
