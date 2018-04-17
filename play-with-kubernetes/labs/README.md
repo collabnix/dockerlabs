@@ -66,7 +66,7 @@ node4     Ready     <none>    12m       v1.10.0
 [node1 ~]$
 ```
 
-## Lab #1: Test Driving NGINX Deployment on a Single Node
+Proceed to [Lab #1: Test Driving NGINX Deployment on a Single Node]()
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/cn/docs/user-guide/nginx-app.yaml
