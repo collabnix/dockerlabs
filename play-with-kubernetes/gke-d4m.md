@@ -80,12 +80,11 @@ This will create a replication controller to spin up 3 pods, each pod runs the n
 You can see the status of deployment by running:
 
 ```
-$ kubectl get pods -owide
-
-NAME          READY     STATUS    RESTARTS   AGE       NODE
-nginx-fffsc   1/1       Running   0          1m        gke-demo-2-43558313-node-sgve
-nginx-nk1ok   1/1       Running   0          1m        gke-demo-2-43558313-node-hswk
-nginx-x86ck   1/1       Running   0          1m        gke-demo-2-43558313-node-wskh
+kubectl get pods -owide
+NAME                    READY     STATUS    RESTARTS   AGE       IP          NODE
+nginx-7c87f569d-glczj   1/1       Running   0          8s        10.12.2.6   gke-k8s-lab1-default-pool-b2aaa29b-w904
+nginx-7c87f569d-pll76   1/1       Running   0          8s        10.12.0.8   gke-k8s-lab1-default-pool-b2aaa29b-2gzh
+nginx-7c87f569d-sf8z9   1/1       Running   0          8s        10.12.1.8   gke-k8s-lab1-default-pool-b2aaa29b-qpc7
 ```
 
 Youcan see that each nginx pod is now running in a different node (virtual machine).
@@ -106,10 +105,9 @@ This command will create a network load balancer to load balance traffic to the 
 ## Step 4: Find the network load balancer address:
 
 ```
-$ kubectl get service nginx
-
-NAME      CLUSTER_IP      EXTERNAL_IP      PORT(S)   SELECTOR    AGE
-nginx     10.X.X.X        X.X.X.X          80/TCP    run=nginx   1m
+kubectl get service nginx
+NAME      TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
+nginx     LoadBalancer   10.15.247.8   <pending>     80:30253/TCP   12s
 ```
 
 It may take several minutes to see the value of EXTERNAL_IP. If you don't see it the first time with the above command, retry every minute or so until the value of EXTERNAL_IP is displayed.
