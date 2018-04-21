@@ -60,3 +60,61 @@ gke-k8s-lab1-default-pool-042d2598-c633   Ready     <none>    7m        v1.7.11-
 gke-k8s-lab1-default-pool-042d2598-q603   Ready     <none>    7m        v1.7.11-gke.1
   
 ```
+
+## Deploy Nginx on GKE Cluster
+
+This requires two commands. deploy and expose.
+
+### Deploy nginx:
+
+```
+$ kubectl run nginx --image=nginx --replicas=3
+
+deployment "nginx" created
+```
+
+This will create a replication controller to spin up 3 pods, each pod runs the nginx container.
+
+## Step 2: Verify that the pods are running.
+
+You can see the status of deployment by running:
+
+```
+$ kubectl get pods -owide
+
+NAME          READY     STATUS    RESTARTS   AGE       NODE
+nginx-fffsc   1/1       Running   0          1m        gke-demo-2-43558313-node-sgve
+nginx-nk1ok   1/1       Running   0          1m        gke-demo-2-43558313-node-hswk
+nginx-x86ck   1/1       Running   0          1m        gke-demo-2-43558313-node-wskh
+```
+
+Youcan see that each nginx pod is now running in a different node (virtual machine).
+
+Once all pods have the Running status, you can then expose the nginx cluster as an external service.
+
+## Step 3: Expose the nginx cluster as an external service.
+
+```
+$ kubectl expose deployment nginx --port=80 --target-port=80 \
+--type=LoadBalancer
+
+service "nginx" exposed
+```
+
+This command will create a network load balancer to load balance traffic to the three nginx instances.
+
+## Step 4: Find the network load balancer address:
+
+```
+$ kubectl get service nginx
+
+NAME      CLUSTER_IP      EXTERNAL_IP      PORT(S)   SELECTOR    AGE
+nginx     10.X.X.X        X.X.X.X          80/TCP    run=nginx   1m
+```
+
+It may take several minutes to see the value of EXTERNAL_IP. If you don't see it the first time with the above command, retry every minute or so until the value of EXTERNAL_IP is displayed.
+
+You can then visit http://EXTERNAL_IP/ to see the server being served through network load balancing.
+
+
+## 
