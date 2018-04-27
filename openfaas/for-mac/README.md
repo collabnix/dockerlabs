@@ -44,3 +44,23 @@ Creating service func_markdown
 
 Creating service func_echoit
 ```
+
+## Setting up Faas CLI
+
+```
+curl -sSL https://cli.openfaas.com | sudo sh
+```
+
+## Testing NodeInfo Function
+```
+faas-cli invoke func_nodeinfo
+Reading from STDIN - hit (Control + D) to stop.
+Hostname: e368862d42df
+
+Platform: linux
+Arch: x64
+CPU count: 2
+Uptime: 2306
+[Captains-Bay]🚩 >  uptime
+```
+
