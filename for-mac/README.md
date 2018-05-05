@@ -24,11 +24,13 @@ ID                            HOSTNAME            STATUS              AVAILABILI
 oumrrgu03r2r8ml7zlec5kozb *   foobar              Ready               Active              Leader              18.05.0-ce-rc1
 ```
 
-## #2: How to override Orchestrator under Docker for Mac?
+## #2: How to fix "docker node ls is not supported" error?
 
 ```
 [Captains-Bay]🚩 >  docker node ls
 docker node ls is only supported on a Docker cli with swarm features enabled
+
+```
 [Captains-Bay]🚩 DOCKER_ORCHESTRATOR=swarm docker node ls
 ID                            HOSTNAME                STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
 oumrrgu03r2r8ml7zlec5kozb *   linuxkit-025000000001   Ready               Active              Leader              18.05.0-ce-rc1
