@@ -11,7 +11,20 @@
 
 # Docker for Mac Tips & Tricks
 
-# #1: How to override Orchestrator under Docker for Mac?
+## #1: How to change hostname of Swarm Node under Docker for Mac?
+
+```
+docker run -it --privileged --pid=host justincormack/nsenter1 /bin/sh -c "hostname foobar"
+```
+
+```
+
+DOCKER_ORCHESTRATOR=swarm docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+oumrrgu03r2r8ml7zlec5kozb *   foobar              Ready               Active              Leader              18.05.0-ce-rc1
+```
+
+## #2: How to override Orchestrator under Docker for Mac?
 
 ```
 [Captains-Bay]🚩 >  docker node ls
