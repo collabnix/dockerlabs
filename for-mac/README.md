@@ -16,9 +16,7 @@
 ```
 [Captains-Bay]🚩 >  docker node ls
 docker node ls is only supported on a Docker cli with swarm features enabled
-[Captains-Bay]🚩 >
-
-DOCKER_ORCHESTRATOR=swarm docker node ls
+[Captains-Bay]🚩 DOCKER_ORCHESTRATOR=swarm docker node ls
 ID                            HOSTNAME                STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
 oumrrgu03r2r8ml7zlec5kozb *   linuxkit-025000000001   Ready               Active              Leader              18.05.0-ce-rc1
 ```
