@@ -8,3 +8,18 @@
 [2-minutes to Kubernetes Cluster on Docker for Mac 18.01 using Swarm CLI](http://collabnix.com/running-kubernetes-cluster-on-docker-for-mac-18-01-using-swarm-cli/)<br>
 [Docker For Mac 1.13.0 brings support for macOS Sierra, now runs ARM & AARCH64 based Docker containers](http://collabnix.com/running-docker-engine-1-13-0-on-apple-mac-os-x-sierra/)<br>
 [Docker for Mac 18.03.0 now comes with NFS Volume Sharing Support for Kubernetes](https://github.com/ajeetraina/docker101/blob/master/for-mac/nfs/README.md)<br>
+
+# Docker for Mac Tips & Tricks
+
+#1: How to override Orchestrator under Docker for Mac?
+
+```
+[Captains-Bay]🚩 >  docker node ls
+docker node ls is only supported on a Docker cli with swarm features enabled
+[Captains-Bay]🚩 >
+
+DOCKER_ORCHESTRATOR=swarm docker node ls
+ID                            HOSTNAME                STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+oumrrgu03r2r8ml7zlec5kozb *   linuxkit-025000000001   Ready               Active              Leader              18.05.0-ce-rc1
+```
+```
