@@ -11,7 +11,7 @@
 
 # Docker for Mac Tips & Tricks
 
-#1: How to override Orchestrator under Docker for Mac?
+# #1: How to override Orchestrator under Docker for Mac?
 
 ```
 [Captains-Bay]🚩 >  docker node ls
