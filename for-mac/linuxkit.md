@@ -103,3 +103,59 @@ ID                 PID         STATUS      BUNDLE                               
 linuxkit-025000000001:~# ctr tasks ls
 ```
 
+## How shall I connect to screen session?
+
+Docker for Mac does expose a screen session to attach to, but it's a bit less than ideal if you're not familiar with screen. It's not a big deal, but it's not optimal and it's also very specific to Docker for Mac. Since we're already running Docker the general solution is ideal in this case:
+
+```
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 brd 127.255.255.255 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 02:50:00:00:00:01 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.65.3/24 brd 192.168.65.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::50:ff:fe00:1/64 scope link
+       valid_lft forever preferred_lft forever
+3: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN qlen 1
+    link/ipip 0.0.0.0 brd 0.0.0.0
+4: ip6tnl0@NONE: <NOARP> mtu 1452 qdisc noop state DOWN qlen 1
+    link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+5: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP
+    link/ether 02:42:76:8b:2b:b1 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:76ff:fe8b:2bb1/64 scope link
+       valid_lft forever preferred_lft forever
+6: docker_gwbridge: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP
+    link/ether 02:42:14:a5:0a:be brd ff:ff:ff:ff:ff:ff
+    inet 172.22.0.1/16 brd 172.22.255.255 scope global docker_gwbridge
+    6: docker_gwbridge: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP
+    link/ether 02:42:14:a5:0a:be brd ff:ff:ff:ff:ff:ff
+    inet 172.22.0.1/16 brd 172.22.255.255 scope global docker_gwbridge
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:14ff:fea5:abe/64 scope link
+       valid_lft forever preferred_lft forever
+7: br-2e87cfd50617: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN
+    link/ether 02:42:ad:f2:21:3f brd ff:ff:ff:ff:ff:ff
+    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-2e87cfd50617
+       valid_lft forever preferred_lft forever
+13: veth62e1053@if12: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue master docker_gwbridge state UP
+    link/ether 92:4e:15:2d:25:fb brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::904e:15ff:fe2d:25fb/64 scope link
+       valid_lft forever preferred_lft forever
+14: cni0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP qlen 1000
+    link/ether 66:df:2e:bb:9c:4f brd ff:ff:ff:ff:ff:ff
+    inet 10.1.0.1/16 scope global cni0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::64df:2eff:febb:9c4f/64 scope link
+       valid_lft forever preferred_lft forever
+15: veth2990a39d@docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master cni0 state UP
+    link/ether 32:d6:aa:ae:b3:e9 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::30d6:aaff:feae:b3e9/64 scope link
+       valid_lft forever preferred_lft forever
+16: veth543abcfc@docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master cni0 state UP
+```
