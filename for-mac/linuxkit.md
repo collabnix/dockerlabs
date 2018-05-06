@@ -224,4 +224,16 @@ Server:
 / #
 ```
 
+## How to see Kubernetes Cluster Node?
+
+```
+/ # kubectl version
+Client Version: version.Info{Major:"1", Minor:"9", GitVersion:"v1.9.6", GitCommit:"9f8ebd171479bec0ada837d7ee641dec2f8c6dd1", GitTreeState:"clean", BuildDate:"2018-03-23T09:38:59Z", GoVersion:"go1.9.4", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"9", GitVersion:"v1.9.6", GitCommit:"9f8ebd171479bec0ada837d7ee641dec2f8c6dd1", GitTreeState:"clean", BuildDate:"2018-03-21T15:13:31Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/amd64"}
+/ # kubectl get nodes
+NAME                 STATUS    ROLES     AGE       VERSION
+docker-for-desktop   Ready     master    26d       v1.9.6
+/ #
+```
+
 
