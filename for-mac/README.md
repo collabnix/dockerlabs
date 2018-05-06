@@ -59,3 +59,19 @@ trim-after-delete       1106    RUNNING
 vpnkit-forwarder        1157    RUNNING
 vsudd                   1198    RUNNING
 ```
+
+## How to use `docker-clean` utility?
+
+```
+
+$brew install docker-clean
+```
+
+```
+[Captains-Bay]🚩 >  docker-clean
+No images to delete!
+No dangling volumes!
+Removing empty networks..
+```
+
+## 
