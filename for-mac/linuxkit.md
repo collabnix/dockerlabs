@@ -159,3 +159,22 @@ Docker for Mac does expose a screen session to attach to, but it's a bit less th
        valid_lft forever preferred_lft forever
 16: veth543abcfc@docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master cni0 state UP
 ```
+
+# How to verify that LinuxKit which Docker for Mac is built upon runs service containers
+
+```
+screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
+```
+
+```
+ctr -n services.linuxkit tasks ls
+TASK                    PID     STATUS
+acpid                   854     RUNNING
+diagnose                898     RUNNING
+docker-ce               936     RUNNING
+host-timesync-daemon    984     RUNNING
+ntpd                    1025    RUNNING
+trim-after-delete       1106    RUNNING
+vpnkit-forwarder        1157    RUNNING
+vsudd                   1198    RUNNING
+```
