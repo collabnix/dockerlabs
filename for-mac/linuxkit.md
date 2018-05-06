@@ -178,3 +178,50 @@ trim-after-delete       1106    RUNNING
 vpnkit-forwarder        1157    RUNNING
 vsudd                   1198    RUNNING
 ```
+
+## How to display containerd version?
+
+```
+linuxkit-025000000001:~# ctr version
+Client:
+  Version:  v1.0.1
+  Revision: 9b55aab90508bd389d7654c4baf173a981477d55
+
+Server:
+  Version:  v1.0.1
+  Revision: 9b55aab90508bd389d7654c4baf173a981477d55
+linuxkit-025000000001:~#
+```
+
+## How shall I enter into docker-ce service container using ctrl?
+
+```
+ctr -n services.linuxkit tasks exec -t --exec-id 936 docker-ce sh
+```
+
+
+```
+/ # docker version
+Client:
+ Version:      18.05.0-ce-rc1
+ API version:  1.37
+ Go version:   go1.9.5
+ Git commit:   33f00ce
+ Built:        Thu Apr 26 00:58:14 2018
+ OS/Arch:      linux/amd64
+ Experimental: false
+ Orchestrator: swarm
+
+Server:
+ Engine:
+  Version:      18.05.0-ce-rc1
+  API version:  1.37 (minimum version 1.12)
+  Go version:   go1.10.1
+  Git commit:   33f00ce
+  Built:        Thu Apr 26 01:06:49 2018
+  OS/Arch:      linux/amd64
+  Experimental: true
+/ #
+```
+
+
