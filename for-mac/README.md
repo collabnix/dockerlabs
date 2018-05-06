@@ -36,3 +36,26 @@ ID                            HOSTNAME                STATUS              AVAILA
 oumrrgu03r2r8ml7zlec5kozb *   linuxkit-025000000001   Ready               Active              Leader              18.05.0-ce-rc1
 ```
 ```
+## #3: If Docker for Mac is built with LinuxKit. How shall I verify that the service container is running inside Linuxkit VM?
+
+
+You can enter into LinuxKit VM with the below command:
+
+```
+screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
+
+```
+
+
+```
+ctr -n services.linuxkit tasks ls
+TASK                    PID     STATUS
+acpid                   854     RUNNING
+diagnose                898     RUNNING
+docker-ce               936     RUNNING
+host-timesync-daemon    984     RUNNING
+ntpd                    1025    RUNNING
+trim-after-delete       1106    RUNNING
+vpnkit-forwarder        1157    RUNNING
+vsudd                   1198    RUNNING
+```
