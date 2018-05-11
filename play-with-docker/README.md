@@ -1,9 +1,11 @@
 
-# List of Applications for the demonstration 
+# How to get Started 
 
-Pre-requisite:
+## Pre-requisite:
 
 - Follow [Docker101](https://github.com/ajeetraina/docker101/README.md) instructions before you follow these examples:
+
+## List of Applications for the demonstration 
 
 [WordPress under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/wordpress/example1/README.md)<br>
 [ELK under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ELK/README.md)<br>
