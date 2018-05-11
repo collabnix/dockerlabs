@@ -8,5 +8,6 @@ cd docker101/play-with-docker/gitlab
 ```
 docker-compose up -d
 ```
+![My image](https://github.com/ajeetraina/docker101/blob/master/images/gitlab.png)
 
 # Enjoy. Have Fun.
