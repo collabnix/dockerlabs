@@ -91,5 +91,24 @@ For those folks experiencing difficulty with Kubernetes, or for issues where Kub
 9). Access Kubernetes Dashboard.
 10). Minikube Commands for Kubernetes.
 
+## #7: How shall I run Docker Diagnostic using CLI?
 
+
+```
+/Applications/Docker.app/Contents/Resources/bin/docker-diagn
+macOS: version 10.13.3 (build: 17D47)
+Docker.app: version: 18.05.0-ce-rc1-mac63 (7e2bb492d35dc35ec0037d8024b7e7be57fc72a9)
+Local time: Sat May 12 10:54:45 IST 2018
+UTC:        Sat May 12 05:24:46 UTC 2018
+Timestamp:  20180512-105445
+Running diagnostic tests:
+[OK]      Files
+[OK]      Docker CLI
+[OK]      /Users/ajeetraina/Library/Containers/com.docker.docker/Data/vms/0/console-ring exists
+[OK]      driver.amd64-linux
+[OK]      vmnetd
+[OK]      osxfs
+[OK]      VPNKit
+[OK]      Disk
+```
 
