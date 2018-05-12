@@ -74,4 +74,22 @@ No dangling volumes!
 Removing empty networks..
 ```
 
-## #5: 
+## #5: I dont see Kubernetes Option listed under Preference Pane. What shall I do?
+
+For those folks experiencing difficulty with Kubernetes, or for issues where Kubernetes is not showing up as an icon in the Docker menu/or Docker dialogue box, I'm providing information on how to install/set-up Kubernetes on your Mac operating system.
+
+1). Kubernetes is only available in Docker-for-Mac 17.12 CE and higher, ONLY on the edge channel.
+
+2). Docker-for-Mac 17.12 CE and higher, Edge includes a standalone Kubernetes server that runs on Mac, so that you can test deploy your workloads on Kubernetes. The client command, kubectl is included in your package and configured to connect to your Kubernetes server. What most folks fail to do after installation is to check to verify that kubectl is installed and pointing to Docker-for desktop. Sometimes, due to configurations, or due to mishaps, kubectl ends up pointing to the wrong environment, which could cause a whole host of issues. If kubectl is pointing toward another environment you have to change context to get it pointing to the correct environment. If you install kubectl with homebrew or some other method other than Docker-for-Mac, and you are experiencing difficulties, remove /usr/local/bin//kubectl. To enable Kubernetes, click on enable Kubernetes, and click the apply and restart button.
+
+3). For those of you not seeing a Kubernetes icon after installation, you can still install Kubernetes as a standalone, if need be, for developmental purposes only. Install NodeJS & Docker Runtime for Mac.
+4). Install Homebrew.
+5). Install Xyve Driver (or Hyperkit Driver).
+6). Install Minikube.
+7). Install Kubectl.
+8). Start Minikube.
+9). Access Kubernetes Dashboard.
+10). Minikube Commands for Kubernetes.
+
+
+
