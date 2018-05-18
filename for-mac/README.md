@@ -300,3 +300,86 @@ Container mounts must reflect metadata modifications, directory structure change
 ## default
 
 The default configuration is identical to the consistent configuration except for its name. Crucially, this means that cached Semantics 4 and delegated Semantics 5 that require strengthening overlapping directories do not apply to default mounts. This is the default configuration if no state flags are supplied.
+
+## #21: Tell me about Docker Networking under D4M?
+
+Docker for Mac provides several networking features to make it easier to use.
+
+### VPN Passthrough
+
+Docker for Mac’s networking can work when attached to a VPN. To do this, Docker for Mac intercepts traffic from the containers and injects it into Mac as if it originated from the Docker application.
+
+### Port Mapping
+
+When you run a container with the -p argument, for example:
+
+```
+$ docker run -p 80:80 -d nginx
+```
+
+Docker for Mac makes whatever is running on port 80 in the container (in this case, nginx) available on port 80 of localhost. In this example, the host and container ports are the same. What if you need to specify a different host port? If, for example, you already have something running on port 80 of your host machine, you can connect the container to a different port:
+
+```
+$ docker run -p 8000:80 -d nginx
+```
+
+Now, connections to localhost:8000 are sent to port 80 in the container. The syntax for -p is HOST_PORT:CLIENT_PORT.
+
+HTTP/HTTPS Proxy Support
+See Proxies.
+
+### Known limitations, use cases, and workarounds
+
+Following is a summary of current limitations on the Docker for Mac networking stack, along with some ideas for workarounds.
+
+## There is no docker0 bridge on macOS
+
+Because of the way networking is implemented in Docker for Mac, you cannot see a docker0 interface on the host. This interface is actually within the virtual machine.
+
+## I cannot ping my containers
+
+Docker for Mac can’t route traffic to containers.
+
+## Per-container IP addressing is not possible
+
+The docker (Linux) bridge network is not reachable from the macOS host.
+
+## Use cases and workarounds
+
+There are two scenarios that the above limitations affect:
+
+## I WANT TO CONNECT FROM A CONTAINER TO A SERVICE ON THE HOST
+
+The host has a changing IP address (or none if you have no network access). From 18.03 onwards our recommendation is to connect to the special DNS name host.docker.internal, which resolves to the internal IP address used by the host. This is for development purpose and will not work in a production environment outside of Docker for Mac.
+
+The gateway is also reachable as gateway.docker.internal.
+
+## I WANT TO CONNECT TO A CONTAINER FROM THE MAC
+
+Port forwarding works for localhost; --publish, -p, or -P all work. Ports exposed from Linux are forwarded to the host.
+
+Our current recommendation is to publish a port, or to connect from another container. This is what you need to do even on Linux if the container is on an overlay network, not a bridge network, as these are not routed.
+
+The command to run the nginx webserver shown in Getting Started is an example of this.
+
+```
+$ docker run -d -p 80:80 --name webserver nginx
+```
+
+To clarify the syntax, the following two commands both expose port 80 on the container to port 8000 on the host:
+
+```
+$ docker run --publish 8000:80 --name webserver nginx
+```
+```
+$ docker run -p 8000:80 --name webserver nginx
+```
+
+To expose all ports, use the -P flag. For example, the following command starts a container (in detached mode) and the -P exposes all ports on the container to random ports on the host.
+
+```
+$ docker run -d -P --name webserver nginx
+```
+
+See the run command for more details on publish options used with docker run.
+
