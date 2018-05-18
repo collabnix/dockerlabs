@@ -25,6 +25,9 @@ root@ubuntu18:~#
 ```
 chmod +xrunsc
 ```
+```
+mv runsc /usr/local/bin
+```
 
 
 ## Configuring Docker
