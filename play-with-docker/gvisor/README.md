@@ -124,7 +124,9 @@ Insecure Registries:
 Live Restore Enabled: false
 ```
 
-## Nginx with runsc doesnt work
+## Can Nginx work with runsc?
+
+No. nginx: Requires ioctl(FIOASYNC), but see workaround in bug #1.
 
 ```
 root@ubuntu18:~/gvisor# docker run --runtime=runsc -d -p 83:80 nginx
@@ -137,3 +139,4 @@ root@ubuntu18:~/gvisor# docker logs -f cb2
 2018/05/18 16:58:47 [alert] 1#1: ioctl(FIOASYNC) failed while spawning "worker process" (25: Inappropriate ioctl for device)
 
 ```
+
