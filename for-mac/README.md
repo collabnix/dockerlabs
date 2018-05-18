@@ -383,3 +383,41 @@ $ docker run -d -P --name webserver nginx
 
 See the run command for more details on publish options used with docker run.
 
+## #22:I have Docker for Mac installed running K8s 1.9.6. Can I install Kubectl 1.10 version? 
+
+```
+Error: kubernetes-cli 1.9.2 is already installed
+To upgrade to 1.10.2, run `brew upgrade kubernetes-cli`
+[Captains-Bay]🚩 >  brew upgrade kubernetes-cli
+==> Upgrading 1 outdated package, with result:
+kubernetes-cli 1.9.2 -> 1.10.2
+==> Upgrading kubernetes-cli
+==> Downloading https://homebrew.bintray.com/bottles/kubernetes-cli-1.10.2.high_sierra.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring kubernetes-cli-1.10.2.high_sierra.bottle.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink bin/kubectl
+Target /usr/local/bin/kubectl
+already exists. You may want to remove it:
+  rm '/usr/local/bin/kubectl'
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite kubernetes-cli
+
+To list all files that would be deleted:
+  brew link --overwrite --dry-run kubernetes-cli
+
+Possible conflicting files are:
+/usr/local/bin/kubectl -> /Applications/Docker.app/Contents/Resources/bin/kubectl
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+==> Summary
+🍺  /usr/local/Cellar/kubernetes-cli/1.10.2: 178 files, 52.8MB
+```
+
+
