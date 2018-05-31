@@ -47,14 +47,14 @@ aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configurati
 ```
 
 ```
-export KOPS_CLUSTER_NAME=k8.aws.dev.collabnix.com
+export KOPS_CLUSTER_NAME=ajeet.k8s.local
 ```
 
 ## Export Cluster Name
 
 
 ```
-export KOPS_CLUSTER_NAME=k8.aws.dev.collabnix.com
+export KOPS_CLUSTER_NAME=ajeet.k8s.local
 ```
 
 ## Exporting Kops State Store
@@ -80,10 +80,10 @@ Cluster configuration has been created.
 Suggestions:
  * list clusters with: kops get cluster
  * edit this cluster with: kops edit cluster k8.aws.dev.collabnix.com
- * edit your node instance group: kops edit ig --name=k8.aws.dev.collabnix.com nodes
- * edit your master instance group: kops edit ig --name=k8.aws.dev.collabnix.com master-us-east-1a
+ * edit your node instance group: kops edit ig --name=ajeet.k8s.local nodes
+ * edit your master instance group: kops edit ig --name=ajeet.k8s.local master-us-east-1a
 
-Finally configure your cluster with: kops update cluster k8.aws.dev.collabnix.com --yes
+Finally configure your cluster with: kops update cluster ajeet.k8s.local --yes
 
 [Captains-Bay]🚩 >
 ```
@@ -98,8 +98,8 @@ kops update cluster --name ${KOPS_CLUSTER_NAME} --yes
 ```
 kops get cluster
 NAME				CLOUD	ZONES
-k8.aws.dev.collabnix.com	aws	us-east-1a
-[Captains-Bay]🚩 >
+ajeet.k8s.local	aws	us-east-1a
+
 ```
 
 
