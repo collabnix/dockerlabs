@@ -19,7 +19,7 @@ brew update && brew install kops
 aws configure
 ```
 
-This will store your credential under ~/aws/credential
+This will store your credential under ~/.aws/credentials
 
 
 
