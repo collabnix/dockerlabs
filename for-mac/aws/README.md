@@ -125,7 +125,7 @@ Changes may require instances to restart: kops rolling-update cluster
 
 Now you can see K8s cluster under Context UI.
 
-![My image](https://github.com/ajeetraina/docker101/blob/master/for-mac/context-aws.png)
+![My image](https://github.com/ajeetraina/docker101/blob/master/for-mac/aws/context-aws.png)
 
 
 
