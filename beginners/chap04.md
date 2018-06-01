@@ -18,3 +18,16 @@ uid=1001 gid=0(root) groups=0(root)
 [node3] (local) root@192.168.0.6 ~
 $
 ```
+
+## How can I specify user under Dockerfile?
+
+```
+git clone https://github.com/ajeetraina/docker101/
+cd beginners/user/
+```
+
+```
+docker build -t ajeetraina/createuser -f ./user1.Dockerfile .
+
+```
+
