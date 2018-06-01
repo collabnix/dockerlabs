@@ -30,6 +30,8 @@ $
 
 ## What if I have multiple Dockerfiles under the same directory
 
-
+```
+ docker build -t ajeetraina/mynginx -f ./nginx1.Dockerfile .
+ ```
 
 
