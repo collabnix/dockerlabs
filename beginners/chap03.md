@@ -47,7 +47,7 @@ Now build Docker Image
 
 ```
 docker build -t ajeetraina/mycmd -f ./cmd.Dockerfile .
-``
+```
 
 Now if you run it:
 
@@ -58,6 +58,4 @@ docker run ajeetraina/mycmd
 ```
 $ docker run ajeetraina/wc
       1       4      16 -
- ```
-
-
+      ```
