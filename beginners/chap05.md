@@ -1,5 +1,7 @@
 
-# What is tini and why is it necessary?
+# The docker run CLI comes with --init and --init-path options. How is it?
+
+Let me introduce Tini !
 
 Let's talk a little bit about Docker. When you run a Docker container, Docker proceeds to isolate it from the rest of the system. 
 That isolation happens at different levels (e.g. network, filesystem, processes).Tini isn't really concerned with the network or the filesystem, so let's focus on what matters in the context of Tini: processes.
