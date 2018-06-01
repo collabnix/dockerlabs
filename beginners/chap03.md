@@ -14,7 +14,7 @@ cd docker101/beginners/nginx
 docker build -t ajeetraina/mynginx .
 ```
 
-``
+```
 docker inspect <containerid>
 ```
 
