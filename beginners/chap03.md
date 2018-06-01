@@ -28,3 +28,8 @@ $ docker inspect 8f| grep Vendor
 $
 ```
 
+## What if I have multiple Dockerfiles under the same directory
+
+
+
+
