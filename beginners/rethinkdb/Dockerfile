@@ -1,4 +1,4 @@
-dockerfile FROM debian:jessie
+FROM debian:jessie
 
 MAINTAINER Daniel Alan Miller dalanmiller@rethinkdb.com
 
