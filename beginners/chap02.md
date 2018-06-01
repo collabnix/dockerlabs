@@ -142,7 +142,7 @@ $ docker inspect a1b
         },
         "Mounts": [],
         "Config": {
-            "Hostname": "CONTAINER",
+            "Hostname": "collabnix",
             "Domainname": "",
             "User": "",
             "AttachStdin": true,
