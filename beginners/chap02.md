@@ -203,3 +203,48 @@ $ docker inspect a1b
     }
 ]
 ```
+
+
+## Displaying IP address
+```
+$ docker inspect a1b | grep IPAddress
+            "SecondaryIPAddresses": null,
+            "IPAddress": "172.17.0.2",
+                    "IPAddress": "172.17.0.2",
+```
+
+## Displaying IP address using Filters
+
+```
+$ docker inspect --format {{.NetworkSettings.IPAddress}} a1b172.17.0.2
+```
+
+## How to check Logs
+
+```
+$ docker logs a1b
+root@collabnix:/# hostname
+collabnix
+
+```
+
+## Stopping the Container
+
+```
+docker stop <containerid>
+```
+
+## Cleaning up stopped containers 
+
+
+```
+ $ docker rm -v $(docker ps -aq -f status=exited)
+```
+
+## Stopping all containers
+
+```
+$ docker stop $(docker ps -a -q)
+```
+
+## 
