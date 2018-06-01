@@ -1,5 +1,5 @@
 
-# The docker run CLI comes with --init and --init-path options. How is it?
+# The docker run CLI comes with --init and --init-path options. What is it?
 
 ## Have you heard about Tini?
 
