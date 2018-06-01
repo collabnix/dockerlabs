@@ -1,6 +1,6 @@
 # Getting Started with Play With Docker Platform
 
-## Docker for Beginners
+[Docker for Beginners]()<br>
 
 
 ## Docker for Intermediate
