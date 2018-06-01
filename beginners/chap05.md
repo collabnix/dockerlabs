@@ -29,28 +29,7 @@ In Docker, you will want to use an entrypoint so you don't have to remember to m
 ## Wait  ! Wait ! Wait... Why are you talking about this?
 
 
-Let me first introduce Tini ! Tini is the simplest init you could think of.
-
-All Tini does is spawn a single child (Tini is meant to be run in a container), and wait for it to exit all the while reaping zombies and performing signal forwarding.
-
-Why Tini?
-Using Tini has several benefits:
-
-It protects you from software that accidentally creates zombie processes, which can (over time!) starve your entire system for PIDs (and make it unusable).
-It ensures that the default signal handlers work for the software you run in your Docker image. For example, with Tini, SIGTERM properly terminates your process even if you didn't explicitly install a signal handler for it.
-It does so completely transparently! Docker images that work without Tini will work with Tini without any changes.
-If you'd like more detail on why this is useful, review this issue discussion: What is advantage of Tini?.
-
-Using Tini
-NOTE: If you are using Docker 1.13 or greater, Tini is included in Docker itself. This includes all versions of Docker CE. To enable Tini, just pass the --init flag to docker run.
-
-NOTE: There are pre-built Docker images available for Tini. If you're currently using an Ubuntu or CentOS image as your base, you can use one of those as a drop-in replacement.
-
-NOTE: There are Tini packages for Alpine Linux and NixOS. See below for installation instructions.
-
-Add Tini to your container, and make it executable. Then, just invoke Tini and pass your program and its arguments as arguments to Tini.
-
-In Docker, you will want to use an entrypoint so you don't have to remember to manually invoke Tini:
+Good Question !
 
 Let's talk a little bit about Docker. When you run a Docker container, Docker proceeds to isolate it from the rest of the system. 
 That isolation happens at different levels (e.g. network, filesystem, processes).Tini isn't really concerned with the network or the filesystem, so let's focus on what matters in the context of Tini: processes.
