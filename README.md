@@ -1,5 +1,12 @@
 # Getting Started with Play With Docker Platform
 
+## Docker for Beginners
+
+
+## Docker for Intermediate
+
+## Docker for Advanced Users
+
 ## Login to PWD Playground
 
 - Open https://labs.play-with-docker.com on your browser
