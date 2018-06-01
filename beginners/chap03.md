@@ -58,4 +58,4 @@ docker run ajeetraina/mycmd
 ```
 $ docker run ajeetraina/wc
       1       4      16 -
-      ```
+ ```
