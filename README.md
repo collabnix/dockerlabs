@@ -5,7 +5,7 @@
 
 [Docker for Intermediate]()<br>
 
-[Docker for Advanced Users]<br>
+[Docker for Advanced Users]()<br>
 
 ## Login to PWD Playground
 
