@@ -10,7 +10,7 @@ docker run ubuntu date
 docker run -it ubuntu /bin/bash
 ```
 
-## Provide hostname to Ubuntu container
+## Provide hostname to Ubuntu container(using -h or --hostname)
 
 ```
  docker run -h collabnix -i -t debian /bin/bash
