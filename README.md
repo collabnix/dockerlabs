@@ -1,6 +1,6 @@
 # Getting Started with Play With Docker Platform
 
-[Docker for Beginners]()<br>
+[Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners)<br>
 
 
 [Docker for Intermediate]()<br>
