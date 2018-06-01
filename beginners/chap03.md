@@ -14,4 +14,17 @@ cd docker101/beginners/nginx
 docker build -t ajeetraina/mynginx .
 ```
 
+``
+docker inspect <containerid>
+```
+
+```
+]
+[node2] (local) root@192.168.0.7 ~
+$ docker inspect 8f| grep Vendor
+                "Vendor": "Collabnix Products",
+                "Vendor": "Collabnix Products",
+[node2] (local) root@192.168.0.7 ~
+$
+```
 
