@@ -34,7 +34,7 @@ $
  docker build -t ajeetraina/mynginx -f ./nginx1.Dockerfile .
  ```
  
- ## Demnonstrating CMD
+ ## Demonstrating CMD
  
 Create a file called cmd.Dockerfile and add the below content:
 
