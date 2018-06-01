@@ -7,7 +7,7 @@
 
 [Docker for Advanced Users]()<br>
 
-[Building Docker Swarm Cluster & Visualization]()<br>
+## Building Docker Swarm Cluster & Visualization
 
 - Open https://labs.play-with-docker.com on your browser
 - Click on Icon near to Instance to choose 3 Managers & 2 Worker Nodes
