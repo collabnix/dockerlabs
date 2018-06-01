@@ -33,5 +33,33 @@ $
 ```
  docker build -t ajeetraina/mynginx -f ./nginx1.Dockerfile .
  ```
+ 
+ ## Demnonstrating CMD
+ 
+Create a file called cmd.Dockerfile and add the below content:
+
+```
+FROM ubuntu
+CMD echo "This is a test." | wc -
+```
+
+Now build Docker Image
+
+```
+docker build -t ajeetraina/mycmd -f ./cmd.Dockerfile .
+``
+
+Now if you run it:
+
+```
+docker run ajeetraina/mycmd
+```
+
+```
+
+
+$ docker run ajeetraina/wc
+      1       4      16 -
+ ```
 
 
