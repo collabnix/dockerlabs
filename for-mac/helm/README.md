@@ -138,7 +138,7 @@ To connect to your database from outside the cluster execute the following comma
     export POD_NAME=$(kubectl get pods --namespace default -l "app=redis" -o jsonpath="{.items[0].metadata.name}")
     kubectl port-forward --namespace default $POD_NAME 6379:6379
     redis-cli -h 127.0.0.1 -p 6379 -a $REDIS_PASSWORD
-    ```
+```
     
 ## Tips:
     
