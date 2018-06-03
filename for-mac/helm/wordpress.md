@@ -87,5 +87,10 @@ mywp-wordpress    LoadBalancer   10.109.204.199   localhost     80:31016/TCP,443
 wordpress-mysql   ClusterIP      None             <none>        3306/TCP                     7d
 ```
 
+## Cleaning up
 
+```
+[Captains-Bay] > helm delete mywp
+release "mywp" deleted
+```
 
