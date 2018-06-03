@@ -1,3 +1,5 @@
+# Build Prometheus Stack using Helm
+
 ```
 [Captains-Bay]🚩 >  helm install stable/prometheus
 NAME:   hasty-ladybug
@@ -92,3 +94,13 @@ Get the PushGateway URL by running these commands in the same shell:
 For more information on running Prometheus, visit:
 https://prometheus.io/
 ```
+
+## Verifying the list
+
+```
+[Captains-Bay]🚩 >  helm ls
+NAME         	REVISION	UPDATED                 	STATUS  	CHART           	NAMESPACE
+hasty-ladybug	1       	Sun Jun  3 09:00:30 2018	DEPLOYED	prometheus-6.7.0	default
+mywp         	1       	Sat Jun  2 07:19:25 2018	DEPLOYED	wordpress-1.0.2 	default
+```
+
