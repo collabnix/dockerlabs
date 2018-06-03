@@ -120,3 +120,10 @@ kubectl --namespace default port-forward $POD_NAME 9090
 ```
 open http://localhost:9090
 ```
+
+## Cleaning Up
+
+```
+[Captains-Bay]🚩 >  helm delete hasty-ladybug
+release "hasty-ladybug" deleted
+```
