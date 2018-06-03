@@ -140,14 +140,13 @@ To connect to your database from outside the cluster execute the following comma
     redis-cli -h 127.0.0.1 -p 6379 -a $REDIS_PASSWORD
     ```
     
-    Tips:
+## Tips:
     
 ```
 [Captains-Bay]🚩 >  helm version
 Client: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
 Server: &version.Version{SemVer:"v2.8.2", GitCommit:"a80231648a1473929271764b920a8e346f6de844", GitTreeState:"clean"}
 ```
-
 
 
 ```
@@ -157,6 +156,7 @@ $HELM_HOME has been configured at /Users/ajeetraina/.helm.
 Tiller (the Helm server-side component) has been upgraded to the current version.
 Happy Helming!
 ```
+
 ```
 [Captains-Bay]🚩 >  helm version
 Client: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
