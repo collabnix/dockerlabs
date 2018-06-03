@@ -104,3 +104,19 @@ hasty-ladybug	1       	Sun Jun  3 09:00:30 2018	DEPLOYED	prometheus-6.7.0	defaul
 mywp         	1       	Sat Jun  2 07:19:25 2018	DEPLOYED	wordpress-1.0.2 	default
 ```
 
+
+## 
+
+```
+export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=server" -o jsonpath="{.items[0].metadata.name}")
+```
+
+```
+kubectl --namespace default port-forward $POD_NAME 9090
+```
+
+## Now you can access Prometheus:
+
+```
+open http://localhost:9090
+```
