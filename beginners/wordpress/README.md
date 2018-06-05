@@ -22,11 +22,11 @@ $ docker images
 REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE
 mysql latest 9def920de0a2 4 days ago 282.9 MB
 wordpress latest 93acfaf85c71 8 days ago 472.8 MB
-```
-
-## Start a MySQL container, give it a name via the --name CLI option, and set the
 
 ```
+
+Start a MySQL container, give it a name via the --name CLI option, and set the
+
 
 ## Running MYSQL Container
 
@@ -46,7 +46,6 @@ docker run --name wordpress --link mysqlwp:mysql -p 80:80 \
 -e WORDPRESS_DB_USER=wordpress \
 -e WORDPRESS_DB_PASSWORD=wordpresspwd \
 -d wordpress
-```
 ```
 
 # How to Backup MySQL Data
