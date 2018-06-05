@@ -9,7 +9,7 @@ A VM is a tightly isolated software container with an operating system and appli
 A thin layer of software called a *“hypervisor”* decouples the virtual machines from the host and dynamically allocates computing resources to each virtual machine as needed.
 
 **What is a container?**
-
+======================================
 Containers use lightweight operating system level virtualization and multiple containers can run on the same host machine. However, containers do not have their own kernel. They share the host machine’s kernel, making them much smaller in size compared to virtual machines. They use process level isolation, allowing processes inside a container to be isolated from other containers.
 
 **DOCKER CONTAINERS**
@@ -19,9 +19,7 @@ Docker, which started as a project to build single-application LXC containers, i
 Docker is a Linux utility that can efficiently create, ship, and run containers.
 Both Docker and LXC containers are user-space lightweight virtualization mechanisms that implement cgroups and namespaces to manage resource isolation.
 
-[//]: # (Image References)
-[image1]: ./containers.jpg "a name"
-![alt text][image1]
+![wow nice pic](https://www.google.com/search?q=vm+vs+docker&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjzhbWLt7zbAhUCL6wKHXiJAxgQ_AUICigB&biw=1477&bih=695&dpr=1.3#imgrc=UQJxzzdkBtkQcM:)
 
 
 **Docker** is an open source tool that lets you to incorporate and store your code and its dependencies into a handy package called an image.
