@@ -1,4 +1,5 @@
 **What is Virtualization?**
+=========================================
 
 Virtualization is the process of creating a software-based, or virtual, representation of something, such as virtual applications, servers, storage and networks. It is the single most effective way to reduce IT expenses while boosting efficiency and agility for all size businesses.
 
