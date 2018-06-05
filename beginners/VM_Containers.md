@@ -19,10 +19,17 @@ Docker is a Linux utility that can efficiently create, ship, and run containers.
 Both Docker and LXC containers are user-space lightweight virtualization mechanisms that implement cgroups and namespaces to manage resource isolation.
 
 
+![](https://user-images.githubusercontent.com/16256583/40974249-9daf21d2-68e4-11e8-8f11-85c5c03b41ac.jpg)
+
 
 
 **Docker** is an open source tool that lets you to incorporate and store your code and its dependencies into a handy package called an image.
 
 
 
+![vm](https://user-images.githubusercontent.com/16256583/40974242-974095ce-68e4-11e8-9d2e-82a2829f718d.jpg)
+
+
 **Virtual Machines V/S Containers**
+
+![vmcont](https://user-images.githubusercontent.com/16256583/40974226-895ccda6-68e4-11e8-800b-78586becb2b1.JPG)
