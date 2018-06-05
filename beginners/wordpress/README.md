@@ -2,7 +2,7 @@
 
 
 ```
-docker build -t wordpress .
+docker build -t wordpress -f ./singlecontainer.Dockerfile .
 $ docker run -d -p 80:80 wordpress
 ```
 
