@@ -9,6 +9,7 @@ A thin layer of software called a *“hypervisor”* decouples the virtual machi
 
 **What is a container?**
 
+
 Containers use lightweight operating system level virtualization and multiple containers can run on the same host machine. However, containers do not have their own kernel. They share the host machine’s kernel, making them much smaller in size compared to virtual machines. They use process level isolation, allowing processes inside a container to be isolated from other containers.
 
 **DOCKER CONTAINERS**
