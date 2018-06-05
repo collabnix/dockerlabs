@@ -59,3 +59,22 @@ docker run ajeetraina/mycmd
 $ docker run ajeetraina/wc
       1       4      16 -
  ```
+ 
+ ## Dockerfile: CMD
+ 
+ ### Example:1
+ 
+ ```
+FROM ubuntu:14.04
+CMD ["/bin/echo" , "Hi Docker !"]
+```
+
+```
+...
+$ docker run eff764828551
+Hi Docker !
+```
+
+
+
+
