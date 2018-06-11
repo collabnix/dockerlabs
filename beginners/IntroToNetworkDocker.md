@@ -27,8 +27,8 @@ Legacy applications expect to be directly connected to the physical network, rat
 Macvlan networks assign a MAC address to a container, making it appear as a physical device on your network. The Docker daemon routes traffic to containers by their MAC addresses.
 We need to designate a physical interface on our Docker host to use for the Macvlan, as well as the subnet and gateway of the Macvlan.
 
-### Few Basic commands
-#### #1. How to assign Static IP address to a Container.
+## Few Basic commands
+### #1. How to assign Static IP address to a Container.
 1. Create a new bridge network with your subnet and gateway for your ip block
 ```
 $ docker network create --subnet 198.0.125.0/24 --gateway 198.0.125.254 mystaticip
@@ -39,16 +39,19 @@ $ docker run --rm -it --net mystaticip --ip 198.0.125.2 nginx
 ```
 3. Curl the ip
 ```
-$ curl 198.0.125.2```
-
-#### #2. How to Expose Container Port on Host
+$ curl 198.0.125.2
 ```
-$ docker run -d -p 80:80 nginx ```
+
+### #2. How to Expose Container Port on Host
+```
+$ docker run -d -p 80:80 nginx
+```
 >If you have multiple interface, then you will need to provide specific IP. Example:-
 ```
-$ docker run -p 127.0.0.1:$HOSTPORT:$CONTAINERPORT --name CONTAINER -t image_name```
+$ docker run -p 127.0.0.1:$HOSTPORT:$CONTAINERPORT --name CONTAINER -t image_name
+```
 
-#### #3. Networking Containers on Multiple Hosts with Docker Network work?
+### #3. Networking Containers on Multiple Hosts with Docker Network work?
 
 ```
 base=https://github.com/docker/machine/releases/download/v0.14.0 &&
