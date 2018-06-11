@@ -8,9 +8,10 @@ $ docker network create -d macvlan \
   --subnet=192.10.86.0/24 \
   --gateway=192.10.86.1 \
   -o parent=eth1 \
-  macvlan-mynet```
+  macvlan-mynet
+  ```
 
-2. List macvlan network
+2.   List macvlan networks
 ```
 $ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
