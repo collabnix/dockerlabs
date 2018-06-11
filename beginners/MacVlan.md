@@ -56,22 +56,25 @@ $ docker network inspect macvlan-mynet
 ]
 ```
 
-2. Check that both containers are actually started:
+3.   Check that both containers are actually started:
 ```
 $ docker container ls
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 602dbf1edc81        alpine              "ash"               4 seconds ago       Up 3 seconds                            alpine2
-da33b7aa74b0        alpine              "ash"               17 seconds ago      Up 16 seconds                           alpine1```
+da33b7aa74b0        alpine              "ash"               17 seconds ago      Up 16 seconds                           alpine1
+```
 
-3. Start and attach an alpine container to the macvlan-mynet network.
+4.   Start and attach an alpine container to the macvlan-mynet network.
 ```
 $ docker run --rm -itd \
   --network macvlan-mynet \
   --name macvlan-alpine \
   alpine:latest \
-  ash```
+  ash
+  ```
 
-5. Inspect the `macvlan-alpine` container and notice the MacAddress key within the Networks key.
+
+5.    Inspect the `macvlan-alpine` container and notice the MacAddress key within the Networks key.
 ```
 $ docker container inspect macvlan-alpine
 ...truncated...
