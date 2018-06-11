@@ -18,21 +18,24 @@ $ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 17e324f45964        bridge              bridge              local
 6ed54d316334        host                host                local
-7092879f2cc8        none                null                local```
+7092879f2cc8        none                null                local
+```
 
-2. Start two ```alpine``` containers running ```ash``` (Alpine’s default shell)
+2.   Start two ```alpine``` containers running ```ash``` (Alpine’s default shell)
 ```
 $ docker run -dit --name alpine1 alpine ash
-$ docker run -dit --name alpine2 alpine ash```
+$ docker run -dit --name alpine2 alpine ash
+```
 
-2. Check that both containers are actually started:
+3.   Check that both containers are actually started:
 ```
 $ docker container ls
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 602dbf1edc81        alpine              "ash"               4 seconds ago       Up 3 seconds                            alpine2
-da33b7aa74b0        alpine              "ash"               17 seconds ago      Up 16 seconds                           alpine1```
+da33b7aa74b0        alpine              "ash"               17 seconds ago      Up 16 seconds                           alpine1
+```
 
-4. See Network manage commands.
+4.   See Network manage commands.
 ```
 $ docker network --help
 Manage Network Options:
@@ -43,29 +46,34 @@ disconnect   Disconnect a container from a network
 inspect      Display detailed information on one or more networks
 ls           List networks
 prune        Remove all unused networks
-rm           Remove one or more networks```
-
-5. Inspect the bridge network to see what containers are connected to it.
+rm           Remove one or more networks
 ```
-$ docker network inspect bridge```
+
+5.   Inspect the bridge network to see what containers are connected to it.
+```
+$ docker network inspect bridge
+```
 Also use it to find the IP address of the running container.
 ```
-$ docker inspect "container ID"```
+$ docker inspect "container ID"
+```
 >To retrieve just the IP address of the running container:-
 ```
-$ docker inspect -f '{{ .NetworkSettings.IPAddress }}' "container ID"```
+$ docker inspect -f '{{ .NetworkSettings.IPAddress }}' "container ID"
+```
 or
 ```
 $ docker inspect <container id> | grep "IPAddress"
 ```
 
-6. The containers are running in the background. Use the **docker attach** command to connect to alpine2.
+6.   The containers are running in the background. Use the **docker attach** command to connect to alpine2.
 ```
 $ docker attach alpine2
-/#```
+/#
+```
 Now root user within alpine2 container.
 
-7. From within alpine2, ping bing.com and then ping first container(alpine1).
+7.   From within alpine2, ping bing.com and then ping first container(alpine1).
 ```
 # ping -c 2 bing.com
 ```
@@ -73,7 +81,7 @@ Now root user within alpine2 container.
 # ping -c 172.17.0.2
 ```
 
-8. Detach from alpine1. Stop and remove both containers.
+8.   Detach from alpine1. Stop and remove both containers.
 ```
 $ docker container stop alpine1 alpine2
 $ docker container rm alpine1 alpine2
