@@ -97,16 +97,18 @@ $ docker container inspect macvlan-alpine
       "DriverOpts": null
   }
 }
-...truncated```
+...truncated
+```
 
-6. Run `docker exec` commands.
+6.   Run `docker exec` commands.
 ```
 $ docker exec macvlan-alpine ip route
 default via 192.10.86.1 dev eth0
-172.16.86.0/24 dev eth0 scope link  src 172.16.86.2```
+172.16.86.0/24 dev eth0 scope link  src 172.16.86.2
+```
 Now root user within alpine2 container.
 
-7. Stop container and remove the macvlan network.
+7.   Stop container and remove the macvlan network.
 ```
 $ docker container stop macvlan-alpine
 $ docker network rm macvlan-mynet
