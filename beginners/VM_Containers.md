@@ -9,6 +9,7 @@ A thin layer of software called a *“hypervisor”* decouples the virtual machi
 
 **What is a container?**
 
+
 Containers use lightweight operating system level virtualization and multiple containers can run on the same host machine. However, containers do not have their own kernel. They share the host machine’s kernel, making them much smaller in size compared to virtual machines. They use process level isolation, allowing processes inside a container to be isolated from other containers.
 
 **DOCKER CONTAINERS**
@@ -18,20 +19,18 @@ Docker, which started as a project to build single-application LXC containers, i
 Docker is a Linux utility that can efficiently create, ship, and run containers.
 Both Docker and LXC containers are user-space lightweight virtualization mechanisms that implement cgroups and namespaces to manage resource isolation.
 
-[//]: # (Image References)
-[image1]: ./containers.jpg "a name"
-![alt text][image1]
+
+![](https://user-images.githubusercontent.com/16256583/40974249-9daf21d2-68e4-11e8-8f11-85c5c03b41ac.jpg)
+
 
 
 **Docker** is an open source tool that lets you to incorporate and store your code and its dependencies into a handy package called an image.
 
 
-[//]: # (Image References)
-[image2]: ./vm.jpg "a name"
-![alt text][image2]
+
+![vm](https://user-images.githubusercontent.com/16256583/40974242-974095ce-68e4-11e8-9d2e-82a2829f718d.jpg)
+
 
 **Virtual Machines V/S Containers**
 
-[//]: # (Image References)
-[image3]: ./VmCont.jpg "a name"
-![alt text][image3]
+![vmcont](https://user-images.githubusercontent.com/16256583/40974226-895ccda6-68e4-11e8-800b-78586becb2b1.JPG)
