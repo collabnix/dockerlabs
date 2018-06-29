@@ -33,5 +33,12 @@ docker-machine create -d amazonec2 --amazonec2-vpc-id $VPC --amazonec2-region $R
 
 ### Swarm Worker Nodes
 
+```
+
+$ docker-machine create -d amazonec2 --amazonec2-vpc-id $VPC --amazonec2-region $REGION --amazonec2-zone $ZONE --amazonec2-instance-type t2.micro --amazonec2-subnet-id $SUBNET --amazonec2-security-group demo-swarm demo-swarm-worker2
+$ docker-machine create -d amazonec2 --amazonec2-vpc-id $VPC --amazonec2-region $REGION --amazonec2-zone $ZONE --amazonec2-instance-type t2.micro --amazonec2-subnet-id $SUBNET --amazonec2-security-group demo-swarm demo-swarm-worker3
+
+```
+
 
 
