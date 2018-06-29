@@ -3,11 +3,10 @@
 ## Pre-requisite
 
 - Create an account on AWS
-- Install Docker Machine anywhere
+- Install Docker Machine on your laptop
 
-# Install 3 Node Swarm Cluster following the below steps
 
-## Create a file with the below contents:
+## Create a file "credential" under ~/.aws/credential with the below contents:
 
 ```
 [default]
