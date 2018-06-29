@@ -63,9 +63,10 @@ To add a worker to this swarm, run the following command:
     docker swarm join --token SWMTKN-1-0co3iy3e6q5luadad3plkus44hihfodzlnr0l52fywl6wwntmz-cwqu225oucj1zr82ytgzuqfg6 172.31.0.39:2377
 
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
 ```
 
-THIS WON"T WORK UNLESS YOU PERFORM BELOW STEP-
+# THIS WON"T WORK UNLESS YOU PERFORM BELOW STEP-
 
 ```
 
@@ -74,6 +75,14 @@ AWS Access Key ID [****************OTEA]:
 AWS Secret Access Key [****************kRHC]: 
 Default region name [us-west-1c]: us-west-1
 Default output format [None]:
+
+## We will need security group
+
+```
+$ SECURITY_GROUP_ID=sg- #Copy the group id here
+```
+
+
 
 [manager3] (local) root@192.168.0.11 ~/.aws$ aws ec2 authorize-security-group-ingress --group-id $SECURITY_GROUP_ID --protocol tcp --port 2377 --source-g
 roup $SECURITY_GROUP_ID
@@ -104,6 +113,13 @@ ubuntu@demo-swarm-manager:~$ sudo docker node lsID                            HO
 uxs3aq57y1bm5mdtsi8z1ovrx     demo-swarm-worker1   Ready               Active 18.05.0-ce
 rcdb3bozljhvn4epjmu4jvjt7     demo-swarm-worker2   Ready               Active 18.05.0-ce
 ubuntu@demo-swarm-manager:~$
+```
+
+
+
+## Reference:
+```
+https://gist.github.com/ghoranyi/f2970d6ab2408a8a37dbe8d42af4f0a5
 ```
 
 
