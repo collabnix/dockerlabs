@@ -3,9 +3,9 @@
 ## Pre-requisite
 
 - Create an account on AWS
-- Install 3 Node Ubuntu Cluster
-- Install Docker on all the Nodes
-- Install Docker Machine
+- Install Docker Machine anywhere
+
+# Install 3 Node Swarm Cluster following the below steps
 
 ## Create a file with the below contents:
 
