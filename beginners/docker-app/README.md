@@ -338,3 +338,89 @@ $ ls
 README.md            install-wp           prod                 wordpress.dockerapp
 devel                mywordpress          with-secrets.yml
 ```
+
+```
+$ cat mywordpress
+version: 1.0.1
+name: wordpress
+description: "Welcome to Collabnix"
+maintainers:
+  - name: ajeetraina
+    email: ajeetraina@gmail.com
+targets:
+  swarm: true
+  kubernetes: true
+
+--
+version: "3.6"
+
+services:
+
+  mysql:
+    image: mysql:${mysql.image.version}
+    environment:
+      MYSQL_ROOT_PASSWORD: ${mysql.rootpass}
+      MYSQL_DATABASE: ${mysql.database}
+      MYSQL_USER: ${mysql.user.name}
+      MYSQL_PASSWORD: ${mysql.user.password}
+    volumes:
+       - source: db_data
+         target: /var/lib/mysql
+         type: volume
+    networks:
+       - overlay
+    deploy:
+      mode: ${mysql.scale.mode}
+      replicas: ${mysql.scale.replicas}
+      endpoint_mode: ${mysql.scale.endpoint_mode}
+
+  wordpress:
+    image: wordpress
+    environment:
+      WORDPRESS_DB_USER: ${mysql.user.name}
+      WORDPRESS_DB_PASSWORD: ${mysql.user.password}
+      WORDPRESS_DB_NAME: ${mysql.database}
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DEBUG: ${debug}
+    ports:
+      - "${wordpress.port}:80"
+    networks:
+      - overlay
+    deploy:
+      mode: ${wordpress.scale.mode}
+      replicas: ${wordpress.scale.replicas}
+      endpoint_mode: ${wordpress.scale.endpoint_mode}
+    depends_on:
+      - mysql
+
+volumes:
+  db_data:
+     name: ${volumes.db_data.name}
+
+networks:
+  overlay:
+
+--
+debug: true
+mysql:
+  image:
+    version: 5.6
+  rootpass: wordpress101
+  database: wordpressdata
+  user:
+    name: wordpress
+    password: wordpress
+  scale:
+    endpoint_mode: dnsrr
+    mode: replicated
+    replicas: 1
+wordpress:
+  scale:
+    mode: replicated
+    replicas: 1
+    endpoint_mode: vip
+  port: 8081
+volumes:
+  db_data:
+    name: db_data
+ ```
