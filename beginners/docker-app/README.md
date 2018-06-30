@@ -3,6 +3,7 @@
 
 ## Deploy 5 Node Swarm Mode Cluster
 
+
 ```
 $ docker node ls
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
@@ -38,7 +39,7 @@ Connecting to github.com (192.30.253.112:443)
 Connecting to github-production-release-asset-2e65be.s3.amazonaws.com (52.216.227.152:443)
 docker-app-linux.tar 100% |**************************************************************|  8780k  0:00:00 ETA
 [manager1] (local) root@192.168.0.13 ~/app
-$ ^C
+$ 
 ```
 
 ## Verify docker-app version
@@ -52,6 +53,7 @@ OS/Arch:      linux/amd64
 Experimental: off
 Renderers:    none
 ```
+The ```docker-app``` tool comes with various options as shown below:
 
 ```
 $ docker-app
@@ -90,7 +92,7 @@ README.md            install-wp           with-secrets.yml
 devel                prod                 wordpress.dockerapp
 ```
 
-## Rendering Wordpress Application Package for Development
+## Wordpress Application Package for Dev Environ
 
 ```
 $ docker-app render wordpress -f devel/dev-settings.yml
@@ -141,7 +143,7 @@ volumes:
     name: db_data
 ```
     
-    ## Rendering Wordpress Application Package for Prod
+## Rendering Wordpress Application Package for Prod
     
 ```
        image: wordpress
@@ -160,7 +162,7 @@ volumes:
 ```
     
     
-## 
+## Inspect the WordPress App
     
     
 ```
@@ -190,7 +192,7 @@ wordpress.scale.replicas      1
 $
 ```
 
-## 
+## Deploying the WordPress App
 
 ```
 $ docker-app deploy wordpress
@@ -200,21 +202,21 @@ Creating service wordpress_wordpress
 
 ```
 
-## Under Dev Environ
+## Switching to Dev Environ
+
 
 ```
-
 $docker-app deploy wordpress -f devel/dev-settings.yml
 ```
 
 
 ![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp1.png)<br><br><br>
 
-## Under Prod Environ
+## Switching to Prod Environ
 
 ```
-
 $docker-app deploy wordpress -f prod/prod-settings.yml
+
 ```
 
 
@@ -259,7 +261,7 @@ $
 
 ```
 
-##
+## Listing out 
 
 ```
 $ docker images
