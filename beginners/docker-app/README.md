@@ -173,8 +173,20 @@ Creating service wordpress_wordpress
 
 ## Under Dev Environ
 
+```
+
+$docker-app deploy wordpress -f devel/dev-settings.yml
+```
+
+
 ![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp1.png)<br><br><br>
 
 ## Under Prod Environ
+
+```
+
+$docker-app deploy wordpress -f prod/prod-settings.yml
+```
+
 
 ![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp1.png)<br>
