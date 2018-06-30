@@ -171,5 +171,5 @@ Creating service wordpress_wordpress
 
 ```
 
-![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/docker-app/dockerapp1.png)
-![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/docker-app/dockerapp2.png)
+![docker-app](https://github.com/ajeetraina/docker101/beginners/blob/master/images/docker-app/dockerapp1.png)
+![docker-app](https://github.com/ajeetraina/docker101/beginners/blob/master/images/docker-app/dockerapp2.png)
