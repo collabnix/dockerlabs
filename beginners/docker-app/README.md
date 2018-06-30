@@ -189,4 +189,4 @@ $docker-app deploy wordpress -f prod/prod-settings.yml
 ```
 
 
-![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp1.png)<br>
+![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp2.png)<br>
