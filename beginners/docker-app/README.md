@@ -171,5 +171,10 @@ Creating service wordpress_wordpress
 
 ```
 
-![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp1.png)<br>
+## Under Dev Environ
+
+![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp1.png)<br><br><br>
+
+## Under Prod Environ
+
 ![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp1.png)<br>
