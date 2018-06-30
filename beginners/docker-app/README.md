@@ -190,3 +190,64 @@ $docker-app deploy wordpress -f prod/prod-settings.yml
 
 
 ![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp2.png)<br>
+
+
+```
+[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+$ docker-app deploy -f devel/dev-settings.yml
+Updating service wordpress_wordpress (id: l95b4s6xi7q5mg7vj26lhzslb)
+Updating service wordpress_mysql (id: lhr4h2uaer861zz1b04pst5sh)
+[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+$ docker-app deploy -f prod/prod-settings.yml
+Updating service wordpress_wordpress (id: l95b4s6xi7q5mg7vj26lhzslb)
+Updating service wordpress_mysql (id: lhr4h2uaer861zz1b04pst5sh)
+[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+$
+```
+
+## Pushing Application Package to Dockerhub
+
+```
+$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to
+ https://hub.docker.com to create one.
+Username: ajeetraina
+Password:
+Login Succeeded
+[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+$
+
+```
+
+## Saving this Application Package as DOcker Image
+
+```
+[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+$ docker-app save wordpress
+Saved application as image: wordpress.dockerapp:1.0.0
+[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+$
+
+```
+
+##
+
+```
+$ docker images
+REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+wordpress.dockerapp   1.0.0               c1ec4d18c16c        47 seconds ago      1.62kB
+mysql                 5.6                 97fdbdd65c6a        3 days ago          256MB
+[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+$
+
+```
+
+```
+$ docker stack services wordpress
+ID                  NAME                  MODE                REPLICAS            IMAGE               PORTS
+l95b4s6xi7q5        wordpress_wordpress   replicated          1/1                 wordpress:latest    *:80->80
+/tcp
+lhr4h2uaer86        wordpress_mysql       replicated          1/1                 mysql:5.6
+[manager1] (local) root@192.168.0.48 ~/docker101/play-with-docker/visualizer
+```
+
