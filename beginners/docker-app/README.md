@@ -25,7 +25,7 @@ Resolving deltas: 100% (5152/5152), done.
 ## Installing docker-app
 
 ```
-wget https://github.com/docker/app/releases/download/v0.2.0/docker-app-linux.tar.gz
+wget https://github.com/docker/app/releases/download/v0.3.0/docker-app-linux.tar.gz
 tar xf docker-app-linux.tar.gz
 cp docker-app-linux /usr/local/bin/docker-app
 ```
@@ -45,12 +45,41 @@ $ ^C
 
 ```
 $ docker-app version
-Version:      v0.2.0
-Git commit:   854872f
-Build time:   2018-06-11T15:06:17.093522032+00:00
+Version:      v0.3.0
+Git commit:   fba6a09
+Built:        Fri Jun 29 13:09:30 2018
 OS/Arch:      linux/amd64
 Experimental: off
 Renderers:    none
+```
+
+```
+$ docker-app
+Build and deploy Docker applications.
+
+Usage:
+  docker-app [command]
+
+Available Commands:
+  deploy      Deploy or update an application
+  helm        Generate a Helm chart
+  help        Help about any command
+  init        Start building a Docker application
+  inspect     Shows metadata and settings for a given application
+  ls          List applications.
+  merge       Merge the application as a single file multi-document YAML
+  push        Push the application to a registry
+  render      Render the Compose file for the application
+  save        Save the application as an image to the docker daemon(in preparation for push)
+  split       Split a single-file application into multiple files
+  version     Print version information
+
+Flags:
+      --debug   Enable debug mode
+  -h, --help    help for docker-app
+
+Use "docker-app [command] --help" for more information about a command.
+[manager1] (local) root@192.168.0.48 ~/app
 ```
 
 ## WordPress Application under dev & Prod environment
@@ -251,3 +280,61 @@ lhr4h2uaer86        wordpress_mysql       replicated          1/1               
 [manager1] (local) root@192.168.0.48 ~/docker101/play-with-docker/visualizer
 ```
 
+```
+$ docker-app ls
+REPOSITORY            TAG                 IMAGE ID            CREATED              SIZE
+wordpress.dockerapp   1.0.1               299fb78857cb        About a minute ago   1.62kB
+wordpress.dockerapp   1.0.0               c1ec4d18c16c        16 minutes ago       1.62kB
+```
+
+## Pusing it to Dockerhub
+
+```
+$ docker-app push --namespace ajeetraina --tag 1.0.1
+The push refers to repository [docker.io/ajeetraina/wordpress.dockerapp]
+51cfe2cfc2a8: Pushed
+1.0.1: digest: sha256:14145fc6e743f09f92177a372b4a4851796ab6b8dc8fe49a0882fc5b5c1be4f9 size: 524
+```
+
+## Pulling it from Dockerhub on new system
+
+```
+$ docker pull ajeetraina/wordpress.dockerapp:1.0.1
+1.0.1: Pulling from ajeetraina/wordpress.dockerapp
+a59931d48895: Pull complete
+Digest: sha256:14145fc6e743f09f92177a372b4a4851796ab6b8dc8fe49a0882fc5b5c1be4f9
+Status: Downloaded newer image for ajeetraina/wordpress.dockerapp:1.0.1
+[manager3] (local) root@192.168.0.24 ~/app
+$ docker images
+REPOSITORY                       TAG                 IMAGE ID            CREATED             SIZE
+ajeetraina/wordpress.dockerapp   1.0.1               299fb78857cb        8 minutes ago       1.62kB
+[manager3] (local) root@192.168.0.24 ~/app
+$
+
+```
+
+## Deploying the Application in Easy Way
+
+```
+$ docker images
+REPOSITORY                       TAG                 IMAGE ID            CREATED             SIZE
+ajeetraina/wordpress.dockerapp   1.0.1               299fb78857cb        9 minutes ago       1.62kB
+[manager3] (local) root@192.168.0.24 ~/app
+$ docker-app deploy ajeetraina/wordpress
+Creating network wordpress_overlay
+Creating service wordpress_mysql
+Creating service wordpress_wordpress
+[manager3] (local) root@192.168.0.24 ~/app
+$
+```
+
+## Using ```docker-app merge``` option
+
+```
+[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+$ docker-app merge -o mywordpress
+[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+$ ls
+README.md            install-wp           prod                 wordpress.dockerapp
+devel                mywordpress          with-secrets.yml
+```
