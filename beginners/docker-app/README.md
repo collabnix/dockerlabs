@@ -84,7 +84,26 @@ Use "docker-app [command] --help" for more information about a command.
 [manager1] (local) root@192.168.0.48 ~/app
 ```
 
+
 ## WordPress Application under dev & Prod environment
+
+Under this demo, you will see that there is a folder called wordpress.dockerapp that contains three YAML documents:
+
+- metadatas
+- the Compose file
+- settings for your application
+
+You can create these files using the below command:
+
+```
+docker-app init --single-file wordpress
+
+```
+
+For more details, you can visit https://github.com/docker/app.
+
+
+## Listing the Wordpress Application package related files/directories
 
 ```
 $ ls
@@ -143,7 +162,18 @@ volumes:
     name: db_data
 ```
     
-## Rendering Wordpress Application Package for Prod
+##  Wordpress Application Package for Prod
+
+Under Prod environment, I have the following content under prod/prod-settings.yml as shown :
+
+```
+debug: false
+wordpress:
+  port: 80
+```
+
+Post rendering, you should be able to see port:80 exposed as shown below in the snippet:
+
     
 ```
        image: wordpress
@@ -261,7 +291,7 @@ $
 
 ```
 
-## Listing out 
+## Listing out the images
 
 ```
 $ docker images
@@ -273,6 +303,8 @@ $
 
 ```
 
+## Listing out the services
+
 ```
 $ docker stack services wordpress
 ID                  NAME                  MODE                REPLICAS            IMAGE               PORTS
@@ -281,6 +313,8 @@ l95b4s6xi7q5        wordpress_wordpress   replicated          1/1               
 lhr4h2uaer86        wordpress_mysql       replicated          1/1                 mysql:5.6
 [manager1] (local) root@192.168.0.48 ~/docker101/play-with-docker/visualizer
 ```
+
+## Using ```docker-app ls``` command to list out the application packages 
 
 ```
 $ docker-app ls
@@ -298,7 +332,9 @@ The push refers to repository [docker.io/ajeetraina/wordpress.dockerapp]
 1.0.1: digest: sha256:14145fc6e743f09f92177a372b4a4851796ab6b8dc8fe49a0882fc5b5c1be4f9 size: 524
 ```
 
-## Pulling it from Dockerhub on new system
+Say, you built WordPress application package and pushed it to Dockerhub. Now one of your colleague pull it on his development system.
+
+## Pulling it from Dockerhub 
 
 ```
 $ docker pull ajeetraina/wordpress.dockerapp:1.0.1
@@ -331,6 +367,8 @@ $
 ```
 
 ## Using ```docker-app merge``` option
+
+Docker Team has introduced ```docker-app merge``` option under the new 0.3.0 release.
 
 ```
 [manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
