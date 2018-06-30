@@ -110,11 +110,11 @@ networks:
 volumes:
   db_data:
     name: db_data
-    ```
+```
     
     ## Rendering Wordpress Application Package for Prod
     
-    ```
+```
        image: wordpress
     networks:
       overlay: null
@@ -128,12 +128,13 @@ networks:
 volumes:
   db_data:
     name: db_data
-    ```
+```
     
     
 ## 
     
-    ```
+    
+```
 $ docker-app inspect wordpress
 wordpress 1.0.0
 Maintained by: ajeetraina <ajeetraina@gmail.com>
