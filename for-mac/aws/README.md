@@ -22,13 +22,16 @@ aws configure
 This will store your credential under ~/.aws/credentials
 
 
+```
+bucket_name=collabstore
+```
 
 
 ## Create a AWS Bucket
 ```
-aws s3api create-bucket --bucket ${bucket_name} --region us-east-1
+[Captains-Bay]🚩 >  baws s3api create-bucket --bucket ${bucket_name} --region us-east-1
 {
-    "Location": "/ajeet-kops-state-store"
+    "Location": "/collabstore"
 }
 ```
 
@@ -87,6 +90,15 @@ Finally configure your cluster with: kops update cluster ajeet.k8s.local --yes
 
 [Captains-Bay]🚩 >
 ```
+
+
+```
+[Captains-Bay]🚩 >  kops get cluster
+NAME		CLOUD	ZONES
+ajeet.k8s.local	aws	us-east-1a
+[Captains-Bay]🚩 >
+```
+
 
 ## Deploy Kubernetes
 
