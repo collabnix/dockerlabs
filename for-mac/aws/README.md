@@ -1,5 +1,5 @@
 
-# Deploying Kubernetes Cluster on AWS using Docker for Mac
+# Kubernetes Cluster on AWS using Kops running on Docker for Mac
 
 Pre-requisites:
 
