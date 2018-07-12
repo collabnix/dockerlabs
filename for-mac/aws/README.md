@@ -1,5 +1,5 @@
 
-# Using Docker Stack Deploy to deploy Application on AWS CLuster using Docker for Mac
+# Deploying Kubernetes Cluster on AWS using Docker for Mac
 
 Pre-requisites:
 
