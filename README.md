@@ -1,15 +1,16 @@
-# Docker for All - Beginners, Intermediate & Advance
+# Docker for Everyone
 
 [Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners)<br>
 
 
-[Docker for Intermediate]()<br>
+[Docker for Intermediate](https://github.com/ajeetraina/docker101/tree/master/intermediate)<br>
 
-[Docker for Advanced Users]()<br>
+[Docker for Advanced Users](https://github.com/ajeetraina/docker101/tree/master/advanced)<br>
 
-## Building Docker Swarm Cluster & Visualization
+## Getting Started with Docker Swarm
 
-To get started with Docker Swarm, you can use Play with Docker, shortly called PWD. It's free for all to test drive 5 Node Swarm Cluster. Follow the below steps in case you are looking out for setting up Docker Swarm for $0 with Fancy visualizer.
+To get started with Docker Swarm, you can use "Play with Docker", shortly called PWD. It's free of cost and open for all.
+You get maximum of 5 instances of Linux system to play around with Docker.
 
 - Open https://labs.play-with-docker.com on your browser
 - Click on Icon near to Instance to choose 3 Managers & 2 Worker Nodes
