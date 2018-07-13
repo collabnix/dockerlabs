@@ -4,4 +4,4 @@
 [Getting Started with Terraform on Docker for Windows]()<br>
 [Getting Started with Terraform for AWS]()<br>
 [Getting Started with Terraform for Azure]()<br>
-[Getting Started with Terraform for Google Cloud Platform()<br>
+[Getting Started with Terraform for Google Cloud Platform]()<br>
