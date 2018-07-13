@@ -6,9 +6,7 @@ RUN apt-key adv --keyserver pgp.mit.edu --recv-keys1614552E5765227AEC39EFCFA7E00
 
 ENV RETHINKDBPACKAGEVERSION 2.0.4~0jessie
 
-RUN apt-get update
-apt-get install -y rethinkdb=$RETHINKDBPACKAGEVERSION
-rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y rethinkdb=$RETHINKDBPACKAGEVERSION && rm -rf /var/lib/apt/lists/*
 
 VOLUME ["/data"]
 
