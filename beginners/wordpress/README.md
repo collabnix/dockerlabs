@@ -1,23 +1,14 @@
- # Running Wordpress Blog using a Single Docker Container(Single Node Cluster)
-
-
-```
-docker build -t wordpress -f ./singlecontainer.Dockerfile .
-$ docker run -d -p 80:80 wordpress
-```
-
-
 # Running a WordPress Blog Using Two Linked Containers(Single Node Cluster)
 
-```
+```bash
 $ docker pull wordpress:latest
 ```
 
-```
+```bash
 $ docker pull mysql:latest
 ```
 
-```
+```bash
 $ docker images
 REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE
 mysql latest 9def920de0a2 4 days ago 282.9 MB
@@ -27,10 +18,9 @@ wordpress latest 93acfaf85c71 8 days ago 472.8 MB
 
 Start a MySQL container, give it a name via the --name CLI option, and set the
 
-
 ## Running MYSQL Container
 
-```
+```bash
 $ docker run --name mysqlwp -e MYSQL_ROOT_PASSWORD=wordpressdocker \
 -e MYSQL_DATABASE=wordpress \
 -e MYSQL_USER=wordpress \
@@ -40,7 +30,7 @@ $ docker run --name mysqlwp -e MYSQL_ROOT_PASSWORD=wordpressdocker \
 
 ## Running WordPress and linking it to MYSQL
 
-```
+```bash
 docker run --name wordpress --link mysqlwp:mysql -p 80:80 \
 -e WORDPRESS_DB_NAME=wordpress \
 -e WORDPRESS_DB_USER=wordpress \
@@ -48,7 +38,7 @@ docker run --name wordpress --link mysqlwp:mysql -p 80:80 \
 -d wordpress
 ```
 
-# How to Backup MySQL Data
+## How to Backup MySQL Data
 
 Starting from the Recipe 1.16, where you set up a WordPress site by using two linked
 containers, you are going to modify the way you start the MySQL container. Once the
@@ -67,7 +57,7 @@ VOLUME /var/lib/mysql. This means that when you start a container based on this
 image, you can bind mount a host directory to this mount point inside the container.
 Let’s do it:
 
-```
+```bash
 $ docker run --name mysqlwp -e MYSQL_ROOT_PASSWORD=wordpressdocker \
 -e MYSQL_DATABASE=wordpress \
 -e MYSQL_USER=wordpress \
@@ -80,7 +70,7 @@ Note the -v /home/docker/mysql:/var/lib/mysql line that performs this mount.
 After doing the WordPress configuration, the /home/docker/mysql directory on the
 host is populated:
 
-```
+```bash
 $ ls mysql/
 auto.cnf ibdata1 ib_logfile0 ib_logfile1 mysql performance_schema wordpress
 ```
@@ -88,7 +78,7 @@ auto.cnf ibdata1 ib_logfile0 ib_logfile1 mysql performance_schema wordpress
 To get a dump of the entire MySQL database, use the docker exec command to run
 mysqldump inside the container:
 
-```
+```bash
 $ docker exec mysqlwp mysqldump --all-databases \
 --password=wordpressdocker > wordpress.backup
 ```

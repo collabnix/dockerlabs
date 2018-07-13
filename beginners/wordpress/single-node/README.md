@@ -1,1 +1,6 @@
-## Running WordPress on a Single Node
+# Running Wordpress Blog using a Single Docker Container(Single Node Cluster)
+
+```bash
+docker build -t wordpress -f ./singlecontainer.Dockerfile .
+$ docker run -d -p 80:80 wordpress
+```

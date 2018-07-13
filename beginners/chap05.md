@@ -28,10 +28,9 @@ In Docker, you will want to use an entrypoint so you don't have to remember to m
 
 ## Wait  ! Wait ! Wait... Why are you talking about this?
 
-
 Good Question !
 
-Let's talk a little bit about Docker. When you run a Docker container, Docker proceeds to isolate it from the rest of the system. 
+Let's talk a little bit about Docker. When you run a Docker container, Docker proceeds to isolate it from the rest of the system.
 That isolation happens at different levels (e.g. network, filesystem, processes).Tini isn't really concerned with the network or the filesystem, so let's focus on what matters in the context of Tini: processes.
 
 Each Docker container is a PID namespace, which means that the processes in your container are isolated from other processes on your host. A PID namespace is a tree, which starts at PID 1, which is commonly called init.
@@ -79,11 +78,9 @@ It's got a lot of tests.
 
 Let's see it in action -
 
-
 Without init, CMD becomes pid 1. In this case, /bin/bash
 
-```
-
+```docker
 $ docker run -ti --rm ubuntu:16.04 /bin/bash
 root@e166034a9571:/# ps -fA
 UID         PID   PPID  C STIME TTY          TIME CMD
@@ -93,8 +90,7 @@ root         11      1  0 1
 
 With --init, tini (/dev/init) becomes pid 1
 
-```
-
+```docker
 $ docker run -ti --init --rm ubuntu:16.04 /bin/bash
 root@d20fb387ca64:/# ps -aF
 UID         PID   PPID  C    SZ   RSS PSR STIME TTY          TIME CMD

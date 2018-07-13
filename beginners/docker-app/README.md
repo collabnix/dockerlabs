@@ -1,10 +1,8 @@
 # A First Look at docker-app
 
-
 ## Deploy 5 Node Swarm Mode Cluster
 
-
-```
+```bash
 $ docker node ls
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
 juld0kwbajyn11gx3bon9bsct *   manager1            Ready               Active              Leader              18.03.1-ce
@@ -16,7 +14,7 @@ n3frm1rv4gn93his3511llm6r     worker1             Ready               Active    
 
 ## Cloning the Repository
 
-```
+```bash
 $ git clone https://github.com/ajeetraina/app
 Cloning into 'app'...remote: Counting objects: 14147, done.
 remote: Total 14147 (delta 0), reused 0 (delta 0), pack-reused 14147Receiving objects: 100% (14147/14147), 17.32 MiB | 18.43 MiB/s, done.
@@ -25,7 +23,7 @@ Resolving deltas: 100% (5152/5152), done.
 
 ## Installing docker-app
 
-```
+```bash
 wget https://github.com/docker/app/releases/download/v0.3.0/docker-app-linux.tar.gz
 tar xf docker-app-linux.tar.gz
 cp docker-app-linux /usr/local/bin/docker-app
@@ -33,18 +31,18 @@ cp docker-app-linux /usr/local/bin/docker-app
 
 OR
 
-```
+```bash
 $ ./install.sh
 Connecting to github.com (192.30.253.112:443)
 Connecting to github-production-release-asset-2e65be.s3.amazonaws.com (52.216.227.152:443)
 docker-app-linux.tar 100% |**************************************************************|  8780k  0:00:00 ETA
 [manager1] (local) root@192.168.0.13 ~/app
-$ 
+$
 ```
 
 ## Verify docker-app version
 
-```
+```bash
 $ docker-app version
 Version:      v0.3.0
 Git commit:   fba6a09
@@ -53,9 +51,10 @@ OS/Arch:      linux/amd64
 Experimental: off
 Renderers:    none
 ```
+
 The ```docker-app``` tool comes with various options as shown below:
 
-```
+```bash
 $ docker-app
 Build and deploy Docker applications.
 
@@ -84,36 +83,33 @@ Use "docker-app [command] --help" for more information about a command.
 [manager1] (local) root@192.168.0.48 ~/app
 ```
 
-
 ## WordPress Application under dev & Prod environment
 
 Under this demo, you will see that there is a folder called wordpress.dockerapp that contains three YAML documents:
 
-- metadatas
-- the Compose file
+- metadata
+- the compose file
 - settings for your application
 
 You can create these files using the below command:
 
-```
+```bash
 docker-app init --single-file wordpress
-
 ```
 
-For more details, you can visit https://github.com/docker/app.
-
+For more details, you can visit https://github.com/docker/app
 
 ## Listing the Wordpress Application package related files/directories
 
-```
+```bash
 $ ls
 README.md            install-wp           with-secrets.yml
 devel                prod                 wordpress.dockerapp
 ```
 
-## Wordpress Application Package for Dev Environ
+## Wordpress Application Package for Dev environment
 
-```
+```bash
 $ docker-app render wordpress -f devel/dev-settings.yml
 version: "3.6"
 services:
@@ -161,22 +157,21 @@ volumes:
   db_data:
     name: db_data
 ```
-    
-##  Wordpress Application Package for Prod
+
+## Wordpress Application Package for Prod
 
 Under Prod environment, I have the following content under prod/prod-settings.yml as shown :
 
-```
+```bash
 debug: false
 wordpress:
-  port: 80
+port: 80
 ```
 
 Post rendering, you should be able to see port:80 exposed as shown below in the snippet:
 
-    
-```
-       image: wordpress
+```bash
+    image: wordpress
     networks:
       overlay: null
     ports:
@@ -190,12 +185,10 @@ volumes:
   db_data:
     name: db_data
 ```
-    
-    
+
 ## Inspect the WordPress App
-    
-    
-```
+
+```bash
 $ docker-app inspect wordpress
 wordpress 1.0.0
 Maintained by: ajeetraina <ajeetraina@gmail.com>
@@ -224,37 +217,31 @@ $
 
 ## Deploying the WordPress App
 
-```
+```bash
 $ docker-app deploy wordpress
 Creating network wordpress_overlay
 Creating service wordpress_mysql
 Creating service wordpress_wordpress
-
 ```
 
 ## Switching to Dev Environ
 
-
+```bash
+$ docker-app deploy wordpress -f devel/dev-settings.yml
 ```
-$docker-app deploy wordpress -f devel/dev-settings.yml
-```
 
-
-![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp1.png)<br><br><br>
+![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp1.png)
 
 ## Switching to Prod Environ
 
+```bash
+$ docker-app deploy wordpress -f prod/prod-settings.yml
 ```
-$docker-app deploy wordpress -f prod/prod-settings.yml
 
-```
+![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp2.png)
 
-
-![docker-app](https://github.com/ajeetraina/docker101/blob/master/images/dockerapp2.png)<br>
-
-
-```
-[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+```bash
+$ [manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
 $ docker-app deploy -f devel/dev-settings.yml
 Updating service wordpress_wordpress (id: l95b4s6xi7q5mg7vj26lhzslb)
 Updating service wordpress_mysql (id: lhr4h2uaer861zz1b04pst5sh)
@@ -268,7 +255,7 @@ $
 
 ## Pushing Application Package to Dockerhub
 
-```
+```bash
 $ docker login
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to
  https://hub.docker.com to create one.
@@ -277,35 +264,32 @@ Password:
 Login Succeeded
 [manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
 $
-
 ```
 
 ## Saving this Application Package as DOcker Image
 
-```
-[manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
+```bash
+$ [manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
 $ docker-app save wordpress
 Saved application as image: wordpress.dockerapp:1.0.0
 [manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
 $
-
 ```
 
 ## Listing out the images
 
-```
+```bash
 $ docker images
 REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
 wordpress.dockerapp   1.0.0               c1ec4d18c16c        47 seconds ago      1.62kB
 mysql                 5.6                 97fdbdd65c6a        3 days ago          256MB
 [manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
 $
-
 ```
 
 ## Listing out the services
 
-```
+```bash
 $ docker stack services wordpress
 ID                  NAME                  MODE                REPLICAS            IMAGE               PORTS
 l95b4s6xi7q5        wordpress_wordpress   replicated          1/1                 wordpress:latest    *:80->80
@@ -314,18 +298,18 @@ lhr4h2uaer86        wordpress_mysql       replicated          1/1               
 [manager1] (local) root@192.168.0.48 ~/docker101/play-with-docker/visualizer
 ```
 
-## Using ```docker-app ls``` command to list out the application packages 
+## Using ```docker-app ls``` command to list out the application packages
 
-```
+```bash
 $ docker-app ls
 REPOSITORY            TAG                 IMAGE ID            CREATED              SIZE
 wordpress.dockerapp   1.0.1               299fb78857cb        About a minute ago   1.62kB
 wordpress.dockerapp   1.0.0               c1ec4d18c16c        16 minutes ago       1.62kB
 ```
 
-## Pusing it to Dockerhub
+## Pushing it to Dockerhub
 
-```
+```bash
 $ docker-app push --namespace ajeetraina --tag 1.0.1
 The push refers to repository [docker.io/ajeetraina/wordpress.dockerapp]
 51cfe2cfc2a8: Pushed
@@ -334,9 +318,9 @@ The push refers to repository [docker.io/ajeetraina/wordpress.dockerapp]
 
 Say, you built WordPress application package and pushed it to Dockerhub. Now one of your colleague pull it on his development system.
 
-## Pulling it from Dockerhub 
+## Pulling it from Dockerhub
 
-```
+```bash
 $ docker pull ajeetraina/wordpress.dockerapp:1.0.1
 1.0.1: Pulling from ajeetraina/wordpress.dockerapp
 a59931d48895: Pull complete
@@ -348,12 +332,11 @@ REPOSITORY                       TAG                 IMAGE ID            CREATED
 ajeetraina/wordpress.dockerapp   1.0.1               299fb78857cb        8 minutes ago       1.62kB
 [manager3] (local) root@192.168.0.24 ~/app
 $
-
 ```
 
 ## Deploying the Application in Easy Way
 
-```
+```bash
 $ docker images
 REPOSITORY                       TAG                 IMAGE ID            CREATED             SIZE
 ajeetraina/wordpress.dockerapp   1.0.1               299fb78857cb        9 minutes ago       1.62kB
@@ -370,7 +353,7 @@ $
 
 Docker Team has introduced ```docker-app merge``` option under the new 0.3.0 release.
 
-```
+```bash
 [manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
 $ docker-app merge -o mywordpress
 [manager1] (local) root@192.168.0.48 ~/app/examples/wordpress
@@ -379,7 +362,7 @@ README.md            install-wp           prod                 wordpress.dockera
 devel                mywordpress          with-secrets.yml
 ```
 
-```
+```bash
 $ cat mywordpress
 version: 1.0.1
 name: wordpress
