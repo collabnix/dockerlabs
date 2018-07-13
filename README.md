@@ -23,26 +23,37 @@ You get maximum of 5 instances of Linux system to play around with Docker.
 
 
 
-## Time to build Swarm Cluster Visualizer tool 
+## A Bonus... Docker Swarm Visualizer 
 
-Swarm Visualizer is a fancy tool which visualized the Swarm Cluster setup. It displays containers running on each node.
+Swarm Visualizer is a fancy tool which visualized the Swarm Cluster setup. It displays containers running on each node in the form of visuals. If you are conducting Docker workshop, it's a perfect way to show your audience how the containers are placed under each node. Go..try it out..
 
 ## Clone the Repository
 
 ```
-git clone https://github.com/ajeetraina/docker101
+git clone https://github.com/dockersamples/docker-swarm-visualizer
 ```
 
 
 
 ```
-cd docker101/play-with-docker/visualizer/
+cd docker-swarm-visualizer
 docker-compose up -d
 ```
 
 ![My image](https://github.com/ajeetraina/docker101/blob/master/images/visualizer.png)
 
-# List of Applications for the demonstration 
+To run in a docker swarm:
+
+```
+$ docker service create \
+  --name=viz \
+  --publish=8080:8080/tcp \
+  --constraint=node.role==manager \
+  --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
+  dockersamples/visualizer
+```
+
+# Quick List of Dockerized Applications for your Demo
 
 [WordPress under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/wordpress/example1/README.md)<br>
 [ELK under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ELK/README.md)<br>
