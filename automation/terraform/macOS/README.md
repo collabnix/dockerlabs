@@ -1,7 +1,7 @@
-# Getting Started with Terraform on Docker for Mac 18.05
+# How to use Terraform to build Nginx Docker Container running on Docker for Mac 18.05
 
 
-## Installing Terraform on Docker for Mac
+## Installing Terraform on macOS
 
 ```
 brew install terraform
