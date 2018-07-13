@@ -1,4 +1,4 @@
-# Using Terraform on Docker for Mac
+# Getting Started with Terraform on Docker for Mac 18.05
 
 
 ## Installing Terraform on Docker for Mac
