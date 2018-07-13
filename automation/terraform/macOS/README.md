@@ -124,7 +124,7 @@ Terraform will perform the following actions:
       must_run:                  "true"
       name:                      "mynginx"
       ports.#:                   "1"
-      ports.4028926921.external: "80"
+      ports.4028926921.external: "84"
       ports.4028926921.internal: "80"
       ports.4028926921.ip:       ""
       ports.4028926921.protocol: "tcp"
