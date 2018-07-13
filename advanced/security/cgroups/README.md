@@ -1,6 +1,6 @@
 # Lab: Control Groups (cgroups)
 
-> **Difficulty**: Intermediate
+> **Difficulty**: Advanced
 
 > **Time**: Approximately 15 minutes
 
