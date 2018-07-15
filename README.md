@@ -1,11 +1,11 @@
 # Docker for Everyone
 
-[Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners)<br>
+[Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners/README.md)<br>
 
 
-[Docker for Intermediate](https://github.com/ajeetraina/docker101/tree/master/intermediate)<br>
+[Docker for Intermediate](https://github.com/ajeetraina/docker101/tree/master/intermediate/README.md)<br>
 
-[Docker for Advanced Users](https://github.com/ajeetraina/docker101/tree/master/advanced)<br>
+[Docker for Advanced Users](https://github.com/ajeetraina/docker101/tree/master/advanced/README.md)<br>
 
 ## Getting Started with Docker Swarm
 
