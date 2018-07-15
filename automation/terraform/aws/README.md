@@ -248,3 +248,32 @@ aws_instance.example:
   root_block_device.0.volume_size = 8
   ```
 
+## Providing Tag to EC2 Instance
+
+```
+$ sudo terraform apply
+aws_instance.example: Refreshing state... (ID: i-02038e31b23bdbe3a)
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  ~ update in-place
+Terraform will perform the following actions:
+  ~ aws_instance.example
+      tags.%:    "0" => "1"
+      tags.Name: "" => "terraform-example"
+Plan: 0 to add, 1 to change, 0 to destroy.
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+  Enter a value: yes
+aws_instance.example: Modifying... (ID: i-02038e31b23bdbe3a)
+  tags.%:    "0" => "1"
+  tags.Name: "" => "terraform-example"
+aws_instance.example: Modifications complete after 7s (ID: i-02038e31b23bdbe3a)
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+
+```
+##
+
+```
+
+```
