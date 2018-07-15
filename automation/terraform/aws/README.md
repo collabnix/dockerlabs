@@ -46,3 +46,14 @@ $ export TF_VAR_aws_access_key_id=ABC123
 $ export TF_VAR_aws_secret_access_key=DEF123
 ```
 
+By default, Terraform operates in the directory you run it from. When run, it will load all files with a .tf extension and combine them. This means you can define everything in a single file or break it down into multiple files for easier maintainability. A common convention is to start with the following structure for each Terraform environment and expand as needed.
+
+```
+backend.tf    // Used for Terraform backend configuration
+main.tf       // Used for all resource definitions
+outputs.tf    // Used to expose outputs from the environment
+providers.tf  // Used to configure credentials for providers
+vars.tf       // Used for variable definition
+```
+
+
