@@ -2,16 +2,23 @@
 
 Pre-requisite:
 
-- Create account with aws.amazon.com
-- A Ubuntu 16.04 System
+- Create account on aws.amazon.com(Free Tier for beginners)
+- A Test Ubuntu System ( or laptop)
 
-## Installing Terraform
+
+## Installing Terraform on your local Ubuntu system
 
 ```
 sudo wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip && tar xvzf terraform_0.11.7_linux_amd64.zip
+
 ```
 
-## Ensure that you make right changes for AWS credentials under main.tf file as shown below:
+This guide is for beginners. To make it simple, I have created individual directory for each scenerios.
+Each folder has main.tf to demonstrate TF features.
+
+## Specifying TF provider
+
+Ensure that you make right changes for AWS credentials under main.tf file as shown below:
 
 ```
 provider "aws" {
@@ -52,7 +59,7 @@ commands will detect it and remind you to do so if necessary.
 $
 ```
 
-## Applying
+## Applying the changes
 
 ```
 terraform apply
