@@ -92,4 +92,159 @@ aws_instance.example: Creation complete after 29s (ID: i-02038e31b23bdbe3a)
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 $ 
 ```
+Terraform also wrote some data into the terraform.tfstate file. This state file is extremely important; it keeps track of the IDs of created resources so that Terraform knows what it is managing. This file must be saved and distributed to anyone who might run Terraform. It is generally recommended to setup remote state when working with Terraform, to share the state automatically, but this is not necessary for simple situations like this Getting Started guide.
+
+```
+dockerworxinc@instance-1:~$ cat terraform.tfstate 
+{
+    "version": 3,
+    "terraform_version": "0.11.7",
+    "serial": 1,
+    "lineage": "785f9f55-6424-a676-62b5-b38bcb087995",
+    "modules": [
+        {
+            "path": [
+                "root"
+            ],
+            "outputs": {},
+            "resources": {
+                "aws_instance.example": {
+                    "type": "aws_instance",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "i-02038e31b23bdbe3a",
+                        "attributes": {
+                            "ami": "ami-2757f631",
+                            "associate_public_ip_address": "true",
+                            "availability_zone": "us-east-1b",
+                            "credit_specification.#": "1",
+                            "credit_specification.0.cpu_credits": "standard",
+                            "disable_api_termination": "false",
+                            "ebs_block_device.#": "0",
+                            "ebs_optimized": "false",
+                            "ephemeral_block_device.#": "0",
+                            "get_password_data": "false",
+                            "iam_instance_profile": "",
+                            "id": "i-02038e31b23bdbe3a",
+                            ...
+                            rworxinc@instance-1:~$ cat terraform.tfstate 
+{
+    "version": 3,
+    "terraform_version": "0.11.7",
+    "serial": 1,
+    "lineage": "785f9f55-6424-a676-62b5-b38bcb087995",
+    "modules": [
+        {
+            "path": [
+                "root"
+            ],
+            "outputs": {},
+            "resources": {
+                "aws_instance.example": {
+                    "type": "aws_instance",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "i-02038e31b23bdbe3a",
+                        "attributes": {
+                            "ami": "ami-2757f631",
+                            "associate_public_ip_address": "true",
+                            "availability_zone": "us-east-1b",
+                            "credit_specification.#": "1",
+                            "credit_specification.0.cpu_credits": "standard",
+                            "disable_api_termination": "false",
+                            "ebs_block_device.#": "0",
+                            "ebs_optimized": "false",
+                            "ephemeral_block_device.#": "0",
+                            "get_password_data": "false",
+                            "iam_instance_profile": "",
+                            "id": "i-02038e31b23bdbe3a",
+                            "instance_state": "running",
+                            "instance_type": "t2.micro",
+                            "ipv6_addresses.#": "0",
+                            "key_name": "",
+                            "monitoring": "false",
+                            "network_interface.#": "0",
+                            "network_interface_id": "eni-88b2f5dd",
+                            "password_data": "",
+                            "placement_group": "",
+                            "primary_network_interface_id": "eni-88b2f5dd",
+                            "private_dns": "ip-172-31-95-236.ec2.internal",
+                            "private_ip": "172.31.95.236",
+                            "public_dns": "ec2-54-164-145-156.compute-1.amazonaws.com",
+                            "public_ip": "54.164.145.156",
+                            "root_block_device.#": "1",
+                            "id": "i-02038e31b23bdbe3a",
+                            "root_block_device.0.delete_on_termination": "true",
+                            "root_block_device.0.iops": "100",
+                            "root_block_device.0.volume_id": "vol-0b31d655768c321f0",
+                            "root_block_device.0.volume_size": "8",
+                            "root_block_device.0.volume_type": "gp2",
+                            "security_groups.#": "1",
+                            "security_groups.3814588639": "default",
+                            "source_dest_check": "true",
+                            "subnet_id": "subnet-c17cb2ef",
+                            "tags.%": "0",
+                            "tenancy": "default",
+                            "volume_tags.%": "0",
+                            "vpc_security_group_ids.#": "1",
+                            "vpc_security_group_ids.2745663399": "sg-a55c07ed"
+                        },
+                        "meta": {
+                            "e2bfb730-ecaa-11e6-8f88-34363bc7c4c0": {
+                                "create": 600000000000,
+                                "delete": 1200000000000,
+                                "update": 600000000000
+                            },
+                            "schema_version": "1"
+                        },
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                }
+            },
+            "depends_on": []
+        }
+    ]
+}
+```
+Congratulations! You've built your first infrastructure with Terraform. You've seen the configuration syntax, an example of a basic execution plan, and understand the state file.
+
+## Inspecting Terraform state or plan
+
+```
+sudo terraform show
+aws_instance.example:
+  id = i-02038e31b23bdbe3a
+  ami = ami-2757f631
+  associate_public_ip_address = true
+  availability_zone = us-east-1b
+  credit_specification.# = 1
+  credit_specification.0.cpu_credits = standard
+  disable_api_termination = false
+  ebs_block_device.# = 0
+  ebs_optimized = false
+  ephemeral_block_device.# = 0
+  get_password_data = false
+  iam_instance_profile = 
+  instance_state = running
+  instance_type = t2.micro
+  ipv6_addresses.# = 0
+  key_name = 
+  monitoring = false
+  network_interface.# = 0
+  network_interface_id = eni-88b2f5dd
+  password_data = 
+  placement_group = 
+  primary_network_interface_id = eni-88b2f5dd
+  private_dns = ip-172-31-95-236.ec2.internal
+  private_ip = 172.31.95.236
+  public_dns = ec2-54-164-145-156.compute-1.amazonaws.com
+  public_ip = 54.164.145.156
+  root_block_device.# = 1
+  root_block_device.0.delete_on_termination = true
+  root_block_device.0.iops = 100
+  root_block_device.0.volume_id = vol-0b31d655768c321f0
+  root_block_device.0.volume_size = 8
+  ```
 
