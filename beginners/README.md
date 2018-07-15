@@ -14,7 +14,7 @@
 
 [Building Docker Image from Dockerfile](https://github.com/ajeetraina/docker101/blob/master/beginners/chap03.md)
 
-[Running WordPress in a single Docker Container](https://github.com/ajeetraina/docker101/tree/master/beginners/wordpress)
+[Running WordPress in a single Docker Container](https://github.com/ajeetraina/docker101/tree/master/beginners/wordpress/single-node)
 
 [Running a WordPress Blog Using Two Linked Containers](https://github.com/ajeetraina/docker101/tree/master/beginners/wordpress#running-a-wordpress-blog-using-two-linked-containerssingle-node-cluster)
 
