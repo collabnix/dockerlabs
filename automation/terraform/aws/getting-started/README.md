@@ -16,6 +16,8 @@ sudo wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux
 This guide is for beginners. To make it simple, I have created individual directory for each scenerios.
 Each folder has main.tf to demonstrate TF features.
 
+#Demo #1 : Setting up Provider
+
 ## Specifying TF provider
 
 Ensure that you make right changes for AWS credentials under main.tf file as shown below:
@@ -254,6 +256,8 @@ aws_instance.example:
   root_block_device.0.volume_id = vol-0b31d655768c321f0
   root_block_device.0.volume_size = 8
   ```
+  
+# Demo #2: Demonstrating Tag
 
 ## Providing Tag to EC2 Instance
 
@@ -277,8 +281,10 @@ aws_instance.example: Modifying... (ID: i-02038e31b23bdbe3a)
   tags.Name: "" => "terraform-example"
 aws_instance.example: Modifications complete after 7s (ID: i-02038e31b23bdbe3a)
 Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
-
 ```
+
+# Demo #3: Demonstrating how to add ELB
+
 ## Adding Elastic Load Balancer on AWS
 
 I have added a file elb/main.tf for Elastic Load Balancer. Check it out -
@@ -305,7 +311,7 @@ Terraform will perform the following actions:
       connection_draining:                    "false"
       connection_draining_timeout:            "300"
       cross_zone_load_balancing:              "true"
-      dns_name:                               <computed>
+      dns_name:                               <computed```
       health_check.#:                         <computed>
       idle_timeout:                           "60"
       instances.#:                            "1"
