@@ -8,7 +8,7 @@
 
 ## Docker Image | Containers | Linking Two Containers
 
-[Running Your First Docker Image](https://github.com/ajeetraina/docker101/blob/master/beginners/chap01.md)
+[Running Your First Docker Image](https://github.com/ajeetraina/docker101/blob/master/beginners/hello-world-001.md)
 
 [Running Your First Ubuntu Container](https://github.com/ajeetraina/docker101/blob/master/beginners/first-ubuntu-container-002.md)
 
