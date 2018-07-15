@@ -329,7 +329,7 @@ dockerworxinc@instance-1:~$
 
 ```
 
-``
+```
  Terraform will perform the actions described above.
   Only 'yes' will be accepted to approve.
   Enter a value: yes
