@@ -11,19 +11,19 @@ Pre-requisite:
 sudo wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip && tar xvzf terraform_0.11.7_linux_amd64.zip
 ```
 
-## Ensure that you make right changes for AWS credentials under main.tf file as shown below:
+## Cloning this Repository
 
 ```
-provider "aws" {
-  access_key = "xxxx"
-  secret_key = "xxxx"
-  region     = "us-east-1"
-}
-resource "aws_instance" "example" {
-  ami           = "ami-2757f631"
-  instance_type = "t2.micro"
-}
-docker
+git clone https://github.com/ajeetraina/docker101
+cd docker101/automation/terraform/aws
+```
+
+## Export the Values
+
+```
+$ export TF_VAR_aws_region=us-east-1
+$ export TF_VAR_aws_access_key_id=ABC123
+$ export TF_VAR_aws_secret_access_key=DEF123
 ```
 
 ## Initializing Local settings
