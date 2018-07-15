@@ -18,7 +18,7 @@ Some of you may already be familiar with Amazon’s CloudFormation infrastructur
 
 Terraform supports over 70 different service providers officially and many more through community plugins. This means that, using the same scripts and syntax, you can manage and connect multiple service providers.
 
-Okay, you’re probably ready to see this magic of which I speak.
+
 
 ## Pre-requisite:
 
