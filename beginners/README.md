@@ -10,7 +10,7 @@
 
 [Running Your First Docker Image](https://github.com/ajeetraina/docker101/blob/master/beginners/chap01.md)
 
-[Running Your First Ubuntu Container](https://github.com/ajeetraina/docker101/blob/master/beginners/chap02.md)
+[Running Your First Ubuntu Container](https://github.com/ajeetraina/docker101/blob/master/beginners/first-ubuntu-container-002.md)
 
 [Building Docker Image from Dockerfile](https://github.com/ajeetraina/docker101/blob/master/beginners/chap03.md)
 
