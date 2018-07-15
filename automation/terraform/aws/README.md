@@ -1,10 +1,10 @@
 # Terraforming Docker Infrastructure on AWS
 
-Problem Statement:
+## Problem Statement:
 
 The complexity of the AWS system leads to two problems that I hope to address in this three-part series: The first is that a lot of experience and understanding are required to properly configure everything, which results in information silos and unhealthy dependency on subject matter experts. The second problem is that with the cloud, things change at a rapid pace, and attempts to document processes can be a wasted effort.Amazon’s web interface changes on a regular basis, and our attempts to document our processes have been invalidated in just months.
 
-Solution: Terraform 
+## Solution: Terraform 
 
 Terraform is an open-source infrastructure-as-code tool that allows you to declare your infrastructure using an easy to read and write DSL (domain specific language). Running the Terraform CLI will either create or update your environment to match what you’ve told it you want. Change a value, like which AMI to use for EC2 instances, and it will see the change and replace any instances with new ones.
 
