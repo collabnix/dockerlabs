@@ -379,3 +379,13 @@ aws_elb.example: Creation complete after 12s (ID: example)
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 :~$ 
 ```
+
+## Demo #4: Running Nginx Docker container
+
+Browse to docker/main.tf for running Nginx docker container on top of this AWS instance.
+
+```
+$ cd docker/
+$ sudo terraform init
+$ sudo terraform apply
+```
