@@ -4,7 +4,7 @@
 
 [Docker Containers and Virtualization](https://github.com/ajeetraina/docker101/blob/master/beginners/VM_Containers.md)
 
-[What is Dockerfile?](https://github.com/ajeetraina/docker101/blob/master/beginners/chap03.md)
+[What is Dockerfile?](https://github.com/ajeetraina/docker101/blob/master/beginners/intro-to-dockerfile-003.md)
 
 ## Docker Image | Containers | Linking Two Containers
 
