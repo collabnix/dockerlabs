@@ -259,6 +259,8 @@ aws_instance.example:
   
 # Demo #2: Demonstrating Tag
 
+Browse to tag-demo folder and run the below command:
+
 ## Providing Tag to EC2 Instance
 
 ```
