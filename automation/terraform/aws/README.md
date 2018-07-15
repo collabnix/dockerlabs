@@ -272,8 +272,97 @@ aws_instance.example: Modifications complete after 7s (ID: i-02038e31b23bdbe3a)
 Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
 
 ```
-##
+## Adding Elastic Load Balancer on AWS
+
+I have added a file elb/main.tf for Elastic Load Balancer. Check it out -
+
+
+
+```
+~$ sudo terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+aws_instance.example: Refreshing state... (ID: i-02038e31b23bdbe3a)
+------------------------------------------------------------------------
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+Terraform will perform the following actions:
+  + aws_elb.example
+      id:                                     <computed>
+      arn:                                    <computed>
+      availability_zones.#:                   "2"
+      availability_zones.1305112097:          "us-east-1b"
+      availability_zones.3569565595:          "us-east-1a"
+      connection_draining:                    "false"
+      connection_draining_timeout:            "300"
+      cross_zone_load_balancing:              "true"
+      dns_name:                               <computed>
+      health_check.#:                         <computed>
+      idle_timeout:                           "60"
+      instances.#:                            "1"
+      instances.1524067361:                   "i-02038e31b23bdbe3a"
+      internal:                               <computed>
+      listener.#:                             "1"
+      listener.3931999347.instance_port:      "8080"
+      listener.3931999347.instance_protocol:  "http"
+      listener.3931999347.lb_port:            "80"
+      listener.3931999347.lb_protocol:        "http"
+      listener.3931999347.ssl_certificate_id: ""
+      name:                                   "example"
+      security_groups.#:                      <computed>
+      source_security_group:                  <computed>
+      source_security_group_id:               <computed>
+      subnets.#:                              <computed>
+      zone_id:                                <computed>
+
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+------------------------------------------------------------------------
+
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+dockerworxinc@instance-1:~$ 
 
 ```
 
+``
+ Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+  Enter a value: yes
+aws_elb.example: Creating...
+  arn:                                    "" => "<computed>"
+  availability_zones.#:                   "" => "2"
+  availability_zones.1305112097:          "" => "us-east-1b"
+  availability_zones.3569565595:          "" => "us-east-1a"
+  connection_draining:                    "" => "false"
+  connection_draining_timeout:            "" => "300"
+  cross_zone_load_balancing:              "" => "true"
+  dns_name:                               "" => "<computed>"
+  health_check.#:                         "" => "<computed>"
+  idle_timeout:                           "" => "60"
+  instances.#:                            "" => "1"
+  instances.1524067361:                   "" => "i-02038e31b23bdbe3a"
+  internal:                               "" => "<computed>"
+  listener.#:                             "" => "1"
+  listener.3931999347.instance_port:      "" => "8080"
+  listener.3931999347.instance_protocol:  "" => "http"
+  listener.3931999347.lb_port:            "" => "80"
+  listener.3931999347.lb_protocol:        "" => "http"
+  listener.3931999347.ssl_certificate_id: "" => ""
+  name:                                   "" => "example"
+  security_groups.#:                      "" => "<computed>"
+  source_security_group:                  "" => "<computed>"
+  source_security_group_id:               "" => "<computed>"
+  subnets.#:                              "" => "<computed>"
+  zone_id:                                "" => "<computed>"
+aws_elb.example: Still creating... (10s elapsed)
+aws_elb.example: Creation complete after 12s (ID: example)
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+:~$ 
 ```
+
+
