@@ -16,7 +16,7 @@ sudo wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux
 This guide is for beginners. To make it simple, I have created individual directory for each scenerios.
 Each folder has main.tf to demonstrate TF features.
 
-#Demo #1 : Setting up Provider
+## Demo #1 : Setting up Provider
 
 ## Specifying TF provider
 
