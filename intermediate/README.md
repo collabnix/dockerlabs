@@ -1,4 +1,4 @@
-# List of Intermediate Course
+# Intermediate Course
 
 [Overview of Container Runtime](https://github.com/collabnix/dockerlabs/tree/master/intermediate/contaner-runtimes)<br>
 [Docker Registry Lab](https://github.com/collabnix/dockerlabs/tree/master/intermediate/registry)<br>
