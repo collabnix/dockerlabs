@@ -71,7 +71,7 @@ $ docker service create \
   dockersamples/visualizer
 ```
 
-# Quick List of Dockerized Applications for your Demo
+# Docker-Ready Solution for You
 
 [WordPress under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/wordpress/example1/README.md)<br>
 [ELK under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ELK/README.md)<br>
