@@ -216,7 +216,8 @@ $ docker inspect a1b | grep IPAddress
 ## Displaying IP address using Filters
 
 ```
-$ docker inspect --format {{.NetworkSettings.IPAddress}} a1b172.17.0.2
+$ docker inspect --format {{.NetworkSettings.IPAddress}} a1b
+
 ```
 
 ## How to check Logs
