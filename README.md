@@ -1,4 +1,4 @@
-# Docker for Everyone
+# Docker for You (DFY)
 
 Are you new to Docker? Want to build your career in Container Technology? 
 
