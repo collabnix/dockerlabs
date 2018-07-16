@@ -1,11 +1,29 @@
 # Docker for Everyone
 
-[Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners/README.md)<br>
+Are you new to Docker? Want to build your career in Container Technology? 
 
+Then Welcome ! You are at the right place.
+
+This repository brings you tutorials that help you get hands-on experience using Docker. Here you will find a mix of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it correct ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://play-with-docker). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed for you. All you need is to get started.
+
+We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Docker. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
+
+[Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners/README.md)<br>
 
 [Docker for Intermediate](https://github.com/ajeetraina/docker101/tree/master/intermediate/README.md)<br>
 
 [Docker for Advanced Users](https://github.com/ajeetraina/docker101/tree/master/advanced/README.md)<br>
+
+
+## Getting Started with Docker 
+
+To get started with Docker, follow the below steps:
+
+- Create Dockerhub Account
+- Open  [Play with Docker Platform](https://play-with-docker). 
+- Click on "Start" 
+- This will open up an easy to understand PWD tool which displays instances on the left hand side while terminal at the right hand side. 
+- Click on "Create Instance" to create your first Linux instance.
 
 ## Getting Started with Docker Swarm
 
