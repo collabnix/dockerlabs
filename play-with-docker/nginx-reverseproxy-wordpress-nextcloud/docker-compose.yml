@@ -1,32 +1,34 @@
-version: '3.6'
-
-volumes:
-  nextcloud:
-  db:
+version: '3'
 
 services:
   db:
     image: mariadb
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     restart: always
     volumes:
       - db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=nextcloud
+      - MYSQL_PASSWORD=nextcloud
       - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
+      - MYSQL_USER=nextcloud    
 
-  app:
-    image: nextcloud:fpm
-    links:
-      - db
+  app:  
+    image: nextcloud:apache
+    restart: always
+    expose:
+      - 3001
     volumes:
       - nextcloud:/var/www/html
-    restart: always
-
-
-
+    environment:
+      - VIRTUAL_HOST= nextcloud.creusere.com
+      - VIRTUAL_PORT=3001
+    depends_on:
+      - db
+    
 networks:
+  
   default:
     external:
+
       name: nginx-proxy
