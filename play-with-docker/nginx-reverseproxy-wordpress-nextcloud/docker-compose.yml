@@ -1,5 +1,9 @@
 version: '3'
 
+volumes:
+  nextcloud:
+  db:
+
 services:
   db:
     image: mariadb
@@ -27,8 +31,6 @@ services:
       - db
     
 networks:
-  
   default:
     external:
-
       name: nginx-proxy
