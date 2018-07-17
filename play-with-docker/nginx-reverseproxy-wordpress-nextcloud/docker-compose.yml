@@ -1,4 +1,4 @@
-version: '2'
+version: '3.6'
 
 volumes:
   nextcloud:
@@ -24,14 +24,9 @@ services:
       - nextcloud:/var/www/html
     restart: always
 
-  web:
-    image: nginx
-    ports:
-      - 8080:80
-    links:
-      - app
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-    volumes_from:
-      - app
-    restart: always
+
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
