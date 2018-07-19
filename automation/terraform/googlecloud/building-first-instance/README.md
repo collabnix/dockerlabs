@@ -24,3 +24,13 @@ curl https://sdk.cloud.google.com | bash
 ```
 gcloud init
 ```
+
+## Initialize Terraform
+
+```
+terraform init
+terraform plan
+terraform apply
+```
+
+# Done.
