@@ -15,3 +15,21 @@ Then [download your credentials from Google Cloud Console](https://www.terraform
 
 Optionally update `variables.tf` to specify a default value for the `project_name` variable, and check other variables.
 
+## Running TF
+
+```
+terraform init
+terraform plan
+terraform apply
+```
+
+## Verifying Nginx Container
+
+Browse to http://<public-ip>:80
+  
+## Cleaning Up
+
+```
+terraform destroy
+```
+
