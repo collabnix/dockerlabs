@@ -1,4 +1,4 @@
-# See https://cloud.google.com/compute/docs/load-balancing/network/example
+
 
 provider "google" {
   region      = "${var.region}"
@@ -7,13 +7,13 @@ provider "google" {
 }
 
 
-resource "google_compute_instance" "www" {
+resource "google_compute_instance" "docker" {
   count = 1
 
-  name         = "tf-www-${count.index}"
+  name         = "tf-docker-${count.index}"
   machine_type = "f1-micro"
   zone         = "${var.region_zone}"
-  tags         = ["www-node"]
+  tags         = ["docker-node"]
 
   boot_disk {
     initialize_params {
@@ -64,5 +64,5 @@ resource "google_compute_firewall" "default" {
   }
 
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["www-node"]
+  target_tags   = ["docker-node"]
 }
