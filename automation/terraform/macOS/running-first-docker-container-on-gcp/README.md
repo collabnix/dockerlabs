@@ -1,4 +1,4 @@
-# Running Your First Docker Container on Google CLoud Platform using Terraform
+# Running Your First Docker Container on Google Cloud Platform using Terraform
 
 ## Installing Terraform on macOS
 
@@ -359,5 +359,17 @@ google_compute_instance.docker (remote-exec): + [ ubuntu = debian ]
 google_compute_instance.docker (remote-exec): + sh -c apt-get update -qq >/dev/null
 google_compute_instance.docker: Still creating... (1m20s elapsed)
 
+google_compute_instance.docker (remote-exec): 54ff137eb1b2: Extracting     204B/204B
+
+google_compute_instance.docker (remote-exec): 54ff137eb1b2: Pull complete
+google_compute_instance.docker (remote-exec): Digest: sha256:4a5573037f358b6cdfa2f3e8a9c33a5cf11bcd1675ca72ca76fbe5bd77d0d682
+google_compute_instance.docker (remote-exec): Status: Downloaded newer image for nginx:latest
+google_compute_instance.docker (remote-exec): a6df1767bb64d34461ff54b87bba2dadff2a94078bd6c4d5091b2a59a9cc9087
+google_compute_instance.docker: Still creating... (3m0s elapsed)
+google_compute_instance.docker: Creation complete after 3m1s (ID: tf-docker-0)
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+[Captains-Bay]🚩 >
+[Captains-Bay]🚩 >
 
 ```
