@@ -373,3 +373,154 @@ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 [Captains-Bay]🚩 >
 
 ```
+
+## Verifying
+
+```
+@tf-docker-0:~$ sudo docker version
+Client:
+ Version:           18.06.0-ce
+ API version:       1.38
+ Go version:        go1.10.3
+ Git commit:        0ffa825
+ Built:             Wed Jul 18 19:10:22 2018
+ OS/Arch:           linux/amd64
+ Experimental:      false
+Server:
+ Engine:
+  Version:          18.06.0-ce
+  API version:      1.38 (minimum version 1.12)
+  Go version:       go1.10.3
+  Git commit:       0ffa825
+  Built:            Wed Jul 18 19:08:26 2018
+  OS/Arch:          linux/amd64
+  Experimental:     false
+@tf-docker-0:~$ 
+
+```
+
+```
+[Captains-Bay]🚩 >  terraform show
+google_compute_firewall.default:
+  id = tf-www-firewall
+  allow.# = 1
+  allow.272637744.ports.# = 1
+  allow.272637744.ports.0 = 80
+  allow.272637744.protocol = tcp
+  deny.# = 0
+  description =
+  destination_ranges.# = 0
+  direction = INGRESS
+  disabled = false
+  name = tf-www-firewall
+  network = https://www.googleapis.com/compute/v1/projects/i-guru-209217/global/networks/default
+  priority = 1000
+  project = i-guru-209217
+  self_link = https://www.googleapis.com/compute/v1/projects/i-guru-209217/global/firewalls/tf-www-firewall
+  source_ranges.# = 1
+  source_ranges.1080289494 = 0.0.0.0/0
+  source_service_accounts.# = 0
+  source_tags.# = 0
+  target_service_accounts.# = 0
+  target_tags.# = 1
+  target_tags.1090984259 = docker-node
+google_compute_instance.docker:
+  id = tf-docker-0
+  attached_disk.# = 0
+  boot_disk.# = 1
+  boot_disk.0.auto_delete = true
+  boot_disk.0.device_name = persistent-disk-0
+  boot_disk.0.disk_encryption_key_raw =
+  boot_disk.0.disk_encryption_key_sha256 =
+  boot_disk.0.initialize_params.# = 1
+  boot_disk.0.initialize_params.0.image = https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1404-trusty-v20160602
+  boot_disk.0.initialize_params.0.size = 10
+  boot_disk.0.initialize_params.0.type = pd-standard
+  boot_disk.0.source = https://www.googleapis.com/compute/v1/projects/i-guru-209217/zones/us-central1-f/disks/tf-docker-0
+  can_ip_forward = false
+  cpu_platform = Intel Ivy Bridge
+  create_timeout = 4
+  deletion_protection = false
+  guest_accelerator.# = 0
+  instance_id = 5050855407468093023
+  label_fingerprint = 42WmSpB8rSM=
+  labels.% = 0
+  machine_type = f1-micro
+  metadata.% = 1
+  metadata.ssh-keys = root:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDW4qyWPIaZg0fu5QMMgVRc96Nv1C2ft2k+cy6bkf0fz5WjZTDWaGRlvkdt7eZqFd5I7C+9frYfwUpBMAJ+lu2nK2xKxTjPUC/PGuhgIVz+AzJX1Rz1RxaOr//xMDvlYDvoQesRO/EMqb31uYPTY/WZVz8k+joj7OMQHkDwZo/Al5a8uSmkHQ6sPQ2mPusT7p7bFfe9M/xQxVBeWtvfAXtXTFRhGecLPByQQ3RogDMO5TvUh3/tURt54OmQNnqzRf36o9Nh69jxhSpbMrRr3ViWZADcyNnD0eECec+1d/3JzbZqoMmUhm5Jpiua+iEPYOj8WbvrU6j4GCuhth0HWSuP ajeetraina@Ajeets-MacBook-Air.local
+
+  metadata_fingerprint = CXEyE8jgfhM=
+  metadata_startup_script =
+  min_cpu_platform =
+  name = tf-docker-0
+  network_interface.# = 1
+  network_interface.0.access_config.# = 1
+  network_interface.0.access_config.0.assigned_nat_ip = 35.226.155.224
+  network_interface.0.access_config.0.nat_ip = 35.226.155.224
+  network_interface.0.access_config.0.network_tier = PREMIUM
+  network_interface.0.access_config.0.public_ptr_domain_name =
+  network_interface.0.address = 10.128.0.2
+  network_interface.0.alias_ip_range.# = 0
+  network_interface.0.name = nic0
+  network_interface.0.network = https://www.googleapis.com/compute/v1/projects/i-guru-209217/global/networks/default
+  network_interface.0.network_ip = 10.128.0.2
+  network_interface.0.subnetwork = https://www.googleapis.com/compute/v1/projects/i-guru-209217/regions/us-central1/subnetworks/default
+  network_interface.0.subnetwork_project = i-guru-209217
+  project = i-guru-209217
+  scheduling.# = 1
+  scheduling.0.automatic_restart = false
+  scheduling.0.on_host_maintenance = MIGRATE
+  scheduling.0.preemptible = false
+  scratch_disk.# = 0
+  self_link = https://www.googleapis.com/compute/v1/projects/i-guru-209217/zones/us-central1-f/instances/tf-docker-0
+  service_account.# = 1
+  service_account.0.email = 737359258701-compute@developer.gserviceaccount.com
+  service_account.0.scopes.# = 1
+  service_account.0.scopes.2862113455 = https://www.googleapis.com/auth/compute.readonly
+  tags.# = 1
+  tags.1090984259 = docker-node
+  tags_fingerprint = KMHM74J1xug=
+  zone = us-central1-f
+```
+
+## Verifying if NginX container is running
+
+```
+dockerworxinc@tf-docker-0:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS         
+       NAMES
+a6df1767bb64        nginx               "nginx -g 'daemon of…"   3 minutes ago       Up 3 minutes        0.0.0.0:80->80
+/tcp   elastic_pare
+```
+
+```
+[Captains-Bay]🚩 >  curl 35.226.155.224
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+
+
+
