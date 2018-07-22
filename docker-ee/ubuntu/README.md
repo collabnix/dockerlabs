@@ -107,16 +107,82 @@ Server:
 ```
 
 
+## 
+
+On production systems, you should install a specific version of Docker EE instead of always using the latest. This output is truncated. List the available versions.
+
+```
+$ apt-cache madison docker-ee
+ docker-ee | 3:18.03.1~ee~2~3-0~ubuntu | https://storebits.docker.com/ee/ubuntu/sub-6f046f55-8d6c-4dfb-a5b0-06d710c8676
+d/ubuntu xenial/stable-18.03 amd64 Packages
+ docker-ee | 3:18.03.1~ee~1~3-0~ubuntu | https://storebits.docker.com/ee/ubuntu/sub-6f046f55-8d6c-4dfb-a5b0-06d710c8676
+d/ubuntu xenial/stable-18.03 amd64 Packages
+
+
+```
+
 ##
 
 ```
-
+$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+9db2ca6ccae0: Pull complete 
+Digest: sha256:4b8ff392a12ed9ea17784bd3c9a8b1fa3299cac44aca35a85c90c5e3c7afacdc
+Status: Downloaded newer image for hello-world:latest
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+For more examples and ideas, visit:
+ https://docs.docker.com/engine/userguide/
 
 ```
 
-##
+##  Manage Docker as a non-root user
+
+The docker daemon binds to a Unix socket instead of a TCP port. By default that Unix socket is owned by the user root and other users can only access it using sudo. ```The docker daemon always runs as the root user.```
+
+If you don’t want to use sudo when you use the docker command, create a Unix group called docker and add users to it. When the docker daemon starts, it makes the ownership of the Unix socket read/writable by the docker group.
+
+## Configure Docker to start on boot
+
+Most current Linux distributions (RHEL, CentOS, Fedora, Ubuntu 16.04 and higher) use systemd to manage which services start when the system boots. Ubuntu 14.10 and below use upstart.
+
+## systemd
 
 ```
+$ sudo systemctl enable docker
+````
 
+To disable this behavior, use disable instead.
 
 ```
+$ sudo systemctl disable docker
+```
+
+If you need to add an HTTP Proxy, set a different directory or partition for the Docker runtime files, or make other customizations, see customize your systemd Docker daemon options.
+
+## upstart
+
+Docker is automatically configured to start on boot using upstart. To disable this behavior, use the following command:
+
+```
+$ echo manual | sudo tee /etc/init/docker.override
+```
+## chkconfig
+
+```
+$ sudo chkconfig docker on
+```
+
