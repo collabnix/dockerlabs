@@ -186,3 +186,55 @@ $ echo manual | sudo tee /etc/init/docker.override
 $ sudo chkconfig docker on
 ```
 
+## Installing UCP
+
+```
+docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   d
+ocker/ucp:3.0.2 install   --host-address 10.140.0.2   --interactive --force-minimums
+INFO[0000] Your engine version 18.03.1-ee-2, build ebbcd7e (4.15.0-1014-gcp) is compatible with UCP 3.0.2 (736cf3c) 
+WARN[0000] Your system does not have enough memory.  UCP suggests a minimum of 4.00 GB, but you only have 3.78 GB.  You
+ may have unexpected errors. 
+Admin Username: ajeetraina
+Admin Password: 
+Confirm Admin Password: 
+INFO[0012] Pulling required images... (this may take a while) 
+INFO[0012] Pulling docker/ucp-auth:3.0.2                
+INFO[0019] Pulling docker/ucp-kube-compose:3.0.2        
+INFO[0026] Pulling docker/ucp-hyperkube:3.0.2           
+INFO[0052] Pulling docker/ucp-swarm:3.0.2               
+INFO[0059] Pulling docker/ucp-interlock-extension:3.0.2 
+INFO[0066] Pulling docker/ucp-kube-dns-sidecar:3.0.2    
+INFO[0074] Pulling docker/ucp-dsinfo:3.0.2              
+INFO[0087] Pulling docker/ucp-metrics:3.0.2             
+INFO[0097] Pulling docker/ucp-calico-node:3.0.2         
+INFO[0119] Pulling docker/ucp-etcd:3.0.2                
+INFO[0129] Pulling docker/ucp-interlock:3.0.2           
+INFO[0136] Pulling docker/ucp-agent:3.0.2               
+INFO[0144] Pulling docker/ucp-compose:3.0.2             
+INFO[0148] Pulling docker/ucp-kube-dns-dnsmasq-nanny:3.0.2 
+INFO[0158] Pulling docker/ucp-cfssl:3.0.2               
+INFO[0164] Pulling docker/ucp-pause:3.0.2               
+INFO[0169] Pulling docker/ucp-calico-cni:3.0.2          
+INFO[0183] Pulling docker/ucp-calico-kube-controllers:3.0.2 
+INFO[0192] Pulling docker/ucp-auth-store:3.0.2          
+INFO[0202] Pulling docker/ucp-controller:3.0.2          
+INFO[0217] Pulling docker/ucp-interlock-proxy:3.0.2     
+INFO[0222] Pulling docker/ucp-kube-dns:3.0.2            
+WARN[0230] None of the hostnames we'll be using in the UCP certificates [instance-1 127.0.0.1 172.17.0.1 10.140.0.2] contain a domain component.  Your generated certs may fail TLS validation unless you only use one of these shortnames or IPs to connect.  You can use the --san flag to add more aliases 
+
+You may enter additional aliases (SANs) now or press enter to proceed with the above list.
+Additional aliases: 
+INFO[0000] Initializing a new swarm at 10.140.0.2     
+
+
+
+
+
+```
+
+##
+
+```
+
+
+```
