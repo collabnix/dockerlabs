@@ -1,5 +1,8 @@
 # Installing Istio on Docker for Mac 18.06 CE
 
+
+Istio is installed in two parts. The first part involves the CLI tooling that will be used to deploy and manage Istio backed services. The second part configures the Kubernetes cluster to support Istio.
+
 ```
 [Captains-Bay]🚩 >  kubectl cluster-info
 Kubernetes master is running at https://localhost:6443
@@ -10,7 +13,23 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ```
 
 
+## Install CLI tooling
 
+The following command will install the Istio 1.0.0 release.
+
+```
+curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.0.0 sh -
+```
+
+After it has successfully run, add the bin folder to your path.
+
+```
+export PATH="$PATH:/root/istio-1.0.0/bin"
+```
+
+```
+cd /root/istio-1.0.0
+```
 
 ```
 [Captains-Bay]🚩 >  curl -L https://git.io/getLatestIstio | sh -
@@ -181,6 +200,64 @@ rule "tcpkubeattrgenrulerule" created
 kubernetes "attributes" created
 destinationrule "istio-policy" created
 destinationrule "istio-telemetry" created
+[Captains-Bay]🚩 >
+```
+
+```
+[Captains-Bay]🚩 >  ls
+LICENSE		bin		istio.VERSION	tools
+README.md	install		samples
+s.yaml -n istio-systemectl apply -f install/kubernetes/helm/istio/templates/crd
+customresourcedefinition "virtualservices.networking.istio.io" configured
+customresourcedefinition "destinationrules.networking.istio.io" configured
+customresourcedefinition "serviceentries.networking.istio.io" configured
+customresourcedefinition "gateways.networking.istio.io" configured
+customresourcedefinition "envoyfilters.networking.istio.io" configured
+customresourcedefinition "policies.authentication.istio.io" created
+customresourcedefinition "meshpolicies.authentication.istio.io" created
+customresourcedefinition "httpapispecbindings.config.istio.io" configured
+customresourcedefinition "httpapispecs.config.istio.io" configured
+customresourcedefinition "quotaspecbindings.config.istio.io" configured
+customresourcedefinition "quotaspecs.config.istio.io" configured
+customresourcedefinition "rules.config.istio.io" configured
+customresourcedefinition "attributemanifests.config.istio.io" configured
+customresourcedefinition "bypasses.config.istio.io" configured
+customresourcedefinition "circonuses.config.istio.io" configured
+customresourcedefinition "deniers.config.istio.io" configured
+customresourcedefinition "fluentds.config.istio.io" configured
+customresourcedefinition "kubernetesenvs.config.istio.io" configured
+customresourcedefinition "listcheckers.config.istio.io" configured
+customresourcedefinition "memquotas.config.istio.io" configured
+customresourcedefinition "noops.config.istio.io" configured
+customresourcedefinition "opas.config.istio.io" configured
+customresourcedefinition "prometheuses.config.istio.io" configured
+customresourcedefinition "rbacs.config.istio.io" configured
+customresourcedefinition "redisquotas.config.istio.io" configured
+customresourcedefinition "servicecontrols.config.istio.io" configured
+customresourcedefinition "signalfxs.config.istio.io" configured
+customresourcedefinition "solarwindses.config.istio.io" configured
+customresourcedefinition "stackdrivers.config.istio.io" configured
+customresourcedefinition "statsds.config.istio.io" configured
+customresourcedefinition "stdios.config.istio.io" configured
+customresourcedefinition "apikeys.config.istio.io" configured
+customresourcedefinition "authorizations.config.istio.io" configured
+customresourcedefinition "checknothings.config.istio.io" configured
+customresourcedefinition "kuberneteses.config.istio.io" configured
+customresourcedefinition "listentries.config.istio.io" configured
+customresourcedefinition "logentries.config.istio.io" configured
+customresourcedefinition "edges.config.istio.io" configured
+customresourcedefinition "metrics.config.istio.io" configured
+customresourcedefinition "quotas.config.istio.io" configured
+customresourcedefinition "reportnothings.config.istio.io" configured
+customresourcedefinition "servicecontrolreports.config.istio.io" configured
+customresourcedefinition "tracespans.config.istio.io" configured
+customresourcedefinition "rbacconfigs.rbac.istio.io" configured
+customresourcedefinition "serviceroles.rbac.istio.io" configured
+customresourcedefinition "servicerolebindings.rbac.istio.io" configured
+customresourcedefinition "adapters.config.istio.io" configured
+customresourcedefinition "instances.config.istio.io" configured
+customresourcedefinition "templates.config.istio.io" configured
+customresourcedefinition "handlers.config.istio.io" configured
 [Captains-Bay]🚩 >
 ```
 
