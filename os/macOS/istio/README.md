@@ -1,6 +1,18 @@
 # Installing Istio on Docker for Mac 18.06 CE
 
 ```
+[Captains-Bay]🚩 >  kubectl cluster-info
+Kubernetes master is running at https://localhost:6443
+KubeDNS is running at https://localhost:6443/api/v1/namespaces/kube-system/services/kube-dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+[Captains-Bay]🚩 >
+```
+
+
+
+
+```
 [Captains-Bay]🚩 >  curl -L https://git.io/getLatestIstio | sh -
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
