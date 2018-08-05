@@ -7,11 +7,6 @@ apt-get update && apt-get install -y apt-transport-https
 
 ##
 
-```
-apt-get update && apt-get install -y apt-transport-https
-``
-
-## 
 
 ```
 echo 'deb http://apt.kubernetes.io/ kubernetes-xenial main' | sudo tee /etc/apt/sources.list.d/kubernetes.list
