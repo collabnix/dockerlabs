@@ -469,6 +469,19 @@ destinationrule "details" created
 [node1 istio-1.0.0]$
 
 ```
+## Setting up K8s Dashboard
+
+```
+[node1 istio-1.0.0]$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+secret "kubernetes-dashboard-certs" created
+serviceaccount "kubernetes-dashboard" created
+role "kubernetes-dashboard-minimal" created
+rolebinding "kubernetes-dashboard-minimal" created
+deployment "kubernetes-dashboard" created
+service "kubernetes-dashboard
+```
+
+
 
                          
 
