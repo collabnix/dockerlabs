@@ -1,7 +1,13 @@
 # Lab-#1: Demonstrating a Single Node Nginx CLuster
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/cn/docs/user-guide/nginx-app.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+secret "kubernetes-dashboard-certs" created
+serviceaccount "kubernetes-dashboard" created
+role "kubernetes-dashboard-minimal" created
+rolebinding "kubernetes-dashboard-minimal" created
+deployment "kubernetes-dashboard" created
+service "kubernetes-dashboard" created
 ```
 
 ```
