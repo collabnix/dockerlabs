@@ -96,8 +96,11 @@ export PATH=$PWD/bin:$PATH
 ## Installing Istio’s Custom Resource Definitions via kubectl apply, and wait a few seconds for the CRDs to be committed in the kube-apiserver:
 
 ```
+cd istio-1.0.0
 [node1 istio-1.0.0]$ ls
 LICENSE  README.md  bin  install  istio.VERSION  samples  tools
+```
+```
 [node1 istio-1.0.0]$ kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml
 customresourcedefinition "virtualservices.networking.istio.io" createdcustomresourcedefinition "destinationrules.networking.istio.io" created
 customresourcedefinition "serviceentries.networking.istio.io" createdcustomresourcedefinition "gateways.networking.istio.io" created
