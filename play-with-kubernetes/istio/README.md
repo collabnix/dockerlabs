@@ -481,6 +481,12 @@ deployment "kubernetes-dashboard" created
 service "kubernetes-dashboard
 ```
 
+## Allowing it accessible
+
+```
+
+```
+
 
 
                          
