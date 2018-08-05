@@ -6,7 +6,7 @@ metadata:
     chart: servicegraph-0.1.0
     heritage: Tiller
     release: RELEASE-NAME
-  name: katacoda-servicegraph
+  name: collabnix-servicegraph
   namespace: istio-system
 spec:
   ports:
@@ -28,7 +28,7 @@ metadata:
     chart: grafana-0.1.0
     heritage: Tiller
     release: RELEASE-NAME
-  name: katacoda-grafana
+  name: collabnix-grafana
   namespace: istio-system
 spec:
   ports:
@@ -52,7 +52,7 @@ metadata:
     heritage: Tiller
     jaeger-infra: jaeger-service
     release: RELEASE-NAME
-  name: katacoda-jaeger-query
+  name: collabnix-jaeger-query
   namespace: istio-system
 spec:
   ports:
@@ -71,7 +71,7 @@ kind: Service
 metadata:
   labels:
     name: prometheus
-  name: katacoda-prometheus
+  name: collabnix-prometheus
   namespace: istio-system
 spec:
   ports:
