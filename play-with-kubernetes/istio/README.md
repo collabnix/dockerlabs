@@ -147,10 +147,285 @@ node4     NotReady   <none>    22s       v1.10.2
 node5     NotReady   <none>    4s        v1.10.2[node1 ~]$
 ```
 
+## Installing Istio Release
+
+```
+[node1 ~]$ curl -L https://git.io/getLatestIstio | sh -
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1447  100  1447    0     0   1823      0 --:--:-- --:--:-- --:--:--  1823
+Downloading istio-1.0.0 from https://github.com/istio/istio/releases/download/1.0.0/istio-1.0.0-linux.tar.gz ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   614    0   614    0     0   1102      0 --:--:-- --:--:-- --:--:--  1104
+100 14.1M  100 14.1M    0     0  4974k      0  0:00:02  0:00:02 --:--:-- 7532k
+Downloaded into istio-1.0.0:
+LICENSE  README.md  bin  install  istio.VERSION  samples  tools
+Add /root/istio-1.0.0/bin to your path; e.g copy paste in your shell and/or ~/.profile:
+export PATH="$PATH:/root/istio-1.0.0/bin"
+```
+
+## Setting up PATH variable
+
+```
+export PATH=$PWD/bin:$PATH
+```
+
+## Installing Istio’s Custom Resource Definitions via kubectl apply, and wait a few seconds for the CRDs to be committed in the kube-apiserver:
+
+```
+[node1 istio-1.0.0]$ ls
+LICENSE  README.md  bin  install  istio.VERSION  samples  tools
+[node1 istio-1.0.0]$ kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml
+customresourcedefinition "virtualservices.networking.istio.io" createdcustomresourcedefinition "destinationrules.networking.istio.io" created
+customresourcedefinition "serviceentries.networking.istio.io" createdcustomresourcedefinition "gateways.networking.istio.io" created
+customresourcedefinition "envoyfilters.networking.istio.io" created
+customresourcedefinition "policies.authentication.istio.io" created
+customresourcedefinition "meshpolicies.authentication.istio.io" created
+customresourcedefinition "httpapispecbindings.config.istio.io" created
+customresourcedefinition "httpapispecs.config.istio.io" created
+customresourcedefinition "quotaspecbindings.config.istio.io" created
+customresourcedefinition "quotaspecs.config.istio.io" created
+customresourcedefinition "rules.config.istio.io" created
+customresourcedefinition "attributemanifests.config.istio.io" created
+customresourcedefinition "bypasses.config.istio.io" created
+customresourcedefinition "circonuses.config.istio.io" created
+customresourcedefinition "deniers.config.istio.io" created
+customresourcedefinition "fluentds.config.istio.io" created
+customresourcedefinition "kubernetesenvs.config.istio.io" created
+customresourcedefinition "listcheckers.config.istio.io" created
+customresourcedefinition "memquotas.config.istio.io" created
+customresourcedefinition "noops.config.istio.io" created
+customresourcedefinition "opas.config.istio.io" created
+customresourcedefinition "prometheuses.config.istio.io" created
+customresourcedefinition "rbacs.config.istio.io" created
+customresourcedefinition "redisquotas.config.istio.io" created
+customresourcedefinition "servicecontrols.config.istio.io" created
+customresourcedefinition "signalfxs.config.istio.io" created
+customresourcedefinition "solarwindses.config.istio.io" created
+customresourcedefinition "stackdrivers.config.istio.io" created
+customresourcedefinition "statsds.config.istio.io" created
+customresourcedefinition "stdios.config.istio.io" created
+customresourcedefinition "apikeys.config.istio.io" created
+customresourcedefinition "authorizations.config.istio.io" created
+customresourcedefinition "checknothings.config.istio.io" created
+customresourcedefinition "kuberneteses.config.istio.io" created
+customresourcedefinition "listentries.config.istio.io" created
+customresourcedefinition "logentries.config.istio.io" created
+customresourcedefinition "edges.config.istio.io" created
+customresourcedefinition "metrics.config.istio.io" created
+customresourcedefinition "quotas.config.istio.io" created
+customresourcedefinition "reportnothings.config.istio.io" created
+customresourcedefinition "servicecontrolreports.config.istio.io" created
+customresourcedefinition "tracespans.config.istio.io" created
+customresourcedefinition "rbacconfigs.rbac.istio.io" created
+customresourcedefinition "serviceroles.rbac.istio.io" created
+customresourcedefinition "servicerolebindings.rbac.istio.io" created
+customresourcedefinition "adapters.config.istio.io" created
+customresourcedefinition "instances.config.istio.io" created
+customresourcedefinition "templates.config.istio.io" created
+customresourcedefinition "handlers.config.istio.io" created
+```
+
+## Install Istio without mutual TLS authentication between sidecars:
+
+```
+[node1 istio-1.0.0]$ kubectl apply -f install/kubernetes/istio-demo.yaml
+namespace "istio-system" created
+configmap "istio-galley-configuration" created
+configmap "istio-grafana-custom-resources" created
+configmap "istio-statsd-prom-bridge" created
+configmap "prometheus" created
+configmap "istio-security-custom-resources" created
+configmap "istio" created
+configmap "istio-sidecar-injector" created
+serviceaccount "istio-galley-service-account" created
+serviceaccount "istio-egressgateway-service-account" created
+serviceaccount "istio-ingressgateway-service-account" created
+serviceaccount "istio-grafana-post-install-account" created
+clusterrole "istio-grafana-post-install-istio-system" created
+clusterrolebinding "istio-grafana-post-install-role-binding-istio-system" created
+job "istio-grafana-post-install" created
+serviceaccount "istio-mixer-service-account" created
+serviceaccount "istio-pilot-service-account" created
+serviceaccount "prometheus" created
+serviceaccount "istio-cleanup-secrets-service-account" created
+clusterrole "istio-cleanup-secrets-istio-system" created
+clusterrolebinding "istio-cleanup-secrets-istio-system" created
+job "istio-cleanup-secrets" created
+serviceaccount "istio-citadel-service-account" created
+serviceaccount "istio-sidecar-injector-service-account" created
+customresourcedefinition "virtualservices.networking.istio.io" configured
+customresourcedefinition "destinationrules.networking.istio.io" configured
+customresourcedefinition "serviceentries.networking.istio.io" configured
+customresourcedefinition "gateways.networking.istio.io" configured
+customresourcedefinition "envoyfilters.networking.istio.io" configured
+customresourcedefinition "httpapispecbindings.config.istio.io" configured
+customresourcedefinition "httpapispecs.config.istio.io" configured
+customresourcedefinition "quotaspecbindings.config.istio.io" configured
+customresourcedefinition "quotaspecs.config.istio.io" configured
+customresourcedefinition "rules.config.istio.io" configured
+customresourcedefinition "attributemanifests.config.istio.io" configured
+customresourcedefinition "bypasses.config.istio.io" configured
+customresourcedefinition "circonuses.config.istio.io" configured
+customresourcedefinition "deniers.config.istio.io" configured
+customresourcedefinition "fluentds.config.istio.io" configured
+customresourcedefinition "kubernetesenvs.config.istio.io" configured
+customresourcedefinition "listcheckers.config.istio.io" configured
+customresourcedefinition "memquotas.config.istio.io" configured
+customresourcedefinition "noops.config.istio.io" configured
+customresourcedefinition "opas.config.istio.io" configured
+customresourcedefinition "prometheuses.config.istio.io" configured
+customresourcedefinition "rbacs.config.istio.io" configured
+customresourcedefinition "redisquotas.config.istio.io" configured
+customresourcedefinition "servicecontrols.config.istio.io" configured
+customresourcedefinition "signalfxs.config.istio.io" configured
+customresourcedefinition "solarwindses.config.istio.io" configured
+customresourcedefinition "stackdrivers.config.istio.io" configured
+customresourcedefinition "statsds.config.istio.io" configured
+customresourcedefinition "stdios.config.istio.io" configured
+customresourcedefinition "apikeys.config.istio.io" configured
+customresourcedefinition "authorizations.config.istio.io" configured
+customresourcedefinition "checknothings.config.istio.io" configured
+customresourcedefinition "kuberneteses.config.istio.io" configured
+customresourcedefinition "listentries.config.istio.io" configured
+customresourcedefinition "logentries.config.istio.io" configured
+customresourcedefinition "edges.config.istio.io" configured
+customresourcedefinition "metrics.config.istio.io" configured
+customresourcedefinition "quotas.config.istio.io" configured
+customresourcedefinition "reportnothings.config.istio.io" configured
+customresourcedefinition "servicecontrolreports.config.istio.io" configured
+customresourcedefinition "tracespans.config.istio.io" configured
+customresourcedefinition "rbacconfigs.rbac.istio.io" configured
+customresourcedefinition "serviceroles.rbac.istio.io" configured
+customresourcedefinition "servicerolebindings.rbac.istio.io" configured
+customresourcedefinition "adapters.config.istio.io" configured
+customresourcedefinition "instances.config.istio.io" configured
+customresourcedefinition "templates.config.istio.io" configured
+customresourcedefinition "handlers.config.istio.io" configured
+clusterrole "istio-galley-istio-system" created
+clusterrole "istio-egressgateway-istio-system" created
+clusterrole "istio-ingressgateway-istio-system" created
+clusterrole "istio-mixer-istio-system" created
+clusterrole "istio-pilot-istio-system" created
+clusterrole "prometheus-istio-system" created
+clusterrole "istio-citadel-istio-system" created
+clusterrole "istio-sidecar-injector-istio-system" created
+clusterrolebinding "istio-galley-admin-role-binding-istio-system" created
+clusterrolebinding "istio-egressgateway-istio-system" created
+clusterrolebinding "istio-ingressgateway-istio-system" created
+clusterrolebinding "istio-mixer-admin-role-binding-istio-system" created
+clusterrolebinding "istio-pilot-istio-system" created
+clusterrolebinding "prometheus-istio-system" created
+clusterrolebinding "istio-citadel-istio-system" created
+clusterrolebinding "istio-sidecar-injector-admin-role-binding-istio-system" created
+service "istio-galley" created
+service "istio-egressgateway" created
+service "istio-ingressgateway" created
+service "grafana" created
+service "istio-policy" created
+service "istio-telemetry" created
+service "istio-statsd-prom-bridge" created
+deployment "istio-statsd-prom-bridge" created
+service "istio-pilot" created
+service "prometheus" created
+service "istio-citadel" created
+service "servicegraph" created
+service "istio-sidecar-injector" created
+deployment "istio-galley" created
+deployment "istio-egressgateway" created
+deployment "istio-ingressgateway" created
+deployment "grafana" created
+deployment "istio-policy" created
+deployment "istio-telemetry" created
+deployment "istio-pilot" created
+deployment "prometheus" created
+deployment "istio-citadel" created
+deployment "servicegraph" created
+deployment "istio-sidecar-injector" created
+deployment "istio-tracing" created
+gateway "istio-autogenerated-k8s-ingress" created
+horizontalpodautoscaler "istio-egressgateway" created
+horizontalpodautoscaler "istio-ingressgateway" created
+horizontalpodautoscaler "istio-policy" created
+horizontalpodautoscaler "istio-telemetry" created
+horizontalpodautoscaler "istio-pilot" created
+service "jaeger-query" created
+service "jaeger-collector" created
+service "jaeger-agent" created
+service "zipkin" created
+service "tracing" created
+attributemanifest "istioproxy" created
+attributemanifest "kubernetes" created
+stdio "handler" created
+logentry "accesslog" created
+logentry "tcpaccesslog" created
+rule "stdio" created
+rule "stdiotcp" created
+metric "requestcount" created
+metric "requestduration" created
+metric "requestsize" created
+metric "responsesize" created
+metric "tcpbytesent" created
+metric "tcpbytereceived" created
+prometheus "handler" created
+rule "promhttp" created
+rule "promtcp" created
+kubernetesenv "handler" created
+rule "kubeattrgenrulerule" created
+rule "tcpkubeattrgenrulerule" created
+kubernetes "attributes" created
+destinationrule "istio-policy" created
+destinationrule "istio-telemetry" created
+error: unable to recognize "install/kubernetes/istio-demo.yaml": no matches for admissionregistration.k8s.io/, Kind=MutatingWebhookConfiguration
+[node1 istio-1.0.0]$
+```
+
+##
+
+Ensure the following Kubernetes services are deployed: istio-pilot, istio-ingressgateway, istio-policy, istio-telemetry, prometheus, istio-galley, and, optionally, istio-sidecar-injector.
+
+```
+[node1 istio-1.0.0]$ kubectl get svc -n istio-system
+NAME                       TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                                                                       AGE
+grafana                    ClusterIP      10.96.40.251     <none>        3000/TCP                                                                       1m
+istio-citadel              ClusterIP      10.111.59.120    <none>        8060/TCP,9093/TCP                                                                       1m
+istio-egressgateway        ClusterIP      10.110.238.251   <none>        80/TCP,443/TCP                                                                       1m
+istio-galley               ClusterIP      10.111.98.96     <none>        443/TCP,9093/TCP                                                                       1m
+istio-ingressgateway       LoadBalancer   10.107.129.238   <pending>     80:31380/TCP,443:31390/TCP,31400:31400/TCP,15011:32524/TCP,8060:31531/TCP,15030:30326/TCP,15031:31943/TCP   1m
+istio-pilot                ClusterIP      10.105.229.209   <none>        15010/TCP,15011/TCP,8080/TCP,9093/TCP                                                                       1m
+istio-policy               ClusterIP      10.106.209.229   <none>        9091/TCP,15004/TCP,9093/TCP                                                                       1mistio-sidecar-injector     ClusterIP      10.98.141.207    <none>        443/TCP                                                                       1m
+istio-statsd-prom-bridge   ClusterIP      10.105.85.15     <none>        9102/TCP,9125/UDP                                                                       1m
+istio-telemetry            ClusterIP      10.99.137.31     <none>        9091/TCP,15004/TCP,9093/TCP,42422/TCP                                                                       1m
+jaeger-agent               ClusterIP      None             <none>        5775/UDP,6831/UDP,6832/UDP                                                                       1m
+jaeger-collector           ClusterIP      10.106.213.241   <none>        14267/TCP,14268/TCP                                                                       1m
+jaeger-query               ClusterIP      10.109.75.105    <none>        16686/TCP                                                                       1m
+prometheus                 ClusterIP      10.106.61.13     <none>        9090/TCP                                                                       1m
+servicegraph               ClusterIP      10.109.144.253   <none>        8088/TCP                                                                       1m
+tracing                    ClusterIP      10.110.217.39    <none>        80/TCP                                                                       1m
+zipkin                     ClusterIP      10.110.67.50     <none>        9411/TCP                                                                       1m
+[node1 istio-1.0.0]$
+[node1 istio-1.0.0]$
+```
+
+## 
+
+Ensure the corresponding Kubernetes pods are deployed and all containers are up and running: istio-pilot-*, istio-ingressgateway-*, istio-egressgateway-*, istio-policy-*, istio-telemetry-*, istio-citadel-*, prometheus-*, istio-galley-*, and, optionally, istio-sidecar-injector-*.
+
+```
+[node1 istio-1.0.0]$ kubectl get pods -n istio-system
+NAME                                        READY     STATUS    RESTARTS   AGEgrafana-6dd4cb7ffd-qsp9c                    1/1       Running   0          3m
+istio-citadel-b874fd9f5-ltjgn               1/1       Running   0          3mistio-egressgateway-ddcdd644c-4xb2n         1/1       Running   0          3m
+istio-galley-8985546b8-lnmn4                1/1       Running   0          3mistio-ingressgateway-7565c689cb-mlcgd       1/1       Running   0          3m
+istio-pilot-58b5d5f-jwj95                   2/2       Running   0          3mistio-policy-686ff55f4f-m7lxj               2/2       Running   0          3m
+istio-sidecar-injector-5d4b7b4957-9nr67     1/1       Running   0          3mistio-statsd-prom-bridge-58f8596c67-k946d   1/1       Running   0          3m
+istio-telemetry-6bff9755fd-mkff2            2/2       Running   0          3mistio-tracing-75d76fb9f-772j4               1/1       Running   0          2m
+prometheus-884dbbcd5-pn25r                  1/1       Running   0          3mservicegraph-646bbc8cb4-6z64r               1/1       Running   0          3m
+[node1 istio-1.0.0]$
+
+```
 
 
-
- 
 
                          
 
