@@ -409,7 +409,110 @@ service "kubernetes-dashboard
 ## Allowing it accessible
 
 ```
+[node1 istio-1.0.0]$ kubectl get svc -n istio-system
+NAME                       TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                                                                    AGE
+grafana                    ClusterIP      10.102.53.163    <none>        3000/TCP                                                                    7m
+istio-citadel              ClusterIP      10.97.92.47      <none>        8060/TCP,9093/TCP                                                                    7m
+istio-egressgateway        ClusterIP      10.102.163.157   <none>        80/TCP,443/TCP                                                                    7mistio-galley               ClusterIP      10.104.119.237   <none>        443/TCP,9093/TCP                                                                    7mistio-ingressgateway       LoadBalancer   10.101.251.4     <pending>     80:31380/TCP,443:31390/TCP,31400:31400/TCP,15011:30333/TCP,8060:30055/TCP,15030:32545/TCP,15031:30237/TCP   7mistio-pilot                ClusterIP      10.111.9.72      <none>        15010/TCP,15011/TCP,8080/TCP,9093/TCP                                                                    7m
+istio-policy               ClusterIP      10.107.121.19    <none>        9091/TCP,15004/TCP,9093/TCP                                                                    7m
+istio-sidecar-injector     ClusterIP      10.107.142.100   <none>        443/TCP                                                                    7m
+istio-statsd-prom-bridge   ClusterIP      10.97.117.69     <none>        9102/TCP,9125/UDP                                                                    7m
+istio-telemetry            ClusterIP      10.99.253.31     <none>        9091/TCP,15004/TCP,9093/TCP,42422/TCP                                                                    7mjaeger-agent               ClusterIP      None             <none>        5775/UDP,6831/UDP,6832/UDP                                                                    7m
+jaeger-collector           ClusterIP      10.101.202.98    <none>        14267/TCP,14268/TCP                                                                    7m
+jaeger-query               ClusterIP      10.98.45.137     <none>        16686/TCP                                                                    7m
+prometheus                 ClusterIP      10.98.164.134    <none>        9090/TCP                                                                    7m
+servicegraph               ClusterIP      10.97.26.200     <none>        8088/TCP                                                                    7m
+tracing                    ClusterIP      10.101.37.224    <none>        80/TCP                                                                    7m
+zipkin                     ClusterIP      10.104.166.92    <none>        9411/TCP                                                                    7m
+[node1 istio-1.0.0]$ curl 10.98.164.134:9090
+<a href="/graph">Found</a>.
 
+[node1 istio-1.0.0]$ kubectl proxy
+Starting to serve on 127.0.0.1:8001
+
+
+^C
+[node1 istio-1.0.0]$ kubectl proxy &
+[1] 5397
+[node1 istio-1.0.0]$ Starting to serve on 127.0.0.1:8001
+
+[node1 istio-1.0.0]$
+[node1 istio-1.0.0]$ curl 127.0.0.1:8001
+{
+  "paths": [
+    "/api",
+    "/api/v1",
+    "/apis",
+    "/apis/",
+    "/apis/apiextensions.k8s.io",
+    "/apis/apiextensions.k8s.io/v1beta1",
+    "/apis/apiregistration.k8s.io",
+    "/apis/apiregistration.k8s.io/v1beta1",
+    "/apis/apps",
+    "/apis/apps/v1beta1",
+    "/apis/apps/v1beta2",
+    "/apis/authentication.istio.io",
+    "/apis/authentication.istio.io/v1alpha1",
+    "/apis/authentication.k8s.io",
+    "/apis/authentication.k8s.io/v1",
+    "/apis/authentication.k8s.io/v1beta1",
+    "/apis/authorization.k8s.io",
+    "/apis/authorization.k8s.io/v1",
+    "/apis/authorization.k8s.io/v1beta1",
+    "/apis/autoscaling",
+    "/apis/autoscaling/v1",
+    "/apis/autoscaling/v2beta1",
+    "/apis/batch",
+    "/apis/batch/v1",
+    "/apis/batch/v1beta1",
+    "/apis/certificates.k8s.io",
+    "/apis/certificates.k8s.io/v1beta1",
+    "/apis/config.istio.io",
+    "/apis/config.istio.io/v1alpha2",
+    "/apis/extensions",
+    "/apis/extensions/v1beta1",
+    "/apis/networking.istio.io",
+    "/apis/networking.istio.io/v1alpha3",
+    "/apis/networking.k8s.io",
+    "/apis/networking.k8s.io/v1",
+    "/apis/policy",
+    "/apis/policy/v1beta1",
+    "/apis/rbac.authorization.k8s.io",
+    "/apis/rbac.authorization.k8s.io/v1",
+    "/apis/rbac.authorization.k8s.io/v1beta1",
+    "/apis/rbac.istio.io",
+    "/apis/rbac.istio.io/v1alpha1",
+    "/apis/storage.k8s.io",
+    "/apis/storage.k8s.io/v1",
+    "/apis/storage.k8s.io/v1beta1",
+    "/healthz",
+    "/healthz/autoregister-completion",
+    "/healthz/etcd",
+    "/healthz/ping",
+    "/healthz/poststarthook/apiservice-openapi-controller",
+    "/healthz/poststarthook/apiservice-registration-controller",
+    "/healthz/poststarthook/apiservice-status-available-controller",
+    "/healthz/poststarthook/bootstrap-controller",
+    "/healthz/poststarthook/ca-registration",
+    "/healthz/poststarthook/generic-apiserver-start-informers",
+    "/healthz/poststarthook/kube-apiserver-autoregistration",
+    "/healthz/poststarthook/rbac/bootstrap-roles",
+    "/healthz/poststarthook/start-apiextensions-controllers",
+    "/healthz/poststarthook/start-apiextensions-informers",
+    "/healthz/poststarthook/start-kube-aggregator-informers",
+    "/healthz/poststarthook/start-kube-apiserver-informers",
+    "/logs",
+    "/metrics",
+    "/swagger-2.0.0.json",
+    "/swagger-2.0.0.pb-v1",
+    "/swagger-2.0.0.pb-v1.gz",
+    "/swagger.json",
+    "/swaggerapi",
+    "/ui",
+    "/ui/",
+    "/version"
+  ]
+}[node1 istio-1.0.0]$
 ```
 
 
