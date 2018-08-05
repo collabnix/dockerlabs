@@ -15,6 +15,10 @@ echo 'deb http://apt.kubernetes.io/ kubernetes-xenial main' | sudo tee /etc/apt/
 ##
 
 ```
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+```
+
+```
 root@instance-1:~# apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 Reading package lists... Done
 Building dependency tree       
