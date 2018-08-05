@@ -425,7 +425,50 @@ prometheus-884dbbcd5-pn25r                  1/1       Running   0          3mser
 
 ```
 
+##
 
+```
+[node1 istio-1.0.0]$ kubectl apply -f <(istioctl kube-inject -f samples/bookinfo/platform/kube/bookinfo.yaml)service "details" created
+deployment "details-v1" createdservice "ratings" created
+deployment "ratings-v1" created
+service "reviews" created
+deployment "reviews-v1" created
+deployment "reviews-v2" created
+deployment "reviews-v3" created
+service "productpage" created
+deployment "productpage-v1" created
+[node1 istio-1.0.0]$
+```
+
+##
+
+```
+[node1 istio-1.0.0]$ kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+gateway "bookinfo-gateway" createdvirtualservice "bookinfo" created
+[node1 istio-1.0.0]$
+```
+
+##
+
+```
+[node1 istio-1.0.0]$ kubectl get poNAME                              READY     STATUS    RESTARTS   AGE
+details-v1-6d4f8689d5-gb5dd       2/2       Running   0          1mproductpage-v1-85cd74dd8f-tlkj2   2/2       Running   0          1m
+ratings-v1-868f55c9b9-pv6mt       2/2       Running   0          1mreviews-v1-5d4f7d4dc7-mcdtm       2/2       Running   0          1m
+reviews-v2-d78b44757-d6crh        2/2       Running   0          1mreviews-v3-ddbc78677-wbhtv        2/2       Running   0          1m
+[node1 istio-1.0.0]$
+
+```
+
+##
+
+```
+[node1 istio-1.0.0]$ kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yamldestinationrule "productpage" created
+destinationrule "reviews" created
+destinationrule "ratings" created
+destinationrule "details" created
+[node1 istio-1.0.0]$
+
+```
 
                          
 
