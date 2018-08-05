@@ -57,5 +57,43 @@ I0805 10:14:10.907305   32509 kernel_validator.go:96] Validating kernel config
 [preflight/images] Pulling images required for setting up a Kubernetes cluster
 [preflight/images] This might take a minute or two, depending on the speed of your internet connection
 [preflight/images] You can also perform this action in beforehand using 'kubeadm config images pull
+
+[markmaster] Marking the node instance-1 as master by adding the taints [node-role.kubernetes.io/ma
+ster:NoSchedule]
+[patchnode] Uploading the CRI Socket information "/var/run/dockershim.sock" to the Node API object 
+"instance-1" as an annotation
+[bootstraptoken] using token: tq1bra.gvb47is9ipkwcrsk
+[bootstraptoken] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nod
+es to get long term certificate credentials
+[bootstraptoken] configured RBAC rules to allow the csrapprover controller automatically approve CS
+Rs from a Node Bootstrap Token
+[bootstraptoken] configured RBAC rules to allow certificate rotation for all node client certificat
+es in the cluster
+[bootstraptoken] creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+Your Kubernetes master has initialized successfully!
+To start using your cluster, you need to run the following as a regular user:
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+You can now join any number of machines by running the following on each node
+as root:
+  kubeadm join 10.140.0.2:6443 --token tq1bra.gvb47is9ipkwcrsk --discovery-token-ca-cert-hash sha25
+6:fbe33cb67b07b4261c71b642fc21f9f36f53e6e9bf7f5ffa37665915244adfc0
+root@instance-1:~# 
+
 ```
+
+```
+CaptainsBay==>kubectl apply -f https://git.io/weave-kube
+serviceaccount/weave-net created
+daemonset.extensions/weave-net created
+CaptainsBay==>
+```
+
+
 
