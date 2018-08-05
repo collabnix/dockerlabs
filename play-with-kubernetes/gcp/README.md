@@ -1,5 +1,7 @@
 # How to install 3 Node Kubernetes Cluster on Google Cloud Platform - Hard Way?
 
+## Setting up Kubernetes Master Node
+
 ```
 apt-get update && apt-get install -y apt-transport-https
 
@@ -98,6 +100,44 @@ serviceaccount/weave-net created
 daemonset.extensions/weave-net created
 CaptainsBay==>
 ```
+
+## Setting up Kubernetes Worker Node
+
+Follow the above steps to install k8s components.
+
+## Joining the node
+
+```
+ 1. Run 'modprobe -- ' to load missing kernel modules;
+2. Provide the missing builtin kernel ipvs support
+I0805 10:25:38.089798    6704 kernel_validator.go:81] Validating kernel version
+I0805 10:25:38.090020    6704 kernel_validator.go:96] Validating kernel config
+        [WARNING SystemVerification]: docker version is greater than the most recently validated ver
+sion. Docker version: 18.06.0-ce. Max validated version: 17.03
+[discovery] Trying to connect to API Server "10.140.0.2:6443"
+[discovery] Created cluster-info discovery client, requesting info from "https://10.140.0.2:6443"
+[discovery] Requesting info from "https://10.140.0.2:6443" again to validate TLS against the pinned 
+public key
+[discovery] Cluster info signature and contents are valid and TLS certificate validates against pinn
+ed roots, will use API Server "10.140.0.2:6443"
+[discovery] Successfully established connection with API Server "10.140.0.2:6443"
+[kubelet] Downloading configuration for the kubelet from the "kubelet-config-1.11" ConfigMap in the 
+kube-system namespace
+[kubelet] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[preflight] Activating the kubelet service
+[tlsbootstrap] Waiting for the kubelet to perform the TLS Bootstrap...
+[patchnode] Uploading the CRI Socket information "/var/run/dockershim.sock" to the Node API object "
+instance-2" as an annotation
+This node has joined the cluster:
+* Certificate signing request was sent to master and a response
+  was received.
+* The Kubelet was informed of the new secure connection details.
+Run 'kubectl get nodes' on the master to see this node join the cluster.
+```
+
+
+
 
 
 
