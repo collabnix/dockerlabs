@@ -152,11 +152,33 @@ root@system-mining: kubeadm token generate
 206b7b.a815ac87abb0ea03
 ```
 
+## Setting up Dashboard
+
+```
+CaptainsBay==>kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master
+/src/deploy/recommended/kubernetes-dashboard.yaml
+secret/kubernetes-dashboard-certs created
+serviceaccount/kubernetes-dashboard created
+role.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+deployment.apps/kubernetes-dashboard created
+service/kubernetes-dashboard created
+CaptainsBay==>
+
+```
+
 ##
 
 ```
+
 ```
 
+##
+
+```
+
+
+```
 
 
 
