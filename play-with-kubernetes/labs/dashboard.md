@@ -24,3 +24,10 @@ Exiting via interrupt: 2
       "clientCIDR": "0.0.0.0/0",
       "serverAddr
   ```
+  
+  ## How to know Public IP within a Cloud Instance
+  
+  ```
+  
+[node1 labs]$ wget http://ipinfo.io/ip -qO -
+```
