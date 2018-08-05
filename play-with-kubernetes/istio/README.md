@@ -6,9 +6,15 @@ Open https://labs.play-with-k8s.com
 
 # Initialize cluster master node
 
-Click on "Create New Instance" to open up new sandbox environment.
+Click on "Add New Instance" to open up new sandbox environment.
 
 ## Bootstrapping the Cluster Master Node
+
+Method-1: Execute the script ```bootstrap.sh``` directly to setup Master Node
+
+OR
+
+Method-2:
 
 Let us initialize cluster master node:
 
