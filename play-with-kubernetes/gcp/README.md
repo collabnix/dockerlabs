@@ -136,6 +136,26 @@ This node has joined the cluster:
 Run 'kubectl get nodes' on the master to see this node join the cluster.
 ```
 
+## Verifying the Nodes
+
+```
+CaptainsBay==>kubectl get nodes
+NAME         STATUS     ROLES     AGE       VERSION
+instance-1   NotReady   master    10m       v1.11.1
+instance-2   NotReady   <none>    42s       v1.11.1
+```
+
+## Regenerating the token
+
+```
+root@system-mining: kubeadm token generate  
+206b7b.a815ac87abb0ea03
+```
+
+##
+
+```
+```
 
 
 
