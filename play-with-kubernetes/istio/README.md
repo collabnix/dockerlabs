@@ -19,6 +19,10 @@ cd docker101/play-with-kubernetes/istio/
 
 Execute the script ```bootstrap.sh``` directly to setup Master Node
 
+```
+clear
+sh bootstrap.sh
+```
 
 ## Configuring Kubernetes Networking
 
