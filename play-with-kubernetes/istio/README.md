@@ -24,6 +24,8 @@ clear
 sh bootstrap.sh
 ```
 
+Wait for 1 minute time till it gets completed.
+
 ## Configuring Kubernetes Networking
 
 ```
