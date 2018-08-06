@@ -10,6 +10,13 @@ Click on "Add New Instance" to open up new sandbox environment.
 
 ## Bootstrapping the Cluster Master Node
 
+Clone the Repository:
+
+```
+git clone https://github.com/ajeetraina/docker101
+cd docker101/play-with-kubernetes/istio/
+```
+
 Execute the script ```bootstrap.sh``` directly to setup Master Node
 
 
