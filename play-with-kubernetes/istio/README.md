@@ -26,13 +26,19 @@ sh bootstrap.sh
 
 Wait for 1 minute time till it gets completed.
 
+Copy the command starting with ```kubeadm join ....```. We will need it to be run on the worker node.
+
 
 ## Setting up Worker Node
 
-Click on "Add New Instance" and run the below command on the first worker node
+Click on "Add New Instance" and paste the last kubeadm command on this fresh new worker node.
 
 ```
-[node2 ~]$ kubeadm join --token 4f924f.14eb7618a20d2ece 192.168.0.8:6443 --discovery-token-ca-cert-hash  sha256:a5c25aa4573e06a0c11b11df23c8f85c95bae36cbb07d5e7879d9341a3ec67b3[kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.
+[node2 ~]$ kubeadm join --token 4f924f.14eb7618a20d2ece 192.168.0.8:6443 --discovery-token-ca-cert-hash  sha256:a5c25aa4573e06a0c11b11df23c8f85c95bae36cbb07d5e7879d9341a3ec67b3```
+
+You will see the below output:
+```
+[kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.
 [preflight] Skipping pre-flight checks[discovery] Trying to connect to API Server "192.168.0.8:6443"
 [discovery] Created cluster-info discovery client, requesting info from "https://192.168.0.8:6443"
 [discovery] Requesting info from "https://192.168.0.8:6443" again to validate TLS against the pinned public key
