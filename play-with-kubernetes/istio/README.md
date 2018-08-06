@@ -405,19 +405,8 @@ destinationrule "details" created
 [node1 istio-1.0.0]$
 
 ```
-## Setting up K8s Dashboard
 
-```
-[node1 istio-1.0.0]$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
-secret "kubernetes-dashboard-certs" created
-serviceaccount "kubernetes-dashboard" created
-role "kubernetes-dashboard-minimal" created
-rolebinding "kubernetes-dashboard-minimal" created
-deployment "kubernetes-dashboard" created
-service "kubernetes-dashboard
-```
-
-## Allowing it accessible
+## Verifying Istio Services
 
 ```
 [node1 istio-1.0.0]$ kubectl get svc -n istio-system
@@ -438,104 +427,4 @@ zipkin                     ClusterIP      10.104.166.92    <none>        9411/TC
 [node1 istio-1.0.0]$ curl 10.98.164.134:9090
 <a href="/graph">Found</a>.
 
-[node1 istio-1.0.0]$ kubectl proxy
-Starting to serve on 127.0.0.1:8001
-
-
-^C
-[node1 istio-1.0.0]$ kubectl proxy &
-[1] 5397
-[node1 istio-1.0.0]$ Starting to serve on 127.0.0.1:8001
-
-[node1 istio-1.0.0]$
-[node1 istio-1.0.0]$ curl 127.0.0.1:8001
-{
-  "paths": [
-    "/api",
-    "/api/v1",
-    "/apis",
-    "/apis/",
-    "/apis/apiextensions.k8s.io",
-    "/apis/apiextensions.k8s.io/v1beta1",
-    "/apis/apiregistration.k8s.io",
-    "/apis/apiregistration.k8s.io/v1beta1",
-    "/apis/apps",
-    "/apis/apps/v1beta1",
-    "/apis/apps/v1beta2",
-    "/apis/authentication.istio.io",
-    "/apis/authentication.istio.io/v1alpha1",
-    "/apis/authentication.k8s.io",
-    "/apis/authentication.k8s.io/v1",
-    "/apis/authentication.k8s.io/v1beta1",
-    "/apis/authorization.k8s.io",
-    "/apis/authorization.k8s.io/v1",
-    "/apis/authorization.k8s.io/v1beta1",
-    "/apis/autoscaling",
-    "/apis/autoscaling/v1",
-    "/apis/autoscaling/v2beta1",
-    "/apis/batch",
-    "/apis/batch/v1",
-    "/apis/batch/v1beta1",
-    "/apis/certificates.k8s.io",
-    "/apis/certificates.k8s.io/v1beta1",
-    "/apis/config.istio.io",
-    "/apis/config.istio.io/v1alpha2",
-    "/apis/extensions",
-    "/apis/extensions/v1beta1",
-    "/apis/networking.istio.io",
-    "/apis/networking.istio.io/v1alpha3",
-    "/apis/networking.k8s.io",
-    "/apis/networking.k8s.io/v1",
-    "/apis/policy",
-    "/apis/policy/v1beta1",
-    "/apis/rbac.authorization.k8s.io",
-    "/apis/rbac.authorization.k8s.io/v1",
-    "/apis/rbac.authorization.k8s.io/v1beta1",
-    "/apis/rbac.istio.io",
-    "/apis/rbac.istio.io/v1alpha1",
-    "/apis/storage.k8s.io",
-    "/apis/storage.k8s.io/v1",
-    "/apis/storage.k8s.io/v1beta1",
-    "/healthz",
-    "/healthz/autoregister-completion",
-    "/healthz/etcd",
-    "/healthz/ping",
-    "/healthz/poststarthook/apiservice-openapi-controller",
-    "/healthz/poststarthook/apiservice-registration-controller",
-    "/healthz/poststarthook/apiservice-status-available-controller",
-    "/healthz/poststarthook/bootstrap-controller",
-    "/healthz/poststarthook/ca-registration",
-    "/healthz/poststarthook/generic-apiserver-start-informers",
-    "/healthz/poststarthook/kube-apiserver-autoregistration",
-    "/healthz/poststarthook/rbac/bootstrap-roles",
-    "/healthz/poststarthook/start-apiextensions-controllers",
-    "/healthz/poststarthook/start-apiextensions-informers",
-    "/healthz/poststarthook/start-kube-aggregator-informers",
-    "/healthz/poststarthook/start-kube-apiserver-informers",
-    "/logs",
-    "/metrics",
-    "/swagger-2.0.0.json",
-    "/swagger-2.0.0.pb-v1",
-    "/swagger-2.0.0.pb-v1.gz",
-    "/swagger.json",
-    "/swaggerapi",
-    "/ui",
-    "/ui/",
-    "/version"
-  ]
-}[node1 istio-1.0.0]$
 ```
-
-
-
-                         
-
-
-
-
-
-
-
-
-
-
