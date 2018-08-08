@@ -11,6 +11,7 @@ You need to set the -s daemon option, for example -s=overlay or -s=devicemapper 
 # Error Mesaage
 
 [root@ax ~]# docker info
+
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? 
 
 # How to identify the issue
