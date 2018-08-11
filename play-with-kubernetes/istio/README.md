@@ -387,7 +387,7 @@ zipkin                     ClusterIP      10.104.166.92    <none>        9411/TC
 <a href="/graph">Found</a>.
 
 ```
-For Prometheus
+## For Prometheus
 ```
 [node1 istio-1.0.0]$ kubectl delete svc  prometheus  -n istio-system
 service "prometheus" deleted
@@ -398,10 +398,29 @@ kubectl create service -n istio-system  nodeport prometheus --tcp=9090 --node-po
 service "prometheus" created
 [node1 istio-1.0.0]$
 ```
-For Grafana:
+## For Grafana:
 ```
 [node1 istio-1.0.0]$ kubectl delete svc grafana  -n istio-systemservice "grafana" deleted
-[node1 istio-1.0.0]$ kubectl create service -n istio-system  nodeport grafana --tcp=3000 --node-port=30004service "grafana" created
+[node1 istio-1.0.0]$ kubectl create service -n istio-system  nodeport grafana --tcp=3000 --node-port=30004
 [node1 istio-1.0.0]$
+```
+
+## For Grafana:
+```
+[node1 istio-1.0.0]$ kubectl delete svc servicegraph  -n istio-systems
+[node1 istio-1.0.0]$ kubectl create service -n istio-system  nodeport servicegraph --tcp=8088 --node-port=30005
+[node1 istio-1.0.0]$
+```
+
+```
+[node1 istio]$ kubectl -n istio-system get svc tracing
+NAME      TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+tracing   ClusterIP   10.102.57.45   <none>        80/TCP    9m[node1 istio]$ curl 10.102.57.45
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="cache-control" content="max-age=0"/><meta http-equiv="cache-control" content="no-cache"/><meta http-equiv="expires" content="0"/><meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/><meta http-equiv="pragma" content="no-cache"/><base href="/" data-inject-target="BASE_URL"/><link rel="shortcut icon" href="./favicon.ico"><title>Jaeger UI</title><script>// Jaeger UI config data is embedded by the query-service. This is
+      // later merged with defaults into the redux `state.config` via      // src/utils/config/get-config.js. The default provided by the query
+      // service should be an empty object or it can leave `DEFAULT_CONFIG`      // unchanged.
+      function getJaegerUiConfig() {        const DEFAULT_CONFIG = null;
+        const JAEGER_CONFIG = DEFAULT_CONFIG;        return JAEGER_CONFIG;
+      }</script><link href="./static/css/main.160e898e.css" rel="stylesheet"></head><body><div id="jaeger-ui-root"></div><script type="text/javascript" src="./static/js/main.4f0c2202.js"></script></body></html>[node1 istio]$
 ```
 
