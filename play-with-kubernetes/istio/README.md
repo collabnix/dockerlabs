@@ -506,8 +506,57 @@ reviews       ClusterIP   10.105.180.31   <none>        9080/TCP   5m
 
 ```
 
+## Inspecting the Istio Ingress gateway
+
+```
+[node1 istio]$ kubectl -n istio-system exec -it istio-ingressgateway-7565c689cb-j8qrh bash
+root@istio-ingressgateway-7565c689cb-j8qrh:/#
+root@istio-ingressgateway-7565c689cb-j8qrh:/# ls
+bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
+boot  etc  lib   media  opt  root  sbin  sys  usr
+root@istio-ingressgateway-7565c689cb-j8qrh:/# curl localhost:15000/help
+admin commands are:
+  /: Admin home page
+  /certs: print certs on machine
+  /clusters: upstream cluster status
+  /config_dump: dump current Envoy configs (experimental)
+  /cpuprofiler: enable/disable the CPU profiler
+  /healthcheck/fail: cause the server to fail health checks
+  /healthcheck/ok: cause the server to pass health checks
+  /help: print out list of admin commands
+  /hot_restart_version: print the hot restart compatibility version
+  /listeners: print listener addresses
+  /logging: query/change logging levels
+  /quitquitquit: exit the server
+  /reset_counters: reset all counters to zero
+  /runtime: print runtime values
+  /runtime_modify: modify runtime values
+  /server_info: print server version/status information
+  /stats: print server stats
+  /stats/prometheus: print server stats in prometheus format
+root@istio-ingressgateway-7565c689cb-j8qrh:/#
+```
+
+##
+
+```
+curl localhost:15000/help
+curl localhost:15000/stats
+curl localhost:15000/listeners
+curl localhost:15000/routes
+curl localhost:15000/clusters
+curl localhost:15000/server_info
+
+
+```
+
 ##
 
 ```
 
+```
+
+##
+
+```
 ```
