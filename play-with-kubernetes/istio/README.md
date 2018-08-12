@@ -461,3 +461,53 @@ deployment "productpage-v1" created
 [node1 istio]$
 ```
 
+Verify that previous deployments are all in a state of AVAILABLE before continuing. Do not procede until they are up and running.
+
+```
+watch kubectl get deployment
+
+Every 2.0s: kubectl get deployment                                                                                  Sun Aug 12 15:27:03 2018
+
+NAME             DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+details-v1       1         1         1            1           3m
+productpage-v1   1         1         1            1           3m
+ratings-v1       1         1         1            1           3m
+reviews-v1       1         1         1            1           3m
+reviews-v2       1         1         1            1           3m
+reviews-v3       1         1         1            1           3m
+
+```
+
+## Inspect the details of the pods
+
+```
+Every 2.0s: kubectl get po                                                                                          Sun Aug 12 15:28:20 2018
+
+NAME                              READY     STATUS    RESTARTS   AGE
+details-v1-6d4f8689d5-dzh9g       2/2       Running   0          4m
+productpage-v1-85cd74dd8f-6jgtj   2/2       Running   0          4m
+ratings-v1-868f55c9b9-8vlxt       2/2       Running   0          4m
+reviews-v1-5d4f7d4dc7-bnsmv       2/2       Running   0          4m
+reviews-v2-d78b44757-bjh72        2/2       Running   0          4m
+reviews-v3-ddbc78677-xdq57        2/2       Running   0          4m
+
+```
+##  Details of the services:
+
+```
+Every 2.0s: kubectl get svc                                                                                         Sun Aug 12 15:28:51 2018
+
+NAME          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+details       ClusterIP   10.97.7.233     <none>        9080/TCP   5m
+kubernetes    ClusterIP   10.96.0.1       <none>        443/TCP    16m
+productpage   ClusterIP   10.102.50.146   <none>        9080/TCP   5m
+ratings       ClusterIP   10.98.10.229    <none>        9080/TCP   5m
+reviews       ClusterIP   10.105.180.31   <none>        9080/TCP   5m
+
+```
+
+##
+
+```
+
+```
