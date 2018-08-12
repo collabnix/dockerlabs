@@ -405,7 +405,7 @@ service "prometheus" created
 [node1 istio-1.0.0]$
 ```
 
-## For Grafana:
+## For Servicegraph:
 ```
 [node1 istio-1.0.0]$ kubectl delete svc servicegraph  -n istio-systems
 [node1 istio-1.0.0]$ kubectl create service -n istio-system  nodeport servicegraph --tcp=8088 --node-port=30005
