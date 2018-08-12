@@ -400,7 +400,7 @@ service "prometheus" created
 ```
 ## For Grafana:
 ```
-[node1 istio-1.0.0]$ kubectl delete svc grafana  -n istio-systemservice "grafana" deleted
+[node1 istio-1.0.0]$ kubectl delete svc grafana  -n istio-system
 [node1 istio-1.0.0]$ kubectl create service -n istio-system  nodeport grafana --tcp=3000 --node-port=30004
 [node1 istio-1.0.0]$
 ```
@@ -422,5 +422,42 @@ tracing   ClusterIP   10.102.57.45   <none>        80/TCP    9m[node1 istio]$ cu
       function getJaegerUiConfig() {        const DEFAULT_CONFIG = null;
         const JAEGER_CONFIG = DEFAULT_CONFIG;        return JAEGER_CONFIG;
       }</script><link href="./static/css/main.160e898e.css" rel="stylesheet"></head><body><div id="jaeger-ui-root"></div><script type="text/javascript" src="./static/js/main.4f0c2202.js"></script></body></html>[node1 istio]$
+```
+
+## Enabling PATH for istioctl
+
+```
+export PATH="$PATH:/root/docker101/play-with-kubernetes/istio/istio-1.0.0/bin"
+```
+## Verifying Istioctl version
+
+```
+[node1 istio]$ istioctl version
+Version: 1.0.0
+GitRevision: 3a136c90ec5e308f236e0d7ebb5c4c5e405217f4
+User: root@71a9470ea93c
+Hub: gcr.io/istio-release
+GolangVersion: go1.10.1
+BuildStatus: Clean
+```
+
+```
+[node1 istio]$ curl https://raw.githubusercontent.com/istio/istio/release-1.0/samples/bookinfo/platform/kube/bookinfo.yaml | istioctl kube-inject --debug -f - > newBookInfo.yaml
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Flag --debug has been deprecated, Use --injectConfigMapName or --injectConfigFile instead
+100  4359  100  4359    0     0  21235      0 --:--:-- --:--:-- --:--:-- 21263
+[node1 istio]$ kubectl apply -f newBookInfo.yaml
+service "details" created
+deployment "details-v1" created
+service "ratings" created
+deployment "ratings-v1" created
+service "reviews" created
+deployment "reviews-v1" created
+deployment "reviews-v2" created
+deployment "reviews-v3" created
+service "productpage" created
+deployment "productpage-v1" created
+[node1 istio]$
 ```
 
