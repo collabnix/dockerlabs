@@ -550,10 +550,30 @@ curl localhost:15000/server_info
 
 ```
 
-##
+## Cleaning Up
 
 ```
-
+[node1 istio-1.0.0]$ samples/bookinfo/platform/kube/cleanup.sh
+namespace ? [default]
+using NAMESPACE=default
+No resources found.
+Deleted config: virtualservices bookinfo
+Deleted config: virtualservices helloworld
+Deleted config: gateways bookinfo-gateway
+Deleted config: gateways helloworld-gateway
+Application cleanup may take up to one minute
+service "details" deleted
+deployment "details-v1" deleted
+service "ratings" deleted
+deployment "ratings-v1" deleted
+service "reviews" deleted
+deployment "reviews-v1" deleted
+deployment "reviews-v2" deleted
+deployment "reviews-v3" deleted
+service "productpage" deleted
+deployment "productpage-v1" deleted
+Application cleanup successful
+[node1 istio-1.0.0]$
 ```
 
 ##
