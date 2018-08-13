@@ -6,13 +6,13 @@ Then Welcome ! You are at the right place.
 
 This repository brings you tutorials that help you get hands-on experience using Kubernetes. Here you will find a mix of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it correct ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on Play with K8s Platform. This is a free browser based learning platform for you. Kubernetes tools like kubeadm, kompose & kubectl are already installed for you. All you need is to get started.
 
-We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Docker. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
+We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Kubernetes. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
 
-Kubernetes for Beginners
+[[Kubernetes for Beginners]]
 
-Kubernetes for Intermediate
+[[Kubernetes for Intermediate]]
 
-Kubernetes for Advanced Users
+[[Kubernetes for Advanced Users]]
 
 ## Getting Started with Kubernetes
 
