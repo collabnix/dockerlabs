@@ -8,11 +8,11 @@ This repository brings you tutorials that help you get hands-on experience using
 
 We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Kubernetes. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
 
-[Kubernetes for Beginners](https://github.com/ajeetraina/docker101/play-with-kubernetes/tree/master/beginners/README.md)<br>
+[Kubernetes for Beginners](https://github.com/ajeetraina/docker101/blob/master/play-with-kubernetes/beginners/README.md)<br>
 
-[Kubernetes for Intermediate](https://github.com/ajeetraina/docker101/play-with-kubernetes/tree/master/intermediate/README.md)<br>
+[Kubernetes for Intermediate](https://github.com/ajeetraina/docker101/blob/master/play-with-kubernetes/intermediate/README.md)<br>
 
-[Kubernetes for Advanced Users](https://github.com/ajeetraina/docker101/play-with-kubernetes/tree/master/advanced/README.md)<br>
+[Kubernetes for Advanced Users](https://github.com/ajeetraina/docker101/play-with-kubernetes/advanced/README.md)<br>
 
 ## Getting Started with Kubernetes
 
