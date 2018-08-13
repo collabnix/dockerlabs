@@ -31,4 +31,6 @@ To get started with Multi-Node Kubernetes Cluster, you can use "Play with Kubern
 
 -  Open https://labs.play-with-kubernetes.com on your browser
 
-Click on Add Instances to build K8s cluster
+Click on Add Instances to setup first k8s node cluster
+
+
