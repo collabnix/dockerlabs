@@ -38,7 +38,7 @@ Click on Add Instances to setup first k8s node cluster
 ```
 git clone https://github.com/ajeetraina/docker101/
 cd docker101/play-with-kubernetes
-sh bootstrap.sh
+
 ```
 
 ## Bootstrapping the First Node Cluster
