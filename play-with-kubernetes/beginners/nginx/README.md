@@ -38,4 +38,11 @@ Commercial support is available at
 </html>
 [node1 ~]$
 ```
+You can access Nginx using URL:
+
+```
+http://ip172-18-0-10-bdom99pfea0000fqcvgg.direct.labs.play-with-k8s.com:30036/
+```
+
+
 
