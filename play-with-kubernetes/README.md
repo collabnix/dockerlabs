@@ -8,11 +8,11 @@ This repository brings you tutorials that help you get hands-on experience using
 
 We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Kubernetes. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
 
-[[Kubernetes for Beginners]]
+[Kubernetes for Beginners](https://github.com/ajeetraina/docker101/play-with-kubernetes/tree/master/beginners/README.md)<br>
 
-[[Kubernetes for Intermediate]]
+[Kubernetes for Intermediate](https://github.com/ajeetraina/docker101/play-with-kubernetes/tree/master/intermediate/README.md)<br>
 
-[[Kubernetes for Advanced Users]]
+[Kubernetes for Advanced Users](https://github.com/ajeetraina/docker101/play-with-kubernetes/tree/master/advanced/README.md)<br>
 
 ## Getting Started with Kubernetes
 
@@ -25,7 +25,7 @@ To get started with Kubernetes, follow the below steps:
 This will open up an easy to understand PWK tool which displays instances on the left hand side while terminal at the right hand side.
 Click on "Add Instance" to create your first K8s instance.
 
-## Getting Started with Docker Swarm
+## Getting Started with Multi-Node Kubernetes Swarm
 
 To get started with Multi-Node Kubernetes Cluster, you can use "Play with Kubernetes", shortly called PWK. It's free of cost and open for all. You get maximum of 5 instances of Linux system to play around with K8s cluster.
 
