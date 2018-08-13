@@ -112,9 +112,9 @@ kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   1h
 
 # Kubernetes-Ready Solution
 
-[[ Demonstrating WordPress under Multi-Node K8s Cluster]]
-[[ Demonstrting Istio under Multi-Node K8s Cluster]]
-[[ Building Multi-Node Hadoop Cluster under K8s Cluster]]
+[[ Demonstrating WordPress under Multi-Node K8s Cluster]]<br>
+[[ Demonstrting Istio under Multi-Node K8s Cluster]]<br>
+[[ Building Multi-Node Hadoop Cluster under K8s Cluster]]<br>
 
 
 
