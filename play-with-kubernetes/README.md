@@ -18,18 +18,8 @@ We recommend you start with one of our Beginners Guides, and then move to interm
 
 To get started with Kubernetes, follow the below steps:
 
-
-- Open Play with Kubernetes Platform.
-- Click on "Start"
-
-This will open up an easy to understand PWK tool which displays instances on the left hand side while terminal at the right hand side.
-Click on "Add Instance" to create your first K8s instance.
-
-## Getting Started with Multi-Node Kubernetes Swarm
-
-To get started with Multi-Node Kubernetes Cluster, you can use "Play with Kubernetes", shortly called PWK. It's free of cost and open for all. You get maximum of 5 instances of Linux system to play around with K8s cluster.
-
 -  Open https://labs.play-with-kubernetes.com on your browser
+
 
 Click on Add Instances to setup first k8s node cluster
 
