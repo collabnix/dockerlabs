@@ -113,7 +113,7 @@ kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   1h
 # Kubernetes-Ready Solution
 
 [ Demonstrating WordPress under Multi-Node K8s Cluster](https://github.com/ajeetraina/docker101/blob/master/play-with-kubernetes/intermediate/README.md)<br>
-[ Demonstrting Istio under Multi-Node K8s Cluster](https://github.com/ajeetraina/docker101/blob/master/play-with-kubernetes/advanced/README.md)<br>
+[ Deploying Nginx on Single Node K8s Cluster](https://github.com/ajeetraina/docker101/blob/master/play-with-kubernetes/beginner/nginx/README.md)<br>
 [ Building Multi-Node Hadoop Cluster under K8s Cluster](https://github.com/ajeetraina/docker101/blob/master/play-with-kubernetes/intermediate/README.md)<br>
 
 
