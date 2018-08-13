@@ -98,6 +98,18 @@ node5     NotReady   <none>    4s        v1.10.2
 [node1 ~]$
 ```
 
+```
+[node1 istio]$ kubectl get po
+No resources found.
+```
+
+```
+[node1 istio]$ kubectl get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   1h
+[node1 istio]$
+```
+
 
 
 
