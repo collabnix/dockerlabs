@@ -6,7 +6,7 @@ Then Welcome ! You are at the right place.
 
 This repository brings you tutorials that help you get hands-on experience using Docker. Here you will find a mix of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it correct ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](http://play-with-docker.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed for you. All you need is to get started.
 
-We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Docker. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
+
 
 ## Getting Started with Docker 
 
@@ -31,6 +31,8 @@ You get maximum of 5 instances of Linux system to play around with Docker.
 
 
 - Wait for few seconds to bring up 5-Node Swarm Cluster
+
+We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Docker. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
 
 [Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners/README.md)<br>
 
