@@ -8,13 +8,6 @@ This repository brings you tutorials that help you get hands-on experience using
 
 We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Docker. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
 
-[Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners/README.md)<br>
-
-[Docker for Intermediate](https://github.com/ajeetraina/docker101/tree/master/intermediate/README.md)<br>
-
-[Docker for Advanced Users](https://github.com/ajeetraina/docker101/tree/master/advanced/README.md)<br>
-
-
 ## Getting Started with Docker 
 
 To get started with Docker, follow the below steps:
@@ -39,7 +32,11 @@ You get maximum of 5 instances of Linux system to play around with Docker.
 
 - Wait for few seconds to bring up 5-Node Swarm Cluster
 
+[Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners/README.md)<br>
 
+[Docker for Intermediate](https://github.com/ajeetraina/docker101/tree/master/intermediate/README.md)<br>
+
+[Docker for Advanced Users](https://github.com/ajeetraina/docker101/tree/master/advanced/README.md)<br>
 
 ## A Bonus... Docker Swarm Visualizer 
 
