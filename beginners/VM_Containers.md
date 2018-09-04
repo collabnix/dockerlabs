@@ -35,4 +35,4 @@ Both Docker and LXC containers are user-space lightweight virtualization mechani
 
 ![vmcont](https://user-images.githubusercontent.com/16256583/40974226-895ccda6-68e4-11e8-800b-78586becb2b1.JPG)
 
-                                  [Next](https://github.com/ajeetraina/docker101/blob/master/beginners/intro-to-dockerfile-003.md)<br>
+                                [Next](https://github.com/ajeetraina/docker101/blob/master/beginners/intro-to-dockerfile-003.md)
