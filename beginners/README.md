@@ -24,8 +24,6 @@
 
 [What are different types of Networking in Docker](https://github.com/ajeetraina/docker101/blob/master/beginners/IntroToNetworkDocker.md#what-are-different-types-of-networking-in-docker)
 
-[How to choose container Networking Namespace](https://github.com/ajeetraina/docker101/blob/master/beginners/Chap08.md)
-
 [What is docker0 in terms of Docker Networking?](https://github.com/ajeetraina/docker101/blob/master/beginners/IntroToNetworkDocker.md#what-is-docker0-in-terms-of-docker-networking)
 
 [What is Bridge Networking? Any Example](https://github.com/ajeetraina/docker101/blob/master/beginners/Bridge-Networks.md)
