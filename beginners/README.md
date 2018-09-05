@@ -51,3 +51,4 @@
 
 [Introduction to Docker Volume](https://github.com/ajeetraina/docker101/blob/master/beginners/IntroToDockerVolume.md)<br>
 [Demonstrating Docker Volume](https://github.com/ajeetraina/docker101/blob/master/beginners/volume/demo-volume.md)
+[Defining Volume under Dockerfile])(https://github.com/ajeetraina/docker101/blob/master/beginners/volume/volume-dockerfile.md)<br>
