@@ -89,13 +89,12 @@ node2     Ready     <none>    1m        v1.10.2
 
 ```
 [node1 ~]$ kubectl get nodes
-NAME      STATUS     ROLES     AGE       VERSION
-node1     Ready      master    57m       v1.10.2
-node2     Ready      <none>    56m       v1.10.2
-node3     Ready      <none>    56m       v1.10.2
-node4     Ready      <none>    56m       v1.10.2
-node5     NotReady   <none>    7s        v1.10.2
-[node1 ~]$
+NAME      STATUS    ROLES     AGE       VERSION
+node1     Ready     master    58m       v1.10.2
+node2     Ready     <none>    57m       v1.10.2
+node3     Ready     <none>    57m       v1.10.2
+node4     Ready     <none>    57m       v1.10.2
+node5     Ready     <none>    54s       v1.10.2
 ```
 
 ```
