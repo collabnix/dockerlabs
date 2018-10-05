@@ -1,5 +1,15 @@
 # How to install Docker EE on Ubuntu 16.04?
 
+
+## Pre-requisite
+
+1. Remove Older Docker packages
+
+```
+$ sudo apt-get remove docker docker-engine docker-ce docker.io
+```
+
+
 ```
 dockerworxinc@instance-1:~$ cat /etc/os-release
 NAME="Ubuntu"
@@ -36,7 +46,7 @@ You can temporarily add a $DOCKER_EE_URL variable into your environment.
 This only persists until you log out of the session. Replace <DOCKER-EE-URL> with the URL you noted down in the prerequisites.
 
 ```
-DOCKER_EE_URL=stable-18.03
+DOCKER_EE_URL=stable-17.06
 76d"
 ```
 
@@ -85,25 +95,23 @@ apt install docker-ee
 ## Verifying Docker Version
 
 ```
-$ docker version
-Client:
- Version:      18.03.1-ee-2
- API version:  1.37
- Go version:   go1.10.2
- Git commit:   ebbcd7e
- Built:        Tue Jul 10 21:36:16 2018
+openusm@node-e1:~$ sudo docker version
+Client: Docker Enterprise Edition (EE) 2.0
+ Version:      17.06.2-ee-16
+ API version:  1.30
+ Go version:   go1.8.7
+ Git commit:   9ef4f0a
+ Built:        Thu Jul 26 16:41:28 2018
  OS/Arch:      linux/amd64
- Experimental: false
-Server:
+Server: Docker Enterprise Edition (EE) 2.0
  Engine:
-  Version:      18.03.1-ee-2
-  API version:  1.37 (minimum version 1.12)
-  Go version:   go1.10.2
-  Git commit:   ebbcd7e
-  Built:        Tue Jul 10 21:34:20 2018
+  Version:      17.06.2-ee-16
+  API version:  1.30 (minimum version 1.12)
+  Go version:   go1.8.7
+  Git commit:   9ef4f0a
+  Built:        Thu Jul 26 16:40:18 2018
   OS/Arch:      linux/amd64
   Experimental: false
-
 ```
 
 
