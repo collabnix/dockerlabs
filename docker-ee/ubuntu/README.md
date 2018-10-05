@@ -312,6 +312,13 @@ This node joined a swarm as a worker.
 By now, you should be able to see 1 Master and 2 Worker Node.
 
 
+## Installing Kubectl
+
+```
+ sudo snap install kubectl --classic
+kubectl 1.11.3 from Canonical✓ installed
+
+```
 
 
 ## Uninstalling 
