@@ -196,53 +196,118 @@ $ sudo chkconfig docker on
 
 ## Installing UCP
 
+Ensure that you have atleast 4GB RAM.
+
 ```
-docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   d
-ocker/ucp:3.0.2 install   --host-address 10.140.0.2   --interactive --force-minimums
-INFO[0000] Your engine version 18.03.1-ee-2, build ebbcd7e (4.15.0-1014-gcp) is compatible with UCP 3.0.2 (736cf3c) 
-WARN[0000] Your system does not have enough memory.  UCP suggests a minimum of 4.00 GB, but you only have 3.78 GB.  You
- may have unexpected errors. 
+sudo docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   docker/ucp:3
+.0.5 install   --host-address 10.140.0.4 --interactive
+INFO[0000] Your engine version 17.06.2-ee-16, build 9ef4f0a (4.15.0-1021-gcp) is compatible with UCP 3.0.5 (f588f8a) 
 Admin Username: ajeetraina
 Admin Password: 
 Confirm Admin Password: 
-INFO[0012] Pulling required images... (this may take a while) 
-INFO[0012] Pulling docker/ucp-auth:3.0.2                
-INFO[0019] Pulling docker/ucp-kube-compose:3.0.2        
-INFO[0026] Pulling docker/ucp-hyperkube:3.0.2           
-INFO[0052] Pulling docker/ucp-swarm:3.0.2               
-INFO[0059] Pulling docker/ucp-interlock-extension:3.0.2 
-INFO[0066] Pulling docker/ucp-kube-dns-sidecar:3.0.2    
-INFO[0074] Pulling docker/ucp-dsinfo:3.0.2              
-INFO[0087] Pulling docker/ucp-metrics:3.0.2             
-INFO[0097] Pulling docker/ucp-calico-node:3.0.2         
-INFO[0119] Pulling docker/ucp-etcd:3.0.2                
-INFO[0129] Pulling docker/ucp-interlock:3.0.2           
-INFO[0136] Pulling docker/ucp-agent:3.0.2               
-INFO[0144] Pulling docker/ucp-compose:3.0.2             
-INFO[0148] Pulling docker/ucp-kube-dns-dnsmasq-nanny:3.0.2 
-INFO[0158] Pulling docker/ucp-cfssl:3.0.2               
-INFO[0164] Pulling docker/ucp-pause:3.0.2               
-INFO[0169] Pulling docker/ucp-calico-cni:3.0.2          
-INFO[0183] Pulling docker/ucp-calico-kube-controllers:3.0.2 
-INFO[0192] Pulling docker/ucp-auth-store:3.0.2          
-INFO[0202] Pulling docker/ucp-controller:3.0.2          
-INFO[0217] Pulling docker/ucp-interlock-proxy:3.0.2     
-INFO[0222] Pulling docker/ucp-kube-dns:3.0.2            
-WARN[0230] None of the hostnames we'll be using in the UCP certificates [instance-1 127.0.0.1 172.17.0.1 10.140.0.2] contain a domain component.  Your generated certs may fail TLS validation unless you only use one of these shortnames or IPs to connect.  You can use the --san flag to add more aliases 
+INFO[0009] Pulling required images... (this may take a while) 
+INFO[0009] Pulling docker/ucp-metrics:3.0.5             
+INFO[0020] Pulling docker/ucp-swarm:3.0.5               
+INFO[0026] Pulling docker/ucp-calico-cni:3.0.5          
+INFO[0039] Pulling docker/ucp-hyperkube:3.0.5           
+INFO[0062] Pulling docker/ucp-dsinfo:3.0.5              
+INFO[0069] Pulling docker/ucp-etcd:3.0.5                
+INFO[0078] Pulling docker/ucp-pause:3.0.5               
+INFO[0082] Pulling docker/ucp-interlock-extension:3.0.5 
+INFO[0085] Pulling docker/ucp-auth:3.0.5                
+INFO[0091] Pulling docker/ucp-cfssl:3.0.5               
+INFO[0098] Pulling docker/ucp-kube-dns-sidecar:3.0.5    
+INFO[0105] Pulling docker/ucp-interlock-proxy:3.0.5     
+INFO[0109] Pulling docker/ucp-kube-compose:3.0.5        
+INFO[0116] Pulling docker/ucp-kube-dns:3.0.5            
+INFO[0123] Pulling docker/ucp-kube-dns-dnsmasq-nanny:3.0.5 
+INFO[0131] Pulling docker/ucp-controller:3.0.5 
+INFO[0145] Pulling docker/ucp-agent:3.0.5               
+INFO[0152] Pulling docker/ucp-calico-kube-controllers:3.0.5 
+INFO[0167] Pulling docker/ucp-calico-node:3.0.5         
+INFO[0188] Pulling docker/ucp-compose:3.0.5             
+INFO[0193] Pulling docker/ucp-interlock:3.0.5           
+WARN[0199] None of the hostnames we'll be using in the UCP certificates [node-e1 127.0.0.1 172.17.0.1 10.140.0.4] contain a domain component.  Your generated certs may fail TLS validation unless you only use one of these shortnames or IPs to connect.  You can use the --san flag to add more aliases 
 
 You may enter additional aliases (SANs) now or press enter to proceed with the above list.
 Additional aliases: 
-INFO[0000] Initializing a new swarm at 10.140.0.2     
+INFO[0000] Initializing a new swarm at 10.140.0.4       
+INFO[0013] Installing UCP with host address 10.140.0.4 - If this is incorrect, please specify an alternative address with the '--host-address' flag 
+INFO[0013] Deploying UCP Service...
+```
 
+## Troubleshooting
 
+```
+{"level":"error","msg":"unable to wait for addon calico to deploy: Timed out while waiting for kube node node-e1 to become re
+ady","time":"2018-10-05T15:44:40Z"}
+{"level":"fatal","msg":"unable to reconcile state of Kubernetes CNI Plugin component: unable to wait for addon calico to depl
+oy: Timed out while waiting for kube node node-e1 to become ready","time":"2018-10-05T15:44:40Z"}
+{"level":"info","msg":"ucp-reconcile container exited with status code: 1","time":"2018-10-05T15:44:40Z"}
+{"level":"info","msg":"Completed state reconciliation, system is ready.","time":"2018-10-05T15:44:40Z"}
+ERRO[0658] Unable to successfully setup local node. Run "docker logs ucp-reconcile" for more details 
+FATA[0658] reconcile exited with non-zero status: 1 
+```
 
+To fix this issue, increase 1vCPU to 2vCPU.
 
+```
+{"level":"info","msg":"successfully reconciled state of eNZi Worker x86_64 service component. This component will enable eNZi workers on x86_64 linux nodes if they are added to 
+the cluster","time":"2018-10-05T16:24:05Z"}
+{"level":"info","msg":"successfully reconciled state of Concurrent [eNZi Worker x86_64 service eNZi Worker s390x service] component","time":"2018-10-05T16:24:05Z"}
+{"level":"debug","msg":"Initialing UCP auth service configuration","time":"2018-10-05T16:24:06Z"}
+{"level":"debug","msg":"Writing out initial configuration to KV store","time":"2018-10-05T16:24:06Z"}
+{"level":"debug","msg":"creating new KV object","time":"2018-10-05T16:24:06Z"}
+{"level":"debug","msg":"Auth API component reconciled successfully","time":"2018-10-05T16:24:07Z"}
+{"level":"info","msg":"successfully reconciled state of eNZi API x86_64 service component. This component will enable eNZi API servers on x86_64 linux nodes if they are added to
+ the cluster","time":"2018-10-05T16:24:07Z"}
+{"level":"info","msg":"successfully reconciled state of Concurrent [eNZi API x86_64 service eNZi API s390x service] component","time":"2018-10-05T16:24:07Z"}
+{"level":"info","msg":"successfully reconciled state of [etcd Exclusive RethinkDB etcdmigration eNZi Secret Concurrent [Swarm-Classic Manager Concurrent [eNZi API x86_64 service
+ eNZi API s390x service] Concurrent [eNZi Worker x86_64 service eNZi Worker s390x service] Kubernetes Scheduler Kubernetes Controller Manager]] component","time":"2018-10-05T16:
+24:07Z"}
+{"level":"info","msg":"Reconciling state of component Concurrent [Kubernetes API Server UCP Controller]","time":"2018-10-05T16:24:07Z"}
+{"level":"debug","msg":"Node already has master config on disk","time":"2018-10-05T16:24:07Z"}
+{"level":"debug","msg":"Deploying UCP Controller Container","time":"2018-10-05T16:24:07Z"}
+{"level":"debug","msg":"Starting UCP controller","time":"2018-10-05T16:24:07Z"}
+{"level":"debug","msg":"creating new KV object","time":"2018-10-05T16:24:07Z"}
+{"level":"debug","msg":"Attempting to remove any previous ucp-kube-apiserver container, if it exists","time":"2018-10-05T16:24:07Z"}
+{"level":"info","msg":"Starting up ucp-kube-apiserver container","time":"2018-10-05T16:24:07Z"}
+{"level":"debug","msg":"Checking for liveness of https://10.140.0.4:443/_ping","time":"2018-10-05T16:24:07Z"}
+{"level":"info","msg":"successfully reconciled state of Kubernetes API Server component","time":"2018-10-05T16:24:08Z"}
+{"level":"debug","msg":"Connected to https://10.140.0.4:443/_ping","time":"2018-10-05T16:24:14Z"}
+{"level":"debug","msg":"Controller component reconciled successfully","time":"2018-10-05T16:24:14Z"}
+{"level":"info","msg":"successfully reconciled state of UCP Controller component","time":"2018-10-05T16:24:14Z"}
+{"level":"info","msg":"Reconciling state of component Kubernetes CNI Plugin","time":"2018-10-05T16:24:14Z"}
+{"level":"debug","msg":"No CNI Installer URL configuration detected, reconciling as an addon","time":"2018-10-05T16:24:14Z"}
+{"level":"info","msg":"Deploying addon calico","time":"2018-10-05T16:24:17Z"}
+{"level":"info","msg":"Waiting for kubernetes node node-e1 to become ready","time":"2018-10-05T16:24:22Z"}
+{"level":"info","msg":"Addon calico was deployed successfully","time":"2018-10-05T16:24:22Z"}
+{"level":"info","msg":"Reconciling state of component Kubernetes addons","time":"2018-10-05T16:24:22Z"}
+{"level":"info","msg":"Deploying addon compose","time":"2018-10-05T16:24:22Z"}
+{"level":"info","msg":"Deploying addon kubedns","time":"2018-10-05T16:24:27Z"}
+{"level":"info","msg":"Addon kubedns was deployed successfully","time":"2018-10-05T16:24:30Z"}
+{"level":"info","msg":"Addon compose was deployed successfully","time":"2018-10-05T16:24:30Z"}
+DEBU[0069] Changing admin temp password to given password 
+{"level":"info","msg":"Completed state reconciliation, system is ready.","time":"2018-10-05T16:24:30Z"}
+DEBU[0070] creating new KV object                       
+DEBU[0070] node-e1 (node a0cy301twurh8na6xngp6obmt) has joined the swarm classic cluster with URL tcp://10.140.0.4:12376 
+INFO[0070] Installation completed on node-e1 (node a0cy301twurh8na6xngp6obmt) 
+INFO[0070] UCP Instance ID: b92spaikb3jc6u6lt3yfwxtpk   
+INFO[0070] UCP Server SSL: SHA-256 Fingerprint=B4:5C:23:B7:81:10:90:BC:67:70:94:2B:41:05:C9:55:4F:6F:16:9F:E3:1E:A5:23:99:41:8A:A5:2C:86:69:E5 
+INFO[0070] Login to UCP at https://10.140.0.4:443       
+INFO[0070] Username: openusm                            
+INFO[0070] Password: (your admin password)
+```
+
+## Uninstalling 
 
 ```
 
-##
-
-```
-
+openusm@node-e1:~$ sudo docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   docker/ucp:
+3.0.5 uninstall-ucp  --id b92spaikb3jc6u6lt3yfwxtpk
+INFO[0000] Your engine version 17.06.2-ee-16, build 9ef4f0a (4.15.0-1021-gcp) is compatible with UCP 3.0.5 (f588f8a) 
+INFO[0000] Uninstalling UCP on each node...             
+INFO[0020] UCP has been removed from this cluster successfully. 
+INFO[0022] Removing UCP Services   
 
 ```
