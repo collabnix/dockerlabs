@@ -299,6 +299,21 @@ INFO[0070] Username: openusm
 INFO[0070] Password: (your admin password)
 ```
 
+## Adding Worker Nodes
+
+Now its time to add worker nodes. Install Docker EE using install-ee.sh under the same repository
+Ensure that you put correct DOCKER_EE_URL
+
+```
+openusm@node-e2:~$ sudo docker swarm join --token SWMTKN-1-XXX 10.140.0.4:2377
+This node joined a swarm as a worker.
+```
+
+By now, you should be able to see 1 Master and 2 Worker Node.
+
+
+
+
 ## Uninstalling 
 
 ```
