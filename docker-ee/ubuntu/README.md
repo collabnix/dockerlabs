@@ -364,8 +364,40 @@ node-e2    Ready     <none>    35m       v1.8.11-docker-8d637ae
 node-ee3   Ready     <none>    34m       v1.8.11-docker-8d637ae
 ```
 
+## Installing Istio
+
+```
+openusm@node-e1:~$ sudo curl -L https://git.io/getLatestIstio | sudo sh -
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  1456  100  1456    0     0   1743      0 --:--:-- --:--:-- --:--:--  1743
+Downloading istio-1.0.2 from https://github.com/istio/istio/releases/download/1.0.2/istio-1.0.2-linux.tar.gz ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   614    0   614    0     0    741      0 --:--:-- --:--:-- --:--:--   740
+100 14.1M  100 14.1M    0     0   823k      0  0:00:17  0:00:17 --:--:--  959k
+Downloaded into istio-1.0.2:
+LICENSE  README.md  bin  install  istio.VERSION  samples  tools
+Add /home/openusm/istio-1.0.2/bin to your path; e.g copy paste in your shell and/or ~/.profile:
+export PATH="$PATH:/home/openusm/istio-1.0.2/bin"
+```
+
+```
+openusm@node-e1:~/install-istio$ istioctl  version
+Version: 1.0.2
+GitRevision: d639408fded355fb906ef2a1f9e8ffddc24c3d64
+User: root@66ce69d4a51e
+Hub: gcr.io/istio-release
+GolangVersion: go1.10.1
+BuildStatus: Clean
+
+```
 
 
+
+
+Additional:
 
 ## Uninstalling 
 
