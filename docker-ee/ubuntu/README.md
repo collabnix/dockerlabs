@@ -320,6 +320,52 @@ kubectl 1.11.3 from Canonical✓ installed
 
 ```
 
+## Using kubectl with a Docker EE cluster
+
+Docker Enterprise Edition provides users unique certificates and keys to authenticate against the Docker and Kubernetes APIs. Instructions on how to download these certificates and how to configure kubectl to use them can be found in CLI-based access.
+
+Now you need to install k8s client bundle for kubectl to point it from local to UCP 
+
+```
+openusm@node-e1:~$ AUTHTOKEN=$(curl -sk -d '{"username":"openusm","password":"xxx"}' https://10.140.0.4/auth/login | j
+q -r .auth_token)
+openusm@node-e1:~$ sudo curl -k -H "Authorization: Bearer $AUTHTOKEN" https://10.140.0.4/api/clientbundle -o bundle.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  9857  100  9857    0     0   150k      0 --:--:-- --:--:-- --:--:--  150k
+openusm@node-e1:~$ unzip bundle.zip
+Archive:  bundle.zip
+ extracting: ca.pem                  
+ extracting: cert.pem                
+ extracting: key.pem                 
+ extracting: cert.pub                
+ extracting: env.ps1                 
+ extracting: env.cmd                 
+ extracting: kube.yml                
+ extracting: env.sh                  
+openusm@node-e1:~$ 
+
+```
+
+```
+node-e1:~$ eval "$(<env.sh)"
+Cluster "ucp_10.140.0.4:6443_openusm" set.
+User "ucp_10.140.0.4:6443_openusm" set.
+Context "ucp_10.140.0.4:6443_openusm" created.
+```
+
+Now kubectl should detect your kubernetes cluster
+
+```
+openusm@node-e1:~$ kubectl get nodes
+NAME       STATUS    ROLES     AGE       VERSION
+node-e1    Ready     master    1h        v1.8.11-docker-8d637ae
+node-e2    Ready     <none>    35m       v1.8.11-docker-8d637ae
+node-ee3   Ready     <none>    34m       v1.8.11-docker-8d637ae
+```
+
+
+
 
 ## Uninstalling 
 
