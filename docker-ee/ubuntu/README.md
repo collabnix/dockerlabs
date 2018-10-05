@@ -364,6 +364,18 @@ node-e2    Ready     <none>    35m       v1.8.11-docker-8d637ae
 node-ee3   Ready     <none>    34m       v1.8.11-docker-8d637ae
 ```
 
+```
+openusm@node-e1:~/install-istio/istio-1.0.2$ kubectl get po,svc,deploy
+NAME                                   READY     STATUS    RESTARTS   AGE
+po/nginx-deployment-76dcc8c697-2t4sq   1/1       Running   0          54m
+po/nginx-deployment-76dcc8c697-c5c65   1/1       Running   0          54m
+NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+svc/kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP        1h
+svc/nginx        NodePort    10.96.203.209   <none>        80:32768/TCP   53m
+NAME                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deploy/nginx-deployment   2         2         2            2           54m
+```
+
 ## Installing Istio
 
 ```
