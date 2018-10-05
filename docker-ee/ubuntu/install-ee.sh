@@ -1,7 +1,7 @@
-sudo apt-get remove docker docker-engine docker-ce docker.io
+sudo apt-get -y remove docker docker-engine docker-ce docker.io
 sudo apt autoremove
-sudo apt update
-sudo apt-get install \
+sudo apt update -y
+sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
