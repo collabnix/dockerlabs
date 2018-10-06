@@ -1,4 +1,4 @@
-# How to install Docker EE on Ubuntu 16.04?
+# Setting up Istio Mesh on 3 Node Kubernetes Cluster running Docker Enterprise Edition 2.0 on Google Cloud Platform
 
 
 ## Tested Infra
