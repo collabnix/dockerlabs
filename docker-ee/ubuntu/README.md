@@ -1,4 +1,4 @@
-# Setting up Istio Mesh on 3 Node Kubernetes Cluster running Docker Enterprise Edition 2.0 on Google Cloud Platform
+# Setting up Istio Mesh on 3 Node Kubernetes Cluster running Docker Enterprise Edition 2.0 over Google Cloud Platform
 
 
 ## Tested Infra
