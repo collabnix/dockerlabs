@@ -357,7 +357,7 @@ Context "ucp_10.140.0.4:6443_openusm" created.
 Now kubectl should detect your kubernetes cluster
 
 ```
-openusm@node-e1:~$ kubectl get nodes
+@node-e1:~$ kubectl get nodes
 NAME       STATUS    ROLES     AGE       VERSION
 node-e1    Ready     master    1h        v1.8.11-docker-8d637ae
 node-e2    Ready     <none>    35m       v1.8.11-docker-8d637ae
@@ -365,7 +365,7 @@ node-ee3   Ready     <none>    34m       v1.8.11-docker-8d637ae
 ```
 
 ```
-openusm@node-e1:~/install-istio/istio-1.0.2$ kubectl get po,svc,deploy
+@node-e1:~/install-istio/istio-1.0.2$ kubectl get po,svc,deploy
 NAME                                   READY     STATUS    RESTARTS   AGE
 po/nginx-deployment-76dcc8c697-2t4sq   1/1       Running   0          54m
 po/nginx-deployment-76dcc8c697-c5c65   1/1       Running   0          54m
@@ -406,6 +406,171 @@ BuildStatus: Clean
 
 ```
 
+## Configure Istio CRD
+
+Istio has extended Kubernetes via Custom Resource Definitions (CRD). Deploy the extensions by applying crds.yaml.
+
+
+```
+$kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml -n istio-system
+customresourcedefinition "envoyfilters.networking.istio.io" configured
+customresourcedefinition "policies.authentication.istio.io" created
+customresourcedefinition "meshpolicies.authentication.istio.io" created
+customresourcedefinition "httpapispecbindings.config.istio.io" configured
+customresourcedefinition "httpapispecs.config.istio.io" configured
+customresourcedefinition "quotaspecbindings.config.istio.io" configured
+customresourcedefinition "quotaspecs.config.istio.io" configured
+customresourcedefinition "rules.config.istio.io" configured
+customresourcedefinition "attributemanifests.config.istio.io" configured
+customresourcedefinition "bypasses.config.istio.io" configured
+customresourcedefinition "circonuses.config.istio.io" configured
+customresourcedefinition "deniers.config.istio.io" configured
+customresourcedefinition "fluentds.config.istio.io" configured
+customresourcedefinition "kubernetesenvs.config.istio.io" configured
+customresourcedefinition "listcheckers.config.istio.io" configured
+customresourcedefinition "memquotas.config.istio.io" configured
+customresourcedefinition "noops.config.istio.io" configured
+customresourcedefinition "opas.config.istio.io" configured
+customresourcedefinition "prometheuses.config.istio.io" configured
+customresourcedefinition "rbacs.config.istio.io" configured
+customresourcedefinition "redisquotas.config.istio.io" configured
+customresourcedefinition "servicecontrols.config.istio.io" configured
+customresourcedefinition "signalfxs.config.istio.io" configured
+customresourcedefinition "solarwindses.config.istio.io" configured
+customresourcedefinition "stackdrivers.config.istio.io" configured
+customresourcedefinition "statsds.config.istio.io" configured
+customresourcedefinition "stdios.config.istio.io" configured
+customresourcedefinition "apikeys.config.istio.io" configured
+customresourcedefinition "authorizations.config.istio.io" configured
+customresourcedefinition "checknothings.config.istio.io" configured
+customresourcedefinition "kuberneteses.config.istio.io" configured
+customresourcedefinition "listentries.config.istio.io" configured
+customresourcedefinition "logentries.config.istio.io" configured
+customresourcedefinition "edges.config.istio.io" configured
+customresourcedefinition "metrics.config.istio.io" configured
+customresourcedefinition "quotas.config.istio.io" configured
+customresourcedefinition "reportnothings.config.istio.io" configured
+customresourcedefinition "servicecontrolreports.config.istio.io" configured
+customresourcedefinition "tracespans.config.istio.io" configured
+customresourcedefinition "rbacconfigs.rbac.istio.io" configured
+customresourcedefinition "serviceroles.rbac.istio.io" configured
+customresourcedefinition "servicerolebindings.rbac.istio.io" configured
+customresourcedefinition "adapters.config.istio.io" configured
+customresourcedefinition "instances.config.istio.io" configured
+customresourcedefinition "templates.config.istio.io" configured
+customresourcedefinition "handlers.config.istio.io" configured
+@node-e1:~/istio-1.0.2$ 
+```
+
+
+## Install Istio with default mutual TLS authentication
+
+To Install Istio and enforce mutual TLS authentication by default, use the yaml istio-demo-auth.yaml:
+
+```
+kubectl apply -f install/kubernetes/istio-demo-auth.yaml --validate=false
+...
+...
+service "jaeger-query" unchanged
+service "jaeger-collector" unchanged
+service "jaeger-agent" unchanged
+service "zipkin" unchanged
+service "tracing" unchanged
+attributemanifest "istioproxy" created
+attributemanifest "kubernetes" created
+stdio "handler" created
+logentry "accesslog" created
+logentry "tcpaccesslog" created
+rule "stdio" created
+rule "stdiotcp" created
+metric "requestcount" created
+metric "requestduration" created
+metric "requestsize" created
+metric "responsesize" created
+metric "tcpbytesent" created
+metric "tcpbytereceived" created
+prometheus "handler" created
+rule "promhttp" created
+rule "promtcp" created
+kubernetesenv "handler" created
+rule "kubeattrgenrulerule" created
+rule "tcpkubeattrgenrulerule" created
+kubernetes "attributes" created
+destinationrule "istio-policy" created
+destinationrule "istio-telemetry" created
+Error from server (Invalid): error when creating "install/kubernetes/istio-demo-auth.yaml": Service "istio-ingressgateway" is invalid: spec.ports[0].nodePort: Invalid value: 313
+80: provided port is not in the valid range. The range of valid ports is 32768-35535
+[unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole, unable to recognize "install/kubernetes/istio-demo-a
+uth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k
+8s.io/, Kind=ClusterRole, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding, unable to recognize 
+"install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches
+ for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterR
+ole, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole, unable to recognize "install/kubernetes/istio-de
+mo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.
+io/, Kind=ClusterRole, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole, unable to recognize "install/k
+ubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.
+authorization.k8s.io/, Kind=ClusterRole, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole, unable to re
+cognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding, unable to recognize "install/kubernetes/istio-demo-auth.ya
+ml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/
+, Kind=ClusterRoleBinding, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding, unable to recognize
+ "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no
+ matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=
+ClusterRoleBinding, unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding, unable to recognize "insta
+ll/kubernetes/istio-demo-auth.yaml": no matches for admissionregistration.k8s.io/, Kind=MutatingWebhookConfiguration]
+```
+
+How to fix this issue?
+
+Change all ports above 30xxx to 33xxx
+
+```
+service "tracing" unchanged
+attributemanifest "istioproxy" configured
+attributemanifest "kubernetes" configured
+stdio "handler" configured
+logentry "accesslog" configured
+logentry "tcpaccesslog" configured
+rule "stdio" configured
+rule "stdiotcp" configured
+metric "requestcount" configured
+metric "requestduration" configured
+metric "requestsize" configured
+metric "responsesize" configured
+metric "tcpbytesent" configured
+metric "tcpbytereceived" configured
+prometheus "handler" configured
+rule "promhttp" configured
+rule "promtcp" configured
+kubernetesenv "handler" configured
+rule "kubeattrgenrulerule" configured
+rule "tcpkubeattrgenrulerule" configured
+kubernetes "attributes" configured
+destinationrule "istio-policy" configured
+destinationrule "istio-telemetry" configured
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRole
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for rbac.authorization.k8s.io/, Kind=ClusterRoleBinding
+unable to recognize "install/kubernetes/istio-demo-auth.yaml": no matches for admissionregistration.k8s.io/, Kind=MutatingWebhookConfiguration
+```
 
 
 
@@ -415,7 +580,7 @@ Additional:
 
 ```
 
-openusm@node-e1:~$ sudo docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   docker/ucp:
+@node-e1:~$ sudo docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   docker/ucp:
 3.0.5 uninstall-ucp  --id b92spaikb3jc6u6lt3yfwxtpk
 INFO[0000] Your engine version 17.06.2-ee-16, build 9ef4f0a (4.15.0-1021-gcp) is compatible with UCP 3.0.5 (f588f8a) 
 INFO[0000] Uninstalling UCP on each node...             
