@@ -365,6 +365,14 @@ node-ee3   Ready     <none>    34m       v1.8.11-docker-8d637ae
 ```
 
 ```
+ kubectl version
+Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.11", GitCommit:"1df6a8381669a6c753f79cb31ca2e3d57ee7c8a3", GitTreeState:"clean", BuildDate:"2018-04-05T17:24:
+03Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"8+", GitVersion:"v1.8.11-docker-8d637ae", GitCommit:"8d637aedf46b9c21dde723e29c645b9f27106fa5", GitTreeState:"clean", BuildDate:"2
+018-04-26T16:51:21Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+```
+
+```
 @node-e1:~/install-istio/istio-1.0.2$ kubectl get po,svc,deploy
 NAME                                   READY     STATUS    RESTARTS   AGE
 po/nginx-deployment-76dcc8c697-2t4sq   1/1       Running   0          54m
