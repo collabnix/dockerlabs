@@ -10,6 +10,7 @@ This guide uses the below configuration: -
 - 8 GB of RAM
 - 30 GB of available disk space
 - Installed Kubectl Version(installation steps below)
+- Google Cloud Platform
 
 ```
 Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.11", GitCommit:"1df6a8381669a6c753f79cb31ca2e3d57ee7c8a3", GitTreeState:"clean", BuildDate:"2018-04-05T17:24:
