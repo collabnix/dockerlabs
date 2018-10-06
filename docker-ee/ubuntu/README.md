@@ -1,7 +1,7 @@
 # How to install Docker EE on Ubuntu 16.04?
 
 
-## Pre-requisite
+## Tested Infra
 
 This guide uses the below configuration: - 
 
