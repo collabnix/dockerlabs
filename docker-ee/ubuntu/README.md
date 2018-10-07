@@ -387,6 +387,41 @@ Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.11", GitComm
 Server Version: version.Info{Major:"1", Minor:"8+", GitVersion:"v1.8.11-docker-8d637ae", GitCommit:"8d637aedf46b9c21dde723e29c645b9f27106fa5", GitTreeState:"clean", BuildDate:"2
 018-04-26T16:51:21Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
 ```
+## Verify K8s 
+
+```
+bernetes master is running at https://10.140.0.4:6443
+KubeDNS is running at https://10.140.0.4:6443/api/v1/namespaces/kube-system/services/kube-dns/proxy
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+```
+
+## Installing Helm
+```
+openusm@node-e1:~$ curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > install-helm.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7230  100  7230    0     0  17548      0 --:--:-- --:--:-- --:--:-- 17548
+openusm@node-e1:~$ chmod u+x install-helm.sh
+
+openusm@node-e1:~$ ./install-helm.sh
+Downloading https://kubernetes-helm.storage.googleapis.com/helm-v2.11.0-linux-amd64.tar.gz
+Preparing to install helm and tiller into /usr/local/bin
+helm installed into /usr/local/bin/helm
+tiller installed into /usr/local/bin/tiller
+Run 'helm init' to configure helm.
+openusm@node-e1:~$ helm init
+$HELM_HOME has been configured at /home/openusm/.helm.
+Warning: Tiller is already installed in the cluster.
+(Use --client-only to suppress this message, or --upgrade to upgrade Tiller to the current version.)
+Happy Helming!
+```
+
+## Installing Tiller Account
+
+```
+openusm@node-e1:~$ kubectl -n kube-system create serviceaccount tiller
+serviceaccount "tiller" created
+```
 
 ```
 @node-e1:~/install-istio/istio-1.0.2$ kubectl get po,svc,deploy
