@@ -1,4 +1,4 @@
-# Setting up Istio Mesh on 3 Node Kubernetes Cluster running Docker Enterprise Edition 2.0 over Google Cloud Platform
+# Setting up Docker EE 2.0 on Ubuntu 18.04 
 
 
 ## Tested Infra
