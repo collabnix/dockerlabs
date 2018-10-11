@@ -21,8 +21,8 @@ install_dockeree() {
    "deb [arch=amd64] $DOCKER_EE_URL/ubuntu \
    $(lsb_release -cs) \
    $DOCKER_EE_VERSION"
- sudo apt update
- sudo apt install docker-ee
+ sudo apt update -y
+ sudo apt install -y docker-ee
  apt-cache madison docker-ee
  
 EOF
@@ -36,6 +36,11 @@ EOF
   docker version
   docker info
   
+  # Docker Compose
+  sudo curl -L https://github.com/docker/compose/releases/download/1.19/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
+  ## show docker-compose version
+  docker-compose version
 }
 
 provision_dockeree() {
@@ -48,25 +53,22 @@ provision_dockeree() {
 
 provision_ucp() {
   # Install JRE (Only needed for running PSI locally)
-  sudo docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   docker/ucp:3.0.5 install   --host-address `hostname -i` --interactive
+  sudo docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   docker/ucp:3
+.0.5 install   --host-address `hostname -i` --interactive
 }
 
 install_kubectl() {
-  # Set the Kubernetes version as found in the UCP Dashboard or API
-  k8sversion=v1.8.11
-  # Get the kubectl binary.
-  curl -LO https://storage.googleapis.com/kubernetes-release/release/$k8sversion/bin/linux/amd64/kubectl
-  # Make the kubectl binary executable.
-  chmod +x ./kubectl
-  # Move the kubectl executable to /usr/local/bin.
-  sudo mv ./kubectl /usr/local/bin/kubectl
+  AUTHTOKEN=$(curl -sk -d '{"username":"collabnix","password":"password"}' https://`hostname -i`/auth/login | jq -r .auth_token)
+  sudo curl -k -H "Authorization: Bearer $AUTHTOKEN" https://`hostname -i`/api/clientbundle -o bundle.zip
+  unzip bundle.zip
+  eval "$(<env.sh)"
 }
 
 
 
 
 command=$1
-#shift
+shift
 case "$command" in
   build)          build ;;
   up)             up $@ ;;
