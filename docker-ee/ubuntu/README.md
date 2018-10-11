@@ -950,3 +950,22 @@ INFO[0020] UCP has been removed from this cluster successfully.
 INFO[0022] Removing UCP Services   
 
 ```
+
+## Troubleshooting
+
+In case you get the below error message
+
+```
+kubectl version
+Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.11", GitCommit:"1df6a8381669a6c753f79cb31ca2e3d57ee7c8a3", GitTreeState:"clean", BuildDate:"2018-04-05T17:24:
+03Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+```
+
+
+```
+openusm@master01:~/test/docker101/docker-ee/ubuntu$ eval "$(<env.sh)"
+Cluster "ucp_10.140.0.2:6443_collabnix" set.
+User "ucp_10.140.0.2:6443_collabnix" set.
+Context "ucp_10.140.0.2:6443_collabnix" created.
+```
