@@ -38,10 +38,10 @@ EOF
   
 }
 
-provision_docker() {
+provision_dockeree() {
   echo "Provisioning ..."
   prepare_ubuntu
-  install_docker
+  install_dockeree
   # Download the Dockerfile and docker-compose.yml
 
 }
