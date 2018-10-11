@@ -48,8 +48,7 @@ provision_dockeree() {
 
 provision_ucp() {
   # Install JRE (Only needed for running PSI locally)
-  sudo docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   docker/ucp:3
-.0.5 install   --host-address `hostname -i` --interactive
+  sudo docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   docker/ucp:3.0.5 install   --host-address `hostname -i` --interactive
 }
 
 install_kubectl() {
@@ -63,7 +62,7 @@ install_kubectl() {
 
 
 command=$1
-shift
+#shift
 case "$command" in
   build)          build ;;
   up)             up $@ ;;
