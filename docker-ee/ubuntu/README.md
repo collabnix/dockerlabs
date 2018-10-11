@@ -12,9 +12,11 @@ cd docker101/docker-ee/ubuntu
 
 ## Installing Docker EE
 
-### Get 1 Month Trial Version of Docker EE. You will get access to URL. Copy the section from URL starting from sub
+Get 1 Month Trial Version of Docker EE. You will get access to URL. Copy the section from URL starting from sub
 
+```
 https://storebits.docker.com/ee/ubuntu/sub-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx
+```
 
 ## Exporting URL
 
