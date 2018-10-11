@@ -1,6 +1,84 @@
 # Setting up Docker EE 2.0 on Ubuntu 18.04 
 
 
+## scripting Method
+
+# Cloning the Repository
+
+```
+git clone https://github.com/ajeetraina/docker101
+cd docker101/docker-ee/ubuntu
+```
+
+## Installing Docker EE
+
+### Get 1 Month Trial Version of Docker EE. You will get access to URL. Copy the section from URL starting from sub
+
+https://storebits.docker.com/ee/ubuntu/sub-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx
+
+## Exporting URL
+
+```
+export eeid=sub-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx
+```
+
+## Installing Docker EE
+
+```
+sudo sh bootstrap.sh provision_dockeree
+```
+
+## Setting up UCP
+
+```
+sudo sh bootstrap.sh provision_ucp
+```
+
+```
+openusm@master01:~/test/docker101/docker-ee/ubuntu$ sudo sh bootstrap.sh provision_ucp
+Unable to find image 'docker/ucp:3.0.5' locally
+3.0.5: Pulling from docker/ucp
+ff3a5c916c92: Pull complete 
+a52011fa0ead: Pull complete 
+87e35eb74a08: Pull complete 
+Digest: sha256:c8a609209183561de7779e5d32abc5fd9125944c67e8daf262dcbb9f2b1e44ff
+Status: Downloaded newer image for docker/ucp:3.0.5
+INFO[0000] Your engine version 17.06.2-ee-16, build 9ef4f0a (4.15.0-1021-gcp) is compatible with UCP 3.0.5 (f588f8a) 
+Admin Username: collabnix
+Admin Password: 
+Confirm Admin Password: 
+INFO[0043] Pulling required images... (this may take a while) 
+INFO[0043] Pulling docker/ucp-auth:3.0.5                
+INFO[0049] Pulling docker/ucp-hyperkube:3.0.5           
+INFO[0064] Pulling docker/ucp-etcd:3.0.5                
+INFO[0070] Pulling docker/ucp-interlock-proxy:3.0.5     
+INFO[0086] Pulling docker/ucp-agent:3.0.5               
+INFO[0092] Pulling docker/ucp-kube-compose:3.0.5        
+INFO[0097] Pulling docker/ucp-dsinfo:3.0.5              
+INFO[0104] Pulling docker/ucp-cfssl:3.0.5               
+INFO[0107] Pulling docker/ucp-kube-dns-sidecar:3.0.5    
+INFO[0112] Pulling docker/ucp-interlock:3.0.5           
+INFO[0115] Pulling docker/ucp-kube-dns:3.0.5            
+INFO[0120] Pulling docker/ucp-controller:3.0.5          
+INFO[0128] Pulling docker/ucp-pause:3.0.5               
+INFO[0132] Pulling docker/ucp-calico-kube-controllers:3.0.5 
+INFO[0136] Pulling docker/ucp-auth-store:3.0.5          
+INFO[0142] Pulling docker/ucp-calico-cni:3.0.5          
+INFO[0149] Pulling docker/ucp-calico-node:3.0.5         
+INFO[0158] Pulling docker/ucp-kube-dns-dnsmasq-nanny:3.0.5 
+INFO[0163] Pulling docker/ucp-compose:3.0.5             
+INFO[0167] Pulling docker/ucp-swarm:3.0.5               
+INFO[0173] Pulling docker/ucp-metrics:3.0.5             
+INFO[0179] Pulling docker/ucp-interlock-extension:3.0.5 
+WARN[0183] None of the hostnames we'll be using in the UCP certificates [master01 127.0.0.1 172.17.0.1 10.140.0.2] contain a domain component.  Your generated certs may fail TLS validation unless you only use one of these shortnames or IPs to connect.  You can use the --san flag to add more aliases 
+
+You may enter additional aliases (SANs) now or press enter to proceed with the above list.
+Additional aliases: 
+INFO[0000] Initializing a new swarm at 10.140.0.2 
+```
+
+## Manual Method
+
 ## Tested Infra
 
 This guide uses the below configuration: - 
