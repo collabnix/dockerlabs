@@ -75,7 +75,22 @@ WARN[0183] None of the hostnames we'll be using in the UCP certificates [master0
 You may enter additional aliases (SANs) now or press enter to proceed with the above list.
 Additional aliases: 
 INFO[0000] Initializing a new swarm at 10.140.0.2 
+Additional aliases: 
+INFO[0000] Initializing a new swarm at 10.140.0.2       
+INFO[0009] Installing UCP with host address 10.140.0.2 - If this is incorrect, please specify an alternative address with the '--host-address' flag 
+INFO[0009] Deploying UCP Service...                     
+INFO[0068] Installation completed on master01 (node slsvy00m1khejbo5itmupk034) 
+INFO[0068] UCP Instance ID: omz7lso0zpeyzk17gxubvz72r   
+INFO[0068] UCP Server SSL: SHA-256 Fingerprint=24:9B:51:4E:E2:F1:CD:1B:DE:E0:86:0F:DC:E7:29:B5:1E:0E:6B:0C:BF:24:CC:27:85:91:35:A1:6A:39:37:C6 
+INFO[0068] Login to UCP at https://10.140.0.2:443       
+INFO[0068] Username: collabnix                          
+INFO[0068] Password: (your admin password) 
 ```
+
+## Logging in Docker EE 
+
+By now, you should be able to login to Docker EE Window using browser. Upload the license and you should be good to 
+
 
 ## Manual Method
 
@@ -328,6 +343,8 @@ Additional aliases:
 INFO[0000] Initializing a new swarm at 10.140.0.4       
 INFO[0013] Installing UCP with host address 10.140.0.4 - If this is incorrect, please specify an alternative address with the '--host-address' flag 
 INFO[0013] Deploying UCP Service...
+You may enter additional aliases (SANs) now or press enter to proceed with the above list.
+
 ```
 
 ## Troubleshooting
