@@ -1,4 +1,5 @@
 #!/bin/bash
+
 prepare_ubuntu() {
   sudo apt-get -y remove docker docker-engine docker-ce docker.io
   sudo apt-get autoremove
@@ -9,6 +10,7 @@ prepare_ubuntu() {
     curl \
     software-properties-common
 }
+
 install_dockeree() {
   # Docker
   DOCKER_EE_URL=https://storebits.docker.com/ee/ubuntu/$eeid
@@ -32,32 +34,29 @@ EOF
   ## show information
   docker version
   docker info
-# Docker Compose
-  sudo curl -L https://github.com/docker/compose/releases/download/1.19/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-  sudo chmod +x /usr/local/bin/docker-compose
-  ## show docker-compose version
-
-  sudo docker-compose version
 }
+  
 provision_dockeree() {
   echo "Provisioning ..."
   prepare_ubuntu
   install_dockeree
   # Download the Dockerfile and docker-compose.yml
 }
+
 provision_ucp() {
   # Install JRE (Only needed for running PSI locally)
   sudo docker container run --rm -it --name ucp   -v /var/run/docker.sock:/var/run/docker.sock   docker/ucp:3.0.5 install   --host-address `hostname -i` --interactive
 }
+
 install_kubectl() {
- # Set the Kubernetes version as found in the UCP Dashboard or API
- k8sversion=v1.8.11
- # Get the kubectl binary.
- curl -LO https://storage.googleapis.com/kubernetes-release/release/$k8sversion/bin/linux/amd64/kubectl
- # Make the kubectl binary executable.
- chmod +x ./kubectl
- # Move the kubectl executable to /usr/local/bin.
- sudo mv ./kubectl /usr/local/bin/kubectl
+  # Set the Kubernetes version as found in the UCP Dashboard or API
+  k8sversion=v1.8.11
+  # Get the kubectl binary.
+  curl -LO https://storage.googleapis.com/kubernetes-release/release/$k8sversion/bin/linux/amd64/kubectl
+  # Make the kubectl binary executable.
+  chmod +x ./kubectl
+  # Move the kubectl executable to /usr/local/bin.
+  sudo mv ./kubectl /usr/local/bin/kubectl
 }
 
 command=$1
