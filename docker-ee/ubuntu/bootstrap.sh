@@ -32,8 +32,8 @@ EOF
   ## Add current user to docker group
   sudo usermod -aG docker $USER
   ## show information
-  docker version
-  docker info
+  sudo docker version
+  sudo docker info
 }
   
 provision_dockeree() {
