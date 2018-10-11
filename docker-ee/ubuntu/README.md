@@ -169,6 +169,21 @@ master01   Ready     master    20m       v1.8.11-docker-8d637ae
 ## Adding Worker Nodes
 
 
+```
+m@master01:~$ sudo docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS
+av668en5dinpin5jpi6ro0yfs     worker01            Ready               Active              
+k4grcnyl6vbf0z17bh67cz9l5     worker02            Ready               Active              
+slsvy00m1khejbo5itmupk034 *   master01            Ready               Active              Leader
+
+@master01:~$ kubectl get nodes
+NAME       STATUS     ROLES     AGE       VERSION
+master01   Ready      master    1h        v1.8.11-docker-8d637ae
+worker01   NotReady   <none>    28s       v1.8.11-docker-8d637ae
+worker02   Ready      <none>    3m        v1.8.11-docker-8d637ae
+openusm@master01:~$ 
+```
+
 
 # Manual Method(Step-by-Step)
 
