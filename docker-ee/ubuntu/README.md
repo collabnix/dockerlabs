@@ -184,6 +184,121 @@ worker02   Ready      <none>    3m        v1.8.11-docker-8d637ae
 openusm@master01:~$ 
 ```
 
+## Installing Helm
+
+```
+openusm@master01:~$ curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > install-helm.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7230  100  7230    0     0  17173      0 --:--:-- --:--:-- --:--:-- 17132
+openusm@master01:~$ chmod u+x install-helm.sh
+openusm@master01:~$ ./install-helm.sh
+Downloading https://kubernetes-helm.storage.googleapis.com/helm-v2.11.0-linux-amd64.tar.gz
+Preparing to install helm and tiller into /usr/local/bin
+helm installed into /usr/local/bin/helm
+tiller installed into /usr/local/bin/tiller
+Run 'helm init' to configure helm.
+openusm@master01:~$ helm init
+Creating /home/openusm/.helm 
+Creating /home/openusm/.helm/repository 
+Creating /home/openusm/.helm/repository/cache 
+Creating /home/openusm/.helm/repository/local 
+Creating /home/openusm/.helm/plugins 
+Creating /home/openusm/.helm/starters 
+Creating /home/openusm/.helm/cache/archive 
+Creating /home/openusm/.helm/repository/repositories.yaml 
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com 
+Adding local repo with URL: http://127.0.0.1:8879/charts 
+$HELM_HOME has been configured at /home/openusm/.helm.
+Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
+Please note: by default, Tiller is deployed with an insecure 'allow unauthenticated users' policy.
+To prevent this, run `helm init` with the --tiller-tls-verify flag.
+For more information on securing your installation see: https://docs.helm.sh/using_helm/#securing-your-helm-installation
+Happy Helming!
+openusm@master01:~$
+```
+
+## Verifying Helm Version
+
+```
+helm version
+Client: &version.Version{SemVer:"v2.11.0", GitCommit:"2e55dbe1fdb5fdb96b75ff144a339489417b146b", GitTreeState:"clean"}
+Server: &version.Version{SemVer:"v2.11.0", GitCommit:"2e55dbe1fdb5fdb96b75ff144a339489417b146b", GitTreeState:"clean"}
+
+```
+
+## Installing MYSQL using Helm
+
+```
+helm install --name mysql stable/mysql
+Error: release mysql failed: namespaces "default" is forbidden: User "system:serviceaccount:kube-system:default" cannot get namespaces in the namespace "default": access denied
+```
+
+## Troubleshooting
+
+```
+openusm@master01:~$ kubectl create serviceaccount --namespace kube-system tiller
+serviceaccount "tiller" created
+```
+
+Follow the below steps:
+
+```
+openusm@master01:~$  kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+deployment "tiller-deploy" patched
+```
+
+```
+openusm@master01:~$ helm init --service-account tiller
+$HELM_HOME has been configured at /home/openusm/.helm.
+Warning: Tiller is already installed in the cluster.
+(Use --client-only to suppress this message, or --upgrade to upgrade Tiller to the current version.)
+Happy Helming!
+```
+
+```
+openusm@master01:~$ helm install --name mysql stable/mysql
+NAME:   mysql
+LAST DEPLOYED: Thu Oct 11 13:37:52 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+RESOURCES:
+==> v1/Pod(related)
+NAME                    READY  STATUS   RESTARTS  AGE
+mysql-694696f6d5-w4j5n  0/1    Pending  0         1s
+==> v1/Secret
+NAME   AGE
+mysql  1s
+==> v1/ConfigMap
+mysql-test  1s
+==> v1/PersistentVolumeClaim
+mysql  1s
+==> v1/Service
+mysql  1s
+==> v1beta1/Deployment
+mysql  1s
+NOTES:
+MySQL can be accessed via port 3306 on the following DNS name from within your cluster:
+mysql.default.svc.cluster.local
+To get your root password run:
+    MYSQL_ROOT_PASSWORD=$(kubectl get secret --namespace default mysql -o jsonpath="{.data.mysql-root-password}" | base64 --decode; echo)
+To connect to your database:
+1. Run an Ubuntu pod that you can use as a client:
+    kubectl run -i --tty ubuntu --image=ubuntu:16.04 --restart=Never -- bash -il
+2. Install the mysql client:
+    $ apt-get update && apt-get install mysql-client -y
+3. Connect using the mysql cli, then provide your password:
+    $ mysql -h mysql -p
+To connect to your database directly from outside the K8s cluster:
+    MYSQL_HOST=127.0.0.1
+    MYSQL_PORT=3306
+    # Execute the following command to route the connection:
+    kubectl port-forward svc/mysql 3306
+    mysql -h ${MYSQL_HOST} -P${MYSQL_PORT} -u root -p${MYSQL_ROOT_PASSWORD}
+    
+
+```
+
 
 # Manual Method(Step-by-Step)
 
