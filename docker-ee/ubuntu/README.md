@@ -93,13 +93,14 @@ INFO[0068] Password: (your admin password)
 
 By now, you should be able to login to Docker EE Window using browser. Upload the license and you should be good to see the UCP console.
 
+
 ## Installing Kubectl
 
 ```
 sudo sh bootstrap.sh install_kubectl
 ```
 
-Verify 
+## Verify Kubectl Version
 
 ```
 @master01:~$ kubectl version
@@ -109,11 +110,62 @@ Server Version: version.Info{Major:"1", Minor:"8+", GitVersion:"v1.8.11-docker-8
 018-04-26T16:51:21Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
+## Verifying Docker Version
+
+```
+ docker version
+Client: Docker Enterprise Edition (EE) 2.0
+ Version:      17.06.2-ee-16
+ API version:  1.30
+ Go version:   go1.8.7
+ Git commit:   9ef4f0a
+ Built:        Thu Jul 26 16:41:28 2018
+ OS/Arch:      linux/amd64
+Server: Docker Enterprise Edition (EE) 2.0
+ Engine:
+  Version:      17.06.2-ee-16
+  API version:  1.30 (minimum version 1.12)
+  Go version:   go1.8.7
+  Git commit:   9ef4f0a
+  Built:        Thu Jul 26 16:40:18 2018
+  OS/Arch:      linux/amd64
+  Experimental: false
+ Universal Control Plane:
+  Version:       3.0.5
+  ApiVersion:                   1.30
+  Arch:                         amd64
+  BuildTime:                    Thu Aug 30 17:47:03 UTC 2018
+  GitCommit:                    f588f8a
+  GoVersion:                    go1.9.4
+  MinApiVersion:                1.20
+  Os:                           linux
+ Kubernetes:
+  Version:      1.8+
+  buildDate:                   2018-04-26T16:51:21Z
+  compiler:                    gc
+  gitCommit:                   8d637aedf46b9c21dde723e29c645b9f27106fa5
+  gitTreeState:                clean
+  gitVersion:                  v1.8.11-docker-8d637ae
+  goVersion:                   go1.8.3
+  major:                       1
+  minor:                       8+
+  platform:                    linux/amd64
+ Calico:
+  Version:          v3.0.8
+  cni:                             v2.0.6
+  kube-controllers:                v2.0.5
+  node:                            v3.0.8
+  ```
+
+
+
+## Verifying the Kubernetes Nodes
 ```
 @master01:~/test/docker101/docker-ee/ubuntu$ kubectl get nodes
 NAME       STATUS    ROLES     AGE       VERSION
 master01   Ready     master    20m       v1.8.11-docker-8d637ae
 ```
+
 
 
 # Manual Method(Step-by-Step)
