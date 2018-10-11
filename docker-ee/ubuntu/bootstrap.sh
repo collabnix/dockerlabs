@@ -22,7 +22,7 @@ install_dockeree() {
    $(lsb_release -cs) \
    $DOCKER_EE_VERSION"
  sudo apt update
- sudo apt install docker-ee
+ sudo apt install -y docker-ee
  apt-cache madison docker-ee
  
 EOF
