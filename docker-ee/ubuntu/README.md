@@ -1,9 +1,9 @@
 # Setting up Docker EE 2.0 on Ubuntu 18.04 
 
 
-# Scripting Method
+## Scripting Method
 
-# Cloning the Repository
+## Cloning the Repository
 
 ```
 git clone https://github.com/ajeetraina/docker101
