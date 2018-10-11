@@ -27,7 +27,7 @@ export eeid=sub-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx
 ## Installing Docker EE
 
 ```
-sudo sh bootstrap.sh provision_dockeree
+sh bootstrap.sh provision_dockeree
 ```
 
 ## Setting up UCP
@@ -165,6 +165,8 @@ Server: Docker Enterprise Edition (EE) 2.0
 NAME       STATUS    ROLES     AGE       VERSION
 master01   Ready     master    20m       v1.8.11-docker-8d637ae
 ```
+
+## Adding Worker Nodes
 
 
 
