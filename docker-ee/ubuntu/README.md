@@ -91,10 +91,32 @@ INFO[0068] Password: (your admin password)
 
 ## Logging in Docker EE 
 
-By now, you should be able to login to Docker EE Window using browser. Upload the license and you should be good to 
+By now, you should be able to login to Docker EE Window using browser. Upload the license and you should be good to see the UCP console.
+
+## Installing Kubectl
+
+```
+sudo sh bootstrap.sh install_kubectl
+```
+
+Verify 
+
+```
+@master01:~$ kubectl version
+Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.11", GitCommit:"1df6a8381669a6c753f79cb31ca2e3d57ee7c8a3", GitTreeState:"clean", BuildDate:"2018-04-05T17:24:
+03Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"8+", GitVersion:"v1.8.11-docker-8d637ae", GitCommit:"8d637aedf46b9c21dde723e29c645b9f27106fa5", GitTreeState:"clean", BuildDate:"2
+018-04-26T16:51:21Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+```
+
+```
+@master01:~/test/docker101/docker-ee/ubuntu$ kubectl get nodes
+NAME       STATUS    ROLES     AGE       VERSION
+master01   Ready     master    20m       v1.8.11-docker-8d637ae
+```
 
 
-## Manual Method
+# Manual Method(Step-by-Step)
 
 ## Tested Infra
 
