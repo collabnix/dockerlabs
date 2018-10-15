@@ -1,6 +1,6 @@
 # Troubleshooting Docker
 
-# #1: Error starting daemon: error initializing graphdriver: \"/var/lib/docker\" contains several valid graph drivers: devicemapper, overlay; Please cleanup or explicitly choose storage driver (-s <DRIVER>)"
+Error starting daemon: error initializing graphdriver: \"/var/lib/docker\" contains several valid graph drivers: devicemapper, overlay; Please cleanup or explicitly choose storage driver (-s <DRIVER>)"
 
 # Summary: 
 
