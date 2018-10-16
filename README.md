@@ -10,6 +10,17 @@ This repository brings you tutorials that help you get hands-on experience using
 
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
+## Categories of DockerLabs:
+
+This repo contains Docker Labs and tutorials authored by members of the open community. Below are the list of categories -
+
+
+[Docker for Beginners](https://github.com/collabnix/dockerlabs/tree/master/beginners/README.md)<br>
+
+[Docker for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/intermediate/README.md)<br>
+
+[Docker for Advanced Users](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)<br>
+
 ## Getting Started with Docker 
 
 To get started with Docker, follow the below steps:
@@ -36,11 +47,7 @@ You get maximum of 5 instances of Linux system to play around with Docker.
 
 We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Docker. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
 
-[Docker for Beginners](https://github.com/collabnix/dockerlabs/tree/master/beginners/README.md)<br>
 
-[Docker for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/intermediate/README.md)<br>
-
-[Docker for Advanced Users](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)<br>
 
 ## A Bonus... Docker Swarm Visualizer 
 
