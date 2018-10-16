@@ -85,11 +85,11 @@ $ docker service create \
   dockersamples/visualizer
 ```
 
-## How to Contribute?
+# How to Contribute?
 
 Thank you so much for your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials. 
 
-[Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br>
+[Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br> - TBD
 
 # Docker-Ready Solution for You
 
