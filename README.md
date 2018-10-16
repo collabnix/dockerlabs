@@ -27,18 +27,18 @@ You get maximum of 5 instances of Linux system to play around with Docker.
 - Click on Icon near to Instance to choose 3 Managers & 2 Worker Nodes
 
 
-![My image](https://github.com/ajeetraina/docker101/blob/master/images/pwd_1.png)
+![My image](https://github.com/collabnix/dockerlabs/blob/master/images/pwd_1.png)
 
 
 - Wait for few seconds to bring up 5-Node Swarm Cluster
 
 We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Docker. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
 
-[Docker for Beginners](https://github.com/ajeetraina/docker101/tree/master/beginners/README.md)<br>
+[Docker for Beginners](https://github.com/collabnix/dockerlabs/tree/master/beginners/README.md)<br>
 
-[Docker for Intermediate](https://github.com/ajeetraina/docker101/tree/master/intermediate/README.md)<br>
+[Docker for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/intermediate/README.md)<br>
 
-[Docker for Advanced Users](https://github.com/ajeetraina/docker101/tree/master/advanced/README.md)<br>
+[Docker for Advanced Users](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)<br>
 
 ## A Bonus... Docker Swarm Visualizer 
 
@@ -57,7 +57,7 @@ cd docker-swarm-visualizer
 docker-compose up -d
 ```
 
-![My image](https://github.com/ajeetraina/docker101/blob/master/images/visualizer.png)
+![My image](https://github.com/collabnix/dockerlabs/blob/master/images/visualizer.png)
 
 To run in a docker swarm:
 
@@ -72,14 +72,14 @@ $ docker service create \
 
 # Docker-Ready Solution for You
 
-[WordPress under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/wordpress/example1/README.md)<br>
-[ELK under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ELK/README.md)<br>
-[Prometheus Stack under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/docker-prometheus-swarm/README.md)<br>
-[Apache Jmeter under Docker Swarm Mode](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/jmeter-docker/README.md)<br>
-[Voting App Example](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/example-voting-app/README.md)<br>
-[Playing around with Photon OS](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/vmware/powercli/README.md)<br>
-[Playing around with MacVLAN](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/macvlan/README.md)<br>
-[IPv6 & Docker Compose](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ipv6/README.md)<br>
-[Trying out Gitlab](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/gitlab/README.md)<br>
-[Getting Started with Nginx](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/nginx/README.md)<br>
+[WordPress under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/wordpress/example1/README.md)<br>
+[ELK under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ELK/README.md)<br>
+[Prometheus Stack under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/docker-prometheus-swarm/README.md)<br>
+[Apache Jmeter under Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/jmeter-docker/README.md)<br>
+[Voting App Example](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/example-voting-app/README.md)<br>
+[Playing around with Photon OS](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/vmware/powercli/README.md)<br>
+[Playing around with MacVLAN](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/macvlan/README.md)<br>
+[IPv6 & Docker Compose](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ipv6/README.md)<br>
+[Trying out Gitlab](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/gitlab/README.md)<br>
+[Getting Started with Nginx](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)<br>
 
