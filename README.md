@@ -93,6 +93,8 @@ Thank you so much for your interest in contributing to [Dockerlabs](https://gith
 
 # Docker-Ready Solution for You
 
+In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time. 
+
 [WordPress under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/wordpress/example1/README.md)<br>
 [ELK under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ELK/README.md)<br>
 [Prometheus Stack under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/docker-prometheus-swarm/README.md)<br>
