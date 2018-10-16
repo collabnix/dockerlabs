@@ -1,6 +1,6 @@
 # Welcome to Dockerlabs 
 
-![My image](https://github.com/collabnix/dockerlabs/blob/master/images/dockerlabs.jpg)
+![My image](https://github.com/collabnix/dockerlabs/blob/master/images/dockerlabs.jpeg)
 
 Are you new to Docker? Want to build your career in Container Technology? 
 
