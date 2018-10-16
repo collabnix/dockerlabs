@@ -72,6 +72,12 @@ $ docker service create \
   dockersamples/visualizer
 ```
 
+## How to Contribute?
+
+Thank you so much for your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials. 
+
+[Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br>
+
 # Docker-Ready Solution for You
 
 [WordPress under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/wordpress/example1/README.md)<br>
