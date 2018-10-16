@@ -21,7 +21,15 @@ This repo contains Docker Labs and tutorials authored by members of the open com
 
 [Docker for Advanced Users](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)<br>
 
-## Getting Started with Docker 
+
+
+## How shall I get started? 
+
+Interestingly, you don't need to do any investment. Throughout the tutorial, you will be using Play with Docker (PWD in short) Playground. Cool....Isn't it?
+
+PWD is a Docker playground which allows users to run Docker commands in a matter of seconds. It gives the experience of having a free Alpine Linux Virtual Machine in browser, where you can build and run Docker containers and even create clusters in Docker Swarm Mode. Under the hood Docker-in-Docker (DinD) is used to give the effect of multiple VMs/PCs. 
+
+## If you are absolute Beginner...
 
 To get started with Docker, follow the below steps:
 
@@ -31,7 +39,7 @@ To get started with Docker, follow the below steps:
 - This will open up an easy to understand PWD tool which displays instances on the left hand side while terminal at the right hand side. 
 - Click on "Create Instance" to create your first Linux instance.
 
-## Getting Started with Docker Swarm
+## If you want to explore Docker Swarm
 
 To get started with Docker Swarm, you can use "Play with Docker", shortly called PWD. It's free of cost and open for all.
 You get maximum of 5 instances of Linux system to play around with Docker.
