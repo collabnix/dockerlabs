@@ -2,17 +2,19 @@
 
 Traffic flows through eth0 and Docker routes traffic to your container using its MAC address. To network devices on your network, your container appears to be physically attached to the network.
 
-1.   Create a macvlan network called macvlan-mynet
-```
+- Create a macvlan network called macvlan-mynet
+
+```docker
 $ docker network create -d macvlan \
   --subnet=192.10.86.0/24 \
   --gateway=192.10.86.1 \
   -o parent=eth1 \
   macvlan-mynet
-  ```
-
-2.   List macvlan networks
 ```
+
+- List macvlan networks
+
+```docker
 $ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 bef0002ef343        bridge              bridge              local
@@ -20,7 +22,8 @@ bef0002ef343        bridge              bridge              local
 a4a33de2232b        macvlan-mynet       macvlan             local
 631e4ef63d66        none                null                local
 ```
-```
+
+```docker
 $ docker network inspect macvlan-mynet
 [
     {
@@ -56,26 +59,28 @@ $ docker network inspect macvlan-mynet
 ]
 ```
 
-3.   Check that both containers are actually started:
-```
+- Check that both containers are actually started
+
+```docker
 $ docker container ls
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 602dbf1edc81        alpine              "ash"               4 seconds ago       Up 3 seconds                            alpine2
 da33b7aa74b0        alpine              "ash"               17 seconds ago      Up 16 seconds                           alpine1
 ```
 
-4.   Start and attach an alpine container to the macvlan-mynet network.
-```
+- Start and attach an alpine container to the macvlan-mynet network
+
+```docker
 $ docker run --rm -itd \
   --network macvlan-mynet \
   --name macvlan-alpine \
   alpine:latest \
   ash
-  ```
-
-
-5.    Inspect the `macvlan-alpine` container and notice the MacAddress key within the Networks key.
 ```
+
+- Inspect the `macvlan-alpine` container and notice the MacAddress key within the Networks key
+
+```docker
 $ docker container inspect macvlan-alpine
 ...truncated...
 "Networks": {
@@ -100,24 +105,30 @@ $ docker container inspect macvlan-alpine
 ...truncated
 ```
 
-6.   Run `docker exec` commands.
+- Run `docker exec` commands
+
+```docker
+$ docker exec macvlan-alpine ip route default via 192.10.86.1 dev eth0 172.16.86.0/24 dev eth0 scope link  src 172.16.86.2
 ```
-$ docker exec macvlan-alpine ip route
-default via 192.10.86.1 dev eth0
-172.16.86.0/24 dev eth0 scope link  src 172.16.86.2
-```
+
 Now root user within alpine2 container.
 
-7.   Stop container and remove the macvlan network.
-```
+- Stop container and remove the macvlan network
+
+```docker
 $ docker container stop macvlan-alpine
+
 $ docker network rm macvlan-mynet
 ```
 
-## Why do we need it?
+## Why do we need it
 
-* Explicit control over container IP assignment
-* We need container IP directly in underlay network managed by enterprise.
-* Connect container to legacy applications
-* Connect container to external network without overlay overhead.
-* Have a need to preserve source IP of container.
+- Explicit control over container IP assignment
+
+- We need container IP directly in underlay network managed by enterprise.
+
+- Connect container to legacy applications
+
+- Connect container to external network without overlay overhead.
+
+- Have a need to preserve source IP of container.
