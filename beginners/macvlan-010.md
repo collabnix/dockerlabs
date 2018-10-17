@@ -1,8 +1,8 @@
 # Understanding MacVLAN - The Easy Way
 
-Assume you have a clean Docker Host system with just 3 networks available – bridge, host and null
+- Assume you have a clean Docker Host system with just 3 networks available – bridge, host and null
 
-```
+```docker
 root@ubuntu:~# docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 871f1f745cc4        bridge              bridge              local
@@ -11,9 +11,9 @@ NETWORK ID          NAME                DRIVER              SCOPE
 root@ubuntu:~#
 ```
 
-My Network Configuration is quite simple. It has eth0 and eth1 interface. I will just use eth0.
+- My Network Configuration is quite simple. It has eth0 and eth1 interface. I will just use eth0.
 
-```
+```docker
 root@ubuntu:~# ifconfig
 docker0   Link encap:Ethernet  HWaddr 02:42:7d:83:13:8e
           inet addr:172.17.0.1  Bcast:172.17.255.255  Mask:255.255.0.0
@@ -43,15 +43,15 @@ lo        Link encap:Local Loopback
           RX bytes:3816 (3.8 KB)  TX bytes:3816 (3.8 KB)
 ```
 
-## Step:3 – Creating MacVLAN network on top of eth0.
+- Creating MacVLAN network on top of eth0.
 
-```
+```docker
 docker network create -d macvlan --subnet=100.98.26.43/24 --gateway=100.98.26.1  -o parent=eth0 pub_net
 ```
 
-## Step-4: Verifying MacVLAN network
+- Verifying MacVLAN network
 
-```
+```docker
 root@ubuntu:~# docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 871f1f745cc4        bridge              bridge              local
@@ -61,9 +61,9 @@ bed75b16aab8        pub_net             macvlan             local
 root@ubuntu:~#
 ```
 
-## Step-5: Let us create a sample Docker Image and assign statics IP(ensure that it is from free pool)
+- Let us create a sample Docker Image and assign statics IP(ensure that it is from free pool)
 
-```
+```docker
 root@ubuntu:~# docker  run --net=pub_net --ip=100.98.26.47 -itd alpine /bin/sh
 Unable to find image 'alpine:latest' locally
 latest: Pulling from library/alpine
@@ -73,27 +73,27 @@ Status: Downloaded newer image for alpine:latest
 493a9566c31c15b1a19855f44ef914e7979b46defde55ac6ee9d7db6c9b620e0
 ```
 
-## Important Point: When using macvlan, you cannot ping or communicate with the default namespace IP address. For example, if you create a container and try to ping the Docker host’s eth0, it will not work. That traffic is explicitly filtered by the kernel modules themselves to offer additional provider isolation and security.
+## Important Point: When using macvlan, you cannot ping or communicate with the default namespace IP address. For example, if you create a container and try to ping the Docker host’s eth0, it will not work. That traffic is explicitly filtered by the kernel modules themselves to offer additional provider isolation and security
 
-## Then how shall I enable this feature?
+### Then how shall I enable this feature
 
 It’s simple. Just run the below command:
 
-Example: ip link add mac0 link $PARENTDEV type macvlan mode bridge
+Example: `ip link add mac0 link $PARENTDEV type macvlan mode bridge`
 
 So, in our case, it will be:
 
-```
+```docker
 ip link add mac0 link eth0 type macvlan mode bridge
+
 ip addr add 100.98.26.38/24 dev mac0
+
 ifconfig mac0 up
 ```
 
-
-
 Let us try creating container and pinging:
 
-```
+```docker
 root@ubuntu:~# docker run --net=pub_net -d --ip=100.98.26.53 -p 81:80 nginx
 10146a39d7d8839b670fc5666950c0e265037105e61b0382575466cc62d34824
 root@ubuntu:~# ping 100.98.26.53
@@ -103,4 +103,3 @@ PING 100.98.26.53 (100.98.26.53) 56(84) bytes of data.
 ```
 
 Wow ! It just worked.
-
