@@ -23,11 +23,6 @@ The host networking driver only works on Linux hosts, and is not supported on Do
 The default network driver. If you don’t specify a driver, this is the type of network you are creating. Bridge networks are usually used when your applications run in standalone containers that need to communicate. A bridge network uses a software bridge which allows containers connected to the same bridge network to communicate, while providing isolation from containers which are not connected to that bridge network.
 
 3. ### Macvlan networks
-Legacy applications expect to be directly connected to the physical network, rather than routed through the Docker host’s network stack.
-Macvlan networks assign a MAC address to a container, making it appear as a physical device on your network. The Docker daemon routes traffic to containers by their MAC addresses.
-We need to designate a physical interface on our Docker host to use for the Macvlan, as well as the subnet and gateway of the Macvlan.
-
-3. ### Macvlan Networks
 
 Legacy applications expect to be directly connected to the physical network, rather than routed through the Docker host’s network stack. Macvlan networks assign a MAC address to a container, making it appear as a physical device on your network. The Docker daemon routes traffic to containers by their MAC addresses. We need to designate a physical interface on our Docker host to use for the Macvlan, as well as the subnet and gateway of the Macvlan.
 
