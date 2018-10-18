@@ -1,10 +1,12 @@
 # Bridge network
+
 Most common network type. It is limited to containers within a single host running the Docker engine. Bridge networks are easy to create, manage and troubleshoot.
-##### Two types of Bridge Networks:
 
--  *Default bridge network*: Docker sets up for you automatically.Best choice for production system.
--  *User-defined bridge network*: Create and use your own custom bridge networks, to connect containers running on the same Docker host. This is recommended for standalone containers running in production.
+## Two types of Bridge Networks
 
+- _Default bridge network_: Docker sets it up for you automatically. Best choice for production system.
+
+- _User-defined bridge network_: Create and use your own custom bridge networks, to connect containers running on the same Docker host. This is recommended for standalone containers running in production.
 
 ## Default bridge network
 
@@ -12,8 +14,9 @@ When you start Docker, a default bridge network (also called bridge) is created 
 
 We'll start two different alpine containers on the same Docker host.
 
-1.   List current networks
-```
+1. List current networks
+
+```docker
 $ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 17e324f45964        bridge              bridge              local
@@ -21,22 +24,25 @@ NETWORK ID          NAME                DRIVER              SCOPE
 7092879f2cc8        none                null                local
 ```
 
-2.   Start two ```alpine``` containers running ```ash``` (Alpine’s default shell)
-```
+2. Start two `alpine` containers running `ash`(Alpine’s default shell)
+
+```docker
 $ docker run -dit --name alpine1 alpine ash
 $ docker run -dit --name alpine2 alpine ash
 ```
 
-3.   Check that both containers are actually started:
-```
+3. Check that both containers are actually started
+
+```docker
 $ docker container ls
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 602dbf1edc81        alpine              "ash"               4 seconds ago       Up 3 seconds                            alpine2
 da33b7aa74b0        alpine              "ash"               17 seconds ago      Up 16 seconds                           alpine1
 ```
 
-4.   See Network manage commands.
-```
+4. See Network manage commands
+
+```docker
 $ docker network --help
 Manage Network Options:
 Commands:
@@ -49,53 +55,67 @@ prune        Remove all unused networks
 rm           Remove one or more networks
 ```
 
-5.   Inspect the bridge network to see what containers are connected to it.
-```
+5. Inspect the bridge network to see what containers are connected to it
+
+```docker
 $ docker network inspect bridge
 ```
+
 Also use it to find the IP address of the running container.
-```
+
+```docker
 $ docker inspect "container ID"
 ```
->To retrieve just the IP address of the running container:-
-```
+
+> To retrieve just the IP address of the running container
+
+```docker
 $ docker inspect -f '{{ .NetworkSettings.IPAddress }}' "container ID"
 ```
+
 or
-```
+
+```docker
 $ docker inspect <container id> | grep "IPAddress"
 ```
 
-6.   The containers are running in the background. Use the **docker attach** command to connect to alpine2.
-```
+6. The containers are running in the background. Use the **docker attach** command to connect to alpine2
+
+```docker
 $ docker attach alpine2
 /#
 ```
-Now root user within alpine2 container.
 
-7.   From within alpine2, ping bing.com and then ping first container(alpine1).
-```
+Now root user within alpine2 container
+
+7. From within alpine2, ping bing.com and then ping first container(alpine1)
+
+```docker
 # ping -c 2 bing.com
 ```
-```
+
+```docker
 # ping -c 172.17.0.2
 ```
 
-8.   Detach from alpine1. Stop and remove both containers.
-```
+8. Detach from alpine1, Stop and remove both containers
+
+```docker
 $ docker container stop alpine1 alpine2
 $ docker container rm alpine1 alpine2
 ```
 
-
 ## User-defined bridge network
 
-1. Create the ```my-alpine-net``` network
-```
+1. Create the `my-alpine-net` network
+
+```docker
 $ docker network create my-alpine-net
 ```
-2. List Docker’s networks:
-```
+
+2. List Docker’s networks
+
+```docker
 $ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 17e324f45964        bridge              bridge              local
@@ -103,16 +123,19 @@ NETWORK ID          NAME                DRIVER              SCOPE
 e9261a8c9a19       my-alpine-net        bridge              local
 7092879f2cc8        none                null                local
 ```
-3. Create your three containers. First alpine container attached to user-defined network (my-alpine-net), second connected to bridge network only and third connected to both.
-```
+
+3. Create three containers, first alpine container attached to user-defined network(my-alpine-net), second connected to bridge network only and third connected to both
+
+```docker
 $ docker run -dit --name alpine1 --network my-alpine-net alpine ash
 $ docker run -dit --name alpine2 alpine ash
 $ docker run -dit --name alpine3 --network my-alpine-net alpine ash
 $ docker network connect bridge alpine3
 ```
-4. After the containers are created and runnning, inspect the bridge network and the my-alpine-net network.
 
-```
+4. After the containers are created and runnning, inspect the bridge network and the my-alpine-net network
+
+```docker
 $ docker network inspect bridge
 [
     {
@@ -166,15 +189,13 @@ $ docker network inspect bridge
         "Labels": {}
     }
 ]
-
 ```
 
+Inspect `my-network-net`network
 
- Inspect `my-network-net`network.
-
- ```
- $ docker network inspect my-alpine-net
- [
+```docker
+$ docker network inspect my-alpine-net
+[
     {
         "Name": "my-alpine-net",
         "Id": "4bdbb2bc8ff1a9d7bba53dcffb604593d593c3ab218b999101627333eb4c756b",
@@ -219,15 +240,17 @@ $ docker network inspect bridge
         "Labels": {}
     }
 ]
- ```
-
-
-5. Create the ```my-alpine-net``` network
 ```
+
+5. Create the `my-alpine-net` network
+
+```docker
 $ docker container attach alpine1
 ```
+
 Now ping other Containers
-```
+
+```docker
 / # ping -c 2 alpine2
 ping: bad address 'alpine2'
 / # ping -c 2 alpine 2
@@ -238,8 +261,10 @@ PING alpine3 (172.20.0.3): 56 data bytes
 2 packets transmitted, 2 packets received, 0% packet loss
 round-trip min/avg/max = 0.092/0.140/0.188 ms
 ```
+
 6. Dettach from alpine1 and attach to alpine3(connected to both networks)
-```
+
+```docker
 $ docker container attach alpine3
 / # ping -c 2 alpine1
 PING alpine1 (172.20.0.2): 56 data bytes
@@ -251,8 +276,10 @@ round-trip min/avg/max = 0.094/0.104/0.115 ms
 / # ping -c 2 alpine2
 ping: bad address 'alpine2'
 ```
+
 Can't ping alpine2(default bridge) using name. We need to address alpine2 by its IP address.
-```
+
+```docker
 $ docker container attach alpine3
 / # ping -c 2 172.17.0.2
 PING 172.17.0.2 (172.17.0.2): 56 data bytes
@@ -262,8 +289,10 @@ PING 172.17.0.2 (172.17.0.2): 56 data bytes
 2 packets transmitted, 2 packets received, 0% packet loss
 round-trip min/avg/max = 0.075/0.108/0.141 ms
 ```
-7. Stop and remove all containers and the my-alpine-net network.
-```
+
+7. Stop and remove all containers and the my-alpine-net network
+
+```docker
 $ docker container stop alpine1 alpine2 alpine3
 $ docker container rm alpine1 alpine2 alpine3
 $ docker network rm my-alpine-net

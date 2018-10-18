@@ -1,19 +1,17 @@
 # Running Hello World Example
 
+```docker
+docker run hello-world
 ```
-docker run hello-world 
-```
 
-So what’s happened here? 
-We’ve called the docker run command, which is responsible for launching containers. 
+So what happened here?
 
-The argument hello-world is the name of the image someone created on dockerhub for us.
-It will first search for "hello-world" image locally and then search in Dockerhub.
+We’ve called the docker run command, which is responsible for launching containers. The argument hello-world is the name of the image someone created on dockerhub for us.
+It will first search for "hello-world" image locally and then search it in Dockerhub. Once the image has been downloaded, Docker turns the image into a running container and executes it.
 
-Once the image has been downloaded, Docker turns the image into a running container and executes it.
 The result of running this command is shown as shown below:
 
-```
+```docker
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -34,26 +32,22 @@ Share images, automate workflows, and more with a free Docker ID:
 
 For more examples and ideas, visit:
  https://docs.docker.com/engine/userguide/
- ```
- 
- # Check if container is still running or not
- 
- ```
- docker ps
- ```
- 
- Result: No Container running. It ran the container and exited quickly.
- 
- ## How to check the last run Container?
- 
-
 ```
+
+## Check if container is still running or not
+
+```docker
+docker ps
+```
+
+Result: No Container running. It ran the container and exited quickly.
+
+## How to check the last ran Container
+
+```docker
 $ docker ps -l
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     POR
 TS               NAMES
 c9f8264d041f        hello-world         "/hello"            7 seconds ago       Exited (0) 6 seconds ago
                  admiring_bhaskara
-                 
- ```
- 
- 
+```

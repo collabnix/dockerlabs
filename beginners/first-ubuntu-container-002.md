@@ -1,19 +1,19 @@
 # Running Your First Ubuntu Container
 
-```
+```docker
 docker run ubuntu date
 ```
 
 ## Accessing Shell inside Ubuntu container
 
-```
+```docker
 docker run -it ubuntu /bin/bash
 ```
 
 ## Provide hostname to Ubuntu container(using -h or --hostname)
 
-```
- docker run -h collabnix -i -t debian /bin/bash
+```docker
+docker run -h collabnix -i -t debian /bin/bash
 Unable to find image 'debian:latest' locally
 latest: Pulling from library/debian
 cc1a78bfd46b: Pull complete
@@ -25,7 +25,7 @@ collabnix
 
 ## Inspecting the Running Container
 
-```
+```docker
 $ docker inspect a1b
 [
     {
@@ -204,9 +204,9 @@ $ docker inspect a1b
 ]
 ```
 
-
 ## Displaying IP address
-```
+
+```docker
 $ docker inspect a1b | grep IPAddress
             "SecondaryIPAddresses": null,
             "IPAddress": "172.17.0.2",
@@ -215,37 +215,32 @@ $ docker inspect a1b | grep IPAddress
 
 ## Displaying IP address using Filters
 
-```
+```docker
 $ docker inspect --format {{.NetworkSettings.IPAddress}} a1b
-
 ```
 
 ## How to check Logs
 
-```
+```docker
 $ docker logs a1b
 root@collabnix:/# hostname
 collabnix
-
 ```
 
 ## Stopping the Container
 
-```
+```docker
 docker stop <containerid>
 ```
 
-## Cleaning up stopped containers 
+## Cleaning up stopped containers
 
-
-```
- $ docker rm -v $(docker ps -aq -f status=exited)
+```docker
+$ docker rm -v $(docker ps -aq -f status=exited)
 ```
 
 ## Stopping all containers
 
-```
+```docker
 $ docker stop $(docker ps -a -q)
 ```
-
-## 
