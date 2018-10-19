@@ -1,6 +1,6 @@
 # Beginners Track
 
-## Introduction( Containers | VM | Docker | Kernel Dependencies)
+## Introduction
 
 - What are Linux Containers? What are they used for?
 
@@ -15,7 +15,7 @@
 - Architecture of Docker Enterprise Edition
 
 
-## Installing Docker ( Linux|Windows|Mac|IoT)
+## Installing Docker 
 
 - Installing Docker on Linux
 
