@@ -2,7 +2,7 @@
 
 ## Introduction to Docker 
 
-- [What are Linux Containers? What are they used for?](https://github.com/collabnix/dockerlabs/master/beginners/b001-linux-containers.md)<br>
+- [What are Linux Containers? What are they used for?](https://github.com/collabnix/dockerlabs/blob/master/beginners/b001-linux-containers.md)<br>
 
 - Difference between Docker & Linux Container?
 
