@@ -14,6 +14,8 @@
 
 - Architecture of Docker Enterprise Edition
 
+- Docker Platform in 2018
+
 
 ## Installing, Upgrading & Maintaining Docker 
 
@@ -38,4 +40,25 @@
 
 ## Docker Components
 
-- What is Docker Image?
+- Docker Server Vs Client Architecture
+
+- Docker Daemon
+
+- What is a Docker Image?
+
+- Working with Docker Image
+
+- What is Docker Container?
+
+- Working with Docker Container
+
+- Difference between Docker Image Vs Docker Container?
+
+- What is Docker registry?
+
+- Running Your Own Docker Registry
+
+- What is DockerHub?
+
+- 
+
