@@ -46,21 +46,36 @@
 
 - What is a Docker Image?
 
-- Working with Docker Image
-
 - What is Docker Container?
-
-- Working with Docker Container
 
 - Difference between Docker Image Vs Docker Container?
 
 - What is Docker registry?
 
-- Running Your Own Docker Registry
-
 - What is DockerHub?
 
+## Working with Docker Image & Container
+
+- Running Hello World Example
+
+- Working with Docker Image
+
+- Working with Docker containers
+
+- Build Your Own Docker Image
+
+- Creating a DockerHub Account
+
+- Sharing Your Docker Image
+
+- Building Docker Image from Dockerfile
+
+
 ## Introduction to Docker Networking
+
+
+
+
 
 
 ## Introduction to Docker Volumes
