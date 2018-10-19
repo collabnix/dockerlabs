@@ -1,6 +1,6 @@
 # Beginners Track
 
-## Introduction
+## Introduction to Docker 
 
 - What are Linux Containers? What are they used for?
 
@@ -15,7 +15,7 @@
 - Architecture of Docker Enterprise Edition
 
 
-## Installing Docker 
+## Installing, Upgrading & Maintaining Docker 
 
 - Installing Docker on Linux
 
@@ -27,6 +27,15 @@
 
 - Installing Docker on Cloud Platform
 
-- Installing Docker on IoT Platforms
+- Installing Docker on IoT Platforms(Raspberry Pi)
 
-## 
+- Docker ToolBox Installations
+
+- Scripts & Installation Tools
+
+- Upgrading Docker
+
+
+## Docker Components
+
+- What is Docker Image?
