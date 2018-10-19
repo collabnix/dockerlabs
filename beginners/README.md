@@ -10,9 +10,9 @@
 
 - Understanding Docker Underlying Technologies
 
-- Docker CE Architecture
+- Architecture of Docker Community Edition
 
-- Docker EE Architecture
+- Architecture of Docker Enterprise Edition
 
 
 ## Installing Docker ( Linux|Windows|Mac|IoT)
