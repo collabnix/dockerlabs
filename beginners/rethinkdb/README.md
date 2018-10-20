@@ -6,7 +6,7 @@ RethinkDB is a free and open-source, distributed document-oriented database orig
 ## RethinkDB Dockerfile
 
 
-This repository contains **Dockerfile** of [RethinkDB](http://www.rethinkdb.com/) for [Docker](https://www.docker.com/)'s [automated build](https://registry.hub.docker.com/u/dockerfile/rethinkdb/) published to the public [Docker Hub Registry](https://registry.hub.docker.com/).
+This repository contains **Dockerfile** of [RethinkDB](http://www.rethinkdb.com/) for [Docker](https://www.docker.com/)'s [automated build](https://hub.docker.com/_/rethinkdb/) published to the public [Docker Hub Registry](https://registry.hub.docker.com/).
 
 
 ### Installation
