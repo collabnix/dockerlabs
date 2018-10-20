@@ -42,14 +42,19 @@
 
 - Housekeeping Docker Containers
 
+- Moving Docker to different partition
+
 
 # Docker Components
 
 - Docker Server Vs Client Architecture
 
 - Docker Daemon
+  - How to open Docker Daemon to External world?
+  - Docker Daemon runs as root. How can Docker be secure?
 
 - What is a Docker Image?
+  - Building Your own Docker Image from Scratch
 
 - What is Docker Container?
 
@@ -105,14 +110,6 @@
 
 
 # FAQs
-
-## #1: How will you open Docker Daemon to external World?
-
-## #2: Docker Daemon runs as root. How can Docker be secure?
-
-## #3: How shall I build my own Docker Image from Scratch?
-
-## #4: How to move Docker to different partition?
 
 ## #5:How to use socat to monitor API Traffic?
 
