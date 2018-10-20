@@ -49,5 +49,5 @@ Please send in a short one-line message about yourself to ajeetraina@gmail.com s
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md) License.
 
