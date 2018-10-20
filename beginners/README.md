@@ -10,10 +10,11 @@
 
 - Understanding Docker Underlying Technologies
 
-- Architecture of Docker Community Edition
+- Architecture of Docker Community Edition <br>
                 |_ Docker Enterprise Edition
 
-- Docker Platform -  2015 <br>
+- Docker Platform 
+                  |_ 2015 <br>
                   |_ 2016 <br>
                   |_ 2017 <br>
                   |_ 2018 <br>
