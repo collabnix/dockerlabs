@@ -28,6 +28,7 @@ There are a number of areas where contributions can be accepted:
 * Manage, triage and research Issues and Pull Requests
 * Engage with the growing community by providing technical support on Slack/GitHub
 * Create docs, guides and write blogs to share
+* In case you find any technical issues or need help from fellow contributor, feel free to post your query under #issues channel under Slack.
 
 #### Wait..I have a question, a suggestion or need help
 
