@@ -63,8 +63,6 @@
 
 - Working with Docker Image <br>
  |_ Injecting files into your image using ADD <br>
- |_<br>
- |_<br>
  |_ Reducing the size of your Dockerfile image. <br>
 
 - Working with Docker containers<br>
@@ -85,7 +83,6 @@
 
 -  Using make with Docker
 
-- 
 
 # Introduction to Docker Networking
 
