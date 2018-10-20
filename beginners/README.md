@@ -13,7 +13,7 @@
 - Architecture of Docker Community Edition <br>
                 |_ Docker Enterprise Edition
 
-- Docker Platform 
+- Docker Platform <br>
                   |_ 2015 <br>
                   |_ 2016 <br>
                   |_ 2017 <br>
