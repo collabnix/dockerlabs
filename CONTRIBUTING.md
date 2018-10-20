@@ -9,11 +9,11 @@ There are 5 golden steps to get involved -
 
 - Ping [Ajeet S Raina](https://github.com/ajeetraina) with your email address so that an invite can be sent out. Once invite is received via email, click on the link to get connected to contributors, enthusiast and active community members.
 
-- Introduce yourself to the Slack Group.
+- Introduce yourself to the Slack Group as soon as you join the Slack Channel.
 
 - Search for channels(like #docker-networking, #docker-volumes, #docker101 etc.) and join the channel.
 
-- Show your interest by choosing the topic of your interest and start contributing
+- Show your interest by choosing the topic of your interest and start contributing.
 
 ## How can I contribute?
 
