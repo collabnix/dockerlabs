@@ -1,4 +1,3 @@
-# Contributing
 
 ## Guidelines for Contributing
 
