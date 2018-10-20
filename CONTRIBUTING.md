@@ -41,14 +41,6 @@ If you have a deeply technical request or need help debugging your application t
 
 If you feel there is an issue with OpenFaaS or were unable to get the help you needed from the Slack channels then raise an issue on one of the GitHub repositories.
 
-### How do I become a maintainer?
-
-In the DockerLabs community there are three levels of maintainership:
-
-* Core Contributors
-* GitHub Organisation Members
-* Those with Derek access
-
 ### Slack
 
 There is an Slack community which you are welcome to join to discuss DockerLabs. Ping [Ajeet S Raina](https://github.com/ajeetraina) with your email address so that an invite can be sent out.
