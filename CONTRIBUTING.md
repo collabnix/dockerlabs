@@ -36,7 +36,7 @@ If you have a simple question you can [join the Slack community](https://collabn
 ### I am new to GitHub. Is it possible for me to contribute?
 
 Yes, you can still submit your tutorial to us. One of us will review and add it on behalf of you.
-But it is highly recommended to learn GitHub so that it saves lot of time in uploading your tutorial.
+But it is highly recommended to learn Git so that it saves lot of time in uploading your tutorial.
 
 ## License
 
