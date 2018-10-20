@@ -10,25 +10,27 @@
 
 - Understanding Docker Underlying Technologies
 
-- Architecture of Docker Community Edition <br>
-                |_ Docker Enterprise Edition
+- Architecture of Docker 
+   - Docker Enterprise Edition
+   - Docker Community Edition
+                
 
-- Docker Platform <br>
-                  |_ 2015 <br>
-                  |_ 2016 <br>
-                  |_ 2017 <br>
-                  |_ 2018 <br>
-
+- Docker Platform 
+   - 2015 
+   - 2016
+   - 2017
+   - 2018
+                 
 
 # Installing, Upgrading & Maintaining Docker 
 
 - Installing Docker on Linux <br>
-                     |_ Windows <br>
-                     |_ Macbook <br>
-                     |_ Windows Server <br>
-                     |_ Cloud Platform <br>
-                     |_ IoT(Raspberry Pi) <br>
-                     |_ Unix ( FreeBSD, Solaris) <br>
+   - Windows 
+   - Windows Server
+   - Cloud Platform
+   - IoT Platform
+   - Unix ( FreeBSD, Solaris)
+                     
 
 - Docker ToolBox Installations
 
@@ -62,11 +64,11 @@
 - Running Hello World Example
 
 - Working with Docker Image <br>
- |_ Injecting files into your image using ADD <br>
- |_ Reducing the size of your Dockerfile image. <br>
+  - Injecting files into your image using ADD <br>
+  - Reducing the size of your Dockerfile image. <br>
 
 - Working with Docker containers<br>
- |_ Detaching containers without stopping them<br>
+  - Detaching containers without stopping them<br>
 
 - Build Your Own Docker Image
 
@@ -75,9 +77,9 @@
 - Sharing Your Docker Image
 
 - Building Docker Image from Dockerfile
- |_ Injecting files into your image using ADD <br>
- |_ Rebuilding without Cache <br> 
- |_ Busting the Cache <br>
+  - Injecting files into your image using ADD <br>
+  - Rebuilding without Cache <br> 
+  - Busting the Cache <br>
  
 - Reverse-engineer a Dockerfile from an image
 
