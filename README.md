@@ -115,4 +115,4 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 [MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md)
 
-[Proceed to Beginners Track >>](https://github.com/collabnix/dockerlabs/blob/master/beginners/README.md)
+   [Proceed to Beginners Track >>](https://github.com/collabnix/dockerlabs/blob/master/beginners/README.md)
