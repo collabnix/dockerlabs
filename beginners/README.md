@@ -82,7 +82,7 @@
 
 
 
-[Next](https://github.com/collabnix/dockerlabs/blob/master/beginners/b001-linux-containers.md)
+ [Proceed >>](https://github.com/collabnix/dockerlabs/blob/master/beginners/b001-linux-containers.md)
 
 
 
