@@ -22,7 +22,7 @@ There are a number of areas where contributions can be accepted:
 * Submit your tutorial for DockerLabs(preferrably on Play with Docker Platform)
   - [Example](https://github.com/collabnix/dockerlabs/blob/master/play-with-docker/wordpress/example1/README.md)
 * Using Play with Docker Platform to build Docker Ready Solution
-* Review pull requests
+* Fork the Repository and Create pull requests
 * Test and verify tutorials submitted by community users
 * Get involved in design reviews and technical proof-of-concepts (PoCs)
 * Manage, triage and research Issues and Pull Requests
