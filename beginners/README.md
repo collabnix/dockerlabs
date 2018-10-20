@@ -24,7 +24,8 @@
 
 # Installing, Upgrading & Maintaining Docker 
 
-- Installing Docker on Linux <br>
+- Installing Docker on 
+   - Linux
    - Windows 
    - Windows Server
    - Cloud Platform
