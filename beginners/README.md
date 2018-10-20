@@ -15,7 +15,7 @@
    - Docker Community Edition
                 
 
-- Docker Platform 
+- Evolution of Docker Platform 
    - 2015 
    - 2016
    - 2017
