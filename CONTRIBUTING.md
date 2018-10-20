@@ -20,6 +20,7 @@ There are 5 golden steps to get involved -
 There are a number of areas where contributions can be accepted:
 
 * Submit your tutorial for DockerLabs(preferrably on Play with Docker Platform)
+  - [Example](https://github.com/collabnix/dockerlabs/blob/master/play-with-docker/wordpress/example1/README.md)
 * Using Play with Docker Platform to build Docker Ready Solution
 * Review pull requests
 * Test and verify tutorials submitted by community users
