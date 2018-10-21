@@ -1,4 +1,4 @@
-# <TOPIC NAME>
+# Working with Docker Images
 
 ## Tested Infrastructure
 
@@ -25,18 +25,34 @@
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
 
-## CLI for Docker Images
-
-
+## Listing the Docker Images
 
 ```
-$ docker run hello-world
-
+$ docker images
 ```
 
-## Image
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              4ab4c602aa5e        6 weeks ago         1.84kB
+```
 
-![alt text](<link>)
+## Show all images (default hides intermediate images)
+
+```
+docker images -a
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              4ab4c602aa5e        6 weeks ago         1.84kB
+```
+
+## List out Docker Image digests
+
+```
+$ docker images --digests
+REPOSITORY          TAG                 DIGEST                    IMAGE ID            CREATED             SIZE
+hello-world         latest              sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788   4ab4c602aa5e        6 weeks ago         1.84kB
+```
+
+## Image ![alt text](<link>)
 
 
 
