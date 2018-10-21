@@ -176,21 +176,9 @@ the Docker Community Forums, the Docker Community Slack, or Stack Overflow
 https://github.com/docker-library/hello-world/issues
 
 ## Maintained by:
-the Docker Community
+Docker Community
 
 ## Supported architectures: (more info)
 amd64, arm32v5, arm32v7, arm64v8, i386, ppc64le, s390x, windows-amd64
 
-## Published image artifact details:
-repo-info repo's repos/hello-world/ directory (history)
-(image metadata, transfer size, etc)
 
-## Image updates:
-official-images PRs with label library/hello-world
-official-images repo's library/hello-world file (history)
-
-## Source of this description:
-docs repo's hello-world/ directory (history)
-
-Supported Docker versions:
-the latest release (down to 1.6 on a best-effort basis)
