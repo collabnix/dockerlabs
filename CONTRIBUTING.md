@@ -17,10 +17,16 @@ There are 5 golden steps to get involved -
 
 ## How can I contribute?
 
-There are a number of areas where contributions can be accepted:
+Contributing towards DockerLabs is simple and all you need is follow the below golden rules -
+
+* Say "Hi" to all Slack members with your short introduction
+* Search for your favourite Slack Channel and join accordingly.
+* Fork this Repository - https://github.com/collabnix/dockerlabs
+* Find your area of interest.
 
 * Submit your tutorial for DockerLabs(preferrably on Play with Docker Platform)
   - [Example](https://github.com/collabnix/dockerlabs/blob/master/play-with-docker/wordpress/example1/README.md)
+*  Create Pull Request
 * Using Play with Docker Platform to build Docker Ready Solution
 * Fork the Repository and Create pull requests
 * Test and verify tutorials submitted by community users
