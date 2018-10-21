@@ -32,6 +32,7 @@
    - IoT Platform
    - Unix ( FreeBSD, Solaris)
                      
+- Compiling Your Own Docker Binary from Source
 
 - Docker ToolBox Installations
 
@@ -62,30 +63,47 @@
 - Difference between Docker Image Vs Docker Container?
 
 - What is Docker registry?
+  - Building a Private Registry <br>
+  
 
 - What is DockerHub?
+  - Setting Up an Automated Build on Docker Hub for Continuous Integration/Deployment<br>
+  
+
 
 # Working with Docker Image & Container
 
 - Running Hello World Example
 
 - Working with Docker Image <br>
-  - Injecting files into your image using ADD <br>
-  - Reducing the size of your Dockerfile image. <br>
+  
+  - Saving Images and Containers as Tar Files for Sharing <br>
+  - Versioning an Image with Tags <br>
+  - 
 
 - Working with Docker containers<br>
   - Detaching containers without stopping them<br>
 
 - Build Your Own Docker Image
+  - Using Packer to Create a Docker Image <br>
+  - Using ONBUILD Images <br>
+  
 
 - Creating a DockerHub Account
 
 - Sharing Your Docker Image
+  -  Publishing Your Image to Docker Hub <br>
+  
 
 - Building Docker Image from Dockerfile
+  - Writing Your First Dockerfile
   - Injecting files into your image using ADD <br>
   - Rebuilding without Cache <br> 
   - Busting the Cache <br>
+  - Reducing the size of your Dockerfile image. <br>
+  - Packaging a Flask Application Inside a Container <br>
+  - Optimizing Your Dockerle by Following Best Practices <br>
+  
  
 - Reverse-engineer a Dockerfile from an image
 
@@ -94,14 +112,37 @@
 
 # Introduction to Docker Networking
 
+- Understanding Docker Container Networking
+
+- Docker Networking subsystem & Driver
+
+- Docker Enterprise Edition Networking Feature
+
+- Difference between Bridge Vs Overlay Network
+
+- What is MacVLAN networking?
+
+- Docker Networking CLI
+  - Disable Networking for Container
+  - Finding IP address of Container
+  - Exposing a Container Port on the Host
+  - Linking Containers in Docker
+  - Choosing a Container Networking Namespace
+  - Configuring the Docker Daemon IP Tables and IP Forwarding Settings
+  - Setting Up a Custom Bridge for Docker
+  - Docker Networking for Swarm
+  - Diving Deeper into the Docker Network Namespaces Configuration
+  
+ 
+
 
 # Introduction to Docker Volumes
 
-- 
+- TBD
 
 - Housekeeping Docker Volumes
 
--
+- TBD
 
 # Introduction to Docker Machine
 
@@ -109,38 +150,6 @@
 
 
 
-
-# FAQs
-
-## #5:How to use socat to monitor API Traffic?
-
-## #6: Can I run multiple services inside Docker container?
-
-## #7: Can I setup Local Docker Registry?
-
-## #8: How can I push Application rather than just Docker Image to DockerHub?
-
-## #9: How shall I convert VM to Docker Image?
-
-## #10: How can you use Docker to break your application stack up into container-based services?
-
-## #11: You want to save the state of your development environment. How shall you do it with Docker Container?
-
-## #12: You want to save container state regularly in order to revert to a known state if necessary. How shall you accomplish that?
-
-## #13: I want to access files on the host from within a container. Can you help?
-
-## #14: How shall I run GUIs in a container as though they were normal desktop apps?
-
-## #15: How can I find Docker container IP address? How shall I ping each of them?
-
-## #16: How to use DockerUI to manage your Docker daemon?
-
-## #17: How to execute commands directly on your Docker container?
-
-## #18: How to delete log files older than a week on a container?
-
-## #19: 
 
 
 
