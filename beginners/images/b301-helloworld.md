@@ -1,7 +1,6 @@
 
-# Running Hello World Example
+# Demonstrating Hello World Example
 <br>
-
 
 ## Tested Infrastructure
 
@@ -9,11 +8,13 @@
   <tr>
     <th class="tg-yw4l"><b>Platform</b></th>
     <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Time</b></th>
     
   </tr>
   <tr>
     <td class="tg-yw4l"><b> Play with Docker</b></td>
     <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>1 min</b></td>
     
   </tr>
   
@@ -62,4 +63,4 @@ So what’s happened here? We’ve called the docker run command, which is respo
 
 The argument hello-world is the name of the image someone created on dockerhub for us. It will first search for "hello-world" image locally and then search in Dockerhub.
 
-Once the image has been downloaded, Docker turns the image into a running container and executes it. The result of running this command is shown as shown below:
+Once the image has been downloaded, Docker turns the image into a running container and executes it. 
