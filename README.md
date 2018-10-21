@@ -86,6 +86,7 @@ $ docker service create \
 Thank you so much for your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials.
 
 [Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)
+[Template for writing Tutorial Page](https://github.com/collabnix/dockerlabs/tree/master/templates/EXAMPLE.md)
 
 ## Docker-Ready Solution for You
 
