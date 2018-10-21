@@ -3,7 +3,6 @@
 # Introduction to Docker 
 
 - [What are Linux Containers? What are they used for?](https://github.com/collabnix/dockerlabs/blob/master/beginners/b001-linux-containers.md)
-
 - Difference between Docker & Linux Container?
 
 - How is Docker different from Virtual Machine?
@@ -97,7 +96,7 @@
   
 - Reverse-engineer a Dockerfile from an image
 
--  Using make with Docker
+- Using make with Docker
 
 
 # Introduction to Docker Networking
