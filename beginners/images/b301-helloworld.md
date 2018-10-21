@@ -53,7 +53,7 @@ Once the image has been downloaded, Docker turns the image into a running contai
 
 ## Did you Know?
 
-1. The Hello World Docker container is only 1.84 KB size.
+1. The Hello World Docker Image is only 1.84 KB size.
 
 ```
 [node1] (local) root@192.168.0.18 ~
