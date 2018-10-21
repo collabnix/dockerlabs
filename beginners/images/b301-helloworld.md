@@ -42,6 +42,9 @@ $ docker run hello-world
 
 ## Explanation
 
+
+This image is a prime example of using the scratch image effectively. See hello.c in https://github.com/docker-library/hello-world for the source code of the hello binary included in this image.
+
 So what’s happened here? We’ve called the docker run command, which is responsible for launching containers.
 
 The argument hello-world is the name of the image someone created on dockerhub for us. It will first search for "hello-world" image locally and then search in Dockerhub.
