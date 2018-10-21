@@ -1,6 +1,6 @@
 
 # Demonstrating Hello World Example
-<br>
+
 
 ## Tested Infrastructure
 
