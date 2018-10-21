@@ -23,8 +23,7 @@
    - Windows Server
    - Cloud Platform
    - IoT Platform
-   - Unix ( FreeBSD, Solaris)
-                     
+   - Unix ( FreeBSD, Solaris)  
 - Compiling Your Own Docker Binary from Source
 - Docker ToolBox Installations
 - Scripts & Installation Tools
@@ -44,32 +43,32 @@
 - What is Docker Container?
 - Difference between Docker Image Vs Docker Container?
 - What is Docker registry?
-  - Building a Private Registry <br>
+  - Building a Private Registry 
 - What is DockerHub?
-  - Setting Up an Automated Build on Docker Hub for Continuous Integration/Deployment<br>
+  - Setting Up an Automated Build on Docker Hub for Continuous Integration/Deployment
   
 # Working with Docker Image & Container
 
 - Running Hello World Example
-- Working with Docker Image <br>
-  - Saving Images and Containers as Tar Files for Sharing <br>
-  - Versioning an Image with Tags <br>
-- Working with Docker containers<br>
-  - Detaching containers without stopping them<br>
+- Working with Docker Image 
+  - Saving Images and Containers as Tar Files for Sharing 
+  - Versioning an Image with Tags 
+- Working with Docker containers
+  - Detaching containers without stopping them
 - Build Your Own Docker Image
-  - Using Packer to Create a Docker Image <br>
-  - Using ONBUILD Images <br>
+  - Using Packer to Create a Docker Image 
+  - Using ONBUILD Images 
 - Creating a DockerHub Account
 - Sharing Your Docker Image
-  -  Publishing Your Image to Docker Hub <br>
+  -  Publishing Your Image to Docker Hub 
 - Building Docker Image from Dockerfile
   - Writing Your First Dockerfile
-  - Injecting files into your image using ADD <br>
-  - Rebuilding without Cache <br> 
-  - Busting the Cache <br>
-  - Reducing the size of your Dockerfile image. <br>
-  - Packaging a Flask Application Inside a Container <br>
-  - Optimizing Your Dockerle by Following Best Practices <br>
+  - Injecting files into your image using ADD
+  - Rebuilding without Cache 
+  - Busting the Cache 
+  - Reducing the size of your Dockerfile image. 
+  - Packaging a Flask Application Inside a Container 
+  - Optimizing Your Dockerfile by Following Best Practices 
 - Reverse-engineer a Dockerfile from an image
 - Using make with Docker
 
