@@ -1,5 +1,27 @@
 # Understanding MacVLAN - The Easy Way
 
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Operating System</b></th>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Ubuntu OS </b></td>
+    <td class="tg-yw4l"><b>Bare Metal</b></td>
+    <td class="tg-yw4l"><b>10 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+- Install Docker Community Edition on Ubuntu Host OS
+
 - Assume you have a clean Docker Host system with just 3 networks available – bridge, host and null
 
 ```docker
