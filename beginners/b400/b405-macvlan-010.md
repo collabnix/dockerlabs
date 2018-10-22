@@ -95,9 +95,9 @@ Status: Downloaded newer image for alpine:latest
 493a9566c31c15b1a19855f44ef914e7979b46defde55ac6ee9d7db6c9b620e0
 ```
 
-## Important Point: When using macvlan, you cannot ping or communicate with the default namespace IP address. For example, if you create a container and try to ping the Docker host’s eth0, it will not work. That traffic is explicitly filtered by the kernel modules themselves to offer additional provider isolation and security
+**Important Point: When using macvlan, you cannot ping or communicate with the default namespace IP address. For example, if you create a container and try to ping the Docker host’s eth0, it will not work. That traffic is explicitly filtered by the kernel modules themselves to offer additional provider isolation and security
 
-### Then how shall I enable this feature
+Follow the below CLIs to enable this feature - 
 
 It’s simple. Just run the below command:
 
