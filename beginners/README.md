@@ -7,7 +7,7 @@
 - How is Docker different from Virtual Machine?
 - Understanding Docker Underlying Technologies
 - Architecture of Docker 
-   - Docker Enterprise Edition
+   - [Docker Enterprise Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/b005-architecture-dockeree.md)
    - Docker Community Edition
 - Evolution of Docker Platform 
    - 2015 
