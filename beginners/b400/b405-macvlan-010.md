@@ -1,5 +1,7 @@
 # Understanding MacVLAN - The Easy Way
 
+To test drive MacVLAN, you can't use Cloud Platforms. All you can try it out either on bare metal system or VMs(ESXi, VirtualBox etc.)
+
 ## Tested Infrastructure
 
 <table class="tg">
