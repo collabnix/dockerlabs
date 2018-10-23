@@ -2,8 +2,8 @@
 
 # Introduction to Docker 
 
-- [What are Linux Containers? What are they used for?](https://github.com/collabnix/dockerlabs/blob/master/beginners/b001-linux-containers.md)
-- Difference between Docker & Linux Container?
+- [What are Containers? What are they used for?](https://github.com/collabnix/dockerlabs/blob/master/beginners/b001-linux-containers.md)
+- Difference between Docker & Container?
 - How is Docker different from Virtual Machine?
 - Understanding Docker Underlying Technologies
 - Architecture of Docker 
