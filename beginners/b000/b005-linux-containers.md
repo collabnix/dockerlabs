@@ -1,6 +1,6 @@
 # Can container communication cross over to noncontainerized apps?
 
-## Que: Can an application have Python as a container, run SQL queries on an external Microsoft SQL database and publish the results on an Apache web server container?
+A Valid Question - Can an application have Python as a container, run SQL queries on an external Microsoft SQL database and publish the results on an Apache web server container? Under this page, we will look into it in detail.
 
 Containers resemble VMs in that they get full network access and can connect to any other service on the internet as long as the containers are configured to do so.
 
