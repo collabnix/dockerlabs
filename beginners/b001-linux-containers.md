@@ -16,7 +16,7 @@ OS sharing led to problems in early containers. Code that required raised privil
 
 The fact that all container applications must use the same underlying OS is a strength, as well as a weakness, of containerized applications. Every application container sharing a Linux OS, for example, must not only be based on Linux, but also on the same version and often patch level of that Linux distribution. That isn't always manageable in reality, as some applications have specific OS requirements.
 
-<image>
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b00-containers-3.png)
 
 System containerization, demonstrated in Figure 3, resolves this tangle. System containers use the shared capabilities of the underlying OS. Where the application needs a certain patch level or functional library that the underlying platform lacks, a proxy namespace captures the call from the application and redirects it to the necessary code or library held within the container itself.
 
