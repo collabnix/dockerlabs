@@ -4,9 +4,11 @@ A basic physical application installation needs server, storage, network equipme
 
 VMs get around some of these problems. A VM creates a logical system that sits atop the physical platform (see Figure 1). A Type 1 hypervisor, such as VMware ESXi or Microsoft Hyper-V, provides each VM with virtual hardware. The VM runs a guest OS, and the application software stack interprets everything below it the same as a physical stack. Virtualization utilizes resources better than physical setups, but the separate OS for each VM creates significant redundancy in base functionality.
 
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b000-container-type1.png)
+
 Containers provide greater flexibility than virtual and physical hardware stacks. A basic application container environment, as seen in Figure 2, runs on physical -- or virtual and physical -- hardware, a host OS and a container virtualization layer directly on the OS. Containers share the OS and its functions instead of running individual OS instances. This greatly reduces the resources required per application. Docker, Rkt (a CoreOS container runtime acquired by Red Hat), Linux Containers and Windows Server Containers operate generally in a similar manner.
 
-<image>
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b000-containers1.png)
   
 ## The benefits have downsides
 
@@ -31,7 +33,7 @@ Performance benefits from hosting such functions in the cloud. Sharing the under
 Microservices also offer flexible, process-based methods to handle business needs in an application architecture. Rather than code that tries to guess at the business process and ends up constraining it, microservices create a composite application of dynamic functions pulled together in real time that enables a business to respond to market forces more rapidly than monolithic applications can.
 
 
-Figure 4. Containers enable microservices architectures.
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b00-containers-last.png)
 
 As shown in Figure 4, the container doesn't carry around physical code within it, but rather a list of required functions that it pulls together as required. The container manages areas such as technical contracts and process audits.
 
