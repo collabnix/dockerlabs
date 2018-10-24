@@ -59,7 +59,7 @@
 - Build Your Own Docker Image
   - Using Packer to Create a Docker Image 
   - Using ONBUILD Images 
-- Creating Effective Docker Images
+- [Creating Effective Docker Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/b300/b304-creating-effective-docker-images.md)
 - Creating a DockerHub Account
 - Sharing Your Docker Image
   -  Publishing Your Image to Docker Hub 
