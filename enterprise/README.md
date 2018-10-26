@@ -6,7 +6,7 @@
 - Installing Docker Enterrprise Edition 2.0 on RHEL
 
 
-- [Resetting Password of Docker Enterprise Edition 2.0]()
+- [Resetting Password of Docker Enterprise Edition 2.0](https://github.com/collabnix/dockerlabs/new/master/enterprise/e001-enterprise-password.md)
 
 
 
