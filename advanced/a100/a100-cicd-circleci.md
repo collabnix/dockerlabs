@@ -134,13 +134,14 @@ You can also provide Github SSH permission.
 ![envn_var](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-26%20at%207.50.31%20AM.png)
 
 Next, Run the build and it will perform following steps one by one {if it encounter any error, you should see red-colored messages )
+<br>
 
-1.Spin up Environment
-2.Checkout code
-3.Setup a remote Docker engine
-4.Install dependencies
-5.Run tests
-
+1.Spin up Environment<br>
+2.Checkout code<br>
+3.Setup a remote Docker engine<br>
+4.Install dependencies<br>
+5.Run tests<br>
+<br>
 It should result in test.py. Refer https://github.com/sangam14/dockerapp1/blob/master/app/test.py
 
 
