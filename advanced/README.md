@@ -5,7 +5,7 @@
 
 ## Continous Integration & Deployment
 
-[5 min CI/CD pipelining using Docker & circle-ci]()
+[5 min CI/CD pipelining using Docker & circle-ci](https://github.com/collabnix/dockerlabs/blob/master/advanced/a100/a100-cicd-circleci.md)
 
 
 
