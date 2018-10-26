@@ -12,7 +12,7 @@ Current CI/CD solutions follow multi-tiered environments approach - development,
 
 This leads to the popular problem known as “it works on my machine” syndrome where an application that works on one environment stops working on some other due to the above-mentioned problem.
 
-## Solution To Problem Statement: Using Docker 
+## Docker comes to Rescue
 
 ![ci with docker](https://user-images.githubusercontent.com/21982562/47330766-0fe6f480-d697-11e8-9c4e-bd2290beae15.png)
 
