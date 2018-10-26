@@ -7,7 +7,7 @@
 
 # Docker Enteprise Edition Configuration & Troubleshooting
 
-- [Resetting Password of Docker Enterprise Edition 2.0](https://github.com/collabnix/dockerlabs/new/master/enterprise/e001-enterprise-password.md)
+- [Resetting Password of Docker Enterprise Edition 2.0](https://github.com/collabnix/dockerlabs/blob/master/enterprise/e0001/e0001-enterprise-password.md)
 
 
 
