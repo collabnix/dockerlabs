@@ -29,21 +29,22 @@ This leads to the popular problem known as “it works on my machine” syndrome
 
 
 
-# lets run the dockerapp before integrating to circle-ci:
+## Using Dockerapp
 
-just pick a git clone using following command 
+Clone the Repository:
 
 ```
 git clone https://github.com/sangam14/dockerapp1.git
 ```
 
-jump into clone directory that is dockerapp1 using following command 
+Change directory to dockerapp1 as shown below:
 
 
 ```
 cd dockerapp1 
 ```
- run the docker compose file by following command 
+
+Bringing up app using Docker Compose:
  
 ```
 docker-compose up 
@@ -54,19 +55,16 @@ output:
 
 ![PWD output](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-25%20at%2010.51.03%20PM.png)
 
-in this above application you can save key and value by clicking save button 
-and you can give key and it will return value for it 
+As shown above, we can save key and value by clicking "Save" button. 
 
-its working perfectly !!
+## Integrating Cirecle-ci (Before Docker)
 
-## Integrating to cirecle-ci (Before Docker)
+Make sure you add circle-ci config file under .circleci/... as shown under the example https://github.com/sangam14/dockerapp1/tree/master/.circleci
 
-make sure add circle-ci config file under .circleci/...
-example https://github.com/sangam14/dockerapp1/tree/master/.circleci
+
 ```
 .circleci/config.yml
 ```
-.circleci/config.yml
 
 ```
 version: 2
@@ -98,23 +96,19 @@ jobs:
             docker push $DOCKER_HUB_USER_ID/dockerapp1:latest
 ```
 
-As shown above,  make sure to add envirment veriable like  $DOCKER_HUB_EMAIL, $DOCKER_HUB_USER_ID,$DOCKER_HUB_PWD
-so after runing circleci job sucessfully it will automatically deployed on dockerhub repo 
+As shown above,  make sure to add environment variable like  $DOCKER_HUB_EMAIL, $DOCKER_HUB_USER_ID,$DOCKER_HUB_PWD
+Once you get circleci job running sucessfully, it should automatically be deployed on DockerHub repository. 
 
-Login to the circl-ci account https://circleci.com using github 
-
-Select project which you want to deploy 
+Login to the circl-ci account https://circleci.com using github. Select project which you want to deploy. 
 
 ![add_project](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-26%20at%207.49.53%20AM.png)
 
-Go to the setting of the project in circleci dashboard
-add the environment veriable which declared in .circleci/config.yml file io
-
-You can also prvide github ssh permission.
+Go to the setting of the project in circleci dashboard and add the environment veriable which declared in .circleci/config.yml file io.
+You can also provide Github SSH permission.
 
 ![envn_var](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-26%20at%207.50.31%20AM.png)
 
-After that run the build it will perform following steps one by one {if its error it will show red otherwise green )
+Next, Run the build and it will perform following steps one by one {if it encounter any error, you should see red-colored messages )
 
 1.Spin up Environment
 2.Checkout code
@@ -122,59 +116,19 @@ After that run the build it will perform following steps one by one {if its erro
 4.Install dependencies
 5.Run tests
 
-Already given test.py file so it will check test.py after  
-```
-https://github.com/sangam14/dockerapp1/blob/master/app/test.py
-
-```
-6.Push application Docker image
+It should result in test.py. Refer https://github.com/sangam14/dockerapp1/blob/master/app/test.py
 
 
-After successfully completed its will deployed in docker hub 
+### Pushing application Docker image
+
+
+After it gets successfully completed, it will start deploying under DockerHub. 
 
 https://hub.docker.com/r/sangam14/dockerapp
 
-see its deployed
+You should see it successfully deployed.
 
-Maintained by: Sangam biradar - smbiradar14@gmail.com -www.codexplus.in 
+## Contributor - 
 
-It help you to understand some docker commands  
+Sangam biradar - smbiradar14@gmail.com -www.codexplus.in 
 
-dockerfile: https://github.com/sangam14/dockerapp1/blob/master/Dockerfile
-```
-FROM python:3.5
-RUN pip install Flask==0.11.1 redis==2.10.5
-RUN useradd -ms /bin/bash admin
-USER admin
-COPY app /app
-WORKDIR /app
-CMD ["python", "app.py"] 
-
-```
-Docker-compose.yml https://github.com/sangam14/dockerapp1/blob/master/docker-compose.yml
-```
-version: "3.0"
-services:
-  dockerapp1:
-    build: .
-    ports:
-      - "5000:5000"
-    depends_on:
-      - redis
-  redis:
-    image: redis:3.2.0
-
-```
-prod.yml https://github.com/sangam14/dockerapp1/blob/master/prod.yml
-```
-version: "3.0"
-services:
-  dockerapp1:
-    image: sangam14/dockerapp1
-    ports:
-      - "5000:5000"
-    depends_on:
-      - redis
-  redis:
-    image: redis:3.2.0
-```
