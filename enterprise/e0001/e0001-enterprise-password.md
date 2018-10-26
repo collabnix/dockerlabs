@@ -12,7 +12,7 @@
     
   </tr>
   <tr>
-    <td class="tg-yw4l"><b> Docker Enterprise Edition</b></td>
+    <td class="tg-yw4l"><b> Google Cloud Platform</b></td>
     <td class="tg-yw4l"><b>3</b></td>
     <td class="tg-yw4l"><b>5 min</b></td>
     
