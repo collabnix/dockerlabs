@@ -1,6 +1,8 @@
 # 5 min CI/CD pipelining using Docker & Circle-ci
-# why docker ??
-# Problem Statement: CI Pipelining Without Docker 
+
+## Problem Statement: CI Pipelining Without Docker 
+
+
 1. For the purpose of virtualization, we uses virtual machine technology. This technology actually reduces concentration risk when deploy in the right configurations. You can always achieve more failures using fewer x physical machines and hosting more than x virtual machines that are networked to watch each other and take over in the event of partner machines failure.
 
 2. Another drawback of virtual machine is licensing cost. Virtual machine technology imposes a performance penalty from running an additional layer about the physical hardware. Also virtual machine technology hardware that both virtual machine hypervisor and the guest operating system support. To overcome all these problems Docker is the best solution.
