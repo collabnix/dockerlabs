@@ -1,4 +1,31 @@
-# 5 min to CI-CD Pipeline using Docker & Circle-ci
+# 5 Minutes Guide to CI/CD pipelining using Docker & Circle-CI
+
+
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+- Create an account with [DockerHub](https://hub.docker.com)
+- Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
+- Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
+- circle-ci and github account 
+
 
 ## Continous Integration Pipeline - (Without Docker)
 
@@ -23,12 +50,8 @@ This leads to the popular problem known as “it works on my machine” syndrome
 5. Since Docker works on prem, in the cloud or virtual environment and supports both Linux and Windows, enterprises no longer have to deal with inconsistencies between different environments types. Perhaps one of the most widely known benefits of the Docker CaaS platform
 
 
+Steps to follow:
 
-![ play-with-docker- PWD](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-25%20at%2010.48.55%20PM.png)
-
-
-
-## Using Dockerapp
 
 Clone the Repository:
 
@@ -48,6 +71,9 @@ Bringing up app using Docker Compose:
 ```
 docker-compose up 
 ```
+
+![ play-with-docker- PWD](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-25%20at%2010.48.55%20PM.png)
+
 ![ play-with-docker- PWD click-button-to-check-web-page](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-25%20at%2010.51.29%20PM.png)
 
 output:
