@@ -1,6 +1,6 @@
 # 5 min to CI-CD Pipeline using Docker & Circle-ci
 
-Continous Integration Pipeline - (Without Docker)
+## Continous Integration Pipeline - (Without Docker)
 
 For the purpose of virtualization, we uses virtual machine technology. This technology actually reduces concentration risk when deploy in the right configurations. You can always achieve more failures using fewer x physical machines and hosting more than x virtual machines that are networked to watch each other and take over in the event of partner machines failure.
 
