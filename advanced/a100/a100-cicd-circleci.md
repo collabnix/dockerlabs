@@ -148,11 +148,11 @@ It should result in test.py. Refer https://github.com/sangam14/dockerapp1/blob/m
 ### Pushing application Docker image
 
 
-After it gets successfully completed, it will start deploying under DockerHub. 
+After it gets successfully completed, you should be able to find the below Docker Image under DockerHub. 
 
 https://hub.docker.com/r/sangam14/dockerapp
 
-You should see it successfully deployed.
+You should see it successfully deployed. Cheers !
 
 ## Contributor - 
 
