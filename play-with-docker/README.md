@@ -8,6 +8,9 @@
 ## List of Applications for the demonstration 
 
 [WordPress under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/wordpress/example1/README.md)<br>
+
+[![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://github.com/ajeetraina/docker101/blob/master/play-with-docker/wordpress/example1/stack.yml)
+
 [ELK under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/ELK/README.md)<br>
 [Prometheus Stack under Docker Swarm](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/docker-prometheus-swarm/README.md)<br>
 [Apache Jmeter under Docker Swarm Mode](https://github.com/ajeetraina/docker101/tree/master/play-with-docker/jmeter-docker/README.md)<br>
