@@ -1,4 +1,4 @@
-# 5 min CI-CD pipelining using Docker & Circle-ci
+# 5 min to CI-CD Pipeline using Docker & Circle-ci
 
 ## Problem Statement: CI Pipelining Without Docker 
 
