@@ -1,4 +1,4 @@
-## Docker Compose -Cheat sheet
+## Docker Compose Cheat sheet
 
 ## Basic example
 
@@ -49,6 +49,7 @@ web:
  image: tutum/influxdb
  image: example-registry:4000/postgresql
  image: a4bc65fd
+```
 
 ## Ports
 
@@ -58,16 +59,15 @@ ports:
  - "8000:80" # guest:host
 # expose ports to linked services (not to host)
  expose: ["3000"]
-```
-
+ 
 ## Commands
-
  command to execute
  command: bundle exec thin -p 3000
  command: [bundle, exec, thin, -p, 3000]
 # override the entrypoint
  entrypoint: /app/start.sh
  entrypoint: [php, -d, vendor/bin/phpunit]
+```
 
 ## Environment variables
 
