@@ -20,6 +20,9 @@ This repo contains Docker Labs and tutorials authored by members of the open com
 
 - [Docker for Advanced Users](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)
 
+- [Kubernetes for Beginners](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+
+
 ## Getting Started with Docker
 
 Interestingly, you don't need to do any investment. Throughout the tutorial, you will be using Play with Docker (PWD in short) Playground. Cool....Isn't it?
