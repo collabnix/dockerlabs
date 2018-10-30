@@ -157,4 +157,6 @@ services:
  - "somehost:192.168.1.100"
  ```
  
- ## Contributed By - Tathagata Sarkar
+## Contributors
+
+Tathagata Sarkar
