@@ -1,4 +1,4 @@
-## Docker Compose Cheat sheet
+# Docker Compose Cheat sheet
 
 ## Basic example
 
