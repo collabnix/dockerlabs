@@ -14,11 +14,16 @@ This repository brings you tutorials that help you get hands-on experience using
 
 This repo contains Docker Labs and tutorials authored by members of the open community. Below are the list of categories -
 
+# Docker
+
 - [Docker for Beginners](https://github.com/collabnix/dockerlabs/tree/master/beginners/README.md)
 
 - [Docker for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/intermediate/README.md)
 
 - [Docker for Advanced Users](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)
+
+
+# Kubernetes
 
 - [Kubernetes for Beginners](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
