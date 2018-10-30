@@ -20,15 +20,21 @@ This repo contains Docker Labs and tutorials authored by members of the open com
 
 - [Docker for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/intermediate/README.md)
 
-- [Docker for Advanced Users](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)
+- [Docker for Advanced](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)
 
 
 ## Kubernetes
 
 - [Kubernetes for Beginners](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
+- [Kubernetes for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
-# Getting Started with Docker
+- [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+
+
+# A Quick Reference
+
+## Getting Started with Docker
 
 Interestingly, you don't need to do any investment. Throughout the tutorial, you will be using Play with Docker (PWD in short) Playground. Cool....Isn't it?
 
@@ -46,7 +52,7 @@ To get started with Docker, follow the below steps:
 
 - Click on "Create Instance" to create your first Linux instance
 
-# Getting Started with Docker Swarm
+## Getting Started with Docker Swarm
 
 To get started with Docker Swarm, you can use "Play with Docker", shortly called PWD. It's free of cost and open for all.
 You get maximum of 5 instances of Linux system to play around with Docker.
@@ -65,7 +71,7 @@ We recommend you start with one of our Beginners Guides, and then move to interm
 
 Swarm Visualizer is a fancy tool which visualized the Swarm Cluster setup. It displays containers running on each node in the form of visuals. If you are conducting Docker workshop, it's a perfect way to show your audience how the containers are placed under each node. Go..try it out..
 
-# Clone the Repository
+## Clone the Repository
 
 ```docker
 git clone https://github.com/dockersamples/docker-swarm-visualizer
