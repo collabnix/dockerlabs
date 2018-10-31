@@ -1,0 +1,7 @@
+---
+
+- name: DOCKER LOGIN | Configure DockerHub account
+  docker_login:
+    username: "{{ docker_login.username }}"
+    password: "{{ docker_login.password }}"
+    email: "{{ docker_login.email }}"

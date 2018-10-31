@@ -1,0 +1,9 @@
+---
+
+- name: DOCKER USERS | Add user to Docker group
+  user:
+    name: "{{ item }}"
+    groups: docker
+    append: yes
+  with_items: "{{ docker_users }}"
+  tags: update-docker-user
