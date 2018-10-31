@@ -2,7 +2,7 @@
 
 ![My image](https://github.com/collabnix/dockerlabs/blob/master/images/dockerlabs.jpeg)
 
-Are you new to Docker? Want to build your career in Container Technology?
+Are you new to Docker & Kubernetes? Want to build your career in Container Technology?
 
 Then Welcome ! You are at the right place.
 
