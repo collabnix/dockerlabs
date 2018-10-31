@@ -10,7 +10,7 @@ This repository brings you tutorials that help you get hands-on experience using
 
 ## Getting Started in 3 Simple Steps
 
-- Join 200+ DockerLabs Contributors via [DockerLabs Slack Channel](https://collabnix.slack.com) 
+- Join 200+ DockerLabs Contributors in 2 mins via [DockerLabs Slack Channel](https://collabnix.slack.com/join/shared_invite/enQtNDYwMTMzNzUyMzA1LTk2MjdiZmM1Mzg3MzEzZjI2MTY3MTA4YmZkM2VkM2EzYzBmNGRmMjM4NGYwYjEwZTBhNTRmM2I5NjZlYjRmNzQ) 
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
