@@ -2,11 +2,22 @@
 
 The aim of this project is to deploy a Docker Swarm cluster on Linux Vagrant instances.
 
-## Getting Started
+## Tested Infrastructure
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b>Local (Virtualbox)</b></td>
+    <td class="tg-yw4l"><b>4</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+  </tr>
+</table>
 
-### Prerequisites
+## Pre-requisite
 
 What things you need to run this Ansible playbook :
 
@@ -19,6 +30,10 @@ What things you need to run this Ansible playbook :
 ```bash
 $ ansible-galaxy install -r requirements.yml
 ```
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Usage
 
