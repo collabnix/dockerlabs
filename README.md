@@ -22,7 +22,7 @@ This repo contains Docker Labs and tutorials authored by members of the open com
 
 - [Docker for Advanced](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)
 
-- [Docker Cheatsheet]()
+- [Docker Cheatsheet](https://github.com/collabnix/dockerlabs/tree/master/docker/cheatsheet/README.md)
 
 
 ## Kubernetes
@@ -33,7 +33,7 @@ This repo contains Docker Labs and tutorials authored by members of the open com
 
 - [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
-- [Kubernetes Cheatsheet]()
+- [Kubernetes Cheatsheet](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/cheatsheet/README.md)
 
 # A Quick Reference
 
