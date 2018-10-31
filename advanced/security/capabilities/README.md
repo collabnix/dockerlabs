@@ -1,4 +1,4 @@
-# Lab: Capabilities
+# Capabilities
 
 > **Difficulty**: Advanced
 
@@ -42,20 +42,25 @@ In an environment without file based capabilities, it's not possible for applica
 
 By default, Docker drops all capabilities except [those needed] using a whitelist approach.The following list contains all capabilities that are enabled by default when you run a docker container with their descriptions from the capabilities man page:
 
-CHOWN - Make arbitrary changes to file UIDs and GIDs
-DAC_OVERRIDE - Discretionary access control (DAC) - Bypass file read, write, and execute permission checks.
-FSETID - Don’t clear set-user-ID and set-group-ID mode bits when a file is modified; set the set-group-ID bit for a file whose GID does not match the file system or any of the supplementary GIDs of the calling process.
-FOWNER - Bypass permission checks on operations that normally require the file system UID of the process to match the UID of the file, excluding those operations covered by CAP_DAC_OVERRIDE and CAP_DAC_READ_SEARCH.
-MKNOD - Create special files using mknod(2).
-NET_RAW - Use RAW and PACKET sockets; bind to any address for transparent proxying.
-SETGID - Make arbitrary manipulations of process GIDs and supplementary GID list; forge GID when passing socket credentials via UNIX domain sockets; write a group ID mapping in a user namespace.
-SETUID - Make arbitrary manipulations of process UIDs; forge UID when passing socket credentials via UNIX domain sockets; write a user ID mapping in a user namespace.
-SETFCAP - Set file capabilities.
-SETPCAP - If file capabilities are not supported: grant or remove any capability in the caller’s permitted capability set to or from any other process.
-NET_BIND_SERVICE - Bind a socket to Internet domain privileged ports (port numbers less than 1024).
-SYS_CHROOT - Use chroot(2) to change to a different root directory.
-KILL - Bypass permission checks for sending signals. This includes use of the ioctl(2) KDSIGACCEPT operation.
-AUDIT_WRITE - Write records to kernel auditing log.
+| Capabilities      | Definition         
+| ------------- |:-------------
+| CHOWN         | Make arbitrary changes to file UIDs and GIDs 
+| DAC_OVERRIDE  | Discretionary access control (DAC) - Bypass file read, write, and execute permission checks     
+| FSETID | Don’t clear set-user-ID and set-group-ID mode bits when a file is modified; set the set-group-ID bit for a file whose GID does not match the file system or any of the supplementary GIDs of the calling process.   
+| FOWNER         | Bypass permission checks on operations that normally require the file system UID of the process to match the UID of the file, excluding those operations covered by CAP_DAC_OVERRIDE and CAP_DAC_READ_SEARCH. 
+| MKNOD         | MKNOD - Create special files using mknod(2)
+| NET_RAW         | Use RAW and PACKET sockets; bind to any address for transparent proxying.
+| SETGID         | Make arbitrary manipulations of process GIDs and supplementary GID list; forge GID when passing socket credentials via UNIX domain sockets; write a group ID mapping in a user namespace.
+| SETUID         | Make arbitrary manipulations of process UIDs; forge UID when passing socket credentials via UNIX domain sockets; write a user ID mapping in a user namespace.
+| SETFCAP        | Set file capabilities.
+| SETPCAP         | If file capabilities are not supported: grant or remove any capability in the caller’s permitted capability set to or from any other process. 
+| NET_BIND_SERVICE | Bind a socket to Internet domain privileged ports (port numbers less than 1024). 
+|  SYS_CHROOT      | Use chroot(2) to change to a different root directory. 
+| KILL         | Bypass permission checks for sending signals. This includes use of the ioctl(2) KDSIGACCEPT operation.
+|  AUDIT_WRITE       |  Write records to kernel auditing log.
+
+	
+
 
 # <a name="docker_cap"></a>Step 2: Working with Docker and capabilities
 
