@@ -1,0 +1,14 @@
+---
+
+- name: PIP | Installation
+  package:
+    name: python-pip
+    state: present
+
+- name: PIP | Install asked packages
+  pip:
+    name: "{{ item.name | default(item) }}"
+    version: "{{ item.version | default(omit) }}"
+    virtualenv: "{{ item.virtualenv | default(omit) }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ pip_packages }}"
