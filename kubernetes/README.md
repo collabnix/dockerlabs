@@ -34,7 +34,7 @@ $ minikube start
 ```
 $
 ```
-=== Create the VM
+= Create the VM
 [source,bash]
 ----
 #!/bin/bash
