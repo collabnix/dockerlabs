@@ -6,7 +6,7 @@ Are you new to Docker? Want to build your career in Container Technology?
 
 Then Welcome ! You are at the right place.
 
-This repository brings you tutorials that help you get hands-on experience using Docker & Kubernetes. Here you will find a mix of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it correct ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://play-with-docker.com) & [Play with Kubernetes Platform](https://play-with-k8s.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed. Hence, we have everything ready for you to get started with.
+DockerLabs brings you tutorials that help you get hands-on experience using Docker & Kubernetes. Here you will find complete documentation of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://play-with-docker.com) & [Play with Kubernetes Platform](https://play-with-k8s.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed. Hence, we have everything ready for you to get started with.
 
 ## Getting Started in 3 Simple Steps
 
@@ -20,7 +20,8 @@ This repository brings you tutorials that help you get hands-on experience using
 
 # Categories
 
-This repo contains Docker Labs & tutorials authored by members of the open community. Below are the list of categories:
+DockerLabs is a tutorials authored by members of the open community. 
+Below are the list of categories:
 
 ## Docker
 
@@ -65,7 +66,8 @@ To get started with Docker, follow the below steps:
 
 ## Getting Started with Docker Swarm
 
-To get started with Docker Swarm, you can use "Play with Docker", shortly called PWD. It's free of cost and open for all.
+To get started with Docker Swarm, you can use "Play with Docker", aka PWD. 
+It's free of cost and open for all.
 You get maximum of 5 instances of Linux system to play around with Docker.
 
 - Open [Play with Docker labs](https://labs.play-with-docker.com) on your browser
@@ -108,7 +110,7 @@ $ docker service create \
 
 ## How to Contribute
 
-Thank you so much for your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials.
+Thank you so much for showing your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials.
 
 [Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br>
 [Template for writing Tutorial Page](https://github.com/collabnix/dockerlabs/tree/master/template/EXAMPLE.md)
