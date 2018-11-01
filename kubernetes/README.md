@@ -1,12 +1,14 @@
 # Getting Started with Kubernetes
-- What is Kubernetes ?
+
+- What is Kubernetes & Why is it damn popular ?
 - Explain where kubernetes fits ?
-- How Kubernetes different from docker ?
-- Understand the kubernetes underlying technologies
-- Architecture of kubernetes
-- Evolution of kubernetes platform
+- How Kubernetes different from Docker ?
+- Demystify Kubernetes Underlying Technology
+- Architecture of Kubernetes
+- Evolution of Kubernetes Release
 
 # Installation & Getting Started
+
 - Installing Kubernetes on 
    - Linux
    - Windows 
@@ -14,7 +16,13 @@
    - Cloud Platform
    - IoT Platform
    - Unix ( FreeBSD, Solaris)  
-- Compiling Your Own Kubernetes Binary from Source
-- Kubernetes ToolBox Installations
+- Compiling Kubernetes Binary from Source
 - Scripts & Installation Tools
 - Upgrading Kubernetes
+
+# Kubernetes Networking
+
+# Kubernetes Volumes
+
+
+
