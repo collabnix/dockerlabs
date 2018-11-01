@@ -31,7 +31,7 @@
 
 ## Contributors
 
-- Karan Singh
-- Ajeet Singh Raina
+- [Karan Singh](karangandhi0007@gmail.com)
+- [Ajeet Singh Raina](ajeetraina@gmail.com)
 
 
