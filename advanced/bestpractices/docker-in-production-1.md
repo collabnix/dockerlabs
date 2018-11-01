@@ -1,5 +1,5 @@
 
-# The Better Way To Deploy Your Production web services With Docker & Docker compose, Docker Netwoking 
+Best Practices to Deploy Your Production Web Services using Docker 
 
 ## Tested Infrastructure
 
