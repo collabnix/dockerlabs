@@ -10,12 +10,6 @@
 # Installation & Getting Started
 - Installing Kubernetes on 
    - Linux
-     - Setup
-     - Prerequisites
-     - Downloads
-     - Environment
-     - Create VM
-     - Check status, IP & Dashboard/Console
    - Windows 
    - Windows Server
    - Cloud Platform
