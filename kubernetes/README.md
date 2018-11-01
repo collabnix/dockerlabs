@@ -16,6 +16,7 @@
    - Cloud Platform
    - IoT Platform
    - Unix ( FreeBSD, Solaris)  
+- [Getting Started with Kubernetes on Play with Kubernetes Platform]()
 - Compiling Kubernetes Binary from Source
 - Scripts & Installation Tools
 - Upgrading Kubernetes
