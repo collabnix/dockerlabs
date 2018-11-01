@@ -1,5 +1,5 @@
 
-# Best Practices to Deploy Your Production-Level Web Services using Docker 
+# Best Practices for Deploying Production-Level Web Services using Docker 
 
 ## Tested Infrastructure
 
