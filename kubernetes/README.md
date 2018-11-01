@@ -16,7 +16,7 @@
    - Cloud Platform
    - IoT Platform
    - Unix ( FreeBSD, Solaris)  
-- [Getting Started with Kubernetes on Play with Kubernetes Platform]()
+- [Getting Started with K8s on PWK Platform](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/getting-started-on-pwk.md)
 - Compiling Kubernetes Binary from Source
 - Scripts & Installation Tools
 - Upgrading Kubernetes
