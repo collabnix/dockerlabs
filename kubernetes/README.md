@@ -4,9 +4,8 @@
 - How Kubernetes different from docker ?
 - Understand the kubernetes underlying technologies
 - Architecture of kubernetes
-  - 
 - Evolution of kubernetes platform
-  - 
+
 # Installation & Getting Started
 - Installing Kubernetes on 
    - Linux
