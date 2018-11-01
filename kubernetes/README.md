@@ -25,11 +25,12 @@ $ minishift addon enable admin-user <3>
 $ minishift addon enable anyuid <4>
 $ minikube start
 ```
-<1> "Explain Minimum Resources for Laptop/ Home Machine"
-<2> "Explain recommended Hypervisor"
-<3> Minishift is secured by default, this creates an cluster "admin" user
+<1> "Explain Minimum Resources for Laptop/ Home Machine".
+<2> "Explain recommended Hypervisor".
+<3> Minishift is secured by default, this creates an cluster "admin" user.
 <4> A mechanism on OpenShift that allows the execution of an image with any user id, including root.
 
 - Check status, IP & Dashboard/Console
-----
+```
 $
+```
