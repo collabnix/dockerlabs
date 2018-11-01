@@ -34,6 +34,7 @@ $ minikube start
 ```
 $
 ```
+
 = Create the VM
 [source,bash]
 ----
@@ -57,3 +58,5 @@ Note: with 1.24, I have seen this command fail, the workaround is to wait until 
 
 <4> A mechanism on OpenShift that allows the execution of an image with any user id, including root.
 https://github.com/burrsutter/9stepsawesome/issues/3
+
+
