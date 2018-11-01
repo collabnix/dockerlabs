@@ -77,4 +77,5 @@ As Swarm Mode is designed, we have central certificate authority that manages al
 Sitting on the top of the stack, there is GUI which uses Swarm APIs and Kubernetes APIs. Right next to GUI, we have Docker Trusted Registry which is an enterprise-ready on-premises service for storing, distributing and securing images. It gives enterprises the ability to ensure secure collaboration between developers and sysadmins to build, ship and run applications. Finally we have Docker & Kubernetes CLI capability integrated. Please note that this uses un-modified version of Kubernetes API.
 
 
-
+Contributor:
+- Ajeet Singh Raina
