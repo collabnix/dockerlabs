@@ -1,4 +1,4 @@
-= Kubernetes Developer Concepts =
+# Kubernetes Developer Concepts
 :toc:
 :imagesdir: ../images
 
@@ -7,11 +7,11 @@ Kubernetes has a number of abstractions that map to API objects. These Kubernete
 
 
 
-== Pod
+## Pod
 
 A Pod is the smallest deployable unit that can be created, scheduled, and managed. It’s a logical collection of containers that belong to an application. Pods are created in a namespace. All containers in a pod share the namespace, volumes and networking stack. This allows containers in the pod to "`find`" each other and communicate using `localhost`.
 
-=== Create a Pod
+## Create a Pod
 
 Each resource in Kubernetes can be defined using a configuration file. For example, an NGINX pod can be defined with configuration file shown in below:
 
@@ -32,6 +32,7 @@ Create the pod as shown below:
 
 	$ kubectl create -f templates/pod.yaml
 	pod "nginx-pod" created
+
 
 Get the list of pod:
 
@@ -54,17 +55,17 @@ If the containers in the pod generate logs, then they can be seen using the comm
 	127.0.0.1 - - [03/Nov/2017:17:33:32 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36" "-"
 	2017/11/03 17:33:32 [error] 5#5: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
 
-=== Delete a Pod
+## Delete a Pod
 
 Delete the pod as shown below:
 
 	$ kubectl delete -f templates/pod.yaml
 
-== Deployment
+##  Deployment
 
 A "`desired state`", such as 4 replicas of a pod, can be described in a Deployment object. The Deployment controller in Kubernetes cluster then ensures the desired and the actual state are matching. Deployment ensures the recreation of a pod when the worker node fails or reboots. If a pod dies, then a new pod is started to ensure the desired vs actual matches. It also allows both up- and down-scaling the number of replicas. This is achieved using ReplicaSet. The Deployment manages the ReplicaSets and provides updates to those pods.
 
-=== Create a Deployment
+##  Create a Deployment
 
 The folowing example will create a Deployment with 3 replicas of NGINX base image. Let's begin with the template:
 
@@ -103,19 +104,19 @@ To monitor deployment rollout status:
 
 A Deployment creates a ReplicaSet to manage the number of replicas. Let's take a look at existing deployments and replica set.
 
-Get the deployments:
+## Get the deployments:
 
 	$ kubectl get deployments
 	NAME               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 	nginx-deployment   3         3         3            3           25s
 
-Get the replica set for the deployment:
+## Get the replica set for the deployment:
 
 	$ kubectl get replicaset
 	NAME                          DESIRED   CURRENT   READY     AGE
 	nginx-deployment-3441592026   3         3         3         1m
 
-Get the list of running pods:
+## Get the list of running pods:
 
 	$ kubectl get pods
 	NAME                                READY     STATUS    RESTARTS   AGE
@@ -123,20 +124,20 @@ Get the list of running pods:
 	nginx-deployment-3441592026-kkp8h   1/1       Running   0          2m
 	nginx-deployment-3441592026-lx304   1/1       Running   0          2m
 
-=== Scaling a Deployment
+## Scaling a Deployment
 
 Number of replicas for a Deployment can be scaled using the following command:
 
 	$ kubectl scale --replicas=5 deployment/nginx-deployment
 	deployment "nginx-deployment" scaled
 
-Verify the deployment:
+## Verify the deployment:
 
 	$ kubectl get deployments
 	NAME               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 	nginx-deployment   5         5         5            5           2m
 
-Verify the pods in the deployment:
+## Verify the pods in the deployment:
 
 	$ kubectl get pods
 	NAME                                READY     STATUS    RESTARTS   AGE
@@ -146,7 +147,7 @@ Verify the pods in the deployment:
 	nginx-deployment-3441592026-kkp8h   1/1       Running   0          3m
 	nginx-deployment-3441592026-lx304   1/1       Running   0          3m
 
-=== Update a Deployment
+## Update a Deployment
 
 A more general update to Deployment can be made by making edits to the pod spec. In this example, let's change to the latest nginx image.
 
@@ -201,7 +202,7 @@ Events:
   Normal  ScalingReplicaSet  25s (x3 over 26s)  deployment-controller  (combined from similar events): Scaled down replica set nginx-deployment-3441592026 to 0
 ```
 
-=== Rollback a Deployment
+## Rollback a Deployment
 
 To rollback to a previous version, first check the revision history:
 
@@ -225,14 +226,14 @@ If rolling back to a specific revision then enter:
 
 	$ kubectl rollout undo deployment/nginx-deployment --to-revision=<version>
 
-=== Delete a Deployment
+## Delete a Deployment
 
 Run the following command to delete the Deployment:
 
 	$ kubectl delete -f templates/deployment.yaml
 	deployment "nginx-deployment" deleted
 
-== Service
+## Service
 
 A pod is ephemeral. Each pod is assigned a unique IP address. If a pod that belongs to a replication controller dies, then it is recreated and may be given a different IP address. Further, additional pods may be created using Deployment or Replica Set. This makes it difficult for an application server, such as WildFly, to access a database, such as MySQL, using its IP address.
 
@@ -242,7 +243,7 @@ This abstraction of selecting pods using labels enables a loose coupling. The nu
 
 A Kubernetes service defines a logical set of pods and enables them to be accessed through microservices.
 
-=== Create a Deployment for Service
+## Create a Deployment for Service
 
 Pods belong to a service by using a loosely-coupled model where labels are attached to a pod and a service picks the pods by using those labels.
 
@@ -309,7 +310,7 @@ Events:
   Normal  ScalingReplicaSet  10s   deployment-controller  Scaled up replica set echo-deployment-3396249933 to 3
 ```
 
-Get the list of pods:
+## Get the list of pods:
 
 ```
 $ kubectl get pods
@@ -319,7 +320,7 @@ echo-deployment-3396249933-bjwqj   1/1       Running   0          1m
 echo-deployment-3396249933-r05nr   1/1       Running   0          1m
 ```
 
-Check the label for a pod:
+## Check the label for a pod:
 
 ```
 $ kubectl describe pods/echo-deployment-3396249933-8slzp | grep Label
@@ -328,7 +329,7 @@ Labels:         app=echo-pod
 
 Each pod in this deployment has `app=echo-pod` label attached to it.
 
-=== Create a Service
+## Create a Service
 
 In the following example, we create a service `echo-service`:
 
@@ -350,7 +351,7 @@ The set of pods targeted by the service are determined by the label `app: echo-p
 
 Kubernetes supports both TCP and UDP protocols.
 
-=== Publish a Service
+## Publish a Service
 
 A service can be published to an external IP using the `type` attribute. This attribute can take one of the following values:
 
@@ -381,7 +382,7 @@ Run the following command to create the service:
 
 	$ kubectl create -f templates/service.yaml --record
 
-Get more details about the service:
+## Get more details about the service:
 
 ```
 $ kubectl get svc
@@ -437,7 +438,7 @@ Note the `client_address` value shown in the output. This is the IP address of t
 
 Now, the number of pods in the deployment can be scaled up and down. Or the pods may terminate and restart on a different host. But the service will still be able to target those pods because of the labels attached to the pod and used by the service.
 
-=== Delete a Service
+## Delete a Service
 
 Run the following command to delete the Service:
 
@@ -447,13 +448,13 @@ The backend Deployment needs to be explicitly deleted as well:
 
     $ kubectl delete -f templates/echo-deployment.yaml
 
-== Daemon Set
+## Daemon Set
 
 Daemon Set ensure that a copy of the pod runs on a selected set of nodes. By default, all nodes in the cluster are selected. A selection critieria may be specified to select a limited number of nodes.
 
 As new nodes are added to the cluster, pods are started on them. As nodes are removed, pods are removed through garbage collection.
 
-=== Create a DaemonSet
+## Create a DaemonSet
 
 The folowing is an example DaemonSet that runs a Prometheus container. Let's begin with the template:
 
@@ -480,13 +481,13 @@ Run the following command to create the ReplicaSet and pods:
 
 The `--record` flag will track changes made through each revision.
 
-Get basic details about the DaemonSet:
+## Get basic details about the DaemonSet:
 
 	$ kubectl get daemonsets/prometheus-daemonset
 	NAME                   DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
 	prometheus-daemonset   5         5         5         5            5           <none>          7s
 
-Get more details about the DaemonSet:
+## Get more details about the DaemonSet:
 
 ```
 $ kubectl describe daemonset/prometheus-daemonset
@@ -522,7 +523,7 @@ Events:
   Normal  SuccessfulCreate  28s   daemon-set  Created pod: prometheus-daemonset-cnbkh
 ```
 
-Get pods in the DaemonSet:
+## Get pods in the DaemonSet:
 
 ```
 $ kubectl get pods -lname=prometheus-exporter
@@ -534,7 +535,7 @@ prometheus-daemonset-rxg79   1/1       Running   0          57s
 prometheus-daemonset-sjcgh   1/1       Running   0          57s
 ```
 
-=== Limit DaemonSets to specific nodes
+## Limit DaemonSets to specific nodes
 
 Verify that the Prometheus pod was successfully deployed to the cluster nodes:
 
@@ -571,13 +572,13 @@ After the update is performed, we have now configured Prometheus to run on a spe
 	NAME                   DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR         AGE
 	prometheus-daemonset   1         1         1         0            1           app=prometheus-node   2m
 
-=== Delete a DaemonSet
+## Delete a DaemonSet
 
 Run the following command to delete the DaemonSet:
 
 	$ kubectl delete -f templates/daemonset.yaml
 
-== Job
+## Job
 
 A Job creates one or more pods and ensures that a specified number of them successfully complete. A job keeps track of successful completion of a pod. When the specified number of pods have successfully completed, the job itself is complete. The job will start a new pod if the pod fails or is deleted due to hardware failure. A successful completion of the specified number of pods means the job is complete.
 
@@ -587,7 +588,7 @@ Jobs are complementary to Replica Set. A Replica Set manages pods which are not 
 
 Job is only appropriate for pods with `RestartPolicy` equal to `OnFailure` or `Never`.
 
-=== Non-parallel Job
+## Non-parallel Job
 
 Only one pod per job is started, unless the pod fails. Job is complete as soon as the pod terminates successfully.
 
@@ -644,11 +645,11 @@ The completed pod is not shown in the `kubectl get pods` command. Instead it can
 	NAME         READY     STATUS      RESTARTS   AGE
 	wait-lk49x   0/1       Completed   0          1m
 
-To delete the job, you can run this command
+## To delete the job, you can run this command
 
 	$ kubectl delete -f templates/job.yaml
 
-=== Parallel Job
+## Parallel Job
 
 Non-parallel job runs only one pod per job. This API is used to run multiple pods in parallel for the job. The number of pods to complete is defined by `.spec.completions` attribute in the configuration file. The number of pods to run in parallel is defined by `.spec.parallelism` attribute in the configuration file. The default value for both of these attributes is 1.
 
@@ -675,11 +676,11 @@ Here is a job specification:
 
 This job specification is similar to the non-parallel job specification. It has two new attributes added: `.spec.completions` and `.spec.parallelism`. This means the job will be complete when six pods have successfully completed. A maximum of two pods will run in parallel at a given time.
 
-Create a parallel job using the command:
+## Create a parallel job using the command:
 
 	$ kubectl apply -f templates/job-parallel.yaml
 
-Watch the status of the job as shown:
+## Watch the status of the job as shown:
 
 	$ kubectl get -w jobs
 	NAME      DESIRED   SUCCESSFUL   AGE
@@ -743,9 +744,9 @@ Deleting a job deletes all the pods as well. Delete the job as:
 
 	$ kubectl delete -f templates/job-parallel.yaml
 
-== Cron Job
+## Cron Job
 
-=== Pre-requisites
+## Pre-requisites
 
 For Kubernetes cluster versions < 1.8, Cron Job can be created with API version `batch/v2alpha1`. You can check the cluster version using this command,
 
@@ -759,7 +760,7 @@ NOTE: Once you switch API versions, you need to perform rolling-update of the cl
 
 If you have cluster version >= 1.8, `batch/v2alpha1` API is deprecated for this version but you can switch to `batch/v1beta1` to create Cron Jobs
 
-=== Create Cron Job
+## Create Cron Job
 
 A Cron Job is a job that runs on a given schedule, written in Cron format. There are two primary use cases:
 
@@ -831,7 +832,7 @@ Get logs from one of the pods:
 	Tue Oct 24 22:41:02 UTC 2017
 	Hello World!
 
-=== Delete Cron Job
+## Delete Cron Job
 
 Delete the Cron Job as shown in the following command:
 
