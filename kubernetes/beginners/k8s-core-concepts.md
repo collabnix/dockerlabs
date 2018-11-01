@@ -1,6 +1,5 @@
 # Kubernetes Developer Concepts
-:toc:
-:imagesdir: ../images
+
 
 Kubernetes has a number of abstractions that map to API objects. These Kubernetes API Objects can be used to describe your cluster's desired state which will include info such as applications and workloads running, replicas, container images, networking resources and more. This section explains the key concepts relevant from an application developer perspecitve.
 
