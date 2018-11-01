@@ -1,36 +1,27 @@
 # Getting Started with Kubernetes
-
-# Understanding The Term "Kubernetes"
 - What is Kubernetes ?
 - Explain where kubernetes fits ?
-
+- How Kubernetes different from docker ?
+- Understand the kubernetes underlying technologies
+- Architecture of kubernetes
+  - 
+- Evolution of kubernetes platform
+  - 
 # Installation & Getting Started
-- Setup
-- Prerequisites
-- Downloads
-  Download & Install Kubernetes CLI
-[source,bash]
-- Environment
-[source,bash]
-- Create the VM
-[source,bash]
-
-```
-$ !/bin/bash
-
-$ minikube config set memory 6144
-$ minikube config set cpus 2 <1>
-$ minikube config set vm-driver virtualbox #hyperkit <2>
-$ minishift addon enable admin-user <3>
-$ minishift addon enable anyuid <4>
-$ minikube start
-```
-  <1> "Explain Minimum Resources for Laptop/ Home Machine".  
-  <2> "Explain recommended Hypervisor".  
-  <3> Minishift is secured by default, this creates an cluster "admin" user.  
-  <4> A mechanism on OpenShift that allows the execution of an image with any user id, including root.  
-
-- Check status, IP & Dashboard/Console
-```
-$
-```
+- Installing Kubernetes on 
+   - Linux
+     - Setup
+     - Prerequisites
+     - Downloads
+     - Environment
+     - Create VM
+     - Check status, IP & Dashboard/Console
+   - Windows 
+   - Windows Server
+   - Cloud Platform
+   - IoT Platform
+   - Unix ( FreeBSD, Solaris)  
+- Compiling Your Own Kubernetes Binary from Source
+- Kubernetes ToolBox Installations
+- Scripts & Installation Tools
+- Upgrading Kubernetes
