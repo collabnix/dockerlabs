@@ -4,6 +4,7 @@
 
 - [What are Containers? What are they used for?](https://github.com/collabnix/dockerlabs/blob/master/beginners/b001-linux-containers.md)
 - Difference between Docker & Container?
+- [Similarity between VM and Docker](https://github.com/collabnix/dockerlabs/blob/master/beginners/similarity-vm-docker.md)
 - [How is Docker different from Virtual Machine?](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-vm-containers.md)
 - Understanding Docker Underlying Technologies
 - [Can container communication cross over to noncontainerized apps?](https://github.com/collabnix/dockerlabs/blob/master/beginners/b000/b005-linux-containers.md)
