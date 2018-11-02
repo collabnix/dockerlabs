@@ -1,6 +1,6 @@
 # Difference between Containers and Virtual Machines
 
-Before we deep dive further, Let us look at the component view of how virtual machines and containers are implemented.
+Let us look at the component view of how virtual machines and containers are implemented.
 
 
 
