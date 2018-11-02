@@ -8,13 +8,13 @@ Docker is not quite like a VM. It uses the host kernel & can’t boot a differen
 
 ## Virtual Machine
 
-If look at how virtual machines are built over the physical hardware, There is a layer of Hypervisor which sits between physical hardware and operating systems.
-In a broad view hypervisor is used to virtualize the hardware which is then configured with the way a user wants it to.
+If we closely look at how Virtual Machines are built over the physical hardware, there is a layer of Hypervisor which sits between physical hardware and operating systems. In a broader view, Hypervisor is used to virtualize the hardware which is then configured with the way a user wants it to.
 
-Thus, While using virtual machines our physical machine is divided into parts.
+Virtual Machines our physical machine is divided into following parts :-
 
 **Example:**
-Say, I have a server with 8GB RAM, I create two virtual machines each with 4GB RAM. Now, what happened is I divided my server into two parts each with 4GB RAM and would never be able to use that underlying 8GB RAM altogether again, Only access I have will be that 2 4GB RAM machines. 
+
+Say, you are using a system having 8GB RAM. If you create 2 VMs each with 4GB RAM, you are basically dividing your server into two components - each with 4GB RAM and would never be able to use that underlying 8GB RAM altogether again. 
 
 ![Component View](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker-vs-vm.png)
 
