@@ -33,7 +33,7 @@ Prime differnce between Containers and Virtual Machine is the virtualization of 
 ## Contributors:
 
 - Ajeet Singh Raina
-- Akshit 
+- Akshit Grover
 
 
 ## Further References
