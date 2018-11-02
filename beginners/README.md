@@ -75,6 +75,7 @@
   - Optimizing Your Dockerfile by Following Best Practices 
 - Reverse-engineer a Dockerfile from an image
 - Using make with Docker
+- [Difference between Docker Compose Vs Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-compose-dockerfile.md)
 
 # Introduction to Docker Networking
 
