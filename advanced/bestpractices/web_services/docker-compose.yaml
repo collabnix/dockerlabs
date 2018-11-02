@@ -1,0 +1,17 @@
+version: "2"
+services:
+    nginx:
+        build: ./nginx
+        ports:
+          - "80:80"
+        networks:
+          - mynetwork
+    app:
+        build: ./app
+        networks:
+          - mynetwork
+        expose: 
+          - 8080
+networks:
+    mynetwork: 
+        driver: bridge
