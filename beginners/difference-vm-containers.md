@@ -2,6 +2,8 @@
 
 Before diving into text lets look at the component view of how virtual machines and containers are implemented.
 
+
+
 ![Component View](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/difference-vm-containers.png)
 
 ## Virtual Machine
@@ -13,6 +15,8 @@ Thus, While using virtual machines our physical machine is divided into parts.
 
 **Example:**
 Say, I have a server with 8GB RAM, I create two virtual machines each with 4GB RAM. Now, what happened is I divided my server into two parts each with 4GB RAM and would never be able to use that underlying 8GB RAM altogether again, Only access I have will be that 2 4GB RAM machines. 
+
+![Component View](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker-vs-vm.png)
 
 ## Containers
 
