@@ -1,6 +1,6 @@
 # Difference between Containers and Virtual Machines
 
-Before diving into text lets look at the component view of how virtual machines and containers are implemented.
+Docker is not quite like a VM. It uses the host kernel & can’t boot a different operating system.Before we deep dive further, Let us look at the component view of how virtual machines and containers are implemented.
 
 
 
