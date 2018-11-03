@@ -105,10 +105,6 @@ To be able to connect to a Vagrant instance, you should use the CLI which is con
 $ vagrant ssh kubernetes01
 ```
 
-## Author
+## Contributor
 
-Member of Wikitops : https://www.wikitops.io/
-
-## Licence
-
-This project is licensed under the Apache License, Version 2.0. For the full text of the license, see the LICENSE file.
+[Wikitops](https://github.com/wikitops) - wikitops5692@gmail.com
