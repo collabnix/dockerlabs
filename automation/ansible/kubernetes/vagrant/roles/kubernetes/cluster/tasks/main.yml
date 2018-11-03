@@ -1,0 +1,56 @@
+---
+
+- name: KUBERNETES | Disable swap
+  shell: swapoff -a
+
+- name: KUBERNETES | Manage Debian environment
+  import_tasks: debian.yml
+  when: ansible_os_family == "Debian"
+
+- name: KUBERNETES | Manage RedHat environment
+  import_tasks: redhat.yml
+  when: ansible_os_family == "RedHat"
+
+- name: KUBERNETES | Installation
+  package:
+    name:
+      - kubelet
+      - kubectl
+      - kubeadm
+    state: present
+
+- name: KUBERNETES | Ensure Kubelet is enabled
+  systemd:
+    name: kubelet
+    enabled: yes
+
+- name: KUBERNETES | Get cluster status
+  stat:
+    path: /etc/kubernetes/kubelet.conf
+  register: k8s_cluster
+
+- name: KUBERNETES | Manage Master node
+  import_tasks: master.yml
+  when: inventory_hostname in groups['kubernetes-master'] and k8s_cluster.stat.exists == false
+
+- name: KUBERNETES | Get kubeadm join command
+  command: kubeadm token create --print-join-command
+  changed_when: false
+  when: inventory_hostname in groups['kubernetes-master']
+  register: kubernetes_join_command
+
+- name: KUBERNETES | Set kubeadm join command globally
+  set_fact:
+    kubernetes_join_command: "{{ hostvars[groups['kubernetes-master'][0]].kubernetes_join_command.stdout }}"
+
+- name: KUBERNETES | Manage Worker node
+  import_tasks: worker.yml
+  when: inventory_hostname in groups['kubernetes-worker'] and k8s_cluster.stat.exists == false
+
+- name: KUBERNETES | Create data directory
+  file:
+    state: directory
+    path: /data/kubernetes
+    owner: root
+    group: root
+    mode: 0755

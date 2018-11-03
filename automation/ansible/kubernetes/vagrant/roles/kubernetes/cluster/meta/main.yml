@@ -1,0 +1,15 @@
+---
+
+dependencies:
+
+  - role: pip
+    vars:
+      pip_packages:
+        - name: setuptools
+          state: latest
+        - name: openshift
+
+  - role: docker
+    vars:
+      docker_users:
+        - vagrant
