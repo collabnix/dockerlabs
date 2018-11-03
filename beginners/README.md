@@ -79,12 +79,12 @@
 
 # Introduction to Docker Networking
 
-- [Understanding Docker Container Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b401-dockercontainernetworking.md)
+- [Understanding Docker Container Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockercontainernetworking.md)
 - Docker Networking subsystem & Driver
 - Docker Enterprise Edition Networking Feature
 - Difference between Bridge Vs Overlay Network
 - What is MacVLAN networking?
-   - [Understanding MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b405-macvlan-010.md)
+   - [Understanding MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/macvlan-010.md)
 - Docker Networking CLI
   - Disable Networking for Container
   - Finding IP address of Container
