@@ -2,13 +2,15 @@
 
 # Introduction to Docker 
 
-- [What are Containers? What are they used for?](https://github.com/collabnix/dockerlabs/blob/master/beginners/b001-linux-containers.md)
+- [What are Containers? What are they used for?](https://github.com/collabnix/dockerlabs/blob/master/beginners/linux-containers.md)
 - Difference between Docker & Container?
-- How is Docker different from Virtual Machine?
+- [Similarity between VM and Docker](https://github.com/collabnix/dockerlabs/blob/master/beginners/similarity-vm-docker.md)
+- [How is Docker different from Virtual Machine?](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-vm-containers.md)
+- [How is Docker Networking different from VM Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-vmnetwork-docker-networking.md)
 - Understanding Docker Underlying Technologies
-- [Can container communication cross over to noncontainerized apps?](https://github.com/collabnix/dockerlabs/blob/master/beginners/b000/b005-linux-containers.md)
+- [Can container communication cross over to noncontainerized apps?](https://github.com/collabnix/dockerlabs/blob/master/beginners/linux-comm-containers.md)
 - Architecture of Docker 
-   - [Docker Enterprise Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/b000/b005-architecture-dockeree.md)
+   - [Docker Enterprise Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-dockeree.md)
    - Docker Community Edition
 - Evolution of Docker Platform 
    - 2015 
@@ -50,7 +52,7 @@
   
 # Working with Docker Image & Container
 
-- [Running Hello World Example](https://github.com/collabnix/dockerlabs/blob/master/beginners/b300/b301-helloworld.md)
+- [Running Hello World Example](https://github.com/collabnix/dockerlabs/blob/master/beginners/helloworld/README.md)
 - [Working with Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/b300/b302-workingwithdockerimage.md) 
   - Saving Images and Containers as Tar Files for Sharing 
   - Versioning an Image with Tags 
@@ -73,15 +75,16 @@
   - Optimizing Your Dockerfile by Following Best Practices 
 - Reverse-engineer a Dockerfile from an image
 - Using make with Docker
+- [Difference between Docker Compose Vs Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-compose-dockerfile.md)
 
 # Introduction to Docker Networking
 
-- [Understanding Docker Container Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b401-dockercontainernetworking.md)
+- [Understanding Docker Container Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockercontainernetworking.md)
 - Docker Networking subsystem & Driver
 - Docker Enterprise Edition Networking Feature
 - Difference between Bridge Vs Overlay Network
 - What is MacVLAN networking?
-   - [Understanding MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b405-macvlan-010.md)
+   - [Understanding MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/macvlan-010.md)
 - Docker Networking CLI
   - Disable Networking for Container
   - Finding IP address of Container
