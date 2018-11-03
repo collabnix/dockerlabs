@@ -1,4 +1,5 @@
 # The Ultimate Docker Cheat Sheet
+<br><br>
 
 ## Complete Docker CLI 
 
@@ -6,8 +7,10 @@
 
 ![full](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet8.png)
 
-
+<br>
+<br>
 ## Container Management CLIs
+<br>
 
 
 ![container_management](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet1.png)
@@ -27,11 +30,14 @@ Inspecting The Container
 
 
 ## The Docker CLI 
+<br>
 
 Manage images
 -------------
+<br>
 
 ### `docker build`
+<br>
 
 ```yml
 docker build [options] .
@@ -42,6 +48,7 @@ Create an `image` from a Dockerfile.
 
 
 ### `docker run`
+<br>
 
 ```yml
 docker run [options] IMAGE
@@ -53,7 +60,10 @@ Run a command in an `image`.
 Manage containers
 -----------------
 
+<br>
+
 ### `docker create`
+<br>
 
 ```yml
 docker create [options] IMAGE
@@ -70,6 +80,7 @@ docker create [options] IMAGE
 ```
 
 #### Example
+<br>
 
 ```
 $ docker create --name app_redis_1 \
@@ -80,6 +91,7 @@ $ docker create --name app_redis_1 \
 Create a `container` from an `image`.
 
 ### `docker exec`
+<br>
 
 ```yml
 docker exec [options] CONTAINER COMMAND
