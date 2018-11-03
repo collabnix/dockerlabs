@@ -18,12 +18,12 @@
      - Pod-to-Service communication
      - External-to-internal communication
        - Working with Ingress
-
-    - Ensuring flexible usage of your containers
-      - Pod as DaemonSets
-	  - Running a stateful Pod
-	  - Pod recovery by DaemonSets
-	  - Pod recovery by StatefulSet
+       
+   - Ensuring flexible usage of your containers
+     - Pod as DaemonSets
+	- Running a stateful Pod
+	- Pod recovery by DaemonSets
+	- Pod recovery by StatefulSet
 
    - Submitting Jobs on Kubernetes
      - Pod as a single Job
