@@ -1,9 +1,9 @@
 # The Ultimate Kubernetes Cheatsheet
 
-|Name|	Command|
- --- | ---
-|Run curl test temporarily|	kubectl run --rm mytest --image=yauritux/busybox-curl -it|
-|Run wget test temporarily|	kubectl run --rm mytest --image=busybox -it|
+| Name |	 Command | 
+ :--- | ---
+| Run curl test temporarily |	 kubectl run --rm mytest --image=yauritux/busybox-curl -it |
+| Run wget test temporarily |	kubectl run --rm mytest --image=busybox -it|
 |List everything|	kubectl get all --all-namespaces|
 |List pods with nodes info|	kubectl get pod -o wide|
 |Show nodes with labels|	kubectl get nodes --show-labels|
