@@ -1,4 +1,4 @@
-# The Ultimate Kubernetes Cheatsheet
+# The Ultimate Survival Kubernetes Cheatsheet
 
 
 |Name|	Command|
