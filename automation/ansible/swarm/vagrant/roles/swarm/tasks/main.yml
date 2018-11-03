@@ -1,0 +1,46 @@
+---
+
+- name: SWARM | Check if "Swarm Mode" is enabled.
+  shell: docker info
+  changed_when: False
+  register: docker_info
+
+- block:
+
+  - name: SWARM | Init "Swarm Mode" on the first manager
+    shell: docker swarm init --listen-addr {{ swarm_listen_address }} --advertise-addr {{ hostvars[ansible_hostname].ip }}
+    when: "ansible_hostname == swarm_leader"
+
+  - block:
+
+    - name: SWARM | Get the manager join-token
+      shell: docker swarm join-token -q manager
+      changed_when: False
+      register: swarm_manager_token
+      delegate_to: "{{ swarm_leader }}"
+      delegate_facts: True
+
+    - name: SWARM | Join Swarm manager nodes
+      shell: docker swarm join --listen-addr {{ swarm_listen_address }} --advertise-addr {{ hostvars[ansible_hostname].ip }} --token {{ swarm_manager_token.stdout }} {{ swarm_leader_address }}
+      changed_when: False
+      when: "docker_info.stdout.find('Swarm: pending') == -1"
+
+    when: "'swarm-master' in group_names and ansible_hostname != swarm_leader"
+
+  - block:
+
+    - name: SWARM | Get the worker join-token
+      shell: docker swarm join-token -q worker
+      changed_when: False
+      register: swarm_worker_token
+      delegate_to: "{{ swarm_leader }}"
+      delegate_facts: True
+
+    - name: SWARM | Join Swarm worker nodes
+      shell: docker swarm join --listen-addr {{ swarm_listen_address }} --advertise-addr {{ hostvars[ansible_hostname].ip }} --token {{ swarm_worker_token.stdout }} {{ swarm_leader_address }}
+      changed_when: False
+      when: "docker_info.stdout.find('Swarm: pending') == -1"
+
+    when: "'swarm-worker' in group_names"
+
+  when: "docker_info.stdout.find('Swarm: active') == -1"

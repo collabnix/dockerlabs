@@ -1,0 +1,29 @@
+---
+
+- name: DOCKER DEBIAN | Uninstall old version
+  package:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - docker
+    - docker-engine
+
+- name: DOCKER DEBIAN | Install prerequisites packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common
+
+- name: DOCKER DEBIAN | Add apt key
+  apt_key:
+    url: "{{ docker_apt_key }}"
+    state: present
+
+- name: DOCKER DEBIAN | Add repository
+  apt_repository:
+    repo: "{{ docker_apt_repository }}"
+    state: present
+    update_cache: yes
