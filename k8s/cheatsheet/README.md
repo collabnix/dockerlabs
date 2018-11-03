@@ -1,4 +1,6 @@
 # The Ultimate Kubernetes Cheatsheet
+
+
 |Name|	Command|
  --- | ---
 |Run curl test temporarily|	kubectl run --rm mytest --image=yauritux/busybox-curl -it|
@@ -134,3 +136,7 @@
 |Log files|	/var/log/pods/|
 |Env|	export KUBECONFIG=/etc/kubernetes/admin.conf|
 |Env|	/etc/systemd/system/kubelet.service.d/10-kubeadm.conf|
+ 
+ # Contributor
+ 
+ Bala
