@@ -21,6 +21,7 @@
 <br>
 
 ![Inspecting The Container](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet3.png)
+## Interacting with Container
 ![Interacting with Container1](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet4.png)
 
 ## Image Management Commands 
