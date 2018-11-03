@@ -17,14 +17,26 @@
 
 ![container_management](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet1.png)
 
-Inspecting The Container 
+## Inspecting The Container 
+<br>
+
 ![Inspecting The Container](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet3.png)
 ![Interacting with Container1](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet4.png)
- Image Management Commands 
+
+## Image Management Commands 
+<br>
+
  ![image management commands](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet5.png)
- Image Transfer Comnands 
+ 
+ ## Image Transfer Comnands 
+ <br>
+ 
  ![Image Transfer Comnands](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet6.png)
- Builder Main Commands
+
+
+## Builder Main Commands
+<br>
+
 ![Builder Main Commands](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet7.png)
 
 
@@ -32,6 +44,7 @@ Inspecting The Container
 
 
 ## The Docker CLI 
+
 <br>
 
 Manage images
