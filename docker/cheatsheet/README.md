@@ -1,13 +1,13 @@
 # The Ultimate Docker Cheat Sheet
 
-# Complete Docker CLI 
+## Complete Docker CLI 
 
 
 
 ![full](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet8.png)
 
 
-# Container Management CLIs
+## Container Management CLIs
 
 
 ![container_management](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet1.png)
@@ -26,7 +26,7 @@ Inspecting The Container
 
 
 
-# The Docker CLI 
+## The Docker CLI 
 
 Manage images
 -------------
