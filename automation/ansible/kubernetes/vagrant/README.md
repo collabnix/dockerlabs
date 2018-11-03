@@ -12,7 +12,7 @@ The aim of this project is to deploy a Kubernetes cluster on Vagrant instances.
   </tr>
   <tr>
     <td class="tg-yw4l"><b>Local (Virtualbox)</b></td>
-    <td class="tg-yw4l"><b>4</b></td>
+    <td class="tg-yw4l"><b>3</b></td>
     <td class="tg-yw4l"><b>5 min</b></td>
   </tr>
 </table>
