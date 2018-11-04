@@ -38,7 +38,7 @@ $ docker run hello-world
 
 ![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b301_helloworld.png)
 
-<a href="https://asciinema.org/a/210117" target="_blank"><img src="https://asciinema.org/a/210117" /></a>
+<a href="https://asciinema.org/a/210117" target="_blank"><img src="https://github.com/collabnix/dockerlabs/blob/master/beginners/helloworld/helloworld.png" /></a>
 
 
 
