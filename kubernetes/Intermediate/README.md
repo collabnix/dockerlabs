@@ -1,6 +1,5 @@
 # Intermediate Track
 
-## Playing with Containers
 
    - Scaling your containers
      - Getting ready
