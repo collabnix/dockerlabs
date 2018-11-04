@@ -78,7 +78,7 @@
   - Optimizing Your Dockerfile by Following Best Practices 
 - Reverse-engineer a Dockerfile from an image
 - Using make with Docker
-- [How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?]()
+- [How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/entrypoint-vs-run.md)
 - [Difference between Docker Compose Vs Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-compose-dockerfile.md)
 
 # Introduction to Docker Networking
