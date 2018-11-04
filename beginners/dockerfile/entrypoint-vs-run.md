@@ -43,3 +43,7 @@ Let's run it passing a command line argument
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/dockerfile-4.png)
 
 This clearly state that ENTRYPOINT is meant to provide the executable while CMD is to pass the default arguments to the executable.
+
+## Contributor
+
+- [Ajeet Singh Raina](ajeetraina@gmail.com)
