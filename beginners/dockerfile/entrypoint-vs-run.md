@@ -24,6 +24,7 @@
 - Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
+## What is ENTRYPOINT meant for?
 
 ENTRYPOINT is meant to provide the executable while CMD is to pass the default arguments to the executable.
 To understand it clearly, let us consider the below Dockerfile:
