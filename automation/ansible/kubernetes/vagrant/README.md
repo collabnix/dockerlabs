@@ -1,4 +1,4 @@
-# Deploy Kubernetes Cluster on Linux Vagrant Instances using 
+# Deploy Kubernetes Cluster on Linux Vagrant Instances using Ansible
 
 The aim of this project is to deploy a Kubernetes cluster on Vagrant instances.
 
