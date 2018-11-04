@@ -1,4 +1,4 @@
-# Deploy Kubernetes Cluster on Linux Vagrant Instances in Easy Steps
+# Deploy Kubernetes Cluster on Linux Vagrant Instances using 
 
 The aim of this project is to deploy a Kubernetes cluster on Vagrant instances.
 
