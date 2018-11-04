@@ -65,6 +65,9 @@
 - Creating a DockerHub Account
 - Sharing Your Docker Image
   -  Publishing Your Image to Docker Hub 
+  
+ # Working with Dockerfile
+ 
 - Building Docker Image from Dockerfile
   - Writing Your First Dockerfile
   - Injecting files into your image using ADD
@@ -75,6 +78,7 @@
   - Optimizing Your Dockerfile by Following Best Practices 
 - Reverse-engineer a Dockerfile from an image
 - Using make with Docker
+- [How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?]()
 - [Difference between Docker Compose Vs Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-compose-dockerfile.md)
 
 # Introduction to Docker Networking
