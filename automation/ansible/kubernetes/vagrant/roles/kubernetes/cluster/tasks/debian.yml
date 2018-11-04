@@ -1,0 +1,19 @@
+---
+
+- name: KUBERNETES DEBIAN | Install prerequisites packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ca-certificates
+    - apt-transport-https
+
+- name: KUBERNETES DEBIAN | Add repository key
+  apt_key:
+    url: "{{ kubernetes_apt_repository_key }}"
+    state: present
+
+- name: KUBERNETES DEBIAN | Add repository
+  apt_repository:
+    repo: "{{ kubernetes_apt_repository_url }}"
+    state: present

@@ -1,0 +1,6 @@
+---
+
+- name: KUBERNETES WORKER | Add node to cluster
+  shell: "{{ kubernetes_join_command }}"
+  args:
+    creates: /etc/kubernetes/kubelet.conf

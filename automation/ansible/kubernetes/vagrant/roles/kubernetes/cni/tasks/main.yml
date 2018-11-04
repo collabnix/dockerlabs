@@ -1,0 +1,5 @@
+---
+
+- name: KUBERNETES CNI | Manage Flannel deployment
+  import_tasks: flannel.yml
+  when: kubernetes_cni == "flannel"
