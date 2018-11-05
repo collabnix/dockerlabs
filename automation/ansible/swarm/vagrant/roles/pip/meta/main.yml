@@ -1,0 +1,33 @@
+---
+
+dependencies:
+
+  - role: epel
+    when: ansible_os_family == "RedHat" or ansible_os_family == "CentOS"
+
+galaxy_info:
+  author: wikitops
+  description: Pip for Linux.
+  company: "Wikitops"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.4
+  platforms:
+  - name: EL
+    versions:
+    - 6
+    - 7
+  - name: Fedora
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - jessie
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+    - bionic
+  galaxy_tags:
+    - python
+    - pip
+    - package

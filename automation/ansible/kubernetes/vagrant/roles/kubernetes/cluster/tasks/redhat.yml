@@ -1,0 +1,17 @@
+---
+
+- name: KUBERNETES REDHAT | Manage repository key
+  rpm_key:
+    key: "{{ item }}"
+    state: present
+  with_items: "{{ kubernetes_yum_keys }}"
+
+- name: KUBERNETES REDHAT | Manage repository
+  yum_repository:
+    name: kubernetes
+    description: Kubernetes
+    enabled: true
+    gpgcheck: true
+    repo_gpgcheck: true
+    baseurl: "{{ kubernetes_yum_baseurl }}"
+    gpgkey: "{{ kubernetes_yum_keys }}"

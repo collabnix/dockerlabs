@@ -1,0 +1,8 @@
+---
+
+###
+# KUBERNETES DASHBOARD
+###
+
+# Dashboard url
+kubernetes_dashboard_src: https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml

@@ -1,0 +1,30 @@
+---
+
+- name: DOCKER REDHAT | Uninstall old version
+  package:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - docker
+    - docker-common
+    - docker-engine
+
+- name: DOCKER REDHAT | Add gpg key
+  rpm_key:
+    key: "{{ docker_gpg_key }}"
+    state: present
+
+- name: DOCKER REDHAT | Add repository
+  get_url:
+    url: "{{ docker_yum_repository }}"
+    dest: "/etc/yum.repos.d/{{ docker_package | default('docker-ce') }}.repo"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: DOCKER REDHAT | Configure Docker Edge repository
+  ini_file:
+    dest: "/etc/yum.repos.d/{{ docker_package | default('docker-ce') }}.repo"
+    section: "{{ docker_package | default('docker-ce') }}-edge"
+    option: enabled
+    value: "{{ docker_yum_repository_enable_edge }}"

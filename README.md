@@ -6,19 +6,45 @@ Are you new to Docker? Want to build your career in Container Technology?
 
 Then Welcome ! You are at the right place.
 
-This repository brings you tutorials that help you get hands-on experience using Docker. Here you will find a mix of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it correct ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](http://play-with-docker.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed for you. All you need is to get started.
+DockerLabs brings you tutorials that help you get hands-on experience using Docker & Kubernetes. Here you will find complete documentation of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://play-with-docker.com) & [Play with Kubernetes Platform](https://play-with-k8s.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed. Hence, we have everything ready for you to get started with.
 
-[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
+## Getting Started in 3 Simple Steps
 
-## Categories
+- Join 200+ DockerLabs Contributors in 2 mins via [DockerLabs Slack Channel](https://collabnix.slack.com/join/shared_invite/enQtNDYwMTMzNzUyMzA1LTk2MjdiZmM1Mzg3MzEzZjI2MTY3MTA4YmZkM2VkM2EzYzBmNGRmMjM4NGYwYjEwZTBhNTRmM2I5NjZlYjRmNzQ) 
 
-This repo contains Docker Labs and tutorials authored by members of the open community. Below are the list of categories -
+- Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
+
+-  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
+
+
+
+# Categories
+
+DockerLabs is a tutorials authored by members of the open community. 
+Below are the list of categories:
+
+## Docker
 
 - [Docker for Beginners](https://github.com/collabnix/dockerlabs/tree/master/beginners/README.md)
 
 - [Docker for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/intermediate/README.md)
 
-- [Docker for Advanced Users](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)
+- [Docker for Advanced](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)
+
+- [Docker Cheatsheet](https://github.com/collabnix/dockerlabs/tree/master/docker/cheatsheet/README.md)
+
+
+## Kubernetes
+
+- [Kubernetes for Beginners](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+
+- [Kubernetes for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+
+- [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+
+- [Kubernetes Cheatsheet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/cheatsheet.md)
+
+# A Quick Reference
 
 ## Getting Started with Docker
 
@@ -40,7 +66,8 @@ To get started with Docker, follow the below steps:
 
 ## Getting Started with Docker Swarm
 
-To get started with Docker Swarm, you can use "Play with Docker", shortly called PWD. It's free of cost and open for all.
+To get started with Docker Swarm, you can use "Play with Docker", aka PWD. 
+It's free of cost and open for all.
 You get maximum of 5 instances of Linux system to play around with Docker.
 
 - Open [Play with Docker labs](https://labs.play-with-docker.com) on your browser
@@ -53,7 +80,7 @@ You get maximum of 5 instances of Linux system to play around with Docker.
 
 We recommend you start with one of our Beginners Guides, and then move to intermediate and expert level tutorials that cover most of the features of Docker. For a comprehensive approach to understanding Docker, I have categorized it as shown below:
 
-## A Bonus... Docker Swarm Visualizer
+# A Bonus... Docker Swarm Visualizer
 
 Swarm Visualizer is a fancy tool which visualized the Swarm Cluster setup. It displays containers running on each node in the form of visuals. If you are conducting Docker workshop, it's a perfect way to show your audience how the containers are placed under each node. Go..try it out..
 
@@ -83,7 +110,7 @@ $ docker service create \
 
 ## How to Contribute
 
-Thank you so much for your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials.
+Thank you so much for showing your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials.
 
 [Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br>
 [Template for writing Tutorial Page](https://github.com/collabnix/dockerlabs/tree/master/template/EXAMPLE.md)
