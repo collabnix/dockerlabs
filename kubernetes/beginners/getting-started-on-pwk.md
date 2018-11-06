@@ -1,4 +1,4 @@
-# Getting Started with Kubernetes
+# Getting Started with Kubernetes on Play with Kubernetes Platform in 5 Minutes
 
 ## Tested Infrastructure
 
