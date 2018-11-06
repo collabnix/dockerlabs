@@ -30,7 +30,7 @@
 
 ```
 git clone https://github.com/collabnix/dockerlabs/
-cd dockerlabs/beginners/install
+cd dockerlabs/kubernetes/install
 
 ```
 
