@@ -1,7 +1,0 @@
----
-
-- hosts: all
-  remote_user: vagrant
-  become: yes
-  roles:
-    - swarm

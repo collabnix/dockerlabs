@@ -1,0 +1,8 @@
+---
+
+dependencies:
+
+  - role: pip
+    vars:
+      pip_packages:
+        - docker
