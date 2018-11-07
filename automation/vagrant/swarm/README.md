@@ -1,4 +1,4 @@
-# Deploy Docker Swarm Cluster on Linux Vagrant Instances in Easy Steps
+# Deploy Docker Swarm Cluster on Linux Vagrant Instances using Ansible
 
 The aim of this project is to deploy a Docker Swarm cluster on Linux Vagrant instances.
 
