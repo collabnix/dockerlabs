@@ -7,15 +7,15 @@
 [Docker compose with swarm secrets]<br>
 [Docker swarm config files]<br>
 [Service Discovery under Docker Swarm Mode]<br>
-- Docker volume sshfs]
-- Swarm synchronous services]
-- Multi-stage builds]
-- Orchestration, part 1: from Compose to Swarm]
-- Orchestration, part 2: securing and operating Swarm]
-- Docker registry for Linux]
-- Go + Docker]
-[Live Debugging Node.js with Docker]
-[Continuous Integration With Docker Cloud]
+[Docker volume sshfs]<br>
+[Swarm synchronous services]<br>
+[Multi-stage builds]<br>
+[Orchestration, part 1: from Compose to Swarm]<br>
+[Orchestration, part 2: securing and operating Swarm]<br>
+[Docker registry for Linux]<br>
+[Go + Docker]<br>
+[Live Debugging Node.js with Docker]<br>
+[Continuous Integration With Docker Cloud]<br>
 
 
 
