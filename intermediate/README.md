@@ -4,9 +4,9 @@
 [Docker Registry Lab](https://github.com/collabnix/dockerlabs/tree/master/intermediate/registry)<br>
 [Introduction to Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/intermediate/swarm-mode)<br>
 [Docker Compose Introduction]<br>
-- Docker compose with swarm secrets]
-- Docker swarm config files]
-- Service Discovery under Docker Swarm Mode]
+[Docker compose with swarm secrets]<br>
+[Docker swarm config files]<br>
+[Service Discovery under Docker Swarm Mode]<br>
 - Docker volume sshfs]
 - Swarm synchronous services]
 - Multi-stage builds]
