@@ -33,7 +33,4 @@ Continuous Integration With Docker Cloud
 
 
 
-
-
-
-- Karan Singh
+* **Karan Singh**
