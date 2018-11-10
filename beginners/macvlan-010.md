@@ -12,7 +12,7 @@
     
   </tr>
   <tr>
-    <td class="tg-yw4l"><b> Linux </b></td>
+    <td class="tg-yw4l"><b> Linux VM/Bare Metal</b></td>
     <td class="tg-yw4l"><b>1</b></td>
     <td class="tg-yw4l"><b>5 min</b></td>
     
@@ -22,7 +22,13 @@
 
 ## Pre-requisite
 
-Assume you have a clean Docker Host system with just 3 networks available – bridge, host and null
+- A Virtual Machine running on ESXi or Virtualbox 
+- Linux System(or Bare Metal OS)
+
+** Please remember MacVLAN is not supported on Cloud Platform
+
+
+Assume you have a clean Docker Host system(VM or Bare Metal System) with just 3 networks available – bridge, host and null
 
 ```docker
 root@ubuntu:~# docker network ls
