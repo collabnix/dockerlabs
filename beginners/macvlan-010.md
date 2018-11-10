@@ -130,4 +130,6 @@ PING 100.98.26.53 (100.98.26.53) 56(84) bytes of data.
 64 bytes from 100.98.26.53: icmp_seq=2 ttl=64 time=0.501 ms
 ```
 
-Wow ! It just worked.
+## Contributor
+
+- [Ajeet Singh Raina](ajeetraina@gmail.com)
