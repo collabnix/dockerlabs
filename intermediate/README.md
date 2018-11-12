@@ -33,5 +33,5 @@
 
 ## Contributor:
 
-[Karan Singh](karangandhi0007@gmail.com)
+[Karan Singh](karangandhi0007@gmail.com)<br>
 [Ajeet Singh Raina](ajeetraina@gmail.com)
