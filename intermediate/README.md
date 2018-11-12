@@ -11,9 +11,8 @@
 
 ## Docker Compose
 
-[Docker Compose Introduction]()<br>
-[Docker compose with swarm secrets]()<br>
-
+[Docker Compose Introduction]()
+[Docker compose with swarm secrets]()
 [Introduction to Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/intermediate/swarm-mode)
 
 ## Docker Swarm
