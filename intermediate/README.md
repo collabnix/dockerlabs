@@ -1,10 +1,24 @@
 # Intermediate Course
 
+
+## Docker Internals | Container Runtime
+
 [Overview of Container Runtime](https://github.com/collabnix/dockerlabs/tree/master/intermediate/contaner-runtimes)<br>
+
+## Docker Registry
+
 [Docker Registry Lab](https://github.com/collabnix/dockerlabs/tree/master/intermediate/registry)<br>
-[Introduction to Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/intermediate/swarm-mode)<br>
+
+## Docker Compose
+
 [Docker Compose Introduction]()<br>
 [Docker compose with swarm secrets]()<br>
+
+[Introduction to Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/intermediate/swarm-mode)<br>
+
+## Docker Swarm
+
+[Introduction to Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/intermediate/swarm-mode)<br>
 [Docker swarm config files]()<br>
 [Service Discovery under Docker Swarm Mode]()<br>
 [Docker volume sshfs]()<br>
