@@ -22,7 +22,7 @@
 [Docker swarm config files]()<br>
 [Service Discovery under Docker Swarm Mode]()<br>
 [Docker volume sshfs]()<br>
-[Swarm synchronous services]<()br>
+[Swarm synchronous services]()<br>
 [Multi-stage builds]()<br>
 [Orchestration, part 1: from Compose to Swarm]()<br>
 [Orchestration, part 2: securing and operating Swarm]()<br>
