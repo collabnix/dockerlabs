@@ -31,19 +31,7 @@
 [Continuous Integration With Docker Cloud]()<br>
 
 
+## Contributor:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* **Karan Singh**
+[Karan Singh](karangandhi0007@gmail.com)
+[Ajeet Singh Raina](ajeetraina@gmail.com)
