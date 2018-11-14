@@ -68,7 +68,7 @@
   
  # Working with Dockerfile
  
-- Building Docker Image from Dockerfile
+- [Building Docker Image from Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/Building_Images_With_Dockerfiles.md)
   - Writing Your First Dockerfile
   - Injecting files into your image using ADD
   - Rebuilding without Cache 
