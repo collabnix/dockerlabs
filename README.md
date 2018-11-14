@@ -139,6 +139,7 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 - [Getting Started with Nginx](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)
 
+- [django-postgres](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/django-postgres/README.md)
 ## License
 
 [MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md)
