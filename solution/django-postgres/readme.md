@@ -84,7 +84,7 @@ Edit the composeexample/settings.py file and Replace the DATABASES = ... with th
 
 ## Brining up the Application Stack
 
-Now it's time to run docker-compose up and 8080 port is open. 
+Now it's time to bring up Application Stack flawlessly. 
 
 ```
 curl "http://0.0.0.0:8080/
