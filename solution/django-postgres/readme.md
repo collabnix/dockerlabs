@@ -43,6 +43,15 @@ cd dockerlabs/solution/django-postgres/
 docker-compose run web django-admin.py startproject composeexample .
 ```
 
+Once you run the above command, you might see containers coming up and running. Soon you will see port:8080 getting displayed on the top of PWD screen. Once clicked it might throw an error 
+
+```
+"DisallowedHost at /
+Invalid HTTP_HOST header: 'ip172-19-0-28-bfn8rk49cs9g00f9usn0-8000.direct.labs.play-with-docker.com'. You may need to add 'ip172-19-0-28-bfn8rk49cs9g00f9usn0-8000.direct.labs.play-with-docker.com' to ALLOWED_HOSTS."
+```
+ 
+To fix this issue, follow the below steps:
+
 2. Now there will be below folders and files present inside project folder
 
  
