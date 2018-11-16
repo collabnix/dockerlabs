@@ -14,10 +14,30 @@
     <td class="tg-yw4l"><b> Play with Docker</b></td>
     <td class="tg-yw4l"><b>1</b></td>
     <td class="tg-yw4l"><b>5 min</b></td>
-    
-  </tr>
-  
-</table>
+    </tr>
+  </table>
+
+## Pre-requisite
+
+- Create an account with [DockerHub](https://hub.docker.com)
+- Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
+- Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
+
+
+## Running Hello World Example
+
+
+
+```
+$ docker run hello-world
+
+```
+
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b301_helloworld.png)
+
+
+
+Once the basic setup is ready, please follow the below instructions.
 
 1. Create a project folder and keep requirements.txt,docker-compose.yml,Dockerfile in a directory and run below command
 
