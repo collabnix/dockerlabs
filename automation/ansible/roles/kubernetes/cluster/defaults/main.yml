@@ -1,0 +1,30 @@
+---
+
+###
+# KUBERNETES
+###
+
+# Version
+kubernetes_version: 1.11
+kubernetes_version_kubeadm: 'stable-{{ kubernetes_version }}'
+
+# Debian
+kubernetes_apt_repository_key: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+kubernetes_apt_repository_url: "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+
+# Redhat
+kubernetes_yum_baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+kubernetes_yum_keys:
+  - https://packages.cloud.google.com/yum/doc/yum-key.gpg
+  - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+
+# Environment
+kubernetes_env_dir: "~/.kube"
+kubernetes_conf_file: "/etc/kubernetes/admin.conf"
+
+# Token
+kubernetes_token: 98dh01.c451acd7588a069d
+kubernetes_token_ttl: 0
+
+# CIDR
+kubernetes_cidr: 10.244.0.0

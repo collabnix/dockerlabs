@@ -1,0 +1,38 @@
+---
+
+- name: KUBERNETES MASTER | Initialize Kubernetes master nodes
+  shell: >
+    kubeadm init \
+      --apiserver-advertise-address {{ hostvars[inventory_hostname].ip }} \
+      --pod-network-cidr {{ kubernetes_cidr }}/16 \
+      # --kubernetes-version {{ kubernetes_version_kubeadm }}
+
+- name: KUBERNETES MASTER | Create user directory
+  become: no
+  file:
+    state: directory
+    path: "~/.kube"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0755
+
+- name: KUBERNETES MASTER | Copy Kubernetes conf file
+  copy:
+    src: /etc/kubernetes/admin.conf
+    dest: /home/{{ ansible_user }}/.kube/config
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0600
+    remote_src: yes
+
+- name: KUBERNETES MASTER | Generate kubectl completion script
+  become: no
+  shell: kubectl completion bash > /home/{{ ansible_user }}/.kube/completion.sh
+  args:
+    creates: /home/{{ ansible_user }}/.kube/completion.sh
+
+- name: KUBERNETES MASTER | Source kubectl completion script
+  lineinfile:
+    path: /home/{{ ansible_user }}/.bashrc
+    line: source ~/.kube/completion.sh
+    state: present

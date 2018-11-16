@@ -1,6 +1,34 @@
-# Understanding MacVLAN - The Easy Way
+# Implementing MacVLAN 
 
-- Assume you have a clean Docker Host system with just 3 networks available – bridge, host and null
+
+
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Linux VM/Bare Metal</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+- A Virtual Machine running on ESXi or Virtualbox 
+- Linux System(or Bare Metal OS)
+
+** Please remember MacVLAN is not supported on Cloud Platform
+
+
+Assume you have a clean Docker Host system(VM or Bare Metal System) with just 3 networks available – bridge, host and null
 
 ```docker
 root@ubuntu:~# docker network ls
@@ -11,7 +39,7 @@ NETWORK ID          NAME                DRIVER              SCOPE
 root@ubuntu:~#
 ```
 
-- My Network Configuration is quite simple. It has eth0 and eth1 interface. I will just use eth0.
+The Network Configuration is quite simple. It has eth0 and eth1 interface. I will just use eth0.
 
 ```docker
 root@ubuntu:~# ifconfig
@@ -73,9 +101,9 @@ Status: Downloaded newer image for alpine:latest
 493a9566c31c15b1a19855f44ef914e7979b46defde55ac6ee9d7db6c9b620e0
 ```
 
-## Important Point: When using macvlan, you cannot ping or communicate with the default namespace IP address. For example, if you create a container and try to ping the Docker host’s eth0, it will not work. That traffic is explicitly filtered by the kernel modules themselves to offer additional provider isolation and security
+** Important Point: When using macvlan, you cannot ping or communicate with the default namespace IP address. For example, if you create a container and try to ping the Docker host’s eth0, it will not work. That traffic is explicitly filtered by the kernel modules themselves to offer additional provider isolation and security
 
-### Then how shall I enable this feature
+### How to enable this communication
 
 It’s simple. Just run the below command:
 
@@ -102,4 +130,6 @@ PING 100.98.26.53 (100.98.26.53) 56(84) bytes of data.
 64 bytes from 100.98.26.53: icmp_seq=2 ttl=64 time=0.501 ms
 ```
 
-Wow ! It just worked.
+## Contributor
+
+- [Ajeet Singh Raina](ajeetraina@gmail.com)

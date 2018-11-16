@@ -1,0 +1,24 @@
+---
+
+- name: KUBERNETES DASHBOARD | Create directory
+  file:
+    state: directory
+    path: /data/kubernetes/dashboard
+    owner: root
+    group: root
+    mode: 0755
+
+- name: KUBERNETES DASHBOARD | Download yaml file
+  get_url:
+    url: "{{ kubernetes_dashboard_src }}"
+    dest: /data/kubernetes/dashboard/deployment.yaml
+    owner: root
+    group: root
+    mode: 0644
+
+- name: KUBERNETES DASHBOARD | Deployment
+  run_once: yes
+  k8s:
+    kubeconfig: /etc/kubernetes/admin.conf
+    src: /data/kubernetes/dashboard/deployment.yaml
+    state: present

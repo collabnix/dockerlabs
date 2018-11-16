@@ -1,0 +1,29 @@
+---
+
+- name: KUBERNETES CNI FLANNEL | Configure Sysctl
+  sysctl:
+    name: net.bridge.bridge-nf-call-iptables
+    value: 1
+
+- name: KUBERNETES CNI FLANNEL | Create directory
+  file:
+    state: directory
+    path: /data/kubernetes/flannel
+    owner: root
+    group: root
+    mode: 0755
+
+- name: KUBERNETES CNI FLANNEL | Download yaml file
+  get_url:
+    url: "{{ kubernetes_cni_flannel_src }}"
+    dest: /data/kubernetes/flannel/deployment.yaml
+    owner: root
+    group: root
+    mode: 0644
+
+- name: KUBERNETES CNI FLANNEL | Deployment
+  run_once: yes
+  k8s:
+    kubeconfig: /etc/kubernetes/admin.conf
+    src: /data/kubernetes/flannel/deployment.yaml
+    state: present
