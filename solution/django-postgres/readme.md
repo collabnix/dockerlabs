@@ -1,3 +1,24 @@
+# Demonstrating Django Postgres Example
+
+
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
 1. Create a project folder and keep requirements.txt,docker-compose.yml,Dockerfile in a directory and run below command
 
 sudo docker-compose run web django-admin.py startproject composeexample .
