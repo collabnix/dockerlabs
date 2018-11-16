@@ -71,8 +71,9 @@ Edit the composeexample/settings.py file and Replace the DATABASES = ... with th
  'USER': 'postgres',
   'HOST': 'db',
   PORT': 5432,
+```
 
-## 
+## Brining up the Application Stack
 
 Now it's time to run docker-compose up and 8080 port is open. 
 
