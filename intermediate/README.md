@@ -1,15 +1,24 @@
 # Intermediate Course
 
 
-## Docker Networking
+## Introduction to Docker Networking
 
-[Linux Docker host default Networking]()<br>
-[Linux container networking]()<br>
-[Docker host and container port mapping]()<br>
-[List, create, inspect and remove new networks]()<br>
-[Launch container in desired network]()<br>
-[Attach a container two networks]()<br>
-[Setting up MacVLAN Networking]()<br>
+- [Understanding Docker Container Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockercontainernetworking.md)
+- Docker Networking subsystem & Driver
+- Docker Enterprise Edition Networking Feature
+- Difference between Bridge Vs Overlay Network
+- What is MacVLAN networking?
+   - [Implementing MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/macvlan-010.md)
+- Docker Networking CLI
+  - Disable Networking for Container
+  - Finding IP address of Container
+  - Exposing a Container Port on the Host
+  - Linking Containers in Docker
+  - Choosing a Container Networking Namespace
+  - Configuring the Docker Daemon IP Tables and IP Forwarding Settings
+  - Setting Up a Custom Bridge for Docker
+  - Docker Networking for Swarm
+  - [Diving Deeper into the Docker Network Namespaces Configuration](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b406-network-namespace-009.md)
 
 
 ## Docker Internals | Container Runtime
