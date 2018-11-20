@@ -1,7 +1,7 @@
 # Intermediate Course
 
 
-# Docker Networking
+## Docker Networking
 
 [Linux Docker host default Networking]()<br>
 [Linux container networking]()<br>
