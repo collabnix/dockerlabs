@@ -61,9 +61,31 @@
 [Live Debugging Node.js with Docker]()<br>
 [Continuous Integration With Docker Cloud]()<br>
 
-## Docker for Windows
+## Docker on Windows
 
 [Install Docker on win 2016 server]()<br>
+[Win container Deploy ,Login,exit container]()<br>
+[List, Start, Stop, restart containers]()<br>
+[Where containers are stored]()<br>
+[Working with container hostnames]()<br>
+[Working on multiple containers]()<br>
+[Container inspect]()<br>
+[Deleting containers]()<br>
+
+## Docker Desktop for Windows
+
+[Install Docker Desktop]()<br>
+[Win container Deploy ,Login,exit container]()<br>
+[List, Start, Stop, restart containers]()<br>
+[Where containers are stored]()<br>
+[Working with container hostnames]()<br>
+[Working on multiple containers]()<br>
+[Container inspect]()<br>
+[Deleting containers]()<br>
+
+## Docker Desktop for Mac
+
+[Install Docker Desktop]()<br>
 [Win container Deploy ,Login,exit container]()<br>
 [List, Start, Stop, restart containers]()<br>
 [Where containers are stored]()<br>
