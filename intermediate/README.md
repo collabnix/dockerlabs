@@ -1,9 +1,33 @@
 # Intermediate Course
 
 
+# Docker Networking
+
+[Linux Docker host default Networking]
+[Linux container networking]
+[Docker host and container port mapping]
+[List, create, inspect and remove new networks]
+[Launch container in desired network]
+[Attach a container two networks]
+
+
 ## Docker Internals | Container Runtime
 
 [Overview of Container Runtime](https://github.com/collabnix/dockerlabs/tree/master/intermediate/contaner-runtimes)<br>
+
+
+## Docker Volumes
+
+[Introduction to Docker volumes]
+[Launch a container with volume attached]
+[Recovering volume]
+
+
+## Linking Docker Containers
+
+[Creating webapp container]
+[Creating mysqldb container]
+[Connect web app with mysql DB]
 
 ## Docker Registry
 
@@ -13,7 +37,13 @@
 
 [Docker Compose Introduction]()<br>
 [Docker compose with swarm secrets]()<br>
-[Introduction to Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/intermediate/swarm-mode)
+
+## Docker Machine
+
+[Install Docker machine on Ubuntu 16.04]
+[Deploy and Manage Docker host via Docker machine on AWS]
+[Transfer files to Docker-host via Docker-machine]
+[Removing Docker host via Docker-machine]
 
 ## Docker Swarm
 
