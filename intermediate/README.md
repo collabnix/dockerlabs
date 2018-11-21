@@ -67,15 +67,9 @@
 
 ## Docker Swarm
 
-- [Introduction to Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/intermediate/swarm-mode)
-  - [What is Docker Swarm?]()
-  - [Docker Swarm Vs Docker Swarm Mode or Swarmkit?]()
-  - [Docker Swarm Key Concepts]()
-    - [Services]()
-      - [Replicated Services]()
-      - [Global Services]()
-    - [Tasks]()
-    - [Load Balancing]()
+- [What is Docker Swarm?]()
+- [What is difference between Docker Swarm Vs Docker Swarm Mode or Swarmkit?]()
+- [Docker Swarm Key Concepts - Services, Tasks & Load Balancing]()
 - [Docker Swarm CLI]()
 - [Docker swarm config files]()
 - [Service Discovery under Docker Swarm Mode]()
