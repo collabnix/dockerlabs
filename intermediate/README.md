@@ -68,20 +68,18 @@
 ## Docker Swarm
 
 - [What is Docker Swarm?]()
-- [What is difference between Docker Swarm Vs Docker Swarm Mode or Swarmkit?]()
+- [What is difference between Docker Swarm Vs Swarm Mode or Swarmkit?]()
+- [How Docker Swarm Mode works?]()
 - [Docker Swarm Key Concepts - Services, Tasks & Load Balancing]()
 - [Docker Swarm CLI]()
 - [Docker swarm config files]()
-- [Service Discovery under Docker Swarm Mode]()
-- [Docker volume sshfs]()
-- [Swarm synchronous services]()
-- [Multi-stage builds]()
-- [Orchestration, part 1: from Compose to Swarm]()
-- [Orchestration, part 2: securing and operating Swarm]()
-- [Docker registry for Linux]()
-- [Go + Docker]()
-- [Live Debugging Node.js with Docker]()
-- [Continuous Integration With Docker Cloud]()
+- [Demonstrating Service Discovery under Docker Swarm Mode]()
+- [How to Lock Docker Swarm]()
+- [Raft Consensus in Docker Swarm]()
+- [Demonstrating Swarm Synchronous Services]()
+
+
+
 
 ## Docker on Windows
 
