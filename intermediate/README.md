@@ -69,16 +69,6 @@
 - [Recovering volume]()<br>
 
 
-## Linking Docker Containers
-
-- [Creating webapp container]()<br>
-- [Creating mysqldb container]()<br>
-- [Connect web app with mysql DB]()<br>
-
-## Docker Registry
-
-- [Docker Registry Lab](https://github.com/collabnix/dockerlabs/tree/master/intermediate/registry)<br>
-
 ## Docker Compose
 
 - [Docker Compose Introduction]()<br>
@@ -91,12 +81,7 @@
 - [Transfer files to Docker-host via Docker-machine]()<br>
 - [Removing Docker host via Docker-machine]()<br>
 
-
-
-
-
-
-## Docker on Windows
+## Docker on Windows Server
 
 - [Install Docker on win 2016 server]()<br>
 - [Win container Deploy ,Login,exit container]()<br>
