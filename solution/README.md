@@ -2,7 +2,7 @@
 
 If you're looking out for complete Application Stack with Docker, this is the right GITHUB page to refer to. 
 
-- [Docker + Nginx + Bind Mount ](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)
+- [Docker + Nginx + Bind Mount ](https://github.com/collabnix/dockerlabs/tree/master/solution/nginx/README.md)
 
 - [Docker + Django + PostgreSQL](https://github.com/collabnix/dockerlabs/blob/master/solution/django-postgres/readme.md)
 
