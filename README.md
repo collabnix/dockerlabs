@@ -123,27 +123,27 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
 
-- [WordPress under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/wordpress/example1/README.md)
+- [Docker + WordPress + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/wordpress/example1/README.md)
 
-- [ELK under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ELK/README.md)
+- [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ELK/README.md)
 
-- [Prometheus Stack under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/docker-prometheus-swarm/README.md)
+- [Docker, Prometheus Stack + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/docker-prometheus-swarm/README.md)
 
-- [Apache Jmeter under Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/jmeter-docker/README.md)
+- [Docker + Apache Jmeter + Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/jmeter-docker/README.md)
 
-- [Voting App Example](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/example-voting-app/README.md)
+- [Docker + Voting App Example](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/example-voting-app/README.md)
 
-- [Playing around with Photon OS](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/vmware/powercli/README.md)
+- [Docker + Photon OS](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/vmware/powercli/README.md)
 
-- [Playing around with MacVLAN](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/macvlan/README.md)
+- [Docker + MacVLAN](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/macvlan/README.md)
 
-- [IPv6 & Docker Compose](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ipv6/README.md)
+- [Docker, Docker Compose & IPv6](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ipv6/README.md)
 
-- [Trying out Gitlab](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/gitlab/README.md)
+- [Docker + GitLab](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/gitlab/README.md)
 
-- [Getting Started with Nginx](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)
+- [Docker + Nginx ](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)
 
-- [django-postgres](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/django-postgres/README.md)
+- [Docker + Django + PostgreSQL](https://github.com/collabnix/dockerlabs/blob/master/solution/django-postgres/readme.md)
 ## License
 
 [MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md)
