@@ -28,6 +28,8 @@
 
 ## Cloning the Repository
 
+Run the below command on Manager1 node terminal
+
 ```
 $ git clone https://github.com/collabnix/dockerlabs
 $ cd dockerlabs
@@ -43,6 +45,10 @@ Creating network myapp4_default
 Creating service myapp4_db
 Creating service myapp4_wordpress
 ```
+
+A Port 8000 will appear instantly. Wait for 20 seconds and then click it to open WordPress App.
+
+
 
 ## Contributor
 
