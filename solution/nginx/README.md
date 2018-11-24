@@ -58,3 +58,7 @@ $ docker run -d -p 80:80 -v /root/dockerlabs/solution/nginx/sample:/usr/share/ng
 ```
 
 You will see that the default NGINX page gets modified and the new Dockerlabs page gets displayed
+
+## Contributor
+
+- [Ajeet Singh Raina](ajeetraina@gmail.com)
