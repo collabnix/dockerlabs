@@ -51,7 +51,7 @@ $ docker run -d -p 80:80 nginx
 You will see the default NGINX page gets displayed while you click on port 80 displayed on top of the PWD screen.
 
 
-# Modifying default NGINX page using volume mount
+## Modifying default NGINX page using volume mount
 
 ```
 $ docker run -d -p 80:80 -v /root/dockerlabs/solution/nginx/sample:/usr/share/nginx/html:ro  nginx
