@@ -1,4 +1,4 @@
-# Dockerize WordPress Application running under 5-Node Docker Swarm Node Cluster
+# Running Dockerized WordPress Application in 5-Node Docker Swarm Mode Cluster
 
 
 ## Tested Infrastructure
