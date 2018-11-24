@@ -1,6 +1,6 @@
 ## Docker-Ready Solution for You
 
-In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
+If you're looking out for complete Application Stack with Docker, this is the right GITHUB page to refer to. 
 
 - [Docker + Nginx + Bind Mount ](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)
 
@@ -24,5 +24,3 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 - [Docker + GitLab](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/gitlab/README.md)
 
-
-- [Docker + Django + PostgreSQL](https://github.com/collabnix/dockerlabs/blob/master/solution/django-postgres/readme.md)
