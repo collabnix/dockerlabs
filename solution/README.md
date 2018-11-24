@@ -24,3 +24,9 @@ If you're looking out for complete Application Stack with Docker, this is the ri
 
 - [Docker + GitLab](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/gitlab/README.md)
 
+- [Docker + Jenkins]()
+
+- [ Docker EE 2.1 + Istio]()
+
+- [ Docker + Portus - Private Registry]()
+
