@@ -52,7 +52,7 @@ You will see the default NGINX page gets displayed while you click on port 80 di
 # Modifying default NGINX page using volume mount
 
 ```
-$ docker run -d -p 80:80 -v /test/nginx.conf:/usr/share/nginx/html:ro  nginx
+$ docker run -d -p 80:80 -v /root/dockerlabs/solution/nginx/sample:/usr/share/nginx/html:ro  nginx
 ```
 
-You will see that the default NGINX page gets modified.
+You will see that the default NGINX page gets modified and the new Dockerlabs page gets displayed
