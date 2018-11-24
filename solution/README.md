@@ -8,7 +8,7 @@ If you're looking out for complete Application Stack with Docker, this is the ri
 
 - [Docker + Django + PostgreSQL](https://github.com/collabnix/dockerlabs/blob/master/solution/django-postgres/readme.md)
 
-- [Docker + WordPress + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/wordpress/example1/README.md)
+- [Docker + WordPress + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/solution/wordpress/README.md)
 
 
 ## Logging | Monitoring
