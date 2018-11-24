@@ -23,7 +23,9 @@
 
 - Create an account with [DockerHub](https://hub.docker.com)
 - Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
-- Click on "Hammer" sign near to select 3 Managers and 2 worker nodes
+- Click on "Template" sign near to Instance on the left side of the PWD window.
+- Select 3 Managers and 2 worker nodes template from drop-down menu
+- This will bring up 5-Node Docker Swarm Mode cluster for you.
 
 
 ## Cloning the Repository
