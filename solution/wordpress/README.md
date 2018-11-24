@@ -1,4 +1,4 @@
-# Running WordPress Application using Docker under Docker Swarm Mode
+# Dockerize WordPress Application running under 5-Node Docker Swarm Node Cluster
 
 
 ## Tested Infrastructure
@@ -12,7 +12,7 @@
   </tr>
   <tr>
     <td class="tg-yw4l"><b> Play with Docker</b></td>
-    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5</b></td>
     <td class="tg-yw4l"><b>5 min</b></td>
     
   </tr>
@@ -23,7 +23,7 @@
 
 - Create an account with [DockerHub](https://hub.docker.com)
 - Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
-- Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
+- Click on "Hammer" sign near to select 3 Managers and 2 worker nodes
 
 
 ## Cloning the Repository
@@ -38,9 +38,12 @@ $ cd solution/wordpress
 
 ```
 $ docker stack deploy -c docker-stack.yml myapp4
-Ignoring unsupported options: restart
 
 Creating network myapp4_default
 Creating service myapp4_db
 Creating service myapp4_wordpress
 ```
+
+## Contributor
+
+- [Ajeet Singh Raina](ajeetraina@gmail.com)
