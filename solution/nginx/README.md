@@ -1,4 +1,4 @@
-# Demonstrating Nginx Server running inside Docker Container
+# Demonstrating Nginx running inside Docker Container using Volume mount option
 
 
 ## Tested Infrastructure
