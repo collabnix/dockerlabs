@@ -30,7 +30,7 @@
 - Compiling Your Own Docker Binary from Source
 - Docker ToolBox Installations
 - Scripts & Installation Tools
-- Upgrading Docker
+- [Upgrading Docker from CE to EE](https://github.com/collabnix/dockerlabs/blob/master/beginners/upgrade-1809ce-1809ee/README.md)
 - Running Docker without Sudo
 - Housekeeping Docker Containers
 - Moving Docker to different partition
