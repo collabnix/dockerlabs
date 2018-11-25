@@ -1,5 +1,5 @@
 
-# Creating Docker Base Image
+# Creating Base Docker Image
 
 
 ## Tested Infrastructure
