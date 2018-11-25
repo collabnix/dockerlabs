@@ -46,4 +46,5 @@ user@docker1:~$ sudo systemctl start docker
 
 ```
 user@docker1:~$ sysctl net.ipv4.ip_forward
+net.ipv4.ip_forward = 1
 ```
