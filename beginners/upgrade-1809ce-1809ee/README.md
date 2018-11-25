@@ -1,4 +1,4 @@
-# How to upgrade Docker 18.09 Community Edition to Enterprise 
+# How to upgrade Docker 18.09 Community Edition to Docker Enterprise 18.09
 
 ## Tested Infrastructure
 
