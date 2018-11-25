@@ -191,6 +191,16 @@ Server: Docker Engine - Enterprise
   Experimental:     false
 ```
 
+## Verifying if Nginx container is still running
+
+```
+joginderkour1950@master1:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+ba4a5822d7c9        nginx               "nginx -g 'daemon of…"   6 minutes ago       Up 6 minutes        0.0.0.0:80->80/tcp   peaceful_swanson
+```
+
+Cheers ~
+
 ## Contributor
 
 - [Ajeet Singh Raina](ajeetraina@gmail.com)
