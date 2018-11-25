@@ -45,7 +45,7 @@ VERSION_CODENAME=cosmic
 UBUNTU_CODENAME=cosmic
 ```
 
-### Run the below commands -
+### Installing Docker 18.09 Release
 
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
