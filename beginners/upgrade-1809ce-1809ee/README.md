@@ -171,7 +171,7 @@ $ sudo systemctl restart docker
 ## Verifying Docker Enterprise Version
 
 ```
-joginderkour1950@master1:~$ sudo docker version
+$ sudo docker version
 Client:
  Version:           18.09.0
  API version:       1.39
