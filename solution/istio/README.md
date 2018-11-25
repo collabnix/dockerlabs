@@ -240,3 +240,28 @@ INFO[0000] Initializing a new swarm at 10.140.0.2
 INFO[0012] Installing UCP with host address 10.140.0.2 - If this is incorrect, please specify an alternative address with the '--host-address' flag 
 INFO[0012] Deploying UCP Service...                                            
 ```
+
+```
+$ sudo docker ps
+CONTAINER ID        IMAGE                    COMMAND                  CREATED             STATUS              PORTS                     NAMES
+2d2be5e7607f        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12385->2376/tcp   ucp-port-check-12385
+ebc31eda7d89        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:443->2376/tcp     ucp-port-check-443
+7a13db7fcafe        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12379->2376/tcp   ucp-port-check-12379
+85c8835226c6        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:10250->2376/tcp   ucp-port-check-10250
+be0cf0aa7830        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:2376->2376/tcp    ucp-port-check-2376
+f863aa01bb85        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12382->2376/tcp   ucp-port-check-12382
+2006264a610b        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12381->2376/tcp   ucp-port-check-12381
+04193f7e2210        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12386->2376/tcp   ucp-port-check-12386
+08587fa666c8        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:6443->2376/tcp    ucp-port-check-6443
+a27d31dd6171        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12384->2376/tcp   ucp-port-check-12384
+d51348228baf        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12380->2376/tcp   ucp-port-check-12380
+d9ca5b998809        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12378->2376/tcp   ucp-port-check-12378
+6ea257fbad25        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12383->2376/tcp   ucp-port-check-12383
+8ba653aba34c        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:179->2376/tcp     ucp-port-check-179
+642cadfc12a2        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:6444->2376/tcp    ucp-port-check-6444
+5e5fc72f805e        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12376->2376/tcp   ucp-port-check-12376
+60559cf03467        docker/ucp-agent:3.0.5   "/bin/ucp-agent test…"   23 minutes ago      Up 23 minutes       0.0.0.0:12387->2376/tcp   ucp-port-check-12387
+ba4a5822d7c9        nginx                    "nginx -g 'daemon of…"   2 hours ago         Up 2 hours          0.0.0.0:80->80/tcp        peaceful_swanson
+```
+
+
