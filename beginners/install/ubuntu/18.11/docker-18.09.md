@@ -1,4 +1,4 @@
-# Installing Docker 18.09 CE on Ubuntu 18.11
+# Installing Docker 18.09 CE on Ubuntu 18.10
 
 
 ## Tested Infrastructure
