@@ -73,3 +73,126 @@ Server: Docker Engine - Community
   OS/Arch:          linux/amd64
   Experimental:     false
   ```
+  
+## Running Nginx Docker container
+
+```
+$ sudo docker run -d -p 80:80 nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+a5a6f2f73cd8: Pull complete 
+67da5fbcb7a0: Pull complete 
+e82455fa5628: Pull complete 
+Digest: sha256:31b8e90a349d1fce7621f5a5a08e4fc519b634f7d3feb09d53fac9b12aa4d991
+Status: Downloaded newer image for nginx:latest
+ba4a5822d7c991c04418b2fbbcadb86057eef4d98ba3f930bff569ac8058468e
+```
+
+```$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+ba4a5822d7c9        nginx               "nginx -g 'daemon of…"   5 seconds ago       Up 3 seconds        0.0.0.0:80->80/tcp   peaceful_swanson
+```
+## Verifying Nginx Docker container Up and Running
+
+```
+~$ sudo curl localhost:80
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+  
+## Connect your system to DockerHub Account
+  
+```
+$sudo docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: ajeetraina
+Password: 
+WARNING! Your password will be stored unencrypted in /home/joginderkour1950/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+Login Succeeded
+ 
+```
+
+## Downloading Your Docker Enterprise License
+
+- Go to https://store.docker.com/my-content site. 
+- Login with your Docker ID.
+- Under your profile page, click on "My Content"
+- Click on "Setup" to get your Docker Enterprise License
+- Download your Docker Enterprise License in your system
+- Copy the content of .lic file 
+- Create a file called mylicense.lic on your Ubuntu sytem and save it in some location.
+
+## Activate the EE license. You must use sudo even if your user is part of the docker group.
+
+```
+$ sudo docker engine activate --license mylicense.lic
+License: Quantity: 10 Nodes     Expiration date: 2018-12-10     License is currently active
+18.09.0: resolved 
+267a9a121ee1: done 
+4365cd59d876: done [==================================================>]  1.161kB/1.161kB
+7ec4ee35c404: done [==================================================>]   4.55MB/4.55MB
+3c60d2c9ddf3: done [==================================================>]  25.71MB/25.71MB
+55fa4079a8ab: done [==================================================>]  1.122MB/1.122MB
+c5a93cbd4679: done [==================================================>]  333.9kB/333.9kB
+e661b0f8ba29: done [==================================================>]   4.82kB/4.82kB
+Successfully activated engine.
+Restart docker with 'systemctl restart docker' to complete the activation.
+```
+
+## Restarting the Docker service
+
+```
+$ sudo systemctl restart docker
+```
+
+## Verifying Docker Enterprise Version
+
+```
+joginderkour1950@master1:~$ sudo docker version
+Client:
+ Version:           18.09.0
+ API version:       1.39
+ Go version:        go1.10.4
+ Git commit:        4d60db4
+ Built:             Wed Nov  7 00:49:01 2018
+ OS/Arch:           linux/amd64
+ Experimental:      false
+Server: Docker Engine - Enterprise
+ Engine:
+  Version:          18.09.0
+  API version:      1.39 (minimum version 1.12)
+  Go version:       go1.10.4
+  Git commit:       33a45cd
+  Built:            Wed Nov  7 00:17:07 2018
+  OS/Arch:          linux/amd64
+  Experimental:     false
+```
+
+## Contributor
+
+- [Ajeet Singh Raina](ajeetraina@gmail.com)
+
+
