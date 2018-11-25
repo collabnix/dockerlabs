@@ -7,6 +7,7 @@
 - Docker Networking subsystem & Driver
 - Docker Enterprise Edition Networking Feature
 - Difference between Bridge Vs Overlay Network
+- [Verifying host-level settings that impact Docker networking](https://github.com/collabnix/dockerlabs/blob/master/intermediate/host-settings.md)
 - What is MacVLAN networking?
    - [Implementing MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/macvlan-010.md)
 - Docker Networking CLI
