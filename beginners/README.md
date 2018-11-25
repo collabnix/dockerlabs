@@ -46,7 +46,7 @@
 - What is Docker Container?
 - Difference between Docker Image Vs Docker Container?
 - What is Docker registry?
-  - Building a Private Registry 
+  - [Building a Private Docker Registry](https://github.com/collabnix/dockerlabs/blob/master/beginners/build-private-docker-registry.md)
 - What is DockerHub?
   - Setting Up an Automated Build on Docker Hub for Continuous Integration/Deployment
   
