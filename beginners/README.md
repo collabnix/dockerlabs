@@ -58,6 +58,7 @@
   - Versioning an Image with Tags 
 - Working with Docker containers
   - Detaching containers without stopping them
+- [Creating Docker Base Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/create-base-image.md)
 - Build Your Own Docker Image
   - Using Packer to Create a Docker Image 
   - Using ONBUILD Images 
