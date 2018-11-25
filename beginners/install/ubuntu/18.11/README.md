@@ -44,4 +44,23 @@ $ sudo snap install docker
 docker 18.06.1-ce from Docker, Inc (docker-inc) installed
 ```
 
-
+```
+$ sudo docker version
+Client:
+ Version:           18.06.1-ce
+ API version:       1.38
+ Go version:        go1.10.4
+ Git commit:        e68fc7a
+ Built:             Mon Oct  1 14:25:31 2018
+ OS/Arch:           linux/amd64
+ Experimental:      false
+Server:
+ Engine:
+  Version:          18.06.1-ce
+  API version:      1.38 (minimum version 1.12)
+  Go version:       go1.10.4
+  Git commit:       e68fc7a
+  Built:            Mon Oct  1 14:25:33 2018
+  OS/Arch:          linux/amd64
+  Experimental:     false
+  ```
