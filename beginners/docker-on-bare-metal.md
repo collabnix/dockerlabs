@@ -41,4 +41,4 @@ Technically, LCOW needs the Windows host to set up a Hyper-V hypervisor, so the 
 
 ## Credits
 
-https://searchitoperations.techtarget.com/tip/Explore-the-benefits-of-containers-on-bare-metal-vs-on-VMs?track=NL-1806&ad=924358&src=924358&asrc=EM_NLN_103959920&utm_medium=EM&utm_source=NLN&utm_campaign=20181123_New%20Relic%20launches%20beta%20for%20AWS%20Lambda%20monitoring%20features
+https://searchitoperations.techtarget.com/tip/Explore-the-benefits-of-containers-on-bare-metal-vs-on-VMs
