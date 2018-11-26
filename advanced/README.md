@@ -69,16 +69,16 @@
 [How to Install Istio under Docker Enterprise 2.1?]()<br>
 
 
-## Docker Enterprise & Logging Solution
+### Docker Enterprise & Logging Solution
 
 [TBD]()<br>
 
-## Docker Enterprise & Backup Solution
+### Docker Enterprise & Backup Solution
 
 [TBD]()<br>
 
 
-## Docker Enterprise & Secrets Configuration
+### Docker Enterprise & Secrets Configuration
 
 <TBD>
 
