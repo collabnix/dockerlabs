@@ -27,113 +27,151 @@
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
 
-## Search Python Docker Images in DockerHub
-```
-$ docker search python
-NAME                                  DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
-python                                Python is an interpreted, interactive, objec…   3590                [OK]
-django                                Django is a free web application framework, …   759                 [OK]
-pypy                                  PyPy is a fast, compliant alternative implem…   157                 [OK]
-kaggle/python                         Docker image for Python scripts run on Kaggle   105                                     [OK]
-frolvlad/alpine-python3               The smallest Docker image with Python 3.5 (~…   90                                      [OK]
-centos/python-35-centos7              Platform for building and running Python 3.5…   32
-resin/raspberrypi3-python             The Python buildpack image for Python apps f…   30
-arm32v7/python                        Python is an interpreted, interactive, objec…   28
-amazon/aws-eb-python                  AWS Elastic Beanstalk Python Image              24
-joyzoursky/python-chromedriver        Python with Chromedriver, for running automa…   16                                      [OK]
-circleci/python                       Python is an interpreted, interactive, objec…   16
-centos/python-36-centos7              Platform for building and running Python 3.6…   12
-centos/python-27-centos7              Platform for building and running Python 2.7…   11
-iron/python                           Tiny Python Microcontainer                      9
-resin/raspberrypi3-alpine-python      The Python buildpack image for Python apps. …   7
-microsoft/azure-functions-python3.6   Azure functions python image                    5                                       [OK]
-dockershelf/python                    Repository for docker images of Python. Test…   4                                       [OK]
-resin/beaglebone-black-python         The Python buildpack image for Python apps f…   3
-bitnami/python                        Bitnami Python Docker Image                     3                                       [OK]
-publicisworldwide/python-conda        Basic Python environments with Conda.           3                                       [OK]
-centos/python-34-centos7              Platform for building and running Python 3.4…   2
-komand/python-plugin                  DEPRECATED: Komand Python SDK                   2                                       [OK]
-resin/qemux86-alpine-python           The Python buildpack image for Python apps. …   1
-openshift/python-33-centos7           DEPRECATED: A Centos7 based Python v3.3 imag…   0
-qbtrade/python                        python 3.5.0 with requirements                  0
-```
-
-## Running Python 3.6 Docker Container
+## Running Hello World Example
 
 
-``
-$ docker run -dit python:3.6
-```
 
 ```
-Unable to find image 'python:3.6' locally
-3.6: Pulling from library/python
-54f7e8ac135a: Pull complete
-d6341e30912f: Pull complete
-087a57faf949: Pull complete
-5d71636fb824: Pull complete
-0c1db9598990: Pull complete
-2eeb5ce9b924: Pull complete
-a8c530378055: Pull complete
-687ed2fb2a0d: Pull complete
-620aea26e853: Pull complete
-Digest: sha256:fc34d5b6cf5d00a6139a74370dc27ddc9ce18303e2210d0f199a6050cc29aa45
-Status: Downloaded newer image for python:3.6
-4411349d2e1c5407617201d8e9f9523d34f7105f82f5c53fad23bf3a67dacd54
+$ docker run hello-world
+
 ```
 
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b301_helloworld.png)
 
-## Running Python 2.7 Docker Container
+
+
+
+
+## Explanation
+
+
+This image is a prime example of using the scratch image effectively. See hello.c in https://github.com/docker-library/hello-world for the source code of the hello binary included in this image.
+
+So what’s happened here? We’ve called the docker run command, which is responsible for launching containers.
+
+The argument hello-world is the name of the image someone created on dockerhub for us. It will first search for "hello-world" image locally and then search in Dockerhub.
+
+Once the image has been downloaded, Docker turns the image into a running container and executes it. 
+
+## Did you Know?
+
+1. The Hello World Docker Image is only 1.84 KB size.
 
 ```
 [node1] (local) root@192.168.0.18 ~
-$ docker run -dit python:2.7
-Unable to find image 'python:2.7' locally
-2.7: Pulling from library/python
-54f7e8ac135a: Already exists
-d6341e30912f: Already exists
-087a57faf949: Already exists
-5d71636fb824: Already exists
-0c1db9598990: Already exists
-220bd9a491ba: Pull complete
-97b15521fe5d: Pull complete
-1b44c1054690: Pull complete
-6b8b382a68d7: Pull complete
-Digest: sha256:1bb98a04d037d9766110499d36bf2f3a2aa43965b4aa345da91f6de75f3816d8
-Status: Downloaded newer image for python:2.7
-dd4b7a0da1b56af242e9853fd512d4af4ddfa919fceaa6e6068a20f9fe0ab880
-[node1] (local) root@192.168.0.18 ~
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              4ab4c602aa5e        6 weeks ago         1.84kB
 ```
 
-## Verifying both Python Version Docker Container
+2. While running `docker ps` command, it doesn't display any running container. Reason - It gets executed once and exit immediately.
 
 ```
-[node1] (local) root@192.168.0.18 ~
 $ docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-dd4b7a0da1b5        python:2.7          "python2"           18 seconds ago      Up 17 seconds                           hardcore_shaw
-4411349d2e1c        python:3.6          "python3"           26 seconds ago      Up 25 seconds                           romantic_spence
-[node1] (local) root@192.168.0.18 ~
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS
+      PORTS               NAMES
 ```
 
-## Verifying Python Version in each Docker Container
-
+3. You can use `docker inspect <imagename>` command to inspect about this particular Docker Image. 
 
 ```
-[node1] (local) root@192.168.0.18 ~
-$ docker run python:2.7 python -V
-Python 2.7.15
-[node1] (local) root@192.168.0.18 ~
-$ docker run python:3.6 python -V
-Python 3.6.7
+$ docker inspect 4ab
+[
+    {
+        "Id": "sha256:4ab4c602aa5eed5528a6620ff18a1dc4faef0e1ab3a5eddeddb410714478c67f",
+        "RepoTags": [
+            "hello-world:latest"
+        ],
+        "RepoDigests": [
+            "hello-world@sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2018-09-07T19:25:39.809797627Z",
+        "Container": "15c5544a385127276a51553acb81ed24a9429f9f61d6844db1fa34f46348e420",
+        "ContainerConfig": {
+            "Hostname": "15c5544a3851",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"/hello\"]"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:9a5813f1116c2426ead0a44bbec252bfc5c3d445402cc1442ce9194fc1397027",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "DockerVersion": "17.06.2-ce",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/hello"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:9a5813f1116c2426ead0a44bbec252bfc5c3d445402cc1442ce9194fc1397027",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1840,
+        "VirtualSize": 1840,
+        "GraphDriver": {
+            "Data": {
+                "MergedDir": "/var/lib/docker/overlay2/e494ae30abc49ad403ef5c2a32bcb894629ea4da6d4d226fbca70d27ed9a74d8/merged",
+                "UpperDir": "/var/lib/docker/overlay2/e494ae30abc49ad403ef5c2a32bcb894629ea4da6d4d226fbca70d27ed9a74d8/diff",
+                "WorkDir": "/var/lib/docker/overlay2/e494ae30abc49ad403ef5c2a32bcb894629ea4da6d4d226fbca70d27ed9a74d8/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:428c97da766c4c13b19088a471de6b622b038f3ae8efa10ec5a37d6d31a2df0b"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
 ```
 
-
-
+<a href="https://asciinema.org/a/210117" target="_blank"><img src="https://github.com/collabnix/dockerlabs/blob/master/beginners/helloworld/helloworld.png" /></a>
 
 
 ## Maintained by:
 Ajeet Singh Raina
 
 
-
+[Next: Working with Docker Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/b300/b302-workingwithdockerimage.md)
