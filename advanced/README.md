@@ -41,7 +41,7 @@
 
 ### Introduction
 
-[What is Docker Enterprise?]()<br>
+[What is Docker Enterprise and why do we need it?]()<br>
 [What are Docker Enterprise Supported Platforms?]<br>
 [What are components of Docker Enterprise?]()<br>
 [Overview of Universal Control Plane]()<br>
