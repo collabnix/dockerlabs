@@ -42,15 +42,15 @@
 ### Introduction
 
 [What is Docker Enterprise?]()<br>
-[ What are Docker Enterprise Supported Platforms?]<br>
-[ What are components of Docker Enterprise?]()<br>
-[ Overview of Universal Control Plane]()<br>
+[What are Docker Enterprise Supported Platforms?]<br>
+[What are components of Docker Enterprise?]()<br>
+[Overview of Universal Control Plane]()<br>
 [Deep Dive into Docker Enterprise Architecture]()<br>
 [What Kubernetes Features are included under Docker Enterprise 2.1?]()<br>
 [What security features are in-built into Docker Enterprise 2.1?]()<br>
 [Compatibility Matrix under Docker Enteprise 2.1]()<br>
-[ Deploy Application using Swarm on Docker Enterprise]<br>
-[ Deploy Application using Kubernetes on Docker Enterprise]<br>
+[Deploy Application using Swarm on Docker Enterprise]<br>
+[Deploy Application using Kubernetes on Docker Enterprise]<br>
 
 ### Docker Enterprise 2.1 
 
