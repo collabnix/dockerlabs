@@ -57,7 +57,7 @@ openshift/python-33-centos7           DEPRECATED: A Centos7 based Python v3.3 im
 qbtrade/python                        python 3.5.0 with requirements                  0
 ```
 
-## Running Python 3.6 Docker Container
+## Running Python 3.6-based Docker Container
 
 
 ```
@@ -82,7 +82,7 @@ Status: Downloaded newer image for python:3.6
 ```
 
 
-## Running Python 2.7 Docker Container
+## Running Python 2.7-based Docker Container
 
 ```
 [node1] (local) root@192.168.0.18 ~
@@ -104,7 +104,7 @@ dd4b7a0da1b56af242e9853fd512d4af4ddfa919fceaa6e6068a20f9fe0ab880
 [node1] (local) root@192.168.0.18 ~
 ```
 
-## Verifying both Python Version Docker Container
+## Verifying both Docker Container
 
 ```
 [node1] (local) root@192.168.0.18 ~
