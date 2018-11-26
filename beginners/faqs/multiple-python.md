@@ -128,7 +128,7 @@ Python 3.6.7
 ```
 
 
-
+<a href="https://asciinema.org/a/Udlbay9cNe4ek2ncSlWQclkPO" target="_blank"><img src="https://github.com/collabnix/dockerlabs/blob/master/beginners/helloworld/helloworld.png" /></a>
 
 
 ## Maintained by:
