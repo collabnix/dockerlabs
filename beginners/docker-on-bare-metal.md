@@ -29,3 +29,16 @@ You probably are wondering why we don't run all containers on bare metal. Consid
 - Containers are OS-dependent. Linux containers run on Linux hosts; Windows containers run on Windows hosts. A bare-metal Windows server requires a Linux VM environment to host Docker containers for an app compiled for Linux. However, there are technological developments in this space (see sidebar).
 
 - Bare-metal servers don't offer rollback features. Most virtualization platforms enable admins to take VM snapshots and roll back to that captured configuration status at a later time. Containers are ephemeral by nature, so there is nothing to roll back to. You might be able to use rollback features built into the host OS or file system, but those are often a less seamless experience. To take advantage of simple system rollback, host containers on a VM.
+
+Here's a Bonus..
+
+
+## Linux containers on bare-metal Windows
+
+Historically, there was not an easy, efficient way to run Linux containers on a Windows host. However, Linux Containers on Windows (LCOW) is a tool from Docker that automatically runs Linux containers on a Windows host.
+
+Technically, LCOW needs the Windows host to set up a Hyper-V hypervisor, so the Linux containers actually don't run directly on bare metal inside the Windows environment. However, the hypervisor footprint is miniscule, and the hypervisor is fully managed. Consequently, the performance and management drawbacks associated with hosting containers inside a VM don't exist with LCOW, and the technology removes another historical downside of running containers on bare metal.
+
+## Credits
+
+https://searchitoperations.techtarget.com/tip/Explore-the-benefits-of-containers-on-bare-metal-vs-on-VMs?track=NL-1806&ad=924358&src=924358&asrc=EM_NLN_103959920&utm_medium=EM&utm_source=NLN&utm_campaign=20181123_New%20Relic%20launches%20beta%20for%20AWS%20Lambda%20monitoring%20features
