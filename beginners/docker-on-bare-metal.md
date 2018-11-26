@@ -30,7 +30,7 @@ You probably are wondering why we don't run all containers on bare metal. Consid
 
 - Bare-metal servers don't offer rollback features. Most virtualization platforms enable admins to take VM snapshots and roll back to that captured configuration status at a later time. Containers are ephemeral by nature, so there is nothing to roll back to. You might be able to use rollback features built into the host OS or file system, but those are often a less seamless experience. To take advantage of simple system rollback, host containers on a VM.
 
-Here's a Bonus..
+# Here's a Bonus..
 
 
 ## Linux containers on bare-metal Windows
