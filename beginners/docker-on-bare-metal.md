@@ -1,4 +1,6 @@
-# Top Reasons why to run Docker containers on Bare Metal System
+# Top Reasons WHY TO & WHY NOT TO run Docker containers on Bare Metal System
+
+## WHY TO RUN CONTAINERS ON BARE METAL SYSTEM
 
 Containers on bare-metal hosts get many of the advantages VMs offer but without the drawbacks of virtualization:
 
@@ -13,3 +15,17 @@ In addition, by hosting containers on bare metal, you get the benefits that have
 - Get app isolation. Although containers arguably don't provide the same level of isolation as VMs, containers do enable admins to prevent apps from interacting with one another and to set strict limits on the privileges and resource accessibility associated with each container.
 
 In short, run containers on bare metal to square the circle -- do what seems impossible. Reap all the benefits of bare-metal servers' performance and hardware accessibility, and take advantage of the portability and isolation features seen with VMs.
+
+## WHY NOT TO RUN CONTAINERS ON BARE METAL SYSTEM
+
+You probably are wondering why we don't run all containers on bare metal. Consider the following drawbacks of using bare-metal servers to host a container engine, rather than VMs:
+
+- Physical server upgrades are difficult. To replace a bare-metal server, you must recreate the container environment from scratch on the new server. If the container environment were part of a VM image, you could simply move the image to the new host.
+
+- Most clouds require VMs. There are some bare-metal cloud hosts out there, such as Rackspace's OnMetal offering and Oracle's Bare Metal Cloud Services. But bare-metal servers in cloud computing environments usually cost significantly more -- if the cloud vendor even offers it. By and large, most public cloud providers only offer VMs. If you want to use their platforms to run containers, you'll have to deploy into VMs.
+
+- Container platforms don't support all hardware and software configurations. These days, you can host almost any type of OS on a VM platform such as VMware or a kernel-based VM. And you can run that virtualization platform on almost any kind of OS or server. Docker is more limited and can run only on Linux, certain Windows servers and IBM mainframes if hosted on bare metal. For example, bare-metal servers that run Windows Server 2012 -- which Docker does not currently support -- require a VM on top of the Windows host.
+
+- Containers are OS-dependent. Linux containers run on Linux hosts; Windows containers run on Windows hosts. A bare-metal Windows server requires a Linux VM environment to host Docker containers for an app compiled for Linux. However, there are technological developments in this space (see sidebar).
+
+- Bare-metal servers don't offer rollback features. Most virtualization platforms enable admins to take VM snapshots and roll back to that captured configuration status at a later time. Containers are ephemeral by nature, so there is nothing to roll back to. You might be able to use rollback features built into the host OS or file system, but those are often a less seamless experience. To take advantage of simple system rollback, host containers on a VM.
