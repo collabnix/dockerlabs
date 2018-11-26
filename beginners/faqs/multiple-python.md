@@ -26,6 +26,7 @@
 
 
 ## Search Python Docker Images in DockerHub
+
 ```
 $ docker search python
 NAME                                  DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
@@ -59,7 +60,7 @@ qbtrade/python                        python 3.5.0 with requirements            
 ## Running Python 3.6 Docker Container
 
 
-``
+```
 $ docker run -dit python:3.6
 ```
 
