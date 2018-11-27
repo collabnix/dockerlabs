@@ -22,7 +22,7 @@
   - [Diving Deeper into the Docker Network Namespaces Configuration](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b406-network-namespace-009.md)
 
 
-## Docker Swarm
+## Docker Swarm - Introduction
 
 - [What is Docker Swarm?]()
 - [What is difference between Docker Swarm(Classic Swarm) Vs Swarm Mode Vs Swarmkit?]()
@@ -30,22 +30,51 @@
 - [Docker Swarm Key Concepts - Services, Tasks & Load Balancing]()
 - [Docker Swarm CLI]()
 - [Docker swarm config files]()
+- [Raft Consensus in Docker Swarm]()
+
+## Getting Started with Docker Swarm - Lab Sessions
+
+
+- [Getting Started with Docker Swarm](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/README.md)
 - [Demonstrating Service Discovery under Docker Swarm Mode]()
 - [How to Lock Docker Swarm]()
-- [Raft Consensus in Docker Swarm]()
 - [Demonstrating Swarm Synchronous Services]()
 - [NFS Volume with Docker Swarm]()
+- [ Building Docker Swarm Topology using Script ]()
+
+
+## Docker Swarm - Logging Solutions
+
 - [Service Logs with Docker Swarm]()
+
+## Docker Swarm - Networking Solution
+
+
 - [Implementing MacVLAN under Docker Swarm]()
 - [Toplology Aware Scheduling with Docker Swarm]()
+
+## Docker Swarm - Updates & Rollback
+
+
 - [Service Rollback with Docker Swarm]()
-- [Service Rollback with Docker Swarm]()
+
+
+## Docker Swarm - High Availability, Placement & Constraints
+
 - [Implementing High Availability with Docker Swarm]()
 - [Secrets Management with Docker Swarm]()
-- [Health Aware Orchestration with Docker Swarm]()
 - [Scheduling Placement with Docker Swarm]()
+
+## Docker Swarm - HealthCheck Solution
+
+- [Health Aware Orchestration with Docker Swarm]()
+
+
+## Docker Swarm - Security
+
+
 - [TLS and Certificate Authority with Docker Swarm]()
-- [ Building Docker Swarm Topology using Script ]()
+
 
 
 ## Docker Configuration & Development
