@@ -30,7 +30,7 @@
 ## Create a directory to permanently store images.
 
 ```
-$ sudo mkdir -p /srv/registry/data
+$ mkdir -p /opt/registry/data
 ```
 
 ## Authenticate with DockerHub
@@ -45,7 +45,7 @@ $docker login
 $ docker run -d \
   -p 5000:5000 \
   --name registry \
-  -v /srv/registry/data:/var/lib/registry \
+  -v /opt/registry/data:/var/lib/registry \
   --restart always \
   registry:2
 ```
@@ -60,8 +60,11 @@ b1a641f8d710eee34405ad575050179f5a1262f1c845806cc3c2b435dea1648c
 $ docker ps
 ```
 ```
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-b1a641f8d710        registry:2          "/entrypoint.sh /etc…"   5 minutes ago       Up 5 minutes        0.0.0.0:5000->5000/tcp   registry
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS
+                    NAMES
+3a056bf96c6d        registry:2          "/entrypoint.sh /etc…"   About an hour ago   Up About an hour    0.0.0
+.0:5000->5000/tcp   registry
 ```
 
 ## Pull Debian Stretch image from official repository.
@@ -84,51 +87,51 @@ $ docker tag debian:stretch localhost:5000/debian:stretch
 ## Push image to the local repository.
 
 ```
+[node1] (local) root@192.168.0.23 ~
 $ docker push localhost:5000/debian:stretch
-
 The push refers to repository [localhost:5000/debian]
-e27a10675c56: Pushed
-stretch: digest: sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c size: 529
+90d1009ce6fe: Pushed
+stretch: digest: sha256:38236c068c393272ad02db100e09cac36a5465149e2924a035ee60d6c60c38fe size: 529
+[node1] (local) root@192.168.0.23 ~
 ```
 
 ## Remove local images.
 
 ```
+[node1] (local) root@192.168.0.23 ~
 $ docker image remove debian:stretch
-
 Untagged: debian:stretch
-Untagged: debian@sha256:0a5fcee6f52d5170f557ee2447d7a10a5bdcf715dd7f0250be0b678c556a501b
+Untagged: debian@sha256:df6ebd5e9c87d0d7381360209f3a05c62981b5c2a3ec94228da4082ba07c4f05
 ```
 
 ```
+[node1] (local) root@192.168.0.23 ~
 $ docker image remove localhost:5000/debian:stretch
-
 Untagged: localhost:5000/debian:stretch
-Untagged: localhost:5000/debian@sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c
-Deleted: sha256:da653cee0545dfbe3c1864ab3ce782805603356a9cc712acc7b3100d9932fa5e
-Deleted: sha256:e27a10675c5656bafb7bfa9e4631e871499af0a5ddfda3cebc0ac401dfe19382
+Untagged: localhost:5000/debian@sha256:38236c068c393272ad02db100e09cac36a5465149e2924a035ee60d6c60c38fe
+Deleted: sha256:4879790bd60d439cfe39c063660eef7af525d5f6f1cbb701a14c7cfc11cbfcf7
 ```
 
 ## Pull Debian Stretch image from local repository.
 
 ```
+[node1] (local) root@192.168.0.23 ~
 $ docker pull localhost:5000/debian:stretch
-
 stretch: Pulling from debian
-723254a2c089: Pull complete
-Digest: sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c
+54f7e8ac135a: Pull complete
+Digest: sha256:38236c068c393272ad02db100e09cac36a5465149e2924a035ee60d6c60c38fe
 Status: Downloaded newer image for localhost:5000/debian:stretch
 ```
 
 ## List stored images.
 
 ```
+[node1] (local) root@192.168.0.23 ~
 $ docker image ls
-
 REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
-registry                2                   d1fd7d86a825        4 weeks ago         33.3MB
-localhost:5000/debian   stretch             da653cee0545        2 months ago        100MB
-hello-world             latest              f2a91732366c        2 months ago        1.85kB
+localhost:5000/debian   stretch             4879790bd60d        12 days ago         101MB
+registry                2                   2e2f252f3c88        2 months ago        33.3MB
+
 ```
 
 ## Shared local registry
@@ -136,13 +139,13 @@ hello-world             latest              f2a91732366c        2 months ago    
 Create a directory to permanently store images.
 
 ```
-$ sudo mkdir -p /srv/registry/data
+$ mkdir -p /srv/registry/data
 ```
 
 ## Create a directory to permanently store certificates and authentication data.
 
 ```
-$ sudo mkdir -p /srv/registry/security
+$ mkdir -p /srv/registry/security
 ```
 
 Store domain and intermediate certificates using /srv/registry/security/registry.crt file, private key using /srv/registry/security/registry.key file. Use valid certificate and do not waste time with self-signed one. This step is required do use basic authentication.
@@ -150,7 +153,9 @@ Store domain and intermediate certificates using /srv/registry/security/registry
 ## Install apache2-utils to use htpasswd utility.
 
 ```
-$ sudo apt-get install apache2-utils
+[node1] (local) root@192.168.0.23 ~
+$ apk add apache2-utils
+OK: 302 MiB in 110 packages
 ```
 
 Create initial username and password. The only supported password format is bcrypt.
@@ -160,45 +165,51 @@ $ : | sudo tee /srv/registry/security/htpasswd
 ```
 
 ```
+[node1] (local) root@192.168.0.23 ~
 $ echo "password" | sudo htpasswd -iB /srv/registry/security/htpasswd username
+Adding password for user username
 ```
 
 ## Adding password for user username
 
 ```
+$
+[node1] (local) root@192.168.0.23 ~
 $ cat /srv/registry/security/htpasswd
+username:$2y$05$q9R5FSNYpAppB4Vw/AGWb.RqMCGE8DmZ4q5HZC/1wC87oTWyvB9vy
+[node1] (local) root@192.168.0.23 ~
+$
+```
 
-username:$2y$05$KjuSifCdzRiYmir9N.nu.OKHtEbSZxbUPR04zatI25G9Bqyq1cho.
+## Stop and Remove all old containers
+
+```
+$ docker stop $(docker ps -a -q)
+3a056bf96c6d
+[node1] (local) root@192.168.0.23 ~
+$ docker rm -f $(docker ps -a -q)
+3a056bf96c6d
 ```
 
 ## Start the registry container.
 
 ```
-$ docker run -d \
-  -p 443:5000 \
-  --name registry \
-  -v /srv/registry/data:/var/lib/registry \
-  -v /srv/registry/security:/etc/security \
-  -e REGISTRY_HTTP_TLS_CERTIFICATE=/etc/security/registry.crt \
-  -e REGISTRY_HTTP_TLS_KEY=/etc/security/registry.key \
-  -e REGISTRY_AUTH=htpasswd \
-  -e REGISTRY_AUTH_HTPASSWD_PATH=/etc/security/htpasswd \
-  -e REGISTRY_AUTH_HTPASSWD_REALM="Registry Realm" \
-  --restart always \
-  registry:2
+[node1] (local) root@192.168.0.23 ~
+$ docker run -d   -p 443:5000   --name registry   -v /srv/registry/data:/var/lib/registry   -v /srv/registry/security:/etc/security   -e REGISTRY_HTTP_TLS_CERTIFICATE=/etc/security/registry.crt   -e REGISTRY_HTTP_TLS_KEY=/etc/security/registry.key   -e REGISTRY_AUTH=htpasswd   -e REGISTRY_AUTH_HTPASSWD_PATH=/etc/security/htpasswd   -e REGISTRY_AUTH_HTPASSWD_REALM="Registry Realm"   --restart always   registry:2
+e7755af8cbd70ea84ab77237a87cb97fd1abb18c7726fbc116c40f081d3b7098
+[node1] (local) root@192.168.0.23 ~
 ```
 
-```
-ac9279b49a1c040c5935fa4d5df19c186a9fb0bcc9583afcf3768dd42bc40143
-```
+
 
 ## Display running containers.
 
 ```
+[node1] (local) root@192.168.0.23 ~
 $ docker ps
-
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                   NAMES
-ac9279b49a1c        registry:2          "/entrypoint.sh /etc…"   17 seconds ago      Up 16 seconds       0.0.0.0:443->5000/tcp   registry
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS        PORTS               NAMES
+e7755af8cbd7        registry:2          "/entrypoint.sh /etc…"   About a minute ago   Restarting (1) 22 seconds ago                       registry
+[node1] (local) root@192.168.0.23 ~
 ```
 
 ## Pull Debian Stretch image from official repository.
@@ -215,28 +226,28 @@ Status: Downloaded newer image for debian:stretch
 ## Tag local Debian Stretch image with an additional tag - local repository address.
 
 ```
-$ docker tag debian:stretch registry.collabnix/debian:stretch
+$ docker tag debian:stretch registry.collabnix.com/debian:stretch
 ```
 
 This time you need to provide login credentials to use local repository.
 
 ```
-$ docker push registry.collabnix/debian:stretch
+$ docker push registry.collabnix.com/debian:stretch
 
 e27a10675c56: Preparing
 no basic auth credentials
 ```
 
 ```
-$ docker pull registry.collabnix/debian:stretch
+$ docker pull registry.collabnix.com/debian:stretch
 ```
 
-Error response from daemon: Get https://registry.collabnix/v2/debian/manifests/stretch: no basic auth credentials
+Error response from daemon: Get https://registry.collabnix.com/v2/debian/manifests/stretch: no basic auth credentials
 
 ## Log in to the local registry.
 
 ```
-$ docker login --username username registry.collabnix
+$ docker login --username username registry.collabnix.com
 Password: ********
 
 Login Succeeded
@@ -245,11 +256,11 @@ Login Succeeded
 ## Push image to the local repository.
 
 ```
-$ docker push registry.collabnix/debian:stretch
+$ docker push registry.collabnix.com/debian:stretch
 ```
 
 ```
-The push refers to repository [registry.collabnix/debian]
+The push refers to repository [registry.collabnix.com/debian]
 e27a10675c56: Pushed
 stretch: digest: sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c size: 529
 ```
@@ -264,10 +275,10 @@ Untagged: debian@sha256:0a5fcee6f52d5170f557ee2447d7a10a5bdcf715dd7f0250be0b678c
 ```
 
 ```
-$ docker image remove registry.sleeplessbeastie.eu/debian:stretch
+$ docker image remove registry.collabnix.com/debian:stretch
 
-Untagged: registry.sleeplessbeastie.eu/debian:stretch
-Untagged: registry.sleeplessbeastie.eu/debian@sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c
+Untagged: registry.collabnix.com/debian:stretch
+Untagged: registry.sl.collabnix.com/debian@sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c
 Deleted: sha256:da653cee0545dfbe3c1864ab3ce782805603356a9cc712acc7b3100d9932fa5e
 Deleted: sha256:e27a10675c5656bafb7bfa9e4631e871499af0a5ddfda3cebc0ac401dfe19382
 ```
@@ -275,12 +286,12 @@ Deleted: sha256:e27a10675c5656bafb7bfa9e4631e871499af0a5ddfda3cebc0ac401dfe19382
 ## Pull Debian Stretch image from local repository.
 
 ```
-$ docker pull registry.collabnix/debian:stretch
+$ docker pull registry.collabnix.com/debian:stretch
 
 stretch: Pulling from debian
 723254a2c089: Pull complete
 Digest: sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c
-Status: Downloaded newer image for registry.collabnix/debian:stretch
+Status: Downloaded newer image for registry.collabnix.com/debian:stretch
 ```
 
 ## List stored images.
@@ -290,6 +301,6 @@ $ docker image ls
 
 REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
 registry                             2                   d1fd7d86a825        4 weeks ago         33.3MB
-registry.collabnix/debian   stretch             da653cee0545        2 months ago        100MB
+registry.collabnix.com/debian   stretch             da653cee0545        2 months ago        100MB
 hello-world                          latest              f2a91732366c        2 months ago     
 ```
