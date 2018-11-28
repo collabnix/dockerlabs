@@ -153,7 +153,7 @@ Store domain and intermediate certificates using /srv/registry/security/registry
 $ sudo apt-get install apache2-utils
 ```
 
-## Create initial username and password. The only supported password format is bcrypt.
+Create initial username and password. The only supported password format is bcrypt.
 
 ```
 $ : | sudo tee /srv/registry/security/htpasswd
@@ -215,28 +215,28 @@ Status: Downloaded newer image for debian:stretch
 ## Tag local Debian Stretch image with an additional tag - local repository address.
 
 ```
-$ docker tag debian:stretch registry.sleeplessbeastie.eu/debian:stretch
+$ docker tag debian:stretch registry.collabnix/debian:stretch
 ```
 
 This time you need to provide login credentials to use local repository.
 
 ```
-$ docker push registry.sleeplessbeastie.eu/debian:stretch
+$ docker push registry.collabnix/debian:stretch
 
 e27a10675c56: Preparing
 no basic auth credentials
 ```
 
 ```
-$ docker pull registry.sleeplessbeastie.eu/debian:stretch
+$ docker pull registry.collabnix/debian:stretch
 ```
 
-Error response from daemon: Get https://registry.sleeplessbeastie.eu/v2/debian/manifests/stretch: no basic auth credentials
+Error response from daemon: Get https://registry.collabnix/v2/debian/manifests/stretch: no basic auth credentials
 
 ## Log in to the local registry.
 
 ```
-$ docker login --username username registry.sleeplessbeastie.eu
+$ docker login --username username registry.collabnix
 Password: ********
 
 Login Succeeded
@@ -245,11 +245,11 @@ Login Succeeded
 ## Push image to the local repository.
 
 ```
-$ docker push registry.sleeplessbeastie.eu/debian:stretch
+$ docker push registry.collabnix/debian:stretch
 ```
 
 ```
-The push refers to repository [registry.sleeplessbeastie.eu/debian]
+The push refers to repository [registry.collabnix/debian]
 e27a10675c56: Pushed
 stretch: digest: sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c size: 529
 ```
@@ -275,12 +275,12 @@ Deleted: sha256:e27a10675c5656bafb7bfa9e4631e871499af0a5ddfda3cebc0ac401dfe19382
 ## Pull Debian Stretch image from local repository.
 
 ```
-$ docker pull registry.sleeplessbeastie.eu/debian:stretch
+$ docker pull registry.collabnix/debian:stretch
 
 stretch: Pulling from debian
 723254a2c089: Pull complete
 Digest: sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c
-Status: Downloaded newer image for registry.sleeplessbeastie.eu/debian:stretch
+Status: Downloaded newer image for registry.collabnix/debian:stretch
 ```
 
 ## List stored images.
@@ -290,6 +290,6 @@ $ docker image ls
 
 REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
 registry                             2                   d1fd7d86a825        4 weeks ago         33.3MB
-registry.sleeplessbeastie.eu/debian   stretch             da653cee0545        2 months ago        100MB
+registry.collabnix/debian   stretch             da653cee0545        2 months ago        100MB
 hello-world                          latest              f2a91732366c        2 months ago     
 ```
