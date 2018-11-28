@@ -1,5 +1,5 @@
 
-# Creating a Private Docker Registry
+# Creating a Private Local Docker Registry using Play with Docker
 
 
 ## Tested Infrastructure
