@@ -53,6 +53,7 @@ $ docker build -t ajeetraina:v1 --build-arg version=`uname -r` .
 
 ## Verifying the environmental variable
 
+```
 [node1] (local) root@192.168.0.23 ~
 $ docker run ajeetraina:v1 env
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
