@@ -1,4 +1,4 @@
-# Demonstrating Runtime Variable in DockerFile using ARG
+# Demonstrating Runtime Variable in Dockerfile using ARG
 
 
 ## Tested Infrastructure
