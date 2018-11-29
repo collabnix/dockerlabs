@@ -83,6 +83,7 @@
 - Using make with Docker
 - [How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/entrypoint-vs-run.md)
 - [Difference between Docker Compose Vs Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-compose-dockerfile.md)
+- [How to use ARG to pass enviornmental variable at runtime](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/arg-dockerfile-runtime.md)
 
 # FAQs
 
