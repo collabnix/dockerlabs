@@ -1,4 +1,9 @@
-# Demonstrating Runtime Variable in Dockerfile using ARG
+# Demonstrating Build Time Variable in Dockerfile using ARG
+
+Docker allows you to set both build time and run time ENV variables and even lets you overwrite build time ENV vars at run time.
+There may come a time where you’ll want to add an ENV variable to your Docker image, but you’ll want this value to be different depending on where you build your image, but you don’t want to edit your Dockerfile to change it.You may also want to sometimes overwrite that value at run time (not build time).
+
+The ARG instruction defines a variable that users can pass at build-time to the builder with the docker build command using the --build-arg <varname>=<value> flag. 
 
 
 ## Tested Infrastructure
@@ -27,6 +32,8 @@
 
 
 ## Create a Dockerfile
+
+Setting up a Docker image with a build argument and ENV variable:
 
 ```
 $ cat Dockerfile
