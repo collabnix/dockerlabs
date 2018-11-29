@@ -1,4 +1,4 @@
-# Demonstrating Hello World Example
+# Demonstrating Runtime Variable in DockerFile using ARG
 
 
 ## Tested Infrastructure
