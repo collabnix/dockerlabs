@@ -10,7 +10,7 @@ Docker Enterprise Edition (EE) is an integrated, supported and certified contain
 - Microsoft Windows Server 2016
 - Oracle Linux
 
-
+![My image](https://github.com/collabnix/dockerlabs/blob/master/advanced/enterprise/dockerlabs1.png)
 
 •	Red Hat Enterprise Linux (RHEL)
 •	SUSE Linux Enterprise Server
