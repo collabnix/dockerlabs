@@ -119,7 +119,7 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 [Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br>
 [Template for writing Tutorial Page](https://github.com/collabnix/dockerlabs/tree/master/template/EXAMPLE.md)
 
-## Docker-Ready Solution for You
+## Docker-Ready Stack for You
 
 In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
 
