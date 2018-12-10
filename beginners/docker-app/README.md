@@ -1,6 +1,35 @@
-# A First Look at docker-app
+# A First Look at Docker Application Packages ("docker-app")
 
-## Deploy 5 Node Swarm Mode Cluster
+Consider a scenario where you have separate development, test, and production environments for your Web application. Under development environment, your team might be spending time in building up Web application(say, WordPress), developing WP Plugins and templates, debugging the issue etc.  When you are in development you’ll probably want to check your code changes in real-time. The usual way to do this is mounting a volume with your source code in the container that has the runtime of your application. But for production this works differently. Before you host your web application in production environment, you might want to turn-off the debug mode and host it under the right port so as to test your application usability and accessibility. In production you have a cluster with multiple nodes, and in most of the case volume is local to the node where your container (or service) is running, then you cannot mount the source code without complex stuff that involve code synchronization, signals, etc. In nutshell, this might require multiple Docker compose files for each environment and as your number of service applications increases, it becomes more cumbersome to manage those pieces of Compose files. Hence, we need a tool which can ease the way Compose files can be shareable across  different environment seamlessly.
+
+To solve this problem, Docker, Inc recently announced a new tool called “docker-app”(Application Packages) which makes “Compose files more reusable and shareable”. This tool not only makes Compose file shareable but provide us with simplified approach to share multi-service application (not just Docker Image) directly on Dockerhub.
+
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>5</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+- Create an account with [DockerHub](https://hub.docker.com)
+- Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
+- Click on **Hammer Sign** on the left side of the screen to bring up template of 3 Managers & 2 Worker Nodes
+
+
+## Verifying 5 Node Swarm Mode Cluster
 
 ```bash
 $ docker node ls
@@ -447,3 +476,7 @@ volumes:
   db_data:
     name: db_data
  ```
+ 
+ # Contributor
+ 
+ [Ajeet Singh Raina](ajeetraina@gmail.com)
