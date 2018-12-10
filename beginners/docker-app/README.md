@@ -26,7 +26,7 @@ To solve this problem, Docker, Inc recently announced a new tool called “docke
 
 - Create an account with [DockerHub](https://hub.docker.com)
 - Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
-- Click on **Hammer Sign** on the left side of the screen to bring up template of 3 Managers & 2 Worker Nodes
+- Click on **Spanner Sign** on the left side of the screen to bring up template of 3 Managers & 2 Worker Nodes
 
 
 ## Verifying 5 Node Swarm Mode Cluster
