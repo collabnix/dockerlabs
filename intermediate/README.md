@@ -147,7 +147,7 @@
 
 ## Introduction to Docker Application Packages
 
-[Getting Started with Docker-app](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-app/introduction.md)
+[A First Look at Docker Application Packages - "docker-app" ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-app/introduction.md)
 
 
 ## Contributor:
