@@ -49,11 +49,11 @@ please run:
 ```
 
 
-## Run on macOS
+## To see GKE context on UI, you need to run the below command:
 
 ```
 [Captains-Bay]🚩 >
-s-central1-a --project sturdy-pivot-225203rs get-credentials mycluster --zone u
+gcloud container clusters get-credentials standard-cluster-1 --zone us-central1-a --project sturdy-pivot-225203
 Fetching cluster endpoint and auth data.
 kubeconfig entry generated for mycluster.
 [Captains-Bay]🚩 >
