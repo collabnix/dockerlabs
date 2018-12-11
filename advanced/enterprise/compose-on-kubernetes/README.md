@@ -48,3 +48,131 @@ please run:
 [Captains-Bay]🚩 >
 ```
 
+
+## Run on macOS
+
+```
+[Captains-Bay]🚩 >
+s-central1-a --project sturdy-pivot-225203rs get-credentials mycluster --zone u
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for mycluster.
+[Captains-Bay]🚩 >
+```
+
+## 
+
+```
+[Captains-Bay]🚩 >  kubectl get nodes
+NAME                                 STATUS    ROLES     AGE       VERSION
+gke-mycluster-pool-1-c1fb7d56-kjbf   Ready     <none>    5m        v1.10.9-gke.5
+[Captains-Bay]🚩 >
+```
+
+##
+
+```
+[Captains-Bay]🚩 >  kubectl create namespace compose
+namespace "compose" created
+[Captains-Bay]🚩 >
+
+```
+
+##
+
+```
+[Captains-Bay]🚩 >  kubectl -n kube-system create serviceaccount tiller
+serviceaccount "tiller" created
+usterrole cluster-admin --serviceaccount kube-system:tillerebinding tiller --cl
+clusterrolebinding "tiller" created
+[Captains-Bay]🚩 >  helm init --service-account tiller
+$HELM_HOME has been configured at /Users/ajeetraina/.helm.
+
+Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
+
+Please note: by default, Tiller is deployed with an insecure 'allow unauthenticated users' policy.
+For more information on securing your installation see: https://docs.helm.sh/using_helm/#securing-your-helm-installation
+Happy Helming!
+espace compose🚩 >  helm install --name etcd-operator stable/etcd-operator --nam
+NAME:   etcd-operator
+LAST DEPLOYED: Tue Dec 11 09:10:05 2018
+NAMESPACE: compose
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1beta1/ClusterRole
+NAME                                       AGE
+etcd-operator-etcd-operator-etcd-operator  2s
+
+==> v1beta1/ClusterRoleBinding
+NAME                                               AGE
+etcd-operator-etcd-operator-etcd-backup-operator   2s
+etcd-operator-etcd-operator-etcd-operator          2s
+etcd-operator-etcd-operator-etcd-restore-operator  2s
+
+==> v1/Service
+NAME                   TYPE       CLUSTER-IP     EXTERNAL-IP  PORT(S)    AGE
+etcd-restore-operator  ClusterIP  10.23.242.119  <none>       19999/TCP  2s
+
+==> v1beta1/Deployment
+NAME                                               DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+etcd-operator-etcd-operator-etcd-backup-operator   1        1        1           0          2s
+etcd-operator-etcd-operator-etcd-operator          1        1        1           0          1s
+etcd-operator-etcd-operator-etcd-restore-operator  1        1        1           0          1s
+
+==> v1/Pod(related)
+NAME                                                             READY  STATUS             RESTARTS  AGE
+etcd-operator-etcd-operator-etcd-backup-operator-687bb97bfz6gpr  0/1    ContainerCreating  0         1s
+etcd-operator-etcd-operator-etcd-operator-cdd58665b-bhk4w        0/1    ContainerCreating  0         1s
+etcd-operator-etcd-operator-etcd-restore-operator-65585cb5psjw8  0/1    ContainerCreating  0         1s
+
+==> v1/ServiceAccount
+NAME                                               SECRETS  AGE
+etcd-operator-etcd-operator-etcd-backup-operator   1        2s
+etcd-operator-etcd-operator-etcd-operator          1        2s
+etcd-operator-etcd-operator-etcd-restore-operator  1        2s
+
+
+NOTES:
+1. etcd-operator deployed.
+  If you would like to deploy an etcd-cluster set cluster.enabled to true in values.yaml
+  Check the etcd-operator logs
+    export POD=$(kubectl get pods -l app=etcd-operator-etcd-operator-etcd-operator --namespace compose --output name)
+    kubectl logs $POD --namespace=compose
+[Captains-Bay]🚩 >
+
+```
+
+##
+
+
+```
+
+[Captains-Bay]🚩 >  cat compose-etcd.yaml
+apiVersion: "etcd.database.coreos.com/v1beta2"
+kind: "EtcdCluster"
+metadata:
+  name: "compose-etcd"
+  namespace: "compose"
+spec:
+  size: 3
+  version: "3.2.13"
+[Captains-Bay]🚩 >
+
+```
+
+## 
+
+```
+[Captains-Bay]🚩 >  kubectl apply -f compose-etcd.yaml
+etcdcluster "compose-etcd" created
+```
+
+##
+
+```
+
+
+```
+
+
+
