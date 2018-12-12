@@ -216,5 +216,18 @@ v1
 [Captains-Bay]🚩 >
 ```
 
+## Granting Access Rights to User
 
+```
+[Captains-Bay]🚩 >  gcloud info | grep Account
+Account: [ajeethsraina@gmail.com]
+[Captains-Bay]🚩 >  kubectl create clusterrolebinding myname-cluster-admin-binding --clusterrole=cluster-admin --user=ajeethsraina@gmail.com
+clusterrolebinding "myname-cluster-admin-binding" created
+[Captains-Bay]🚩 >  k./installer-darwin -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.16
+INFO[0001] Checking installation state
+INFO[0001] Install image with tag "v0.4.16" in namespace "compose"
+INFO[0005] Api server: image: "docker/kube-compose-api-server:v0.4.16", pullPolicy: "Always"
+INFO[0007] Controller: image: "docker/kube-compose-controller:v0.4.16", pullPolicy: "Always"
+[Captains-Bay]🚩 >
+```
 
