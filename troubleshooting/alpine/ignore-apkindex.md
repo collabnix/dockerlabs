@@ -13,7 +13,7 @@ ERROR: http://dl-cdn.alpinelinux.org/alpine/v3.8/community: temporary error (try
 WARNING: Ignoring APKINDEX.efaa1f73.tar.gz: No such file or directory
 ```
 
-How to fix it?
+## How to fix it?
 
 You need to add DNS entry for your Docker containers to fetch theb packages:
 
