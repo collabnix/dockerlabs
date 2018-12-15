@@ -84,5 +84,5 @@ hello-world         latest              sha256:0add3ace90ecb4adbf7777e9aacf18357
 amd64, arm32v5, arm32v7, arm64v8, i386, ppc64le, s390x, windows-amd64
 
 
-[Next: Saving Images and Containers as Tar Files for Sharing](https://github.com/collabnix/dockerlabs/new/master/beginners/saving-images-as-tar/README.md)
+[Next: Saving Images and Containers as Tar Files for Sharing](https://github.com/collabnix/dockerlabs/blob/master/beginners/saving-images-as-tar/README.md)
 
