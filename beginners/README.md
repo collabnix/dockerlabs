@@ -10,7 +10,7 @@
 - [How is Docker Networking different from VM Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-vmnetwork-docker-networking.md)
 - [Understanding Docker Underlying Technologies]()
 - [Can container communication cross over to noncontainerized apps?](https://github.com/collabnix/dockerlabs/blob/master/beginners/linux-comm-containers.md)
-- Architecture of Docker 
+- [Architecture of Docker](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-of-a-docker.md)
    - [Docker Enterprise Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-dockeree.md)
    - Docker Community Edition
 - Evolution of Docker Platform 
