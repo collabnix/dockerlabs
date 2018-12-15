@@ -105,4 +105,21 @@ Once you login to Portus, you will need to provide Docker Registry details:
 
 ![My image](https://github.com/collabnix/dockerlabs/blob/master/beginners/portus/Portus_3.png)
 
-  
+ ## Creating Users & Team
+ 
+ Say, you have 4-5 teams inside your organization namely,
+ 
+ - DB Team
+ - HPC Team
+ - Solutions Team
+ - Advisor Team
+ - Virtualization Team
+ 
+ First, create user who would be point of contact for each of these teams who will be pushing their Docker Image.
+ Then, create team names accordingly.
+ 
+ 
+ 
+ ## Contributor
+ 
+ - [Ajeet Singh Raina](ajeetraina@gmail.com)
