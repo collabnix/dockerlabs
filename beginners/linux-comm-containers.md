@@ -12,3 +12,6 @@ In addition to containers' ability to connect to anything outside of their envir
 Although no longer recommended, Docker links can also join multiple containers together to provide one service. Consider how a Python container can run SQL queries against a Docker container that's running Microsoft SQL, and publish those results to an Apache web server in another container.
 
 * Please Note - Docker Inc. states that the functionality of Docker links was incorp
+
+
+[Proceed >> Architecture of Docker Platform](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-of-docker.md)
