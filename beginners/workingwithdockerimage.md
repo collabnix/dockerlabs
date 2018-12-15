@@ -52,7 +52,6 @@ REPOSITORY          TAG                 DIGEST                    IMAGE ID      
 hello-world         latest              sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788   4ab4c602aa5e        6 weeks ago         1.84kB
 ```
 
-## Image ![alt text](<link>)
 
 
 
@@ -76,12 +75,14 @@ hello-world         latest              sha256:0add3ace90ecb4adbf7777e9aacf18357
 ## Where to file issues:
 
 
-## Maintained by:
+## Contributor
+
+[Ajeet Singh Raina](ajeetraina@gmail.com)
 
 
 ## Supported architectures: (more info)
 amd64, arm32v5, arm32v7, arm64v8, i386, ppc64le, s390x, windows-amd64
 
 
-[Next: <Topic Name](https://github.com/collabnix/dockerlabs/blob/master/beginners/b300/<>.md)
+[Next: Saving Images and Containers as Tar Files for Sharing](https://github.com/collabnix/dockerlabs/new/master/beginners/saving-images-as-tar/README.md)
 
