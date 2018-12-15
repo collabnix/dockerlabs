@@ -40,6 +40,16 @@ chmod +x /usr/local/bin/docker-compose
 
 ```
 
+## Create Docker Registry
+
+```
+docker run -d \
+  -p 2000:2000 \
+  --restart=always \
+  --name registry \
+  -v /mnt/registry:/var/lib/registry \
+  registry:2
+```
 
 ## Cloning the Repository
 
@@ -76,3 +86,22 @@ portus_webpack_1      bash /srv/Portus/examples/    Up
                   ...
 
 ```
+
+![My image](https://github.com/collabnix/dockerlabs/blob/master/beginners/portus/Portus_11.png)
+
+![My image](https://github.com/collabnix/dockerlabs/blob/master/beginners/portus/Portus_2.png)
+
+
+## Provide Docker Registry Details
+
+Once you login to Portus, you will need to provide Docker Registry details:
+
+```
+- Name
+- <Your Host IP or Hostname>: 2000
+```
+
+**Please remember that Portus is designed to handle only a single private Registry.**
+
+
+  
