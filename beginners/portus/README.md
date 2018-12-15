@@ -49,6 +49,12 @@ git clone https://github.com/SUSE/Portus
 
 ## Bring up Portus Application
 
+```
+docker-compose up -d
+```
+
+## Verifying the Portus services
+
 
 ```
  docker-compose ps
