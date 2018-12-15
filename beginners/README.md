@@ -61,7 +61,7 @@
 - [Working with Docker containers](https://github.com/collabnix/dockerlabs/blob/master/beginners/working-with-docker-containers/README.md)
   - [Detaching containers without stopping them](https://github.com/collabnix/dockerlabs/blob/master/beginners/deatching-containers-without-stopping-them/README.md)
 - [Creating Docker Base Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/create-base-image.md)
-- [Build Your Own Docker Image](ttps://github.com/collabnix/dockerlabs/blob/master/beginners/building-you-own-docker-image/README.md)
+- [Build Your Own Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/building-you-own-docker-image/README.md)
   - [Using Packer to Create a Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/using-packer-to-create-a-docker-image/README.md)
   - [Using ONBUILD Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/using-onbuild-images/README.md)
 - [Creating Effective Docker Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/b300/b304-creating-effective-docker-images.md)
