@@ -1,0 +1,8 @@
+---
+
+###
+# JAVA
+###
+
+# Package
+java_package: '' # Only needed when the default variable cannot be used

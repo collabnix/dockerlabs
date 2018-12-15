@@ -1,0 +1,26 @@
+# {{ ansible_managed }}
+
+CLUSTER="{{ mesos_cluster_name }}"
+IP={{ mesos_ip }}
+LOGS={{ mesos_log_location }}
+ULIMIT="{{ mesos_ulimit }}"
+ZK="{{ mesos_zookeeper_masters }}"
+
+{% if mesos_ssl_enabled %}
+export LIBPROCESS_SSL_ENABLED=true
+export LIBPROCESS_SSL_SUPPORT_DOWNGRADE={{ mesos_ssl_support_downgrade | ternary('true', 'false') }}
+export LIBPROCESS_SSL_KEY_FILE={{ mesos_ssl_key_file }}
+export LIBPROCESS_SSL_CERT_FILE={{ mesos_ssl_cert_file }}
+export LIBPROCESS_SSL_VERIFY_CERT=false
+export LIBPROCESS_SSL_REQUIRE_CERT=false
+{% endif %}
+
+# mesos env variables
+# see http://mesos.apache.org/documentation/latest/configuration/
+export MESOS_HOSTNAME="{{ mesos_hostname }}"
+
+# Additional configs
+export MESOS_OPTION_PREFIX={{ mesos_option_prefix }}
+{% for config_item in mesos_additional_configs %}
+export {{ mesos_option_prefix }}{{ config_item.name }}={{ config_item.value }}
+{% endfor %}

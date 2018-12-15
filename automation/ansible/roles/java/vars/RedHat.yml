@@ -1,0 +1,4 @@
+---
+
+# Java package to install
+java_package: ["java-1.8.0-openjdk"]

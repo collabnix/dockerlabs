@@ -1,0 +1,8 @@
+---
+
+- name: ZOOKEEPER DEBIAN | Installation
+  apt:
+    name:
+      - zookeeper
+      - zookeeperd
+    state: present

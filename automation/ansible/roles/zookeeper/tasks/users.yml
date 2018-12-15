@@ -1,0 +1,15 @@
+---
+
+- name: ZOOKEEPER USER | Manage group
+  group:
+    name: "{{ zookeeper_group }}"
+    state: present
+    system: true
+
+- name: ZOOKEEPER USER | Manage user
+  user:
+    name: "{{ zookeeper_user }}"
+    comment: "Zookeeper admin user"
+    group: "{{ zookeeper_group }}"
+    state: present
+    system: true

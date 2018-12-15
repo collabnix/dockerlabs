@@ -1,0 +1,8 @@
+---
+
+- name: Restart zookeeper
+  systemd:
+    name: zookeeper
+    state: restarted
+    enabled: true
+    daemon_reload: true

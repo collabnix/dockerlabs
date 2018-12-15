@@ -1,0 +1,8 @@
+---
+
+- name: Restart marathon
+  systemd:
+    name: marathon
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
