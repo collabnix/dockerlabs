@@ -103,5 +103,6 @@ Once you login to Portus, you will need to provide Docker Registry details:
 
 **Please remember that Portus is designed to handle only a single private Registry.**
 
+![My image](https://github.com/collabnix/dockerlabs/blob/master/beginners/portus/Portus_3.png)
 
   
