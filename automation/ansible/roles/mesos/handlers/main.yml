@@ -1,0 +1,15 @@
+---
+
+- name: Restart mesos-master
+  systemd:
+    name: mesos-master
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+
+- name: Restart mesos-slave
+  systemd:
+    name: mesos-slave
+    state: restarted
+    enabled: yes
+    daemon_reload: yes

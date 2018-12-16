@@ -1,0 +1,43 @@
+# {{ ansible_managed }}
+
+# #####################################
+# ##### Environment Configuration #####
+# #####################################
+
+# To use your own template create
+#   src/templates/etc-default-systemv
+# see http://www.scala-sbt.org/sbt-native-packager/archetypes/cheatsheet.html#server-app-config-src-templates-etc-default-systemv-systemd
+
+# This file is parsed by systemd. You can modify it to specify environment
+# variables for your application.
+#
+# For a description of the format, see: `man systemd.exec`, section
+# `EnvironmentFile`.
+
+# Available replacements
+# see http://www.scala-sbt.org/sbt-native-packager/archetypes/systemloaders.html#override-start-script
+# --------------------------------------------------------------------
+# Name                   Contains                     Current value
+# (remove space)
+# $ {author}           debian author                Mesosphere Package Builder <support@mesosphere.io>
+# $ {descr}            debian package description   Scheduler for Apache Mesos
+# $ {exec}             startup script name          marathon
+# $ {chdir}            app directory                /usr/share/marathon
+# $ {retries}          retries for startup          0
+# $ {retryTimeout}     retry timeout                60
+# $ {app_name}         normalized app name          marathon
+# $ {app_main_class}   main class/entry point       ${app_main_class}
+# $ {daemon_user}      daemon user                  marathon
+# $ {daemon_group}     daemon group                 marathon
+# --------------------------------------------------------------------
+
+# Setting JAVA_OPTS
+# -----------------
+# JAVA_OPTS="-Dpidfile.path=/var/run/marathon/play.pid"
+
+# Setting PIDFILE
+# ---------------
+# PIDFILE="/var/run/marathon/play.pid"
+
+MARATHON_MASTER={{ marathon_master }}
+MARATHON_ZK={{ marathon_zk }}

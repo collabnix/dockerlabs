@@ -1,0 +1,18 @@
+---
+
+###
+# MARATHON
+###
+
+# Debian
+# Setup
+marathon_apt_repository_keyserver: hkp://keyserver.ubuntu.com:80
+marathon_apt_repository_keyserver_revc: DF7D54CBE56151BF
+marathon_apt_repository_url: "deb http://repos.mesosphere.com/{{ ansible_distribution | lower }} {{ ansible_distribution_release | lower }} main"
+
+# RedHat
+marathon_rpm_repository: http://repos.mesosphere.com/el/7/noarch/RPMS/mesosphere-el-repo-7-3.noarch.rpm
+
+# Configuration
+marathon_master: "zk://{% for host in groups['zookeeper'] %}{{ hostvars[host].ip }}:2181{% if not loop.last %},{% endif %}{% endfor%}/marathon"
+marathon_zk: "zk://{% for host in groups['zookeeper'] %}{{ hostvars[host].ip }}:2181{% if not loop.last %},{% endif %}{% endfor%}/mesos"

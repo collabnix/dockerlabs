@@ -1,0 +1,8 @@
+---
+
+###
+# ZOOKEEPER
+###
+
+# Zookeeper home
+zookeeper_home: /opt/zookeeper

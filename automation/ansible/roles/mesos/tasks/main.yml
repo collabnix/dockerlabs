@@ -1,0 +1,59 @@
+---
+
+- name: MESOS | Manage Debian environment
+  import_tasks: debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: MESOS | Installation
+  package:
+    name: mesos
+    state: present
+
+- name: MESOS | Manage directories
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state }}"
+    owner: root
+    group: root
+    mode: 0755
+  with_items:
+    - { path: "{{ mesos_work_dir }}", state: directory }
+    - { path: "/etc/mesos", state: absent }
+    - { path: "/etc/mesos-master", state: absent }
+    - { path: "/etc/mesos-slave", state: absent }
+
+- name: MESOS | Configuration
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: root
+    group: root
+    mode: 0664
+  with_items:
+    - "etc/default/mesos"
+    - "etc/default/mesos-master"
+    - "etc/default/mesos-slave"
+  notify:
+    - Restart mesos-master
+    - Restart mesos-slave
+
+- name: MESOS | Configure systemd on master nodes
+  template:
+    src: lib/systemd/system/mesos-master.service.j2
+    dest: /lib/systemd/system/mesos-master.service
+    owner: root
+    group: root
+    mode: 0664
+  when: inventory_hostname in groups['mesos-master']
+  notify:
+    - Restart mesos-master
+
+- name: MESOS | Configure systemd on slave nodes
+  template:
+    src: lib/systemd/system/mesos-slave.service.j2
+    dest: /lib/systemd/system/mesos-slave.service
+    owner: root
+    group: root
+    mode: 0664
+  when: inventory_hostname in groups['mesos-slave']
+  notify: Restart mesos-slave
