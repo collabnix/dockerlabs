@@ -17,11 +17,11 @@ more.
 
 Some of these necessary features include:
 
-● Health Checks on the Containers
-● Launching a fixed set of Containers for a particular Docker image
-● Scaling the number of Containers up and down depending on the load
-● Performing rolling update of software across containers
-● and more…
+● Health Checks on the Containers <br>
+● Launching a fixed set of Containers for a particular Docker image<br>
+● Scaling the number of Containers up and down depending on the load<br>
+● Performing rolling update of software across containers<br>
+● and more…<br>
 
 Docker Swarm has capabilities to help us implementing all those great features - all through simple CLIs.
 
