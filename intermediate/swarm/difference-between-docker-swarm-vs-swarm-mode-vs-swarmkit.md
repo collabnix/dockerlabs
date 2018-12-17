@@ -1,3 +1,6 @@
+# Comparing Swarm vs SwarmKit Vs Swarm Mode
+
+
 Docker Swarm is an older (2014) Docker native orchestration tool. It is standalone from the Docker engine and serves to connect Docker engines together to form a cluster. It's then possible to connect to the Swarm and run containers on the cluster. Swarm has a few features:
 •	Allows us to specify a discovery service
 •	Some control over where containers are placed (using filters / constraints / distribution strategies, etc...)
