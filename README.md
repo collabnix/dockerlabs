@@ -123,7 +123,7 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
 
-- [Docker + WordPress + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/wordpress/example1/README.md)
+- [Docker + WordPress + Docker Swarm](https://github.com/collabnix/dockerlabs/solution/wordpress/example1/README.md)
 
 - [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ELK/README.md)
 
