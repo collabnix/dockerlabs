@@ -42,4 +42,4 @@ $ docker service create \
   dockersamples/visualizer
 ```
 
-[Proceed >> What is Docker Swarm](https://github.com/collabnix/dockerlabs/edit/master/intermediate/what-is-docker-swarm.md)
+[Proceed >> What is Docker Swarm](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/what-is-docker-swarm.md)
