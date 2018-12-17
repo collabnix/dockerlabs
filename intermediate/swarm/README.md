@@ -41,3 +41,5 @@ $ docker service create \
   --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
   dockersamples/visualizer
 ```
+
+[Proceed >> What is Docker Swarm](https://github.com/collabnix/dockerlabs/edit/master/intermediate/what-is-docker-swarm.md)
