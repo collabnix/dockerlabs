@@ -2,8 +2,25 @@
 
 # What is Docker Swarm?
 
-Docker Swarm is the native clustering tool for Docker. Swarm uses the standard Docker API, i.e., containers can be launched using normal docker run commands and Swarm will take care of selecting an appropriate host to run the container on. This also means
+Docker Swarm is a container orchestration tool built and managed by Docker, Inc. It is the native clustering tool for Docker. Swarm uses the standard Docker API, i.e., containers can be launched using normal docker run commands and Swarm will take care of selecting an appropriate host to run the container on. This also means
 that other tools that use the Docker API—such as Compose and bespoke scripts—can use Swarm without any changes and take advantage of running on a cluster rather than a single host.
+
+
+
+# But why do we need Container orchestration System?
+
+
+Imagine that you had to run hundreds of containers. You can easily see that if they are running in a distributed mode, there are multiple features that you will need from a management angle to make sure that the cluster is up and running, is healthy and
+more.
+
+Some of these necessary features include:
+
+● Health Checks on the Containers
+● Launching a fixed set of Containers for a particular Docker image
+● Scaling the number of Containers up and down depending on the load
+● Performing rolling update of software across containers
+● and more…
+
 
 # Does it require 3rd Party tool?
 
