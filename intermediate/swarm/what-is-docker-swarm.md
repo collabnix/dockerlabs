@@ -2,13 +2,15 @@
 
 # What is Docker Swarm?
 
+![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/Dockerswarm.png)
+
 Docker Swarm is a container orchestration tool built and managed by Docker, Inc. It is the native clustering tool for Docker. Swarm uses the standard Docker API, i.e., containers can be launched using normal docker run commands and Swarm will take care of selecting an appropriate host to run the container on. This also means
 that other tools that use the Docker API—such as Compose and bespoke scripts—can use Swarm without any changes and take advantage of running on a cluster rather than a single host.
 
+![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/swarm-orchestration.png)
 
 
 # But why do we need Container orchestration System?
-
 
 Imagine that you had to run hundreds of containers. You can easily see that if they are running in a distributed mode, there are multiple features that you will need from a management angle to make sure that the cluster is up and running, is healthy and
 more.
@@ -21,8 +23,10 @@ Some of these necessary features include:
 ● Performing rolling update of software across containers
 ● and more…
 
+Docker Swarm has capabilities to help us implementing all those great features - all through simple CLIs.
 
-# Does it require 3rd Party tool?
+
+# Does Docker Swarm require 3rd Party tool to be installed?
 
 Docker Swarm Mode comes integrated with Docker Platform. Starting 1.12, Docker Swarm Mode is rightly integrated which means that you don't need to install anything outside to run Docker Swarm. Just initialize it and you can get started.
 
@@ -34,6 +38,12 @@ Yes, it works very well with the Docker command line tools like docker and docke
 
 A swarm is a group of machines that are running Docker and joined into a cluster. After that has happened, we continue to run the Docker commands we’re used to, but now they are executed on a cluster by a swarm manager. The machines in a swarm can be physical or virtual. After joining a swarm, they are referred to as nodes.
 
+Swarm managers are the only machines in a swarm that can execute your commands, or authorize other machines to join the swarm as workers. Workers are just there to provide capacity and do not have the authority to tell any other machine what it can and cannot do.
+
+Up until now, you have been using Docker in a single-host mode on your local machine. But Docker also can be switched into swarm mode, and that’s what enables the use of swarms. Enabling swarm mode instantly makes the current machine a swarm manager. From then on, Docker runs the commands you execute on the swarm you’re managing, rather than just on the current machine.
+
 Swarm managers can use several strategies to run containers, such as “emptiest node” -- which fills the least utilized machines with containers. Or “global”, which ensures that each machine gets exactly one instance of the specified container. 
-Swarm managers are the only machines in a swarm that can execute our commands, or authorize other machines to join the swarm as workers. Workers are just there to provide capacity and do not have the authority to tell any other machine what it can and cannot do.
+
 A swarm is made up of multiple nodes, which can be either physical or virtual machines. The basic concept is simple enough: run docker swarm init to enable swarm mode and make our current machine a swarm manager, then run docker swarm join on other machines to have them join the swarm as workers. 
+
+
