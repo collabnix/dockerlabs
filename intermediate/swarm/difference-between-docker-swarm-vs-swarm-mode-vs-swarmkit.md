@@ -33,3 +33,5 @@ Swarmkit needs to built and run separately	<--------------> 	Docker 1.12 comes i
 No service discovery, load balancing and routing mesh		<-------------->   Service discovery, load balancing and routing mesh available
 Use swarmctl CLI	<--------------> 	Use regular Docker CLI
 Swarmkit has primitives to handle orchestration features like node management, discovery, security and scheduling.
+
+[Proceed >> ]()
