@@ -23,7 +23,7 @@ Some of these necessary features include:
 ● Performing rolling update of software across containers<br>
 ● and more…<br>
 
-Docker Swarm has capabilities to help us implementing all those great features - all through simple CLIs.
+Docker Swarm has capabilities to help us implement all those great features - all through simple CLIs.
 
 
 # Does Docker Swarm require 3rd Party tool to be installed?
