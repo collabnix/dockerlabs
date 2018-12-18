@@ -25,68 +25,94 @@
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
 
-## 
+## Create Nginx Container
 
+```
+$ docker run -d -p 80:80 nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+a5a6f2f73cd8: Pull complete
+1ba02017c4b2: Pull complete
+33b176c904de: Pull complete
+Digest: sha256:5d32f60db294b5deb55d078cd4feb410ad88e6fe77500c87d3970eca97f54dba
+Status: Downloaded newer image for nginx:latest
+df2caf9283e84a15bb2321a17aabe84e3e0762ec82fc180e2a4c15fcf0f96588
+[node1] (local) root@192.168.0.33 ~
+```
+
+## Displaying Running Container
 ```
 $ docker ps -a
-CONTAINER ID IMAGE COMMAND CREATED ... NAMES
-77d9619a7a71 ubuntu:14.04 "/bin/bash" 10 seconds ago ... high_shockley
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+df2caf9283e8        nginx               "nginx -g 'daemon of…"   35 seconds ago      Up 34 seconds       0.0.0.0:80->80/tcp   vigorous_jang
+```
+
+
+```
+$ docker export df2 > nginx.tar
 ```
 
 ```
-$ docker export 77d9619a7a71 > update.tar
-```
-
-```
-$ ls
-update.tar
+$ docker export df2 > nginx.tar
 ```
 
 You could commit this container as a new image  locally, but you could also use the Docker import command:
 
 ```
-$ docker import - update < update.tar
-157bcbb5fdfce0e7c10ef67ebdba737a491214708a5f266a3c74aa6b0cfde078
+$ docker import - mynginx < nginx.tar
+sha256:aaaed50d250a671042e8dc383c6e05012e245f5eaf555d10c40be63f6028ee7b
 ```
 
 ```
 $ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+mynginx             latest              aaaed50d250a        25 seconds ago      107MB
+nginx               latest              568c4670fa80        2 weeks ago         109MB
 ```
 
-```
-REPOSITORY TAG IMAGE ID ... VIRTUAL SIZE
-update latest 157bcbb5fdfc ... 188.1 MB
-
-```
 
 If you wanted to share this image with one of your collaborators, you could upload the tar file on a web server and let your collaborator download it and use the import command on his Docker host.
 
 If you would rather deal with images that you have already committed, you can use the load and save commands:
 
 ```
-$ docker save -o update1.tar update
+$ docker save -o mynginx1.tar nginx
 ```
 
 ```
 $ ls -l
-total 385168
--rw-rw-r-- 1 vagrant vagrant 197206528 Jan 13 14:13 update1.tar
--rw-rw-r-- 1 vagrant vagrant 197200896 Jan 13 14:05 update.tar
+total 218756
+-rw-------    1 root     root     112844800 Dec 18 02:53 mynginx1.tar
+-rw-r--r--    1 root     root     111158784 Dec 18 02:50 nginx.tar
 ```
 
 ```
-$ docker rmi update
-Untagged: update:latest
-Deleted: 157bcbb5fdfce0e7c10ef67ebdba737a491214708a5f266a3c74aa6b0cfde078
+$ docker rmi mynginx
+Untagged: mynginx:latest
+Deleted: sha256:aaaed50d250a671042e8dc383c6e05012e245f5eaf555d10c40be63f6028ee7b
+Deleted: sha256:41135ad184eaac0f5c4f46e4768555738303d30ab161a7431d28a5ccf1778a0f
 ```
 
-```
-$ docker load < update1.tar
-```
+Now delete all images and containers running and try to run the below command to load Docker image into your system:
 
 ```
 $ docker images
-REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE
-update latest 157bcbb5fdfc 5 minutes ago 188.1 MB
-ubuntu 14.04 8eaa4ff06b53 12 days ago 192.7 MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ```
+
+```
+$ docker load < mynginx1.tar
+Loaded image: nginx:latest
+```
+
+```
+[node1] (local) root@192.168.0.33 ~$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+nginx               latest              568c4670fa80        2 weeks ago         109MB
+[node1] (local) root@192.168.0.33 ~
+$
+```
+
+## Contributor
+
+[Ajeet Singh Raina](ajeetraina@gmail.com)
