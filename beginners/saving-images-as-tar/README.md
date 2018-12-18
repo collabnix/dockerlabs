@@ -62,10 +62,6 @@ df2caf9283e8        nginx               "nginx -g 'daemon of…"   35 seconds ag
 $ docker export df2 > nginx.tar
 ```
 
-```
-$ docker export df2 > nginx.tar
-```
-
 You could commit this container as a new image  locally, but you could also use the Docker import command:
 
 ```
