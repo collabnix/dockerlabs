@@ -42,8 +42,7 @@ $ ls
 update.tar
 ```
 
-You could commit this container as a new image (see Recipe 2.1) locally, but you
-could also use the Docker import command:
+You could commit this container as a new image  locally, but you could also use the Docker import command:
 
 ```
 $ docker import - update < update.tar
@@ -62,8 +61,7 @@ update latest 157bcbb5fdfc ... 188.1 MB
 
 If you wanted to share this image with one of your collaborators, you could upload the tar file on a web server and let your collaborator download it and use the import command on his Docker host.
 
-If you would rather deal with images that you have already committed, you can use
-the load and save commands:
+If you would rather deal with images that you have already committed, you can use the load and save commands:
 
 ```
 $ docker save -o update1.tar update
