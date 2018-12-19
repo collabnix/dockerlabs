@@ -11,9 +11,9 @@
 - [What is MacVLAN networking?](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/macvlan.md)
    - [Implementing MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/macvlan-010.md)
 - Docker Networking CLI
-  - Disable Networking for Container
-  - Finding IP address of Container
-  - Exposing a Container Port on the Host
+  - [Disable Networking for Container](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/disableNetworkingToContainer.md)
+  - [Finding IP address of Container](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/FindingIPaddressofContainer.md)
+  - [Exposing a Container Port on the Host](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/ExposingContainerPort.md)
   - Linking Containers in Docker
   - Choosing a Container Networking Namespace
   - Configuring the Docker Daemon IP Tables and IP Forwarding Settings
