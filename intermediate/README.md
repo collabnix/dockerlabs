@@ -8,7 +8,7 @@
 - Docker Enterprise Edition Networking Feature
 - [Difference between Bridge Vs Overlay Network](https://github.com/amitatha82/dockerlabs/blob/master/beginners/DiffBridgeVsOverlay.md)
 - [Verifying host-level settings that impact Docker networking](https://github.com/collabnix/dockerlabs/blob/master/intermediate/host-settings.md)
-- What is MacVLAN networking?
+- [What is MacVLAN networking?](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/macvlan.md)
    - [Implementing MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/macvlan-010.md)
 - Docker Networking CLI
   - Disable Networking for Container
