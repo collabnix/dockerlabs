@@ -1,0 +1,57 @@
+---
+
+###
+# MESOS
+###
+
+# Debian
+mesos_apt_repository_url: "deb http://repos.mesosphere.com/{{ ansible_distribution | lower }} {{ ansible_distribution_release | lower }} main"
+mesos_apt_repository_key: http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0xE56151BF
+
+# Users
+mesos_owner: root
+mesos_group: root
+
+# Configuration
+mesos_cluster_name: "mesos_cluster"
+mesos_ip: "{{ hostvars[inventory_hostname].ip }}"
+mesos_hostname: "{{ ansible_hostname }}"
+mesos_master_port: "5050"
+mesos_slave_port: "5051"
+mesos_log_location: "/var/log/mesos"
+mesos_ulimit: "-n 8192"
+mesos_work_dir: "/opt/mesos"
+mesos_quorum: "1"
+
+# Zookeeper
+zookeeper_client_port: "2181"
+zookeeper_hostnames: "{{ hostvars[groups['zookeeper'][0]].ip }}:{{ zookeeper_client_port }}"
+mesos_zookeeper_masters: "zk://{{ zookeeper_hostnames }}/mesos"
+
+mesos_containerizers: "docker,mesos"
+mesos_executor_timeout: "5mins"
+
+mesos_ssl_enabled: false
+mesos_ssl_support_downgrade: false
+
+mesos_agent_meta_cleanup: false
+
+mesos_option_prefix: "MESOS_"
+
+# Additional configurations
+mesos_additional_configs: []
+  # For example:
+  # - name: FOO
+  #   value: bar
+
+# Additional configurations for master
+mesos_master_additional_configs: []
+  # For example:
+  # - name: FOO
+  #   value: bar
+
+# Additional configurations for slave
+mesos_slave_additional_configs: []
+  # For example:
+  # - name: FOO
+#   value: bar

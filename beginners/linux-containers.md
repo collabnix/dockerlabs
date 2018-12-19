@@ -38,3 +38,5 @@ Microservices also offer flexible, process-based methods to handle business need
 As shown in Figure 4, the container doesn't carry around physical code within it, but rather a list of required functions that it pulls together as required. The container manages areas such as technical contracts and process audits.
 
 IT professionals can soon expect to see how containers will evolve from here. Containers exist in a highly dynamic and changing world. They optimize resource utilization and provide much needed flexibility better than their predecessors, so enterprise IT organizations should prepare to use them.
+
+[Proceed >>](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-docker-vm.md)

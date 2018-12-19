@@ -136,6 +136,34 @@
 |Log files|	/var/log/pods/|
 |Env|	export KUBECONFIG=/etc/kubernetes/admin.conf|
 |Env|	/etc/systemd/system/kubelet.service.d/10-kubeadm.conf|
+|Get ExternalIPs of all nodes|	kubectl get nodes -o jsonpath=’{.items[*].status.addresses[?(@.type==”ExternalIP”)].address}’|
+|Add a label|	kubectl label pods busybox-sleep new-label=new-busybox-sleep|
+|Add an annotation|	kubectl annotate pods busybox-sleep icon-url=http://goo.gl/XXBTWq|
+|Auto scale a deployment nginx|	kubectl autoscale deployment nginx --min=2 --max=5|
+|Rolling update pods of frontend-v1|	kubectl rolling-update frontend-v1 -f frontend-v2.json|
+|Force replace, delete and then re-create the resource. Will cause a service outage|	kubectl replace --force -f ./pod.json|
+|Create a service for a replicated nginx, which serves on port 80 and connects to the containers on port 8000|	kubectl expose rc nginx --port=80 --target-port=8000|
+|Partially update a node|	kubectl patch node k8s-node-1 -p ‘{“spec”:{“unschedulable”:true}}’|
+|Update a container’s image; spec.containers[*].name is required because it’s a merge key|	kubectl patch pod valid-pod -p ‘{“spec”:{“containers”:[{“name”:”kubernetes-serve-hostname”,”image”:”new image”}]}}’|
+|Edit the service named docker-registry|	kubectl edit svc/docker-registry|
+|Scale multiple replication controllers|	kubectl scale --replicas=5 rc/foo rc/bar rc/baz|
+|Delete pods and services with same names “baz” and “foo”|	kubectl delete pod,service baz foo|
+|dump pod logs (stdout)|	kubectl logs busybox-sleep|
+|stream pod logs (stdout)|	kubectl logs -f hello-minikube-3015430129-vfgei|
+|Run pod as interactive shell|	kubectl run -i --tty busybox --image=busybox -- sh|
+|Attach to Running Container|	kubectl attach my-pod -i|
+|Mark a specific node as unschedulable|	kubectl cordon minikube|
+|Mark a specific node as schedulable|	kubectl uncordon minikube|
+|Dump current cluster state to stdout|	kubectl cluster-info dump|
+|Dump current cluster state to /path/to/cluster-state|	kubectl cluster-info dump --output-directory=/path/to/cluster-state|
+|Print the version of the API Server|	kubectl API version|
+|Removes pods from node via graceful termination for maintenance|	kubectl drain NODE|
+|Find the names of the objects that will be removed|	kubectl drain NODE --dryrun=true|
+|Removes pods even if they are not managed by controller|	kubectl drain NODE --force=true|
+|Taint a node so they can only run dedicated workloads or certain pods that need specialized hardware|	kubectl taint nodes node1 key=value:NoSchedule|
+|Create a clusterIP for a service named foo|	kubectl create service clusterip foo --tcp=5678:8080|
+|Autoscale pod foo with a minimum of 2 and maximum of 10 replicas when CPU utilization is equal to or greater than 70%|	kubectl autoscale deployment foo --min=2 --max=10 --cpupercent=70|
+
  
  ## Contributor
  

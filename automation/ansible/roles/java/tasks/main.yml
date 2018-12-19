@@ -1,0 +1,22 @@
+---
+
+- name: JAVA | Gather OS specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+  when: java_package == ''
+
+- name: JAVA | Installation
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ java_package }}"
+
+- name: JAVA | Get java home
+  changed_when: false
+  shell: readlink -f /usr/bin/java | sed "s:bin/java::"
+  register: java_home
+
+- name: JAVA | Configure environment
+  lineinfile:
+    path: /etc/environment
+    line: "JAVA_HOME={{ java_home.stdout }}"
+    state: present

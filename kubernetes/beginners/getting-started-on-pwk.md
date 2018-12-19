@@ -1,4 +1,4 @@
-# Getting Started with Kubernetes
+# Getting Started with Kubernetes on Play with Kubernetes Platform in 5 Minutes
 
 ## Tested Infrastructure
 
@@ -29,8 +29,8 @@
 ## Cloning the Repository
 
 ```
-git clone https://github.com/ajeetraina/kubernetes101/
-cd kubernetes101/install
+git clone https://github.com/collabnix/dockerlabs/
+cd dockerlabs/kubernetes/install
 
 ```
 

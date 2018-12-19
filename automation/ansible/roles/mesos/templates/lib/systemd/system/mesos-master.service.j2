@@ -1,0 +1,18 @@
+# {{ ansible_managed }}
+
+[Unit]
+Description=Mesos Master Service
+After=network.target
+Wants=network.target
+
+[Service]
+ExecStart=/usr/bin/mesos-init-wrapper master
+Restart=always
+RestartSec=20
+TimeoutSec=300
+LimitNOFILE=16384
+User={{ mesos_owner }}
+Group={{ mesos_group }}
+
+[Install]
+WantedBy=multi-user.target

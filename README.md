@@ -6,11 +6,11 @@ Are you new to Docker? Want to build your career in Container Technology?
 
 Then Welcome ! You are at the right place.
 
-DockerLabs brings you tutorials that help you get hands-on experience using Docker & Kubernetes. Here you will find complete documentation of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://play-with-docker.com) & [Play with Kubernetes Platform](https://play-with-k8s.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed. Hence, we have everything ready for you to get started with.
+DockerLabs brings you tutorials that help you get hands-on experience using Docker & Kubernetes. Here you will find complete documentation of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://labs.play-with-docker.com/) & [Play with Kubernetes Platform](https://play-with-k8s.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed. Hence, we have everything ready for you to get started with.
 
 ## Getting Started in 3 Simple Steps
 
-- Join 200+ DockerLabs Contributors in 2 mins via [DockerLabs Slack Channel](https://collabnix.slack.com/join/shared_invite/enQtNDYwMTMzNzUyMzA1LTk2MjdiZmM1Mzg3MzEzZjI2MTY3MTA4YmZkM2VkM2EzYzBmNGRmMjM4NGYwYjEwZTBhNTRmM2I5NjZlYjRmNzQ) 
+- Join 200+ DockerLabs Contributors in 2 mins via [DockerLabs Slack Channel](https://join.slack.com/t/collabnix/shared_invite/enQtNDkwMjY0OTE2NzA1LTYwMmE4MzU0YjQzYTU1NzUzZWRlNTI4MGFkMGRiMmZiM2YwNTc0MTNlOGIzZDc2NGNkOGUwNzdiN2JjZjI3MjE) 
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
@@ -33,6 +33,8 @@ Below are the list of categories:
 
 - [Docker Cheatsheet](https://github.com/collabnix/dockerlabs/tree/master/docker/cheatsheet/README.md)
 
+- [Docker Interview Questions]()
+
 
 ## Kubernetes
 
@@ -43,6 +45,8 @@ Below are the list of categories:
 - [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
 - [Kubernetes Cheatsheet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/cheatsheet.md)
+
+- [Kubernetes Interview Questions]()
 
 # A Quick Reference
 
@@ -56,7 +60,7 @@ To get started with Docker, follow the below steps:
 
 - Create Dockerhub Account
 
-- Open [Play with Docker Platform](http://play-with-docker.com)
+- Open [Play with Docker Platform](https://labs.play-with-docker.com/)
 
 - Click on "Start"
 
@@ -115,30 +119,31 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 [Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br>
 [Template for writing Tutorial Page](https://github.com/collabnix/dockerlabs/tree/master/template/EXAMPLE.md)
 
-## Docker-Ready Solution for You
+## Docker-Ready Stack for You
 
 In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
 
-- [WordPress under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/wordpress/example1/README.md)
+- [Docker + WordPress + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/solution/wordpress/README.md)
 
-- [ELK under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ELK/README.md)
+- [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ELK/README.md)
 
-- [Prometheus Stack under Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/docker-prometheus-swarm/README.md)
+- [Docker, Prometheus Stack + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/docker-prometheus-swarm/README.md)
 
-- [Apache Jmeter under Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/jmeter-docker/README.md)
+- [Docker + Apache Jmeter + Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/jmeter-docker/README.md)
 
-- [Voting App Example](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/example-voting-app/README.md)
+- [Docker + Voting App Example](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/example-voting-app/README.md)
 
-- [Playing around with Photon OS](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/vmware/powercli/README.md)
+- [Docker + Photon OS](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/vmware/powercli/README.md)
 
-- [Playing around with MacVLAN](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/macvlan/README.md)
+- [Docker + MacVLAN](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/macvlan/README.md)
 
-- [IPv6 & Docker Compose](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ipv6/README.md)
+- [Docker, Docker Compose & IPv6](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ipv6/README.md)
 
-- [Trying out Gitlab](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/gitlab/README.md)
+- [Docker + GitLab](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/gitlab/README.md)
 
-- [Getting Started with Nginx](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)
+- [Docker + Nginx ](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)
 
+- [Docker + Django + PostgreSQL](https://github.com/collabnix/dockerlabs/blob/master/solution/django-postgres/readme.md)
 ## License
 
 [MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md)

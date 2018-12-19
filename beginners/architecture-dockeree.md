@@ -79,3 +79,5 @@ Sitting on the top of the stack, there is GUI which uses Swarm APIs and Kubernet
 
 Contributor:
 - Ajeet Singh Raina
+
+[Proceed >>  Architecture of Docker Community Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/arhcitecture-of-docker-ce.md)

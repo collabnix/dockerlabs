@@ -170,8 +170,9 @@ $ docker inspect 4ab
 <a href="https://asciinema.org/a/210117" target="_blank"><img src="https://github.com/collabnix/dockerlabs/blob/master/beginners/helloworld/helloworld.png" /></a>
 
 
-## Maintained by:
-Ajeet Singh Raina
+## Contributor
+
+[Ajeet Singh Raina](ajeetraina@gmail.com)
 
 
-[Next: Working with Docker Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/b300/b302-workingwithdockerimage.md)
+[Next: Working with Docker Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/workingwithdockerimage.md)
