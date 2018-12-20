@@ -87,8 +87,24 @@ ID                  NAME                MODE                REPLICAS            
 qsmd3x69jds1        myswarm_app         replicated          1/1                 crazymax/swarm-cronjob:latest
 
 ```
+## Visualizing the Magic
 
-## Edit date.yml file to change cronjob from * to */5 to run every 5 seconds as shown:
+```
+git clone https://github.com/collabnix/dockerlabs
+cd dockerlabs/intermediate/swarm/visualizer/
+```
+
+```
+docker-compose up -d
+```
+
+
+
+![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/images/app1.png)
+
+## Example #1: Running Date container every 5 seconds
+
+Edit date.yml file to change cronjob from * to */5 to run every 5 seconds as shown:
 
 ```
 $ cd .res/example/
@@ -105,23 +121,22 @@ services:  test:    image: busybox    command: date    deploy:
 [manager1] (local) roo
 ```
 
-## Running the date service
+## Running the date service every 5 seconds
 
 ```
 docker stack deploy -c date.yml date
 ```
 
-## Visualizing the Magic
 
-```
-git clone https://github.com/collabnix/dockerlabs
-cd dockerlabs/intermediate/swarm/visualizer/
-```
+![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/images/app2.png)
 
-```
-docker-compose up -d
-```
+## Contributor
 
+- [Ajeet Sing Raina](ajeetraina@gmail.com)
+
+## Special Credits
+
+https://github.com/crazy-max/swarm-cronjob
 
 
 
