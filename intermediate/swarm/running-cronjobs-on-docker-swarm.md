@@ -6,17 +6,14 @@ A task is a running container which is part of a swarm service and managed by a 
 
 Let us talk a bit more about Services...
 
-A service is the definition of the tasks to execute on the manager or worker nodes. It is the central structure of the swarm system and 
-the primary root of user interaction with the swarm. When one create a service, you specify which container image to use and which commands to execute inside running containers.
-
-## Services Model
-
-In the replicated services model, the swarm manager distributes a specific number of replica tasks among the nodes based upon the scale you set in the desired state.
-For global services, the swarm runs one task for the service on every available node in the cluster.
-
-Swarm mode allows users to specify a group of homogenous containers which are meant to be kept running with the docker service CLI.
-This abstraction which is undoubtedly powerful, may not be the right fit for containers which are intended to eventually terminate or only run periodically.
+A Swarm service is a 1st class citizen and is the definition of the tasks to execute on the manager or worker nodes. It is the central structure of the swarm system and the primary root of user interaction with the swarm. When one create a service, you specify which container image to use and which commands to execute inside running containers.Swarm mode allows users to specify a group of homogenous containers which are meant to be kept running with the docker service CLI. Its ever running process.This abstraction which is undoubtedly powerful, may not be the right fit for containers which are intended to eventually terminate or only run periodically.
 Hence, one might need to run some containers for specific period of time and terminate it acccordingly.
+
+Let us consider few example:
+
+- You are a System Administrator who wishes to allow users to submit long-running compiler jobs on a Swarm cluster
+- A website which needs to process all user uploaded images into thumbnails of various sizes
+- An operator who wishes to periodically run docker rmi $(docker images --filter dangling=true -q) on each machine
 
 Under this tutorial, we will show you how to run on-off cron-job on 5-Node Swarm Mode Cluster.
 
