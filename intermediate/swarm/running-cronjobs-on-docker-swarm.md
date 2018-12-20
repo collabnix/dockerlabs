@@ -104,6 +104,8 @@ docker-compose up -d
 
 ## Example #1: Running Date container every 5 seconds
 
+![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/images/cronjobapp.png)
+
 Edit date.yml file to change cronjob from * to */5 to run every 5 seconds as shown:
 
 ```
