@@ -67,8 +67,64 @@ dhht9gr8lhbeilrbz195ffhrn     worker2             Ready               Active
  ## Cloning the Repository
  
  ```
- git clone https://github.com/collabnix/swarm-cronjob
- cd swarm-cronjob
+ git clone https://github.com/crazy-max/swarm-cronjob
+ cd swarm-cronjob/.res/example
  ```
  
- ## 
+ ## Bring up Swarm Cronjob
+ 
+ ```
+ docker stack deploy -c swarm_cronjob.yml swarm_cronjob
+ ```
+ 
+ ## Listing Docker Services
+ 
+ ```
+ $ docker service ls
+ID                  NAME                MODE                REPLICAS            IMAGE
+   PORTS
+
+qsmd3x69jds1        myswarm_app         replicated          1/1                 crazymax/swarm-cronjob:latest
+
+```
+
+## Edit date.yml file to change cronjob from * to */5 to run every 5 seconds as shown:
+
+```
+[manager1] (local) root@192.168.0.47 ~/swarm-cronjob/.res/example
+$ cat date.yml
+version: "3.2"
+services:  test:    image: busybox    command: date    deploy:
+      labels:
+        - "swarm.cronjob.enable=true"
+        - "swarm.cronjob.schedule=*/5 * * * *"
+        - "swarm.cronjob.skip-running=false"
+      replicas: 0
+      restart_policy:
+        condition: none
+[manager1] (local) roo
+```
+
+## Running the date service
+
+```
+docker stack deploy -c date.yml date
+```
+
+## Visualizing the Magic
+
+```
+git clone https://github.com/collabnix/dockerlabs
+cd dockerlabs/intermediate/swarm/visualizer/
+```
+
+```
+docker-compose up -d
+```
+
+
+
+  
+  
+  
+  
