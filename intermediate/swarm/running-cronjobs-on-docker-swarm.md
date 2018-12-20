@@ -91,7 +91,7 @@ qsmd3x69jds1        myswarm_app         replicated          1/1                 
 ## Edit date.yml file to change cronjob from * to */5 to run every 5 seconds as shown:
 
 ```
-[manager1] (local) root@192.168.0.47 ~/swarm-cronjob/.res/example
+$ cd .res/example/
 $ cat date.yml
 version: "3.2"
 services:  test:    image: busybox    command: date    deploy:
@@ -121,6 +121,8 @@ cd dockerlabs/intermediate/swarm/visualizer/
 ```
 docker-compose up -d
 ```
+
+
 
 
 
