@@ -87,7 +87,7 @@ ID                  NAME                MODE                REPLICAS            
 qsmd3x69jds1        myswarm_app         replicated          1/1                 crazymax/swarm-cronjob:latest
 
 ```
-## Visualizing the Magic
+## Visualizing the Swarm Cluster running Cronjob container
 
 ```
 git clone https://github.com/collabnix/dockerlabs
@@ -121,7 +121,7 @@ services:  test:    image: busybox    command: date    deploy:
 [manager1] (local) roo
 ```
 
-## Running the date service every 5 seconds
+## Bringing up App Stack
 
 ```
 docker stack deploy -c date.yml date
