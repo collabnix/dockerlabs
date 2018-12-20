@@ -15,6 +15,7 @@ Let us consider few example:
 - A website which needs to process all user uploaded images into thumbnails of various sizes
 - An operator who wishes to periodically run docker rmi $(docker images --filter dangling=true -q) on each machine
 
+Today Docker Swarm doesn't come with this feature by default. But there are various workaround to make it work.
 Under this tutorial, we will show you how to run on-off cron-job on 5-Node Swarm Mode Cluster.
 
 
