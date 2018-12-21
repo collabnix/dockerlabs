@@ -6,15 +6,15 @@
 - [Understanding Docker Container Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockercontainernetworking.md)
 - Docker Networking subsystem & Driver
 - Docker Enterprise Edition Networking Feature
-- [Difference between Bridge Vs Overlay Network](https://github.com/amitatha82/dockerlabs/blob/master/beginners/DiffBridgeVsOverlay.md)
+- [Difference between Bridge Vs Overlay Network](https://github.com/collabnix/dockerlabs/blob/master/beginners/DiffBridgeVsOverlay.md)
 - [Verifying host-level settings that impact Docker networking](https://github.com/collabnix/dockerlabs/blob/master/intermediate/host-settings.md)
-- [What is MacVLAN networking?](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/macvlan.md)
+- [What is MacVLAN networking?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/macvlan.md)
    - [Implementing MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/macvlan-010.md)
 - Docker Networking CLI
-  - [Disable Networking for Container](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/disableNetworkingToContainer.md)
-  - [Finding IP address of Container](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/FindingIPaddressofContainer.md)
-  - [Exposing a Container Port on the Host](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/ExposingContainerPort.md)
-  - Linking Containers in Docker
+  - [Disable Networking for Container](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/disableNetworkingToContainer.md)
+  - [Finding IP address of Container](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/FindingIPaddressofContainer.md)
+  - [Exposing a Container Port on the Host](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/ExposingContainerPort.md)
+  - [Linking Containers in Docker](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/LinkingContainersinDocker.md)
   - Choosing a Container Networking Namespace
   - Configuring the Docker Daemon IP Tables and IP Forwarding Settings
   - Setting Up a Custom Bridge for Docker
@@ -153,4 +153,5 @@
 ## Contributor:
 
 [Karan Singh](karangandhi0007@gmail.com)<br>
-[Ajeet Singh Raina](ajeetraina@gmail.com)
+[Ajeet Singh Raina](ajeetraina@gmail.com)<br>
+[Tathagata Sarkar](amitatha82@yahoo.com)

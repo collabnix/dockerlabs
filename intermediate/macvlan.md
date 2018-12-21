@@ -6,7 +6,7 @@ The macvlan driver uses the concept of a parent interface. This interface can be
 
 The macvlan driver can be configured in different ways to achieve different results. In the below example we create two MACVLAN networks joined to different subinterfaces. This type of configuration can be used to extend multiple L2 VLANs through the host interface directly to containers. The VLAN default gateway exists in the external network.
 
-![alt text](https://github.com/amitatha82/dockerlabs/blob/master/beginners/images/macvlan.png)
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/macvlan.png)
 
 
 The db and web containers are connected to different MACVLAN networks in this example. Each container resides on its respective external network with an external IP provided from that network. Using this design an operator can control network policy outside of the host and segment containers at L2. The containers could have also been placed in the same VLAN by configuring them on the same MACVLAN network. This just shows the amount of flexibility offered by each network driver.
