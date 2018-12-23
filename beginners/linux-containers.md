@@ -77,6 +77,35 @@ cpu devices net_cls pids
 cpuacct freezer net_cls,net_prio systemd
 cpu,cpuacct hugetlb net_prio
 ```
+
+Each of the directories represents the resources they control. It's pretty easy to create a cgroup and control processes with it: just create a directory under the resource type with any name, and append the process IDs you'd like to control to tasks. Here we
+want to throttle the CPU usage of our yes process, so create a new directory under cpu and find out the PID of the yes process:
+
+```
+$ ps x | grep yes
+11809 pts/2 R 12:37 yes
+$ mkdir /sys/fs/cgroup/cpu/box && \
+echo 11809 > /sys/fs/cgroup/cpu/box/tasks
+```
+
+We've just added yes into the newly created CPU group box, but the policy remains unset, and processes still run without restriction. Set a limit by writing the desired number into the corresponding file and check the CPU usage again:
+
+```
+$ echo 50000 > /sys/fs/cgroup/cpu/box/cpu.cfs_quota_us
+$ PID USER PR NI VIRT RES SHR S %CPU %MEM
+TIME+ COMMAND
+3 root 20 0 6012 656 584 R 50.2 0.0
+0:32.05 yes
+1 root 20 0 4508 1700 1608 S 0.0 0.0
+0:00.00 sh
+4 root 20 0 40388 3664 3204 R 0.0 0.1
+0:00.00 top
+```
+
+The CPU usage is dramatically reduced, meaning that our CPU throttle works. These two examples elucidate how Linux container isolates system resources. By putting more confinements in an application, we can definitely build a fully isolated box, including filesystem and networks, without encapsulating an operating system within it.
+
+
+
 A basic physical application installation needs server, storage, network equipment and other physical hardware on which an OS is installed. A software stack -- an application server, a database and more -- enables the application to run. An organization must either provision resources for its maximum workload and potential outages and suffer significant waste outside those times or, if provisioned resources are set for average workload, expect traffic peaks to lead to performance issues.
 
 VMs get around some of these problems. A VM creates a logical system that sits atop the physical platform (see Figure 1). A Type 1 hypervisor, such as VMware ESXi or Microsoft Hyper-V, provides each VM with virtual hardware. The VM runs a guest OS, and the application software stack interprets everything below it the same as a physical stack. Virtualization utilizes resources better than physical setups, but the separate OS for each VM creates significant redundancy in base functionality.
