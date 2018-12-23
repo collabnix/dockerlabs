@@ -1,5 +1,82 @@
 ## What are Containers?
 
+Container comprises several building blocks, the two most important being namespaces and cgroups (control groups). Both of them are Linux kernel features.
+
+Namespaces provide logical partitions of certain kinds of system resources, such as mounting point (mnt), process ID (PID), network (net), and so on. To explain the concept of isolation, let's look at some simple examples on the pid namespace. 
+
+The following examples are all from Ubuntu 16.04.2 and util-linux 2.27.1. When we type ps axf, we will see a long list of running processes:
+
+```
+$ ps axf
+PID TTY STAT TIME COMMAND
+2 ? S 0:00 [kthreadd]
+3 ? S 0:42 \_ [ksoftirqd/0]
+5 ? S< 0:00 \_ [kworker/0:0H]
+7 ? S 8:14 \_ [rcu_sched]
+8 ? S 0:00 \_ [rcu_bh]
+```
+
+ps is a utility to report current processes on the system. 
+ps axf is to list all processes in forest.
+
+Now let's enter a new pid namespace with unshare, which is able to disassociate a process resource part-by-part to a new namespace, and check the processes again:
+
+```
+$ sudo unshare --fork --pid --mount-proc=/proc /bin/sh
+$ ps axf
+PID TTY STAT TIME COMMAND
+1 pts/0 S 0:00 /bin/sh
+2 pts/0 R+ 0:00 ps axf
+```
+
+You will find the pid of the shell process at the new namespace becoming 1, with all other processes disappearing. That is to say, you have created a pid container. 
+
+Let's switch to another session outside the namespace, and list the processes again:
+
+```
+$ ps axf // from another terminal
+PID TTY COMMAND
+...
+25744 pts/0 \_ unshare --fork --pid --mount-proc=/proc
+/bin/sh
+25745 pts/0 \_ /bin/sh
+3305 ? /sbin/rpcbind -f -w
+6894 ? /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u
+113:116
+```
+
+You can still see the other processes and your shell process within the new namespace.
+
+With the pid namespace isolation, processes in different namespaces cannot see each other. Nonetheless, if one process eats up a considerable amount of system resources, such as memory, it could cause the system to run out of memory and become unstable. In other words, an isolated process could still disrupt other processes or even crash a whole system if we don't impose resource usage
+restrictions on it.
+
+The following diagram illustrates the PID namespaces and how an out-of-memory (OOM) event can affect other processes outside a child namespace. The bubbles are the process in the system, and the numbers are their PID. Processes in the child namespace have their own PID. Initially, there is still free memory available in the system. Later, the processes in the child namespace exhaust the whole memory in the system. The kernel then starts the OOM killer to release memory, and the victims may be processes outside the child namespace:
+
+
+
+In light of this, cgroups is utilized here to limit resource usage. Like namespaces, it can set constraint on different kinds of system resources. Let's continue from our pid namespace, stress the CPU with yes > /dev/null, and monitor it with top:
+
+```
+$ yes > /dev/null & top
+$ PID USER PR NI VIRT RES SHR S %CPU %MEM
+TIME+ COMMAND
+3 root 20 0 6012 656 584 R 100.0 0.0
+0:15.15 yes
+1 root 20 0 4508 708 632 S 0.0 0.0
+0:00.00 sh
+4 root 20 0 40388 3664 3204 R 0.0 0.1
+0:00.00 top
+```
+
+Our CPU load reaches 100% as expected. Now let's limit it with the CPU cgroup. Cgroups are organized as directories under /sys/fs/cgroup/ (switch to the host session first):
+
+```
+$ ls /sys/fs/cgroup
+blkio cpuset memory perf_event
+cpu devices net_cls pids
+cpuacct freezer net_cls,net_prio systemd
+cpu,cpuacct hugetlb net_prio
+```
 A basic physical application installation needs server, storage, network equipment and other physical hardware on which an OS is installed. A software stack -- an application server, a database and more -- enables the application to run. An organization must either provision resources for its maximum workload and potential outages and suffer significant waste outside those times or, if provisioned resources are set for average workload, expect traffic peaks to lead to performance issues.
 
 VMs get around some of these problems. A VM creates a logical system that sits atop the physical platform (see Figure 1). A Type 1 hypervisor, such as VMware ESXi or Microsoft Hyper-V, provides each VM with virtual hardware. The VM runs a guest OS, and the application software stack interprets everything below it the same as a physical stack. Virtualization utilizes resources better than physical setups, but the separate OS for each VM creates significant redundancy in base functionality.
