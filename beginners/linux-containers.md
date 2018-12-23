@@ -52,6 +52,9 @@ restrictions on it.
 
 The following diagram illustrates the PID namespaces and how an out-of-memory (OOM) event can affect other processes outside a child namespace. The bubbles are the process in the system, and the numbers are their PID. Processes in the child namespace have their own PID. Initially, there is still free memory available in the system. Later, the processes in the child namespace exhaust the whole memory in the system. The kernel then starts the OOM killer to release memory, and the victims may be processes outside the child namespace:
 
+![My image](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/ns1.png)
+
+![My image](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/ns2.png)
 
 
 In light of this, cgroups is utilized here to limit resource usage. Like namespaces, it can set constraint on different kinds of system resources. Let's continue from our pid namespace, stress the CPU with yes > /dev/null, and monitor it with top:
