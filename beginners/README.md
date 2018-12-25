@@ -69,6 +69,27 @@
 - [Sharing Your Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/sharing-your-docker-image/README.md)
   -  [Publishing Your Image to Docker Hub](https://github.com/collabnix/dockerlabs/blob/master/beginners/publishing-your-image-to-docker-hub/README.md)
 
+# Steps  to install Docker CE stable version  in Linux(RHEL) from Amazon Ec2 machine
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum makecache fast
+
+Before install docker we need to install container-selinux .container-selinux package is available from the rhel-7-server-extras-rpms .So we need to enable that in 7.
+sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+
+Install the latest version of Docker CE on RHEL:
+
+sudo yum -y install docker-ce
+Alternatively, you can specify a specific version of Docker CE:
+
+sudo yum -y install docker-ce-<version>-<release>
+Start Docker:
+
+sudo systemctl start docker
+Test your Docker CE installation:
+
+sudo docker run hello-world
+
   
  # Working with Dockerfile
  
