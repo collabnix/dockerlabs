@@ -1,4 +1,4 @@
-# Installing Docker on Linux System
+# Installing Docker CE & EE on Linux System
 
 ## RHEL 7.x
 
