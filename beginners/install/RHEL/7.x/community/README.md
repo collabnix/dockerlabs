@@ -1,4 +1,4 @@
-# Installing Docker Community Edition on RHEL 7.x running on Amazon EC2 Instance
+# Installing Docker Community Edition on RHEL 7.6 running on Amazon EC2 Instance
 
 Docker Community Edition (Docker CE) is officially NOT supported on Red Hat Enterprise Linux but still you can install it on RHEL 7.x with few tweaks. In case you're new, Docker Community Edition (CE) is ideal for developers and small teams looking to get started with Docker and experimenting with container-based apps. Docker CE has three types of update channels, stable, test, and nightly:
 
@@ -30,10 +30,28 @@ Under this tutorial, we will see how to install RHEL
 
 - Create RHEL 7.x OS Instance on Amazon EC2 
 
+```
+$cat /etc/os-release
+NAME="Red Hat Enterprise Linux Server"
+VERSION="7.6 (Maipo)"
+ID="rhel"
+ID_LIKE="fedora"
+VARIANT="Server"
+VARIANT_ID="server"
+VERSION_ID="7.6"
+PRETTY_NAME="Red Hat Enterprise Linux Server 7.6 (Maipo)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:7.6:GA:server"
+HOME_URL="https://www.redhat.com/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
 
-## Steps
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 7"
+REDHAT_BUGZILLA_PRODUCT_VERSION=7.6
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="7.6"
+```
 
-## Configuring YUM Repository
+## Setting up the Docker CE repository on RHEL:
 
 ```
 sudo yum install -y yum-utils
