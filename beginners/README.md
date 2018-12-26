@@ -28,6 +28,7 @@
    - Cloud Platform
    - IoT Platform
    - Unix ( FreeBSD, Solaris)  
+   - MacOS
 - Compiling Your Own Docker Binary from Source
 - Docker ToolBox Installations
 - Scripts & Installation Tools
