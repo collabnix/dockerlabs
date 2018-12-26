@@ -21,13 +21,10 @@
 
 ## Pre-requisite
 
-- Install Red Hat Enterprise Linux 
+- Install Red Hat Enterprise Linux on your system
 
 
-
-## Running Hello World Example
-
-
+## Steps
 
 ```
 sudo yum install -y yum-utils
