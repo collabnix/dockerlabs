@@ -28,7 +28,7 @@ Under this tutorial, we will see how to install RHEL
 
 ## Pre-requisite
 
-- Create RHEL 7.x OS Instance on Amazon EC2 
+- Create RHEL 7.6 OS Instance on Amazon EC2 
 
 ```
 $cat /etc/os-release
@@ -60,13 +60,13 @@ sudo yum makecache fast
 ```
 
 
-** Please Note:
+## Please Note:
 
 Before you install Docker, you need to install "container-selinux", "container-selinux" package. It  is available from the rhel-7-server-extras-rpms . You might need to enable that in 7.x
 
 
 ```
-sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+sudo yum-config-manager --enable rhel-7-server-extras
 ```
 
 ## Install the latest version of Docker CE on RHEL:
@@ -111,5 +111,7 @@ sudo docker run hello-world
 ```
 
 ## Contributor
+
+[Hari]()
 
 
