@@ -56,31 +56,26 @@ The tables following give you some useful commands that you will probably use in
 
 Some useful commands on Kubernetes cluster management.
 
-|Description|Command|
+| Description | Command |
  --- | ---
-|Show nodes with labels|kubectl get nodes --show-labels|
-|Get system conf via configmap|kubectl -n kube-system get cm kubeadm-config -o yaml|
-|Query healthcheck endpoint|curl -L http://127.0.0.1:10250/healthz|
-|Get node resource usage|kubectl top node|
-|Delete resources under a namespace|kubectl -n my-ns delete po,svc --all|
-|List authenticated contexts|kubectl config get-contexts|
-|Load context from config file|kubectl get cs --kubeconfig kube_config.yml|
-|List contexts|kubectl config get-contexts|
-|Switch context|kubectl config use-context <cluster-name>|
-|Delete the specified context|kubectl config delete-context <cluster-name>|
-|List all namespaces defined|kubectl get namespaces|
-|List all critical pods|kubectl get -n kube-system pods -a|
-|List Resource Quota|kubectl get resourcequota|
-|Get network policy|kubectl get NetworkPolicy|
-|Get cluster info|kubectl cluster-info|
-|Get configuration|kubectl config view|
-|List Limit Range|kubectl get limitrange|
-|Customize resource definition|kubectl set resources deployment nginx -c=nginx --limits=cpu=200m,memory=512Mi|
-|List certificates|kubectl get csr|
-|Get component status|kubectl get componentstatus|
-|Similar to docker ps|kubectl get nodes|
-|List api group|kubectl api-versions|
-|List all CRD|kubectl get crd|
+| Get all nodes with their labels | kubectl get nodes --show-labels |
+| Describe a node | kubectl describe nodes <node-name> |
+| Get nodes resources usage | kubectl top node |
+| Get existing context | kubectl config get-contexts |
+| Get current context | kubectl config current-context |
+| Switch to another context | kubectl config use-context <cluster-name> |
+| Delete a context  | kubectl config delete-context <cluster-name> |
+| Get all namespaces | kubectl get namespaces |
+| Delete resources under a namespace | kubectl -n <namespace-name> delete po,svc --all |
+| Delete a specific namespace | kubectl delete namespaces <namespace-name> |
+| Get cluster info | kubectl cluster-info |
+| Get configuration | kubectl config view |
+| List api group | kubectl api-versions |
+| List all CRD | kubectl get crd |
+| List certificates | kubectl get csr |
+| List Resource Quotas | kubectl get resourcequota |
+| Get Network Policies | kubectl get NetworkPolicy |
+| List Limit Range | kubectl get limitrange |
 
 ## Deployments
 
@@ -88,15 +83,15 @@ Some useful commands on Kubectl Deployment management.
 
 |Description|Command|
  --- | ---
-|Start a temporary deployment|kubectl run --rm -i -t --image=alpine test-$RANDOM -- sh|
-|Delete deployments by labels|kubectl delete deployment -l app=wordpress|
-|online rolling upgrade|kubectl rollout app-v1 app-v2 --image=img:v2|
-|Roll backup|kubectl rollout app-v1 app-v2 --rollback|
-|List rollout|kubectl rollout history|
-|Check update status|kubectl rollout status deployment/nginx-app|
-|Check update history|kubectl rollout history deployment/nginx-app|
-|Pause/Resume|kubectl rollout pause deployment/nginx-deployment, resume|
-|Rollback to previous version|kubectl rollout undo deployment/nginx-deployment|
+| Start a temporary deployment | kubectl run <deployment-name> --rm -i -t --image=alpine -- sh |
+| Delete Deployments by labels | kubectl delete deployment -l app=wordpress |
+| Update the image of a Deployment | kubectl set deployment <deployment-name> --image  |
+| Roll backup | kubectl rollout app-v1 app-v2 --rollback |
+| List rollout | kubectl rollout history |
+| Check update status | kubectl rollout status deployment/nginx-app |
+| Check update history | kubectl rollout history deployment/nginx-app |
+| Pause/Resume | kubectl rollout pause deployment/nginx-deployment, resume |
+| Rollback to previous version | kubectl rollout undo deployment/nginx-deployment |
 
 ## Kubectl
 
@@ -118,6 +113,7 @@ Some useful commands on Kubectl Pods management.
 
 |Description|Command|
  --- | ---
+|List all critical pods|kubectl get -n kube-system pods -a|  |
 |List pods with nodes info|kubectl get pod -o wide|
 |Check pod environment variables|kubectl exec redis-master-ft9ex env|
 |Run curl test temporarily|kubectl run --rm mytest --image=yauritux/busybox-curl -it|
