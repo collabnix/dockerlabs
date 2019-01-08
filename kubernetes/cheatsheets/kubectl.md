@@ -679,5 +679,5 @@ To go further in the management of Kubectl, please refer to these documentations
 
  ## Contributors
 
-[Bala](https://www.linkedin.com/in/balasundaram-natarajan-43471115) - balasundarammaster@gmail.com
-[Wikitops](https://github.com/wikitops) - wikitops5692@gmail.com
+* [Bala](https://www.linkedin.com/in/balasundaram-natarajan-43471115) - balasundarammaster@gmail.com
+* [Wikitops](https://github.com/wikitops) - wikitops5692@gmail.com
