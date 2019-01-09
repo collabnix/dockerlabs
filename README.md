@@ -10,7 +10,7 @@ DockerLabs brings you tutorials that help you get hands-on experience using Dock
 
 ## Getting Started in 3 Simple Steps
 
-- Join 200+ DockerLabs Contributors in 2 mins via [DockerLabs Slack Channel](https://join.slack.com/t/collabnix/shared_invite/enQtNDkwMjY0OTE2NzA1LTYwMmE4MzU0YjQzYTU1NzUzZWRlNTI4MGFkMGRiMmZiM2YwNTc0MTNlOGIzZDc2NGNkOGUwNzdiN2JjZjI3MjE) 
+- Join 200+ DockerLabs Contributors in 2 mins via [DockerLabs Slack Channel](https://join.slack.com/t/collabnix/shared_invite/enQtNDkwMjY0OTE2NzA1LTYwMmE4MzU0YjQzYTU1NzUzZWRlNTI4MGFkMGRiMmZiM2YwNTc0MTNlOGIzZDc2NGNkOGUwNzdiN2JjZjI3MjE)
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
@@ -20,7 +20,7 @@ DockerLabs brings you tutorials that help you get hands-on experience using Dock
 
 # Categories
 
-DockerLabs is a tutorials authored by members of the open community. 
+DockerLabs is a tutorials authored by members of the open community.
 Below are the list of categories:
 
 ## Docker
@@ -44,7 +44,7 @@ Below are the list of categories:
 
 - [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
-- [Kubernetes Cheatsheet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/cheatsheet.md)
+- [Kubernetes Cheatsheets](https://github.com/wikitops/dockerlabs/tree/master/kubernetes/cheatsheets)
 
 - [Kubernetes Interview Questions]()
 
@@ -70,7 +70,7 @@ To get started with Docker, follow the below steps:
 
 ## Getting Started with Docker Swarm
 
-To get started with Docker Swarm, you can use "Play with Docker", aka PWD. 
+To get started with Docker Swarm, you can use "Play with Docker", aka PWD.
 It's free of cost and open for all.
 You get maximum of 5 instances of Linux system to play around with Docker.
 
