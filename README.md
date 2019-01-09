@@ -31,6 +31,8 @@ Below are the list of categories:
 
 - [Docker for Advanced](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)
 
+- [Docker for CIOs/CEOs](https://github.com/collabnix/dockerlabs/tree/master/docker/leadership/README.md)
+
 - [Docker Cheatsheet](https://github.com/collabnix/dockerlabs/tree/master/docker/cheatsheet/README.md)
 
 - [Docker Interview Questions]()
@@ -43,6 +45,8 @@ Below are the list of categories:
 - [Kubernetes for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
 - [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+
+- [Kubernetes for CIOs/CEOs](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/leadership/README.md)
 
 - [Kubernetes Cheatsheets](https://github.com/wikitops/dockerlabs/tree/master/kubernetes/cheatsheets)
 
