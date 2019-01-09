@@ -44,7 +44,7 @@ Below are the list of categories:
 
 - [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
-- [Kubernetes Cheatsheets](https://github.com/wikitops/dockerlabs/tree/master/kubernetes/cheatsheets)
+- [Kubernetes Cheatsheets](https://github.com/wikitops/dockerlabs/blob/master/kubernetes/cheatsheets/kubectl.md)
 
 - [Kubernetes Interview Questions]()
 
