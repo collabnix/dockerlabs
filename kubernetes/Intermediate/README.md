@@ -69,3 +69,7 @@
 ## Running Stateful Applications with Kubernetes
 
 ## Handling Kubernetes Storage
+
+## Compose on Kubernetes
+
+[Compose on Kubernetes for Minikube](https://github.com/collabnix/dockerlabs/master/kubernetes/Intermediate/compose-on-kubernetes-for-minikube.md)
