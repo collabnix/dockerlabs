@@ -33,7 +33,18 @@ Server: Docker Engine - Community
 
 ## Installing Minikube
 
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 \
+  && chmod +x minikube
+```
 
+
+## Verifying Minikube Version
+
+```
+minikube version
+minikube version: v0.32.0
+```
 
 ## Checking Minikube Status
 
@@ -58,3 +69,5 @@ Downloading kubeadm v1.12.4
 
 
 ```
+
+## 
