@@ -10,23 +10,7 @@ Now you can use Swarm CLI to manage Kubernetes Cluster in lot easier way.
 
 First, we need to install the Compose on Kubernetes controller into your Kubernetes cluster. This controller uses the standard Kubernetes extension points to introduce the "Stack" to the Kubernetes API. You can use any Kubernetes cluster you like, but if you don't already have one available then remember that Docker Desktop comes with Kubernetes and the Compose controller built-in, and enabling it is as simple as ticking a box in the settings.
 
-## Tested Infrastructure
-
-<table class="tg">
-  <tr>
-    <th class="tg-yw4l"><b>Platform</b></th>
-    <th class="tg-yw4l"><b>Number of Instance</b></th>
-    <th class="tg-yw4l"><b>Reading Time</b></th>
-    
-  </tr>
-  <tr>
-    <td class="tg-yw4l"><b> Docker Desktop for MacOS </b></td>
-    <td class="tg-yw4l"><b>1</b></td>
-    <td class="tg-yw4l"><b>5 min</b></td>
-    
-  </tr>
-  
-</table>
+Kops, short for Kubernetes Operations, is a set of tools for installing, operating, and deleting Kubernetes clusters in the cloud. A rolling upgrade of an older version of Kubernetes to a new version can also be performed. It also manages the cluster add-ons. After the cluster is created, the usual kubectl CLI can be used to manage resources in the cluster.
 
 ## Pre-requisite
 
