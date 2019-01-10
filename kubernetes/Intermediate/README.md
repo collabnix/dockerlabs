@@ -72,4 +72,4 @@
 
 ## Compose on Kubernetes
 
-[Compose on Kubernetes for Minikube](https://github.com/collabnix/dockerlabs/master/kubernetes/Intermediate/compose-on-kubernetes-for-minikube.md)
+[Compose on Kubernetes for Minikube](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/Intermediate/compose-on-kubernetes-for-minikube.md)
