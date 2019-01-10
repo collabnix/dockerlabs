@@ -5,7 +5,23 @@ Kops refers to Kubernetes Operations. It is a set of tools for installing, opera
 
 Under this tutorial, I will showcase how Kubernetes Cluster can be deployed and Managed using Kops via Docker Desktop for Mac.
 
+## Tested Infrastructure
 
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Docker Desktop for MacOS </b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
 
 ## Pre-requisites:
 
