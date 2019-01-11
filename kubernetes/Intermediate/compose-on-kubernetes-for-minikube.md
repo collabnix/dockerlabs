@@ -162,6 +162,15 @@ Server: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf66
 ##
 
 ```
+[Captains-Bay]🚩 >  minikube status
+host: Running
+kubelet: Running
+apiserver: Running
+```
+
+##
+
+```
 kubectl -n kube-system get pod
 NAME                                    READY     STATUS    RESTARTS   AGE
 coredns-576cbf47c7-fsk76                1/1       Running   1          12h
@@ -262,3 +271,37 @@ wget https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.17/i
 ```
 
 ## 
+
+```
+./installer-darwin -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.16
+INFO[0000] Checking installation state
+INFO[0000] Install image with tag "v0.4.16" in namespace "compose"
+INFO[0000] Api server: image: "docker/kube-compose-api-server:v0.4.16", pullPolicy: "Always"
+INFO[0000] Controller: image: "docker/kube-compose-controller:v0.4.16", pullPolicy: "Always"
+```
+
+##
+
+```
+kubectl api-versions | grep compose
+[Captains-Bay]🚩 >
+```
+
+## 
+
+```
+minikube service list
+|-------------|-----------------------|--------------|
+|  NAMESPACE  |         NAME          |     URL      |
+|-------------|-----------------------|--------------|
+| compose     | compose-api           | No node port |
+| compose     | compose-etcd          | No node port |
+| compose     | compose-etcd-client   | No node port |
+| compose     | etcd-restore-operator | No node port |
+| default     | kubernetes            | No node port |
+| kube-system | kube-dns              | No node port |
+| kube-system | kubernetes-dashboard  | No node port |
+| kube-system | tiller-deploy         | No node port |
+|-------------|-----------------------|--------------|
+[Captains-Bay]🚩 >
+```
