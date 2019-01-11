@@ -17,7 +17,7 @@ Kops, short for Kubernetes Operations, is a set of tools for installing, operati
 - Install Docker Desktop on MacOS
 - Enable Kubernetes with the below feature enabled
 
-![My Image]()
+![My Image](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/Intermediate/dockerdesktop1.png)
 
 
 
