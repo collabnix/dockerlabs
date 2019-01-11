@@ -273,11 +273,11 @@ wget https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.17/i
 ## 
 
 ```
-./installer-darwin -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.16
+./installer-darwin -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.17
 INFO[0000] Checking installation state
 INFO[0000] Install image with tag "v0.4.16" in namespace "compose"
-INFO[0000] Api server: image: "docker/kube-compose-api-server:v0.4.16", pullPolicy: "Always"
-INFO[0000] Controller: image: "docker/kube-compose-controller:v0.4.16", pullPolicy: "Always"
+INFO[0000] Api server: image: "docker/kube-compose-api-server:v0.4.17", pullPolicy: "Always"
+INFO[0000] Controller: image: "docker/kube-compose-controller:v0.4.17", pullPolicy: "Always"
 ```
 
 ##
@@ -303,5 +303,33 @@ minikube service list
 | kube-system | kubernetes-dashboard  | No node port |
 | kube-system | tiller-deploy         | No node port |
 |-------------|-----------------------|--------------|
+[Captains-Bay]🚩 >
+```
+
+## Verifying StackAPI
+
+```
+[Captains-Bay]🚩 >  docker version
+Client: Docker Engine - Community
+ Version:           18.09.0
+ API version:       1.39
+ Go version:        go1.10.4
+ Git commit:        4d60db4
+ Built:             Wed Nov  7 00:47:43 2018
+ OS/Arch:           darwin/amd64
+ Experimental:      false
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          18.09.0
+  API version:      1.39 (minimum version 1.12)
+  Go version:       go1.10.4
+  Git commit:       4d60db4
+  Built:            Wed Nov  7 00:55:00 2018
+  OS/Arch:          linux/amd64
+  Experimental:     true
+ Kubernetes:
+  Version:          v1.12.4
+  StackAPI:         Unknown
 [Captains-Bay]🚩 >
 ```
