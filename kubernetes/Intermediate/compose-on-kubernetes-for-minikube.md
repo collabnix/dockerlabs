@@ -80,16 +80,185 @@ apiserver:
 ## Starting Minikube
 
 ```
-minikube start
+kubectl: [Captains-Bay]🚩 >  minikube start
 Starting local Kubernetes v1.12.4 cluster...
 Starting VM...
 Getting VM IP address...
 Moving files into cluster...
-Downloading kubelet v1.12.4
-Downloading kubeadm v1.12.4
+Setting up certs...
+Connecting to cluster...
+Setting up kubeconfig...
+Stopping extra container runtimes...
+Machine exists, restarting cluster components...
+Verifying kubelet health ...
+Verifying apiserver health ....Kubectl is now configured to use the cluster.
+Loading cached images from config file.
 
 
+Everything looks great. Please enjoy minikube!
+```
 
+## Checking the Status
+
+```
+[Captains-Bay]🚩 >  minikube status
+host: Running
+kubelet: Running
+apiserver: Running
+kubectl: Correctly Configured: pointing to minikube-vm at 192.168.99.100[Captains-Bay]🚩 >
+```
+
+##  Verifying Minikube Cluster Nodes
+
+
+```
+ kubectl get nodes
+NAME       STATUS    ROLES     AGE       VERSION
+minikube   Ready     master    12h       v1.12.4
+```
+
+##
+
+```
+kubectl create namespace compose
+namespace "compose" created
+```
+
+## Creating the tiller service account
+
+```
+kubectl -n kube-system create serviceaccount tiller
+serviceaccount "tiller" created
+```
+
+## Give it admin access to your cluster (note: you might want to reduce the scope of this):
+
+```
+kubectl -n kube-system create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount kube-system:tiller
+clusterrolebinding "tiller" created
+```
+
+## Initializing the helm component.
+
+```
+[Captains-Bay]🚩 >  helm init --service-account tiller
+$HELM_HOME has been configured at /Users/ajeetraina/.helm.
+
+Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
+
+Please note: by default, Tiller is deployed with an insecure 'allow unauthenticated users' policy.
+For more information on securing your installation see: https://docs.helm.sh/using_helm/#securing-your-helm-installation
+Happy Helming!
+```
+
+##
+
+```
+helm version
+Client: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
+Server: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
+```
+
+##
+
+```
+kubectl -n kube-system get pod
+NAME                                    READY     STATUS    RESTARTS   AGE
+coredns-576cbf47c7-fsk76                1/1       Running   1          12h
+coredns-576cbf47c7-xc2br                1/1       Running   1          12h
+etcd-minikube                           1/1       Running   1          12h
+kube-addon-manager-minikube             1/1       Running   1          12h
+kube-apiserver-minikube                 1/1       Running   0          11m
+kube-controller-manager-minikube        1/1       Running   0          11m
+kube-proxy-8kcjr                        1/1       Running   0          11m
+kube-scheduler-minikube                 1/1       Running   1          12h
+kubernetes-dashboard-5bff5f8fb8-qfrwl   1/1       Running   3          12h
+storage-provisioner                     1/1       Running   3          12h
+tiller-deploy-694dc94c65-tt27k          1/1       Running   0          4m
+```
+
+## Deploy etcd operator and create an etcd cluster
+
+```
+Captains-Bay]🚩 >  helm install --name etcd-operator stable/etcd-operator --namespace compose
+NAME:   etcd-operator
+LAST DEPLOYED: Fri Jan 11 10:08:06 2019
+NAMESPACE: compose
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/ServiceAccount
+NAME                                               SECRETS  AGE
+etcd-operator-etcd-operator-etcd-backup-operator   1        1s
+etcd-operator-etcd-operator-etcd-operator          1        1s
+etcd-operator-etcd-operator-etcd-restore-operator  1        1s
+
+==> v1beta1/ClusterRole
+NAME                                       AGE
+etcd-operator-etcd-operator-etcd-operator  1s
+
+==> v1beta1/ClusterRoleBinding
+NAME                                               AGE
+etcd-operator-etcd-operator-etcd-backup-operator   1s
+etcd-operator-etcd-operator-etcd-operator          1s
+etcd-operator-etcd-operator-etcd-restore-operator  1s
+
+==> v1/Service
+NAME                   TYPE       CLUSTER-IP      EXTERNAL-IP  PORT(S)    AGE
+etcd-restore-operator  ClusterIP  10.104.102.245  <none>       19999/TCP  1s
+
+==> v1beta1/Deployment
+NAME                                               DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+etcd-operator-etcd-operator-etcd-backup-operator   1        1        1           0          1s
+etcd-operator-etcd-operator-etcd-operator          1        1        1           0          1s
+etcd-operator-etcd-operator-etcd-restore-operator  1        1        1           0          1s
+
+==> v1/Pod(related)
+NAME                                                             READY  STATUS             RESTARTS  AGE
+etcd-operator-etcd-operator-etcd-backup-operator-7978f8bc4r97s7  0/1    ContainerCreating  0         1s
+etcd-operator-etcd-operator-etcd-operator-6c57fff9d5-kdd7d       0/1    ContainerCreating  0         1s
+etcd-operator-etcd-operator-etcd-restore-operator-6d787599vg4rb  0/1    ContainerCreating  0         1s
+
+
+NOTES:
+1. etcd-operator deployed.
+  If you would like to deploy an etcd-cluster set cluster.enabled to true in values.yaml
+  Check the etcd-operator logs
+    export POD=$(kubectl get pods -l app=etcd-operator-etcd-operator-etcd-operator --namespace compose --output name)
+    kubectl logs $POD --namespace=compose
+[Captains-Bay]🚩 >
+```
+
+
+## Copy the below content into compose-etcd.yml
+
+```
+cat compose-etcd.yaml
+apiVersion: "etcd.database.coreos.com/v1beta2"
+kind: "EtcdCluster"
+metadata:
+  name: "compose-etcd"
+  namespace: "compose"
+spec:
+  size: 3
+  version: "3.2.13"
+```
+
+##
+
+```
+kubectl apply -f compose-etcd.yml
+etcdcluster "compose-etcd" created
+
+
+```
+
+This should bring an etcd cluster in the compose namespace.
+
+## Download the Compose Installer
+
+```
+wget https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.17/installer-darwin
 ```
 
 ## 
