@@ -15,9 +15,9 @@ VOLUME /data
 Execute the following commands:
 
 ```
-docker build -f volume -t sagarj/volume:1 .
+docker build -f volume -t collabnix/volume:1 .
 
-docker run sagarj/volume:1
+docker run collabnix/volume:1
 
 docker volume ls
 
