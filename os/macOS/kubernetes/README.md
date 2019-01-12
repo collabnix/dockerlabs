@@ -1,4 +1,4 @@
-# Deploy Application on Kubernetes Cluster using Compose on Kubernetes on Docker Desktop 2.0.1.0 for Mac
+# Deploy Application on Kubernetes Cluster using Compose on Kubernetes running on Docker Desktop 2.0.1.0 for Mac
 
 
 Kubernetes is available in Docker for Mac 17.12 CE Edge and higher, and 18.06 Stable and higher , this includes a standalone Kubernetes server and client, as well as Docker CLI integration. The Kubernetes server runs locally within your Docker instance, is not configurable, and is a single-node cluster.
