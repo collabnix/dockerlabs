@@ -38,15 +38,15 @@ ENTRYPOINT echo ${MESSAGE} > ${FILENAME} && ls
 Execute following commands:
 
 ```
-docker build -f volume_test -t sagarj/volume_test:1 .
+docker build -f volume_test -t collabnix/volume_test:1 .
 
 docker run --env MESSAGE="GOOD Morning" --env FILENAME=morning_message\
  --mount type=volume,source=demo,target=/data \
- sagarj/volume_test:1
+ collabnix/volume_test:1
  
  docker run --env MESSAGE="GOOD Afternoon" --env FILENAME=afternoon_message\
   --mount type=volume,source=demo,target=/data \
-  sagarj/volume_test:1
+  collabnix/volume_test:1
 
 docker volume ls
 
