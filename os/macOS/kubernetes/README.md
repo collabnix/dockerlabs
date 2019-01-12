@@ -3,6 +3,7 @@
 ## Pre-requisite:
 
 - Install Docker Desktop 2.0.1.0 for Mac
+- Enable Kubernetes under Preference UI
 
 
 ## Steps to follow
@@ -51,6 +52,8 @@ ety51y7hfwfi        myapp2_db1          replicated          2/2                 
 9vkik71wtfox        myapp2_web1         replicated          3/3                 nginx:alpine        *:8083->80/tcp
 ```
 
+## Scale the Web Services to 5 replicas
+
 ```
 docker service scale myapp2_web1=5
 myapp2_web1 scaled to 5
@@ -62,3 +65,13 @@ overall progress: 5 out of 5 tasks
 5/5: running
 verify: Service converged
 ```
+
+## Verifying Final List of Replicas
+
+```
+docker service ls
+ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
+ety51y7hfwfi        myapp2_db1          replicated          2/2                 nginx:alpine
+9vkik71wtfox        myapp2_web1         replicated          5/5                 nginx:alpine        *:8083->80/tcp
+```
+
