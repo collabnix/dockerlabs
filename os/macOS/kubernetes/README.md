@@ -102,3 +102,70 @@ ety51y7hfwfi        myapp2_db1          replicated          2/2                 
 9vkik71wtfox        myapp2_web1         replicated          5/5                 nginx:alpine        *:8083->80/tcp
 ```
 
+## Cleaning Up
+
+
+
+## Scenarios:2 
+
+
+## Verifying Kubectl
+
+```
+[Captains-Bay]🚩 >  kubectl version
+Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.6", GitCommit:"6260bb08c46c31eea6cb538b34a9ceb3e406689c", GitTreeState:"clean", BuildDate:"2017-12-21T06:34:11Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"darwin/amd64"}
+Server Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.0", GitCommit:"ddf47ac13c1a9483ea035a79cd7c10005ff21a6d", GitTreeState:"clean", BuildDate:"2018-12-03T20:56:12Z", GoVersion:"go1.11.2", Compiler:"gc", Platform:"linux/amd64"}
+```
+
+## Verifying Kubernetes Nodes
+
+```
+[Captains-Bay]🚩 >  kubectl get nodes
+NAME             STATUS    ROLES     AGE       VERSION
+docker-desktop   Ready     master    17h       v1.13.0
+[Captains-Bay]🚩 >
+```
+
+## Deploying the Apps
+
+```
+[Captains-Bay]🚩 >  docker stack deploy -c docker-compose1.yml myapp1
+Waiting for the stack to be stable and running...
+db1: Ready		[pod status: 1/2 ready, 1/2 pending, 0/2 failed]
+web1: Ready		[pod status: 1/3 ready, 2/3 pending, 0/3 failed]
+
+Stack myapp1 is stable and running
+```
+
+## Verifying App Stack
+
+```
+[Captains-Bay]🚩 >  docker stack ls
+NAME                SERVICES            ORCHESTRATOR        NAMESPACE
+myapp1              2                   Kubernetes          default
+```
+
+```
+[Captains-Bay]🚩 >  kubectl get all
+NAME          AGE
+deploy/db1    13s
+deploy/web1   13s
+
+NAME                 AGE
+rs/db1-6cf565f7cc    13s
+rs/web1-69c7f5d64b   13s
+
+NAME                       READY     STATUS    RESTARTS   AGE
+po/db1-6cf565f7cc-p49bp    1/1       Running   0          13s
+po/db1-6cf565f7cc-z9lnw    1/1       Running   0          13s
+po/web1-69c7f5d64b-jhwgh   1/1       Running   0          13s
+po/web1-69c7f5d64b-pmx79   1/1       Running   0          13s
+po/web1-69c7f5d64b-x7r7b   1/1       Running   0          13s
+
+NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+svc/db1              ClusterIP      None            <none>        55555/TCP        13s
+svc/kubernetes       ClusterIP      10.96.0.1       <none>        443/TCP          17h
+svc/web1             ClusterIP      None            <none>        55555/TCP        13s
+svc/web1-published   LoadBalancer   10.101.67.167   localhost     8083:32350/TCP   13s
+[Captains-Bay]🚩 >
+```
