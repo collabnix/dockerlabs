@@ -28,26 +28,27 @@ Kops, short for Kubernetes Operations, is a set of tools for installing, operati
 ```
 [Captains-Bay]🚩 >  docker version
 Client: Docker Engine - Community
- Version:           18.09.0
+ Version:           18.09.1
  API version:       1.39
- Go version:        go1.10.4
- Git commit:        4d60db4
- Built:             Wed Nov  7 00:47:43 2018
+ Go version:        go1.10.6
+ Git commit:        4c52b90
+ Built:             Wed Jan  9 19:33:12 2019
  OS/Arch:           darwin/amd64
  Experimental:      false
 
 Server: Docker Engine - Community
  Engine:
-  Version:          18.09.0
+  Version:          18.09.1
   API version:      1.39 (minimum version 1.12)
-  Go version:       go1.10.4
-  Git commit:       4d60db4
-  Built:            Wed Nov  7 00:55:00 2018
+  Go version:       go1.10.6
+  Git commit:       4c52b90
+  Built:            Wed Jan  9 19:41:49 2019
   OS/Arch:          linux/amd64
   Experimental:     true
  Kubernetes:
-  Version:          v1.10.3
+  Version:          v1.12.4
   StackAPI:         v1beta2
+[Captains-Bay]🚩 >
   ```
 
 
