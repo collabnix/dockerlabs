@@ -339,3 +339,22 @@ Server: Docker Engine - Community
   StackAPI:         v1beta2
 [Captains-Bay]🚩 >
 ```
+
+```
+[Captains-Bay]🚩 >  docker stack deploy -c docker-compose2.yml myapp4
+Waiting for the stack to be stable and running...
+db1: Ready		[pod status: 1/2 ready, 1/2 pending, 0/2 failed]
+web1: Ready		[pod status: 2/2 ready, 0/2 pending, 0/2 failed]
+
+Stack myapp4 is stable and running
+
+[Captains-Bay]🚩 >  docker stack ls
+NAME                SERVICES            ORCHESTRATOR        NAMESPACE
+myapp4              2                   Kubernetes          default
+[Captains-Bay]🚩 >  kubectl get po
+NAME                    READY     STATUS    RESTARTS   AGE
+db1-55959c855d-jwh69    1/1       Running   0          57s
+db1-55959c855d-kbcm4    1/1       Running   0          57s
+web1-58cc9c58c7-sgsld   1/1       Running   0          57s
+web1-58cc9c58c7-tvlhc   1/1       Running   0          57s
+```
