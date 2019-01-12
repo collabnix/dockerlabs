@@ -6,7 +6,7 @@
 - Enable Kubernetes under Preference UI
 
 
-## Steps to follow
+## Scenario #1: Demonstrating Swarm as Orchestrator
 
 ## Verify Docker Version
 
