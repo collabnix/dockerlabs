@@ -104,7 +104,7 @@ ety51y7hfwfi        myapp2_db1          replicated          2/2                 
 
 ## Cleaning Up
 
-
+You can use ```docker service rm myapp2_db1 myapp2_web1``` to clean up services, though I was expecting it being done directly via `docker stack rm myapp1`.
 
 ## Scenarios:2 
 
