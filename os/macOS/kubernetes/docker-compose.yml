@@ -4,7 +4,11 @@ services:
   web1:
     image: nginx:alpine
     ports:
-      - 8082:80
+      - "8083:80"
+    deploy:
+      replicas: 3
   db1:
     image: nginx:alpine
+    deploy:
+      replicas: 2
 
