@@ -42,7 +42,7 @@ This variable can be unset (the default, in which case Kubernetes is the orchest
 The following command overrides the orchestrator for a single deployment, by setting the variable at the start of the command itself.
 
 ```
-DOCKER_STACK_ORCHESTRATOR=swarm docker stack deploy -c docker-compose1.yml myapp2
+DOCKER_STACK_ORCHESTRATOR=swarm docker stack deploy -c docker-compose.yml myapp2
 ```
 
 ```
