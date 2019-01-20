@@ -48,5 +48,19 @@ EOF
 ## Cloning the Compose on Kubernetes Repository
 
 echo "Cloning Compose on K8s Repo..."
-git clone https://github.com/docker/compose-on-kubernetes
+git clone https://github.com/collabnix/compose-on-kubernetes
 cd compose-on-kubernetes
+
+## Download the installer
+
+wget https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.18/installer-linux
+chmod +x installer-linux
+./installer -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.16 
+
+## Verifying 
+
+kubectl api-versions | grep compose
+
+## Getting the Stack
+
+kubectl get stacks
