@@ -45,7 +45,46 @@ node5     Ready     <none>    7m        v1.11.3
 [node1 install]$
 ```
 
+## Steps to follow:
 
+```
+kubectl create namespace compose
+```
+
+```
+[node1 install]$ curl https://storage.googleapis.com/kubernetes-helm/helm-v2.12.1-linux-amd64.tar.gz -o helm-v2.12.1-linux-amd64.tar.gz``
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 21.6M  100 21.6M    0     0  11.8M      0  0:00:01  0:00:01 --:--:-- 11.8M
+[node1 install]$ tar xvf helm-v2.12.1-linux-amd64.tar.gz
+linux-amd64/
+linux-amd64/tiller
+linux-amd64/helm
+linux-amd64/LICENSE
+linux-amd64/README.md
+
+```
+[node1 linux-amd64]$ ./helm init --service-account tiller --upgradeCreating /root/.helm
+Creating /root/.helm/repository
+Creating /root/.helm/repository/cache
+Creating /root/.helm/repository/local
+Creating /root/.helm/plugins
+Creating /root/.helm/starters
+Creating /root/.helm/cache/archive
+Creating /root/.helm/repository/repositories.yaml
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com
+Adding local repo with URL: http://127.0.0.1:8879/charts
+$HELM_HOME has been configured at /root/.helm.
+
+Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
+
+```
+
+
+
+```
+
+```
 
 
 
