@@ -16,14 +16,37 @@ Kops, short for Kubernetes Operations, is a set of tools for installing, operati
 ## Pre-requisite
 
 - Go to https://labs.play-with-k8s.com
-- Clone the Repository
+- Create your 1st Instance
+- Clone the Repository and run this script on your 1st instance
+
+```
+git clone https://github.com/collabnix/dockerlabs
+cd dockerlabs/kubernetes/scripts/
+```
+
+- Execute this script
+
+```
+sh bootstrap.sh
+```
+
+- Copy the ```kubeadm join..``` command which gets displayed during the end of output of the last script and run the command on all the other 4 nodes
+
+- Verify the 5-Node K8s cluster
+
+```
+[node1 install]$ kubectl get nodes
+NAME      STATUS    ROLES     AGE       VERSION
+node1     Ready     master    17m       v1.11.3
+node2     Ready     <none>    7m        v1.11.3
+node3     Ready     <none>    7m        v1.11.3
+node4     Ready     <none>    7m        v1.11.3
+node5     Ready     <none>    7m        v1.11.3
+[node1 install]$
+```
 
 
 
-![My Image](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/Intermediate/dockerdesktop1.png)
 
 
 
-
-
-## Verifying Docker Desktop
