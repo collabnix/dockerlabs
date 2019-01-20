@@ -62,6 +62,7 @@ linux-amd64/tiller
 linux-amd64/helm
 linux-amd64/LICENSE
 linux-amd64/README.md
+```
 
 ```
 [node1 linux-amd64]$ ./helm init --service-account tiller --upgradeCreating /root/.helm
