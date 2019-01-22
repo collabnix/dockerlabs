@@ -25,3 +25,26 @@ Also, it could be an application oriented container like CakePHP container or a 
 Docker, Inc is the company behind development of Docker, an open-source project that automates the deployment of code inside software containers. 
 Docker, Inc had over 500 employees in 2018 and is based in San Francisco, California . Docker is the leader in the containerization market, combining an enterprise-grade container platform with world-class services to give developers and IT alike the freedom to build, manage and secure applications without the fear of technology or infrastructure lock-in. Today’s organizations are under pressure to digitally transform their business 
 but are constrained by a diverse portfolio of applications, clouds and premises-based infrastructures
+
+
+## Milestones of Docker Inc.
+
+- December 2018: Docker Announces Docker Desktop Enterprise
+- October 2018: Docker named a Leader in The Forrester New Wave™: Enterprise Container Platform Software Suites, Q4 2018 report
+- June 2018: Docker Provides Federated Application Management Across Multiple Clouds
+- April 2018: Docker announces Enterprise Edition 2.0
+- January 2018: Docker Surpasses 50B container downloads
+- October 2017: Docker integrates Kubernetes into Docker Enterprise Edition
+- May 2017: Steve Singh becomes CEO
+- April 2017: Docker Open Sources the Moby Project and LinuxKit
+- March 2017: Docker Announces Enterprise Edition
+- December 2016: Docker Donates containerd to the CNCF
+- October 2016: Alibaba Cloud and Docker Partner to Drive Adoption of Containerized Applications in China
+- June 2016: Docker 1.12 with integrated Orchestration
+- January 2016: Docker Surpasses 18B Container Download
+- June 2015: Docker Forms OCI to Defines Industry Standards
+- April 2015: Docker Secures Series D Funding
+- March 2015: Docker Second Birthday
+- December 2014: Docker reaches 100M Downloads
+- June 2014: Docker Engine 1.0 GA and DockerCon 1
+- March 2013: PyCon Lightning talk by Solomon Hykes introduces Docker
