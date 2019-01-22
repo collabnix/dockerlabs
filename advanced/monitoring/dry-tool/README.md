@@ -195,11 +195,16 @@ dry -v
 
 ```
 
-Now, run Dry. Type dry in the command and hit [enter]. You should get the similar output where your containers are running.
+Next, time to tun dry. 
+Type dry in the command and hit [enter]. 
+
+You should get the similar output where your containers are running.
 ![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture1.png)
 
 
-for more details https://github.com/moncho/dry
+# Reference:
+
+- https://github.com/moncho/dry
 
 ## Contributor - 
 
