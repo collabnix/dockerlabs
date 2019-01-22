@@ -151,8 +151,8 @@ Stop
 
 ![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture1.png)
 
-### Press [2] to switch to Docker images. It will show a list of your Docker images.
-### Select any image from the list and hit [enter] to show the details of the selected image.
+ - Press [2] to switch to Docker images. It will show a list of your Docker images.
+ - Select any image from the list and hit [enter] to show the details of the selected image.
 
 You can use the shortcuts in Dry:<br>
 “Ctrl + D” to remove dangling. It is equivalent to docker volume rm with the flag dangling=true <br>
@@ -163,26 +163,26 @@ You can use the shortcuts in Dry:<br>
 
 ![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture1.png)
 
-### Press [3] to switch to Docker networks. It will show a list of your active Docker networks. 
-### Select any network from the list and hit [enter] to fetch and show the details of the selected network. The output will look similar to the below: 
+- Press [3] to switch to Docker networks. It will show a list of your active Docker networks. 
+- Select any network from the list and hit [enter] to fetch and show the details of the selected network. The output will look similar to the below: 
 
 ![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture3.png)
 
-# manual method 
+# Manual method 
 
-## Download the latest version of Dry :
+Download the latest version of Dry :
 
 ```
 wget https://github.com/moncho/dry/releases/download/v0.9-beta.3/dry-linux-amd64
 
 ```
-## Move the file to /usr/local/bin/dry
+## Moving the file to /usr/local/bin/dry
 
 ```
 sudo mv dry-linux-amd64 /usr/local/bin/dry
 
 ```
-## Provide the access permissions.
+## Providing the access permissions.
 
 ```
 sudo chmod 755 /usr/local/bin/dry
@@ -200,7 +200,8 @@ Now, run Dry. Type dry in the command and hit [enter]. You should get the simila
 
 
 for more details https://github.com/moncho/dry
+
 ## Contributor - 
 
-Sangam biradar - smbiradar14@gmail.com -https://engineitops.github.io 
+[Sangam biradar](smbiradar14@gmail.com) -https://engineitops.github.io 
 
