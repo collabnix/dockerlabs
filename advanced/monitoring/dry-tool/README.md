@@ -1,6 +1,11 @@
-#  Manage and Monitor the Docker Containers with Dry Tool in 5 Min
+#  Manage and Monitor Your Docker Containers with Dry Tool in 5 Min
 
+If you are looking out for a tool which can manage Docker & Docker Swarm, you really need to try out "Dry" tool. With close to 1500 stars in short span of time, this tool is a terminal application to manage both Docker Host & Docker Swarm Mode.It shows information about Containers, Images and Networks, and, if running a Swarm cluster, it shows information about Nodes, Service, Stacks and the rest of Swarm constructs. It can be used with both local or remote Docker daemons.
 
+Besides showing information, it can be used to manage Docker. Most of the commands that the official Docker CLI provides, are available in dry with the same behaviour. A list of available commands and their keybindings can be found in dry's help screen or in this README.
+Lastly, it can also be used as a monitoring tool for Docker containers.Dry can be installed as a single binary and does not require external libraries.
+
+Under this tutorial, I will show you how to get started with this tool to manage and monitor your Docker containers
 
 ## Tested Infrastructure
 
@@ -26,17 +31,10 @@
 - Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
-## Run multiple containers in an interactive and detached mode. 
+## Running Multiple containers in an interactive and detached mode. 
 
 
-```
-docker pull busybox
-docker pull hello-world
-docker run -t -d busybox
-docker run -t -d hello-world
 
-```
-## you will get on screen like this 
 ```
 [node1] (local) root@192.168.0.33 ~
 $ docker pull busybox
@@ -45,7 +43,9 @@ latest: Pulling from library/busybox
 57c14dd66db0: Pull complete
 Digest: sha256:7964ad52e396a6e045c39b5a44438424ac52e12e4d5a25d94895f2058cb863a0
 Status: Downloaded newer image for busybox:latest
+```
 
+```
 [node1] (local) root@192.168.0.33 ~
 $ docker pull hello-world
 Using default tag: latest
@@ -53,28 +53,34 @@ latest: Pulling from library/hello-world
 1b930d010525: Pull complete
 Digest: sha256:2557e3c07ed1e38f26e389462d03ed943586f744621577a99efb77324b0fe535
 Status: Downloaded newer image for hello-world:latest
+```
 
+```
 [node1] (local) root@192.168.0.33 ~
 $ docker run -t -d busybox
 7c96cde9894fd9ff42d1c3638cad65cf306cb2757b3925a925f4d421a510a79f
-
+```
+```
 [node1] (local) root@192.168.0.33 ~
 $ docker run -t -d hello-world
 7a4198a31f61c380ddbe3b06eeb313da74de3d232727b0325937434900e8be8d
-
-
 ```
-## Confirm if the containers are up and running: 
+
+
+## Verifying if containers are Up and Running: 
 
 ```
 $ docker ps
 
 ```
-## You can check the exited containers:
+## Verifying the exited containers
+
 ```
 $ docker ps -a
 ```
-## you will get on screen like this 
+
+## Observe the below results:
+
 ```
 [node1] (local) root@192.168.0.33 ~
 $ docker ps
@@ -87,12 +93,17 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 7c96cde9894f        busybox             "sh"                3 minutes ago       Up 3 minutes                                 romantic_greider
 
 ```
+
 # Direct method 
-## if you want to run dry tool directly than use this one magical command 
+
+## Running Dry tool in a single Shot 
+
 ```
 $ docker run -it -v /var/run/docker.sock:/var/run/docker.sock moncho/dry
 ```
-## you will get on screen like this 
+
+
+
 ```
 [node1] (local) root@192.168.0.33 ~
 $ docker run -it -v /var/run/docker.sock:/var/run/docker.sock moncho/dry
@@ -108,6 +119,7 @@ Status: Downloaded newer image for moncho/dry:latest
 
 
 ## Interacting with Docker Containers:
+
 Use the navigation keys mentioned below to interact with the terminal.
 
 ```
@@ -116,7 +128,8 @@ Use the navigation keys mentioned below to interact with the terminal.
 
 ```
 
-## Select any container from the list and hit [enter] to open the options:
+### Select any container from the list and hit [enter] to open the options:
+
 ```
 Fetch logs
 Inspect container
@@ -128,7 +141,8 @@ Stats + Top
 Stop
 
 ```
-## you will get on screen like this 
+## Verifying the Results
+
 ![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/pic2.png)
 
 
@@ -137,17 +151,21 @@ Stop
 
 ![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture1.png)
 
-## Press [2] to switch to Docker images. It will show a list of your Docker images.
-## Select any image from the list and hit [enter] to show the details of the selected image.
+### Press [2] to switch to Docker images. It will show a list of your Docker images.
+### Select any image from the list and hit [enter] to show the details of the selected image.
+
 You can use the shortcuts in Dry:<br>
 “Ctrl + D” to remove dangling. It is equivalent to docker volume rm with the flag dangling=true <br>
 “Ctrl + E” to remove image. It is equivalent to docker rmi. <br>
 “CTRL + F” to force remove. It is equivalent to docker rmi --force <br>
 
 ## 3.Interacting with Docker Networks:
+
 ![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture1.png)
-## Press [3] to switch to Docker networks. It will show a list of your active Docker networks. 
-## Select any network from the list and hit [enter] to fetch and show the details of the selected network. The output will look similar to the below: 
+
+### Press [3] to switch to Docker networks. It will show a list of your active Docker networks. 
+### Select any network from the list and hit [enter] to fetch and show the details of the selected network. The output will look similar to the below: 
+
 ![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture3.png)
 
 # manual method 
