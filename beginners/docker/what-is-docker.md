@@ -50,4 +50,8 @@ Docker, Inc is the company behind development of Docker, an open-source project 
 - June 2014: Docker Engine 1.0 GA and DockerCon 1
 - March 2013: PyCon Lightning talk by Solomon Hykes introduces Docker
 
+## Contributor
+
+- [Ajeet S Raina](ajeetraina@gmail.com)
+
 [Proceed >> What are Containers?](https://github.com/collabnix/dockerlabs/blob/master/beginners/linux-containers.md)
