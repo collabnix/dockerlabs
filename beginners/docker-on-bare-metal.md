@@ -1,6 +1,6 @@
 # Top Reasons WHY TO & WHY NOT TO run Docker containers on Bare Metal System
 
-## WHY TO RUN CONTAINERS ON BARE METAL SYSTEM
+## Why to run containers on Bare Metal System?
 
 Containers on bare-metal hosts get many of the advantages VMs offer but without the drawbacks of virtualization:
 
