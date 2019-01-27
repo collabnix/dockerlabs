@@ -10,7 +10,7 @@ In the other hand, Docker containers are executed with the Docker engine rather 
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/images/vm-docker2.png)
 
-Docker containers are executed with the Docker engine rather than the hypervisor. Containers are therefore smaller than Virtual Machines and enable faster start up with better performance, less isolation and greater compatibility possible due to sharing of the host’s kernel.
+
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/images/vm-docker3.png)
 
@@ -30,7 +30,7 @@ As compared to virtual machines, containers can be faster and less resource heav
 There is an estimation being done by Docker that application running in a container can go twice as fast as one in a virtual machine. Also, a single server can pack more than one containers as OS is not duplicated for each application.
 
  
-Virtual Machines and Containers: better together
+# Virtual Machines and Containers: better together
 
  
 You can sometimes use a hybrid approach which uses both VM and Docker. There are also workloads which are best suited for physical hardware. If both are placed in a hybrid approach, it might lead to a better and efficient scenario. With this Hybrid setup, users can benefit from the advantages if they have workloads that fit the model. 
@@ -54,7 +54,7 @@ Following are a few of them, that explain how they work together as a Hybrid:
 Apples to apples comparison: On a physical host with a certain configuration and Virtual Machines with the same configuration running an identical running same number of docker Containers with the same performance on both?
 
  
-Who wins amongst the two?
+# Okay. Who's the winner?
 
  
 Answer to this question so far cannot be ascertained but depending upon their configurations and constraints one could say that containers are overcoming virtual machines. Application design is the one standpoint suggesting which one of the two should be chosen. If application is designed to provide scalability and high availability then containers are the best choice else application can be placed in a virtual machine, though Docker containers have surely challenged  virtualization market with containers. Well, keeping the debate aside, it is easy to say that containers in Virtual Machines are twice as robust as one without the other.
