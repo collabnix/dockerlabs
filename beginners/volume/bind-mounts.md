@@ -24,6 +24,30 @@
 - Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
 - Click on "Add New Node"
 
+
+## Using custom "bind-mounts"
+
+In some cases, you want a specific directory on the host to be mapped
+inside the container:
+
+* You want to manage storage and snapshots yourself.
+
+    (With LVM, or a SAN, or ZFS, or anything else!)
+
+* You have a separate disk with better performance (SSD) or resiliency (EBS)
+  than the system disk, and you want to put important data on that disk.
+
+* You want to share your source directory between your host (where the
+  source gets edited) and the container (where it is compiled or executed).
+
+Wait, we already met the last use-case in our example development workflow!
+Nice.
+
+```bash
+$ docker run -d -v /path/on/the/host:/path/in/container image ...
+```
+
+
 Execute the following commands:
 
 
