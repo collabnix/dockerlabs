@@ -4,4 +4,4 @@ Docker containers might look very similar to Virtual Machines, especially for th
 
 ![Component View](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/images/vm-docker6.png)
 
-[Proceed >> Difference between Docker & Virtual Machine](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-vm-containers.md)
+[Proceed >> Difference between Container & Virtual Machine](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-vm-containers.md)
