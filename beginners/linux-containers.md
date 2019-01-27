@@ -148,4 +148,4 @@ As shown in Figure 4, the container doesn't carry around physical code within it
 
 IT professionals can soon expect to see how containers will evolve from here. Containers exist in a highly dynamic and changing world. They optimize resource utilization and provide much needed flexibility better than their predecessors, so enterprise IT organizations should prepare to use them.
 
-[Proceed >>](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-docker-vm.md)
+[Proceed >> Docker Vs Virtua Machines](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-docker-vm.md)
