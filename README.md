@@ -35,7 +35,7 @@ Below are the list of categories:
 
 - [Docker Cheatsheet](https://github.com/collabnix/dockerlabs/tree/master/docker/cheatsheet/README.md)
 
-- [Docker Interview Questions]()
+- [Docker Certificate Associate Exam Preparation](https://github.com/collabnix/dockerlabs/tree/master/docker/dca.md)
 
 
 ## Kubernetes
