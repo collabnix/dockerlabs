@@ -37,6 +37,8 @@ Below are the list of categories:
 
 - [Docker Certificate Associate Exam Preparation](https://github.com/collabnix/dockerlabs/tree/master/docker/dca.md)
 
+- [Docker Interview Questions](https://github.com/collabnix/dockerlabs/tree/master/docker/docker-interview-questions.md)
+
 
 ## Kubernetes
 
