@@ -75,14 +75,6 @@ Getting new hardware up, running, provisioned, and available used to take days. 
 
 So, Docker technology is a more granular, controllable, microservices-based approach that places greater value on efficiency.
 
-# Are there limitations to using Docker?
-
-Docker, by itself, is very good at managing single containers. When you start using more and more containers and containerized apps, broken down into hundreds of pieces, management and orchestration can get very difficult. Eventually, you need to take a step back and group containers to deliver services—networking, security, telemetry, etc.— across all of your containers. That's where Kubernetes comes in.
-
-With Docker, you don’t get the same UNIX-like functionality that you get with traditional Linux containers. This includes being able to use processes like cron or syslog within the container, alongside your app. There are also limitations on things like cleaning up grandchild processes after you terminate child processes—something that is inherently handled in traditional Linux containers. These concerns can be mitigated by modifying the configuration file and setting up these abilities from the start–not something immediately obvious on first look.
-
-On top of this, there are other Linux subsystems and devices that aren’t namespaced. These include SELinux, Cgroups, and /dev/sd* devices. This means that if an attacker gains control over these subsystems, the host is compromised. In order to stay lightweight, the sharing of the host kernel with containers opens this security vulnerability possibility. This differs from virtual machines, which are much more tightly segregated from the host system.
-
 
 
 
