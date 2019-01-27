@@ -3,7 +3,7 @@
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/images/dockerinc.jpg)
 
 
-In 2019 "DOCKER" refers to several things. This includes an open source community project which started in 2013; tools from the open source project; Docker Inc., the company that is the primary supporter of that project; and the tools that the company formally supports. 
+In 2019, "DOCKER" refers to several things. This includes an open source community project which started in 2013; tools from the open source project; Docker Inc., the company that is the primary supporter of that project; and the tools that the company formally supports. 
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/images/docker_facebook_share.png)
 
