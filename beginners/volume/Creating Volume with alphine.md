@@ -33,7 +33,9 @@ Verify the existence of Docker volume<br>
 
 ## Create a Docker volume and pull Alpine image
 Create a Docker volume to which you will add persistent data.
+```
 docker volume create --name mydata
+```
 
 Create a Docker container, attach the data volume, and add persistent data. Pull a lightweight Alpine distribution image.
 docker pull alpine
