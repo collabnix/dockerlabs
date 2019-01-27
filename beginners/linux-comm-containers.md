@@ -1,6 +1,6 @@
 # Can container communication cross over to noncontainerized apps?
 
-Let us start with a popular question - Can an application have Python as a container, run SQL queries on an external Microsoft SQL database and publish the results on an Apache web server container? 
+Let us start with a popular question - Can an application having Python as a container, run SQL queries on an external Microsoft SQL database and publish the results on an Apache web server container? 
 
 The answer is "Absolutely, Yes its possible."Under this page, we will deep dive into this subject.
 
