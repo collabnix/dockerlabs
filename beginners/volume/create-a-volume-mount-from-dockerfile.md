@@ -26,6 +26,26 @@
 - Click on "Add New Node"
 
 
+## Volumes are special directories in a container
+
+Volumes can be declared in two different ways.
+
+* Within a `Dockerfile`, with a `VOLUME` instruction.
+
+```dockerfile
+VOLUME /uploads
+```
+
+* On the command-line, with the `-v` flag for `docker run`.
+
+```bash
+$ docker run -d -v /uploads myapp
+```
+
+In both cases, `/uploads` (inside the container) will be a volume.
+
+
+
 Create a file with name volume and paste the following content to it:
 
 ```
