@@ -17,11 +17,14 @@ In the other hand, Docker containers are executed with the Docker engine rather 
  
 ## Docker Containers versus Virtual Machines:
 
+![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/images/vm-docker4.png)
  
 When it comes to comparing the two, it could be said that Docker Containers have much more potential than Virtual Machines. It’s evident as Docker Containers are able to share a single kernel and share application libraries. Containers present a lower system overhead than Virtual Machines and performance of the application inside a container is generally same or better as compared to the same application running within a Virtual Machine.
 
  
 There is one key metric where Docker Containers are weaker than Virtual Machines, and that’s “Isolation”. Intel’s VT-d and VT- x technologies have provided Virtual Machines with ring-1 hardware isolation of which, it takes full advantage. It helps Virtual Machines from breaking down and interfering with each other. Docker Containers yet don’t have any hardware isolation, thus making them receptive to exploits.
+
+![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/images/vm-docker5.png)
 
  
 As compared to virtual machines, containers can be faster and less resource heavy as long as the user is willing to stick to a single platform to provide the shared OS. A virtual machine could take up several minutes to create and launch whereas a container can be created and launched just in a few seconds. Applications contained in containers offer superior performance, compared to running the application within a virtual machine.
