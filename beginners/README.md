@@ -95,7 +95,7 @@
 [Managing volumes through Docker CLI](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/managing-volumes-via-docker-cli.md)<br>
 [Creating Volume Mount from **docker run** command & sharing same Volume Mounts among multiple containers](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/creating-volume-mount-from-dockercli.md)<br>
 [Mounting host directory into container](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/bind-mounts.md)<br>
-[Creating Volume with Alpine OS](https://github.com/collabnix/dockerlabs/tree/master/beginners/volumes/creating-volumes-with-alpine.md)<br>
+[Creating Volume with Alpine OS](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/Creating%20Volume%20with%20alphine.md)<br>
 
 # FAQs
 
