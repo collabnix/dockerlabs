@@ -3,6 +3,7 @@
 # Introduction to Docker 
 
 - [What is Docker?](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/what-is-docker.md)
+- [Difference between Docker & Container](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/docker-vs-container.md)
 - [What are Containers? What are they used for?](https://github.com/collabnix/dockerlabs/blob/master/beginners/linux-containers.md)
 - [Difference between VM and Docker](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-docker-vm.md)
 - [Similarity between VM and Docker](https://github.com/collabnix/dockerlabs/blob/master/beginners/similarity-vm-docker.md)
