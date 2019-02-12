@@ -44,6 +44,8 @@ WARNING: Adding a user to the "docker" group will grant the ability to run
 @collabnix:~$ sudo usermod -aG docker robertsingh181
 ```
 
+# Verifying Docker Version
+
 ```
 $sudo docker version
 Client:
@@ -64,6 +66,8 @@ Server: Docker Engine - Community
   OS/Arch:          linux/amd64
   Experimental:     false
   ```
+  
+  # Verifying Containerd Version
   
   ```
   $ sudo containerd --help
