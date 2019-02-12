@@ -43,3 +43,24 @@ WARNING: Adding a user to the "docker" group will grant the ability to run
          for more information.
 @collabnix:~$ sudo usermod -aG docker robertsingh181
 ```
+
+```
+ sudo docker version
+Client:
+ Version:           18.09.2
+ API version:       1.39
+ Go version:        go1.10.6
+ Git commit:        6247962
+ Built:             Sun Feb 10 04:13:46 2019
+ OS/Arch:           linux/amd64
+ Experimental:      false
+Server: Docker Engine - Community
+ Engine:
+  Version:          18.09.2
+  API version:      1.39 (minimum version 1.12)
+  Go version:       go1.10.6
+  Git commit:       6247962
+  Built:            Sun Feb 10 03:42:13 2019
+  OS/Arch:          linux/amd64
+  Experimental:     false
+  ```
