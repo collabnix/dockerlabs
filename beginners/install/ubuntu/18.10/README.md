@@ -1,4 +1,4 @@
-# How to Install Docker Engine 18.09.2 on Ubuntu 10
+# How to Install Docker Engine 18.09.2 on Ubuntu 18.10
 
 ```
 sudo curl -sSL https://get.docker.com/ | sh
