@@ -97,3 +97,48 @@ GLOBAL OPTIONS:
    --help, -h                   show help
    --version, -v                print the version
   ```
+  
+  # Verifying Containerd Version
+  
+  ```
+  ctr version
+Client:
+  Version:  1.2.2
+  Revision: 9754871865f7fe2f4e74d43e2fc7ccd237edcbce
+  ```
+  
+  ```
+  / /__/ /_/ /
+\___/\__/_/
+containerd CLI
+USAGE:
+   ctr [global options] command [command options] [arguments...]
+VERSION:
+   1.2.2
+COMMANDS:
+     plugins, plugin           provides information about containerd plugins
+     version                   print the client and server versions
+     containers, c, container  manage containers
+     content                   manage content
+     events, event             display containerd events
+     images, image, i          manage images
+     leases                    manage leases
+     namespaces, namespace     manage namespaces
+     pprof                     provide golang pprof outputs for containerd
+     run                       run a container
+     snapshots, snapshot       manage snapshots
+     tasks, t, task            manage tasks
+     install                   install a new package
+     shim                      interact with a shim directly
+     cri                       interact with cri plugin
+     help, h                   Shows a list of commands or help for one command
+GLOBAL OPTIONS:
+   --debug                      enable debug output in logs
+   --address value, -a value    address for containerd's GRPC server (default: "/run/containerd/containerd.sock")
+   --timeout value              total timeout for ctr commands (default: 0s)
+   --connect-timeout value      timeout for connecting to containerd (default: 0s)
+   --namespace value, -n value  namespace to use with commands (default: "default") [$CONTAINERD_NAMESPACE]
+   --help, -h                   show help
+   --version, -v                print the version
+  
+  ```
