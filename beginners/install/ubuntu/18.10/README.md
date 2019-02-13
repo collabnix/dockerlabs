@@ -144,4 +144,30 @@ GLOBAL OPTIONS:
    --help, -h                   show help
    --version, -v                print the version
   
-  ```
+```
+
+
+
+```
+systemctl status docker.service
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2019-02-13 14:28:00 UTC; 17min ago
+     Docs: https://docs.docker.com
+ Main PID: 4743 (dockerd)
+    Tasks: 8
+   Memory: 30.5M
+   CGroup: /system.slice/docker.service
+           └─4743 /usr/bin/dockerd -H fd://
+
+Feb 13 14:27:58 node2 dockerd[4743]: time="2019-02-13T14:27:58.450228348Z" level=warning msg="Your kernel does not support swa
+Feb 13 14:27:58 node2 dockerd[4743]: time="2019-02-13T14:27:58.450475526Z" level=warning msg="Your kernel does not support cgr
+Feb 13 14:27:58 node2 dockerd[4743]: time="2019-02-13T14:27:58.450589830Z" level=warning msg="Your kernel does not support cgr
+Feb 13 14:27:58 node2 dockerd[4743]: time="2019-02-13T14:27:58.451457667Z" level=info msg="Loading containers: start."
+Feb 13 14:27:59 node2 dockerd[4743]: time="2019-02-13T14:27:59.005085922Z" level=info msg="Default bridge (docker0) is assigne
+Feb 13 14:27:59 node2 dockerd[4743]: time="2019-02-13T14:27:59.104795847Z" level=info msg="Loading containers: done."
+Feb 13 14:28:00 node2 dockerd[4743]: time="2019-02-13T14:28:00.549086174Z" level=info msg="Docker daemon" commit=6247962 graph
+Feb 13 14:28:00 node2 dockerd[4743]: time="2019-02-13T14:28:00.550147741Z" level=info msg="Daemon has completed initialization
+Feb 13 14:28:00 node2 systemd[1]: Started Docker Application Container Engine.
+Feb 13 14:28:00 node2 dockerd[4743]: time="2019-02-13T14:28:00.592676303Z" level=info msg="API listen on /var/run/docker.sock"
+```
