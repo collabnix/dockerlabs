@@ -182,3 +182,80 @@ Feb 13 14:28:00 node2 dockerd[4743]: time="2019-02-13T14:28:00.550147741Z" level
 Feb 13 14:28:00 node2 systemd[1]: Started Docker Application Container Engine.
 Feb 13 14:28:00 node2 dockerd[4743]: time="2019-02-13T14:28:00.592676303Z" level=info msg="API listen on /var/run/docker.sock"
 ```
+
+# Comparing `docker build` VS Buildkit
+
+```
+$ git clone https://github.com/ajeetraina/hellowhale
+Cloning into 'hellowhale'...
+remote: Enumerating objects: 28, done.
+remote: Total 28 (delta 0), reused 0 (delta 0), pack-reused 28
+Unpacking objects: 100% (28/28), done.
+```
+```
+~$ cd hellowhale/
+~$ ls
+Dockerfile  README.md  html  wrapper.sh
+```
+
+```
+:~/hellowhale$ time docker build -t ajeetraina/hellowhale .
+Sending build context to Docker daemon  153.1kB
+Step 1/4 : FROM nginx:latest
+latest: Pulling from library/nginx
+6ae821421a7d: Pull complete 
+da4474e5966c: Pull complete 
+eb2aec2b9c9f: Pull complete 
+Digest: sha256:dd2d0ac3fff2f007d99e033b64854be0941e19a2ad51f174d9240dda20d9f534
+Status: Downloaded newer image for nginx:latest
+ ---> f09fe80eb0e7
+Step 2/4 : COPY wrapper.sh /
+ ---> 10d671c6cf08
+Step 3/4 : COPY html /usr/share/nginx/html
+ ---> 3e8a09f56168
+Step 4/4 : CMD ["./wrapper.sh"]
+ ---> Running in b1f24992f9e5
+Removing intermediate container b1f24992f9e5
+ ---> 9dae85ca0867
+Successfully built 9dae85ca0867
+Successfully tagged ajeetraina/hellowhale:latest
+real    0m6.359s
+user    0m0.035s
+sys     0m0.022s
+
+```
+
+Let's build it with buildkit
+
+```
+ time docker build -t ajeetraina/hellowhale .
+[+] Building 1.7s (9/9) FINISHED                                                                                                                                                 
+ => [internal] load build definition from Dockerfile                                                                                                                        0.1s
+ => => transferring dockerfile: 135B                                                                                                                                        0.0s
+ => [internal] load .dockerignore                                                                                                                                           0.0s
+ => => transferring context: 2B                                                                                                                                             0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest                                                                                                             0.0s
+ => [internal] helper image for file operations                                                                                                                             0.4s
+ => => resolve docker.io/docker/dockerfile-copy:v0.1.9@sha256:e8f159d3f00786604b93c675ee2783f8dc194bb565e61ca5788f6a6e9d304061                                              0.7s
+ => => sha256:e8f159d3f00786604b93c675ee2783f8dc194bb565e61ca5788f6a6e9d304061 2.03kB / 2.03kB                                                                              0.0s
+ => => sha256:a546a4352bcaa6512f885d24fef3d9819e70551b98535ed1995e4b567ac6d05b 736B / 736B                                                                                  0.0s
+ => => sha256:494e63343c3f0d392e7af8d718979262baec9496a23e97ad110d62b9c90d6182 766B / 766B                                                                                  0.0s
+ => => sha256:df3b4bed1f63b36992540a09e0d10bd3f9d0b082d50810313841d745d7cce368 898.21kB / 898.21kB                                                                          0.2s
+ => => sha256:f7b6696c3fee7264ec4486cebe146a6a98aa8d1e46747843107ff473aada8d56 861.00kB / 861.00kB                                                                          0.2s
+ => => extracting sha256:df3b4bed1f63b36992540a09e0d10bd3f9d0b082d50810313841d745d7cce368                                                                                   0.1s
+ => => extracting sha256:f7b6696c3fee7264ec4486cebe146a6a98aa8d1e46747843107ff473aada8d56                                                                                   0.1s
+ => [1/3] FROM docker.io/library/nginx:latest                                                                                                                               0.0s
+ => => resolve docker.io/library/nginx:latest                                                                                                                               0.0s
+ => [internal] load build context                                                                                                                                           0.0s
+ => => transferring context: 34.39kB                                                                                                                                        0.0s
+ => [2/3] COPY wrapper.sh /                                                                                                                                                 0.2s
+ => [3/3] COPY html /usr/share/nginx/html                                                                                                                                   0.2s
+ => exporting to image                                                                                                                                                      0.1s
+ => => exporting layers                                                                                                                                                     0.0s
+ => => writing image sha256:db60ac4c90d7412b8c9f9382711f0d97a9ad9d4a33c05200aa36dc4c935c8cb3                                                                                0.0s
+ => => naming to docker.io/ajeetraina/hellowhale                                                                                                                            0.0s
+real    0m1.732s
+user    0m0.042s
+sys     0m0.019s
+~/hellowhale$
+```
