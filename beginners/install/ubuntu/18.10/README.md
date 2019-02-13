@@ -67,6 +67,17 @@ Server: Docker Engine - Community
   Experimental:     false
   ```
   
+  # Verifying Docker packages
+  
+Please Note: The client and container runtime are now in separate packages from the daemon in Docker Engine 18.09. Users should install and update all three packages at the same time to get the latest patch releases. For example, on Ubuntu: sudo apt install docker-ce docker-ce-cli containerd.io. See the install instructions for the corresponding linux distro for details
+  
+  ```
+  $ sudo dpkg --list | grep container
+ii  containerd.io                  1.2.2-3                             amd64        An open and reliable container runtime
+ii  docker-ce                      5:18.09.2~3-0~ubuntu-cosmic         amd64        Docker: the open-source application container engine
+ii  docker-ce-cli                  5:18.09.2~3-0~ubuntu-cosmic         amd64        Docker CLI: the open-source application container engine
+```
+  
   # Verifying Containerd Version
   
   ```
