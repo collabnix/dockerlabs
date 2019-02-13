@@ -101,8 +101,11 @@ GLOBAL OPTIONS:
   # Verifying Containerd Version
   
   ```
-  ctr version
+  $ sudo ctr version
 Client:
+  Version:  1.2.2
+  Revision: 9754871865f7fe2f4e74d43e2fc7ccd237edcbce
+Server:
   Version:  1.2.2
   Revision: 9754871865f7fe2f4e74d43e2fc7ccd237edcbce
   ```
