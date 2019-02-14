@@ -278,4 +278,8 @@ BuildKit: Changes --console=[auto,false,true] to --progress=[auto,plain,tty]dock
 BuildKit: Sets BuildKit’s ExportedProduct variable to show useful errors in the future. moby/moby#37439﻿
 ```
 
+```
+docker run --isolation=process mcr.microsoft.com/windows/nanoserver:1809 cmd.exe /c ping 127.0.0.1 -t
+```
+
 
