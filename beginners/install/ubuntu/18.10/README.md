@@ -282,4 +282,14 @@ BuildKit: Sets BuildKit’s ExportedProduct variable to show useful errors in th
 docker run --isolation=process mcr.microsoft.com/windows/nanoserver:1809 cmd.exe /c ping 127.0.0.1 -t
 ```
 
+```
+$ docker -H ssh://ajeetraina@10.94.26.28 run -ti ubuntu echo “hello”
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+6cf436f81810: Pull complete 
+987088a85b96: Pull complete 
+b4624b3efe06: Pull complete 
+d42beb8ded59: Pull complete 
+Digest: sha256:7a47ccc3bbe8a451b500d2b53104868b46d60ee8f5b35a24b41a86077c650210
+```
 
