@@ -267,4 +267,15 @@ RUN apt update && apt install git
 
 ```
 
+```
+Added support for build-time secrets using a --secret flag when using BuildKit docker/cli#1288
+Added builder prune subcommand to prune BuildKit build cache docker/cli#1295docker/cli#1334
+BuildKit: Adds configurable garbage collection policy for the BuildKit build cache docker/engine#59 / moby/moby#37846
+BuildKit: Adds support for docker build --pull ... when using BuildKit moby/moby#37613
+BuildKit: Adds support or “registry-mirrors” and “insecure-registries” when using BuildKit docker/engine#59 / moby/moby#37852
+BuildKit: Enables net modes and bridge. moby/moby#37620
+BuildKit: Changes --console=[auto,false,true] to --progress=[auto,plain,tty]docker/cli#1276
+BuildKit: Sets BuildKit’s ExportedProduct variable to show useful errors in the future. moby/moby#37439﻿
+```
+
 
