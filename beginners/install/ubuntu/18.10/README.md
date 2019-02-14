@@ -259,3 +259,12 @@ user    0m0.042s
 sys     0m0.019s
 ~/hellowhale$
 ```
+
+```
+FROM debian
+EXPOSE 80
+RUN apt update && apt install git
+
+```
+
+
