@@ -8,9 +8,29 @@ Kubernetes does not run natively on MacOS or Windows. You may be thinking “I h
 what kind of sorcery was that?” It’s simple, Kubernetes is running inside a VM. You might not see the VM or it 
 might not even be a full blown virtual system but some level of virtualisation is there. This is exactly what we will show here. 
 
-Under this tutorial, we will setup a VM using Multipass and will showcase how to install MicroK8s. After the installation we will discuss how to build appalication stack using K8s. Let's get started
+Under this tutorial, we will setup a VM using Multipass and will showcase how to install MicroK8s. After the installation we will discuss how to build appalication stack using K8s. Let's get started:
 
--[Download Multipass VM](https://github.com/CanonicalLtd/multipass/releases)
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> macOS </b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+- [Download Multipass VM](https://github.com/CanonicalLtd/multipass/releases)
 
 # A Multipass VM on MacOS
 
