@@ -1,18 +1,19 @@
 
 
 
-# MULTIPASS + MICROK8 + Grafana On MACOSX
+# MULTIPASS + MICROK8 + Grafana On MacOS
 
 MicroK8s is a local deployment of Kubernetes. Let’s skip all the technical details and just accept that
 Kubernetes does not run natively on MacOS or Windows. You may be thinking “I have seen Kubernetes running on a MacOS laptop, 
 what kind of sorcery was that?” It’s simple, Kubernetes is running inside a VM. You might not see the VM or it 
 might not even be a full blown virtual system but some level of virtualisation is there. This is exactly what we will show here. 
-We will setup a VM and inside there we will install MicroK8s. After the installation we will discuss
+
+Under this tutorial, we will setup a VM and inside there we will install MicroK8s. After the installation we will discuss
 how to use the in-VM-Kubernetes.
 
 -[Download Multipass VM](https://github.com/CanonicalLtd/multipass/releases)
 
-# A multipass VM on MacOS
+# A Multipass VM on MacOS
 
 ```
 Biradars-MacBook-Air:~ sangam$ multipass launch --name microk8s-vm --mem 4G --disk 40G
@@ -25,10 +26,10 @@ microk8s v1.13.2 from Canonical✓ installed
 ```
 
 Make sure you reserve enough resources to host your deployments; above, we got 4GB of RAM and 40GB of hard disk. 
-We also make sure packets to/from the pod network interface can be forwarded to/from the default interface.
+We need to ensure that the packets to/from the pod network interface can be forwarded to/from the default interface.
 
 
-# Our VM has an IP that you can check with:
+# Verifying VM IP Address
 
 ```
 Biradars-MacBook-Air:~ sangam$ multipass list
@@ -38,7 +39,10 @@ microk8s-vm             RUNNING           192.168.64.3     Ubuntu 18.04 LTS
 ```
 Take a note of this IP since our services will become available there.
 Other multipass commands you may find handy:
-# Get a shell inside the VM:
+
+
+# Getting a shell inside the VM:
+
 ```
 Biradars-MacBook-Air:~ sangam$ multipass shell microk8s-vm
 Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-45-generic x86_64)
@@ -59,7 +63,7 @@ Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-45-generic x86_64)
 Last login: Tue Feb 19 18:11:11 2019 from 192.168.64.1
 ```
 
-# install kubect 
+# Installing Kubectl
 ```
 sudo snap install kubectl --classic
 ```
@@ -69,20 +73,23 @@ Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.3", GitCom
 Server Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.2", GitCommit:"cff46ab41ff0bb44d8584413b598ad8360ec1def", GitTreeState:"clean", BuildDate:"2019-01-10T23:28:14Z", GoVersion:"go1.11.4", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
-# check k8 microk8
+# Verifying Kubernetes microk8
+
 ```
 multipass@microk8s-vm:~$ microk8s.kubectl get nodes
 NAME          STATUS   ROLES    AGE   VERSION
 microk8s-vm   Ready    <none>   13m   v1.13.2
 ```
 
-# check cluster 
+# Checking the cluster Status
+
 ```
 multipass@microk8s-vm:~$ microk8s.kubectl get services
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
 kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   15m
 ```
 # Enable microk8 dashboard 
+
 ```
 multipass@microk8s-vm:~$ microk8s.enable dns dashboard
 Enabling DNS
@@ -109,8 +116,10 @@ deployment.extensions/heapster-v1.5.2 created
 dashboard enabled
 multipass@microk8s-vm:~$ 
 ```
-# Deployment
+# Deploying NGINX service
+
 Deploying a nginx service is what you would expect, with the addition of the Microk8s prefix
+
 
 ```
 multipass@microk8s-vm:~$ microk8s.kubectl run nginx --image nginx --replicas 3
@@ -120,7 +129,9 @@ deployment.apps/nginx created
 The Service "nginx" is invalid: spec.type: Unsupported value: "ClusterIP --selector=run=nginx": supported values: "ClusterIP", "ExternalName", "LoadBalancer", "NodePort"
 multipass@microk8s-vm:~$ 
 ```
-# get all pod and services details 
+
+# Listing all pod and services details 
+
 ```
 multipass@microk8s-vm:~$ microk8s.kubectl get all
 NAME                         READY   STATUS    RESTARTS   AGE
@@ -145,7 +156,8 @@ multipass@microk8s-vm:~$ kubectl --kubeconfig=kubeconfig get all --all-namespace
 NAMESPACE   NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
 default     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   11m
 ```
-# You can verify that all services are up and running with the following command:
+
+# Verifying if all services are Up and Running
 
 ```
 multipass@microk8s-vm:~$ microk8s.kubectl get all --all-namespaces
@@ -184,7 +196,8 @@ kube-system   replicaset.apps/monitoring-influxdb-grafana-v4-6679c46745   1     
 ```
 
 
-# get cluster info 
+# Checking the Cluster Information
+
 ```
 
 multipass@microk8s-vm:~$ microk8s.kubectl cluster-info
@@ -195,7 +208,9 @@ Grafana is running at http://127.0.0.1:8080/api/v1/namespaces/kube-system/servic
 InfluxDB is running at http://127.0.0.1:8080/api/v1/namespaces/kube-system/services/monitoring-influxdb:http/proxy
 
 ```
-# find ip of your vm and replace with your monitoring servives
+
+# Verifying IP Address of VM instance & Replacing with your Monitoring servives
+
 ```
 
 Kubernetes master is running at http://192.168.64.3:8080
@@ -204,6 +219,10 @@ KubeDNS is running at http://192.168.64.3:8080/v1/namespaces/kube-system/service
 Grafana is running at http://192.168.64.3:8080/api/v1/namespaces/kube-system/services/monitoring-grafana/proxy
 InfluxDB is running at http://192.168.64.3:8080/api/v1/namespaces/kube-system/services/monitoring-influxdb:http/proxy
 ```
-reference: https://engineitops.icu/setup_microk8_on_MAC
+
+
+# Reference: https://engineitops.icu/setup_microk8_on_MAC
+
 # contributor 
+
 -[sangam biradar](https://www.linkedin.com/in/sangambiradar14)
