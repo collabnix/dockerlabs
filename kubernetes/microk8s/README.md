@@ -1,7 +1,7 @@
 
 
 
-# MULTIPASS + MICROK8 + Grafana On MacOS
+# Multipass + MicroK8 + Grafana On MacOS
 
 Multipass is a system that orchestrates the creation, management and maintenance of Virtual Machines and associated Ubuntu images to simplify development. MicroK8s is a local deployment of Kubernetes. Let’s skip all the technical details and just accept that
 Kubernetes does not run natively on MacOS or Windows. You may be thinking “I have seen Kubernetes running on a MacOS laptop, 
