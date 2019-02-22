@@ -3,13 +3,12 @@
 
 # MULTIPASS + MICROK8 + Grafana On MacOS
 
-MicroK8s is a local deployment of Kubernetes. Let’s skip all the technical details and just accept that
+Multipass is a system that orchestrates the creation, management and maintenance of Virtual Machines and associated Ubuntu images to simplify development. MicroK8s is a local deployment of Kubernetes. Let’s skip all the technical details and just accept that
 Kubernetes does not run natively on MacOS or Windows. You may be thinking “I have seen Kubernetes running on a MacOS laptop, 
 what kind of sorcery was that?” It’s simple, Kubernetes is running inside a VM. You might not see the VM or it 
 might not even be a full blown virtual system but some level of virtualisation is there. This is exactly what we will show here. 
 
-Under this tutorial, we will setup a VM and inside there we will install MicroK8s. After the installation we will discuss
-how to use the in-VM-Kubernetes.
+Under this tutorial, we will setup a VM using Multipass and will showcase how to install MicroK8s. After the installation we will discuss how to build appalication stack using K8s. Let's get started
 
 -[Download Multipass VM](https://github.com/CanonicalLtd/multipass/releases)
 
