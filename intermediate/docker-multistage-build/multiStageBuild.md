@@ -13,7 +13,7 @@ to keep layers light as much as possible. Using shell tricks to write a really e
 
 In simple terms: you can use end result (for ex: binary/executable file) of one stage into another stage without worrying about dependencies used to build that binary/executable file. 
 
-## Multi-Stage Builds
+## How does it work?
 
 With Multi-stage builds, you can have multiple `FROM` statement in a single Dockerfile. Each `FROM` statement contributes to one stage.
 First stage starts from number `0`.
