@@ -1,8 +1,8 @@
 
-# Leveraging Docker Multi-Stage Build Feature to optimize Dockerfiles/Images
+# Leveraging Docker Multi-Stage Builds Feature to optimize Dockerfiles/Images
 
 
-Multi-stage build is a new feature requiring **Docker 17.05** or higher on the daemon and client. It's useful in building complex/multi step image while keeping them easy to read and maintain.
+Multi-stage builds are a new feature requiring **Docker 17.05** or higher on the daemon and client. It's useful in building complex/multi step image while keeping them easy to read and maintain.
 
 Keeping the image size down is one of the challenging task while building image. Each instruction in Dockerfile adds a layer to the image.
 Also, you need to remember to clean up any dependency/artifactory you don't need later. Earlier you might have used shell scripts
@@ -13,9 +13,9 @@ to keep layers light as much as possible. Using shell tricks to write a really e
 
 In simple terms: you can use end result (for ex: binary/executable file) of one stage into another stage without worrying about dependencies used to build that binary/executable file. 
 
-## Multi-stage builds
+## Multi-Stage Builds
 
-With multi-stage builds, you can have multiple `FROM` statement in a single Dockerfile. Each `FROM` statement contributes to one stage.
+With Multi-stage builds, you can have multiple `FROM` statement in a single Dockerfile. Each `FROM` statement contributes to one stage.
 First stage starts from number `0`.
 
 ```
@@ -40,7 +40,7 @@ FROM mhart/alpine-node:10 AS nodebuilder
 FROM alpine:3.7 AS builder
 ```
 
-# Demonstrating Multi-Stage Build
+# Demonstrating Multi-Stage Builds
 
 ## Tested Infrastructure
 
@@ -62,13 +62,13 @@ FROM alpine:3.7 AS builder
 
 
 
-For demonstration, i have taken a nodejs project and built a binary out of it. When you execute this binary, it will call a [NASA api](https://api.nasa.gov/api.html) which returns some interesting facts about today's date.
+For demonstration, Let us consider a nodejs project and build a binary out of it. When you execute this binary, it will call a [NASA api](https://api.nasa.gov/api.html) which returns some interesting facts about today's date.
 
 #### Before: docker images
 
 ![Before docker images list](https://github.com/kumarrishav/dockerlabs/blob/patch-2/images/multi-stage-img1.png)
 
-Currently we have two images which i pulled from [dockerhub](https://hub.docker.com/): 
+Currently we have two images which I pulled from [dockerhub](https://hub.docker.com/): 
 * `alpine (~4Mb)` - Lightest version of linux os
 * `alpine-node (~70Mb)` - alpine + Node/Npm and other dependency.
 
