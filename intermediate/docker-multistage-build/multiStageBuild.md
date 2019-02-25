@@ -1,5 +1,5 @@
 
-# Leveraging Docker Multi-Stage Builds Feature to optimize Dockerfiles/Images
+# Leveraging Docker Multi-Stage Build Feature to optimize Dockerfiles/Images
 
 
 Multi-stage build is a new feature requiring **Docker 17.05** or higher on the daemon and client. It's useful in building complex/multi step image while keeping them easy to read and maintain.
