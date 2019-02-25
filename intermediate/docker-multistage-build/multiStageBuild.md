@@ -100,12 +100,10 @@ When using multi-stage builds, you are not limited to copying from stages you cr
 
 ------------------------------------------------------------------------------------------------------------------------------
 
- Hope you enjoyed this blog.
+
  
- !Cheers. Keep dockering. 
- 
- #### Contributor
+ # Contributor
  
 [Kumar Rishav](https://www.linkedin.com/in/rishav006/)
 
-Next: [Intermediate](https://github.com/collabnix/dockerlabs/tree/master/intermediate)
+
