@@ -28,7 +28,7 @@
    - Windows 
    - Windows Server
    - Cloud Platform
-   - IoT Platform
+   - [IoT Platform](https://github.com/collabnix/dockerlabs/tree/master/beginners/install)
    - Unix ( FreeBSD, Solaris)  
    - MacOS
 - Compiling Your Own Docker Binary from Source
