@@ -1,17 +1,44 @@
-# How to install Docker 18.09.1 on Raspberry Pi 3
+# How to install Docker 18.09.0 on Raspberry Pi 3
 
 
 
-##  Flash Raspbian OS on SD card
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Raspberry Pi 3</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+
+- Flash Raspbian OS on SD card
 
 If you are in Mac, you might need to install Etcher tool. If on Windows, install SDFormatter to format SD card as well as Win32installer to flash Raspbian ISO image onto the SD card. You will need SD card reader to achieve this.
 
 
 ## Booting up Raspbian OS
 
+Just use the same charger which you use for your mobile to power on Raspberry Pi box. Connect HDMI port to your TV or display. Let it boot up.
+
+
+The default username is pi and password is raspberry.
+
+
 ### Enable SSH to perform remote login
 
-
+To login via your laptop, you need to allow SSH service running. You can verify IP address command via ifconfig command.
 
 ```
 [Captains-Bay]🚩 >  ssh pi@192.168.1.5
