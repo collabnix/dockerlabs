@@ -236,6 +236,64 @@ WARNING: No cpu cfs quota support
 WARNING: No cpu cfs period support
 ```
 
-##
+## Building up Nginx App
+
+
+
+## BuildKit on Raspberry Pi
+
+```
+root@raspberrypi:~# export DOCKER_BUILDKIT=1
+root@raspberrypi:~# git clone https://github.com/ajeetraina/hellowhale
+Cloning into 'hellowhale'...
+remote: Enumerating objects: 28, done.
+remote: Total 28 (delta 0), reused 0 (delta 0), pack-reused 28
+Unpacking objects: 100% (28/28), done.
+root@raspberrypi:~# cd hellowhale/
+root@raspberrypi:~/hellowhale# ls
+Dockerfile  html  README.md  wrapper.sh
+root@raspberrypi:~/hellowhale# docker build -t ajeetraina/hellowhalecom .
+[+] Building 7.9s (5/8)                                                         
+ => [internal] load build definition from Dockerfile                       0.1s
+ => => transferring dockerfile: 129B                                       0.0s
+ => [internal] load .dockerignore                                          0.2s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest            0.0s
+ => [1/3] FROM docker.io/library/nginx:latest                              0.0s
+ => => resolve docker.io/library/nginx:latest                              0.0s
+ => [internal] helper image for file operations                            0.1s
+ => => resolve docker.io/docker/dockerfile-copy:v0.1.9@sha256:e8f159d3f00  7.5s
+ => => sha256:b13ecc473b58ad8d80fba73ae6de690f6fcbe341bdaca42 736B / 736B  0.0s
+ => => sha256:fabe16b757ee155dfd7210795199962d1b35e22b3437d06 767B / 767B  0.0s
+ => [internal] load build context                                          0.1s
+ => => transferring context: 34.39kB                                       0.0s
+
+```
+
+```
+root@raspberrypi:~/hellowhale# time docker build -t ajeetraina/hellowhale .
+[+] Building 0.4s (9/9) FINISHED                                                
+ => [internal] load build definition from Dockerfile                       0.1s
+ => => transferring dockerfile: 31B                                        0.0s
+ => [internal] load .dockerignore                                          0.1s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest            0.0s
+ => [internal] helper image for file operations                            0.0s
+ => [1/3] FROM docker.io/library/nginx:latest                              0.0s
+ => [internal] load build context                                          0.0s
+ => => transferring context: 317B                                          0.0s
+ => CACHED [2/3] COPY wrapper.sh /                                         0.0s
+ => CACHED [3/3] COPY html /usr/share/nginx/html                           0.0s
+ => exporting to image                                                     0.1s
+ => => exporting layers                                                    0.0s
+ => => writing image sha256:5aee990f7e24e7c0f486ed01b4c1f8696ff307f836af1  0.0s
+ => => naming to docker.io/ajeetraina/hellowhale                           0.0s
+
+real	0m0.615s
+user	0m0.204s
+sys	0m0.082s
+```
+
+
 
 
