@@ -294,6 +294,70 @@ user	0m0.204s
 sys	0m0.082s
 ```
 
+## Verifying Dockerd
+
+
+```
+root@raspberrypi:~/hellowhale# systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: e
+   Active: active (running) since Tue 2019-02-26 13:01:04 IST; 38min ago
+     Docs: https://docs.docker.com
+ Main PID: 2437 (dockerd)
+      CPU: 1min 46.174s
+   CGroup: /system.slice/docker.service
+           ├─2437 /usr/bin/dockerd -H unix://
+           ├─2705 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 8
+           └─4186 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 8
+
+Feb 26 13:37:06 raspberrypi dockerd[2437]: time="2019-02-26T13:37:06.400368104+0
+Feb 26 13:37:06 raspberrypi dockerd[2437]: time="2019-02-26T13:37:06.402012958+0
+Feb 26 13:37:06 raspberrypi dockerd[2437]: time="2019-02-26T13:37:06.402634316+0
+Feb 26 13:37:06 raspberrypi dockerd[2437]: time="2019-02-26T13:37:06.403005881+0
+Feb 26 13:37:06 raspberrypi dockerd[2437]: time="2019-02-26T13:37:06.408358205+0
+Feb 26 13:37:06 raspberrypi dockerd[2437]: time="2019-02-26T13:37:06.810154786+0
+Feb 26 13:37:06 raspberrypi dockerd[2437]: time="2019-02-26T13:37:06.810334839+0
+Feb 26 13:37:06 raspberrypi dockerd[2437]: time="2019-02-26T13:37:06.811462659+0
+Feb 26 13:37:06 raspberrypi dockerd[2437]: time="2019-02-26T13:37:06.811768546+0
+Feb 26 13:37:07 raspberrypi dockerd[2437]: time="2019-02-26T13:37:07.402282796+0
+```
+
+
+## Verifying if armv7 hello-world image is available or not
+
+```
+docker run --rm mplatform/mquery hello-world
+Unable to find image 'mplatform/mquery:latest' locally
+latest: Pulling from mplatform/mquery
+db6020507de3: Pull complete
+5107afd39b7f: Pull complete
+Digest: sha256:e15189e3d6fbcee8a6ad2ef04c1ec80420ab0fdcf0d70408c0e914af80dfb107
+Status: Downloaded newer image for mplatform/mquery:latest
+Image: hello-world
+ * Manifest List: Yes
+ * Supported platforms:
+   - linux/amd64
+   - linux/arm/v5
+   - linux/arm/v7
+   - linux/arm64
+   - linux/386
+   - linux/ppc64le
+   - linux/s390x
+   - windows/amd64:10.0.14393.2551
+   - windows/amd64:10.0.16299.846
+   - windows/amd64:10.0.17134.469
+   - windows/amd64:10.0.17763.194
+```
+
+
+## Verifying hellowhale Image 
+
+```
+root@raspberrypi:~# docker run --rm mplatform/mquery ajeetraina/hellowhale
+Image: ajeetraina/hellowhale
+ * Manifest List: No
+ * Supports: amd64/linux
+````
 
 
 
