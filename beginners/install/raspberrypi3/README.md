@@ -359,5 +359,17 @@ Image: ajeetraina/hellowhale
  * Supports: amd64/linux
 ````
 
+## Verifying Random Images
+
+```
+root@raspberrypi:~# docker run --rm mplatform/mquery rycus86/prometheus
+Image: rycus86/prometheus
+ * Manifest List: Yes
+ * Supported platforms:
+   - linux/amd64
+   - linux/arm/v7
+   - linux/arm64
+```
+
 
 
