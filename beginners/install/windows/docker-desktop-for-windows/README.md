@@ -70,4 +70,66 @@ PS C:\Users\Ajeet_Raina> docker run -d -p 81:80 ajeetraina/hellowhale
 ```
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/windows/docker-desktop-for-windows/win_image2.png)
 
+## Try running WIndows Based Docker Container
 
+```
+PS C:\Users\Ajeet_Raina> docker container run -d -p 84:80 --name iis microsoft/iis
+Unable to find image 'microsoft/iis:latest' locally
+latest: Pulling from microsoft/iis
+C:\Program Files\Docker\Docker\Resources\bin\docker.exe: no matching manifest for unknown in the manifest list entries.
+See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
+PS C:\Users\Ajeet_Raina>
+```
+
+This was expected as we are currently switched to Linux containers
+
+
+## Creating Docker Swarm Cluster on Windows 
+
+```
+PS C:\Users\Ajeet_Raina\docker101\play-with-docker\wordpress> docker swarm init
+Swarm initialized: current node (29g3oqgz89f9g7gyicgq8h1o2) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-1gz58w1cgci63er4dhl6rkhhg29umkkt373ic85hpb3ywvtvqg-4ersf0a9dz00ime4xy
+168.65.3:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+PS C:\Users\Ajeet_Raina\docker101\play-with-docker\wordpress>
+```
+
+## Verifying Single Node Cluster
+
+```
+PS C:\Users\Ajeet_Raina\docker101\play-with-docker\wordpress> docker node ls
+ID                            HOSTNAME                STATUS              AVAILABILITY        MANAGER STATUS      ENGINE
+ VERSION
+29g3oqgz89f9g7gyicgq8h1o2 *   linuxkit-00155d1fffe2   Ready               Active              Leader              18.09.
+2
+```
+
+## Running WordPress Application on Docker Desktop for Windows
+
+Let us first stop the last 2 containers which listen on port 80 and 81 and then follow the below command to bring up WordPress App
+
+```
+PS C:\Users\Ajeet_Raina\docker101\play-with-docker\wordpress\example1> docker stack deploy --orchestrator=swarm -c stack.yml myapp10
+.yml myapp10
+Ignoring unsupported options: restart
+
+Creating network myapp10_default
+Creating service myapp10_db
+Creating service myapp10_wordpress
+PS C:\Users\Ajeet_Raina\docker101\play-with-docker\wordpress\example1>
+```
+
+## Verifying the Stack
+
+```
+PS C:\Users\Ajeet_Raina\docker101\play-with-docker\wordpress\example1> docker stack --orchestrator=swarm ls
+NAME                SERVICES            ORCHESTRATOR
+myapp10             2                   Swarm
+PS C:\Users\Ajeet_Raina\docker101\play-with-docker\wordpress\example1>
+```
