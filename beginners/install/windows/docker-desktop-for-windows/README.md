@@ -19,6 +19,9 @@ Did you Know? Switch between Windows and Linux containers describes the Linux / 
 - At least 4GB of RAM.
 
 
+## Checking Docker Version
+
+Run docker version to check the basic details of your deployment. You should see "Windows" listed as the operating system for the Docker client and the Docker Engine:
 
 
 ```
@@ -44,7 +47,9 @@ Server: Docker Engine - Community
   Version:          v1.10.11
   StackAPI:         Unknown
 PS C:\Users\Ajeet_Raina>
+
 ```
+The OS/Arch field tells you the operating system and CPU architecture you're using. Docker is cross-platform, so you can manage Windows Docker servers from a Linux client and vice-versa, using the same docker commands.
 
 ## Running Your First NGINX application
 
@@ -52,4 +57,13 @@ PS C:\Users\Ajeet_Raina>
 PS C:\Users\Ajeet_Raina> docker run -d -p 80:80 nginx
 567450d768e42e521bf3cec945d07bc3f796b6c5503d971881f5169e30a73215
 ```
+
+## Running Your First Nginx based Docker Container
+
+```
+PS C:\Users\Ajeet_Raina> docker run -d -p 81:80 ajeetraina/hellowhale
+33e673c86f63990cdac2c155bc6bfe20a7b7809b82434908bc38517ae029d0e8
+```
+
+
 
