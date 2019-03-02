@@ -25,7 +25,7 @@
 
 - Installing Docker on 
    - [Linux](https://github.com/collabnix/dockerlabs/tree/master/beginners/install)
-   - Windows 
+   - [Windows](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/windows/docker-desktop-for-windows/README.md)
    - Windows Server
    - Cloud Platform
    - [IoT Platform](https://github.com/collabnix/dockerlabs/tree/master/beginners/install)
