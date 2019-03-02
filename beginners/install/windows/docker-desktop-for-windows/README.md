@@ -11,6 +11,9 @@ Did you Know? Switch between Windows and Linux containers describes the Linux / 
 
 # Pre-requisite:
 
+- Windows 10 Laptop 10.0.143393 Build 14391
+- x64 based PC
+
 ## System Requirements:
 
 - Windows 10 64bit: Pro, Enterprise or Education (1607 Anniversary Update, Build 14393 or later).
