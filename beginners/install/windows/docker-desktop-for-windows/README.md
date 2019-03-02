@@ -13,6 +13,7 @@ Did you Know? Switch between Windows and Linux containers describes the Linux / 
 
 - Windows 10 Laptop 10.0.143393 Build 14391
 - x64 based PC
+- Verify if Switch to Linux container is well selected under Preference UI
 
 ## System Requirements:
 
