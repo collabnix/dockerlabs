@@ -64,6 +64,6 @@ PS C:\Users\Ajeet_Raina> docker run -d -p 80:80 nginx
 PS C:\Users\Ajeet_Raina> docker run -d -p 81:80 ajeetraina/hellowhale
 33e673c86f63990cdac2c155bc6bfe20a7b7809b82434908bc38517ae029d0e8
 ```
-
+![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/windows/docker-desktop-for-windows/win_image2.png)
 
 
