@@ -133,3 +133,36 @@ NAME                SERVICES            ORCHESTRATOR
 myapp10             2                   Swarm
 PS C:\Users\Ajeet_Raina\docker101\play-with-docker\wordpress\example1>
 ```
+
+## Running Docker Swarm Visualizer
+
+```
+PS C:\Users\Ajeet_Raina\docker101\play-with-docker\visualizer> docker-compose up -d
+WARNING: Some services (visualizer) use the 'deploy' key, which will be ignored. Compose does not support 'deploy' configu
+ration - use `docker stack deploy` to deploy to a swarm.
+WARNING: The Docker Engine you're using is running in swarm mode.
+
+Compose does not use swarm mode to deploy services to multiple nodes in a swarm. All containers will be scheduled on the c
+urrent node.
+
+To deploy your application across the swarm, use `docker stack deploy`.
+
+Creating network "visualizer_default" with the default driver
+Pulling visualizer (dockersamples/visualizer:stable)...
+stable: Pulling from dockersamples/visualizer
+88286f41530e: Pull complete
+6a722742375f: Pull complete
+7e9d2f284de4: Pull complete
+a8a42e9e643e: Pull complete
+878a9d1427c8: Pull complete
+b1867f55f80a: Pull complete
+1a82a234b70b: Pull complete
+93d560de8dd8: Pull complete
+3eb2a9bba107: Pull complete
+67cde5cd35b3: Pull complete
+b4376f83977c: Pull complete
+730e0303ceca: Pull complete
+Creating visualizer_visualizer_1 ... done
+PS C:\Users\Ajeet_Raina\docker101\play-with-docker\visualizer>
+```
+
