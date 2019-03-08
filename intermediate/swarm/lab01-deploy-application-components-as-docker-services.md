@@ -110,3 +110,4 @@ kwmey288bkhp        sleep-app.6         ubuntu:latest       manager3            
 You have successfully scaled a swarm service up and down.
 
 
+[Next >> Drain a Node and Reschedule the Containers ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab02-drain-a-node-and-reschedule-the-containers.md)
