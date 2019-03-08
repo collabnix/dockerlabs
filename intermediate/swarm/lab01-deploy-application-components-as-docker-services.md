@@ -1,4 +1,4 @@
-# Deploy the application components as Docker services
+# Lab #01 - Deploy the application components as Docker services
 
 Our sleep application is becoming very popular on the internet (due to hitting Reddit and HN). 
 People just love it. So, you are going to have to scale your application to meet peak demand. 
