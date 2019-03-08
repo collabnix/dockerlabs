@@ -160,4 +160,4 @@ verify: Service converged
 [manager1] (local) root@192.168.0.9 ~/dockerlabs/intermediate/swarm
 ```
 
-[[Next >>](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab02-drain-a-node-and-reschedule-the-containers.md)
+[[Next >> Cleaning Up](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab03-cleaning-up.md)
