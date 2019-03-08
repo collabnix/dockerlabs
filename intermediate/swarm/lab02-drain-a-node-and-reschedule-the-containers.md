@@ -14,9 +14,9 @@ v57fk367d1lw4e1ufis3jwa2h     worker1             Ready               Active    
 uinkvr56fq7zb711ycbifhf4f     worker2             Ready               Active               18.09.3
 ```
 
-You will be taking node2 out of service for maintenance.
+You will be taking worker2 out of service for maintenance.
 
-Let’s see the containers that you have running on node2.
+Let’s see the containers that you have running on worker2.
 
 We are going to take the ID for worker2 and run docker node update --availability drain worker2. 
 We are using the worker2 host ID as input into our drain command. Replace yournodeid with the id of worker2.
