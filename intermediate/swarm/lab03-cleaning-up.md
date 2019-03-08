@@ -1,9 +1,13 @@
 # Cleaning Up
 
-Execute the docker service rm sleep-app command on node1 to remove the service called myservice.
+Execute the docker service rm sleep-app command on manager1 to remove the service called sleep-app.
 
 ```
-docker service rm sleep-app
+$ docker service rm sleep-app
+sleep-app
+[manager1] (local) root@192.168.0.9 ~/dockerlabs/intermediate/swarm
+$ docker service ls
+ID                  NAME                MODE                REPLICAS            IMAGE     PORTS
 ```
 
 Execute the docker ps command on node1 to get a list of running containers.
@@ -42,4 +46,6 @@ docker swarm leave --force
 ```
 
 Congratulations! You’ve completed this lab. You now know how to build a swarm, deploy applications as collections of services, and scale individual services up and down.
+
+[[Next >> ]()
 
