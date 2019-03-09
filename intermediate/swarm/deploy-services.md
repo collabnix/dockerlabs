@@ -1,4 +1,4 @@
-# Deploy Service
+# Lab02 - Deploy Service
 
 By default, Docker uses a spread replication model for deciding which containers should run on which hosts. 
 The spread approach ensures that containers are deployed across the cluster evenly. This means that if one of the nodes is removed from 
@@ -43,4 +43,4 @@ If we issue an HTTP request to the public port, it will be processed by the two 
 ```
  curl docker. 
 ```
-[Next >> Inspecting State]()
+[Next >> Lab03 - Inspecting State](lab03-inspecting-state.md)
