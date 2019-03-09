@@ -1,5 +1,17 @@
 # Setting up Kubernetes Dashboard on Docker Desktop for Windows 2.0.0.3
 
+
+```
+PS C:\WINDOWS\system32> kubectl version
+Client Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.11", GitCommit:"637c7e288581ee40ab4
+b6e7e9", GitTreeState:"clean", BuildDate:"2018-11-26T14:38:32Z", GoVersion:"go1.9.3", Compiler:"gc", Plat
+md64"}
+Server Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.11", GitCommit:"637c7e288581ee40ab4
+b6e7e9", GitTreeState:"clean", BuildDate:"2018-11-26T14:25:46Z", GoVersion:"go1.9.3", Compiler:"gc", Plat
+64"}
+PS C:\WINDOWS\system32>
+```
+
 ```
 PS C:\Users\Ajeet_Raina> kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/
 mmended/kubernetes-dashboard.yaml
