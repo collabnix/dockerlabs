@@ -14,7 +14,7 @@ The following command will create a new overlay network called skynet. All conta
 each other, regardless of which node they are deployed onto.
 
 ```
-docker network create -d overlay skynet
+docker network create -d overlay collabnet
 ```
 
 [Next >> Lab02- Deploy Services](lab02-deploy-services.md)
