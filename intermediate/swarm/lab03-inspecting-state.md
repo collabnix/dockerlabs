@@ -1,4 +1,4 @@
-# Inspect State
+# Lab03 - Inspecting State
 
 The Service concept allows you to inspect the health and state of your cluster and the running applications.
 
