@@ -55,6 +55,8 @@ PS C:\Users\Ajeet_Raina>
 ```
 The OS/Arch field tells you the operating system and CPU architecture you're using. Docker is cross-platform, so you can manage Windows Docker servers from a Linux client and vice-versa, using the same docker commands.
 
+# Running Linux Application on Docker Desktop for Windows Platform
+
 ## Running Your First NGINX application
 
 ```
