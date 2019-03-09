@@ -14,7 +14,7 @@ PS C:\Users\Ajeet_Raina>
 
 
 ```
-PS C:\Users\Ajeet_Raina> kubectl prox
+PS C:\Users\Ajeet_Raina> kubectl proxy
 Starting to serve on 127.0.0.1:8001
 ```
 
