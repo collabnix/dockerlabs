@@ -40,7 +40,7 @@
 - [Lab02 - Deploy Service](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab02-deploy-services.md)
 - [Lab03 - Inspecting State](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab03-inspecting-state.md)
 - [Lab04 - Scale Service](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab04-scale-services.md)
-- [Lab #05 - Deploy the application components as Docker services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab05-deploy-application-components-as-docker-services.md)
+- [Lab05 - Deploy the application components as Docker services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab05-deploy-application-components-as-docker-services.md)
 - [Lab06 - Drain a node and reschedule the containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab06-drain-a-node-and-reschedule-the-containers.md)
 - [Demonstrating Service Discovery under Docker Swarm Mode]()
 - [How to Lock Docker Swarm]()
