@@ -24,3 +24,5 @@ curl docker
 ```
 
 Try scaling the service down to see the result.
+
+[Next >> Lab05 - Deploy Applications Components as Docker Services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab05-deploy-application-components-as-docker-services.md)
