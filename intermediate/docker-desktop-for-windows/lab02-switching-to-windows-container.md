@@ -25,4 +25,19 @@ Server: Docker Engine - Community
   Experimental:     false
   ```
   
+ ## Verify if we have mplatform/mquery image built on top of Windows Platform
+ 
+ ```
+  PS C:\Users\Ajeet_Raina> docker run --rm mplatform/mquery hello-world
+Unable to find image 'mplatform/mquery:latest' locally
+C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: Get https://registry
+/: dial tcp: lookup registry-1.docker.io: no such host.
+See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
+PS C:\Users\Ajeet_Raina>
+```
+
+Surprisingly, there is NO image as such.
+
+
+
   
