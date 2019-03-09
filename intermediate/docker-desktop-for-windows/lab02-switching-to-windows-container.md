@@ -109,6 +109,16 @@ microsoft/cntk-nightly                     CNTK nightly image f
 PS C:\Users\Ajeet_Raina>
 ```
 
+```
+PS C:\Users\Ajeet_Raina> docker-compose version
+docker-compose version 1.23.2, build 1110ad01
+docker-py version: 3.6.0
+CPython version: 3.6.6
+OpenSSL version: OpenSSL 1.0.2o  27 Mar 2018
+PS C:\Users\Ajeet_Raina>
+
+```
+
 
 
 
