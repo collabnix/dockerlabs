@@ -16,3 +16,5 @@ each other, regardless of which node they are deployed onto.
 ```
 docker network create -d overlay skynet
 ```
+
+[Next >> Deploy Services](https://github.com/collabnix/dockerlabs/edit/master/intermediate/swarm/deploy-services.md)
