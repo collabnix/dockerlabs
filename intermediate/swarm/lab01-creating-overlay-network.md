@@ -1,4 +1,4 @@
-# Create Overlay Network
+# Lab01 - Create Overlay Network
 
 Swarm Mode also introduces an improved networking model. 
 In previous versions, Docker required the use of an external key-value store, such as Consul, to ensure consistency across the network. 
@@ -17,4 +17,4 @@ each other, regardless of which node they are deployed onto.
 docker network create -d overlay skynet
 ```
 
-[Next >> Deploy Services](https://github.com/collabnix/dockerlabs/edit/master/intermediate/swarm/deploy-services.md)
+[Next >> Lab02- Deploy Services](lab02-deploy-services.md)
