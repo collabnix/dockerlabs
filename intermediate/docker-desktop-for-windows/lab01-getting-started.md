@@ -86,7 +86,7 @@ PS C:\Users\Ajeet_Raina>
 This was expected as we are currently switched to Linux containers
 
 
-## Creating Docker Swarm Cluster on Windows 
+## Creating Docker Swarm Cluster  
 
 ```
 PS C:\Users\Ajeet_Raina\docker101\play-with-docker\wordpress> docker swarm init
@@ -112,7 +112,7 @@ ID                            HOSTNAME                STATUS              AVAILA
 2
 ```
 
-## Running WordPress Application on Docker Desktop for Windows
+## Running Linux based WordPress Application 
 
 Let us first stop the last 2 containers which listen on port 80 and 81 and then follow the below command to bring up WordPress App
 
@@ -168,3 +168,4 @@ Creating visualizer_visualizer_1 ... done
 PS C:\Users\Ajeet_Raina\docker101\play-with-docker\visualizer>
 ```
 
+[Next >> Switching to Windows Containers]()
