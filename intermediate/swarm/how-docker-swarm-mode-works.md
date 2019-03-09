@@ -66,4 +66,4 @@ docker swarm join 172.17.0.57:2377 --token $token
 
 By default, the manager will automatically accept new nodes being added to the cluster. You can view all nodes in the cluster using ```docker node ls```
 
-[Next >> ]()
+[Next >> Deploy Application Components as Docker Services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab01-deploy-application-components-as-docker-services.md)
