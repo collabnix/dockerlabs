@@ -1,4 +1,4 @@
-# How to Initialise Docker Swarm Mode Manually?
+# How Docker Swarm Mode works?
 
 Let us first understand what is Swarm Mode and what are its key concepts.
 
@@ -65,3 +65,5 @@ docker swarm join 172.17.0.57:2377 --token $token
 ```
 
 By default, the manager will automatically accept new nodes being added to the cluster. You can view all nodes in the cluster using ```docker node ls```
+
+[Next >> ]()
