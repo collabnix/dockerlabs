@@ -1,4 +1,4 @@
-# Cleaning Up
+# Lab07 - Cleaning Up
 
 Execute the docker service rm sleep-app command on manager1 to remove the service called sleep-app.
 
