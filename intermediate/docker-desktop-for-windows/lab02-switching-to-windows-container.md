@@ -1,285 +1,77 @@
-# Switching to Windows Container under Docker Desktop for Windows
+## Getting Started with Windows Containers
 
-Docker Desktop for Windows is Docker designed to run on Windows 10. It is a native Windows application that provides an easy-to-use development environment for building, shipping, and running dockerized apps. Docker Desktop for Windows uses Windows-native Hyper-V virtualization and networking and is the fastest and most reliable way to develop Docker apps on Windows. 
-Docker Desktop for Windows supports running both Linux and Windows Docker containers.
+The latest release of Windows to support Docker containers is Windows Server 2019, and Windows 10 with the 1809 update. There are many enhancements from the original Windows containers release in Server 2016.
 
-```
-PS C:\Users\Ajeet_Raina> docker version
-Client: Docker Engine - Community
- Version:           18.09.2
- API version:       1.39
- Go version:        go1.10.8
- Git commit:        6247962
- Built:             Sun Feb 10 04:12:31 2019
- OS/Arch:           windows/amd64
- Experimental:      false
+[Read about the new container features with Docker on Windows Server 2019](https://blog.docker.com/2019/01/announcing-support-for-windows-server-2019-within-docker-enterprise/)
 
-Server: Docker Engine - Community
- Engine:
-  Version:          18.09.2
-  API version:      1.39 (minimum version 1.24)
-  Go version:       go1.10.6
-  Git commit:       6247962
-  Built:            Sun Feb 10 04:28:48 2019
-  OS/Arch:          windows/amd64
-  Experimental:     false
-  ```
-  
- ## Verify if we have mplatform/mquery image built on top of Windows Platform
- 
- ```
-  Unable to find image 'mplatform/mquery:latest' locally
-latest: Pulling from mplatform/mquery
-db6020507de3: Pull complete
-f11a2bcbeb86: Pull complete
-Digest: sha256:e15189e3d6fbcee8a6ad2ef04c1ec80420ab0fdcf0d70408c0e914af80dfb107
-Status: Downloaded newer image for mplatform/mquery:latest
-Image: hello-world
- * Manifest List: Yes
- * Supported platforms:
-   - linux/amd64
-   - linux/arm/v5
-   - linux/arm/v7
-   - linux/arm64
-   - linux/386
-   - linux/ppc64le
-   - linux/s390x
-   - windows/amd64:10.0.14393.2551
-   - windows/amd64:10.0.16299.846
-   - windows/amd64:10.0.17134.469
-   - windows/amd64:10.0.17763.194
-```
+Windows containers need to match the version of the OS where the container is running with the version of the OS inside the container. Container images flagged as ltsc2019 or 1809 work with the latest Windows versions.
 
 
+Under this section we will cover the basics of using Windows Containers with Docker.
+
+## Running Windows containers
+
+First pull a Docker image which you can use to run a Windows container:
 
 ```
-PS C:\Users\Ajeet_Raina> docker search microsoft
-NAME                                       DESCRIPTION
-           AUTOMATED
-microsoft/dotnet                           Official images for
-           [OK]
-microsoft/mssql-server-linux               Official images for
-
-microsoft/aspnet                           Microsoft IIS images
-           [OK]
-microsoft/windowsservercore                The official Windows
-
-microsoft/aspnetcore                       Official images for
-           [OK]
-microsoft/nanoserver                       The official Nano Se
-
-microsoft/iis                              Microsoft IIS images
-
-microsoft/mssql-server-windows-developer   Official Microsoft S
-
-microsoft/mssql-server-windows-express     Official Microsoft S
-
-microsoft/aspnetcore-build                 Official images for
-           [OK]
-microsoft/azure-cli                        Official images for
-           [OK]
-microsoft/powershell                       PowerShell for every
-           [OK]
-microsoft/vsts-agent                       Official images for
-
-microsoft/dynamics-nav                     Official images for
-
-microsoft/dotnet-samples                   .NET Core Docker Sam
-           [OK]
-microsoft/bcsandbox                        Business Central San
-
-microsoft/mssql-tools                      Official images for
-
-microsoft/oms                              Monitor your contain
-           [OK]
-microsoft/cntk                             CNTK images from git
-           [OK]
-microsoft/wcf                              Microsoft WCF images
-
-microsoft/dotnet-nightly                   Preview images for t
-           [OK]
-microsoft/dotnet-framework-build           The .NET Framework b
-           [OK]
-microsoft/mmlspark                         Microsoft Machine Le
-
-microsoft/aspnetcore-build-nightly         Images to build prev
-           [OK]
-microsoft/cntk-nightly                     CNTK nightly image f
-
-PS C:\Users\Ajeet_Raina>
+docker image pull mcr.microsoft.com/windows/nanoserver:1809
 ```
 
-```
-PS C:\Users\Ajeet_Raina> docker-compose version
-docker-compose version 1.23.2, build 1110ad01
-docker-py version: 3.6.0
-CPython version: 3.6.6
-OpenSSL version: OpenSSL 1.0.2o  27 Mar 2018
-PS C:\Users\Ajeet_Raina>
+This downloads Microsoft's [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver) Docker image onto your environment. That image is a minimal Windows server operating system, packaged to run as a Docker container. You can use it as the base for your own apps, or you can run containers from it directly.
+
+Try a simple container, passing a command for the container to run:
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+PS> docker container run mcr.microsoft.com/windows/nanoserver:1809 hostname
+a33758b2dbea
 ```
 
+This runs a new container from the Windows Nano Server image, and tells it to run the `hostname` command. The output is the machine name of the container, which is actually a random ID set by Docker. Repeat the command and you'll see a different host name every time.
 
-  
+## Building and pushing Windows container images
+
+You package your own apps in Docker by building a Docker image. You share the app by pushing the image to a registry - it could be a public registry like [Docker Hub](https://hub.docker.com), or a private registry running in your own environment like [Docker Trusted Registry](https://docs.docker.com/ee/dtr/). Anyone with access to your image can pull it and run containers - just like you did with Microsoft's public Windows Nano Server image.
+
+Pushing images to Docker Hub requires a [free Docker ID](https://hub.docker.com/ "Click to create a Docker ID"). Storing images on Docker Hub is a great way to share applications, or to create build pipelines that move apps from development to production with Docker.
+
+Register for an account, and then save your Docker ID in a variable in your PowerShell session. We will use it in the rest of the lab:
+
+```
+$dockerId = '<your-docker-id>'
+```
+
+> Be sure to use your own Docker ID here. Mine is `sixeyed`, so the command I run is `$dockerId = 'sixeyed'`.
+
+Docker images are built with the [docker image build](https://docs.docker.com/engine/reference/commandline/image_build/ "docker image build reference") command, using a simple script called a [Dockerfile](https://docs.docker.com/engine/reference/builder/ "Dockerfile reference"). The Dockerfile describes the complete deployment of your application and all its dependencies.
+
+You can generate a very simple Dockerfile with PowerShell:
+
+```
+'FROM mcr.microsoft.com/windows/nanoserver:1809' | Set-Content Dockerfile
+'CMD echo Hello World!' | Add-Content Dockerfile
+```
+
+And now run `docker image build`, giving the image a tag which identifies it with your Docker ID:
+
+```
+docker image build --tag $dockerId/hello-world .
+```
+
+Run a container from the image, and you'll see it just executes the instruction from the `CMD` line:
+
+```
+> docker container run $dockerId/hello-world
+Hello World!
+```
+
+Now you have a Docker image for a simple Hello World app. The image is the portable unit - you can push the image to Docker Hub, and anyone can pull it and run your app for themselves. First run `docker login` with your credentials, to authenticate with the registry. Then push the image:
+
+```
+docker image push $dockerId/hello-world
+```
+
+Images stored on Docker Hub are available in the web interface, and public images can be pulled by other Docker users.
+
+### Next Steps
+
+Continue to Step 3: [Multi-Container Applications](MultiContainerApp.md "Multi-Container Applications"), to see how to build and run a web application which uses an ASP.NET Core web application and a SQL Server database - all using Docker Windows containers.
