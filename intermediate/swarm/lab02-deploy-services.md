@@ -19,7 +19,7 @@ Finally, we load balance these two containers together on port 80. Sending an HT
 The node which accepted the request might not be the node where the containerFinally, we load balance these two containers together on port 80. Sending an HTTP request to any of the nodes in the cluster will process the request by one of the containers within the cluster. The node which accepted the request might not be the node where the container responds. Instead, Docker load-balances requests across all available containers.
 
 ```
-docker service create --name http --network skynet --replicas 2 -p 80:80 katacoda/docker-http-server
+docker service create --name http --network collabnet --replicas 2 -p 80:80 ajeetraina/hellowhale
 ```
 
 You can view the services running on the cluster using the CLI command docker service ls
