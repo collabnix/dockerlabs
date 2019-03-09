@@ -1,4 +1,4 @@
-# Lab #01 - Deploy the application components as Docker services
+# Lab #05 - Deploy the application components as Docker services
 
 Our sleep application is becoming very popular on the internet (due to hitting Reddit and HN). 
 People just love it. So, you are going to have to scale your application to meet peak demand. 
@@ -110,4 +110,4 @@ kwmey288bkhp        sleep-app.6         ubuntu:latest       manager3            
 You have successfully scaled a swarm service up and down.
 
 
-[Next >> Drain a Node and Reschedule the Containers ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab02-drain-a-node-and-reschedule-the-containers.md)
+[Next >> Lab06 - Drain a Node and Reschedule the Containers ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab06-drain-a-node-and-reschedule-the-containers.md)
