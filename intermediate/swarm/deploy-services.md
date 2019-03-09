@@ -38,4 +38,9 @@ List containers on the second host -
 docker ps
 ```
 
-If we issue an HTTP request to the public port, it will be processed by the two containers  curl docker. 
+If we issue an HTTP request to the public port, it will be processed by the two containers  
+
+```
+ curl docker. 
+```
+[Next >> Inspecting State]()
