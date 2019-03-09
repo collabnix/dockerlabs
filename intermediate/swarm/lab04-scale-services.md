@@ -1,4 +1,4 @@
-# Scale Service
+# Lab04 - Scale Service
 
 A Service allows us to scale how many instances of a task is running across the cluster. 
 As it understands how to launch containers and which containers are running, it can easily start, or remove, containers as required. 
