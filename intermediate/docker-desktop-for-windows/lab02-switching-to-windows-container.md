@@ -40,7 +40,7 @@ Register for an account, and then save your Docker ID in a variable in your Powe
 $dockerId = '<your-docker-id>'
 ```
 
-> Be sure to use your own Docker ID here. Mine is `sixeyed`, so the command I run is `$dockerId = 'sixeyed'`.
+> Be sure to use your own Docker ID here. Mine is `ajeetraina`, so the command I run is `$dockerId = 'ajeetraina'`.
 
 Docker images are built with the [docker image build](https://docs.docker.com/engine/reference/commandline/image_build/ "docker image build reference") command, using a simple script called a [Dockerfile](https://docs.docker.com/engine/reference/builder/ "Dockerfile reference"). The Dockerfile describes the complete deployment of your application and all its dependencies.
 
