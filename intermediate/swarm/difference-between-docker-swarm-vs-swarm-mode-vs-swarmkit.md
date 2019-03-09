@@ -40,3 +40,5 @@ Following table compares Swarmkit and Swarm Mode:
 | Use swarmctl CLI | Use regular Docker CLI |
 
 Swarmkit has primitives to handle orchestration features like node management, discovery, security and scheduling.
+
+[Proceed >> How Docker Swarm Mode works](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/how-docker-swarm-mode-works.md)
