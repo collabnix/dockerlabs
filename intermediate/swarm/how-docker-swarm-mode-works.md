@@ -1,4 +1,4 @@
-# How Docker Swarm Mode Works?
+# How to Initialise Docker Swarm Mode Manually?
 
 Let us first understand what is Swarm Mode and what are its key concepts.
 
