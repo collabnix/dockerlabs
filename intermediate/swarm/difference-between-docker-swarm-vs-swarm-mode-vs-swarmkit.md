@@ -1,3 +1,7 @@
+
+# Understanding Difference between Docker Swarm(Classic), Swarm Mode & SwarmKit
+
+
 **Docker Swarm**  is an older (2014) Docker native orchestration tool. It is _standalone_ from the Docker engine and serves to connect Docker engines together to form a cluster. It&#39;s then possible to connect to the Swarm and run containers on the cluster. Swarm has a few features:
 
 - Allows us to specify a discovery service
