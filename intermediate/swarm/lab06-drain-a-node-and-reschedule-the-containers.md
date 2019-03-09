@@ -1,4 +1,4 @@
-# Lab07 - Drain a node and reschedule the containers
+# Lab06 - Drain a node and reschedule the containers
 
 Your sleep-app has been doing amazing after hitting Reddit and HN. It’s now number 1 on the App Store! You have scaled up during the holidays and down during the slow season. Now you are doing maintenance on one of your servers so you will need to gracefully take a server out of the swarm without interrupting service to your customers.
 
@@ -160,4 +160,4 @@ verify: Service converged
 [manager1] (local) root@192.168.0.9 ~/dockerlabs/intermediate/swarm
 ```
 
-[Next >> Cleaning Up](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab03-cleaning-up.md)
+[Next >> Lab07 - Cleaning Up](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab07-cleaning-up.md)
