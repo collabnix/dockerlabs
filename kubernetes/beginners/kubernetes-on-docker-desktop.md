@@ -150,11 +150,9 @@ Browse to http://<master IP>:8001/api/v1/namespaces/kube-system/services/https:k
 Direct Method:
 
 ```
-PS C:\Users\Ajeet_Raina\Desktop> $TOKEN=((kubectl -n kube-system describe secret default | Select-String "token:")
-t " +")[1]
-PS C:\Users\Ajeet_Raina\Desktop> kubectl config set-credentials docker-for-desktop --token="${TOKEN}"
-User "docker-for-desktop" set.
-PS C:\Users\Ajeet_Raina\Desktop>
+
+$TOKEN=((kubectl -n kube-system describe secret default | Select-String "token:") -split " +")[1]
+kubectl config set-credentials docker-for-desktop --token="${TOKEN}"
 ```
 
 Click on Kubeconfig and select the "config" file under C:\Users\<Username>\.kube\config
