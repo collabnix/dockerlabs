@@ -35,6 +35,14 @@
 
 ## Getting Started with Docker Swarm - Lab Sessions
 
+- [Lab01 - Create Overlay Network](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab01-creating-overlay-network.md)
+- [Lab02 - Deploy Service](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab02-deploy-services.md)
+- [Lab03 - Inspecting State](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab03-inspecting-state.md)
+- [Lab04 - Scale Service](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab04-scale-services.md)
+- [Lab #05 - Deploy the application components as Docker services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab05-deploy-application-components-as-docker-services.md)
+- [Lab06 - Drain a node and reschedule the containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab06-drain-a-node-and-reschedule-the-containers.md)
+
+
 
 - [Getting Started with Docker Swarm](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/README.md)
 - [Demonstrating Service Discovery under Docker Swarm Mode]()
