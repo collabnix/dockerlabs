@@ -28,19 +28,19 @@ Turn single host Docker host into a Multi-host Docker Swarm Mode. Becomes Manage
 
 The first node to initialise the Swarm Mode becomes the manager. As new nodes join the cluster, they can adjust their roles between managers or workers. You should run 3-5 managers in a production environment to ensure high availability.
 
+## Create Swarm Mode Cluster
 
+Swarm Mode is built into the Docker CLI. You can find an overview the possibility commands via docker swarm --help
+
+The most important one is how to initialise Swarm Mode. Initialisation is done via init.
 
 ```
 docker swarm init
 ```
 
-After running the command, the Docker Engine knows how to work with a cluster and becomes the manager. The results of an initialisation is a token used to add additional nodes in a secure fashion. 
+After running the command, the Docker Engine knows how to work with a cluster and becomes the manager. The results of an initialisation is a token used to add additional nodes in a secure fashion. Keep this token safe and secure for future use when scaling your cluster.
 
-## Task: Create Swarm Mode Cluster
-
-Swarm Mode is built into the Docker CLI. You can find an overview the possibility commands via docker swarm --help
-
-The most important one is how to initialise Swarm Mode. Initialisation is done via init.
+In the next step, we will add more nodes and deploy containers across these hosts.
 
 ## Step 2 - Join Cluster
 
@@ -48,13 +48,20 @@ With Swarm Mode enabled, it is possible to add additional nodes and issues comma
 
 On each additional node, you wish to add to the cluster, use the Docker CLI to join the existing group. Joining is done by pointing the other host to a current manager of the cluster. In this case, the first host.
 
-Swarm Mode is built into the Docker CLI. You can find an overview the possibility commands via docker swarm --help
+Docker now uses an additional port, 2377, for managing the Swarm. The port should be blocked from public access and only accessed by trusted users and nodes. We recommend using VPNs or private networks to secure access.
 
+## Task
 
+The first task is to obtain the token required to add a worker to the cluster. For demonstration purposes, we'll ask the manager what the token is via swarm join-token. In production, this token should be stored securely and only accessible by trusted individuals.
 
+```
+token=$(docker -H 172.17.0.57:2345 swarm join-token -q worker) && echo $token
+```
 
-[Next >> Deploy Application Components as Docker Services ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab01-deploy-application-components-as-docker-services.md)
+On the second host, join the cluster by requesting access via the manager. The token is provided as an additional parameter.
 
+```
+docker swarm join 172.17.0.57:2377 --token $token
+```
 
-
-
+By default, the manager will automatically accept new nodes being added to the cluster. You can view all nodes in the cluster using ```docker node ls```
