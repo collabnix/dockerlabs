@@ -1,4 +1,4 @@
-# Lab02 - Drain a node and reschedule the containers
+# Lab07 - Drain a node and reschedule the containers
 
 Your sleep-app has been doing amazing after hitting Reddit and HN. It’s now number 1 on the App Store! You have scaled up during the holidays and down during the slow season. Now you are doing maintenance on one of your servers so you will need to gracefully take a server out of the swarm without interrupting service to your customers.
 
