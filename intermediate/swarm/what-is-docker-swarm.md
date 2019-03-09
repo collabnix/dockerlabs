@@ -53,4 +53,4 @@ Swarm managers can use several strategies to run containers, such as “emptiest
 A swarm is made up of multiple nodes, which can be either physical or virtual machines. The basic concept is simple enough: run docker swarm init to enable swarm mode and make our current machine a swarm manager, then run docker swarm join on other machines to have them join the swarm as workers. 
 
 
-[Proceed >> Difference between Docker Swarm, Docker Swarm Mode and Swarmkit] (https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/difference-between-docker-swarm-vs-swarm-mode-vs-swarmkit.md
+[Proceed >> Difference between Docker Swarm, Docker Swarm Mode and Swarmkit] (https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/difference-between-docker-swarm-vs-swarm-mode-vs-swarmkit.md)
