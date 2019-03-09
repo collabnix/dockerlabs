@@ -52,6 +52,224 @@ Image: hello-world
 
 
 
+```
+PS C:\Users\Ajeet_Raina> docker search microsoft
+NAME                                       DESCRIPTION
+           AUTOMATED
+microsoft/dotnet                           Official images for
+           [OK]
+microsoft/mssql-server-linux               Official images for
+
+microsoft/aspnet                           Microsoft IIS images
+           [OK]
+microsoft/windowsservercore                The official Windows
+
+microsoft/aspnetcore                       Official images for
+           [OK]
+microsoft/nanoserver                       The official Nano Se
+
+microsoft/iis                              Microsoft IIS images
+
+microsoft/mssql-server-windows-developer   Official Microsoft S
+
+microsoft/mssql-server-windows-express     Official Microsoft S
+
+microsoft/aspnetcore-build                 Official images for
+           [OK]
+microsoft/azure-cli                        Official images for
+           [OK]
+microsoft/powershell                       PowerShell for every
+           [OK]
+microsoft/vsts-agent                       Official images for
+
+microsoft/dynamics-nav                     Official images for
+
+microsoft/dotnet-samples                   .NET Core Docker Sam
+           [OK]
+microsoft/bcsandbox                        Business Central San
+
+microsoft/mssql-tools                      Official images for
+
+microsoft/oms                              Monitor your contain
+           [OK]
+microsoft/cntk                             CNTK images from git
+           [OK]
+microsoft/wcf                              Microsoft WCF images
+
+microsoft/dotnet-nightly                   Preview images for t
+           [OK]
+microsoft/dotnet-framework-build           The .NET Framework b
+           [OK]
+microsoft/mmlspark                         Microsoft Machine Le
+
+microsoft/aspnetcore-build-nightly         Images to build prev
+           [OK]
+microsoft/cntk-nightly                     CNTK nightly image f
+
+PS C:\Users\Ajeet_Raina>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
 
 
   
