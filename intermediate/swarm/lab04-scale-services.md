@@ -14,6 +14,22 @@ The command below will scale our http service to be running across five containe
 docker service scale http=5
 ```
 
+```
+ docker service scale http=5
+http scaled to 5
+overall progress: 5 out of 5 tasks
+1/5: running   [==================================================>]
+2/5: running   [==================================================>]
+3/5: running   [==================================================>]
+4/5: running   [==================================================>]
+5/5: running   [==================================================>]
+verify: Waiting 4 seconds to verify that tasks are stable...
+verify: Service converged
+[manager1] (local) root@192.168.0.4 ~
+$
+[manager1] (local) root@192.168.0.4 ~
+```
+
 On each host, you will see additional nodes being started docker ps
 
 The load balancer will automatically be updated. Requests will now be processed across the new containers. 
