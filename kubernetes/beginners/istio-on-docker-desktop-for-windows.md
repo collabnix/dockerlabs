@@ -341,3 +341,36 @@ prometheus-f556886b8-pt6zf                0/1       ContainerCreating   0       
 
 You will need to wait till these pods comes up well.
 
+```
+PS C:\Users\Ajeet_Raina\Desktop\istio-1.1.0-rc.3-win\istio-1.1.0-rc.3> kubectl get all
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/details       ClusterIP   10.103.40.159    <none>        9080/TCP   7h
+service/kubernetes    ClusterIP   10.96.0.1        <none>        443/TCP    1d
+service/productpage   ClusterIP   10.108.229.154   <none>        9080/TCP   7h
+service/ratings       ClusterIP   10.110.235.174   <none>        9080/TCP   7h
+service/reviews       ClusterIP   10.108.95.118    <none>        9080/TCP   7h
+
+NAME                             DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/details-v1       1         0         0            0           7h
+deployment.apps/productpage-v1   1         0         0            0           7h
+deployment.apps/ratings-v1       1         0         0            0           7h
+deployment.apps/reviews-v1       1         0         0            0           7h
+deployment.apps/reviews-v2       1         0         0            0           7h
+deployment.apps/reviews-v3       1         0         0            0           7h
+
+NAME                                       DESIRED   CURRENT   READY     AGE
+replicaset.apps/details-v1-5c479cb788      1         0         0         7h
+replicaset.apps/details-v1-6865b9b99d      0         0         0         1h
+replicaset.apps/productpage-v1-97d4c545d   1         0         0         7h
+replicaset.apps/productpage-v1-f8c8fb8     0         0         0         1h
+replicaset.apps/ratings-v1-77f657f55d      0         0         0         1h
+replicaset.apps/ratings-v1-855794cc7b      1         0         0         7h
+replicaset.apps/reviews-v1-6b7f6db5c5      0         0         0         1h
+replicaset.apps/reviews-v1-7489fb5675      1         0         0         7h
+replicaset.apps/reviews-v2-6b795954ff      1         0         0         7h
+replicaset.apps/reviews-v2-7ff5966b99      0         0         0         1h
+replicaset.apps/reviews-v3-58cdbd8cf9      1         0         0         7h
+replicaset.apps/reviews-v3-5df889bcff      0         0         0         1h
+PS C:\Users\Ajeet_Raina\Desktop\istio-1.1.0-rc.3-win\istio-1.1.0-rc.3>
+
+```
