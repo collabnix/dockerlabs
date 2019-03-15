@@ -68,6 +68,7 @@ alpine              3.8                 dac705114996        7 days ago          
 alpine              3.9                 5cb3aa00f899        7 days ago          5.53MB
 ```
 
+```
 [node4] (local) root@192.168.0.20 ~
 $ docker images alpine:3.7
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
