@@ -1,4 +1,4 @@
-# How to build Your First Alpine Docker Container
+# How to build Your First Alpine Docker Image and Push it to DockerHub
 
 Under this tutorial we will see how to build our own first alpine based Docker Image.
 
