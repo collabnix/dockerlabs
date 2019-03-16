@@ -117,29 +117,18 @@ root@pi-node1:/home/pi#
 
 ```
 
-## Running Nginx Service with 4 replicas
+## Running Portainer 
+
+
 
 ```
-docker service create --name mynginx --network collabnet --publish 80 --replicas 4 nginx
+$curl -L https://downloads.portainer.io/portainer-agent-stack.yml -o portainer-agent-stack.yml
+$ docker stack deploy --compose-file=portainer-agent-stack.yml portainer
 ```
 
-```
-root@pi-node1:~# docker service ps zhz
-ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE                  ERROR               PORTS
-l8u5e54hitwj        mynginx.1           nginx:latest        pi-node1            Running             Preparing about a minute ago
-qik9p1oii6z3        mynginx.2           nginx:latest        pi-node2            Running             Preparing about a minute ago
-xo50b6puak06        mynginx.3           nginx:latest        pi-node1            Running             Preparing about a minute ago
-nchemr0wgkb0        mynginx.4           nginx:latest        pi-node2            Running             Preparing about a minute ago
-root@pi-node1:~#
-```
+That's it . Browse to http://IP:9000 to see portainer.
 
-```
-root@pi-node1:/home/pi# docker service ls
-ID                  NAME                MODE                REPLICAS            IMAGE                                      PORTS
-zhztgd16cnmw        mynginx             replicated          4/4                 nginx:latest                               *:30000->80/tcp
-x9s1oq0bc2g8        viz                 replicated          1/1                 ajeetraina/swarm-visualizer-armv7:latest   *:8080->8080/tcp
-root@pi-node1:/home/pi#
-```
+
 
 
 
