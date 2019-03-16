@@ -1,5 +1,30 @@
 # How to build Your First Alpine Docker Image and Push it to DockerHub
 
+
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+- Create an account with [DockerHub](https://hub.docker.com)
+- Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
+- Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
+
 Under this tutorial we will see how to build our own first alpine based Docker Image.
 
 ```
@@ -131,7 +156,7 @@ bcf2f368fe23: Mounted from library/alpine
 1.0: digest: sha256:85d50f702e930db9e5b958387e667b7e26923f4de340534085cea184adb8411e size: 740
 [node4] (local) root@192.168.0.20 ~
 ```
-
+[Next >> Building Docker Image from Scratch]()
 
 
 
