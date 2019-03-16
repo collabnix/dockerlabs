@@ -75,6 +75,8 @@ root@raspberrypi:~#
 
 ## Installing Docker 18.09
 
+Its a single liner command. -L means location, -s means silent and -S means show error.
+
 ```
 root@raspberrypi:~# curl -sSL https://get.docker.com/ | sh
 # Executing docker install script, commit: 40b1b76
