@@ -2,7 +2,7 @@
 
 Let us setup 2 node Swarm Mode Cluster.
 
-System #1 - pi-node1 - 192.168.1.5
+System #1 - pi-node1 - 192.168.1.5<br>
 System #2 - pi-node2 - 192.168.1.6
 
 
