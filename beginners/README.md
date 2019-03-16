@@ -61,6 +61,7 @@
 - [Working with Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/workingwithdockerimage.md) 
   - [Saving Images and Containers as Tar Files for Sharing](https://github.com/collabnix/dockerlabs/blob/master/beginners/saving-images-as-tar/README.md) 
   - [Versioning an Image with Tags](https://github.com/collabnix/dockerlabs/blob/master/beginners/versioning-an-image-with-tags/README.md)
+- [Building Your First Alpine Docker Image and Push it to DockerHub](https://github.com/collabnix/dockerlabs/blob/master/beginners/building-your-first-alpine-container.md)
 - [Working with Docker containers](https://github.com/collabnix/dockerlabs/blob/master/beginners/working-with-docker-containers/README.md)
   - [Detaching containers without stopping them](https://github.com/collabnix/dockerlabs/blob/master/beginners/deatching-containers-without-stopping-them/README.md)
 - [Creating Docker Base Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/create-base-image.md)
