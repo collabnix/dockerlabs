@@ -59,6 +59,15 @@ $ docker run -d -p 81:80 -v /root/dockerlabs/solution/nginx/sample:/usr/share/ng
 
 You will see that the default NGINX page gets modified and the new Dockerlabs page gets displayed under port 81.
 
+# Building Nginx using Dockerfile
+
+```
+cd dockerfile
+docker build -t ajeetraina/mynginx .
+docker run -d -p 83:80 ajeetraina/mynginx
+```
+
+
 ## Contributor
 
 - [Ajeet Singh Raina](ajeetraina@gmail.com)
