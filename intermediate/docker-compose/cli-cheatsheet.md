@@ -205,6 +205,6 @@ docker-compose stop         # Stop containers for every service.
 docker-compose stop web     # Stop containers only for service web.
 ```
 
-#Contributor
+# Contributor
 
 [Akshit Grover]()
