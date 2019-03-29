@@ -56,5 +56,28 @@ INFO[2019-03-29T10:52:10.543022102+05:30] Writing manifest: /var/lib/rancher/k3s
 INFO[2019-03-29T10:52:10.548766216+05:30] Writing manifest: /var/lib/rancher/k3s/server/manifests/traefik.yaml
 ```
 
+```
+root@raspberrypi:~# sudo k3s kubectl get node -o wide
+NAME          STATUS   ROLES    AGE     VERSION         INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION   CONTAINER-RUNTIME
+raspberrypi   Ready    <none>   2m13s   v1.13.4-k3s.1   192.168.43.134   <none>        Raspbian GNU/Linux 9 (stretch)   4.14.98-v7+      containerd://1.2.4+unknown
+```
+
+```
+root@raspberrypi:~# k3s kubectl get nodes
+NAME          STATUS   ROLES    AGE     VERSION
+raspberrypi   Ready    <none>   2m26s   v1.13.4-k3s.1
+```
+
+```
+root@raspberrypi:~# k3s kubectl get po
+No resources found.
+```
+
+```
+root@raspberrypi:~# k3s kubectl get po,svc,deploy
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.43.0.1    <none>        443/TCP   11h
+root@raspberrypi:~#
+```
 
 
