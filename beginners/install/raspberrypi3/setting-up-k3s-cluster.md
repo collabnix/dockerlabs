@@ -100,3 +100,12 @@ deployment.apps/kubernetes-dashboard created
 service/kubernetes-dashboard created
 root@raspberrypi:~#
 ```
+
+```
+k3s kubectl proxy
+
+root@raspberrypi:~# k3s kubectl proxy
+Starting to serve on 127.0.0.1:8001
+```
+
+
