@@ -128,7 +128,7 @@ $ docker stack deploy --compose-file=portainer-agent-stack.yml portainer
 
 That's it . Browse to http://IP:9000 to see portainer.
 
-[Next >> Setting up K3s Cluster]()
+[Next >> Setting up K3s Cluster](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
 
 
 
