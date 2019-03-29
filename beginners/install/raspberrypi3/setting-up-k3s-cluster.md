@@ -95,3 +95,59 @@ root@raspberrypi:~#
 service "hypriot" deleted
 service "kubernetes" delete
 ```
+
+
+```
+root@raspberrypi:~# k3s kubectl run mynginx --image=nginx --replicas=3 --port=80
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/mynginx created
+```
+
+```
+root@raspberrypi:~# k3s kubectl get po
+NAME                       READY   STATUS    RESTARTS   AGE
+mynginx-84b8d48d44-ggpcp   1/1     Running   0          119s
+mynginx-84b8d48d44-hkdg8   1/1     Running   0          119s
+mynginx-84b8d48d44-n4r6q   1/1     Running   0          119s
+```
+
+```
+
+root@raspberrypi:~# k3s kubectl expose deployment mynginx --port 80
+service/mynginx exposed
+```
+
+```
+root@raspberrypi:~# k3s kubectl get endpoints mynginx
+NAME      ENDPOINTS                                   AGE
+mynginx   10.42.0.10:80,10.42.0.11:80,10.42.0.12:80   17s
+```
+
+```
+root@raspberrypi:~# curl 10.42.0.10:80
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
