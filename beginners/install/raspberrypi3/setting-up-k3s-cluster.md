@@ -88,24 +88,10 @@ service/kubernetes   ClusterIP   10.43.0.1    <none>        443/TCP   11h
 root@raspberrypi:~#
 ```
 
-## Runnig Kubernetes Dashboard
+## Cleaning Up Kubernetes Resources
 
 ```
-root@raspberrypi:~# k3s kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
-secret/kubernetes-dashboard-certs created
-serviceaccount/kubernetes-dashboard created
-role.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
-rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
-deployment.apps/kubernetes-dashboard created
-service/kubernetes-dashboard created
-root@raspberrypi:~#
+#k3s kubectl delete po,svc,deploy --all
+service "hypriot" deleted
+service "kubernetes" delete
 ```
-
-```
-k3s kubectl proxy
-
-root@raspberrypi:~# k3s kubectl proxy
-Starting to serve on 127.0.0.1:8001
-```
-
-
