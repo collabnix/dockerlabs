@@ -104,11 +104,11 @@ root@pi-node1:~#
 
 ```
 root@pi-node1:/home/pi# docker service create \
->   --name=vizualizer \
->   --publish=8080:8080/tcp \
->   --constraint=node.role==manager \
->   --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
->   ajeetraina/swarm-visualizer-armv7
+   --name=vizualizer \
+   --publish=8080:8080/tcp \
+   --constraint=node.role==manager \
+   --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
+   ajeetraina/swarm-visualizer-armv7
 x9s1oq0bc2g8yqjs4u7zfejr7
 overall progress: 1 out of 1 tasks
 1/1: running   [==================================================>]
