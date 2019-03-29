@@ -126,7 +126,7 @@ $curl -L https://downloads.portainer.io/portainer-agent-stack.yml -o portainer-a
 $ docker stack deploy --compose-file=portainer-agent-stack.yml portainer
 ```
 
-That's it . Browse to http://IP:9000 to see portainer.
+That's it . Browse to http://IP:9000 to see portainer.(admin/Oracle9ias)
 
 [Next >> Setting up K3s Cluster](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
 
