@@ -92,13 +92,6 @@ ed12cf66b701        bridge              bridge              local
 root@pi-node1:~#
 ```
 
-## Creating an Overlay Network
-
-```
-root@pi-node1:~# docker network create -d overlay collabnet
-smr6pppnsd6el21k68xb91viw
-root@pi-node1:~#
-```
 
 ## Running Swarm Visualizer on Raspberry Pi
 
