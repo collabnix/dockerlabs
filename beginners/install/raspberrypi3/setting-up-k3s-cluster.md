@@ -1,6 +1,6 @@
 # Building up K3s Cluster
 
-## Pre-requisite:
+# Pre-requisite:
 
 ## Enable container features in Kernel
 
@@ -12,6 +12,7 @@ cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory
 
 Reboot the device.
 
+## Installing K3s 
 
 ```
 root@raspberrypi:~# curl -sfL https://get.k3s.io | sh -
@@ -41,6 +42,7 @@ k3s-armhf             100%[========================>]  33.08M  93.1KB/s    in 8m
 
 ```
 
+## Boostrapping Your K3s Server
 
 ```
 root@raspberrypi:~# sudo k3s server
@@ -62,16 +64,22 @@ NAME          STATUS   ROLES    AGE     VERSION         INTERNAL-IP      EXTERNA
 raspberrypi   Ready    <none>   2m13s   v1.13.4-k3s.1   192.168.43.134   <none>        Raspbian GNU/Linux 9 (stretch)   4.14.98-v7+      containerd://1.2.4+unknown
 ```
 
+# Listing K3s Nodes
+
 ```
 root@raspberrypi:~# k3s kubectl get nodes
 NAME          STATUS   ROLES    AGE     VERSION
 raspberrypi   Ready    <none>   2m26s   v1.13.4-k3s.1
 ```
 
+## Listing K3s Pods
+
 ```
 root@raspberrypi:~# k3s kubectl get po
 No resources found.
 ```
+
+
 
 ```
 root@raspberrypi:~# k3s kubectl get po,svc,deploy
