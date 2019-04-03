@@ -1,4 +1,6 @@
-# Welcome to DockerLabs  [![Say Thanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/collabnix)
+# Welcome to DockerLabs  [![Say Thanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/collabnix) [![Slack ](https://img.shields.io/badge/collabnix/dockerlabs-pink.svg)](https://collabnix.slack.com) 
+
+
 
 ![My image](https://github.com/collabnix/dockerlabs/blob/master/images/dockerlabs.jpeg)
 
