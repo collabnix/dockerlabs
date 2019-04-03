@@ -114,7 +114,7 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
    - [Windows](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/windows/docker-desktop-for-windows/README.md)
    - Windows Server
    - Cloud Platform
-   - [IoT Platform](https://github.com/collabnix/dockerlabs/tree/master/beginners/install)
+   - [IoT Platform](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/README.md)
    - Unix ( FreeBSD, Solaris)  
    - MacOS
 - Compiling Your Own Docker Binary from Source
