@@ -2,7 +2,7 @@
 
 - What is Kubernetes & Why is it damn popular ?
 - Explain where kubernetes fits ?
-- How Kubernetes different from Docker ?
+- How is Kubernetes different from Docker ?
 - Demystify Kubernetes Underlying Technology
 - Architecture of Kubernetes
 - Evolution of Kubernetes Release
