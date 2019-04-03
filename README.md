@@ -55,13 +55,6 @@ Below are the list of categories:
 - [Kubernetes Interview Questions]()
 
 
-## How to Contribute
-
-Thank you so much for showing your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials.
-
-[Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br>
-[Template for writing Tutorial Page](https://github.com/collabnix/dockerlabs/tree/master/template/EXAMPLE.md)
-
 ## Docker-Ready Stack for You
 
 In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
@@ -87,6 +80,14 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 - [Docker + Nginx ](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)
 
 - [Docker + Django + PostgreSQL](https://github.com/collabnix/dockerlabs/blob/master/solution/django-postgres/readme.md)
+
+## How to Contribute
+
+Thank you so much for showing your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials.
+
+[Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br>
+[Template for writing Tutorial Page](https://github.com/collabnix/dockerlabs/tree/master/template/EXAMPLE.md)
+
 ## License
 
 [MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md)
