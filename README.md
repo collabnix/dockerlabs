@@ -185,7 +185,7 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 [Mounting host directory into container](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/bind-mounts.md)<br>
 [Creating Volume with Alpine OS](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/Creating%20Volume%20with%20alphine.md)<br>
 
-# Intermediate Course
+# Intermediate Track
 
 
 ## Introduction to Docker Networking
