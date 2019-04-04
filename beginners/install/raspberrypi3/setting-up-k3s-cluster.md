@@ -58,6 +58,27 @@ INFO[2019-03-29T10:52:10.543022102+05:30] Writing manifest: /var/lib/rancher/k3s
 INFO[2019-03-29T10:52:10.548766216+05:30] Writing manifest: /var/lib/rancher/k3s/server/manifests/traefik.yaml
 ```
 
+In case you face issue shown below:
+
+```
+
+INFO[2019-04-04T15:52:43.736199140+05:30] Wrote kubeconfig /etc/rancher/k3s/k3s.yaml
+INFO[2019-04-04T15:52:43.736433150+05:30] Run: k3s kubectl
+INFO[2019-04-04T15:52:43.736514243+05:30] k3s is up and running
+INFO[2019-04-04T15:52:44.708941793+05:30] Logging containerd to /var/lib/rancher/k3s/agent/containerd/containerd.log
+INFO[2019-04-04T15:52:44.709420021+05:30] Running containerd -c /var/lib/rancher/k3s/agent/etc/containerd/config.toml -a /run/k3s/containerd/containerd.sock --state /run/k3s/containerd --root /var/lib/rancher/k3s/agent/containerd
+INFO[2019-04-04T15:52:44.710450122+05:30] Waiting for containerd startup: rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial unix /run/k3s/containerd/containerd.sock: connect: connection refused"
+containerd: exit status 1
+```
+You can fix it by editing /etc/hosts and adding :
+
+```
+127.0.0.1       raspberrypi-node3
+```
+
+
+
+
 ```
 root@raspberrypi:~# sudo k3s kubectl get node -o wide
 NAME          STATUS   ROLES    AGE     VERSION         INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION   CONTAINER-RUNTIME
