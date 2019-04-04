@@ -330,6 +330,23 @@ pi-node1   Ready    <none>   118s   v1.13.5-k3s.1
 pi-node2   Ready    <none>   108m   v1.13.5-k3s.1
 ```
 
-## Running Kubernetes Dashboard
+## Setting up Nginx
+
+```
+root@raspberrypi:~# k3s kubectl run mynginx --image=nginx --replicas=3 --port=80
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/mynginx created
+```
+```
+root@raspberrypi:~# k3s kubectl expose deployment mynginx --port 80
+service/mynginx exposed
+```
+
+```
+kubectl delete --all pods
+pod "mynginx-84b8d48d44-9ghrl" deleted
+pod "mynginx-84b8d48d44-bczsv" deleted
+pod "mynginx-84b8d48d44-qqk9p" deleted
+```
 
 
