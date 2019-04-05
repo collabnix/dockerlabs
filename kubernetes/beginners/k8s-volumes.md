@@ -4,7 +4,7 @@ In Kubernetes, a volume can be thought of as a directory which is accessible to 
 The concept of volume was present with the Docker, however the only issue was that the volume was very much limited to a particular pod. As soon as the life of a pod ended, the volume was also lost.
 On the other hand, the volumes that are created through Kubernetes is not limited to any container. It supports any or all the containers deployed inside the pod of Kubernetes. A key advantage of Kubernetes volume is, it supports different kind of storage wherein the pod can use multiple of them at the same time.
 
-## Types of Kubernetes Volume
+# Types of Kubernetes Volume
 
 Here is a list of some popular Kubernetes Volumes −
 
