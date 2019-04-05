@@ -8,41 +8,41 @@ On the other hand, the volumes that are created through Kubernetes is not limite
 
 Here is a list of some popular Kubernetes Volumes −
 
-## emptyDir − It is a type of volume that is created when a Pod is first assigned to a Node. It remains active as long as the Pod is running on that node. The volume is initially empty and the containers in the pod can read and write the files in the emptyDir volume. Once the Pod is removed from the node, the data in the emptyDir is erased.
+-  emptyDir − It is a type of volume that is created when a Pod is first assigned to a Node. It remains active as long as the Pod is running on that node. The volume is initially empty and the containers in the pod can read and write the files in the emptyDir volume. Once the Pod is removed from the node, the data in the emptyDir is erased.
 
-## hostPath − This type of volume mounts a file or directory from the host node’s filesystem into your pod.
+-  hostPath − This type of volume mounts a file or directory from the host node’s filesystem into your pod.
 
-## gcePersistentDisk − This type of volume mounts a Google Compute Engine (GCE) Persistent Disk into your Pod. The data in a gcePersistentDisk remains intact when the Pod is removed from the node.
+- gcePersistentDisk − This type of volume mounts a Google Compute Engine (GCE) Persistent Disk into your Pod. The data in a gcePersistentDisk remains intact when the Pod is removed from the node.
 
-## awsElasticBlockStore − This type of volume mounts an Amazon Web Services (AWS) Elastic Block Store into your Pod. Just like gcePersistentDisk, the data in an awsElasticBlockStore remains intact when the Pod is removed from the node.
+- awsElasticBlockStore − This type of volume mounts an Amazon Web Services (AWS) Elastic Block Store into your Pod. Just like gcePersistentDisk, the data in an awsElasticBlockStore remains intact when the Pod is removed from the node.
 
-## nfs − An nfs volume allows an existing NFS (Network File System) to be mounted into your pod. The data in an nfs volume is not erased when the Pod is removed from the node. The volume is only unmounted.
+- nfs − An nfs volume allows an existing NFS (Network File System) to be mounted into your pod. The data in an nfs volume is not erased when the Pod is removed from the node. The volume is only unmounted.
 
-## iscsi − An iscsi volume allows an existing iSCSI (SCSI over IP) volume to be mounted into your pod.
+- iscsi − An iscsi volume allows an existing iSCSI (SCSI over IP) volume to be mounted into your pod.
 
-## flocker − It is an open-source clustered container data volume manager. It is used for managing data volumes. A flocker volume allows a Flocker dataset to be mounted into a pod. If the dataset does not exist in Flocker, then you first need to create it by using the Flocker API.
+- flocker − It is an open-source clustered container data volume manager. It is used for managing data volumes. A flocker volume allows a Flocker dataset to be mounted into a pod. If the dataset does not exist in Flocker, then you first need to create it by using the Flocker API.
 
-## glusterfs − Glusterfs is an open-source networked filesystem. A glusterfs volume allows a glusterfs volume to be mounted into your pod.
+- glusterfs − Glusterfs is an open-source networked filesystem. A glusterfs volume allows a glusterfs volume to be mounted into your pod.
 
-## rbd − RBD stands for Rados Block Device. An rbd volume allows a Rados Block Device volume to be mounted into your pod. Data remains preserved after the Pod is removed from the node.
+- rbd − RBD stands for Rados Block Device. An rbd volume allows a Rados Block Device volume to be mounted into your pod. Data remains preserved after the Pod is removed from the node.
 
-## cephfs − A cephfs volume allows an existing CephFS volume to be mounted into your pod. Data remains intact after the Pod is removed from the node.
+-cephfs − A cephfs volume allows an existing CephFS volume to be mounted into your pod. Data remains intact after the Pod is removed from the node.
 
-## gitRepo − A gitRepo volume mounts an empty directory and clones a git repository into it for your pod to use.
+- gitRepo − A gitRepo volume mounts an empty directory and clones a git repository into it for your pod to use.
 
-## secret − A secret volume is used to pass sensitive information, such as passwords, to pods.
+- secret − A secret volume is used to pass sensitive information, such as passwords, to pods.
 
-## persistentVolumeClaim − A persistentVolumeClaim volume is used to mount a PersistentVolume into a pod. PersistentVolumes are a way for users to “claim” durable storage (such as a GCE PersistentDisk or an iSCSI volume) without knowing the details of the particular cloud environment.
+- persistentVolumeClaim − A persistentVolumeClaim volume is used to mount a PersistentVolume into a pod. PersistentVolumes are a way for users to “claim” durable storage (such as a GCE PersistentDisk or an iSCSI volume) without knowing the details of the particular cloud environment.
 
-## downwardAPI − A downwardAPI volume is used to make downward API data available to applications. It mounts a directory and writes the requested data in plain text files.
+- downwardAPI − A downwardAPI volume is used to make downward API data available to applications. It mounts a directory and writes the requested data in plain text files.
 
-## azureDiskVolume − An AzureDiskVolume is used to mount a Microsoft Azure Data Disk into a Pod.
+- azureDiskVolume − An AzureDiskVolume is used to mount a Microsoft Azure Data Disk into a Pod.
 
-# Persistent Volume and Persistent Volume Claim
+- Persistent Volume and Persistent Volume Claim
 
-## Persistent Volume (PV) − It’s a piece of network storage that has been provisioned by the administrator. It’s a resource in the cluster which is independent of any individual pod that uses the PV.
+- Persistent Volume (PV) − It’s a piece of network storage that has been provisioned by the administrator. It’s a resource in the cluster which is independent of any individual pod that uses the PV.
 
-## Persistent Volume Claim (PVC) − The storage requested by Kubernetes for its pods is known as PVC. The user does not need to know the underlying provisioning. The claims must be created in the same namespace where the pod is created.
+- Persistent Volume Claim (PVC) − The storage requested by Kubernetes for its pods is known as PVC. The user does not need to know the underlying provisioning. The claims must be created in the same namespace where the pod is created.
 
 ## Creating Persistent Volume
 
@@ -64,17 +64,17 @@ spec:
 
 In the above code, we have defined −
 
-## kind: PersistentVolume → We have defined the kind as PersistentVolume which tells kubernetes that the yaml file being used is to create the Persistent Volume.
+- kind: PersistentVolume → We have defined the kind as PersistentVolume which tells kubernetes that the yaml file being used is to create the Persistent Volume.
 
-## name: pv0001 → Name of PersistentVolume that we are creating.
+- name: pv0001 → Name of PersistentVolume that we are creating.
 
-## capacity: → This spec will define the capacity of PV that we are trying to create.
+- capacity: → This spec will define the capacity of PV that we are trying to create.
 
-## storage: 10Gi → This tells the underlying infrastructure that we are trying to claim 10Gi space on the defined path.
+- storage: 10Gi → This tells the underlying infrastructure that we are trying to claim 10Gi space on the defined path.
 
-## ReadWriteOnce → This tells the access rights of the volume that we are creating.
+- ReadWriteOnce → This tells the access rights of the volume that we are creating.
 
-## path: "/tmp/data01" → This definition tells the machine that we are trying to create volume under this path on the underlying infrastructure.
+- path: "/tmp/data01" → This definition tells the machine that we are trying to create volume under this path on the underlying infrastructure.
 
 # Creating PV
 
@@ -114,13 +114,13 @@ spec:
 
 In the above code, we have defined −
 
-## kind: PersistentVolumeClaim → It instructs the underlying infrastructure that we are trying to claim a specified amount of space.
+- kind: PersistentVolumeClaim → It instructs the underlying infrastructure that we are trying to claim a specified amount of space.
 
-## name: myclaim-1 → Name of the claim that we are trying to create.
+- name: myclaim-1 → Name of the claim that we are trying to create.
 
-## ReadWriteOnce → This specifies the mode of the claim that we are trying to create.
+- ReadWriteOnce → This specifies the mode of the claim that we are trying to create.
 
-## storage: 3Gi → This will tell kubernetes about the amount of space we are trying to claim.
+- storage: 3Gi → This will tell kubernetes about the amount of space we are trying to claim.
 
 # Creating PVC
 
@@ -171,8 +171,8 @@ spec:
 
 In the above code, we have defined −
 
-## volumeMounts: → This is the path in the container on which the mounting will take place.
+- volumeMounts: → This is the path in the container on which the mounting will take place.
 
-## Volume: → This definition defines the volume definition that we are going to claim
+- Volume: → This definition defines the volume definition that we are going to claim
 
-## persistentVolumeClaim: → Under this, we define the volume name which we are going to use in the defined pod.
+-persistentVolumeClaim: → Under this, we define the volume name which we are going to use in the defined pod.
