@@ -26,7 +26,7 @@ Here is a list of some popular Kubernetes Volumes −
 
 - rbd − RBD stands for Rados Block Device. An rbd volume allows a Rados Block Device volume to be mounted into your pod. Data remains preserved after the Pod is removed from the node.
 
--cephfs − A cephfs volume allows an existing CephFS volume to be mounted into your pod. Data remains intact after the Pod is removed from the node.
+- cephfs − A cephfs volume allows an existing CephFS volume to be mounted into your pod. Data remains intact after the Pod is removed from the node.
 
 - gitRepo − A gitRepo volume mounts an empty directory and clones a git repository into it for your pod to use.
 
