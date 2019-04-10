@@ -1,9 +1,5 @@
 # How to test the latest Docker Static Binaries(test Build)?
 
-## Node #1: 10.140.0.2
-## Node #2: 10.140.0.3
-
-Node #1:
 
 ## Downloading the static binary archive. 
 
