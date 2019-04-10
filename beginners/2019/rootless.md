@@ -1,8 +1,6 @@
 # Testing rootless Docker under Docker 19.03.1
 
-## Installing Rootless Docker
-
-We require the below components in place:
+End Goal:
 
 ```
 Start daemon: dockerd-rootless.sh --experimental
