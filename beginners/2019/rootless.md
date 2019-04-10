@@ -82,4 +82,7 @@ export DOCKER_HOST=unix:///run/user/1001/docker.sock
 #
 ```
 
-
+```
+$ echo "export PATH=/home/tanvirkour1985/bin:$PATH" >> .bashrc
+$ echo "export DOCKER_HOST=unix:///run/user/1001/docker.sock" >> .bashrc
+```
