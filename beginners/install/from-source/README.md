@@ -114,6 +114,14 @@ For more examples and ideas, visit:
 
 ## Testing 19.03 Context Feature
 
+Say, you have 2 nodes: node1 and node2
+
+On Node2, install Docker and run the below command.You can configure the Docker daemon to listen to multiple sockets at the same time using multiple -H options:
+
+```
+sudo dockerd -H unix:///var/run/docker.sock -H tcp://10.140.0.3
+```
+
 
 Removing the contexts, if any
 
@@ -153,4 +161,41 @@ context2 *                                                    tcp://10.140.0.3:2
 default             Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                     
     swarm
 ```
+
+## Verify if 
+
+```
+Captain'sBay==>sudo docker context inspect context2
+[
+    {
+        "Name": "context2",
+        "Metadata": {},
+        "Endpoints": {
+            "docker": {
+                "Host": "tcp://10.140.0.3:2375",
+                "SkipTLSVerify": false
+            }
+        },
+        "TLSMaterial": {},
+        "Storage": {
+            "MetadataPath": "/home/ajeetraina/.docker/contexts/meta/53c5077690eb97802a2b4c62bdebcf287d32b1
+9fdfe625ed4e215e96fdb42378",
+            "TLSPath": "/home/ajeetraina/.docker/contexts/tls/53c5077690eb97802a2b4c62bdebcf287d32b19fdfe6
+25ed4e215e96fdb42378"
+        }
+    }
+]
+```
+
+## Verify if you are able to access Swarm Mode Cluster
+
+```
+Captain'sBay==>sudo docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      
+ENGINE VERSION
+w49axti8f1soh6egkcqzoph69 *   node2               Ready               Active              Leader              
+19.03.0-beta1
+Captain'sBay==>
+```
+
 
