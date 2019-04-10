@@ -121,18 +121,16 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
-## 19.03 Context Feature
+# Support for ```docker context```
 
-## Node #2:
-
-Install Docker on node-2  and run the below command.You can configure the Docker daemon to listen to multiple sockets at the same time using multiple -H options:
+I assume you have Docker already installed on Node-2(10.140.0.3) .You can configure the Docker daemon to listen to multiple sockets at the same time using multiple -H options:
 
 ```
 sudo dockerd -H unix:///var/run/docker.sock -H tcp://10.140.0.3
 ```
 
 
-Removing the contexts, if any
+To test drive, let us first remove available context if any to keep it clean
 
 ```
 Captain'sBay==>sudo docker context rm -f context2
