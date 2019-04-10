@@ -1,4 +1,4 @@
-# Testing rootless Docker
+# Testing rootless Docker under Docker 19.03.1
 
 ## Installing Rootless Docker
 
