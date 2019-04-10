@@ -46,6 +46,27 @@ docker  docker-19.03.0-beta1.tgz  docker-rootless-extras  docker-rootless-extras
 dockerd-rootless.sh --experimental
 ```
 
+## Downloading Client
+
+```
+wget https://download.docker.com/linux/static/test/x86_64/docker-19.03.0-beta1.tgz
+```
+
+## Extracting the bits
+
+```
+tar xvf docker-19.03.0-beta1.tgz
+```
+
+
+
+## Putting it under right executables
+
+```
+cp -rf docker/* /usr/local/bin/
+```
+
+
 ## Start client: 
 
 
