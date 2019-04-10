@@ -1,5 +1,10 @@
 # How to test the latest Docker Static Binaries(test Build)?
 
+## Node #1: 10.140.0.2
+## Node #2: 10.140.0.3
+
+Node #1:
+
 ## Downloading the static binary archive. 
 
 Go to https://download.docker.com/linux/static/stable/ (or change stable to nightly or test), 
@@ -114,9 +119,9 @@ For more examples and ideas, visit:
 
 ## Testing 19.03 Context Feature
 
-Say, you have 2 nodes: node1 and node2
+## Node #2:
 
-On Node2, install Docker and run the below command.You can configure the Docker daemon to listen to multiple sockets at the same time using multiple -H options:
+Install Docker on node-2  and run the below command.You can configure the Docker daemon to listen to multiple sockets at the same time using multiple -H options:
 
 ```
 sudo dockerd -H unix:///var/run/docker.sock -H tcp://10.140.0.3
@@ -187,7 +192,7 @@ Captain'sBay==>sudo docker context inspect context2
 ]
 ```
 
-## Verify if you are able to access Swarm Mode Cluster
+## Verify if you are able to access Swarm Mode Cluster running on other node
 
 ```
 Captain'sBay==>sudo docker node ls
@@ -198,4 +203,4 @@ w49axti8f1soh6egkcqzoph69 *   node2               Ready               Active    
 Captain'sBay==>
 ```
 
-
+Awesome !
