@@ -1,4 +1,4 @@
-# How to test Docker Static Binaries(test Build)?
+# How to test the latest Docker Static Binaries(test Build)?
 
 ## Downloading the static binary archive. 
 
@@ -111,3 +111,5 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
+
+
