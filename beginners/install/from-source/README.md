@@ -112,4 +112,45 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
+## Testing 19.03 Context Feature
+
+
+Removing the contexts, if any
+
+```
+Captain'sBay==>sudo docker context rm -f context2
+context2
+Captain'sBay==>sudo docker context rm -f context1
+context1
+Captain'sBay==>sudo docker context rm -f context3
+context3
+```
+
+## Creating a new Context
+
+```
+Captain'sBay==>sudo docker context create --docker host=tcp://10.140.0.3:2375 context2
+context2
+Successfully created context "context2"
+```
+
+##
+
+```
+Captain'sBay==>sudo docker context use context2
+context2
+Current context is now "context2"
+```
+
+## Listing out the available contexts
+
+```
+Captain'sBay==>sudo docker context ls
+NAME                DESCRIPTION                               DOCKER ENDPOINT               KUBERNETES ENDPOIN
+T   ORCHESTRATOR
+context2 *                                                    tcp://10.140.0.3:2375                           
+    
+default             Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                     
+    swarm
+```
 
