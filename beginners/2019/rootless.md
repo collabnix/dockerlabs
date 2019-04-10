@@ -31,7 +31,7 @@ tar xvf docker-rootless-extras-19.03.0-beta1.tgz
 
 ```
 $pwd;ls
-/home/tanvirkour1985/docker-rootless-extras
+/home/ajeetraina/docker-rootless-extras
 dockerd-rootless.sh  rootlesskit  vpnkit
 ```
 
