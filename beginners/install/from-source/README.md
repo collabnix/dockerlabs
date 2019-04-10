@@ -1,4 +1,6 @@
-# How to test the latest Docker Static Binaries(test Build)?
+# How to test the latest Docker Static Binaries(Test Build: Docker Release 19.03)?
+
+Please follow the below steps to test Docker 19.03 Beta 1 Release Build:
 
 
 ## Downloading the static binary archive. 
@@ -86,6 +88,8 @@ Server: Docker Engine - Community
 Captain'sBay==>
 ```
 
+## Testing with hello-world
+
 ```
 Captain'sBay==>sudo docker run hello-world
 Unable to find image 'hello-world:latest' locally
@@ -113,7 +117,7 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
-## Testing 19.03 Context Feature
+## 19.03 Context Feature
 
 ## Node #2:
 
@@ -163,7 +167,7 @@ default             Current DOCKER_HOST based configuration   unix:///var/run/do
     swarm
 ```
 
-## Verify if 
+## Inspecting the new Context
 
 ```
 Captain'sBay==>sudo docker context inspect context2
