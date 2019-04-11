@@ -216,7 +216,7 @@ TBD<br>
 
 TBD<br>
  
-# Testing rootless Docker under Docker 19.03.1
+# Testing rootless Docker under Docker 19.03.0 Beta 1
 
 End Goal:
 
