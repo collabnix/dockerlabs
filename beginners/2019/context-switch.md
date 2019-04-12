@@ -120,6 +120,52 @@ Commands:
 Run 'docker context COMMAND --help' for more information on a command.
 ```
 
+## Creating a 2 Node Swarm Cluster
 
+Install Docker 19.03.0 Beta 1 on both the nodes.
+
+```
+swarm-node-1:~$ sudo docker swarm init --advertise-addr 10.140.0.6 --listen-addr 10.140.0
+.6:2377
+Swarm initialized: current node (c78wm1g99q1a1g2sxiuawqyps) is now a manager.
+To add a worker to this swarm, run the following command:
+    docker swarm join --token SWMTKN-1-1bc88158q1v4b4gdof8k0u532bxzdvrgxfztwgj2r443337mja-cmhuu258lu0327
+e32l0g4pl47 10.140.0.6:2377
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+```
+
+## Run the below command on worker node:
+
+```
+swarm-node2:~$ sudo docker swarm join --token SWMTKN-1-1bc88158q1v4b4gdof8k0u532bxzdvrgxf
+ztwgj2r443337mja-cmhuu258lu0327e32l0g4pl47 10.140.0.6:2377
+This node joined a swarm as a worker.
+```
+
+## Listing the Swarm Mode CLuster
+
+```
+sudo docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS
+      ENGINE VERSION
+qzoefpylfkaxubst7j7ckbko0     swarm-node2         Ready               Active                            
+      19.03.0-beta1
+c78wm1g99q1a1g2sxiuawqyps *   swarm-node-1        Ready               Active              Leader        
+      19.03.0-beta1
+ ```
+ 
+ # Switching the Context
+ 
+ ## Listing the Context
+ 
+ ```
+ node-1:~$ sudo docker context ls
+NAME                DESCRIPTION                               DOCKER ENDPOINT               KUBERNETES E
+NDPOINT   ORCHESTRATOR
+default *           Current DOCKER_HOST based configuration   unix:///var/run/docker.sock               
+          swarm
+ ```
+ 
+ 
 
 
