@@ -122,7 +122,31 @@ Run 'docker context COMMAND --help' for more information on a command.
 
 ## Creating a 2 Node Swarm Cluster
 
-Install Docker 19.03.0 Beta 1 on both the nodes.
+Install Docker 19.03.0 Beta 1 on both the nodes. 
+
+## Configuring remote access with systemd unit file
+
+Use the command sudo systemctl edit docker.service to open an override file for docker.service in a text editor.
+
+Add or modify the following lines, substituting your own values.
+
+```
+Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://10.140.0.6:2375
+```
+
+
+Save the file.
+
+Reload the systemctl configuration.
+
+ $ sudo systemctl daemon-reload
+Restart Docker.
+
+$ sudo systemctl restart docker.service
+
+Repeat it for other swarm node too.
 
 ```
 swarm-node-1:~$ sudo docker swarm init --advertise-addr 10.140.0.6 --listen-addr 10.140.0
@@ -145,13 +169,10 @@ This node joined a swarm as a worker.
 ## Listing the Swarm Mode CLuster
 
 ```
-sudo docker node ls
-ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS
-      ENGINE VERSION
-qzoefpylfkaxubst7j7ckbko0     swarm-node2         Ready               Active                            
-      19.03.0-beta1
-c78wm1g99q1a1g2sxiuawqyps *   swarm-node-1        Ready               Active              Leader        
-      19.03.0-beta1
+root@swarm-node-1:~# docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+0v5r9xmpbxzqpy72u41ihfck0     swarm-node2         Ready               Active                                  19.03.0-beta1
+xwmay5i48xxbzlp7is7a3uord *   swarm-node-1        Ready               Active              Leader              19.03.0-beta1
  ```
  
  # Switching the Context
@@ -166,6 +187,41 @@ default *           Current DOCKER_HOST based configuration   unix:///var/run/do
           swarm
  ```
  
+ ## Adding the new Context
  
+ ```
+ docker context create --docker host=tcp://10.140.0.6:2375 swarm-context1
+ ```
+ 
+ ## Using the new context for Swarm
+ 
+ ```
+ docker context use swarm-context1
+ ```
+ 
+ ## Listing the Swarm Mode Cluster
+ 
+ ```
+  sudo docker context ls
+NAME                DESCRIPTION                               DOCKER ENDPOINT               KUBERNETES E
+NDPOINT   ORCHESTRATOR
+default             Current DOCKER_HOST based configuration   unix:///var/run/docker.sock               
+          swarm
+swarm-context1 *                                              tcp://10.140.0.6:2375             
+```
+
+
+```          
+tanvirkour1985@sys1:~$ sudo docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS
+      ENGINE VERSION
+xwmay5i48xxbzlp7is7a3uord *   swarm-node-1        Ready               Active              Leader        
+      19.03.0-beta1
+tanvirkour1985@sys1:~$ sudo docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+0v5r9xmpbxzqpy72u41ihfck0     swarm-node2         Ready               Active                                  19.03.0-beta1
+xwmay5i48xxbzlp7is7a3uord *   swarm-node-1        Ready               Active              Leader              19.03.0-beta1
+tanvirkour1985@sys1:~$ C
+```
 
 
