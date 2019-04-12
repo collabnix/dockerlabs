@@ -1,14 +1,13 @@
 # Context Switching Made Simple for Swarm & Kubernetes under Docker 19.03.0 Beta1
 
-## Test Infrastructure:
+## Tested Infrastructure:
 
-- A Node with Docker 19.03.0 Beta1 installed
-- 2 Docker Swarm Node Cluster(swarm-node1 and swarm-node2)
-- Create 2 Node Kubernetes Cluster(GKE Cluster)
+- A Node with Docker 19.03.0 Beta1 installed on Ubuntu 18.10
+- 2 Docker Swarm Node Cluster(swarm-node1 and swarm-node2) setup on installed on Ubuntu 18.10
+- Create 3 Node Kubernetes Cluster using GKE
 
 
-## Installing a Node with Docker 19.03.0 Beta 1 Test Build 
-
+## Installing a Node with Docker 19.03.0 Beta 1 Test Build on Ubuntu 18.10
 
 
 ## Method:I
