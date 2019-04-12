@@ -102,4 +102,24 @@ Server:
 root@DebianBuster:~#
 ```
 
+## Verifying the new `docker context` command
+
+```
+$ sudo docker context --help
+Usage:  docker context COMMAND
+Manage contexts
+Commands:
+  create      Create a context
+  export      Export a context to a tar or kubeconfig file
+  import      Import a context from a tar file
+  inspect     Display detailed information on one or more contexts
+  ls          List contexts
+  rm          Remove one or more contexts
+  update      Update a context
+  use         Set the current docker context
+Run 'docker context COMMAND --help' for more information on a command.
+```
+
+
+
 
