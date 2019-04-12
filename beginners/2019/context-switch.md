@@ -318,6 +318,25 @@ default             Current DOCKER_HOST based configuration   unix:///var/run/do
 swarm-context1 *                                              tcp://10.140.0.6:2375             
 ```
 
+```
+ sudo docker context ls --format '{{json .}}' | jq .
+{
+  "Current": true,
+  "Description": "Current DOCKER_HOST based configuration",
+  "DockerEndpoint": "unix:///var/run/docker.sock",
+  "KubernetesEndpoint": "",
+  "Name": "default",
+  "StackOrchestrator": "swarm"
+}
+{
+  "Current": false,
+  "Description": "",
+  "DockerEndpoint": "tcp://10.140.0.6:2375",
+  "KubernetesEndpoint": "",
+  "Name": "swarm-context1",
+  "StackOrchestrator": ""
+}
+```
 
 ```          
 tanvirkour1985@sys1:~$ sudo docker node ls
