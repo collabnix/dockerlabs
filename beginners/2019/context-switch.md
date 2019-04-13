@@ -351,5 +351,35 @@ xwmay5i48xxbzlp7is7a3uord *   swarm-node-1        Ready               Active    
 tanvirkour1985@sys1:~$ C
 ```
 
+## Context Switching to PWD
+
+```
+[:)Captain'sBay=>sudo docker context ls
+NAME                DESCRIPTION                               DOCKER ENDPOINT               KUBERNETES ENDPOINT                 ORCHESTRATOR
+default *           Current DOCKER_HOST based configuration   unix:///var/run/docker.sock   https://127.0.0.1:16443 (default)   swarm
+swarm-context1                                                tcp://10.140.0.6:2375                                             
+```
+
+Let us go ahead and add PWD context
+
+```
+[:)Captain'sBay=>sudo docker context create --docker host=tcp://ip172-18-0-5-biosq9o6chi000as1470.direct.labs.play-with-docker.com:2375 pwd-clu
+ster1
+pwd-cluster1
+Successfully created context "pwd-cluster1"
+```
+
+```
+[:)Captain'sBay=>sudo docker context ls
+NAME                DESCRIPTION                               DOCKER ENDPOINT                                                                 K
+UBERNETES ENDPOINT                 ORCHESTRATOR
+default *           Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                                                     h
+ttps://127.0.0.1:16443 (default)   swarm
+pwd-cluster1                                                  tcp://ip172-18-0-5-biosq9o6chi000as1470.direct.labs.play-with-docker.com:2375    
+                                   
+swarm-context1                                                tcp://10.140.0.6:2375                                                            
+                                   
+[:)Captain'sBay=>
+```
 
 
