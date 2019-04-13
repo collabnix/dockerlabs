@@ -382,4 +382,21 @@ swarm-context1                                                tcp://10.140.0.6:2
 [:)Captain'sBay=>
 ```
 
+```
+[:)Captain'sBay=>sudo docker context use pwd-cluster1
+pwd-cluster1
+Current context is now "pwd-cluster1"
+```
 
+```
+[:)Captain'sBay=>sudo docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+wnrz5fks5drzs9agkyl8z3ffi *   manager1            Ready               Active              Leader              18.09.4
+dcweon0icoolfs3kirj0p3qgg     manager2            Ready               Active              Reachable           18.09.4
+f78bkvfbzot2jkr2n6cen7240     manager3            Ready               Active              Reachable           18.09.4
+xla6nb5ql5i6pkjruyxpc1hzk     worker1             Ready               Active                                  18.09.4
+45nk1t94ympplgaasiryunwvk     worker2             Ready               Active                                  18.09.4
+[:)Captain'sBay=>
+```
+
+Awesome ~
