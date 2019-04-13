@@ -339,12 +339,12 @@ swarm-context1 *                                              tcp://10.140.0.6:2
 ```
 
 ```          
-tanvirkour1985@sys1:~$ sudo docker node ls
+$ sudo docker node ls
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS
       ENGINE VERSION
 xwmay5i48xxbzlp7is7a3uord *   swarm-node-1        Ready               Active              Leader        
       19.03.0-beta1
-tanvirkour1985@sys1:~$ sudo docker node ls
+$ sudo docker node ls
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
 0v5r9xmpbxzqpy72u41ihfck0     swarm-node2         Ready               Active                                  19.03.0-beta1
 xwmay5i48xxbzlp7is7a3uord *   swarm-node-1        Ready               Active              Leader              19.03.0-beta1
