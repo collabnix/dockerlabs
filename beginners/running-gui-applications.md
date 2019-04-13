@@ -1,4 +1,4 @@
-# Running GUI desktop applications on Docker
+# Running Desktop GUI Applications on Docker
 
 ## How is it  different from runing any other application?
 
@@ -8,7 +8,7 @@ There is not much of a difference between running desktop applications and web a
 
 Image Courtesy: https://medium.com/@SaravSun/running-gui-applications-inside-docker-containers-83d65c0db110
 
-## Why would we do something like that? Running desktop GUI on docker, I mean like why?
+## Why would we do something like that? Running Desktop GUI on docker, I mean like why?
 
 Well, There is not much to it but once you use this your life will be a lot easier if you are a developer building those GUI apps.
 
