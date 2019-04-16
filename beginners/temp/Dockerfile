@@ -8,7 +8,7 @@ USER root
 # Make sure apt is happy
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update -y
+RUN apt-get update -y 
 
 # Install a basic SSH server
 RUN apt-get install -y openssh-server
@@ -35,7 +35,7 @@ RUN apt-get install -y curl
 
 RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y
-RUN apt-get update -q
+RUN apt-get update -y
 
 
 # Add user jenkins to the image
@@ -64,7 +64,7 @@ RUN apt-get clean
 # Install Ansbile 
 
 RUN echo "===> Adding Ansible's PPA..."  && \
-    apt-get update  &&  apt-get install -y gnupg2    && \
+    apt-get update -y  &&  apt-get install -y gnupg2    && \
     echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | tee /etc/apt/sources.list.d/ansible.list           && \
     echo "deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | tee -a /etc/apt/sources.list.d/ansible.list    && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7BB9C367    && \
