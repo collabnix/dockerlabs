@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 ENV pip_packages "ansible"
 
 RUN apt update -y
-RUN apt install -y python python-pip
+RUN apt install -y coreutils python python-pip
 RUN pip install $pip_packages
 
 
