@@ -1,30 +1,17 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
+ENV pip_packages "ansible"
 
-ENV pip_packages "ansible pyopenssl"
-
-# Install dependencies.
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-       python-software-properties \
-       software-properties-common \
-       python-setuptools \
-       python-pip \
-       rsyslog systemd systemd-cron sudo \
-    && rm -Rf /var/lib/apt/lists/* \
-    && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
-    && apt-get clean
-RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
-
-# Install Ansible via Pip.
+RUN apt update -y
+RUN apt install -y python python-pip
 RUN pip install $pip_packages
 
-COPY initctl_faker .
-RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin/initctl
 
-# Install Ansible inventory file.
-RUN mkdir -p /etc/ansible
-RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \ sudo tee /etc/apt/sources.list.d/azure-cli.list
 
-VOLUME ["/sys/fs/cgroup", "/tmp", "/run"]
-CMD ["/lib/systemd/systemd"]
+RUN curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+RUN apt-get install -y apt-transport-https
+RUN apt-get update && sudo apt-get install azure-cli
+
+
