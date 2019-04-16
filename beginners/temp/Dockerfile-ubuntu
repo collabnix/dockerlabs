@@ -7,7 +7,7 @@ RUN apt install -y coreutils python python-pip
 RUN pip install $pip_packages
 
 
-RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \ sudo tee /etc/apt/sources.list.d/azure-cli.list
+RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" > /etc/apt/sources.list.d/azure-cli.list
 
 RUN curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
