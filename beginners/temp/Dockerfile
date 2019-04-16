@@ -1,14 +1,14 @@
 # This Dockerfile is used to build an image containing basic stuff to be used as a Jenkins slave build node.
 FROM ubuntu:18.04
 
-LABEL Description=" This image is for building Jenkins Slave with Azure CLi and Ansbile"
+LABEL Description=" This image is for building Jenkins Slave with Azure CLi and Ansible"
 
 USER root
 
 # Make sure apt is happy
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update
+RUN apt-get update -y
 
 # Install a basic SSH server
 RUN apt-get install -y openssh-server
@@ -69,26 +69,19 @@ RUN echo "===> Adding Ansible's PPA..."  && \
     echo "deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | tee -a /etc/apt/sources.list.d/ansible.list    && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7BB9C367    && \
     DEBIAN_FRONTEND=noninteractive  apt-get update  && \
-    \
-    \
     echo "===> Installing Ansible..."  && \
     apt-get install -y ansible  && \
-    \
-    \
     echo "===> Installing handy tools (not absolutely required)..."  && \
     apt-get install -y python-pip              && \
     pip install --upgrade pycrypto pywinrm     && \
     apt-get install -y sshpass openssh-client  && \
-    \
-    \
     echo "===> Removing Ansible PPA..."  && \
     rm -rf /var/lib/apt/lists/*  /etc/apt/sources.list.d/ansible.list  && \
-    \
-    \
     echo "===> Adding hosts for convenience..."  && \
     echo 'localhost' > /etc/ansible/hosts
 
 # Install Azure CLi and Dependency
+
 RUN apt-get update -y
 Run apt-get install curl -y
 run apt-get install build-essential libssl-dev libffi-dev python-dev -y
