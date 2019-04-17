@@ -1,0 +1,13 @@
+version: '3'
+services:
+  redis:
+    image: redis:latest
+    sysctls:
+      net.core.somaxconn: 1024
+  redis-commander:
+    image: tenstartups/redis-commander
+    command: --redis-host redis
+    depends_on:
+      - redis
+    ports:
+      - 8081:8081
