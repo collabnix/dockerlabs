@@ -1,4 +1,4 @@
-# How to authenticate your DockerHub Account with new V2 API and list out all the repositories
+# How to authenticate your DockerHub Account with new V2 API and list out all your repositories
 
 The following example script demonstrates authentication with the new V2 API.
 
