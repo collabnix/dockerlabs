@@ -309,7 +309,69 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
  ```
 
+## Support for --gpu runtime option in Docker 19.03.0 Beta3
 
+### Pre-requisite:
+
+- Ubuntu 18.10 instance with 1 GPU device added under Google Cloud Instance
+
+- Verify that NVIDIA card is detected
+
+```
+$ sudo lspci -vv | grep -i nvidia
+00:04.0 3D controller: NVIDIA Corporation GP100GL [Tesla P100 PCIe 16GB] (rev a1)
+        Subsystem: NVIDIA Corporation GP100GL [Tesla P100 PCIe 16GB]
+        Kernel modules: nvidiafb
+```
+
+### Install Docker 19.03.0 Beta 3
+
+```
+ curl -fsSL https://test.docker.com -o test-docker.sh | sh
+```
+
+### Verifying Docker Installation
+
+```
+$ sudo docker version
+Client:
+ Version:           19.03.0-beta3
+ API version:       1.40
+ Go version:        go1.12.4
+ Git commit:        c55e026
+ Built:             Thu Apr 25 02:59:01 2019
+ OS/Arch:           linux/amd64
+ Experimental:      false
+Server:
+ Engine:
+  Version:          19.03.0-beta3
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.12.4
+  Git commit:       c55e026
+  Built:            Thu Apr 25 02:57:33 2019
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.2.5
+  GitCommit:        bb71b10fd8f58240ca47fbb579b9d1028eea7c84
+ runc:
+  Version:          1.0.0-rc6+dev
+  GitCommit:        2b18fe1d885ee5083ef9f0838fee39b62d653e30
+ docker-init:
+  Version:          0.18.0
+  GitCommit:        fec3683
+
+```
+
+## Using --gpu option
+
+```
+$ sudo docker run --help | grep gpu
+      --gpus gpu-request               GPU devices to add to the container ('all' to pass all GPUs)
+
+```
+
+## 
 
 
 
