@@ -1,5 +1,13 @@
 # Test Drive --gpus option under Docker 19.03.0 Beta 3
 
+## Pre-requisite:
+
+- Create a GCP instance selecting Ubuntu 18.04 as OS 
+- Select 1x GPU while you select CPU
+
+
+## Setting up Ubuntu Environment
+
 
 
 ```
@@ -176,4 +184,44 @@ Tue May  7 15:52:15 2019
 +-----------------------------------------------------------------------------+
 :~$ 
 ```
+
+## Listing out GPU devices
+
+```
+$ sudo docker run -it --rm --gpus all ubuntu nvidia-smi -L
+GPU 0: Tesla P4 (UUID: GPU-fa974b1d-3c17-ed92-28d0-805c6d089601)
+```
+
+```
+$ sudo docker run -it --rm --gpus all ubuntu nvidia-smi  --query-gpu=index,name,uui
+d,serial --format=csv
+index, name, uuid, serial
+0, Tesla P4, GPU-fa974b1d-3c17-ed92-28d0-805c6d089601, 0325017070224
+```
+
+
+## Verify nvidia-smi once you run nvidia/digits container
+
+```
+$ sudo docker run -it --rm --gpus all ubuntu nvidia-smi
+Tue May  7 16:27:37 2019       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 390.116                Driver Version: 390.116                   |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Tesla P4            Off  | 00000000:00:04.0 Off |                    0 |
+| N/A   51C    P0    24W /  75W |    129MiB /  7611MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
++-----------------------------------------------------------------------------+
+```
+
+
+
 
