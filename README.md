@@ -105,7 +105,7 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
    - [2017](https://github.com/collabnix/dockerlabs/blob/master/beginners/2017.md)
    - [2018](https://github.com/collabnix/dockerlabs/blob/master/beginners/2018.md)
    - [2019](https://github.com/collabnix/dockerlabs/blob/master/beginners/2018.md)
-      - [Release 19.03.1](https://github.com/collabnix/dockerlabs/blob/master/beginners/2019/Release_19_03.md)
+      - [Release 19.03.0 Pre-Release](https://github.com/collabnix/dockerlabs/blob/master/beginners/2019/Release_19_03.md)
              
 # Installing, Upgrading & Maintaining Docker 
 
