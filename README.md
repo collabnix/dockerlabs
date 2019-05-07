@@ -115,6 +115,9 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
    - Windows Server
    - Cloud Platform
    - [IoT Platform](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/README.md)
+     - [How to install Docker 18.09 on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/README.md)
+     - [How to setup Docker Swarm Cluster on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-swarm-cluster.md)
+     - [Building up K3s Cluster on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
    - Unix ( FreeBSD, Solaris)  
    - MacOS
 - Compiling Your Own Docker Binary from Source
