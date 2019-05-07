@@ -136,6 +136,44 @@ Server:
   Version:          0.18.0
   GitCommit:        fec3683
 ```
+
+## Verifying --gpus option under ```docker run ```
+
+```
+$ docker run --help | grep -i gpus
+      --gpus gpu-request               GPU devices to add to the container ('all' to pass all GPUs)
+ ```
   
-  
+ 
+ ## 
+ 
+ ```
+ $ sudo docker run -it --rm --gpus all ubuntu nvidia-smi
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+f476d66f5408: Pull complete 
+8882c27f669e: Pull complete 
+d9af21273955: Pull complete 
+f5029279ec12: Pull complete 
+Digest: sha256:d26d529daa4d8567167181d9d569f2a85da3c5ecaf539cace2c6223355d69981
+Status: Downloaded newer image for ubuntu:latest
+Tue May  7 15:52:15 2019       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 390.116                Driver Version: 390.116                   |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Tesla P4            Off  | 00000000:00:04.0 Off |                    0 |
+| N/A   39C    P0    22W /  75W |      0MiB /  7611MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+:~$ 
+```
 
