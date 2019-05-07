@@ -371,11 +371,81 @@ $ sudo docker run --help | grep gpu
 
 ```
 
-## Follow the below
+## Installing NVIDIA drivers first
+
+
+- The official page is https://www.nvidia.com/Download/index.aspx but read on for a simpler way to install drivers on Ubuntu
+- Canonical provides “magic driver install” that Nvidia doesn’t officially support but running the following as root worked for me:
 
 ```
-https://gist.github.com/tiborvass/f023fc519796b07cfbaffdcbb76eecfb
+sudo apt-get install ubuntu-drivers-common \
+	&& sudo ubuntu-drivers autoinstall
 ```
+
+
+```
+- Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.18.0-1009-gcp/updates/dkms/
+
+nvidia-uvm.ko:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/4.18.0-1009-gcp/updates/dkms/
+
+depmod...
+
+DKMS: install completed.
+Setting up xserver-xorg-video-nvidia-390 (390.116-0ubuntu0.18.10.1) ...
+Processing triggers for libc-bin (2.28-0ubuntu1) ...
+Processing triggers for systemd (239-7ubuntu10.13) ...
+Setting up nvidia-driver-390 (390.116-0ubuntu0.18.10.1) ...
+Setting up adwaita-icon-theme (3.30.0-0ubuntu1) ...
+update-alternatives: using /usr/share/icons/Adwaita/cursor.theme to provide /usr/share/icons/default/index.theme (x-cursor-theme) in auto mode
+Setting up humanity-icon-theme (0.6.15) ...
+Setting up libgtk-3-0:amd64 (3.24.4-0ubuntu1.1) ...
+Setting up libgtk-3-bin (3.24.4-0ubuntu1.1) ...
+Setting up policykit-1-gnome (0.105-6ubuntu2) ...
+Setting up screen-resolution-extra (0.17.3build1) ...
+Setting up ubuntu-mono (16.10+18.10.20181005-0ubuntu1) ...
+Setting up nvidia-settings (390.77-0ubuntu1) ...
+Processing triggers for libgdk-pixbuf2.0-0:amd64 (2.38.0+dfsg-6) ...
+Processing triggers for initramfs-tools (0.131ubuntu15.1) ...
+update-initramfs: Generating /boot/initrd.img-4.18.0-1009-gcp
+cryptsetup: WARNING: The initramfs image may not contain cryptsetup binaries 
+    nor crypto modules. If that's on purpose, you may want to uninstall the 
+    'cryptsetup-initramfs' package in order to disable the cryptsetup initramfs 
+    integration and avoid this warning.
+Processing triggers for libc-bin (2.28-0ubuntu1) ...
+Processing triggers for dbus (1.12.10-1ubuntu2) ...
+
+```
+
+Go ahead and reboot the system
+
+```
+sudo reboot
+```
+
+## Installing NVIDIA Container Runtime
+
+Please Note: Ubuntu 18.04 is the last supported OS for this. If you are on Ubuntu 18.10, it mightn't work as it report Unsupported OS.
+
+Follow instructions at https://nvidia.github.io/nvidia-container-runtime/ to tap into Nvidia’s apt/yum repositories then run:
+
+apt-get install nvidia-container-runtime
+Make sure that nvidia-container-runtime-hook is accessible from $PATH:
+
+```
+$ which nvidia-container-runtime-hook
+/usr/bin/nvidia-container-runtime-hook
+```
+
+Restart the docker daemon to pick up the nvidia driver.
+
 
 
 
