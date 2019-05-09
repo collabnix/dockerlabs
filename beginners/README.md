@@ -14,7 +14,6 @@
 - [Can container communication cross over to noncontainerized apps?](https://github.com/collabnix/dockerlabs/blob/master/beginners/linux-comm-containers.md)
 - [Architecture of Docker](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-of-a-docker.md)
    - [Docker Enterprise Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-dockeree.md)
-   - [Docker Community Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/arhcitecture-of-docker-ce.md)
 - [Docker Engine Release Features](https://github.com/collabnix/dockerlabs/blob/master/beginners/evolution-of-docker-platform.md)
    - [18.09](https://github.com/collabnix/dockerlabs/blob/master/beginners/1809.md)
    - [19.03](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/README.md#how-to-install-latest-docker-19030-beta-1-test-build)
