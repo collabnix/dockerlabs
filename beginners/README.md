@@ -15,11 +15,10 @@
 - [Architecture of Docker](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-of-a-docker.md)
    - [Docker Enterprise Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-dockeree.md)
    - [Docker Community Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/arhcitecture-of-docker-ce.md)
-- [Evolution of Docker Platform](https://github.com/collabnix/dockerlabs/blob/master/beginners/evolution-of-docker-platform.md)
-   - [2015](https://github.com/collabnix/dockerlabs/blob/master/beginners/2015.md)
-   - [2016](https://github.com/collabnix/dockerlabs/blob/master/beginners/2016.md)
-   - [2017](https://github.com/collabnix/dockerlabs/blob/master/beginners/2017.md)
-   - [2018](https://github.com/collabnix/dockerlabs/blob/master/beginners/2018.md)
+- [New Upcoming Features](https://github.com/collabnix/dockerlabs/blob/master/beginners/evolution-of-docker-platform.md)
+   - [18.09](https://github.com/collabnix/dockerlabs/blob/master/beginners/1809.md)
+   - [19.03](https://github.com/collabnix/dockerlabs/blob/master/beginners/1903.md)
+   
              
 # Installing, Upgrading & Maintaining Docker 
 
