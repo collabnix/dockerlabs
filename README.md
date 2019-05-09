@@ -25,7 +25,7 @@ Below are the list of categories:
 
 ## Docker
 
-- [Docker for Beginners](https://github.com/collabnix/dockerlabs/tree/master/beginners/README.md)
+- [Docker for Beginners](https://github.com/collabnix/dockerlabs#introduction-to-docker)
 
 - [Docker for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/intermediate/README.md)
 
