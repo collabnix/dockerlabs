@@ -29,7 +29,7 @@
 - Installing Docker on 
    - [Linux](https://github.com/collabnix/dockerlabs/tree/master/beginners/install)
    - [Windows](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/windows/docker-desktop-for-windows/README.md)
-   - Windows Server
+   - Windows Server(https://github.com/collabnix/dockerlabs/blob/master/beginners/install/windows/docker-on-windows/README.md)
    - [IoT Platform](https://github.com/collabnix/dockerlabs/tree/master/beginners/install/raspberrypi3)
      - [How to install Docker 18.09.0 on Raspberry Pi 3?](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/README.md)
      - [How to setup Docker Swarm Cluster on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-swarm-cluster.md)
