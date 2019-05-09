@@ -27,9 +27,9 @@ Below are the list of categories:
 
 - [Docker for Beginners](https://github.com/collabnix/dockerlabs#introduction-to-docker)
 
-- [Docker for Intermediate](https://github.com/collabnix/dockerlabs#installing-upgrading--maintaining-docker)
+- [Docker for Intermediate](https://github.com/collabnix/dockerlabs#intermediate-track)
 
-- [Docker for Advanced](https://github.com/collabnix/dockerlabs/tree/master/advanced/README.md)
+- [Docker for Advanced](https://github.com/collabnix/dockerlabs#advanced-track)
 
 - [Docker for CIOs/CEOs](https://github.com/collabnix/dockerlabs/tree/master/docker/leadership/README.md)
 
