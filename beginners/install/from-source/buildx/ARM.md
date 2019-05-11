@@ -1,6 +1,32 @@
 # How to Build ARM-based Docker Image using `docker buildx`?
 
 
+```
+[Captains-Bay]🚩 >  docker buildx --help
+
+Usage:	docker buildx COMMAND
+
+Build with BuildKit
+
+Management Commands:
+  imagetools  Commands to work on images in registry
+
+Commands:
+  bake        Build from a file
+  build       Start a build
+  create      Create a new builder instance
+  inspect     Inspect current builder instance
+  ls          List builder instances
+  rm          Remove a builder instance
+  stop        Stop builder instance
+  use         Set the current builder instance
+  version     Show buildx version information 
+
+Run 'docker buildx COMMAND --help' for more information on a command.
+```
+
+
+
 
 ## Cloning the Repository
 
