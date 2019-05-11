@@ -238,4 +238,9 @@ Manifests:
 [Captains-Bay]🚩 >
 ```
 
+The image is now available on Docker Hub with the tag ajeetraina/docker-cctv-raspbian:latest.  You can run a container from that image on Intel laptops, Amazon EC2 A1 instances, Raspberry Pis, and more.  Docker pulls the correct image for the current architecture, so Raspberry Pis run the 32-bit Arm version and EC2 A1 instances run 64-bit Arm.
+
+
+
+
 
