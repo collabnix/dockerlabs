@@ -240,7 +240,121 @@ Manifests:
 
 The image is now available on Docker Hub with the tag ajeetraina/docker-cctv-raspbian:latest.  You can run a container from that image on Intel laptops, Amazon EC2 A1 instances, Raspberry Pis, and more.  Docker pulls the correct image for the current architecture, so Raspberry Pis run the 32-bit Arm version and EC2 A1 instances run 64-bit Arm.
 
+## Verifying it on Raspberry Pi
 
+```
+root@node2:/home/pi# cat /etc/os-release
+PRETTY_NAME="Raspbian GNU/Linux 9 (stretch)"
+NAME="Raspbian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+ID=raspbian
+ID_LIKE=debian
+HOME_URL="http://www.raspbian.org/"
+SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
+BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
+root@node2:/home/pi#
+```
+
+## Verify the Docker version
+
+```
+root@node2:/home/pi# docker version
+Client:
+ Version:           18.09.0
+ API version:       1.39
+ Go version:        go1.10.4
+ Git commit:        4d60db4
+ Built:             Wed Nov  7 00:57:21 2018
+ OS/Arch:           linux/arm
+ Experimental:      false
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          18.09.0
+  API version:      1.39 (minimum version 1.12)
+  Go version:       go1.10.4
+  Git commit:       4d60db4
+  Built:            Wed Nov  7 00:17:57 2018
+  OS/Arch:          linux/arm
+  Experimental:     false
+```
+
+## Running the Docker Image
+
+```
+root@node2:/home/pi# docker pull ajeetraina/docker-cctv-raspbian:latest
+latest: Pulling from ajeetraina/docker-cctv-raspbian
+6bddb275e70b: Already exists
+ef16d706debb: Already exists
+2734b4597042: Already exists
+873755612f30: Already exists
+67a3f53689ff: Already exists
+5fb2b6f7daac: Already exists
+a04aef7b1e2f: Already exists
+9d5b46a00008: Already exists
+b98db37cf252: Already exists
+78ba3f046631: Already exists
+6b6c68e7ac85: Already exists
+3eae71a21b9d: Already exists
+db08b1848bc3: Pull complete
+9c84b2387994: Pull complete
+3579f37869a5: Pull complete
+Digest: sha256:daec2787002024c07addf56a8099a866d7f1cd85ed8c33818beb64a5a208cd54
+Status: Downloaded newer image for ajeetraina/docker-cctv-raspbian:latest
+root@node2:/home/pi#
+
+
+```
+
+## Inspecting the Docker Image
+
+
+```
+ docker image inspect ajeetraina/docker-cctv-raspbian:latest | grep arm
+                "QEMU_CPU=arm1176",
+        "Architecture": "arm",
+
+```
+
+
+## Running the Docker Container
+
+```
+ docker run -dit -p 8000:8000 ajeetraina/docker-cctv-raspbian:latest
+c43f25cd06672883478908e71ad6f044766270fcbf413e69ad63c8020610816f
+root@node2:/home/pi# docker ps
+CONTAINER ID        IMAGE                                    COMMAND             CREATED             STATUS              PORTS                              NAMES
+c43f25cd0667        ajeetraina/docker-cctv-raspbian:latest   "motion"            7 seconds ago       Up 2 seconds        0.0.0.0:8000->8000/tcp, 8081/tcp   zen_brown
+```
+
+## Verifying the Logs
+
+```
+root@node2:/home/pi# docker logs -f c43
+[0] [NTC] [ALL] conf_load: Processing thread 0 - config file /etc/motion/motion.conf
+[0] [NTC] [ALL] motion_startup: Motion 3.2.12+git20140228 Started
+[0] [NTC] [ALL] motion_startup: Logging to syslog
+[0] [NTC] [ALL] motion_startup: Using log type (ALL) log level (NTC)
+[0] [NTC] [ENC] ffmpeg_init: ffmpeg LIBAVCODEC_BUILD 3670016 LIBAVFORMAT_BUILD 3670272
+[0] [NTC] [ALL] main: Thread 1 is from /etc/motion/motion.conf
+[0] [NTC] [ALL] main: Thread 1 is device: /dev/video0 input -1
+[0] [NTC] [ALL] main: Stream port 8081
+[0] [NTC] [ALL] main: Waiting for threads to finish, pid: 1
+[1] [NTC] [ALL] motion_init: Thread 1 started , motion detection Enabled
+[1] [NTC] [VID] vid_v4lx_start: Using videodevice /dev/video0 and input -1
+[1] [ALR] [VID] vid_v4lx_start: Failed to open video device /dev/video0:
+[1] [WRN] [ALL] motion_init: Could not fetch initial image from camera Motion continues using width and height from config file(s)
+[1] [NTC] [ALL] image_ring_resize: Resizing pre_capture buffer to 1 items
+[1] [NTC] [STR] http_bindsock: motion-stream testing : IPV4 addr: 0.0.0.0 port: 8081
+[1] [NTC] [STR] http_bindsock: motion-stream Bound : IPV4 addr: 0.0.0.0 port: 8081
+[1] [NTC] [ALL] motion_init: Started motion-stream server in port 8081 auth Disabled
+[1] [NTC] [ALL] image_ring_resize: Resizing pre_capture buffer to 3 items
+[0] [NTC] [STR] httpd_run: motion-httpd testing : IPV4 addr: 127.0.0.1 port: 8080
+[0] [NTC] [STR] httpd_run: motion-httpd Bound : IPV4 addr: 127.0.0.1 port: 8080
+[0] [NTC] [STR] httpd_run: motion-httpd/3.2.12+git20140228 running, accepting connections
+[0] [NTC] [STR] httpd_run: motion-httpd: waiting for data on 127.0.0.1 port TCP 8080
+```
 
 
 
