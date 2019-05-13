@@ -41,7 +41,7 @@
 
 # Docker Components
 
-- Docker Server Vs Client Architecture
+- [Docker Client-Server Architecture](https://github.com/collabnix/dockerlabs/tree/master/beginner/components/server_client.md)
 - Docker Daemon
   - How to open Docker Daemon to External world?
   - Docker Daemon runs as root. How can Docker be secure?
