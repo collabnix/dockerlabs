@@ -231,3 +231,19 @@ qgejarr87g7w        portainer_agent       global              1/1               
 y1pc7bqdybop        portainer_portainer   replicated          1/1                 portainer/portainer:latest   *:9000->9000/tcp
 ```
 
+
+## Setting up 3-Node Swarm Cluster
+
+```
+ubuntu@ip-172-31-62-91:~$ docker swarm join-token worker
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-0fvah2dp0p32zksxnx9sqly12f8t7vobo9xjsv5p2xxnd2l80j-4w9d4jnaiq5efpcapiy5ubkli 172.31.62.91:2377
+
+ubuntu@ip-172-31-62-91:~$ ^C
+ubuntu@ip-172-31-62-91:~$ sudo docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+8psul7qy81gocurxlw6qmf8vb     ip-172-31-50-106    Ready               Active                                  19.03.0-beta3
+j6orudsoxy6rdeitxbw9aw0wh     ip-172-31-58-242    Ready               Active                                  19.03.0-beta3
+osjvbz0ry567q93vysn1ntduv *   ip-172-31-62-91     Ready               Active              Leader              19.03.0-beta3
+```
