@@ -180,7 +180,30 @@ ID                            HOSTNAME            STATUS              AVAILABILI
 osjvbz0ry567q93vysn1ntduv *   ip-172-31-62-91     Ready               Active              Leader              19.03.0-beta3
 ```
 
-## 
+## Running Portainer on top of AWS A1 Instance
+
+Before we run Portainer container, we need to identify if portainer support ARM platform through another container called mplatform/mquery as shown below:
+
+```
+ubuntu@ip-172-31-62-91:~$ sudo docker run --rm mplatform/mquery portainer/portainer
+Unable to find image 'mplatform/mquery:latest' locally
+latest: Pulling from mplatform/mquery
+db6020507de3: Pull complete
+713cdc222639: Pull complete
+Digest: sha256:e15189e3d6fbcee8a6ad2ef04c1ec80420ab0fdcf0d70408c0e914af80dfb107
+Status: Downloaded newer image for mplatform/mquery:latest
+Image: portainer/portainer
+ * Manifest List: Yes
+ * Supported platforms:
+   - linux/amd64
+   - linux/arm
+   - linux/arm64
+   - linux/ppc64le
+   - windows/amd64:10.0.14393.2551
+   - windows/amd64:10.0.16299.967
+   - windows/amd64:10.0.17134.590
+   - windows/amd64:10.0.17763.253
+```
 
 ```
 ubuntu@ip-172-31-62-91:~$ curl -L https://downloads.portainer.io/portainer-agent-stack.yml -o portainer-agent-stack.yml
