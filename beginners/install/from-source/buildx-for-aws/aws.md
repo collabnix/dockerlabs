@@ -71,6 +71,10 @@ ubuntu@ip-172-31-62-91:~$ dpkg --print-architecture
 arm64
 ```
 
+## Configure VPC 
+
+We will be setting up VPC so as to allow ports to be accessible from outside world. At the end of this blog post, we will see how to setup Portainer on A1 Instance.
+
 ## Installing Docker 19.03.0
 
 ```
