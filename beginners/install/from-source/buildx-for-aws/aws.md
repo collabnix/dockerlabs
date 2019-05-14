@@ -3,25 +3,30 @@
 
 ## Pre-requisites:
 
-- Open up https://beta.docker.com
+-  Open up https://beta.docker.com page and it will ask to register for public beta as shown below:
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a001.png)
 
-- Click on "Register for Public Beta"
+
+- Click on "Register for Public Beta". This will open up various options to test drive Docker products
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a002.png)
+
 
 - Don't forget to Select "Docker Desktop CE with Multi-Arch images (Arm Enabled) - Edge Release Amazon Cloud Credits available for limited time" option
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a003.png)
 
+
 - Enter your details
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a004.png)
 
+
 - You will see an option to sign up for credits for Amazon EC2 A1 instances via https://www.surveymonkey.com/r/DockerCon19AWS
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a005.png)
+
 
 - Click on Sign Up
 
