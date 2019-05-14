@@ -18,13 +18,21 @@
 - You will see an option to sign up for credits for Amazon EC2 A1 instances via https://www.surveymonkey.com/r/DockerCon19AWS. 
 - Click on Sign Up
 
+## Creating AWS Account
+
+
 - Go to aws.amazon.com and create Free Tier Accounts
+- You must have received email from Amazon on Free Credits of $50. 
+- Open up https://aws.amazon.com/amazoncredits and add this Promo Code
+
+## Creating AWS A1 Instance 
+
 - Go to Create Instance under EC2(shown below)
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a003.png)
 
 
-- 
+- Select Instance of ARM Type
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a004.png)
 
