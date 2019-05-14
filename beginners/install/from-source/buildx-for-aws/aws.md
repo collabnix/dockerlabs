@@ -13,22 +13,28 @@
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a002.png)
 
 
-- Don't forget to Select "Docker Desktop CE with Multi-Arch images (Arm Enabled) - Edge Release Amazon Cloud Credits available for limited time" option
+- Don't forget to Select "Docker Desktop CE with Multi-Arch images (Arm Enabled) - Edge Release Amazon Cloud Credits available for limited time" option.
+- Enter your details and this will open. 
+- You will see an option to sign up for credits for Amazon EC2 A1 instances via https://www.surveymonkey.com/r/DockerCon19AWS. 
+- Click on Sign Up
+
+- Go to aws.amazon.com and create Free Tier Accounts
+- Go to Create Instance under EC2(shown below)
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a003.png)
 
 
-- Enter your details
+- 
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a004.png)
 
 
-- You will see an option to sign up for credits for Amazon EC2 A1 instances via https://www.surveymonkey.com/r/DockerCon19AWS
+- 
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a005.png)
 
 
-- Click on Sign Up
+- 
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a006.png)
 
