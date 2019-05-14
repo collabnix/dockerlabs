@@ -44,7 +44,7 @@
 
 - 
 
-![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a006.png)
+![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a007.png)
 
 - It will take you to Survey Monkey. Complete the form and you will be receiving email for Free A1 Instance with $50
 
