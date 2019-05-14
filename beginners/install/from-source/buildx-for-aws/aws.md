@@ -32,23 +32,38 @@
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a003.png)
 
 
-- Select Instance of ARM Type
+- Select Ubuntu 18.04 64-bit ARM Type Instance
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a004.png)
 
 
-- 
+- Choose the right size of instance as per Free Tier Account
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a005.png)
 
 
-- 
+- Bring up Instance
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a007.png)
 
-- It will take you to Survey Monkey. Complete the form and you will be receiving email for Free A1 Instance with $50
 
+## Logging into AWS A1 Instance
 
+You can use Putty to login into this A1 instance with the right .PEM file uploaded under Putty > Connections > SSH > Auth.
+Or you can run the below command on Your Linux system:
+
+```
+[root@ki ~]# chmod 400 a1instance.pem
+[root@ki ~]# ssh -i "a1instance.pem" ubuntu@ec2-52-35-234-202.us-west-2.compute.amazonaws.com
+The authenticity of host 'ec2-52-35-234-202.us-west-2.compute.amazonaws.com (52.35.234.202)' can't be established.
+ECDSA key fingerprint is a4:3d:e4:c4:5d:79:94:aa:32:aa:c0:5d:74:03:67:d0.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'ec2-52-35-234-202.us-west-2.compute.amazonaws.com,52.35.234.202' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1028-aws aarch64)
+
+```
+
+## Verifying the correct System Architecture
 
 
 ```
