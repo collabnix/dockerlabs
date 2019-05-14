@@ -1,4 +1,4 @@
-# Docker Images for AWS ARM A1 Instance using New Docker CLI Plugin "buildx"
+# Running Docker Images for AWS ARM A1 Instance built using New Docker CLI Plugin "buildx" on Docker Desktop
 
 
 ## Pre-requisites:
