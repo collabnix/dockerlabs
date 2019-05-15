@@ -27,6 +27,14 @@
 
 ## Creating AWS A1 Instance 
 
+Method:1
+
+```
+docker-machine create  --driver amazonec2  --amazonec2-access-key=${ACCESS_KEY_ID}  --amazonec2-secret-key=${SECRET_ACCESS_KEY}  --amazonec2-region=us-west-2  --amazonec2-ami=ami-08692d171e3cf02d6  --amazonec2-instance-type=t2.medium swarm-node-2
+```
+
+Method:2
+
 - Go to Create Instance under EC2(shown below)
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/buildx-for-aws/a003.png)
