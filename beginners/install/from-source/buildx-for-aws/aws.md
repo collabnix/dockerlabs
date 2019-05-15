@@ -75,6 +75,8 @@ arm64
 
 We will be setting up VPC so as to allow ports to be accessible from outside world. At the end of this blog post, we will see how to setup Portainer on A1 Instance.
 
+Method: 1 - Manual 
+
 ## Installing Docker 19.03.0
 
 ```
@@ -247,3 +249,17 @@ ID                            HOSTNAME            STATUS              AVAILABILI
 j6orudsoxy6rdeitxbw9aw0wh     ip-172-31-58-242    Ready               Active                                  19.03.0-beta3
 osjvbz0ry567q93vysn1ntduv *   ip-172-31-62-91     Ready               Active              Leader              19.03.0-beta3
 ```
+
+
+Method-II : Using Docker Desktop for Windows
+
+```
+PS C:\Users\Ajeet_Raina> aws configure
+AWS Access Key ID [None]: AKIATSQXXXXX
+AWS Secret Access Key [None]: wbq3VHDZun4OXXXXX
+Default region name [None]: us-east-1
+Default output format [None]:
+PS C:\Users\Ajeet_Raina>
+```
+
+
