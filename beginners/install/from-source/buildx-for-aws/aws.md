@@ -27,11 +27,23 @@
 
 ## Creating AWS A1 Instance 
 
-Method:1
+We will use Docker Desktop for Windows which comes installed with Docker Machine to bring up ARM instances quickly.
+
+Run the below command:
 
 ```
-docker-machine create  --driver amazonec2  --amazonec2-access-key=${ACCESS_KEY_ID}  --amazonec2-secret-key=${SECRET_ACCESS_KEY}  --amazonec2-region=us-west-2  --amazonec2-ami=ami-08692d171e3cf02d6  --amazonec2-instance-type=t2.medium swarm-node-2
+PS C:\Users\Ajeet_Raina> set ACCESS_KEY_ID=XXX
+PS C:\Users\Ajeet_Raina> set SECRET_ACCESS_KEY=XX
 ```
+
+## Running Docker Machine to bring up our first Docker Node on AWS A1 ARM instance 
+
+```
+PS C:\Users\Ajeet_Raina> docker-machine create  --driver amazonec2  --amazonec2-access-key=${ACCESS_KEY_ID}  --amazonec2-secret-key=${SECRET_ACCESS_KEY} --amazonec2-region=us-west-2 --amazon
+ec2-vpc-id=vpc-ae59f0d6 --amazonec2-ami=ami-0db180c518750ee4f  --amazonec2-instance-type=a1.medium arm-node1
+```
+
+If you are looking out for manual way:
 
 Method:2
 
