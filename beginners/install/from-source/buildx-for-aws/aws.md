@@ -113,11 +113,29 @@ Server: Docker Engine - Community
 ubuntu@arm-node1:~$
 ```
 
+# Checking the Node IP
 
+```
+PS C:\Users\Ajeet_Raina> docker-machine ip arm-node1
+34.218.208.175
+```
 
-If you are looking out for manual way:
+# Creating Swarm Worker Nodes
+
+```
+PS C:\Users\Ajeet_Raina> docker-machine create  --driver amazonec2  --amazonec2-access-key=${ACCESS_KEY_ID}  --amazonec2-secret-key=${SECRET_ACCESS_KEY} --amazonec2-region=us-west-2 --amazon
+ec2-vpc-id=vpc-ae59f0d6 --amazonec2-ami=ami-0db180c518750ee4f  --amazonec2-instance-type=a1.medium arm-node2
+```
+
+```
+PS C:\Users\Ajeet_Raina> docker-machine create  --driver amazonec2  --amazonec2-access-key=${ACCESS_KEY_ID}  --amazonec2-secret-key=${SECRET_ACCESS_KEY} --amazonec2-region=us-west-2 --amazon
+ec2-vpc-id=vpc-ae59f0d6 --amazonec2-ami=ami-0db180c518750ee4f  --amazonec2-instance-type=a1.medium arm-node3
+```
+
 
 ## Method:2
+
+There is a manual way to create instance if you're new to Docker Machine
 
 - Go to Create Instance under EC2(shown below)
 
