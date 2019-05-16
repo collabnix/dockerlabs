@@ -43,9 +43,81 @@ PS C:\Users\Ajeet_Raina> docker-machine create  --driver amazonec2  --amazonec2-
 ec2-vpc-id=vpc-ae59f0d6 --amazonec2-ami=ami-0db180c518750ee4f  --amazonec2-instance-type=a1.medium arm-node1
 ```
 
+## Listing out the ARM Nodes
+
+```
+PS C:\Users\Ajeet_Raina> docker-machine ls
+NAME        ACTIVE   DRIVER      STATE     URL                         SWARM   DOCKER     ERRORS
+arm-node1   -        amazonec2   Running   tcp://34.218.208.175:2376           v18.09.6
+PS C:\Users\Ajeet_Raina>
+```
+
+## Login into the first Node
+
+```
+PS C:\Users\Ajeet_Raina> docker-machine ssh arm-node1
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1028-aws aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu May 16 04:35:16 UTC 2019
+
+  System load:  0.06              Processes:              116
+  Usage of /:   9.1% of 15.34GB   Users logged in:        0
+  Memory usage: 10%               IP address for ens5:    172.31.60.52
+  Swap usage:   0%                IP address for docker0: 172.17.0.1
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+178 packages can be updated.
+86 updates are security updates.
+```
+
+This node comes with Docker 18.09.6 installed.
+
+```
+ubuntu@arm-node1:~$ docker version
+Client:
+ Version:           18.09.6
+ API version:       1.39
+ Go version:        go1.10.8
+ Git commit:        481bc77
+ Built:             Sat May  4 02:40:48 2019
+ OS/Arch:           linux/arm64
+ Experimental:      false
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.so
+ connect: permission denied
+ubuntu@arm-node1:~$ sudo docker version
+Client:
+ Version:           18.09.6
+ API version:       1.39
+ Go version:        go1.10.8
+ Git commit:        481bc77
+ Built:             Sat May  4 02:40:48 2019
+ OS/Arch:           linux/arm64
+ Experimental:      false
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          18.09.6
+  API version:      1.39 (minimum version 1.12)
+  Go version:       go1.10.8
+  Git commit:       481bc77
+  Built:            Sat May  4 02:00:10 2019
+  OS/Arch:          linux/arm64
+  Experimental:     false
+ubuntu@arm-node1:~$
+```
+
+
+
 If you are looking out for manual way:
 
-Method:2
+## Method:2
 
 - Go to Create Instance under EC2(shown below)
 
