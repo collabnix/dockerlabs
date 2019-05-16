@@ -132,6 +132,23 @@ PS C:\Users\Ajeet_Raina> docker-machine create  --driver amazonec2  --amazonec2-
 ec2-vpc-id=vpc-ae59f0d6 --amazonec2-ami=ami-0db180c518750ee4f  --amazonec2-instance-type=a1.medium arm-node3
 ```
 
+## Initiating Docker Swarm Cluster
+
+Identify Security Group from your instance
+
+```
+$ SECURITY_GROUP_ID=sg- #Copy the group id here
+$ aws ec2 authorize-security-group-ingress --group-id $SECURITY_GROUP_ID --protocol tcp --port 2377 --source-group $SECURITY_GROUP_ID
+aws ec2 authorize-security-group-ingress --group-id $SECURITY_GROUP_ID --protocol tcp --port 7946 --source-group $SECURITY_GROUP_ID
+aws ec2 authorize-security-group-ingress --group-id $SECURITY_GROUP_ID --protocol udp --port 7946 --source-group $SECURITY_GROUP_ID
+aws ec2 authorize-security-group-ingress --group-id $SECURITY_GROUP_ID --protocol tcp --port 4789 --source-group $SECURITY_GROUP_ID
+aws ec2 authorize-security-group-ingress --group-id $SECURITY_GROUP_ID --protocol udp --port 4789 --source-group $SECURITY_GROUP_ID
+```
+
+## Joining Worker Nodes
+
+
+
 
 ## Method:2
 
