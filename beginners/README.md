@@ -16,12 +16,13 @@
    - [Docker Enterprise Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-dockeree.md)
 - [Docker Engine Release Features](https://github.com/collabnix/dockerlabs/blob/master/beginners/evolution-of-docker-platform.md)
    - [18.09](https://github.com/collabnix/dockerlabs/blob/master/beginners/1809.md)
-   - [19.03](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/README.md#how-to-install-latest-docker-19030-beta-1-test-build)
+   - [19.03 Community Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/README.md#how-to-install-latest-docker-19030-beta-1-test-build)
      - [How to install latest Docker 19.03.0 Test Build](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/README.md#how-to-install-latest-docker-19030-beta-1-test-build)<br>
      - [Support for ```docker context```](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/README.md#support-for-docker-context)<br>
      - [Support for rootless Docker](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/README.md#testing-rootless-docker-under-docker-19030-beta-1)<br>
      - [Context Switching Made Simple for Swarm & Kubernetes in Docker 19.03.0](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/README.md#support-for-docker-context)<br>
      - [Test Drive --gpu option during docker CLI runtime on Docker 19.03.0 Beta 3](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/README.md#support-for---gpu-runtime-option-in-docker-19030-beta3)
+    - [19.03 Enterprise Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/from-source/README.md#how-to-install-latest-docker-19030-enterprise-beta-4-test-build)
    
              
 # Installing, Upgrading & Maintaining Docker 
