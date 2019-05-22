@@ -28,7 +28,10 @@ sh bootstrap.sh
 NAME      STATUS     ROLES     AGE       VERSION
 node1     Ready      master    39s       v1.11.3
 node2     NotReady   <none>    19s       v1.11.3
-[node1 install]$ cat ~/.docker/config.json
+```
+
+```
+cat ~/.docker/config.json
 {
         "auths": {
                 "https://index.docker.io/v1/": {
@@ -37,6 +40,8 @@ node2     NotReady   <none>    19s       v1.11.3
         "HttpHeaders": {
                 "User-Agent": "Docker-Client/18.06.1-ce (linux)"
         }
-}[node1 install]$
+}
 ```
+
+
 
