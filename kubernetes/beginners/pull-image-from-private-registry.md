@@ -22,26 +22,61 @@ sh bootstrap.sh
 
 ## Steps:
 
+## Creating Password File
+
+Create a password file with one entry for the user testuser, with password testpassword:
 
 ```
-[node1 install]$ kubectl get nodes
-NAME      STATUS     ROLES     AGE       VERSION
-node1     Ready      master    39s       v1.11.3
-node2     NotReady   <none>    19s       v1.11.3
+$ mkdir auth
+$ docker run \
+  --entrypoint htpasswd \
+  registry:2 -Bbn testuser testpassword > auth/htpasswd
+```
+
+## Stop the registry.
+
+```
+$ docker container stop registry
+```
+
+## Start the registry with basic authentication.
+
+```
+$ docker run -d \
+  -p 5000:5000 \
+  --restart=always \
+  --name registry \
+  -v "$(pwd)"/auth:/auth \
+  -e "REGISTRY_AUTH=htpasswd" \
+  -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
+  -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \
+  -v "$(pwd)"/certs:/certs \
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+  -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+  registry:2
 ```
 
 ```
-cat ~/.docker/config.json
-{
-        "auths": {
-                "https://index.docker.io/v1/": {
-                        "auth": "YWplZXRyYWluYTpPcmFjbGU5aWFz"                }
-        },
-        "HttpHeaders": {
-                "User-Agent": "Docker-Client/18.06.1-ce (linux)"
-        }
-}
+[node1 ~]$ ls
+anaconda-ks.cfg  auth  certs  kubernetes101
 ```
+
+```
+[node1 ~]$ cd auth/
+[node1 auth]$ ls
+htpasswd
+```
+
+```
+[node1 ~]$ docker login 127.0.0.1:5000
+Username: testuser
+Password: testpassword
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+```
+
+
 
 
 
