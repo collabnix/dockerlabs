@@ -198,3 +198,29 @@ Events:
 [node1 ~]$
 f042e2df8b77        b3b94275d97c            "/coredns -conf /etc…"   About an hour ago    Up About an hour
 ```
+
+
+# A Simple Nginx Example
+
+```
+[node1 ~]$ kubectl get po^C[node1 ~]$ export DOCKER_REGISTRY_SERVER=http://127.0.0.1:5000[node1 ~]$ export DOCKER_USER=testuser[node1 ~]$ export DOCKER_PASSWORD=testpassword
+[node1 ~]$ kubectl create secret docker-registry myown   --docker-server=$DOCKER_REGISTRY_SERVER   --docker-username=$DOCKER_USER   --docker-password=$DOCKER_PASSWORD   --docker-email=$DOCKER_EMAIL
+secret/myown created
+[node1 ~]$ docker pull nginxUsing default tag: latest
+latest: Pulling from library/nginx
+743f2d6c1f65: Pull complete
+6bfc4ec4420a: Pull complete
+688a776db95f: Pull complete
+Digest: sha256:23b4dcdf0d34d4a129755fc6f52e1c6e23bb34ea011b315d87e193033bcd1b68
+Status: Downloaded newer image for nginx:latest
+[node1 ~]$ docker images | grep nginx
+nginx                                      latest              53f3fd8007f7        2 weeks ago         109MB
+[node1 ~]$ docker tag nginx:latest 127.0.0.1:5000/mynginx
+[node1 ~]$ docker push 127.0.0.1:5000/mynginx
+The push refers to repository [127.0.0.1:5000/mynginx]
+332fa54c5886: Pushed
+6ba094226eea: Pushed
+6270adb5794c: Pushed
+latest: digest: sha256:e770165fef9e36b990882a4083d8ccf5e29e469a8609bb6b2e3b47d9510e2c8d size: 948
+```
+
