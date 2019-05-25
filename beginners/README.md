@@ -35,8 +35,7 @@
      - [How to install Docker 18.09.0 on Raspberry Pi 3?](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/README.md)
      - [How to setup Docker Swarm Cluster on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-swarm-cluster.md)
      - [Building up K3s Cluster on Raspberry Pi 3 Nodes](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
-- [Compiling Your Own Docker Binary from Source]()
-- Scripts & Installation Tools
+- [Compiling Your Own Docker Binary from Source](https://github.com/collabnix/dockerlabs/blob/master/beginners/compiling-docker-from-source.md)
 - [Upgrading Docker from CE to EE](https://github.com/collabnix/dockerlabs/blob/master/beginners/upgrade-1809ce-1809ee/README.md)
 
 
