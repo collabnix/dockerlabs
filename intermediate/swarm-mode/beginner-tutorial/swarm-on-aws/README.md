@@ -1,4 +1,4 @@
-# How to setup Docker Swarm on AWS
+# Apache Kafka on 2-Node Docker Swarm Mode Cluster running on Amazon EC2 Instance
 
 
 ## Adding Your Credentials:
