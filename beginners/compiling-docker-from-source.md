@@ -10,9 +10,11 @@ As I’ve always been installing docker using apt, the first step was to get it 
 
 You can check which binaries are these by looking at dpkg --listfiles <pkg_name> (it lists the files installed to your system from pkg_name):
 
+```
 # List the files that the docker-ce package brought
 # us and then filter out those that are not in
 # the `/usr/bin` directory.
+```
 
 ```
 sudo dpkg --listfiles docker-ce | \
