@@ -45,3 +45,17 @@ To see how to connect your Docker Client to the Docker Engine running on this vi
 [Captains-Bay]🚩 >
 ```
 
+```
+ docker-machine ls
+NAME                 ACTIVE   DRIVER      STATE     URL                       SWARM   DOCKER     ERRORS
+demo-swarm-manager   -        amazonec2   Running   tcp://34.220.73.41:2376           v18.09.6   
+[Captains-Bay]🚩 >  
+```
+
+```
+[Captains-Bay]🚩 >  aws ec2 describe-security-groups --filter "Name=group-name,Values=demo-swarm"
+{
+    "SecurityGroups": []
+}
+```
+
