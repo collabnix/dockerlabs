@@ -47,7 +47,7 @@
 - What is a Docker Image?
   - [Building Your own Docker Image from Scratch](https://github.com/collabnix/dockerlabs/blob/master/beginners/building-docker-image-from-scratch.md)
 - [What is Docker Container?](https://github.com/collabnix/dockerlabs/blob/master/beginners/components/what-is-container.md)
-- Difference between Docker Image Vs Docker Container?
+- [Difference between Docker Image Vs Docker Container?](https://github.com/collabnix/dockerlabs/blob/master/beginners/components/container-vs-image.md)
 - What is Docker registry?
   - [Building a Private Docker Registry](https://github.com/collabnix/dockerlabs/blob/master/beginners/build-private-docker-registry.md)
   - [Building a Private Docker Registry using Portus](https://github.com/collabnix/dockerlabs/blob/master/beginners/portus/README.md)
