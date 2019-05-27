@@ -116,3 +116,5 @@ If the file is empty, add the following:
   "debug": true
 }
 ```
+
+If the file already contains JSON, just add the key "debug": true, being careful to add a comma to the end of the line if it is not the last line before the closing bracket. Also verify that if the log-level key is set, it is set to either info or debug. info is the default, and possible values are debug, info, warn, error, fatal.
