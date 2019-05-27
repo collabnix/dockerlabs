@@ -102,3 +102,17 @@ Since the state of a Docker daemon is kept on this directory, make sure you use 
 ## Troubleshoot the daemon
 
 You can enable debugging on the daemon to learn about the runtime activity of the daemon and to aid in troubleshooting. If the daemon is completely non-responsive, you can also force a full stack trace of all threads to be added to the daemon log by sending the SIGUSR signal to the Docker daemon.
+
+## Enable debugging
+
+There are two ways to enable debugging. The recommended approach is to set the debug key to true in the daemon.json file. This method works for every Docker platform.
+
+Edit the daemon.json file, which is usually located in /etc/docker/. You may need to create this file, if it does not yet exist. On macOS or Windows, do not edit the file directly. Instead, go to Preferences / Daemon / Advanced.
+
+If the file is empty, add the following:
+
+```
+{
+  "debug": true
+}
+```
