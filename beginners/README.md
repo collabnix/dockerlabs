@@ -42,7 +42,7 @@
 # Docker Components
 
 - [Docker Client-Server Architecture](https://github.com/collabnix/dockerlabs/tree/master/beginners/components/server_client.md)
-- Docker Daemon
+- [Docker Daemon](https://github.com/collabnix/dockerlabs/blob/master/beginners/components/daemon/README.md)
   - How to open Docker Daemon to External world?
   - Docker Daemon runs as root. How can Docker be secure?
 - What is a Docker Image?
