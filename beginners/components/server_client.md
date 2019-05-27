@@ -38,7 +38,7 @@ To communicate with the docker daemon to execute a certain task like runing a co
 
 A subset view of docker's client and server.
 
-![Image](https://github.com/collabnix/dockerlabs/tree/master/beginners/images/comp_subset.png)<br>
+![Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/comp_subset.png)<br>
 *Image courtesy: https://docs.docker.com/engine/docker-overview/*
 
 
