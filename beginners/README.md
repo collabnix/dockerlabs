@@ -44,9 +44,8 @@
 - [Docker Client-Server Architecture](https://github.com/collabnix/dockerlabs/tree/master/beginners/components/server_client.md)
 - [Docker Daemon](https://github.com/collabnix/dockerlabs/blob/master/beginners/components/daemon/README.md)
   - [How to open Docker Daemon to External world?](https://github.com/collabnix/dockerlabs/blob/master/beginners/components/daemon/access-daemon-externally.md)
-  - Docker Daemon runs as root. How can Docker be secure?
 - What is a Docker Image?
-  - Building Your own Docker Image from Scratch
+  - [Building Your own Docker Image from Scratch](https://github.com/collabnix/dockerlabs/blob/master/beginners/building-docker-image-from-scratch.md)
 - What is Docker Container?
 - Difference between Docker Image Vs Docker Container?
 - What is Docker registry?
