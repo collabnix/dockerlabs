@@ -86,3 +86,19 @@ You can learn what configuration options are available in the dockerd reference 
 dockerd --help
 ```
 
+## Docker daemon directory
+
+The Docker daemon persists all data in a single directory. This tracks everything related to Docker, including containers, images, volumes, service definition, and secrets.
+
+By default this directory is:
+
+/var/lib/docker on Linux.
+C:\ProgramData\docker on Windows.
+
+You can configure the Docker daemon to use a different directory, using the data-root configuration option.
+
+Since the state of a Docker daemon is kept on this directory, make sure you use a dedicated directory for each daemon. If two daemons share the same directory, for example, an NFS share, you are going to experience errors that are difficult to troubleshoot.
+
+## Troubleshoot the daemon
+
+You can enable debugging on the daemon to learn about the runtime activity of the daemon and to aid in troubleshooting. If the daemon is completely non-responsive, you can also force a full stack trace of all threads to be added to the daemon log by sending the SIGUSR signal to the Docker daemon.
