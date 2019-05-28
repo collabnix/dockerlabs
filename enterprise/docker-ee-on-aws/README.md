@@ -16,6 +16,12 @@ ddbd7b624dc0: Download complete
 ```
 
 ```
+[Captains-Bay]🚩 >  docker cluster rm fervent_taussig
+Removing fervent_taussig                                                   [OK]
+Removing: [==========                                                    ] 17%
+```
+
+```
 docker tag docker/cluster:v0.3.0 dockereng/cluster:v0.3.0
 ```
 
