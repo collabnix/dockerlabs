@@ -2504,3 +2504,55 @@ DEBU[0721] TASK [dtr : Start installing DTR] ***********************************
 DEBU[0723] changed: [67fb8cb05043-registry-1]
 ```
 
+```
+[Captains-Bay]🚩 >  docker cluster inspect fervent_taussig
+name: fervent_taussig
+shortid: 67fb8cb05043
+variable:
+  region: us-east-1
+  subscription_url: https://storebits.docker.com/ee/m/sub-a3dd83ed-d9db-440f-a175-e11347fb1037/
+  ucp_password: Oracle9ias
+provider:
+  aws:
+    region: us-east-1
+    tags:
+      pet: "true"
+      project: CSG-DCI
+    version: ~> 1.0
+cluster:
+  dtr:
+    version: docker/dtr:2.7.0-beta4
+  engine:
+    storage_volume: /dev/xvdb
+    url: https://storebits.docker.com/ee/m/sub-a3dd83ed-d9db-440f-a175-e11347fb1037/
+    version: ee-test-19.03
+  registry:
+    url: https://index.docker.io/v1/
+    username: ajeetraina
+  ucp:
+    username: admin
+    version: docker/ucp:3.2.0-beta4
+resource:
+  aws_instance:
+    managers:
+      _running:
+        managers_ids:
+        - i-088036137bdf5564a
+        managers_ips:
+        - 35.170.33.58
+      instance_type: t2.xlarge
+      os: Ubuntu 16.04
+      quantity: 1
+      role: manager
+    registry:
+      _running:
+        registry_ids:
+        - i-016770ea989a55a0a
+        registry_ips:
+        - 18.208.208.51
+      instance_type: t2.xlarge
+      os: Ubuntu 16.04
+      quantity: 1
+      role: dtr
+
+```
