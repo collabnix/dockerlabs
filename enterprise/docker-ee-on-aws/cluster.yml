@@ -1,8 +1,9 @@
 variable:
   region: us-east-1
-  subscription_url: <subscription_url>
+  subscription_url: https://storebits.docker.com/ee/m/sub-zxxxx/
   ucp_password:
     type: "prompt"
+
 
 
 provider:
