@@ -2556,3 +2556,75 @@ resource:
       role: dtr
 
 ```
+
+```
+[Captains-Bay]🚩 >  docker context ls
+NAME                DESCRIPTION                               DOCKER ENDPOINT               KUBERNETES ENDPOINT                ORCHESTRATOR
+default *           Current DOCKER_HOST based configuration   unix:///var/run/docker.sock   https://localhost:6443 (default)   swarm
+fervent_taussig     fervent_taussig                           tcp://35.170.33.58:443                                           
+[Captains-Bay]🚩 >  docker context use fervent_taussig
+fervent_taussig
+Current context is now "fervent_taussig"
+[Captains-Bay]🚩 >  docker node ls
+ID                            HOSTNAME                       STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+fbe5k12hyoit5qcdtatamz907 *   ip-172-31-9-19.ec2.internal    Ready               Active              Leader              19.03.0-beta4
+hs8jz9vnuwqjjjukzh9s2rejc     ip-172-31-10-73.ec2.internal   Ready               Active                                  19.03.0-beta4
+[Captains-Bay]🚩 >
+```
+
+```
+[Captains-Bay]🚩 >  docker version
+Client: Docker Engine - Community
+ Version:           19.03.0-beta3
+ API version:       1.40
+ Go version:        go1.12.4
+ Git commit:        c55e026
+ Built:             Thu Apr 25 19:05:38 2019
+ OS/Arch:           darwin/amd64
+ Experimental:      false
+
+Server: Docker Enterprise 3.0
+ Engine:
+  Version:          19.03.0-beta4
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.11.5
+  Git commit:       d9934ea
+  Built:            Tue May 14 06:43:37 2019
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.2.5
+  GitCommit:        bb71b10fd8f58240ca47fbb579b9d1028eea7c84
+ runc:
+  Version:          1.0.0-rc6+dev
+  GitCommit:        2b18fe1d885ee5083ef9f0838fee39b62d653e30
+ docker-init:
+  Version:          0.18.0
+  GitCommit:        fec3683
+ Universal Control Plane:
+  Version:          3.2.0-beta4
+  ApiVersion:       1.40
+  Arch:             amd64
+  BuildTime:        Thu May 16 00:23:28 UTC 2019 
+  GitCommit:        93be304
+  GoVersion:        go1.12.3
+  MinApiVersion:    1.20
+  Os:               linux
+ Kubernetes:
+  Version:          1.14+
+  buildDate:        2019-04-09T04:40:58Z
+  compiler:         gc
+  gitCommit:        0afac0d5083db76807439791b0ea7244d199a274
+  gitTreeState:     clean
+  gitVersion:       v1.14.1-docker-1
+  goVersion:        go1.12.1
+  major:            1
+  minor:            14+
+  platform:         linux/amd64
+ Calico:
+  Version:          v3.5.4
+  cni:              v3.5.4
+  kube-controllers: v3.5.4
+  node:             v3.5.4
+[Captains-Bay]🚩 >  
+```
