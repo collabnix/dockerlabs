@@ -8,8 +8,8 @@ services:
     image: qnib/plain-zkui@sha256:30c4aa1236ee90e4274a9059a5fa87de2ee778d9bfa3cb48c4c9aafe7cfa1a13
     ports:
       - "9090:9090"
-  broker:
-    image: qnib/plain-kafka:2018-04-25_1.1.0
+  broker: 
+    image: qnib/plain-kafka:2019-01-28_2.1.0
     hostname: "{{.Service.Name}}.{{.Task.Slot}}.{{.Task.ID}}"
     ports:
       - "9092:9092"
@@ -17,7 +17,6 @@ services:
       replicas: 3
     environment:
       - KAFKA_BROKER_ID={{.Task.Slot}}
-      - ZK_SERVERS=tasks.zookeeper 
   manager:
     image: qnib/plain-kafka-manager:2018-04-25@sha256:8a30ced91432b9b3ef21bc66c4b5635690e1af823684fe6e29ab866d839d10ca
     ports:
