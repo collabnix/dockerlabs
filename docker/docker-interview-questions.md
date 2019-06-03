@@ -33,11 +33,22 @@ AWS provides a set of fully managed services that you can use to build and run s
 
 ## COMPUTE
 
+### AWS Lambda
+
 AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
+
+### AWS Fargate
+
+AWS Fargate is a purpose-built serverless compute engine for containers. Fargate scales and manages the infrastructure required to run your containers.
+
 
 ## STORAGE
 
 Amazon Simple Storage Service (Amazon S3) provides developers and IT teams with secure, durable, highly-scalable object storage. Amazon S3 is easy to use, with a simple web service interface to store and retrieve any amount of data from anywhere on the web.
+
+## Amazon Elastic File System (Amazon EFS) 
+
+It provides simple, scalable, elastic file storage. It is built to elastically scale on demand, growing and shrinking automatically as you add and remove files. 
 
 ## DATA STORES
 
@@ -63,10 +74,6 @@ Amazon Kinesis is a platform for streaming data on AWS, offering powerful servic
 
 AWS provides tools and services that aid developers in the serverless application development process. AWS and its partner ecosystem offer tools for continuous integration and delivery, testing, deployments, monitoring and diagnostics, SDKs, frameworks, and integrated development environment (IDE) plugins.
 
-## AWS Fargate
 
-AWS Fargate is a purpose-built serverless compute engine for containers. Fargate scales and manages the infrastructure required to run your containers.
 
-## Amazon Elastic File System (Amazon EFS) 
 
-It provides simple, scalable, elastic file storage. It is built to elastically scale on demand, growing and shrinking automatically as you add and remove files. 
