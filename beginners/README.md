@@ -65,13 +65,8 @@
 - [Working with Docker containers](https://github.com/collabnix/dockerlabs/blob/master/beginners/working-with-docker-containers/README.md)
   - [Detaching containers without stopping them](https://github.com/collabnix/dockerlabs/blob/master/beginners/deatching-containers-without-stopping-them/README.md)
 - [Creating Docker Base Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/create-base-image.md)
-- [Build Your Own Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/building-you-own-docker-image/README.md)
-  - [Using Packer to Create a Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/using-packer-to-create-a-docker-image/README.md)
-  - [Using ONBUILD Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/using-onbuild-images/README.md)
-- [Creating Effective Docker Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/b300/b304-creating-effective-docker-images.md)
-- [Creating a DockerHub Account](https://github.com/collabnix/dockerlabs/blob/master/beginners/creating-a-dockerhub-account/README.md)
-- [Sharing Your Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/sharing-your-docker-image/README.md)
-  -  [Publishing Your Image to Docker Hub](https://github.com/collabnix/dockerlabs/blob/master/beginners/publishing-your-image-to-docker-hub/README.md)
+- [Using ONBUILD Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/using-onbuild-images/README.md)
+
 
   
  # Working with Dockerfile
