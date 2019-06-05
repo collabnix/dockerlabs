@@ -70,7 +70,7 @@
  # Working with Dockerfile
  
 - Building Docker Image from Dockerfile
-  - Writing Your First Dockerfile
+  - [Writing Your First Dockerfile] (https://github.com/Prashansa-K/dockerlabs/blob/patch-2/beginners/Writing-Dockerfile.md)
   - Injecting files into your image using ADD
   - Rebuilding without Cache 
   - Busting the Cache 
