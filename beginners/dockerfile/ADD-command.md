@@ -2,7 +2,10 @@
 
 It is the usual requirement of a developer to copy a few files into the docker image so that every container spawned from this image has the required files.
 
-Docker allows us to do this using two isntructions in a Dockerfile: 1) ADD 2) COPY
+Docker allows us to do this using two isntructions in a Dockerfile: 
+
+- ADD 
+- COPY
 
 ## ADD instruction
 
