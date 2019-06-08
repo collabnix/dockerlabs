@@ -1,8 +1,6 @@
 # These are supported funding model platforms
 
-github: [ajeetraina, openusm, collabnix, abendigeri]
-patreon: collabnix
-open_collective: collabnix
+github: [ajeetraina]
 ko_fi: # http://ko-fi.com/K3K5AZX5
 tidelift: npm/babel
 community_bridge: # collabnix
