@@ -21,7 +21,11 @@
   - Docker Networking for Swarm
   - [Diving Deeper into the Docker Network Namespaces Configuration](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b406-network-namespace-009.md)
 
+## Docker Compose
 
+- [Docker Compose Introduction](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-compose/README.md)<br>
+- [Docker Compose Cheatsheet](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-compose/cli-cheatsheet.md)<br>
+- [Docker compose with swarm secrets]()<br>
 
 ## Docker Swarm - Introduction
 
@@ -105,11 +109,7 @@
 - [Recovering volume]()<br>
 
 
-## Docker Compose
 
-- [Docker Compose Introduction](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-compose/README.md)<br>
-- [Docker Compose Cheatsheet](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-compose/cli-cheatsheet.md)<br>
-- [Docker compose with swarm secrets]()<br>
 
 ## Docker Machine
 
