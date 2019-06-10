@@ -108,6 +108,6 @@ docker stack deploy -c external-compose.yml external_secret
 docker service logs -f external_secret_test
 ```
 
-Contributors:
+# Contributors:
 
 @marcosnils
