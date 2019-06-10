@@ -20,8 +20,6 @@ In nutshell, Docker is a computer program, command-line tool, a containerization
 ## Docker as a Computer program...
 
 Docker is a computer program that performs operating-system-level virtualization, also known as "containerization". 
-Docker is a command-line program, a background daemon, and a set of remote services that take a logistical approach to solving common software problems and simplifying
-your experience installing, running, publishing, and removing software. It accomplishes this using a UNIX technology called containers
 It was first released in 2013 and is developed by Docker, Inc. 
 
 ## Docker as a CLI tool
