@@ -70,4 +70,5 @@ g++ -std=c++11 -I/usr/include/boost/asio -I/usr/include/boost -o binary.out main
 
 ## Maintained by:
 Sujith Abdul Rahim<br>
-[LinkedIN](https://www.linkedin.com/in/sujithar37/) && [GitHub](https://github.com/sujiar37/)
+- [LinkedIN](https://www.linkedin.com/in/sujithar37/) 
+- [GitHub](https://github.com/sujiar37/)
