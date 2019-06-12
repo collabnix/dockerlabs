@@ -232,3 +232,7 @@ Are you sure? [yN] y
 Removing wordpress-service_wordpress_1 ... done
 Removing wordpress-service_db_1        ... done
 ```
+
+## Contributor
+
+[Prashansa Kulshrestha](https://github.com/Prashansa-K)
