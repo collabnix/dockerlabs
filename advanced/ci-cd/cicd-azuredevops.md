@@ -20,6 +20,7 @@
 </table>
 
 ## Introduction
+
 This guide will explain a few core concept about CI-CD pipeline using Azure DevOps for Docker based deployments. Also, this could be more likely a generic CI-CD template which can even customize in depth by going through the relevant documentations and it has been described very well in the configuration files([azure-pipelines.yml](https://dev.azure.com/sujithar37/_git/RWODevOpsTest?path=%2Fazure-pipelines.yml&version=GBmaster) && [Dockerfile](https://dev.azure.com/sujithar37/_git/RWODevOpsTest?path=%2FDockerfile&version=GBmaster)) and how we can play with those etc.
 
 This guide has 3 sections as follows,
@@ -68,5 +69,5 @@ g++ -std=c++11 -I/usr/include/boost/asio -I/usr/include/boost -o binary.out main
 
 
 ## Maintained by:
-Sujith Abdul Rahim
+Sujith Abdul Rahim<br>
 [LinkedIN](https://www.linkedin.com/in/sujithar37/) && [GitHub](https://github.com/sujiar37/)
