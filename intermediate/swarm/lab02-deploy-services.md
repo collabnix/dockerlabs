@@ -2,7 +2,7 @@
 
 By default, Docker uses a spread replication model for deciding which containers should run on which hosts. 
 The spread approach ensures that containers are deployed across the cluster evenly. This means that if one of the nodes is removed from 
-the cluster,  the instances would be already running on the other nodes. Thr workload on the removed node would be rescheduled across 
+the cluster,  the instances would be already running on the other nodes. There workload on the removed node would be rescheduled across 
 the remaining available nodes.
 
 A new concept of Services is used to run containers across the cluster. This is a higher-level concept than containers.
