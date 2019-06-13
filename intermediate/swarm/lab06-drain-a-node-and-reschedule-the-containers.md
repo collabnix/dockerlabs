@@ -19,7 +19,7 @@ You will be taking worker2 out of service for maintenance.
 Let’s see the containers that you have running on worker2.
 
 We are going to take the ID for worker2 and run docker node update --availability drain worker2. 
-We are using the worker2 host ID as input into our drain command. Replace your node id with the id of worker2.
+We are using the worker2 host ID as input into our drain command. Replace yournodeid with the id of worker2.
 
 ```
 $ docker node update --availability drain worker2
@@ -141,23 +141,5 @@ Lb6ZrhbEJDcIhlnozKRcPSJi7RWy4/16THIUJdpM
  Issuer Subject:        MBMxETAPBgNVBAMTCHN3YXJtLWNh
  Issuer Public Key:     MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+ju2b5XGT4IjD0AkQZOXJb8k+i1C5Wqtu+Lfh+4roCThxZhTpPVZKIkwcjScQZL/XMUhZDMljRZBtPx4xqpfiA==
  ```
- 
- ```
- $ docker service scale sleep-app=10
-sleep-app scaled to 10
-overall progress: 10 out of 10 tasks
-1/10: running
-2/10: running
-3/10: running
-4/10: running
-5/10: running
-6/10: running
-7/10: running
-8/10: running
-9/10: running
-10/10: running
-verify: Service converged
-[manager1] (local) root@192.168.0.9 ~/dockerlabs/intermediate/swarm
-```
 
 [Next >> Lab07 - Cleaning Up](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab07-cleaning-up.md)
