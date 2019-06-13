@@ -5,7 +5,11 @@ The Service concept allows you to inspect the health and state of your cluster a
 ## Task
 
 You can view the list of all the tasks associated with a service across the cluster. 
-In this case, each task is a container docker service ps http
+In this case, each task is a container, 
+
+```
+docker service ps http
+```
 
 You can view the details and configuration of a service via 
 
