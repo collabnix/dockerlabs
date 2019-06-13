@@ -36,7 +36,7 @@ The load balancer will automatically be updated. Requests will now be processed 
 Try issuing more commands via 
 
 ```
-curl docker
+curl localhost:80
 ```
 
 Try scaling the service down to see the result.
