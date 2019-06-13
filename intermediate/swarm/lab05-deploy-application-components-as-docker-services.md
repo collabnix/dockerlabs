@@ -44,7 +44,7 @@ One of the great things about services is that you can scale them up and down to
 
 You will perform the following procedure from node1.
 
-Scale the number of containers in the sleep-app service to 7 with the docker service update --replicas 7 sleep-app command. replicas is the term we use to describe identical containers providing the same service.
+Scale the number of containers in the sleep-app service to 7 with the docker service update --replicas 7 sleep-app command. Replicas is the term we use to describe identical containers providing the same service.
 
 ```
 $ docker service update --replicas 7 sleep-app
