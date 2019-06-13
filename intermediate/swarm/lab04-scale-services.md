@@ -4,7 +4,7 @@ A Service allows us to scale how many instances of a task is running across the 
 As it understands how to launch containers and which containers are running, it can easily start, or remove, containers as required. 
 At the moment the scaling is manual. However, the API could be hooked up to an external system such as a metrics dashboard.
 
-#Task
+# Task
 
 At present, we have two load-balanced containers running, which are processing our requests curl docker
 
