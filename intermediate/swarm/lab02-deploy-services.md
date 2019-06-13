@@ -16,7 +16,7 @@ http and that it should be attached to the newly created skynet network.
 For ensuring replication and availability, we are running two instances, of replicas, of the container across our cluster.
 
 Finally, we load balance these two containers together on port 80. Sending an HTTP request to any of the nodes in the cluster will process the request by one of the containers within the cluster.
-The node which accepted the request might not be the node where the containerFinally, we load balance these two containers together on port 80. Sending an HTTP request to any of the nodes in the cluster will process the request by one of the containers within the cluster. The node which accepted the request might not be the node where the container responds. Instead, Docker load-balances requests across all available containers.
+The node which accepted the request might not be the node where the container responds. Instead, Docker load-balances requests across all available containers.
 
 ```
 docker service create --name http --network collabnet --replicas 2 -p 80:80 ajeetraina/hellowhale
