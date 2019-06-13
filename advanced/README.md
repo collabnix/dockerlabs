@@ -31,7 +31,8 @@
 
 ## Continous Integration & Deployment(CI-CD)
 
-[5 min CI/CD pipelining using Docker & circle-ci](https://github.com/collabnix/dockerlabs/blob/master/advanced/ci-cd/cicd-circleci.md)
+[5 min CI/CD pipelining using Docker & circle-ci](https://github.com/collabnix/dockerlabs/blob/master/advanced/ci-cd/cicd-circleci.md)<br>
+[CI - CD using Docker & Azure DevOps integrated with MS Teams](https://github.com/collabnix/dockerlabs/blob/master/advanced/ci-cd/cicd-azuredevops.md)
 
 ## Automation Tool - Ansible, Puppet, Terraform & Chef
 
