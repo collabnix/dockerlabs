@@ -27,19 +27,7 @@ docker kill yourcontainerid
 
 Finally, let’s remove node1, node2, and node3 from the Swarm. We can use the docker swarm leave --force command to do that.
 
-Lets run docker swarm leave --force on node1.
-
-```
-docker swarm leave --force
-```
-
-Then, run docker swarm leave --force on node2.
-
-```
-docker swarm leave --force
-```
-
-Finally, run docker swarm leave --force on node3.
+Lets run docker swarm leave --force on all the nodes to leave swarm cluster.
 
 ```
 docker swarm leave --force
