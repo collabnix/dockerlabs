@@ -19,7 +19,7 @@ You will be taking worker2 out of service for maintenance.
 Let’s see the containers that you have running on worker2.
 
 We are going to take the ID for worker2 and run docker node update --availability drain worker2. 
-We are using the worker2 host ID as input into our drain command. Replace yournodeid with the id of worker2.
+We are using the worker2 host ID as input into our drain command. Replace your node id with the id of worker2.
 
 ```
 $ docker node update --availability drain worker2
