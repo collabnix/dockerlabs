@@ -41,6 +41,6 @@ docker ps
 If we issue an HTTP request to the public port, it will be processed by the two containers  
 
 ```
- curl docker. 
+ curl localhost:80
 ```
 [Next >> Lab03 - Inspecting State](lab03-inspecting-state.md)
