@@ -13,7 +13,11 @@ You can view the details and configuration of a service via
 docker service inspect --pretty http
 ```
 
-On each node, you can ask what tasks it is currently running. Self refers to the manager node Leader: docker node ps self
+On each node, you can ask what tasks it is currently running. Self refers to the manager node Leader: 
+
+```
+docker node ps self
+```
 
 Using the ID of a node you can query individual hosts 
 
