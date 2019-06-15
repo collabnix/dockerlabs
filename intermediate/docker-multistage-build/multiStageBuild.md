@@ -6,7 +6,7 @@ Multi-stage builds are a new feature requiring **Docker 17.05** or higher on the
 
 Keeping the image size down is one of the challenging task while building image. Each instruction in Dockerfile adds a layer to the image.
 Also, you need to remember to clean up any dependency/artifactory you don't need later. Earlier you might have used shell scripts
-to keep layers light as much as possible. Using shell tricks to write a really efficient Dockerfile is a painful task.
+to keep layers light as much as possible. Using shell scripts, tricks to write a really efficient Dockerfile is a painful task.
 
 
 ## What exactly is Multi-Stage Builds? 
