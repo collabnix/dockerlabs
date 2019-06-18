@@ -80,13 +80,3 @@ $HELM_HOME has been configured at /root/.helm.
 Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
 
 ```
-
-
-
-```
-
-```
-
-
-
-
