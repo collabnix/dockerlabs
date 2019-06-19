@@ -5,6 +5,23 @@
 - A Raspberry Pi
 - Blinkt
 
+Blinkt! is an eight super-bright RGB LED indicators that are ideal for adding visual notifications to your Raspberry Pi without breaking the bank!
+Inspired by Alex Ellis' work with his Raspberry Pi Zero Docker Cluster, we developed these boards for him to use as status indicators. Blinkt! offers eight APA102 pixels in the smallest (and cheapest) form factor to plug straight onto your Raspberry Pi.
+
+Each pixel on Blinkt! is individually controllable and dimmable allowing you to create gradients, pulsing effects, or just flash them on and off like crazy. The data and clock lines are connected to GPIO #23 and #24 respectively but for simplicity you can just use our Python library to drive them.
+
+## Features
+
+- Eight APA102 RGB LEDs
+- Individually controllable pixels
+- Sits directly on top of your Pi in a tiny footprint
+- Fits inside most Pi cases
+- Doesn't interfere with PWM audio
+- Blinkt! pinout
+- Compatible with Raspberry Pi 3B+, 3, 2, B+, A+, Zero, and Zero W
+- Python library
+- Comes fully assembled
+
 
 ## Installing Docker on all 3 Nodes - 1 Manager and 2 worker nodes
 
