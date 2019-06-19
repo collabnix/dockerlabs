@@ -56,11 +56,9 @@ This node joined a swarm as a worker.
 pi@raspberrypi:~ $ 
 ```
 
-##
 
 
-
-##
+## Listing the Nodes
 
 ```
 root@raspberrypi:/home/pi# docker node ls
@@ -70,6 +68,8 @@ j7i394an31gsevxt3fndzvum5 *   raspberrypi         Ready               Active    
 let43cp6uoankngeg5lmd91mn     raspberrypi         Ready               Active                                  18.09.0
 root@raspberrypi:/home/pi# 
 ```
+
+## Running Monitor Service 
 
 ```
 root@raspberrypi:/home/pi# docker service create --name monitor --mode global --restart-condition any --mount type=bind,src=/sys,dst=/sys --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock stefanscherer/monitor:1.1.0
@@ -83,7 +83,7 @@ root@raspberrypi:/home/pi#
 ```
 
 
-##
+## 
 
 ```
 root@raspberrypi:/home/pi# docker service create --name whoami stefanscherer/whoami:1.1.0
@@ -92,6 +92,8 @@ overall progress: 1 out of 1 tasks
 1/1: running   [==================================================>] 
 verify: Service converged 
 ```
+
+## Scaling the Service to 4
 
 ```
 root@raspberrypi:/home/pi# docker service scale whoami=4
@@ -102,6 +104,11 @@ overall progress: 4 out of 4 tasks
 3/4: running   [==================================================>] 
 4/4: running   [==================================================>] 
 verify: Service converged 
+```
+
+## Scaling the service to 16
+
+```
 root@raspberrypi:/home/pi# docker service scale whoami=16
 whoami scaled to 16
 overall progress: 16 out of 16 tasks 
@@ -122,10 +129,20 @@ overall progress: 16 out of 16 tasks
 15/16: running   [==================================================>] 
 16/16: running   [==================================================>] 
 verify: Service converged 
+```
+
+## Scaling the Service to 32
+
+```
 root@raspberrypi:/home/pi# docker service scale whoami=32
 whoami scaled to 32
 overall progress: 32 out of 32 tasks 
 verify: Service converged 
+```
+
+## Scaling the Service back to 4
+
+```
 root@raspberrypi:/home/pi# docker service scale whoami=4
 whoami scaled to 4
 overall progress: 4 out of 4 tasks 
@@ -138,7 +155,7 @@ verify: Service converged
 
 
 
-##
+## Listing out the service
 
 ```
 root@raspberrypi:/home/pi# docker service ls
@@ -149,7 +166,7 @@ root@raspberrypi:/home/pi#
 ```
 
 
-## 
+## Listing the Nodes
 
 
 ```
@@ -159,6 +176,11 @@ ijnqkk7vybzts7ohgt63fteoo     raspberrypi         Ready               Active    
 j7i394an31gsevxt3fndzvum5 *   raspberrypi         Ready               Active              Leader              18.09.0
 let43cp6uoankngeg5lmd91mn     raspberrypi         Down                Active                                  18.09.0
 root@raspberrypi:/home/pi# 
+```
+
+## Rolling Updates
+
+```
 root@raspberrypi:/home/pi# docker service update --image stefanscherer/whoami:1.2.0 \
 >   --update-parallelism 4  --update-delay 2s whoami
 whoami
