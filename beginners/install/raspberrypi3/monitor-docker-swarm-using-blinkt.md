@@ -93,16 +93,7 @@ overall progress: 1 out of 1 tasks
 verify: Service converged 
 ```
 
-
-###
-
-
 ```
-root@raspberrypi:/home/pi# docker service create --name whoami stefanscherer/whoami:1.1.0
-jd5e5hlswu8ruxgfhgbwtww84
-overall progress: 1 out of 1 tasks 
-1/1: running   [==================================================>] 
-verify: Service converged 
 root@raspberrypi:/home/pi# docker service scale whoami=4
 whoami scaled to 4
 overall progress: 4 out of 4 tasks 
