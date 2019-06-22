@@ -10,9 +10,8 @@
 ## Introduction to Docker Networking
 
 - [Understanding Docker Container Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockercontainernetworking.md)
-- Docker Networking subsystem & Driver - TBD
 - [Difference between Bridge Vs Overlay Network](https://github.com/collabnix/dockerlabs/blob/master/beginners/DiffBridgeVsOverlay.md)
-- [Verifying host-level settings that impact Docker networking](https://github.com/collabnix/dockerlabs/blob/master/intermediate/host-settings.md)
+- [Verifying host-level settings that impact Docker networking](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/host-settings.md)
 - [What is MacVLAN networking?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/macvlan.md)
    - [Implementing MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/macvlan-010.md)
 - Docker Networking CLI
@@ -20,7 +19,7 @@
   - [Finding IP address of Container](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/FindingIPaddressofContainer.md)
   - [Exposing a Container Port on the Host](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/ExposingContainerPort.md)
   - [Linking Containers in Docker](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/LinkingContainersinDocker.md)
-   - [Diving Deeper into the Docker Network Namespaces Configuration](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b406-network-namespace-009.md)
+  - [Diving Deeper into the Docker Network Namespaces Configuration](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b406-network-namespace-009.md)
 
 ## Docker Compose
 
