@@ -32,10 +32,7 @@
 - [What is Docker Swarm?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/what-is-docker-swarm.md)
 - [How Docker Swarm Mode works?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/how-docker-swarm-mode-works.md)
 - [What is difference between Docker Swarm(Classic Swarm) Vs Swarm Mode Vs Swarmkit?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/difference-between-docker-swarm-vs-swarm-mode-vs-swarmkit.md)
-- [Docker Swarm Key Concepts - Services, Tasks & Load Balancing]()
-- [Docker Swarm CLI]()
-- [Docker swarm config files]()
-- [Raft Consensus in Docker Swarm]()
+- [Docker Swarm - Under the Hood] - (http://collabnix.com/docker-1-12-swarm-mode-under-the-hood/)
 
 ## Getting Started with Docker Swarm - Lab Sessions
 
