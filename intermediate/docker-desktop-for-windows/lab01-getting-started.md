@@ -168,4 +168,4 @@ Creating visualizer_visualizer_1 ... done
 PS C:\Users\Ajeet_Raina\docker101\play-with-docker\visualizer>
 ```
 
-[Next >> Switching to Windows Containers]()
+[Next >> Switching to Windows Containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab02-switching-to-windows-container.md)
