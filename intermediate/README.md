@@ -19,7 +19,7 @@
   - [Finding IP address of Container](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/FindingIPaddressofContainer.md)
   - [Exposing a Container Port on the Host](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/ExposingContainerPort.md)
   - [Linking Containers in Docker](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/LinkingContainersinDocker.md)
-  - [Diving Deeper into the Docker Network Namespaces Configuration](https://github.com/collabnix/dockerlabs/blob/master/beginners/b400/b406-network-namespace-009.md)
+ 
 
 ## Docker Compose
 
