@@ -1,18 +1,24 @@
 # Docker-IOT Using Arduino Uno And Johnny-Five Tranform Your IOT Platform to Next level 
 ![](https://github.com/sangam14/docker-IOT/blob/master/Webp.net-resizeimage.jpg)
 
+Johnny-Five is the JavaScript Robotics & IoT Platform. Released by Bocoup in 2012, Johnny-Five is maintained by a community of passionate software developers and hardware engineers. Over 75 developers have made contributions towards building a robust, extensible and composable ecosystem.
+
+Johnny-Five has been tested with a variety of Arduino-compatible Boards. For non-Arduino based projects, platform-specific IO Plugins are available. IO Plugins allow Johnny-Five code to communicate with any hardware in whatever language that platform speaks!
+
 # Prerequisites
 
 At least an Arduino or compatible board (Uno, Mega, Leonardo, Fio, Pro, Pro Mini)
 
-```Arduino UNO
-Arduino Leonardo
-Arduino MEGA
-Arduino FIO
-Arduino Pro
-Arduino Pro Mini
-TinyDuino
+
+- Arduino UNO
+- Arduino Leonardo
+- Arduino MEGA
+- Arduino FIO
+- Arduino Pro
+- Arduino Pro Mini
+- TinyDuino
 ```
+
 Sparkfun Inventor's Kit (Recommended for getting started)
 # OSX
 ````
