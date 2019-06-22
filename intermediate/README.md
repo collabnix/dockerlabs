@@ -51,6 +51,7 @@
 - [Demonstrating Swarm Synchronous Services]()
 - [NFS Volume with Docker Swarm]()
 - [ Building Docker Swarm Topology using Script ]()
+- [Docker Service Inspection Filtering & Template Engine under Swarm Mode](http://collabnix.com/understanding-swarm-mode-filtering/)
 
 
 ## Docker Swarm - Logging Solutions
@@ -60,8 +61,10 @@
 ## Docker Swarm - Networking Solution
 
 
-- [Implementing MacVLAN under Docker Swarm]()
-- [Toplology Aware Scheduling with Docker Swarm]()
+- [Implementing MacVLAN under Docker Swarm](https://collabnix.com/docker-17-06-swarm-mode-now-with-macvlan-support/)
+- [Toplology Aware Scheduling with Docker Swarm](https://collabnix.com/demonstrating-topology-aware-scheduling-under-docker-17-05-swarm-mode/)
+- [What’s new in Docker 1.12 Scheduling? – Part-I](http://collabnix.com/whats-new-in-docker-1-12-scheduling-part-i/)
+- [What’s new in Docker 1.12.0 Load-Balancing feature?](http://collabnix.com/whats-new-in-docker-1-12-0-load-balancing/)
 
 ## Docker Swarm - Updates & Rollback
 
