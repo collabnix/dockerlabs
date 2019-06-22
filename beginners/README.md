@@ -34,8 +34,7 @@
    - [IoT Platform](https://github.com/collabnix/dockerlabs/tree/master/beginners/install/raspberrypi3)
      - [How to install Docker 18.09.0 on Raspberry Pi 3?](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/README.md)
      - [How to setup Docker Swarm Cluster on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-swarm-cluster.md)
-     - [Building up K3s Cluster on Raspberry Pi 3 Nodes]
-(https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
+     - [Building up K3s Cluster on Raspberry Pi 3 Nodes](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
      - [Docker on Arduino Uno & Johnny Five](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/Docker-IOT_Using_Arduino_Uno_and_Johnny-Five.md)
 - [Compiling Your Own Docker Binary from Source](https://github.com/collabnix/dockerlabs/blob/master/beginners/compiling-docker-from-source.md)
 - [Upgrading Docker from CE to EE](https://github.com/collabnix/dockerlabs/blob/master/beginners/upgrade-1809ce-1809ee/README.md)
