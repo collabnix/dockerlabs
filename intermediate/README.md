@@ -1,5 +1,11 @@
 # Intermediate Course
 
+## Docker Desktop for Windows
+
+[Install Docker Desktop for Windows](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab01-getting-started.md)<br>
+[Geting Started with Windows Containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab02-switching-to-windows-container.md)
+[Multi-Container Applications](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab03-multicontainerapp.md)
+
 
 ## Introduction to Docker Networking
 
@@ -129,16 +135,7 @@
 - [Container inspect]()<br>
 - [Deleting containers]()<br>
 
-## Docker Desktop for Windows
 
-[Install Docker Desktop for Windows](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab01-getting-started.md)<br>
-[Win container Deploy ,Login,exit container]()<br>
-[List, Start, Stop, restart containers]()<br>
-[Where containers are stored]()<br>
-[Working with container hostnames]()<br>
-[Working on multiple containers]()<br>
-[Container inspect]()<br>
-[Deleting containers]()<br>
 
 ## Docker Desktop for Mac
 
