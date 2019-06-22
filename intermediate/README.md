@@ -3,7 +3,7 @@
 ## Docker Desktop for Windows
 
 [Install Docker Desktop for Windows](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab01-getting-started.md)<br>
-[Geting Started with Windows Containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab02-switching-to-windows-container.md)
+[Geting Started with Windows Containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab02-switching-to-windows-container.md)<br>
 [Multi-Container Applications](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab03-multicontainerapp.md)
 
 
