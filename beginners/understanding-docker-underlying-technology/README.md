@@ -6,13 +6,13 @@ At the core of container technology are cGroups and namespaces. Additionally, Do
 
 Namespaces offer another form of isolation in the way of processes. Processes are limited to see only the process ID in the same namespace. Namespaces from other system processes would not be accessible from a container process. For example, a network namespace would isolate access to the network interfaces and configuration, which allows the separation of network interfaces, routes, and firewall rules.
 
-![New Image]()
+![New Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/understanding-docker-underlying-technology/image1.png)
 
 
 Union file systems are also a key advantage to using Docker containers. The easiest way to understand union file systems is to think of them like a layer cake with each layer baked independently. The Linux kernel is our base layer; then, we might add an OS like Red Hat
 Linux or Ubuntu. Next, we might add an application like Nginx or Apache. Every change creates a new layer. Finally, as you make changes and new layers are added, you’ll always have a top layer (think frosting) that is a writable layer.
 
-![New Image]()
+![New Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/understanding-docker-underlying-technology/image2.png)
 
 What makes this truly efficient is that Docker caches the layers the first time we build
 them. So, let’s say that we have an image with Ubuntu and then add Apache and build the
