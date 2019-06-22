@@ -18,45 +18,52 @@ At least an Arduino or compatible board (Uno, Mega, Leonardo, Fio, Pro, Pro Mini
 - Arduino Pro
 - Arduino Pro Mini
 - TinyDuino
-```
+- Sparkfun Inventor's Kit (Recommended for getting started)
 
-Sparkfun Inventor's Kit (Recommended for getting started)
-# OSX
-````
+## OSX
+
+```
 Install Node.js >= 0.10.x
 Install Xcode
 Install node-gyp npm install -g node-gyp
-````
-# Windows
+```
+
+## Windows
 
 Via @ThomasDeutsch on https://github.com/rwldrn/johnny-five/issues/48#issuecomment-7696662
+
 ```
 Install Node.js >= 0.10.x 32 bit (unless anyone can confirm success with 64 bit)
 npm --add-python-to-path install --global --production windows-build-tools
 Install node-gyp npm install -g node-gyp
 ```
-# Ubuntu and Debian
+
+## Ubuntu and Debian
+
 ```
 Install Node.js >= 0.10.x apt-get install nodejs
 Install the nodejs-legacy package apt-get install nodejs-legacy
 Install build-essential or a suitable alternative apt-get install build-essential
 ```
-# Arch Linux
+
+## Arch Linux
+
 ```
 Install Node.js pacman -S nodejs
 Install Arduino Libraries (for firmware flashing) pacman -S arduino
-
 ```
+
 # Hello World
 
 Generally Arduino boards (Uno, Mega, Leonardo, Fio, Mini) come pre-flashed with the compiled StandardFirmata firmware. In most cases, getting started is as simple as...
+
 ```
 mkdir nodebot && cd nodebot;
-
 npm install johnny-five;
-
 ```
+
 Now open your text editor and create a new file called "strobe.js", in that file type or paste the following:
+
 ```
 var five = require("johnny-five"),
     board = new five.Board();
@@ -69,14 +76,18 @@ board.on("ready", function() {
   led.strobe();
 });
 ```
+
 Make sure the board is plugged into your host machine (desktop, laptop, raspberry pi, etc). Now, in your terminal, type or paste the following:
+
 ```
 node strobe.js
 Troubleshooting
 ```
+
 # Firmware
 
 The StandardFirmataPlus firmware is the one that is used for Johnny-Five to communicate with the board. That means you have to install it first, then you can execute the nodejs programs. Arduiono IDE
+
 ```
 Open Arduino IDE
 Verify correct port and board
@@ -84,6 +95,7 @@ Navigate to File > Examples > Firmata > StandardFirmataPlus
 Load sketch onto board.
 Packaged
 ```
+
 Install arduino package on your operating system ).
 Make a firmware folder and save this firmware.ino into it. if the link is dead again and not appearing in the Arduino IDE, use this gist backup.
 Install arduino libraries via arduino --install-library "Firmata,Servo" in the Terminal.
@@ -97,6 +109,7 @@ Inside the archive, there's a boards.txt file that contains all supported boards
 List of Arduino Board identifiers (May 2017)
 
 This is a compiled list that may not be up-to-date. Use the method described above in case you can't find your board here.
+
 ```
 "arduino:avr:yun" for Arduino Yun
 "arduino:avr:uno" for Arduino/Genuino Uno
