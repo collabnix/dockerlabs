@@ -87,15 +87,6 @@
 
 
 
-
-
-## Docker Volumes
-
-- [Introduction to Docker volumes]()<br>
-- [Launch a container with volume attached]()<br>
-- [Recovering volume]()<br>
-
-
 ## Docker Desktop for Mac
 
 [Install Docker Desktop]()<br>
