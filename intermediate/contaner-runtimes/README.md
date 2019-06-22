@@ -12,9 +12,10 @@ Here is basically what happens when a container is launched:
 
 Those concepts were first elaborated in Docker's Standard Container manifesto which was eventually removed from Docker, but other standardization efforts followed. The Open Container Initiative (OCI) now specifies most of the above under a few specifications:
 
-the Image Specification (often referred to as "OCI 1.0 images") which defines the content of container images
-the Runtime Specification (often referred to as CRI 1.0 or Container Runtime Interface) describes the "configuration, execution environment, and lifecycle of a container"
-the Container Network Interface (CNI) specifies how to configure network interfaces inside containers, though it was standardized under the Cloud Native Computing Foundation (CNCF) umbrella, not the OCI
+- the Image Specification (often referred to as "OCI 1.0 images") which defines the content of container images
+- the Runtime Specification (often referred to as CRI 1.0 or Container Runtime Interface) describes the "configuration, execution environment, and lifecycle of a container"
+- the Container Network Interface (CNI) specifies how to configure network interfaces inside containers, though it was standardized under the Cloud Native Computing Foundation (CNCF) umbrella, not the OCI
+
 Implementation of those standards varies among the different projects. For example, Docker is generally compatible with the standards except for the image format. Docker has its own image format that predates standardization and it has promised to convert to the new specification soon. Implementation of the runtime interface also differs as not everything Docker does is standardized, as we shall see.
 
 # The Docker and rkt story
@@ -39,7 +40,7 @@ One of CRI-O's most notable features, however is that it supports mixed workload
 
 CRI-O has an interesting architecture (see the diagram below from the talk slides [PDF]). It reuses basic components like runc to start containers, and software libraries like containers/image and containers/storage, created for the skopeo project, to pull container images and create container filesystems. A separate library called oci-runtime-tool prepares the container configuration. CRI-O introduces a new daemon to handle containers called conmon. According to Patel, the program was "written in C for stability and performance" and takes care of monitoring, logging, TTY allocation, and miscellaneous hazards like out-of-memory conditions.
 
-##  [CRI-O architecture]
+##  CRI-O architecture
 
 The conmon daemon is needed here to do all of the things that systemd doesn't (want to) do. But even though CRI-O doesn't use systemd directly to manage containers, it assigns containers to systemd-compatible cgroups, so that regular systemd tools like systemctl have visibility into the container resources. Since conmon (and not the CRI daemon) is the parent process of the container, it also allows parts of CRI-O to be restarted without stopping containers, which promises smoother upgrades. This is a problem for Docker deployments right now, where a Docker upgrade requires restarting all of the containers. This is usually not much trouble for Kubernetes clusters, however, because it is easy to roll out upgrades progressively by moving containers around.
 
