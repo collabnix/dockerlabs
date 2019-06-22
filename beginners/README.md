@@ -11,6 +11,7 @@
 - [Top Reasons why to & why not to run Docker containers directly on Bare Metal System](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker-on-bare-metal.md)
 - [How is Docker Networking different from VM Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-vmnetwork-docker-networking.md)
 - [Understanding Docker Underlying Technologies](https://github.com/collabnix/dockerlabs/tree/master/beginners/understanding-docker-underlying-technology)
+- [What happen when Containers are Launched?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/contaner-runtimes/README.md)
 - [Can container communication cross over to noncontainerized apps?](https://github.com/collabnix/dockerlabs/blob/master/beginners/linux-comm-containers.md)
 - [Architecture of Docker](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-of-a-docker.md)
    - [Docker Enterprise Edition](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-dockeree.md)
