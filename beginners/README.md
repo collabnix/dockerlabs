@@ -30,7 +30,6 @@
 - Installing Docker on 
    - [Linux](https://github.com/collabnix/dockerlabs/tree/master/beginners/install)
    - [Windows](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/windows/docker-desktop-for-windows/README.md)
-   - [Windows Server](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/windows/docker-on-windows/README.md)
    - [IoT Platform](https://github.com/collabnix/dockerlabs/tree/master/beginners/install/raspberrypi3)
      - [How to install Docker 18.09.0 on Raspberry Pi 3?](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/README.md)
      - [How to setup Docker Swarm Cluster on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-swarm-cluster.md)
@@ -52,8 +51,7 @@
 - What is Docker registry?
   - [Building a Private Docker Registry](https://github.com/collabnix/dockerlabs/blob/master/beginners/build-private-docker-registry.md)
   - [Building a Private Docker Registry using Portus](https://github.com/collabnix/dockerlabs/blob/master/beginners/portus/README.md)
-- What is DockerHub?
-  - Setting Up an Automated Build on Docker Hub for Continuous Integration/Deployment
+
   
 # Working with Docker Image & Container
 
@@ -74,12 +72,7 @@
   - [Writing Your First DockerFile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md)
   - [Injecting files into your image using ADD](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/ADD-command.md)
   - [Rebuilding without Cache](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Rebuild-without-cache.md)
-  - Busting the Cache 
-  - Reducing the size of your Dockerfile image. 
-  - Packaging a Flask Application Inside a Container 
-  - Optimizing Your Dockerfile by Following Best Practices 
-- Reverse-engineer a Dockerfile from an image
-- Using make with Docker
+  
 - [How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/entrypoint-vs-run.md)
 - [Difference between Docker Compose Vs Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/difference-compose-dockerfile.md)
 - [How to use ARG to pass enviornmental variable at runtime](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/arg-dockerfile-runtime.md)
