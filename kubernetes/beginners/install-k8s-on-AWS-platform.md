@@ -7,15 +7,23 @@
 
 ## Executing the script to install Kubernetes Cluster
 
+### Master Node:
+
 ```
+cd install
 sh install-docker.sh
 sh prepare-kube.sh
 sh install-kube.sh
 sh install-k8s-master.sh
 ```
 
+### Worker Node
 
-
+```
+sh install-docker.sh
+sh prepare-kube.sh
+sh install-kube.sh
+```
 
 
 
