@@ -47,6 +47,59 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
 
 
+## Verifying Kubernetes Nodes
+
+```
+rainaajeet1981@kubemaster:~$ sudo kubectl version
+Client Version: version.Info{Major:"1", Minor:"15", GitVersion:"v1.15.0", GitCommit:"e8462b5b5dc2584fdcd18e6bcfe9f1e4d970a529", GitTreeState:"clean",
+ BuildDate:"2019-06-19T16:40:16Z", GoVersion:"go1.12.5", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"15", GitVersion:"v1.15.0", GitCommit:"e8462b5b5dc2584fdcd18e6bcfe9f1e4d970a529", GitTreeState:"clean",
+ BuildDate:"2019-06-19T16:32:14Z", GoVersion:"go1.12.5", Compiler:"gc", Platform:"linux/amd64"}
+rainaajeet1981@kubemaster:~$ 
+```
+
+## Deploy a Simple Web Page
+
+```
+rainaajeet1981@kubemaster:~$ sudo kubectl create deployment hellowhale --image ajeetraina/hellowhale
+deployment.apps/hellowhale created
+rainaajeet1981@kubemaster:~$ sudo kubectl get deploy
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+hellowhale   1/1     1            1           13s
+rainaajeet1981@kubemaster:~$ 
+```
+
+## Getting the Pods
+
+```
+rainaajeet1981@kubemaster:~$ kubectl get po
+NAME                          READY   STATUS    RESTARTS   AGE
+hellowhale-798955b69f-bmfnd   1/1     Running   0          44s
+rainaajeet1981@kubemaster:~$ 
+```
+
+## 
+
+```
+rainaajeet1981@kubemaster:~$ sudo kubectl expose deployment/hellowhale --port=80 --name=hellowhalesvc --type NodePort
+service/hellowhalesvc exposed
+rainaajeet1981@kubemaster:~$ 
+```
+
+## 
+
+```
+rainaajeet1981@kubemaster:~$ kubectl get svc
+NAME            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+hellowhalesvc   NodePort    10.109.16.198   <none>        80:32356/TCP   19s
+kubernetes      ClusterIP   10.96.0.1       <none>        443/TCP        21m
+rainaajeet1981@kubemaster:~$ 
+```
+
+## 
+
+Wait till External-IP under the firt row appear.
+
 ## Logs
 
      
