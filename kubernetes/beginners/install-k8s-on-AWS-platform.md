@@ -19,11 +19,15 @@ chmod 400 myubuntu.pem
 ssh -i "myubuntu.pem" ubuntu@ec2-34-220-163-78.us-west-2.compute.amazonaws.com
 ```
 
-## 
+## Executing the script to install Kubernetes Cluster
 
 ```
-sudo apt-get update && sudo apt-get install -y apt-transport-https curl 
+sh install-kube.sh
 ```
+
+## 
+
+
 
 
 
