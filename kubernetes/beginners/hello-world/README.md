@@ -54,3 +54,33 @@ Events:
   Normal  ScalingReplicaSet  31s   deployment-controller  Scaled up replica set hello-world-bbbb4c85d to 5
 rainaajeet1981@kubemaster:~$ 
 ```
+
+```
+rainaajeet1981@kubemaster:~$ kubectl expose deployment hello-world --type=LoadBalancer --name=my-service
+service/my-service exposed
+rainaajeet1981@kubemaster:~$ 
+```
+
+```
+kubectl describe services my-service
+```
+
+```
+rainaajeet1981@kubemaster:~$ kubectl describe services my-service
+Name:                     my-service
+Namespace:                default
+Labels:                   app.kubernetes.io/name=load-balancer-example
+Annotations:              <none>
+Selector:                 app.kubernetes.io/name=load-balancer-example
+Type:                     LoadBalancer
+IP:                       10.104.76.76
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  32763/TCP
+Endpoints:                10.244.1.4:8080,10.244.1.5:8080,10.244.1.6:8080 + 2 more...
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+```
+
+
