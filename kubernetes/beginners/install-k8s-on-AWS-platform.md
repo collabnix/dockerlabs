@@ -15,7 +15,23 @@ sh install-docker.sh
 sh prepare-kube.sh
 sh install-kube.sh
 sh install-k8s-master.sh
+
 ```
+
+### To start using your cluster, you need to run the following as a regular user:
+
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+### Bootstrapping the Kubernetes Cluster
+
+```
+sh bootstrap.sh
+```
+
 
 ### Worker Node
 
@@ -25,7 +41,22 @@ sh prepare-kube.sh
 sh install-kube.sh
 ```
 
-
+```
+rainaajeet1981@kubeworker1:~/dockerlabs/kubernetes/beginners/install$ sudo kubeadm join 10.140.0.7:6443 --token gzukm0.oqt9hsvagvi5ygxb \
+>     --discovery-token-ca-cert-hash sha256:6cd6b2e51cee2ba5d6235bb3d6b1bb07cc4daefa2c941a1e1c8c2e3310d63c1c
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -oyaml'
+[kubelet-start] Downloading configuration for the kubelet from the "kubelet-config-1.15" ConfigMap in the kube-system namespace
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Activating the kubelet service
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+```
 
 
 ## Logs
