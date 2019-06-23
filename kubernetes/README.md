@@ -14,6 +14,7 @@
    - Windows
    - Windows Server
    - Cloud Platform
+     - [Google Cloud Platform](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/install-k8s-on-GCP-platform.md)
    - IoT Platform
    - Unix ( FreeBSD, Solaris)
 - [Getting Started with K8s on PWK Platform](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/getting-started-on-pwk.md)
