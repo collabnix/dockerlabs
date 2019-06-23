@@ -47,7 +47,7 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
 
 
-## Verifying Kubernetes Nodes
+## Verifying Kubectl version on master node
 
 ```
 rainaajeet1981@kubemaster:~$ sudo kubectl version
@@ -143,6 +143,78 @@ RUn the below command to open commandline UI to verify if it is working fine
 </body>
 </html>
 rainaajeet1981@kubemaster:~$ 
+```
+
+## Listing the containers in master node
+
+```
+rainaajeet1981@kubemaster:~$ sudo docker ps
+CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS               NAMES
+208c047c49ba        weaveworks/weave-npc    "/usr/bin/weave-npc"     15 minutes ago      Up 15 minutes                           k8s_weave-npc_weave-
+net-v8l4x_kube-system_fd884fae-709d-4fbc-a19c-6a5e394afdc4_0
+082e1b8a7931        weaveworks/weave-kube   "/home/weave/launch.…"   15 minutes ago      Up 15 minutes                           k8s_weave_weave-net-
+v8l4x_kube-system_fd884fae-709d-4fbc-a19c-6a5e394afdc4_0
+da373e15e2c9        k8s.gcr.io/pause:3.1    "/pause"                 15 minutes ago      Up 15 minutes                           k8s_POD_weave-net-v8
+l4x_kube-system_fd884fae-709d-4fbc-a19c-6a5e394afdc4_0
+76617d14ccb1        eb516548c180            "/coredns -conf /etc…"   28 minutes ago      Up 28 minutes                           k8s_coredns_coredns-
+5c98db65d4-8lt6b_kube-system_2ddcf54e-3be4-4a9c-bb53-1e5a5712e768_0
+eed32ad39a81        eb516548c180            "/coredns -conf /etc…"   28 minutes ago      Up 28 minutes                           k8s_coredns_coredns-
+5c98db65d4-wk96h_kube-system_d40504cb-6363-48fa-aaee-7fe9cfc43c57_0
+72f2b6ce0312        k8s.gcr.io/pause:3.1    "/pause"                 28 minutes ago      Up 28 minutes                           k8s_POD_coredns-5c98
+db65d4-8lt6b_kube-system_2ddcf54e-3be4-4a9c-bb53-1e5a5712e768_0
+4ab707ad73d4        k8s.gcr.io/pause:3.1    "/pause"                 28 minutes ago      Up 28 minutes                           k8s_POD_coredns-5c98
+db65d4-wk96h_kube-system_d40504cb-6363-48fa-aaee-7fe9cfc43c57_0
+0c8429ebe4e5        f0fad859c909            "/opt/bin/flanneld -…"   28 minutes ago      Up 28 minutes                           k8s_kube-flannel_kub
+e-flannel-ds-amd64-9wq4l_kube-system_4c7a7224-ff02-447c-9fc9-961c8f790e64_0
+84b08bf1f4a5        d235b23c3570            "/usr/local/bin/kube…"   28 minutes ago      Up 28 minutes                           k8s_kube-proxy_kube-
+proxy-sc5l4_kube-system_2baa7973-dc77-4617-963b-b1d2653b64dd_0
+7d6d4b1a6068        k8s.gcr.io/pause:3.1    "/pause"                 28 minutes ago      Up 28 minutes                           k8s_POD_kube-flannel
+-ds-amd64-9wq4l_kube-system_4c7a7224-ff02-447c-9fc9-961c8f790e64_0
+f4cf21df5b6a        k8s.gcr.io/pause:3.1    "/pause"                 28 minutes ago      Up 28 minutes                           k8s_POD_kube-proxy-s
+c5l4_kube-system_2baa7973-dc77-4617-963b-b1d2653b64dd_0
+21056e4bfce3        2c4adeb21b4f            "etcd --advertise-cl…"   29 minutes ago      Up 29 minutes                           k8s_etcd_etcd-kubema
+ster_kube-system_7af76fec5794c446dbdd79fce93b93a2_0
+d81083f12cd9        2d3813851e87            "kube-scheduler --bi…"   29 minutes ago      Up 29 minutes                           k8s_kube-scheduler_k
+ube-scheduler-kubemaster_kube-system_31d9ee8b7fb12e797dc981a8686f6b2b_0
+4852c60ba2fe        201c7a840312            "kube-apiserver --ad…"   29 minutes ago      Up 29 minutes                           k8s_kube-apiserver_k
+ube-apiserver-kubemaster_kube-system_d23d3be758e89d4192996f6e5f2489c1_0
+1615dd8544b1        8328bb49b652            "kube-controller-man…"   29 minutes ago      Up 29 minutes                           k8s_kube-controller-
+manager_kube-controller-manager-kubemaster_kube-system_5c8d15384444348773e9de77de0cf941_0
+307af522d3d7        k8s.gcr.io/pause:3.1    "/pause"                 29 minutes ago      Up 29 minutes                           k8s_POD_kube-control
+ler-manager-kubemaster_kube-system_5c8d15384444348773e9de77de0cf941_0
+298bda6c3b87        k8s.gcr.io/pause:3.1    "/pause"                 29 minutes ago      Up 29 minutes                           k8s_POD_kube-apiserv
+er-kubemaster_kube-system_d23d3be758e89d4192996f6e5f2489c1_0
+05f3e304d5ca        k8s.gcr.io/pause:3.1    "/pause"                 29 minutes ago      Up 29 minutes                           k8s_POD_etcd-kubemas
+ter_kube-system_7af76fec5794c446dbdd79fce93b93a2_0
+e4c21e9dd7e7        k8s.gcr.io/pause:3.1    "/pause"                 29 minutes ago      Up 29 minutes                           k8s_POD_kube-schedul
+er-kubemaster_kube-system_31d9ee8b7fb12e797dc981a8686f6b2b_0
+
+```
+
+
+## Listing out the container in worker node
+
+```
+rainaajeet1981@kubeworker1:~/dockerlabs/kubernetes/beginners/install$ sudo docker ps
+CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS               NAMES
+20c69cf479ef        ajeetraina/hellowhale   "./wrapper.sh"           8 minutes ago       Up 8 minutes                            k8s_hellowhale_hello
+whale-798955b69f-bmfnd_default_debbaf69-796e-44ac-8a03-e9d1a5857051_0
+f926f8b44d45        k8s.gcr.io/pause:3.1    "/pause"                 8 minutes ago       Up 8 minutes                            k8s_POD_hellowhale-7
+98955b69f-bmfnd_default_debbaf69-796e-44ac-8a03-e9d1a5857051_0
+d46234b0083b        weaveworks/weave-npc    "/usr/bin/weave-npc"     13 minutes ago      Up 13 minutes                           k8s_weave-npc_weave-
+net-x22qt_kube-system_0ff78287-124b-465f-bc75-a2cbec96d6da_0
+c978f4e8263c        f0fad859c909            "/opt/bin/flanneld -…"   13 minutes ago      Up 13 minutes                           k8s_kube-flannel_kub
+e-flannel-ds-amd64-bd76j_kube-system_6f69e6b9-8b3e-41c0-844b-5d06c054db2b_0
+a4b74ef7c237        weaveworks/weave-kube   "/home/weave/launch.…"   13 minutes ago      Up 13 minutes                           k8s_weave_weave-net-
+x22qt_kube-system_0ff78287-124b-465f-bc75-a2cbec96d6da_0
+58b246880805        k8s.gcr.io/kube-proxy   "/usr/local/bin/kube…"   13 minutes ago      Up 13 minutes                           k8s_kube-proxy_kube-
+proxy-5swf5_kube-system_e70954f7-dc5e-4572-9c1a-2ab50b7ebaa1_0
+7c9de82eabba        k8s.gcr.io/pause:3.1    "/pause"                 13 minutes ago      Up 13 minutes                           k8s_POD_kube-flannel
+-ds-amd64-bd76j_kube-system_6f69e6b9-8b3e-41c0-844b-5d06c054db2b_0
+ce8b6b03fdd1        k8s.gcr.io/pause:3.1    "/pause"                 13 minutes ago      Up 13 minutes                           k8s_POD_kube-proxy-5
+swf5_kube-system_e70954f7-dc5e-4572-9c1a-2ab50b7ebaa1_0
+a965ed6fd6b9        k8s.gcr.io/pause:3.1    "/pause"                 13 minutes ago      Up 13 minutes                           k8s_POD_weave-net-x2
+2qt_kube-system_0ff78287-124b-465f-bc75-a2cbec96d6da_0
 ```
 
 ## Logs
