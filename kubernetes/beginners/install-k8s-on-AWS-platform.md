@@ -263,6 +263,56 @@ daemonset.extensions/kube-flannel-ds-s390x created
 rainaajeet1981@kubemaster:~$ 
  
  ```
+ 
+ ## Deep Diving into Pods
+ 
+ ```
+ rainaajeet1981@kubemaster:~$ sudo kubectl describe po hellowhale-798955b69f-bmfnd
+Name:           hellowhale-798955b69f-bmfnd
+Namespace:      default
+Priority:       0
+Node:           kubeworker1/10.140.0.8
+Start Time:     Sun, 23 Jun 2019 07:27:03 +0000
+Labels:         app=hellowhale
+                pod-template-hash=798955b69f
+Annotations:    <none>
+Status:         Running
+IP:             10.244.1.2
+Controlled By:  ReplicaSet/hellowhale-798955b69f
+Containers:
+  hellowhale:
+    Container ID:   docker://20c69cf479ef8a00f3b021dc9318996f41d326ee29b1ea66dd3ad201dab17e83
+    Image:          ajeetraina/hellowhale
+    Image ID:       docker-pullable://ajeetraina/hellowhale@sha256:50e5d8b034ff3a0d537224e332da0ee74e393df36acefa6859daba58712ad1f4
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Sun, 23 Jun 2019 07:27:12 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-h9dbb (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-h9dbb:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-h9dbb
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From                  Message
+  ----    ------     ----  ----                  -------
+ 
+ ```
 
 
 
