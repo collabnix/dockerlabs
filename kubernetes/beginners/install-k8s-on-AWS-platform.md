@@ -26,7 +26,15 @@ sh prepare-kube.sh
 sh install-kube.sh
 ```
 
-## 
+## Install Docker 
+
+```
+curl -sSL https://get.docker.com/ | sh
+```
+
+##
+
+
 
 
 
