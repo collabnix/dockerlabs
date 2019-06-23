@@ -15,22 +15,10 @@ sh install-docker.sh
 sh prepare-kube.sh
 sh install-kube.sh
 sh install-k8s-master.sh
-
-```
-
-### To start using your cluster, you need to run the following as a regular user:
-
-```
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-```
-
-### Bootstrapping the Kubernetes Cluster
-
-```
 sh bootstrap.sh
+
 ```
+
 
 
 ### Worker Node
