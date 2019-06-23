@@ -22,6 +22,7 @@ ssh -i "myubuntu.pem" ubuntu@ec2-34-220-163-78.us-west-2.compute.amazonaws.com
 ## Executing the script to install Kubernetes Cluster
 
 ```
+sh prepare-kube.sh
 sh install-kube.sh
 ```
 
