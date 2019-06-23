@@ -81,7 +81,7 @@ rainaajeet1981@kubemaster:~$
 ## 
 
 ```
-rainaajeet1981@kubemaster:~$ sudo kubectl expose deployment/hellowhale --port=80 --name=hellowhalesvc --type NodePort
+rainaajeet1981@kubemaster:~$ sudo kubectl expose deployment/hellowhale --port=80 --name=hellowhalesvc --type LoadBalancer
 service/hellowhalesvc exposed
 rainaajeet1981@kubemaster:~$ 
 ```
@@ -89,11 +89,14 @@ rainaajeet1981@kubemaster:~$
 ## 
 
 ```
-rainaajeet1981@kubemaster:~$ kubectl get svc
-NAME            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
-hellowhalesvc   NodePort    10.109.16.198   <none>        80:32356/TCP   19s
-kubernetes      ClusterIP   10.96.0.1       <none>        443/TCP        21m
-rainaajeet1981@kubemaster:~$ 
+rainaajeet1981@kubemaster:~$ sudo kubectl get po,svc,deploy
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/hellowhale-798955b69f-nww69   1/1     Running   0          98s
+NAME                    TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/hellowhalesvc   LoadBalancer   10.97.34.197   <pending>     80:30813/TCP   82s
+service/kubernetes      ClusterIP      10.96.0.1      <none>        443/TCP        40m
+NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.extensions/hellowhale   1/1     1            1           98s 
 ```
 
 ## 
@@ -267,27 +270,23 @@ rainaajeet1981@kubemaster:~$
  ## Deep Diving into Pods
  
  ```
- rainaajeet1981@kubemaster:~$ sudo kubectl describe po hellowhale-798955b69f-bmfnd
-Name:           hellowhale-798955b69f-bmfnd
-Namespace:      default
-Priority:       0
-Node:           kubeworker1/10.140.0.8
-Start Time:     Sun, 23 Jun 2019 07:27:03 +0000
+ Node:           kubeworker1/10.140.0.8
+Start Time:     Sun, 23 Jun 2019 07:46:30 +0000
 Labels:         app=hellowhale
                 pod-template-hash=798955b69f
 Annotations:    <none>
 Status:         Running
-IP:             10.244.1.2
+IP:             10.244.1.3
 Controlled By:  ReplicaSet/hellowhale-798955b69f
 Containers:
   hellowhale:
-    Container ID:   docker://20c69cf479ef8a00f3b021dc9318996f41d326ee29b1ea66dd3ad201dab17e83
+    Container ID:   docker://a5d33a6056a73e62dc2dfa5f42285882de3aaaa3106ef28b1bdde30f20d120c5
     Image:          ajeetraina/hellowhale
     Image ID:       docker-pullable://ajeetraina/hellowhale@sha256:50e5d8b034ff3a0d537224e332da0ee74e393df36acefa6859daba58712ad1f4
     Port:           <none>
     Host Port:      <none>
     State:          Running
-      Started:      Sun, 23 Jun 2019 07:27:12 +0000
+      Started:      Sun, 23 Jun 2019 07:46:34 +0000
     Ready:          True
     Restart Count:  0
     Environment:    <none>
@@ -309,10 +308,15 @@ Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
                  node.kubernetes.io/unreachable:NoExecute for 300s
 Events:
-  Type    Reason     Age   From                  Message
-  ----    ------     ----  ----                  -------
- 
- ```
+  Type    Reason     Age    From                  Message
+  ----    ------     ----   ----                  -------
+  Normal  Scheduled  2m38s  default-scheduler     Successfully assigned default/hellowhale-798955b69f-nww69 to kubeworker1
+  Normal  Pulling    2m36s  kubelet, kubeworker1  Pulling image "ajeetraina/hellowhale"
+  Normal  Pulled     2m34s  kubelet, kubeworker1  Successfully pulled image "ajeetraina/hellowhale"
+  Normal  Created    2m34s  kubelet, kubeworker1  Created container hellowhale
+  Normal  Started    2m34s  kubelet, kubeworker1  Started container hellowhale
+rainaajeet1981@kubemaster:~$ 
+```
 
 
 
