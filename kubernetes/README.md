@@ -24,6 +24,12 @@
 - Scripts & Installation Tools
 - Upgrading Kubernetes
 
+## Kubernetes Labs
+
+- Lab #1: Creating Nginx Pod
+- Lab #2: Deleting Nginx Pod
+- Lab #3: Creating a Deployment with 3 replicas of NGINX service
+
 # Kubernetes Core Concept
 
 - [Kubernetes Developer Concept](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/k8s-core-concepts.md)
