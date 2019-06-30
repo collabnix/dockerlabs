@@ -167,3 +167,12 @@ my-nginx     ClusterIP   10.106.231.19   <none>        80/TCP    4m47s
 NAME       READY   UP-TO-DATE   AVAILABLE   AGE
 my-nginx   2/2     2            2           8m45s
 ```
+
+## Cleaning Up
+
+```
+my-nginx   2/2     2            2           14m
+[node1 lab01-creating-nginx-pod]$ kubectl delete deploy my-nginx
+deployment.extensions "my-nginx" deleted
+
+```
