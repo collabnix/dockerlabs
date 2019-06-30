@@ -1,11 +1,8 @@
 # Getting Started with Kubernetes
 
-- What is Kubernetes & Why is it damn popular ?
-- Explain where kubernetes fits ?
-- How is Kubernetes different from Docker Swarm ?
-- Demystifying Kubernetes Underlying Technology
-- Architecture of Kubernetes
-- Evolution of Kubernetes Release
+- [What is Kubernetes & Why is it damn popular?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/README.md#what-is-kubernetes)
+- [Deep Dive into Kubernetes Dashboard](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/README.md#what-is-k8s-made-up-of)
+
 
 # Installation & Getting Started
 
