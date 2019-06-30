@@ -46,17 +46,72 @@ Containers are becoming popular because they have many benefits. Some of the con
 
 # What is K8s made up of?
 
+
+
 ![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-architecture.png)
 
-- Master Components - ( Kube API Server + etcd + kube-scheduler + kube-controller-manager + Cloud-controller Manager)
+- Master Components -  Kube API Server + Control Plane (kube-scheduler + kube-controller-manager + Cloud-controller Manager) + etc(not part of Control Plane)
 - Node Components - ( Kubelet + Kube-proxy + Container Runtime)
 - Addons - ( DNS + WebUI + Container Resource Monitoring + Cluster Level Logging)
 
 ## Master Components:
 
+- K8s have 1 or more master.
 - Master components provide the cluster’s control plane. 
 - Master components make global decisions about the cluster (for example, scheduling), and they detect and respond to cluster events (for example, starting up a new pod when a replication controller’s replicas field is unsatisfied).
 - Master components can be run on any machine in the cluster. However, for simplicity, set up scripts typically start all master components on the same machine, and do not run user containers on this machine. See Building High-Availability Clusters for an example multi-master-VM setup
+
+## The Kube API Server
+
+Kubernetes architecture consists of one or more master machine. 
+
+The Kube API server is the main component and everything in kubernetes cluster will connect and talk to this API Server.
+Component on the master that exposes the Kubernetes API. It is the front-end for the Kubernetes control plane.It is designed to scale horizontally – that is, it scales by deploying more instances. 
+
+## The etcd
+
+- Store the information abou k8s cluster
+- A very important component in the entire cluster
+
+- if you loose etcd, you will loose the whole cluster
+- You can use separate etcd too.
+- Consistent and highly-available key value store used as Kubernetes’ backing store for all cluster data.
+- If your Kubernetes cluster uses etcd as its backing store, make sure you have a back up plan for those data.
+
+
+## Scheduler
+
+- Decide where to start the workload, on which node should it start the application
+- Component on the master that watches newly created pods that have no node assigned, and selects a node for them to run on.
+- Factors taken into account for scheduling decisions include:
+    - individual and collective resource requirements, 
+    - hardware/software/policy constraints, 
+    - affinity and anti-affinity specifications, 
+    - data locality, 
+    - inter-workload interference and 
+    - deadlines
+
+## Kube-controller-manager
+
+- Component on the master that runs controllers .
+- Logically, each controller is a separate process, but to reduce complexity, they are all compiled into a single binary and run in a single process.
+- These controllers include:
+   - Node Controller: Responsible for noticing and responding when nodes go down.
+   - Replication Controller: Responsible for maintaining the correct number of pods for every replication controller object in the system.
+   - Endpoints Controller: Populates the Endpoints object (that is, joins Services & Pods).
+   - Service Account & Token Controllers: Create default accounts and API access tokens for new namespaces.
+   - cloud-controller
+   
+ ## Cloud-controller-manager
+ 
+- cloud-controller-manager runs controllers that interact with the underlying cloud providers. 
+- The cloud-controller-manager binary is an alpha feature introduced in Kubernetes release 1.6.
+- cloud-controller-manager runs cloud-provider-specific controller loops only. 
+- You must disable these controller loops in the kube-controller-manager. 
+- You can disable the controller loops by setting the --cloud-provider flag to external when starting the kube-controller-manager.
+- cloud-controller-manager allows the cloud vendor’s code and the Kubernetes code to evolve independently of each other. 
+- In prior releases, the core Kubernetes code was dependent upon cloud-provider-specific code for functionality. 
+- In future releases, code specific to cloud vendors should be maintained by the cloud vendor themselves, and linked to cloud-controller-manager while running Kubernetes.
 
 ## Kubectl:
 
