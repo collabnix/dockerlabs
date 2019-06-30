@@ -31,7 +31,6 @@
 
 - [Kubernetes Developer Concept](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/k8s-core-concepts.md)
 
-# Kubernetes Volumes
 
 ## Contributors
 
