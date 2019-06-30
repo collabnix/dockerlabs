@@ -26,7 +26,7 @@
 
 ## Kubernetes Labs
 
-- [Lab #0: Running Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab00-running-nginx-pod/README.md)
+- [Lab #00: Running Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab00-running-nginx-pod/README.md)
 - [Lab #01: Creating Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab01-creating-nginx-pod/README.md)
 - [Lab #02: Deleting Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab02-deleting-nginx-pod/README.md)
 - [Lab #03: Creating a Deployment with 3 replicas of NGINX service](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab03-creating-deployment-3replicas-nginx-pod/README.md)
