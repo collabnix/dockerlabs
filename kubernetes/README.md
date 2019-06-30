@@ -17,8 +17,8 @@
    - IoT Platform
      - [K3s on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
    
-[Kubernetes Hands-on Lab #1 – Setting up 5-Node K8s Cluster](https://collabnix.com/kubernetes-hands-on-lab-1-setting-up-5-node-k8s-cluster/)
-[Kubernetes Hands-on Lab #2 – Running Our First Nginx Cluster](https://collabnix.com/kubernetes-hands-on-lab-2-running-our-first-nginx-cluster/)
+[Kubernetes Hands-on Lab #1 – Setting up 5-Node K8s Cluster](https://collabnix.com/kubernetes-hands-on-lab-1-setting-up-5-node-k8s-cluster/)<br>
+[Kubernetes Hands-on Lab #2 – Running Our First Nginx Cluster](https://collabnix.com/kubernetes-hands-on-lab-2-running-our-first-nginx-cluster/)<br>
 [Kubernetes Hands-on Lab #3 – Deploy Istio Mesh on K8s Cluster](https://collabnix.com/kubernetes-hands-on-lab-3-deploy-istio-mesh/)
 
 
