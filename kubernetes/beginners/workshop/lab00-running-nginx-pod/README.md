@@ -5,8 +5,19 @@
 The kubectl run line below will create two nginx pods listening on port 82. It will also create a deployment named my-nginx to ensure that there are always two pods running.
 
 ```
-Ajeets-MacBook-Air:~ ajeetraina$ kubectl run my-nginx --image=nginx --replicas=2 --port=82
+$ kubectl run my-nginx --image=nginx --replicas=2 --port=82
 deployment "my-nginx" created
+```
+
+
+```
+[node1 lab01-creating-nginx-pod]$ kubectl get po,svc,deploy
+NAME            READY   STATUS    RESTARTS   AGE
+pod/nginx-pod   1/1     Running   0          5m5s
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   8m6s
+[node1 lab01-creating-nginx-pod]$
 ```
 
 ```
