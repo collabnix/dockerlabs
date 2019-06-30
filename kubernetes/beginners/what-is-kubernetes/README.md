@@ -46,6 +46,8 @@ Containers are becoming popular because they have many benefits. Some of the con
 
 # What is K8s made up of?
 
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-architecture.png)
+
 - Master Components - ( Kube API Server + etcd + kube-scheduler + kube-controller-manager + Cloud-controller Manager)
 - Node Components - ( Kubelet + Kube-proxy + Container Runtime)
 - Addons - ( DNS + WebUI + Container Resource Monitoring + Cluster Level Logging)
@@ -72,7 +74,7 @@ Containers are becoming popular because they have many benefits. Some of the con
 - Main entrypoint for all administrative tasks
 - It handles the orchestration of the worker nodes
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-architecture.png)
+
 
 ## Worker Node
 
