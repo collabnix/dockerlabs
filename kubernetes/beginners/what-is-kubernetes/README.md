@@ -60,7 +60,8 @@ Containers are becoming popular because they have many benefits. Some of the con
 
 ```
 [node1 install]$ kubectl get componentstatus
-NAME                 STATUS    MESSAGE             ERRORscheduler            Healthy   ok
+NAME                 STATUS    MESSAGE             ERROR
+scheduler            Healthy   ok
 controller-manager   Healthy   ok
 etcd-0               Healthy   {"health":"true"}
 ```
