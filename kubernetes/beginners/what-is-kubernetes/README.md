@@ -24,6 +24,8 @@ Any developer can package up applications and deploy them on Kubernetes with bas
 - Main entrypoint for all administrative tasks
 - It handles the orchestration of the worker nodes
 
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-architecture.png)
+
 ## Worker Node
 
 ![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-worker-node.png)
