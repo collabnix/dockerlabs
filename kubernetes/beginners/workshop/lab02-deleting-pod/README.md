@@ -1,4 +1,4 @@
-Lab #1: Deleting Nginx Pod
+# Lab #02: Deleting Nginx Pod
 
 Delete the Ngnix pod as shown below:
 
