@@ -6,20 +6,18 @@
 
 # Installation & Getting Started
 
-- Installing Kubernetes on
+- [Getting Started with K8s on PWK Platform](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/getting-started-on-pwk.md)
+
+- Setting up Kubernetes on
    - Linux
    - Windows
    - Windows Server
    - Cloud Platform
      - [Google Cloud Platform](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/install-k8s-on-GCP-platform.md)
    - IoT Platform
-   - Unix ( FreeBSD, Solaris)
-- [Getting Started with K8s on PWK Platform](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/getting-started-on-pwk.md)
-- [Kubernetes Hello World Example]()
+     - [K3s on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
+   
 
-- Compiling Kubernetes Binary from Source
-- Scripts & Installation Tools
-- Upgrading Kubernetes
 
 ## Kubernetes Labs
 
