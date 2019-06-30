@@ -1,7 +1,7 @@
 # Lab #1: Creating Nginx Pod
 
 ```
-kubectl create -f templates/pod.yaml
+kubectl create -f nginx-pod.yaml
 ```
 
 ```
