@@ -36,10 +36,10 @@
 
 ## Helm
 
-[Installing Helm to deploy Kubernetes Applications on Docker Enterprise 2.0 Made Easy](https://collabnix.com/installing-helm-to-deploy-kubernetes-applications-on-docker-enterprise-2-0-made-easy/)
-[Building Helm Chart for Kubernetes Cluster running on Docker Enterprise 2.0 using Docker-app 0.6.0](https://collabnix.com/building-helm-chart-for-kubernetes-cluster-running-on-docker-enterprise-2-0-using-docker-app-0-6-0/)
-[Kubernetes Hands-on Lab #4 – Deploy Prometheus Stack using Helm on Play with Kubernetes Platform](https://collabnix.com/kubernetes-hands-on-lab-4-deploy-application-stack-using-helm-on-play-with-kubernetes-platform/)
-[Installing Helm to deploy Kubernetes Applications on Docker Enterprise 2.0 Made Easy](https://collabnix.com/installing-helm-to-deploy-kubernetes-applications-on-docker-enterprise-2-0-made-easy/)
+[Installing Helm to deploy Kubernetes Applications on Docker Enterprise 2.0 Made Easy](https://collabnix.com/installing-helm-to-deploy-kubernetes-applications-on-docker-enterprise-2-0-made-easy/)<br>
+[Building Helm Chart for Kubernetes Cluster running on Docker Enterprise 2.0 using Docker-app 0.6.0](https://collabnix.com/building-helm-chart-for-kubernetes-cluster-running-on-docker-enterprise-2-0-using-docker-app-0-6-0/)<br>
+[Kubernetes Hands-on Lab #4 – Deploy Prometheus Stack using Helm on Play with Kubernetes Platform](https://collabnix.com/kubernetes-hands-on-lab-4-deploy-application-stack-using-helm-on-play-with-kubernetes-platform/)<br>
+[Installing Helm to deploy Kubernetes Applications on Docker Enterprise 2.0 Made Easy](https://collabnix.com/installing-helm-to-deploy-kubernetes-applications-on-docker-enterprise-2-0-made-easy/)<br>
 
 ## Contributors
 
