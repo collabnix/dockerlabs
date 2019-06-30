@@ -1,4 +1,4 @@
-# Lab #1: Creating Nginx Pod
+# Lab #01: Creating Nginx Pod
 
 ```
 kubectl create -f nginx-pod.yaml
