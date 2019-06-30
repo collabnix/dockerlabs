@@ -54,7 +54,16 @@ Containers are becoming popular because they have many benefits. Some of the con
 - Node Components - ( Kubelet + Kube-proxy + Container Runtime)
 - Addons - ( DNS + WebUI + Container Resource Monitoring + Cluster Level Logging)
 
+
+
 ## Master Components:
+
+```
+[node1 install]$ kubectl get componentstatus
+NAME                 STATUS    MESSAGE             ERRORscheduler            Healthy   ok
+controller-manager   Healthy   ok
+etcd-0               Healthy   {"health":"true"}[node1 install]$
+```
 
 - K8s have 1 or more master.
 - Master components provide the cluster’s control plane. 
