@@ -22,7 +22,7 @@
 [Kubernetes Hands-on Lab #3 – Deploy Istio Mesh on K8s Cluster](https://collabnix.com/kubernetes-hands-on-lab-3-deploy-istio-mesh/)
 
 
-## Kubernetes Labs
+## Kubernetes Workshop
 
 - [Lab #00: Running Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab00-running-nginx-pod/README.md)
 - [Lab #01: Creating Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab01-creating-nginx-pod/README.md)
