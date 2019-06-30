@@ -62,7 +62,7 @@ Containers are becoming popular because they have many benefits. Some of the con
 [node1 install]$ kubectl get componentstatus
 NAME                 STATUS    MESSAGE             ERRORscheduler            Healthy   ok
 controller-manager   Healthy   ok
-etcd-0               Healthy   {"health":"true"}[node1 install]$
+etcd-0               Healthy   {"health":"true"}
 ```
 
 - K8s have 1 or more master.
