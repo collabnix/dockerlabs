@@ -73,3 +73,7 @@
 ## Compose on Kubernetes
 
 [Compose on Kubernetes for Minikube](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/Intermediate/compose-on-kubernetes-for-minikube.md)
+
+## Kubernetes on Docker Desktop for Mac
+
+[Bootstrapping GKE Cluster using Docker Desktop for Mac](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/Intermediate/bootstrapping-gKE-cluster-docker-desktop-mac.md)
