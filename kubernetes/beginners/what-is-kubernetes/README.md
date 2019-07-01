@@ -183,6 +183,8 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 
 ## Deployment:
 
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s_deployment.png)
+
 - A deployment is a blueprint for the Pods to be create (see Pod)
 - Handles update of its respective Pods.
 - A deployment will create a Pod by it’s spec from the template.
