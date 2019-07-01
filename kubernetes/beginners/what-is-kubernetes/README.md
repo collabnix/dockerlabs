@@ -51,11 +51,18 @@ Containers are becoming popular because they have many benefits. Some of the con
 ![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-architecture.png)
 
 ## Master Components:
-   Kube API Server + Control Plane (kube-scheduler + kube-controller-manager + Cloud-controller Manager) + etcd
+   Kube API Server + 
+   Control Plane (kube-scheduler + kube-controller-manager + Cloud-controller Manager) + 
+   etcd
 ## Node Components:
-   Kubelet + Kube-proxy + Container Runtime)
+   Kubelet + 
+   Kube-proxy + 
+   Container Runtime
 ## Addons:
-   DNS + WebUI + Container Resource Monitoring + Cluster Level Logging)
+   DNS + 
+   WebUI + 
+   Container Resource Monitoring + 
+   Cluster Level Logging
 
 
 
