@@ -232,6 +232,6 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 - Traffic is load balanced between the Pods of the deployment
 
 ## Credits:
-- https://blog.risingstack.com/what-is-kubernetes-how-to-get-started/
-- https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-deployment-tutorial-example-yaml.html
+- [Link-1](https://blog.risingstack.com/what-is-kubernetes-how-to-get-started/)
+- [Link-2](https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-deployment-tutorial-example-yaml.html)
 
