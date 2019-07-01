@@ -233,4 +233,5 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 
 ## Credits:
 - https://blog.risingstack.com/what-is-kubernetes-how-to-get-started/
+- https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-deployment-tutorial-example-yaml.html
 
