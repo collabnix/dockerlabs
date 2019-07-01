@@ -208,6 +208,8 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 
 ## Service:
 
+![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-service.png)
+
 - A service is responsible for making our Pods discoverable inside the network or exposing them to the internet
 - A Service identifies Pods by its LabelSelector
 - There are 3 types of services:
