@@ -52,8 +52,10 @@ Containers are becoming popular because they have many benefits. Some of the con
 
 ## Master Components:
    Kube API Server + Control Plane (kube-scheduler + kube-controller-manager + Cloud-controller Manager) + etcd
-   Node Components - ( Kubelet + Kube-proxy + Container Runtime)
-   Addons - ( DNS + WebUI + Container Resource Monitoring + Cluster Level Logging)
+## Node Components:
+   Kubelet + Kube-proxy + Container Runtime)
+## Addons:
+   DNS + WebUI + Container Resource Monitoring + Cluster Level Logging)
 
 
 
