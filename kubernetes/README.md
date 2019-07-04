@@ -41,6 +41,12 @@
 [Kubernetes Hands-on Lab #4 – Deploy Prometheus Stack using Helm on Play with Kubernetes Platform](https://collabnix.com/kubernetes-hands-on-lab-4-deploy-application-stack-using-helm-on-play-with-kubernetes-platform/)<br>
 [Installing Helm to deploy Kubernetes Applications on Docker Enterprise 2.0 Made Easy](https://collabnix.com/installing-helm-to-deploy-kubernetes-applications-on-docker-enterprise-2-0-made-easy/)<br>
 
+
+## Prometheus 
+
+[How To Setup Prometheus Monitoring On Kubernetes Cluster](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/Prometheus_Monitoring_On_Kubernetes_Cluster.md)<br>
+[Alert manager kubernetes]()
+
 ## Contributors
 
 - [Karan Singh](karangandhi0007@gmail.com)
