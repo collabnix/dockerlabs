@@ -169,6 +169,41 @@ sudo systemctl restart kubectl
 
 If still issue occurs, you can uninstall kubelet and kubeadm both.
 
+```
+rm -fr /opt/containerd
+```
+
+```
+~$ mkdir -p $HOME/.kube
+~$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+```
+cse@ubuntu1804-1:~$ sudo hostname kubemaster
+```
+
+```
+$ sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+podsecuritypolicy.extensions/psp.flannel.unprivileged created
+clusterrole.rbac.authorization.k8s.io/flannel created
+clusterrolebinding.rbac.authorization.k8s.io/flannel created
+serviceaccount/flannel created
+configmap/kube-flannel-cfg created
+daemonset.extensions/kube-flannel-ds-amd64 created
+daemonset.extensions/kube-flannel-ds-arm64 created
+daemonset.extensions/kube-flannel-ds-arm created
+daemonset.extensions/kube-flannel-ds-ppc64le created
+daemonset.extensions/kube-flannel-ds-s390x created
+```
+
+```
+cse@ubuntu1804-1:~$ sudo kubectl get nodes
+NAME           STATUS     ROLES    AGE     VERSION
+ubuntu1804-1   NotReady   master   2m18s   v1.15.0
+cse@ubuntu1804-1:~$
+``  
+
 
 
 
