@@ -425,7 +425,7 @@ This node has joined the cluster:
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 
 root@ubuntu1804-1:~#
-
+```
 
 ```
 cse@kubemaster:~$ sudo kubectl get nodes
