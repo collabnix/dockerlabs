@@ -404,6 +404,9 @@ to reset your system's IPVS tables.
 
 The reset process does not clean your kubeconfig files and you must remove them manually.
 Please, check the contents of the $HOME/.kube/config file.
+```
+
+```
 root@ubuntu1804-1:~# kubeadm join 100.98.26.210:6443 --token 3m8abj.6fk8mszif58hsx6o     --discovery-token-ca-cert-hash sha256:42ebcc9b7a52f004698cbb37ce0f1baa474dab93945ded4baf66026361c2e8da
 [preflight] Running pre-flight checks
         [WARNING IsDockerSystemdCheck]: detected "cgroupfs" as the Docker cgroup driver. The recommended driver is "systemd". Please follow the guide at https://kubernetes.io/docs/setup/cri/
@@ -432,3 +435,5 @@ worker1.dell.com   Ready    <none>   14s   v1.15.0
 cse@kubemaster:~$
 
 ```
+
+
