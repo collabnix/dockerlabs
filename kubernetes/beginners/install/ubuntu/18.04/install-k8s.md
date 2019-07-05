@@ -586,5 +586,85 @@ Events:              <none>
 cse@kubemaster:~$
 ```
 
+```
+cse@kubemaster:~$ sudo kubectl get nodes
+NAME               STATUS     ROLES    AGE     VERSION
+kubemaster         Ready      master   3m20s   v1.15.0
+worker1.dell.com   NotReady   <none>   25s     v1.15.0
+cse@kubemaster:~$ sudo kubectl describe node worker1.dell.com
+Name:               worker1.dell.com
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=worker1.dell.com
+                    kubernetes.io/os=linux
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 05 Jul 2019 16:10:33 -0400
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type                 Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                 ------  -----------------                 ------------------                ------                       -------
+  NetworkUnavailable   False   Fri, 05 Jul 2019 16:10:55 -0400   Fri, 05 Jul 2019 16:10:55 -0400   WeaveIsUp                    Weave pod has set this
+  MemoryPressure       False   Fri, 05 Jul 2019 16:11:03 -0400   Fri, 05 Jul 2019 16:10:33 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure         False   Fri, 05 Jul 2019 16:11:03 -0400   Fri, 05 Jul 2019 16:10:33 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure          False   Fri, 05 Jul 2019 16:11:03 -0400   Fri, 05 Jul 2019 16:10:33 -0400   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                True    Fri, 05 Jul 2019 16:11:03 -0400   Fri, 05 Jul 2019 16:11:03 -0400   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  100.98.26.213
+  Hostname:    worker1.dell.com
+Capacity:
+ cpu:                2
+ ephemeral-storage:  102685624Ki
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             4040016Ki
+ pods:               110
+Allocatable:
+ cpu:                2
+ ephemeral-storage:  94635070922
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             3937616Ki
+ pods:               110
+System Info:
+ Machine ID:                 e7573bb6bf1e4cf5b9249413950f0a3d
+ System UUID:                2FD93F42-FA94-0C27-83A3-A1F9276469CF
+ Boot ID:                    782d6cfc-08a2-4586-82b6-7149389b1f4f
+ Kernel Version:             4.15.0-29-generic
+ OS Image:                   Ubuntu 18.04.1 LTS
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  docker://18.9.7
+ Kubelet Version:            v1.15.0
+ Kube-Proxy Version:         v1.15.0
+Non-terminated Pods:         (2 in total)
+  Namespace                  Name                CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                  ----                ------------  ----------  ---------------  -------------  ---
+  kube-system                kube-proxy-jt4bs    0 (0%)        0 (0%)      0 (0%)           0 (0%)         38s
+  kube-system                weave-net-kw9gg     20m (1%)      0 (0%)      0 (0%)           0 (0%)         38s
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                20m (1%)  0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+Events:
+  Type    Reason                   Age                From                          Message
+  ----    ------                   ----               ----                          -------
+  Normal  Starting                 38s                kubelet, worker1.dell.com     Starting kubelet.
+  Normal  NodeHasSufficientMemory  38s (x2 over 38s)  kubelet, worker1.dell.com     Node worker1.dell.com status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    38s (x2 over 38s)  kubelet, worker1.dell.com     Node worker1.dell.com status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     38s (x2 over 38s)  kubelet, worker1.dell.com     Node worker1.dell.com status is now: NodeHasSufficientPID
+  Normal  NodeAllocatableEnforced  38s                kubelet, worker1.dell.com     Updated Node Allocatable limit across pods
+  Normal  Starting                 35s                kube-proxy, worker1.dell.com  Starting kube-proxy.
+  Normal  NodeReady                8s                 kubelet, worker1.dell.com     Node worker1.dell.com status is now: NodeReady
+
+```
+
 
 
