@@ -254,7 +254,11 @@ Labels:             beta.kubernetes.io/arch=amd64
                     kubernetes.io/hostname=kubemaster
                     kubernetes.io/os=linux
                     node-role.kubernetes.io/master=
-Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+Annotations:        flannel.alpha.coreos.com/backend-data: {"VtepMAC":"ba:7e:74:34:96:55"}
+                    flannel.alpha.coreos.com/backend-type: vxlan
+                    flannel.alpha.coreos.com/kube-subnet-manager: true
+                    flannel.alpha.coreos.com/public-ip: 100.98.26.210
+                    kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
                     node.alpha.kubernetes.io/ttl: 0
                     volumes.kubernetes.io/controller-managed-attach-detach: true
 CreationTimestamp:  Fri, 05 Jul 2019 04:42:37 -0400
@@ -265,10 +269,10 @@ Unschedulable:      false
 Conditions:
   Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
   ----             ------  -----------------                 ------------------                ------                       -------
-  MemoryPressure   False   Fri, 05 Jul 2019 04:45:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
-  DiskPressure     False   Fri, 05 Jul 2019 04:45:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
-  PIDPressure      False   Fri, 05 Jul 2019 04:45:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletHasSufficientPID      kubelet has sufficient PID available
-  Ready            False   Fri, 05 Jul 2019 04:45:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletNotReady              runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+  MemoryPressure   False   Fri, 05 Jul 2019 04:52:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 05 Jul 2019 04:52:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 05 Jul 2019 04:52:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            False   Fri, 05 Jul 2019 04:52:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletNotReady              runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
 Addresses:
   InternalIP:  100.98.26.210
   Hostname:    kubemaster
@@ -298,32 +302,38 @@ System Info:
  Kubelet Version:            v1.15.0
  Kube-Proxy Version:         v1.15.0
 PodCIDR:                     100.98.0.0/24
-Non-terminated Pods:         (5 in total)
+Non-terminated Pods:         (6 in total)
   Namespace                  Name                                  CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
   ---------                  ----                                  ------------  ----------  ---------------  -------------  ---
-  kube-system                etcd-kubemaster                       0 (0%)        0 (0%)      0 (0%)           0 (0%)         119s
-  kube-system                kube-apiserver-kubemaster             250m (12%)    0 (0%)      0 (0%)           0 (0%)         2m
-  kube-system                kube-controller-manager-kubemaster    200m (10%)    0 (0%)      0 (0%)           0 (0%)         2m7s
-  kube-system                kube-proxy-f6xp7                      0 (0%)        0 (0%)      0 (0%)           0 (0%)         2m56s
-  kube-system                kube-scheduler-kubemaster             100m (5%)     0 (0%)      0 (0%)           0 (0%)         2m13s
+  kube-system                etcd-kubemaster                       0 (0%)        0 (0%)      0 (0%)           0 (0%)         9m31s
+  kube-system                kube-apiserver-kubemaster             250m (12%)    0 (0%)      0 (0%)           0 (0%)         9m32s
+  kube-system                kube-controller-manager-kubemaster    200m (10%)    0 (0%)      0 (0%)           0 (0%)         9m39s
+  kube-system                kube-flannel-ds-amd64-5vplk           100m (5%)     100m (5%)   50Mi (1%)        50Mi (1%)      10s
+  kube-system                kube-proxy-f6xp7                      0 (0%)        0 (0%)      0 (0%)           0 (0%)         10m
+  kube-system                kube-scheduler-kubemaster             100m (5%)     0 (0%)      0 (0%)           0 (0%)         9m45s
 Allocated resources:
   (Total limits may be over 100 percent, i.e., overcommitted.)
   Resource           Requests    Limits
   --------           --------    ------
-  cpu                550m (27%)  0 (0%)
-  memory             0 (0%)      0 (0%)
+  cpu                650m (32%)  100m (5%)
+  memory             50Mi (1%)   50Mi (1%)
   ephemeral-storage  0 (0%)      0 (0%)
 Events:
-  Type    Reason                   Age                    From                    Message
-  ----    ------                   ----                   ----                    -------
-  Normal  Starting                 3m30s                  kubelet, kubemaster     Starting kubelet.
-  Normal  NodeHasSufficientMemory  3m30s (x8 over 3m30s)  kubelet, kubemaster     Node kubemaster status is now: NodeHasSufficientMemory
-  Normal  NodeHasNoDiskPressure    3m30s (x8 over 3m30s)  kubelet, kubemaster     Node kubemaster status is now: NodeHasNoDiskPressure
-  Normal  NodeHasSufficientPID     3m30s (x7 over 3m30s)  kubelet, kubemaster     Node kubemaster status is now: NodeHasSufficientPID
-  Normal  NodeAllocatableEnforced  3m30s                  kubelet, kubemaster     Updated Node Allocatable limit across pods
-  Normal  Starting                 2m51s                  kube-proxy, kubemaster  Starting kube-proxy.
-cse@kubemaster:~$
+  Type    Reason                   Age                From                    Message
+  ----    ------                   ----               ----                    -------
+  Normal  Starting                 11m                kubelet, kubemaster     Starting kubelet.
+  Normal  NodeHasSufficientMemory  11m (x8 over 11m)  kubelet, kubemaster     Node kubemaster status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    11m (x8 over 11m)  kubelet, kubemaster     Node kubemaster status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     11m (x7 over 11m)  kubelet, kubemaster     Node kubemaster status is now: NodeHasSufficientPID
+  Normal  NodeAllocatableEnforced  11m                kubelet, kubemaster     Updated Node Allocatable limit across pods
+  Normal  Starting                 10m                kube-proxy, kubemaster  Starting kube-proxy.
+```
 
+```
+cse@kubemaster:~$ sudo kubectl get nodes
+NAME         STATUS   ROLES    AGE   VERSION
+kubemaster   Ready    master   10m   v1.15.0
+cse@kubemaster:~$
 ```
 
 
