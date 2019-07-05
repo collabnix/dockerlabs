@@ -202,9 +202,9 @@ cse@ubuntu1804-1:~$ sudo kubectl get nodes
 NAME           STATUS     ROLES    AGE     VERSION
 ubuntu1804-1   NotReady   master   2m18s   v1.15.0
 cse@ubuntu1804-1:~$
-``  
+``` 
 
-Adding Worker Node
+## Adding Worker Node
 
 ```
 cse@ubuntu1804-1:~$ sudo swapoff -a
@@ -226,6 +226,104 @@ This node has joined the cluster:
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 
 cse@ubuntu1804-1:~$
+```
+## Listing the Nodes
+
+```
+
+cse@kubemaster:~$ sudo kubectl get nodes
+NAME         STATUS     ROLES    AGE     VERSION
+kubemaster   NotReady   master   3m14s   v1.15.0
+```
+
+```
+cse@kubemaster:~$ sudo kubectl get nodes
+NAME         STATUS     ROLES    AGE     VERSION
+kubemaster   NotReady   master   3m15s   v1.15.0
+```
+## Checking the detailed information
+
+
+```
+cse@kubemaster:~$ sudo kubectl describe nodes kubemaster
+Name:               kubemaster
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=kubemaster
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 05 Jul 2019 04:42:37 -0400
+Taints:             node.kubernetes.io/not-ready:NoExecute
+                    node-role.kubernetes.io/master:NoSchedule
+                    node.kubernetes.io/not-ready:NoSchedule
+Unschedulable:      false
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Fri, 05 Jul 2019 04:45:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 05 Jul 2019 04:45:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 05 Jul 2019 04:45:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            False   Fri, 05 Jul 2019 04:45:38 -0400   Fri, 05 Jul 2019 04:42:37 -0400   KubeletNotReady              runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Addresses:
+  InternalIP:  100.98.26.210
+  Hostname:    kubemaster
+Capacity:
+ cpu:                2
+ ephemeral-storage:  102685624Ki
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             4040008Ki
+ pods:               110
+Allocatable:
+ cpu:                2
+ ephemeral-storage:  94635070922
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             3937608Ki
+ pods:               110
+System Info:
+ Machine ID:                 e7573bb6bf1e4cf5b9249413950f0a3d
+ System UUID:                CB5C3F42-D2C6-D024-42E8-FA7AB2243C53
+ Boot ID:                    f508be44-f306-4d2e-82c0-de559c51dba2
+ Kernel Version:             4.15.0-29-generic
+ OS Image:                   Ubuntu 18.04.1 LTS
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  docker://18.9.7
+ Kubelet Version:            v1.15.0
+ Kube-Proxy Version:         v1.15.0
+PodCIDR:                     100.98.0.0/24
+Non-terminated Pods:         (5 in total)
+  Namespace                  Name                                  CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                  ----                                  ------------  ----------  ---------------  -------------  ---
+  kube-system                etcd-kubemaster                       0 (0%)        0 (0%)      0 (0%)           0 (0%)         119s
+  kube-system                kube-apiserver-kubemaster             250m (12%)    0 (0%)      0 (0%)           0 (0%)         2m
+  kube-system                kube-controller-manager-kubemaster    200m (10%)    0 (0%)      0 (0%)           0 (0%)         2m7s
+  kube-system                kube-proxy-f6xp7                      0 (0%)        0 (0%)      0 (0%)           0 (0%)         2m56s
+  kube-system                kube-scheduler-kubemaster             100m (5%)     0 (0%)      0 (0%)           0 (0%)         2m13s
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                550m (27%)  0 (0%)
+  memory             0 (0%)      0 (0%)
+  ephemeral-storage  0 (0%)      0 (0%)
+Events:
+  Type    Reason                   Age                    From                    Message
+  ----    ------                   ----                   ----                    -------
+  Normal  Starting                 3m30s                  kubelet, kubemaster     Starting kubelet.
+  Normal  NodeHasSufficientMemory  3m30s (x8 over 3m30s)  kubelet, kubemaster     Node kubemaster status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    3m30s (x8 over 3m30s)  kubelet, kubemaster     Node kubemaster status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     3m30s (x7 over 3m30s)  kubelet, kubemaster     Node kubemaster status is now: NodeHasSufficientPID
+  Normal  NodeAllocatableEnforced  3m30s                  kubelet, kubemaster     Updated Node Allocatable limit across pods
+  Normal  Starting                 2m51s                  kube-proxy, kubemaster  Starting kube-proxy.
+cse@kubemaster:~$
+
 ```
 
 
