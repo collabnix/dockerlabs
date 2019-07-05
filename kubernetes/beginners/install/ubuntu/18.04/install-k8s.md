@@ -436,4 +436,155 @@ cse@kubemaster:~$
 
 ```
 
+```
+cse@kubemaster:~$ sudo kubectl get nodes
+NAME               STATUS   ROLES    AGE   VERSION
+kubemaster         Ready    master   11h   v1.15.0
+worker1.dell.com   Ready    <none>   10h   v1.15.0
+cse@kubemaster:~$ sudo kubectl describe nodes
+Name:               kubemaster
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=kubemaster
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+Annotations:        flannel.alpha.coreos.com/backend-data: {"VtepMAC":"ba:7e:74:                                                                             34:96:55"}
+                    flannel.alpha.coreos.com/backend-type: vxlan
+                    flannel.alpha.coreos.com/kube-subnet-manager: true
+                    flannel.alpha.coreos.com/public-ip: 100.98.26.210
+                    kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.                                                                             sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 05 Jul 2019 04:42:37 -0400
+Taints:             node-role.kubernetes.io/master:NoSchedule
+Unschedulable:      false
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                                                                                             Reason                       Message
+  ----             ------  -----------------                 ------------------                                                                                             ------                       -------
+  MemoryPressure   False   Fri, 05 Jul 2019 15:46:46 -0400   Fri, 05 Jul 2019 04                                                                             :42:37 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory availa                                                                             ble
+  DiskPressure     False   Fri, 05 Jul 2019 15:46:46 -0400   Fri, 05 Jul 2019 04                                                                             :42:37 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 05 Jul 2019 15:46:46 -0400   Fri, 05 Jul 2019 04                                                                             :42:37 -0400   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 05 Jul 2019 15:46:46 -0400   Fri, 05 Jul 2019 04                                                                             :53:28 -0400   KubeletReady                 kubelet is posting ready status. App                                                                             Armor enabled
+Addresses:
+  InternalIP:  100.98.26.210
+  Hostname:    kubemaster
+Capacity:
+ cpu:                2
+ ephemeral-storage:  102685624Ki
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             4040008Ki
+ pods:               110
+Allocatable:
+ cpu:                2
+ ephemeral-storage:  94635070922
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             3937608Ki
+ pods:               110
+System Info:
+ Machine ID:                 e7573bb6bf1e4cf5b9249413950f0a3d
+ System UUID:                CB5C3F42-D2C6-D024-42E8-FA7AB2243C53
+ Boot ID:                    f508be44-f306-4d2e-82c0-de559c51dba2
+ Kernel Version:             4.15.0-29-generic
+ OS Image:                   Ubuntu 18.04.1 LTS
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  docker://18.9.7
+ Kubelet Version:            v1.15.0
+ Kube-Proxy Version:         v1.15.0
+PodCIDR:                     100.98.0.0/24
+Non-terminated Pods:         (8 in total)
+  Namespace                  Name                                  CPU Requests                                                                               CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                  ----                                  ------------                                                                               ----------  ---------------  -------------  ---
+  kube-system                coredns-5c98db65d4-g5jn6              100m (5%)                                                                                  0 (0%)      70Mi (1%)        170Mi (4%)     11h
+  kube-system                coredns-5c98db65d4-m6g6c              100m (5%)                                                                                  0 (0%)      70Mi (1%)        170Mi (4%)     11h
+  kube-system                etcd-kubemaster                       0 (0%)                                                                                     0 (0%)      0 (0%)           0 (0%)         11h
+  kube-system                kube-apiserver-kubemaster             250m (12%)                                                                                 0 (0%)      0 (0%)           0 (0%)         11h
+  kube-system                kube-controller-manager-kubemaster    200m (10%)                                                                                 0 (0%)      0 (0%)           0 (0%)         11h
+  kube-system                kube-flannel-ds-amd64-5vplk           100m (5%)                                                                                  100m (5%)   50Mi (1%)        50Mi (1%)      10h
+  kube-system                kube-proxy-f6xp7                      0 (0%)                                                                                     0 (0%)      0 (0%)           0 (0%)         11h
+  kube-system                kube-scheduler-kubemaster             100m (5%)                                                                                  0 (0%)      0 (0%)           0 (0%)         11h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                850m (42%)  100m (5%)
+  memory             190Mi (4%)  390Mi (10%)
+  ephemeral-storage  0 (0%)      0 (0%)
+Events:              <none>
+
+
+Name:               worker1.dell.com
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=worker1.dell.com
+                    kubernetes.io/os=linux
+Annotations:        flannel.alpha.coreos.com/backend-data: {"VtepMAC":"6e:5b:47:                                                                             cd:e3:11"}
+                    flannel.alpha.coreos.com/backend-type: vxlan
+                    flannel.alpha.coreos.com/kube-subnet-manager: true
+                    flannel.alpha.coreos.com/public-ip: 100.98.26.213
+                    kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.                                                                             sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 05 Jul 2019 05:01:00 -0400
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                                                                                             Reason                       Message
+  ----             ------  -----------------                 ------------------                                                                                             ------                       -------
+  MemoryPressure   False   Fri, 05 Jul 2019 15:46:27 -0400   Fri, 05 Jul 2019 05                                                                             :01:00 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory availa                                                                             ble
+  DiskPressure     False   Fri, 05 Jul 2019 15:46:27 -0400   Fri, 05 Jul 2019 05                                                                             :01:00 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 05 Jul 2019 15:46:27 -0400   Fri, 05 Jul 2019 05                                                                             :01:00 -0400   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 05 Jul 2019 15:46:27 -0400   Fri, 05 Jul 2019 05                                                                             :01:10 -0400   KubeletReady                 kubelet is posting ready status. App                                                                             Armor enabled
+Addresses:
+  InternalIP:  100.98.26.213
+  Hostname:    worker1.dell.com
+Capacity:
+ cpu:                2
+ ephemeral-storage:  102685624Ki
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             4040016Ki
+ pods:               110
+Allocatable:
+ cpu:                2
+ ephemeral-storage:  94635070922
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             3937616Ki
+ pods:               110
+System Info:
+ Machine ID:                 e7573bb6bf1e4cf5b9249413950f0a3d
+ System UUID:                2FD93F42-FA94-0C27-83A3-A1F9276469CF
+ Boot ID:                    782d6cfc-08a2-4586-82b6-7149389b1f4f
+ Kernel Version:             4.15.0-29-generic
+ OS Image:                   Ubuntu 18.04.1 LTS
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  docker://18.9.7
+ Kubelet Version:            v1.15.0
+ Kube-Proxy Version:         v1.15.0
+PodCIDR:                     100.98.1.0/24
+Non-terminated Pods:         (2 in total)
+  Namespace                  Name                           CPU Requests  CPU Li                                                                             mits  Memory Requests  Memory Limits  AGE
+  ---------                  ----                           ------------  ------                                                                             ----  ---------------  -------------  ---
+  kube-system                kube-flannel-ds-amd64-fbgd4    100m (5%)     100m (                                                                             5%)   50Mi (1%)        50Mi (1%)      10h
+  kube-system                kube-proxy-mx9kn               0 (0%)        0 (0%)                                                                                   0 (0%)           0 (0%)         10h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests   Limits
+  --------           --------   ------
+  cpu                100m (5%)  100m (5%)
+  memory             50Mi (1%)  50Mi (1%)
+  ephemeral-storage  0 (0%)     0 (0%)
+Events:              <none>
+cse@kubemaster:~$
+```
+
+
 
