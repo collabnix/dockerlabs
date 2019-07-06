@@ -273,3 +273,153 @@ Events:
   Normal  NodeReady                5m21s                  kubelet, worker1.dell.com     Node worker1.dell.com status is now: NodeReady
 cse@kubemaster:~$
 ```
+
+```
+$ sudo kubectl run nginx --image nginx
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/nginx created
+~$
+```
+
+## Configuring Metal LoadBalancer
+
+```
+kubectl apply -f https://raw.githubusercontent.com/google/metallb/v0.7.3/manifests/metallb.yaml
+```
+
+## 
+
+```
+~$ sudo kubectl get ns
+NAME              STATUS   AGE
+default           Active   23h
+kube-node-lease   Active   23h
+kube-public       Active   23h
+kube-system       Active   23h
+metallb-system    Active   13m
+```
+
+```
+$ kubectl get all -n metallb-system
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/controller-547d466688-m9xlt   1/1     Running   0          13m
+pod/speaker-tb9d7                 1/1     Running   0          13m
+
+
+
+NAME                     DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+daemonset.apps/speaker   1         1         1       1            1           <none>          13m
+
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/controller   1/1     1            1           13m
+
+NAME                                    DESIRED   CURRENT   READY   AGE
+replicaset.apps/controller-547d466688   1         1         1       13m
+```
+
+There are 2 components : 
+- Controller - Assigns the IP address to the LB
+- Speaker - Ensure that you can reach service through LB
+
+Controller component is deployed as deplyment and speaker as daemonset which is running on all worker nodes
+
+Next, we need to look at config files.
+
+To configure MetalLB, write a config map to metallb-system/config
+
+Link: https://metallb.universe.tf/configuration/
+
+Layer 2 mode is the simplest to configure: in many cases, you don’t need any protocol-specific configuration, only IP addresses.
+
+```
+ sudo kubectl get nodes -o wide
+NAME               STATUS   ROLES    AGE   VERSION   INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+kubemaster         Ready    master   23h   v1.15.0   100.98.26.210   <none>        Ubuntu 18.04.1 LTS   4.15.0-29-generic   docker://18.9.7
+worker1.dell.com   Ready    <none>   23h   v1.15.0   100.98.26.213   <none>        Ubuntu 18.04.1 LTS   4.15.0-29-generic   docker://18.9.7
+
+```
+We need to pay attention to the above Internal IP. We need to use this range only.
+
+```
+$ sudo cat <<EOF | kubectl create -f -
+> apiVersion: v1
+> kind: ConfigMap
+> metadata:
+>   namespace: metallb-system
+>   name: config
+> data:
+>   config: |
+>     address-pools:
+>     - name: default
+>       protocol: layer2
+>       addresses:
+>       - 100.98.26.200-100.98.26.255
+>
+> EOF
+configmap/config created
+```
+
+```
+cse@kubemaster:~$ kubectl describe configmap config -n metallb-system
+Name:         config
+Namespace:    metallb-system
+Labels:       <none>
+Annotations:  <none>
+
+Data
+====
+config:
+----
+address-pools:
+- name: default
+  protocol: layer2
+  addresses:
+  - 100.98.26.200-100.98.26.255
+
+Events:  <none>
+```
+
+
+```
+kubectl get all
+```
+
+
+```
+$ kubectl expose deploy nginx --port 80 --type LoadBalancer
+service/nginx exposed
+
+```
+
+```
+Every 2.0s: kubectl get all             kubemaster: Sat Jul  6 15:33:30 2019
+
+NAME                         READY   STATUS    RESTARTS   AGE
+pod/nginx-7bb7cd8db5-rc8c4   1/1     Running   0          18m
+
+
+NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)
+        AGE
+service/kubernetes   ClusterIP      10.96.0.1        <none>          443/TCP
+        23h
+service/nginx        LoadBalancer   10.105.157.210   100.98.26.200   80:3063
+1/TCP   34s
+
+
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx   1/1     1            1           18m
+
+NAME                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-7bb7cd8db5   1         1         1       18m
+
+
+```
+
+
+By now, you should be able to browser NGINX Page under http://100.98.26.210
+
+Hurray !!!
+
+
+
+
