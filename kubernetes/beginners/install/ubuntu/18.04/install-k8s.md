@@ -420,6 +420,70 @@ By now, you should be able to browser NGINX Page under http://100.98.26.210
 
 Hurray !!!
 
+Let's run another nginx service:
 
+```
+~$ kubectl run nginx2 --image nginx
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/nginx2 created
+```
+
+```
+Every 2.0s: kubectl get all             kubemaster: Sat Jul  6 15:37:21 2019
+
+NAME                          READY   STATUS    RESTARTS   AGE
+pod/nginx-7bb7cd8db5-rc8c4    1/1     Running   0          21m
+pod/nginx2-5746fc444c-4tsls   1/1     Running   0          42s
+
+
+NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)
+        AGE
+service/kubernetes   ClusterIP      10.96.0.1        <none>          443/TCP
+        23h
+service/nginx        LoadBalancer   10.105.157.210   100.98.26.200   80:3063
+1/TCP   4m24s
+
+
+NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx    1/1     1            1           21m
+deployment.apps/nginx2   1/1     1            1           42s
+
+NAME                                DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-7bb7cd8db5    1         1         1       21m
+replicaset.apps/nginx2-5746fc444c   1         1         1       42s
+```
+
+```
+cse@kubemaster:~$ kubectl expose deploy  nginx2 --port 80 --type LoadBalancer
+service/nginx2 exposed
+cse@kubemaster:~$
+```
+
+```
+Every 2.0s: kubectl get all             kubemaster: Sat Jul  6 15:38:49 2019
+
+NAME                          READY   STATUS    RESTARTS   AGE
+pod/nginx-7bb7cd8db5-rc8c4    1/1     Running   0          23m
+pod/nginx2-5746fc444c-4tsls   1/1     Running   0          2m10s
+
+
+NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)
+        AGE
+service/kubernetes   ClusterIP      10.96.0.1        <none>          443/TCP
+        23h
+service/nginx        LoadBalancer   10.105.157.210   100.98.26.200   80:3063
+1/TCP   5m52s
+service/nginx2       LoadBalancer   10.107.32.195    100.98.26.201   80:3139
+0/TCP   15s
+
+
+NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx    1/1     1            1           23m
+deployment.apps/nginx2   1/1     1            1           2m10s
+
+NAME                                DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-7bb7cd8db5    1         1         1       23m
+replicaset.apps/nginx2-5746fc444c   1         1         1       2m10s
+```
 
 
