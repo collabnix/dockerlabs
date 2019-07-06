@@ -1,37 +1,50 @@
 # Installing Kubernetes Dashboard
 
 ```
-[node1 install]$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
-secret/kubernetes-dashboard-certs createdserviceaccount/kubernetes-dashboard created
+wget https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+```
+
+## Change the YAML file and include at the Dashboard Service section
+
+```
+
+# ------------------- Dashboard Service ------------------- #
+
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard
+  namespace: kube-system
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 443
+      targetPort: 8443
+  selector:
+    k8s-app: kubernetes-dashboard
+cse@kubemaster:~$
+
+```
+Just add type: LoadBalancer as shown above.
+
+
+```
+$ sudo kubectl create -f kubernetes-dashboard.yaml
+secret/kubernetes-dashboard-certs created
+serviceaccount/kubernetes-dashboard created
 role.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
 rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
-deployment.apps/kubernetes-dashboard createdservice/kubernetes-dashboard created
-[node1 install]$
-```
-
-## Displaying all the Pods under all namespaces
-
-```
-[node1 install]$ kubectl get po --all-namespacesNAMESPACE     NAME                                    READY   STATUS    RESTARTS   AGE
-kube-system   coredns-fb8b8dccf-lwjz6                 1/1     Running   0          8m20s
-kube-system   coredns-fb8b8dccf-zpz2r                 1/1     Running   0          8m20skube-system   etcd-node1                              1/1     Running   0          7m29s
-kube-system   kube-apiserver-node1                    1/1     Running   0          7m34s
-kube-system   kube-controller-manager-node1           1/1     Running   0          7m18s
-kube-system   kube-proxy-ffbcw                        1/1     Running   0          8m19s
-kube-system   kube-proxy-mfnrx                        1/1     Running   0          8m1s
-kube-system   kube-scheduler-node1                    1/1     Running   0          7m16s
-kube-system   kubernetes-dashboard-5f7b999d65-29tv6   1/1     Running   0          2m2s
-kube-system   weave-net-b9svm                         2/2     Running   1          8m1s
-kube-system   weave-net-xjfxc                         2/2     Running   0          8m19s
-[node1 install]$
+deployment.apps/kubernetes-dashboard created
+service/kubernetes-dashboard created
 ```
 
 ```
-[node1 install]$ kubectl create clusterrolebinding dashboard-admin -n default \
-> --clusterrole=cluster-admin \
-> --serviceaccount=default:dashboard
-clusterrolebinding.rbac.authorization.k8s.io/dashboard-admin created
-
- ```
- 
- 
+cse@kubemaster:~$ kubectl get svc --namespace=kube-system
+NAME                   TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)                  AGE
+kube-dns               ClusterIP      10.96.0.10    <none>          53/UDP,53/TCP,9153/TCP   23h
+kubernetes-dashboard   LoadBalancer   10.99.35.10   100.98.26.202   443:30725/TCP            12s
+cse@kubemaster:~$ ^C
+cse@kubemaster:~$
+```
