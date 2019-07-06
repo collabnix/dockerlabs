@@ -1,4 +1,4 @@
-# How to setup 3 Node Kubernetes Cluster on VMware vSphere ESXi VMs?
+# How to setup 3 Node Kubernetes Cluster on VMware vSphere ESXi VMs and setup Nginx using MetalLB?
 
 ## Preparing the Infrastructure
 
