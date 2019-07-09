@@ -3,6 +3,25 @@
 - [What is Kubernetes & Why is it damn popular?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/README.md#what-is-kubernetes)
 - [Deep Dive into Kubernetes Architecture](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/README.md#what-is-k8s-made-up-of)
 
+# Kubernetes Architecture
+   - Single and multi-node clusters
+   - Examining the control plane
+   - Persisting changes in etcd
+   - Syncing changes with RAFT
+   - Event-based architecture
+   - Understanding the kubelet
+   - Verifying “no single point of failure”
+   - Setting up a multi-master cluster
+   - Investigating multi-master setup in EKS
+   - Exploring multi-master setup in Monzo
+   - Creating a 3 node cluster with kubeadm
+   - Installing an overlay network
+   - Installing an Ingress controller
+   - Exploring the API without kubectl
+   - Taking down the cluster one node at the time
+   
+   
+
 
 # Installation & Getting Started
 
