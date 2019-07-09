@@ -486,4 +486,45 @@ replicaset.apps/nginx-7bb7cd8db5    1         1         1       23m
 replicaset.apps/nginx2-5746fc444c   1         1         1       2m10s
 ```
 
+Let's run hellowhale example
+
+```
+cse@kubemaster:~$ sudo kubectl run hellowhale --image ajeetraina/hellowhale
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/hellowhale created
+cse@kubemaster:~$
+```
+
+```
+cse@kubemaster:~$ sudo kubectl expose deploy hellowhale --port 89 --type LoadBalancer
+service/hellowhale exposed
+cse@kubemaster:~$
+```
+
+
+```
+cse@kubemaster:~$ sudo kubectl get all
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/hellowhale-64ff675cb5-c95qf   1/1     Running   0          99s
+pod/nginx-7bb7cd8db5-rc8c4        1/1     Running   0          2d9h
+pod/nginx2-5746fc444c-4tsls       1/1     Running   0          2d8h
+
+
+NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)        AGE
+service/hellowhale   LoadBalancer   10.100.239.246   100.98.26.203   89:30385/TCP   29s
+service/kubernetes   ClusterIP      10.96.0.1        <none>          443/TCP        3d8h
+service/nginx        LoadBalancer   10.105.157.210   100.98.26.200   80:30631/TCP   2d8h
+service/nginx2       LoadBalancer   10.107.32.195    100.98.26.201   80:31390/TCP   2d8h
+
+
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/hellowhale   1/1     1            1           99s
+deployment.apps/nginx        1/1     1            1           2d9h
+deployment.apps/nginx2       1/1     1            1           2d8h
+
+NAME                                    DESIRED   CURRENT   READY   AGE
+replicaset.apps/hellowhale-64ff675cb5   1         1         1       99s
+replicaset.apps/nginx-7bb7cd8db5        1         1         1       2d9h
+replicaset.apps/nginx2-5746fc444c       1         1         1       2d8h
+```
 
