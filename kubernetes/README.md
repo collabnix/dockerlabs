@@ -5,7 +5,7 @@
 
 # Kubernetes Architecture
    - Single and multi-node clusters
-   - Examining the control plane
+   - [Examining the control plane](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/Kubernetes_Control_Plane.md)<br>
    - Persisting changes in etcd
    - Syncing changes with RAFT
    - Event-based architecture
