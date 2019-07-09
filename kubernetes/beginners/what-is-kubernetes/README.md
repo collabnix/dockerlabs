@@ -46,27 +46,36 @@ Containers are becoming popular because they have many benefits. Some of the con
 
 # What is K8s made up of?
 
-
-
 ![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-architecture.png)
 
-## Master Components:
-   Kube API Server + <br>
-   Control Plane (kube-scheduler + kube-controller-manager + Cloud-controller Manager) + <br>
-   etcd<br>
-## Node Components:
-   Kubelet + <br>
-   Kube-proxy + <br>
-   Container Runtime<br>
-## Addons:
-   DNS + <br>
-   WebUI + <br>
-   Container Resource Monitoring + <br>
-   Cluster Level Logging<br>
+Kubernetes Cluster is primarily made up of following components
+- Master:
+    - Kube API Server
+    - Control Plane (kube-scheduler + kube-controller-manager + Cloud-controller Manager)
+    - Etcd
+    
+- Node:
+    - Kubelet
+    - Kube-proxy
+    - Container Runtime
+    
+- Addons:
+   - DNS 
+   - WebUI 
+   - Container Resource Monitoring
+   - Cluster Level Logging
 
 
+# Kubernetes Cluster Components
 
-## Master Components:
+## Master Node and its Components:
+
+![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubelet.png)
+
+- The main machine that controls the nodes
+- Main entrypoint for all administrative tasks
+- It handles the orchestration of the worker nodes
+
 
 ```
 [node1 install]$ kubectl get componentstatus
@@ -76,30 +85,29 @@ controller-manager   Healthy   ok
 etcd-0               Healthy   {"health":"true"}
 ```
 
-- K8s have 1 or more master.
+- K8s may have 1 or more master.
 - Master components provide the cluster’s control plane. 
 - Master components make global decisions about the cluster (for example, scheduling), and they detect and respond to cluster events (for example, starting up a new pod when a replication controller’s replicas field is unsatisfied).
 - Master components can be run on any machine in the cluster. However, for simplicity, set up scripts typically start all master components on the same machine, and do not run user containers on this machine. See Building High-Availability Clusters for an example multi-master-VM setup
 
-## The Kube API Server
+### The Kube API Server
 
 Kubernetes architecture consists of one or more master machine. 
 
 The Kube API server is the main component and everything in kubernetes cluster will connect and talk to this API Server.
 Component on the master that exposes the Kubernetes API. It is the front-end for the Kubernetes control plane.It is designed to scale horizontally – that is, it scales by deploying more instances. 
 
-## The etcd
+### The etcd
 
 - Store the information abou k8s cluster
 - A very important component in the entire cluster
-
 - if you loose etcd, you will loose the whole cluster
 - You can use separate etcd too.
 - Consistent and highly-available key value store used as Kubernetes’ backing store for all cluster data.
 - If your Kubernetes cluster uses etcd as its backing store, make sure you have a back up plan for those data.
 
 
-## Scheduler
+### Kube Scheduler
 
 - Decide where to start the workload, on which node should it start the application
 - Component on the master that watches newly created pods that have no node assigned, and selects a node for them to run on.
@@ -111,7 +119,7 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
     - inter-workload interference and 
     - deadlines
 
-## Kube-controller-manager
+### Kube-controller-manager
 
 - Component on the master that runs controllers .
 - Logically, each controller is a separate process, but to reduce complexity, they are all compiled into a single binary and run in a single process.
@@ -122,7 +130,7 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
    - Service Account & Token Controllers: Create default accounts and API access tokens for new namespaces.
    - cloud-controller
    
- ## Cloud-controller-manager
+### Cloud-controller-manager
  
 - cloud-controller-manager runs controllers that interact with the underlying cloud providers. 
 - The cloud-controller-manager binary is an alpha feature introduced in Kubernetes release 1.6.
@@ -133,25 +141,9 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 - In prior releases, the core Kubernetes code was dependent upon cloud-provider-specific code for functionality. 
 - In future releases, code specific to cloud vendors should be maintained by the cloud vendor themselves, and linked to cloud-controller-manager while running Kubernetes.
 
-## Kubectl:
 
-- A CLI tool for Kubernetes
+## Worker Node and its components:
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubectl.png)
-
-
-
-## Master Node:
-
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubelet.png)
-
-- The main machine that controls the nodes
-- Main entrypoint for all administrative tasks
-- It handles the orchestration of the worker nodes
-
-
-
-## Worker Node
 
 ![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-worker-node.png)
 
@@ -160,14 +152,35 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 - Runs containers inside pods
 - This is where the Docker engine runs and takes care of downloading images and starting containers
 
-## Kubelet
+### KubeProxy
+- `kube-proxy` is a network proxy that runs on each node in the cluster.
+- `Kube-proxy` is responsible for request forwarding. kube-proxy allows TCP and UDP stream forwarding or round robin TCP and UDP forwarding across a set of backend functions.
+
+
+### Kubelet
+- An agent that runs on each node in the cluster. It makes sure that containers are running in a pod.
+- The kubelet takes a set of PodSpecs that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running and healthy.
+- Kubelet does not manage the container which are not created by Kubernetes .
 
 ![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubelet.png)
 
-- Primary node agent
-- Ensures that containers are running and healthy
 
-## Kubernetes Pod:
+### Container Runtime
+- The container runtime is the software that is responsible for running containers.
+- Kubernetes supports several container runtimes: Docker, containerd etc.
+- Docker is the most common container runtime that is used in many Kubernetes Clusters.
+
+
+## Kubernetes Constructs: 
+
+### Kubectl:
+
+- A CLI tool for Kubernetes
+
+![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubectl.png)
+
+
+### Kubernetes Pod:
 
 - A Pod can host multiple containers and storage volumes
 - Pods are instances of Deployments (see Deployment)
@@ -180,13 +193,13 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 
 ![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-pod-new.png)
 
-## ReplicaSet
+### ReplicaSet
 - A Repliaset runs `n` number of pods , based on the provided kubernetes object template.
 - A ReplicaSet ensures that a specified number of pod replicas are running at any given time.
 - If one pod dies or crashes , the ReplicaSet ensures a new one is created in its place .
 - A Deployment ( explained below ) is a higher level construct that manages replicasets. As per K8S recommendation , Deployments should be used over ReplicaSets
 
-## Deployment:
+### Deployment:
 
 ![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s_deployment.png)
 
@@ -203,12 +216,12 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 ![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-deployment%20(1).png)
 
 
-## ConfigMap
+### ConfigMap
 - A ConfigMap binds configuration files , command-line , arguments, environment variables and other configuration artifacts to your Pods.
 - ConfigMaps allow you to separate your configurations from Pods and components, which helps keep the workloads portable, makes their configurations easier to change and manage.
 - ConfigMaps are useful for storing and sharing non-sensitive, unencrypted configuration information.
  
-## Secret:
+### Secret:
 
 - A Secret is an object, where we can store sensitive informations like usernames and passwords.
 - In the secret files, values are base64 encoded.
@@ -217,7 +230,7 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 - Secrets are not encrypted by default. For encryption we need to create an EncryptionConfig.
 - You can read more about encryption here
 
-## Service:
+### Service:
 
 ![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-service.png)
 
@@ -225,19 +238,19 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 - A Service identifies Pods by its LabelSelector
 - There are 3 types of services:
 
-## ClusterIP:
+### ClusterIP:
 - The deployment is only visible inside the cluster
 - The deployment gets an internal ClusterIP assigned to it
 - Traffic is load balanced between the Pods of the deployment
 
-## Node Port:
+### Node Port:
 - The deployment is visible inside the cluster
 - The deployment is bound to a port of the Master Node
 - Each Node will proxy that port to your Service
 - The service is available at http(s)://:/
 - Traffic is load balanced between the Pods of the deployment
 
-## Load Balancer:
+### Load Balancer:
 - The deployment gets a Public IP address assigned
 - The service is available at http(s)://:<80||42>/
 - Traffic is load balanced between the Pods of the deployment
