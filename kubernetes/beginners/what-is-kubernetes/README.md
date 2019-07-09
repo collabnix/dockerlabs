@@ -180,6 +180,11 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 
 ![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-pod-new.png)
 
+## ReplicaSet
+- A Repliaset runs `n` number of pods , based on the provided kubernetes object template.
+- A ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+- If one pod dies or crashes , the ReplicaSet ensures a new one is created in its place .
+- A Deployment ( explained below ) is a higher level construct that manages replicasets. As per K8S recommendation , Deployments should be used over ReplicaSets
 
 ## Deployment:
 
@@ -197,6 +202,12 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 
 ![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-deployment%20(1).png)
 
+
+## ConfigMap
+- A ConfigMap binds configuration files , command-line , arguments, environment variables and other configuration artifacts to your Pods.
+- ConfigMaps allow you to separate your configurations from Pods and components, which helps keep the workloads portable, makes their configurations easier to change and manage.
+- ConfigMaps are useful for storing and sharing non-sensitive, unencrypted configuration information.
+ 
 ## Secret:
 
 - A Secret is an object, where we can store sensitive informations like usernames and passwords.
