@@ -4,7 +4,7 @@
 - [Deep Dive into Kubernetes Architecture](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/README.md#what-is-k8s-made-up-of)
 
 # Kubernetes Architecture
-   - [Understanding the kubect](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubectl.md)<br>
+   - [Understanding the kubectl](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubectl.md)<br>
    - Single and multi-node clusters
    - [Examining the control plane](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/Kubernetes_Control_Plane.md)<br>
    - Persisting changes in etcd
