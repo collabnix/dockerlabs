@@ -44,19 +44,19 @@ Note that it's totally possible to control Kubernetes with a tool like curl by m
 
 These are the basics of what kubectl is and how it works. But there is much more about the Kubernetes API that every kubectl user should know. To this end, let's briefly dive into the Kubernetes internals.
 
-Kubernetes internals
+## Kubernetes internals
 
 Kubernetes consists of a set of independent components that run as separate processes on the nodes of a cluster. Some components run on the master nodes and others run on the worker nodes, and each component has a very specific function.
 
 These are the most important components on the master nodes:
 
-Storage backend: stores resource definitions (usually etcd is used)
+### Storage backend: stores resource definitions (usually etcd is used)
 API server: provides Kubernetes API and manages storage backend
 Controller manager: ensures resource statuses match specifications
 Scheduler: schedules Pods to worker nodes
 And this is the most important component on the worker nodes:
 
-Kubelet: manages execution of containers on a worker node
+### Kubelet: manages execution of containers on a worker node
 To see how these components work together, let's consider an example.
 
 Assume, you just executed kubectl create -f replicaset.yaml, upon which kubectl made an HTTP POST request to the create ReplicaSet API endpoint (passing along your ReplicaSet resource definition).
@@ -152,7 +152,7 @@ Command completion is available for the Bash and Zsh shells.
 
 The [official documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion)contains detailed instructions for setting up command completion, but the following sections provide a recap for you.
 
-How command completion works
+## How command completion works
 
 In general, command completion is a shell feature that works by the means of a completion script. A completion script is a shell script that defines the completion behaviour for a specific command. Sourcing a completion script enables completion for the corresponding command.
 
