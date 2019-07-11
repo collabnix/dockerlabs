@@ -1,4 +1,4 @@
-# what is kubectl?
+# What is kubectl?
 
 
 Before learning how to use kubectl more efficiently, you should have a basic understanding of what it is and how it works.
