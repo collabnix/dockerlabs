@@ -148,6 +148,8 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 - [Docker + Nginx ](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/nginx/README.md)
 
 - [Docker + Django + PostgreSQL](https://github.com/collabnix/dockerlabs/blob/master/solution/django-postgres/readme.md)
+
+- [Docker + Gomodule](https://github.com/collabnix/dockerlabs/blob/master/beginners/httpserver_go_module_and_docker.md)
 ## License
 
 [MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md)
