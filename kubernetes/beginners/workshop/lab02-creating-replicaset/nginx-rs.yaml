@@ -9,7 +9,7 @@ spec:
       app: ngnix-app
     matchExpressions:  
       - {key: tier, operator: In, values: [frontend]}
-  templates:  
+  template:  
     metadata:
       name: nginx-pod
       labels:
