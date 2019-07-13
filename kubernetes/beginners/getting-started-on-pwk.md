@@ -113,6 +113,15 @@ kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   1h
 [node1 istio]$
 ```
 
+Tips & Tricks:
+
+How to find kubeadm join command?
+
+```
+kubeadm token create --print-join-command
+```
+
+
 # Contributor
 
 - Ajeet Singh Raina
