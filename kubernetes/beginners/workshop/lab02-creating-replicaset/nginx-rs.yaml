@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:  
       app: ngnix-app
-     matchExpressions:  
+    matchExpressions:  
       - {key: tier, operator: In, values: [frontend]}
   templates:  
     metadata:
