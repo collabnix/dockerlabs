@@ -30,7 +30,6 @@
 
 - Setting up Kubernetes on
    - Linux
-      - [Multi node Cluster] (https://github.com/collabnix/dockerlabs/new/master/kubernetes/install)
    - Windows
    - Windows Server
    - Cloud Platform
