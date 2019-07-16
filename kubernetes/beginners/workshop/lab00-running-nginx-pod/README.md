@@ -2,10 +2,10 @@
 
 ## Creating 2 NGINX Pods
 
-The kubectl run line below will create two nginx pods listening on port 82. It will also create a deployment named my-nginx to ensure that there are always two pods running.
+The kubectl run line below will create two nginx pods listening on port 80. It will also create a deployment named my-nginx to ensure that there are always two pods running.
 
 ```
-[node1 lab01-creating-nginx-pod]$ kubectl run my-nginx --image=nginx --replicas=2 --port=82
+[node1 lab01-creating-nginx-pod]$ kubectl run my-nginx --image=nginx --replicas=2 --port=80
 kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
 deployment.apps/my-nginx created
 ```
