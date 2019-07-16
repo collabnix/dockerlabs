@@ -1,4 +1,4 @@
-# List of Kubernetes Workshops
+# Kubernetes Workshop
 
 ## Lab #01 - Getting Started
 
