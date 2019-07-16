@@ -23,7 +23,7 @@
 
 # Tips & Tricks
 
-## #1: My system rebooted and now the ```kubectl get nodes``` is unable to display my K8s cluster. What shall I do?
+## #1: My system rebooted and now the ```kubectl get nodes``` is unable to display my K8s nodes. What shall I do?
 
 
 ```
