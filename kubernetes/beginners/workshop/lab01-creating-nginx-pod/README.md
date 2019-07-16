@@ -1,4 +1,6 @@
-# Lab #01: Creating Nginx Pod
+# Lab #01: Creating Nginx Pod using Pod Manifest File
+
+In our last workshop, we created a Pod directly using kubectl. Under this section, we will use Pod manifest file instead. We will see how to expose nginx pod to port 8080.
 
 ```
 kubectl create -f nginx-pod.yaml
