@@ -69,3 +69,37 @@ Events:
   Normal  Started    13m   kubelet, node2     Started container nginx
   ```
 
+
+## Get the list of pod:
+
+```
+$ kubectl get pods
+	NAME        READY     STATUS    RESTARTS   AGE
+	nginx-pod   1/1       Running   0          22s
+```
+
+
+## Verify that the pod came up fine:
+
+```
+kubectl -n default port-forward $(kubectl -n default get pod -l name=nginx-pod -o jsonpath='{.items[0].metadata.name}') 8080:80 & open http://localhost:8080/
+```
+
+This opens up a browser window and shows the NGINX main page:
+
+If the containers in the pod generate logs, then they can be seen using the command shown:
+
+```
+$ kubectl logs nginx-pod
+	127.0.0.1 - - [03/Nov/2017:17:33:30 +0000] "GET / HTTP/1.1" 200 612 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36" "-"
+	127.0.0.1 - - [03/Nov/2017:17:33:32 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36" "-"
+	2017/11/03 17:33:32 [error] 5#5: *2 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
+```
+
+## Delete a Pod
+
+Delete the pod as shown below:
+
+```
+$ kubectl delete -f templates/pod.yaml
+```
