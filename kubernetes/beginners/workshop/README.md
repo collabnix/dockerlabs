@@ -21,7 +21,7 @@
 
 [Creating a Deployment with 3 replicas of NGINX service](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab03-creating-deployment-3replicas-nginx)<br>
 
-## Tips & Tricks
+# Tips & Tricks
 
 ## #1: My system rebooted and now the ```kubectl get nodes``` is unable to display my K8s cluster. What shall I do?
 
