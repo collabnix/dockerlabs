@@ -21,3 +21,21 @@
 
 [Creating a Deployment with 3 replicas of NGINX service](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab03-creating-deployment-3replicas-nginx)<br>
 
+## Tips & Tricks
+
+## #1: My system rebooted and now the ```kubectl get nodes``` is unable to display my K8s cluster. What shall I do?
+
+
+```
+~$ sudo systemctl restart kubelet
+@kubemaster:~$ sudo kubectl version
+Client Version: version.Info{Major:"1", Minor:"15", GitVersion:"v1.15.0", GitCommit:"e8462b5b5dc2584fdcd18e6bcfe9f1e4d970a529", GitTreeState:"clean", BuildDate:"2019-06-19T16:40:16Z", GoVersion:"go1.12.5", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"15", GitVersion:"v1.15.0", GitCommit:"e8462b5b5dc2584fdcd18e6bcfe9f1e4d970a529", GitTreeState:"clean", BuildDate:"2019-06-19T16:32:14Z", GoVersion:"go1.12.5", Compiler:"gc", Platform:"linux/amd64"}
+```
+
+```
+$ sudo kubectl get nodes
+NAME               STATUS   ROLES    AGE   VERSION
+kubemaster         Ready    master   10d   v1.15.0
+worker1            Ready    <none>   10d   v1.15.0
+```
