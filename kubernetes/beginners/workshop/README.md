@@ -14,7 +14,8 @@
 
 ## Lab #03 - Getting Started with ReplicaSet Manifest File
 
-[Creating ReplicaSet Manifest file for Nginx](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab02-creating-replicaset/nginx-rs.yaml)
+[Creating ReplicaSet Manifest file for Nginx](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab02-creating-replicaset/nginx-rs.yaml)<br>
+[Scaling up Nginx Application](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/beginners/workshop/lab03-creating-deployment-3replicas-nginx#scaling-up-nginx-app)
 
 ## Lab #04 - Getting Started with Deployment Manifest File
 
