@@ -1,4 +1,4 @@
-Running Nginx pod
+# Running Nginx pod
 
 ## Creating 2 NGINX Pods
 
