@@ -90,6 +90,8 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 - [Working with Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/workingwithdockerimage.md) 
 - [Building Your First Alpine Docker Image and Push it to DockerHub](https://github.com/collabnix/dockerlabs/blob/master/beginners/building-your-first-alpine-container.md)
 - [Building Docker Image using Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md)
+- [Building a Private Docker Registry](https://github.com/collabnix/dockerlabs/blob/master/beginners/build-private-docker-registry.md)
+
 
 
 
