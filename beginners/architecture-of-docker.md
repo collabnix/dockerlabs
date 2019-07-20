@@ -1,3 +1,10 @@
+---
+layout: default
+title: Beginners Track -  Architecture of Docker
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
+
 # Architecture of Docker
 
 
