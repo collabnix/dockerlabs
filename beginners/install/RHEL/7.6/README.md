@@ -1,3 +1,10 @@
+---
+layout: default
+title: Beginners Track - Installing Docker Community Edition on RHEL 7.6 running on Amazon EC2 Instance
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
+
 # Installing Docker Community Edition on RHEL 7.6 running on Amazon EC2 Instance
 
 Docker Community Edition (Docker CE) is officially NOT supported on Red Hat Enterprise Linux but still you can install it on RHEL 7.x with few tweaks. In case you're new, Docker Community Edition (CE) is ideal for developers and small teams looking to get started with Docker and experimenting with container-based apps. Docker CE has three types of update channels, stable, test, and nightly:
