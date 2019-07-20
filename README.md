@@ -42,7 +42,7 @@ Below are the list of categories:
 
 ## Kubernetes
 
-- [Kubernetes for Beginners](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+- [Kubernetes for Beginners](./kubernetes/README.md)
 
 - [Kubernetes for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
