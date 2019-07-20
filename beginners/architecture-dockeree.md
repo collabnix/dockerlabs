@@ -1,3 +1,10 @@
+---
+layout: default
+title: Beginners Track -  Architecture of Docker Enteprise Edition 2.0
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
+
 # Architecture of Docker Enteprise Edition 2.0
 
 ## Introduction to Docker EE 2.0
