@@ -116,4 +116,4 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 [MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md)
 
-   [Proceed to Beginners Track >>](./Beginners-Track.md)
+   [Proceed to Beginners Track >>](./beginners/README.md)
