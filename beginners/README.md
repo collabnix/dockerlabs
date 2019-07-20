@@ -10,7 +10,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
 
 - [What is Docker?](./docker/what-is-docker.md)
 - [Difference between Docker & Container](./docker/docker-vs-container.md)
-- [What are Containers? What are they used for?](./beginners/linux-containers.md)
+- [What are Containers? What are they used for?](./linux-containers.md)
 - [Difference between VM and Docker](./beginners/difference-docker-vm.md)
 - [Similarity between VM and Docker](./beginners/similarity-vm-docker.md)
 - [How is Container different from Virtual Machine?](./beginners/difference-vm-containers.md)
