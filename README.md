@@ -25,7 +25,7 @@ Below are the list of categories:
 
 ## Docker
 
-- [Docker for Beginners](./Beginners-Track.md)
+- [Docker for Beginners](./beginners/README.md)
 
 - [Docker for Intermediate](https://github.com/collabnix/dockerlabs/blob/master/intermediate/README.md)
 
