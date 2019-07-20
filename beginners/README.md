@@ -87,11 +87,11 @@ description: collabnix | DockerLab | Docker - Beginners Track
 
 # Getting Started with Docker Volume
 
-[Creating Volume Mount from Dockerfile](./beginners/volume/create-a-volume-mount-from-dockerfile.md)<br>
-[Managing volumes through Docker CLI](./beginners/volume/managing-volumes-via-docker-cli.md)<br>
-[Creating Volume Mount from **docker run** command & sharing same Volume Mounts among multiple containers](./beginners/volume/creating-volume-mount-from-dockercli.md)<br>
-[Mounting host directory into container](./beginners/volume/bind-mounts.md)<br>
-[Creating Volume with Alpine OS](./beginners/volume/Creating%20Volume%20with%20alphine.md)<br>
+[Creating Volume Mount from Dockerfile](./volume/create-a-volume-mount-from-dockerfile.md)<br>
+[Managing volumes through Docker CLI](./volume/managing-volumes-via-docker-cli.md)<br>
+[Creating Volume Mount from **docker run** command & sharing same Volume Mounts among multiple containers](./volume/creating-volume-mount-from-dockercli.md)<br>
+[Mounting host directory into container](./volume/bind-mounts.md)<br>
+[Creating Volume with Alpine OS](./volume/Creating-Volume-with-alphine.md)<br>
 
 # FAQs
 
