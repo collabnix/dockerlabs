@@ -6,13 +6,13 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 # Getting Started with Kubernetes
 
-- [What is Kubernetes & Why is it damn popular?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/README.md#what-is-kubernetes)
-- [Deep Dive into Kubernetes Architecture](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/README.md#what-is-k8s-made-up-of)
+- [What is Kubernetes & Why is it damn popular?](./what-is-kubernetes/README.md#what-is-kubernetes)
+- [Deep Dive into Kubernetes Architecture](./what-is-kubernetes/README.md#what-is-k8s-made-up-of)
 
 # Kubernetes Architecture
-   - [Understanding the kubectl](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubect.md)
+   - [Understanding the kubectl](./what-is-kubect.md)
    - Single and multi-node clusters
-   - [Examining the control plane](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/Kubernetes_Control_Plane.md)<br>
+   - [Examining the control plane](./Kubernetes_Control_Plane.md)<br>
    - Persisting changes in etcd
    - Syncing changes with RAFT
    - Event-based architecture
@@ -32,14 +32,14 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 # Installation & Getting Started
 
-- [Getting Started with K8s on PWK Platform](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/getting-started-on-pwk.md)
+- [Getting Started with K8s on PWK Platform](./getting-started-on-pwk.md)
 
 - Setting up Kubernetes on
    - Linux
    - Windows
    - Windows Server
    - Cloud Platform
-     - [Google Cloud Platform](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/install-k8s-on-GCP-platform.md)
+     - [Google Cloud Platform](./beginners/install-k8s-on-GCP-platform.md)
    - IoT Platform
      - [K3s on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
    
