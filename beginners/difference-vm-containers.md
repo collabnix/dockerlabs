@@ -1,3 +1,10 @@
+---
+layout: default
+title: Beginners Track - Difference between Containers and Virtual Machines
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
+
 # Difference between Containers and Virtual Machines
 
 Let us look at the component view of how virtual machines and containers are implemented.
