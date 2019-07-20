@@ -16,7 +16,7 @@ Virtual Machines our physical machine is divided into following parts :-
 
 Say, you are using a system having 8GB RAM. If you create 2 VMs each with 4GB RAM, you are basically dividing your server into two components - each with 4GB RAM and would never be able to use that underlying 8GB RAM altogether again. 
 
-![Component View](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker-vs-vm.png)
+![Component View](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/docker-vs-vm.png)
 
 ## Containers
 
