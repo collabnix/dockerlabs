@@ -42,7 +42,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
      - [How to setup Docker Swarm Cluster on Raspberry Pi](./beginners/install/raspberrypi3/setting-up-swarm-cluster.md)
      - [Building up K3s Cluster on Raspberry Pi 3 Nodes](./beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
      - [How to monitor a Docker Swarm with Blinkt! LED using Raspberry Pi 3](./beginners/install/raspberrypi3/monitor-docker-swarm-using-blinkt.md)
-     - [Docker on Arduino Uno & Johnny Five](.beginners/install/raspberrypi3/Docker-IOT_Using_Arduino_Uno_and_Johnny-Five.md)
+     - [Docker on Arduino Uno & Johnny Five](./beginners/install/raspberrypi3/Docker-IOT_Using_Arduino_Uno_and_Johnny-Five.md)
 - [Compiling Your Own Docker Binary from Source](./beginners/compiling-docker-from-source.md)
 - [Upgrading Docker from CE to EE](./upgrade-1809ce-1809ee/README.md)
 
