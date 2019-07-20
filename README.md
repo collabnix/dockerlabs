@@ -29,15 +29,15 @@ Below are the list of categories:
 
 - [Docker for Intermediate](./intermediate/README.md)
 
-- [Docker for Advanced](https://github.com/collabnix/dockerlabs/blob/master/advanced/README.md)
+- [Docker for Advanced](./advanced/README.md)
 
-- [Docker for CIOs/CEOs](https://github.com/collabnix/dockerlabs/tree/master/docker/leadership/README.md)
+- [Docker for CIOs/CEOs](./docker/leadership/README.md)
 
-- [Docker Cheatsheet](https://github.com/collabnix/dockerlabs/tree/master/docker/cheatsheet/README.md)
+- [Docker Cheatsheet](./docker/cheatsheet/README.md)
 
-- [Docker Certificate Associate Exam Preparation](https://github.com/collabnix/dockerlabs/tree/master/docker/dca.md)
+- [Docker Certificate Associate Exam Preparation](./docker/dca.md)
 
-- [Docker Interview Questions](https://github.com/collabnix/dockerlabs/tree/master/docker/docker-interview-questions.md)
+- [Docker Interview Questions](./docker/docker-interview-questions.md)
 
 
 ## Kubernetes
