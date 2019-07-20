@@ -80,5 +80,5 @@ Getting new hardware up, running, provisioned, and available used to take days. 
 So, Docker technology is a more granular, controllable, microservices-based approach that places greater value on efficiency.
 
 
-[Proceed >> Docker Vs Containers](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/docker-vs-container.md)
+[Proceed >> Docker Vs Containers](./beginners/docker/docker-vs-container.md)
 
