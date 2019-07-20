@@ -16,7 +16,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
 - [How is Container different from Virtual Machine?](./difference-vm-containers.md)
 - [Top Reasons why to & why not to run Docker containers directly on Bare Metal System](./docker-on-bare-metal.md)
 - [How is Docker Networking different from VM Networking](./difference-vmnetwork-docker-networking.md)
-- [Understanding Docker Underlying Technologies](./beginners/understanding-docker-underlying-technology)
+- [Understanding Docker Underlying Technologies](./understanding-docker-underlying-technology//README.md)
 - [What happen when Containers are Launched?](./intermediate/contaner-runtimes/README.md)
 - [Can container communication cross over to noncontainerized apps?](./beginners/linux-comm-containers.md)
 - [Architecture of Docker](./beginners/architecture-of-a-docker.md)
