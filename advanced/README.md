@@ -1,3 +1,9 @@
+---
+layout: default
+title: Advanced Track
+description: collabnix | DockerLab | Docker - Advanced Track
+---
+
 # Advanced Track
 
 ## Docker Security
