@@ -1,3 +1,11 @@
+---
+layout: default
+title: Beginners Track - Docker On Bare Metal 
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
+
+
 # Top Reasons WHY TO & WHY NOT TO run Docker containers on Bare Metal System
 
 ## Why to run containers on Bare Metal System?
