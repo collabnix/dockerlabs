@@ -1,3 +1,9 @@
+---
+layout: default
+title: Beginners Track - What happens when Containers are Launched?
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
 ## What happens when Containers are Launched?
 
 Here is basically what happens when a container is launched:
