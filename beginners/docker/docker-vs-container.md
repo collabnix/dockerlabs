@@ -1,3 +1,9 @@
+---
+layout: default
+title: Beginners Track - Is Docker technology the same as traditional Linux containers?
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
 # Is Docker technology the same as traditional Linux containers?
 
 No. Docker technology was initially built on top of the LXC technology—what most people associate with "traditional” Linux containers—though it’s since moved away from that dependency. LXC was useful as lightweight virtualization, but it didn’t have a great developer or user experience. The Docker technology brings more than the ability to run containers—it also eases the process of creating and building containers, shipping images, and versioning of images (among other things).
