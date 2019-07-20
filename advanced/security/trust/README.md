@@ -1,3 +1,9 @@
+---
+layout: default
+title:  Distribution and Trust
+description: collabnix | DockerLab | Docker - Distribution and Trust
+---
+
 # Lab: Distribution and Trust
 
 > **Difficulty**: Intermediate
