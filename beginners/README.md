@@ -8,7 +8,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
 
 # Introduction to Docker 
 
-- [What is Docker?](./beginners/docker/what-is-docker.md)
+- [What is Docker?](./docker/what-is-docker.md)
 - [Difference between Docker & Container](./beginners/docker/docker-vs-container.md)
 - [What are Containers? What are they used for?](./beginners/linux-containers.md)
 - [Difference between VM and Docker](./beginners/difference-docker-vm.md)
