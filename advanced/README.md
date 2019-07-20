@@ -16,7 +16,7 @@ description: collabnix | DockerLab | Docker - Advanced Track
 [What are Kernel Security Features?]()<br>
 [How to protect the Docker daemon socket]()<br>
 [How to build security into the container pipeline]()<br>
-[Docker Security - An Easy Way](https://github.com/collabnix/dockerlabs/blob/master/advanced/security/README.md)
+[Docker Security - An Easy Way](./security/README.md)
 
 ## Docker Monitoring
 
@@ -37,23 +37,23 @@ description: collabnix | DockerLab | Docker - Advanced Track
 
 ## Continous Integration & Deployment(CI-CD)
 
-[5 min CI/CD pipelining using Docker & circle-ci](https://github.com/collabnix/dockerlabs/blob/master/advanced/ci-cd/cicd-circleci.md)<br>
-[CI - CD using Docker & Azure DevOps integrated with MS Teams](https://github.com/collabnix/dockerlabs/blob/master/advanced/ci-cd/cicd-azuredevops.md)
+[5 min CI/CD pipelining using Docker & circle-ci](./ci-cd/cicd-circleci.md)<br>
+[CI - CD using Docker & Azure DevOps integrated with MS Teams](./ci-cd/cicd-azuredevops.md)
 
 ## Automation Tool - Ansible, Puppet, Terraform & Chef
 
-[Spin Up AWS Infrastructure using Terraform](https://github.com/collabnix/dockerlabs/blob/master/automation/terraform/aws/README.md)<br>
-[Spin Up GCP Infrastructure using Terraform](https://github.com/collabnix/dockerlabs/blob/master/automation/terraform/googlecloud/building-first-instance/first-docker-container/README.md)<br>
-[Spin Up Azure Infrastruture with Terraform](https://github.com/collabnix/dockerlabs/tree/master/automation/terraform/azure/README.md)<br>
-[Using Terraform to build Nginx Docker Container running on Docker for Mac 18.05](https://github.com/collabnix/dockerlabs/blob/master/advanced/automation/terraform/terraform-mac-nginx.md)<br>
-[Deploy Kubernetes Cluster on Linux Vagrant Instances using Ansible](https://github.com/collabnix/dockerlabs/blob/master/automation/vagrant/kubernetes/README.md)<br>
-[Deploy Docker Swarm Cluster on Linux Vagrant Instances using Ansible](https://github.com/collabnix/dockerlabs/blob/master/automation/vagrant/swarm/README.md)
+[Spin Up AWS Infrastructure using Terraform](./automation/terraform/aws/README.md)<br>
+[Spin Up GCP Infrastructure using Terraform](./automation/terraform/googlecloud/building-first-instance/first-docker-container/README.md)<br>
+[Spin Up Azure Infrastruture with Terraform](./automation/terraform/azure/README.md)<br>
+[Using Terraform to build Nginx Docker Container running on Docker for Mac 18.05](./automation/terraform/terraform-mac-nginx.md)<br>
+[Deploy Kubernetes Cluster on Linux Vagrant Instances using Ansible](./automation/vagrant/kubernetes/README.md)<br>
+[Deploy Docker Swarm Cluster on Linux Vagrant Instances using Ansible](./automation/vagrant/swarm/README.md)
 
 ## Docker Enterprise 
 
 ### Introduction
 
-[What is Docker Enterprise and why do we need it?](https://github.com/collabnix/dockerlabs/blob/master/advanced/enterprise/what-is-docker-enterprise.md)<br>
+[What is Docker Enterprise and why do we need it?](./enterprise/what-is-docker-enterprise.md)<br>
 [What are Docker Enterprise Supported Platforms?]<br>
 [What are components of Docker Enterprise?]()<br>
 [Overview of Universal Control Plane]()<br>
@@ -99,4 +99,4 @@ description: collabnix | DockerLab | Docker - Advanced Track
 
 ## Docker in Production
 
-[Best Practices for Deploying Production-Level Web Services using Docker](https://github.com/collabnix/dockerlabs/blob/master/advanced/bestpractices/docker-in-production-1.md)
+[Best Practices for Deploying Production-Level Web Services using Docker](./bestpractices/docker-in-production-1.md)
