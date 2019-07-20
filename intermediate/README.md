@@ -1,3 +1,10 @@
+---
+layout: default
+title: Intermediate Track
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
+
 # Intermediate Course
 
 ## Docker Desktop for Windows
