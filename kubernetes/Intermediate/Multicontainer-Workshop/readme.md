@@ -1,5 +1,5 @@
-maintainer- Saiyam Pathak (saiyam911@gmail.com) | @saiyampathak | https://medium.com/@saiyampathak
-            Sangam Birdar
+maintainer - Saiyam Pathak (saiyam911@gmail.com) | @saiyampathak | https://medium.com/@saiyampathak
+             Sangam Birdar
             
 This is an Example for Multi Container Pod 
 Simple tutorial to demonstrate the concept of packaging multiple containers into a single pod.
