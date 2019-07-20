@@ -1,3 +1,8 @@
+---
+layout: default
+title: Beginners Track - How does Docker work?
+description: collabnix | DockerLab | Docker - Beginners Track
+---
 # How does Docker work?
 
 The Docker technology uses the Linux kernel and features of the kernel, like Cgroups and namespaces, to segregate processes so they can run independently. This independence is the intention of containers‐the ability to run multiple processes and apps separately from one another to make better use of your infrastructure while retaining the security you would have with separate systems.
