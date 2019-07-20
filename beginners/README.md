@@ -22,7 +22,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
 - [Architecture of Docker](./architecture-of-a-docker.md)
    - [Docker Enterprise Edition](./architecture-dockeree.md)
 - [Docker Engine Release Features](./evolution-of-docker-platform.md)
-   - [18.09](./beginners/1809.md)
+   - [18.09](./1809.md)
    - [19.03 Community Edition](./beginners/install/from-source/README.md#how-to-install-latest-docker-19030-beta-1-test-build)
      - [How to install latest Docker 19.03.0 Test Build](./beginners/install/from-source/README.md#how-to-install-latest-docker-19030-beta-1-test-build)<br>
      - [Support for ```docker context```](./beginners/install/from-source/README.md#support-for-docker-context)<br>
