@@ -1,3 +1,8 @@
+---
+layout: default
+title: Beginners Track - Linux Containers 
+description: collabnix | DockerLab | Docker - Beginners Track
+---
 ## What are Containers?
 
 Container comprises several building blocks, the two most important being namespaces and cgroups (control groups). Both of them are Linux kernel features.
@@ -52,9 +57,9 @@ restrictions on it.
 
 The following diagram illustrates the PID namespaces and how an out-of-memory (OOM) event can affect other processes outside a child namespace. The bubbles are the process in the system, and the numbers are their PID. Processes in the child namespace have their own PID. Initially, there is still free memory available in the system. Later, the processes in the child namespace exhaust the whole memory in the system. The kernel then starts the OOM killer to release memory, and the victims may be processes outside the child namespace:
 
-![My image](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/ns1.png)
+![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/ns1.png)
 
-![My image](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/ns2.png)
+![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/ns2.png)
 
 
 In light of this, cgroups is utilized here to limit resource usage. Like namespaces, it can set constraint on different kinds of system resources. Let's continue from our pid namespace, stress the CPU with yes > /dev/null, and monitor it with top:
@@ -113,11 +118,11 @@ A basic physical application installation needs server, storage, network equipme
 
 VMs get around some of these problems. A VM creates a logical system that sits atop the physical platform (see Figure 1). A Type 1 hypervisor, such as VMware ESXi or Microsoft Hyper-V, provides each VM with virtual hardware. The VM runs a guest OS, and the application software stack interprets everything below it the same as a physical stack. Virtualization utilizes resources better than physical setups, but the separate OS for each VM creates significant redundancy in base functionality.
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b000-container-type1.png)
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b000-container-type1.png)
 
 Containers provide greater flexibility than virtual and physical hardware stacks. A basic application container environment, as seen in Figure 2, runs on physical -- or virtual and physical -- hardware, a host OS and a container virtualization layer directly on the OS. Containers share the OS and its functions instead of running individual OS instances. This greatly reduces the resources required per application. Docker, Rkt (a CoreOS container runtime acquired by Red Hat), Linux Containers and Windows Server Containers operate generally in a similar manner.
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b000-containers1.png)
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b000-containers1.png)
   
 ## The benefits have downsides
 
@@ -125,7 +130,7 @@ OS sharing led to problems in early containers. Code that required raised privil
 
 The fact that all container applications must use the same underlying OS is a strength, as well as a weakness, of containerized applications. Every application container sharing a Linux OS, for example, must not only be based on Linux, but also on the same version and often patch level of that Linux distribution. That isn't always manageable in reality, as some applications have specific OS requirements.
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b00-containers-3.png)
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b00-containers-3.png)
 
 System containerization, demonstrated in Figure 3, resolves this tangle. System containers use the shared capabilities of the underlying OS. Where the application needs a certain patch level or functional library that the underlying platform lacks, a proxy namespace captures the call from the application and redirects it to the necessary code or library held within the container itself.
 
@@ -142,7 +147,7 @@ Performance benefits from hosting such functions in the cloud. Sharing the under
 Microservices also offer flexible, process-based methods to handle business needs in an application architecture. Rather than code that tries to guess at the business process and ends up constraining it, microservices create a composite application of dynamic functions pulled together in real time that enables a business to respond to market forces more rapidly than monolithic applications can.
 
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b00-containers-last.png)
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b00-containers-last.png)
 
 As shown in Figure 4, the container doesn't carry around physical code within it, but rather a list of required functions that it pulls together as required. The container manages areas such as technical contracts and process audits.
 
