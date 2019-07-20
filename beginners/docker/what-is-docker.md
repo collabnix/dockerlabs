@@ -1,3 +1,9 @@
+---
+layout: default
+title: Beginners Track - What is Docker?
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
 # What is Docker?
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/docker/images/dockerinc.jpg)
