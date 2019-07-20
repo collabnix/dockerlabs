@@ -10,46 +10,46 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 ## Docker Desktop for Windows
 
 [Install Docker Desktop for Windows](./docker-desktop-for-windows/lab01-getting-started.md)<br>
-[Geting Started with Windows Containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab02-switching-to-windows-container.md)<br>
-[Multi-Container Applications](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab03-multicontainerapp.md)
+[Geting Started with Windows Containers](./docker-desktop-for-windows/lab02-switching-to-windows-container.md)<br>
+[Multi-Container Applications](./docker-desktop-for-windows/lab03-multicontainerapp.md)
 
 
 ## Introduction to Docker Networking
 
-- [Understanding Docker Container Networking](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockercontainernetworking.md)
-- [Difference between Bridge Vs Overlay Network](https://github.com/collabnix/dockerlabs/blob/master/beginners/DiffBridgeVsOverlay.md)
-- [Verifying host-level settings that impact Docker networking](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/host-settings.md)
-- [What is MacVLAN networking?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/macvlan.md)
-   - [Implementing MacVLAN](https://github.com/collabnix/dockerlabs/blob/master/beginners/macvlan-010.md)
+- [Understanding Docker Container Networking](./beginners/dockercontainernetworking.md)
+- [Difference between Bridge Vs Overlay Network](./beginners/DiffBridgeVsOverlay.md)
+- [Verifying host-level settings that impact Docker networking](./networking/host-settings.md)
+- [What is MacVLAN networking?](./macvlan.md)
+   - [Implementing MacVLAN](./beginners/macvlan-010.md)
 - Docker Networking CLI
-  - [Disable Networking for Container](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/disableNetworkingToContainer.md)
-  - [Finding IP address of Container](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/FindingIPaddressofContainer.md)
-  - [Exposing a Container Port on the Host](https://github.com/collabnix/dockerlabs/blob/master/intermediate/networking/ExposingContainerPort.md)
-  - [Linking Containers in Docker](https://github.com/amitatha82/dockerlabs/blob/master/intermediate/networking/LinkingContainersinDocker.md)
+  - [Disable Networking for Container](./networking/disableNetworkingToContainer.md)
+  - [Finding IP address of Container](./networking/FindingIPaddressofContainer.md)
+  - [Exposing a Container Port on the Host](./networking/ExposingContainerPort.md)
+  - [Linking Containers in Docker](./networking/LinkingContainersinDocker.md)
  
 
 ## Docker Compose
 
-- [Docker Compose Introduction](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-compose/README.md)<br>
-- [Docker Compose Cheatsheet](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-compose/compose-cheatsheet.md)<br>
+- [Docker Compose Introduction](./docker-compose/README.md)<br>
+- [Docker Compose Cheatsheet](./docker-compose/compose-cheatsheet.md)<br>
 - [Docker compose with swarm secrets]()<br>
 
 ## Docker Swarm - Introduction
 
-- [What is Docker Swarm?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/what-is-docker-swarm.md)
-- [How Docker Swarm Mode works?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/how-docker-swarm-mode-works.md)
-- [What is difference between Docker Swarm(Classic Swarm) Vs Swarm Mode Vs Swarmkit?](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/difference-between-docker-swarm-vs-swarm-mode-vs-swarmkit.md)
+- [What is Docker Swarm?](./swarm/what-is-docker-swarm.md)
+- [How Docker Swarm Mode works?](./swarm/how-docker-swarm-mode-works.md)
+- [What is difference between Docker Swarm(Classic Swarm) Vs Swarm Mode Vs Swarmkit?](./swarm/difference-between-docker-swarm-vs-swarm-mode-vs-swarmkit.md)
 - [Docker Swarm - Under the Hood](http://collabnix.com/docker-1-12-swarm-mode-under-the-hood/)
 
 ## Getting Started with Docker Swarm - Lab Sessions
 
-- [Getting Started with Docker Swarm](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/README.md)
-- [Lab01 - Create Overlay Network](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab01-creating-overlay-network.md)
-- [Lab02 - Deploy Service](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab02-deploy-services.md)
-- [Lab03 - Inspecting State](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab03-inspecting-state.md)
-- [Lab04 - Scale Service](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab04-scale-services.md)
-- [Lab05 - Deploy the application components as Docker services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab05-deploy-application-components-as-docker-services.md)
-- [Lab06 - Drain a node and reschedule the containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab06-drain-a-node-and-reschedule-the-containers.md)
+- [Getting Started with Docker Swarm](./swarm/README.md)
+- [Lab01 - Create Overlay Network](./swarm/lab01-creating-overlay-network.md)
+- [Lab02 - Deploy Service](./swarm/lab02-deploy-services.md)
+- [Lab03 - Inspecting State](./swarm/lab03-inspecting-state.md)
+- [Lab04 - Scale Service](./swarm/lab04-scale-services.md)
+- [Lab05 - Deploy the application components as Docker services](./swarm/lab05-deploy-application-components-as-docker-services.md)
+- [Lab06 - Drain a node and reschedule the containers](./swarm/lab06-drain-a-node-and-reschedule-the-containers.md)
 - [Demonstrating Service Discovery under Docker Swarm Mode](http://collabnix.com/how-service-discovery-works-under-docker-1-12/)
 - [How to Lock Docker Swarm]()
 - [Demonstrating Swarm Synchronous Services]()
@@ -107,7 +107,7 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 
 ## Introduction to Docker Application Packages
 
-[A First Look at Docker Application Packages - "docker-app" ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-app/introduction.md)
+[A First Look at Docker Application Packages - "docker-app" ](./docker-app/introduction.md)
 
 
 ## Contributor:
