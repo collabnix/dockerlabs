@@ -1,15 +1,15 @@
 ---
 layout: default
 title: Intermediate Track
-description: collabnix | DockerLab | Docker - Beginners Track
+description: collabnix | DockerLab | Docker - Intermediate Track
 ---
 
 
-# Intermediate Course
+# Intermediate Track
 
 ## Docker Desktop for Windows
 
-[Install Docker Desktop for Windows](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab01-getting-started.md)<br>
+[Install Docker Desktop for Windows](./docker-desktop-for-windows/lab01-getting-started.md)<br>
 [Geting Started with Windows Containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab02-switching-to-windows-container.md)<br>
 [Multi-Container Applications](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab03-multicontainerapp.md)
 
