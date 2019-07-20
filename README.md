@@ -2,7 +2,7 @@
 
 
 
-![My image](https://github.com/collabnix/dockerlabs/blob/master/images/dockerlabs.jpeg)
+![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/dockerlabs.jpeg)
 
 Are you new to Docker? Looking out for building Your Career in DevOps & Containers Technology?  Welcome ! You are at the right place.
 
