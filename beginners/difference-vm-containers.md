@@ -4,7 +4,7 @@ Let us look at the component view of how virtual machines and containers are imp
 
 
 
-![Component View](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/difference-vm-containers.png)
+![Component View](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/difference-vm-containers.png)
 
 ## Virtual Machine
 
