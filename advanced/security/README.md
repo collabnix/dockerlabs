@@ -8,7 +8,7 @@ description: collabnix | DockerLab | Docker - Docker Security
 This directory contains tutorials on how to take advantage of a non-exhaustive collection of Docker security features. Moreover, the tutorials are designed to explain and demonstrate the strong security defaults in Docker for each feature.
 
 ## Docker
-* [Content Trust](trust/README.md)
+* [Content Trust](./trust/README.md)
 * [Content Trust Basics](trust-basics/README.md)
 * [Secrets Management](secrets/README.md)
 * [Secrets Management with Docker Datacenter](secrets-ddc/README.md)
