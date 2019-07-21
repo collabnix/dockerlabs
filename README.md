@@ -88,19 +88,19 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 ### Getting Started with Docker Image
 
-- [Running Hello World Example](https://github.com/collabnix/dockerlabs/blob/master/beginners/helloworld/README.md)
-- [Working with Docker Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/workingwithdockerimage.md) 
-- [Building Your First Alpine Docker Image and Push it to DockerHub](https://github.com/collabnix/dockerlabs/blob/master/beginners/building-your-first-alpine-container.md)
-- [Building Docker Image using Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md)
-- [Building a Private Docker Registry](https://github.com/collabnix/dockerlabs/blob/master/beginners/build-private-docker-registry.md)
+- [Running Hello World Example](https://collabnix.github.io/dockerlabs/beginners/helloworld/)
+- [Working with Docker Image](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html) 
+- [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
+- [Building Docker Image using Dockerfile](https://collabnix.github.io/dockerlabs/beginners/dockerfile/Writing-dockerfile.html)
+- [Building a Private Docker Registry](https://collabnix.github.io/dockerlabs/beginners/build-private-docker-registry.html)
 
 ### Docker Volumes
 
 - [Creating Volume Mount from Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/create-a-volume-mount-from-dockerfile.md)<br>
-- [Managing volumes through Docker CLI](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/managing-volumes-via-docker-cli.md)<br>
-- [Creating Volume Mount from **docker run** command & sharing same Volume Mounts among multiple containers](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/creating-volume-mount-from-dockercli.md)<br>
-- [Mounting host directory into container](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/bind-mounts.md)<br>
-- [Creating Volume with Alpine OS](https://github.com/collabnix/dockerlabs/blob/master/beginners/volume/Creating%20Volume%20with%20alphine.md)<br>
+- [Managing volumes through Docker CLI](https://collabnix.github.io/dockerlabs/beginners/volume/managing-volumes-via-docker-cli.html)<br>
+- [Creating Volume Mount from **docker run** command & sharing same Volume Mounts among multiple containers](https://collabnix.github.io/dockerlabs/beginners/volume/creating-volume-mount-from-dockercli.html)<br>
+- [Mounting host directory into container](https://collabnix.github.io/dockerlabs/beginners/volume/bind-mounts.html)<br>
+- [Creating Volume with Alpine OS](https://collabnix.github.io/dockerlabs/beginners/volume/Creating-Volume-with-alphine.html)<br>
 
 
 
