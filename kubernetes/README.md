@@ -41,7 +41,7 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
    - Cloud Platform
      - [Google Cloud Platform](./beginners/install-k8s-on-GCP-platform.md)
    - IoT Platform
-     - [K3s on Raspberry Pi](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
+     - [K3s on Raspberry Pi](./beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
    
 [Kubernetes Hands-on Lab #1 – Setting up 5-Node K8s Cluster](https://collabnix.com/kubernetes-hands-on-lab-1-setting-up-5-node-k8s-cluster/)<br>
 [Kubernetes Hands-on Lab #2 – Running Our First Nginx Cluster](https://collabnix.com/kubernetes-hands-on-lab-2-running-our-first-nginx-cluster/)<br>
@@ -50,15 +50,15 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 ## Kubernetes Workshop
 
-- [Lab #00: Running Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab00-running-nginx-pod/README.md)<br>
-- [Lab #01: Creating Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab01-creating-nginx-pod/README.md)<br>
-- [Lab #02: Deleting Nginx Pod](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/beginners/workshop/lab02-deleting-pod)<br>
-- [Lab #03: Creating a Deployment with 3 replicas of NGINX service](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab03-creating-deployment-3replicas-nginx/README.md)<br>
-- [Lab #04: Scaling the Deployment](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab04-scaling-the-deployment/README.md)<br>
+- [Lab #00: Running Nginx Pod](./beginners/workshop/lab00-running-nginx-pod/README.md)<br>
+- [Lab #01: Creating Nginx Pod](./beginners/workshop/lab01-creating-nginx-pod/README.md)<br>
+- [Lab #02: Deleting Nginx Pod](./beginners/workshop/lab02-deleting-pod)<br>
+- [Lab #03: Creating a Deployment with 3 replicas of NGINX service](./beginners/workshop/lab03-creating-deployment-3replicas-nginx/README.md)<br>
+- [Lab #04: Scaling the Deployment](./beginners/workshop/lab04-scaling-the-deployment/README.md)<br>
 
 ## Kubernetes Core Concept
 
-- [Kubernetes Developer Concept](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/k8s-core-concepts.md)
+- [Kubernetes Developer Concept](./beginners/k8s-core-concepts.md)
 
 ## Helm
 
@@ -70,8 +70,8 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 ## Prometheus 
 
-[How To Setup Prometheus Monitoring On Kubernetes Cluster](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/Prometheus_Monitoring_On_Kubernetes_Cluster.md)<br>
-[Setting up Alert Manager on Kubernetes](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/alert_manager_on_K8.md)<br>
+[How To Setup Prometheus Monitoring On Kubernetes Cluster](./beginners/Prometheus_Monitoring_On_Kubernetes_Cluster.md)<br>
+[Setting up Alert Manager on Kubernetes](./beginners/alert_manager_on_K8.md)<br>
 
 ## Contributors
 
