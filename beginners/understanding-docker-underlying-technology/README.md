@@ -29,5 +29,5 @@ layers, from Figure 1.2, are already baked. We simply need to bake the pistachio
 layer, assemble, and add the icing (writable layer).
 
 
-[Proceed >> Can container communication cross over to noncontainerized apps?](https://github.com/collabnix/dockerlabs/blob/master/beginners/linux-comm-containers.md)
+[Proceed >> Can container communication cross over to noncontainerized apps?](https://collabnix.github.io/dockerlabs/beginners/linux-comm-containers.html)
 
