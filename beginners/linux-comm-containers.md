@@ -1,3 +1,9 @@
+---
+layout: default
+title: Beginners Track - Can container communication cross over to noncontainerized apps?
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
 # Can container communication cross over to noncontainerized apps?
 
 Let us start with a popular question - Can an application having Python as a container, run SQL queries on an external Microsoft SQL database and publish the results on an Apache web server container? 
