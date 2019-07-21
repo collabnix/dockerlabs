@@ -12,4 +12,4 @@ No. Docker technology was initially built on top of the LXC technology—what mo
 
 Traditional Linux containers use an init system that can manage multiple processes. This means entire applications can run as one. The Docker technology encourages applications to be broken down into their separate processes and provides the tools to do that. This granular approach has its advantages.
 
-[Proceed > What are Containers? ](https://github.com/collabnix/dockerlabs/blob/master/beginners/linux-containers.md)
+[Proceed > What are Containers? ](https://collabnix.github.io/dockerlabs/beginners/linux-containers.html)
