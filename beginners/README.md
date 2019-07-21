@@ -19,7 +19,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
 - [Understanding Docker Underlying Technologies](./understanding-docker-underlying-technology//README.md)
 - [What happen when Containers are Launched?](./container-runtime.md)
 - [Can container communication cross over to noncontainerized apps?](./linux-comm-containers.md)
-- [Architecture of Docker](./architecture-of-a-docker.md)
+- [Architecture of Docker](./architecture-of-docker.md)
    - [Docker Enterprise Edition](./architecture-dockeree.md)
 - [Docker Engine Release Features](./evolution-of-docker-platform.md)
    - [18.09](./1809.md)
