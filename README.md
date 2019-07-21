@@ -1,4 +1,4 @@
-# Welcome to DockerLabs  [![Say Thanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/collabnix) [![Slack ](https://img.shields.io/badge/collabnix/dockerlabs-pink.svg)](https://tinyurl.com/y973wcq8) 
+# Welcome to DockerLabs  [![Say Thanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/collabnix) [![Slack ](https://img.shields.io/badge/collabnix/dockerlabs-pink.svg)](https://tinyurl.com/y973wcq8) ![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fcollabnix.github.io%2Fdockerlabs%2F)
 
 
 
