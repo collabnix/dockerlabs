@@ -1,3 +1,10 @@
+---
+layout: default
+title: Kubernetes - How To Setup Prometheus Monitoring On Kubernetes Cluster
+description: collabnix | DockerLab | Kubernetes - Beginners Track
+---
+
+
 # How To Setup Prometheus Monitoring On Kubernetes Cluster
 
 ```git clone https://github.com/sangam14/Prometheus-Monitoring-with-k8```
