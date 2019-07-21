@@ -67,4 +67,4 @@ Apples to apples comparison: On a physical host with a certain configuration and
  
 Answer to this question so far cannot be ascertained but depending upon their configurations and constraints one could say that containers are overcoming virtual machines. Application design is the one standpoint suggesting which one of the two should be chosen. If application is designed to provide scalability and high availability then containers are the best choice else application can be placed in a virtual machine, though Docker containers have surely challenged  virtualization market with containers. Well, keeping the debate aside, it is easy to say that containers in Virtual Machines are twice as robust as one without the other.
 
-[Proceed >> Similarity between Docker & Virtual Machine](https://github.com/collabnix/dockerlabs/blob/master/beginners/similarity-vm-docker.md)
+[Proceed >> Similarity between Docker & Virtual Machine](https://collabnix.github.io/dockerlabs/beginners/similarity-vm-docker.html)
