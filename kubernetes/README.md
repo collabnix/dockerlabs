@@ -10,9 +10,9 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 - [Deep Dive into Kubernetes Architecture](./what-is-kubernetes/README.md#what-is-k8s-made-up-of)
 
 # Kubernetes Architecture
-   - [Understanding the kubectl](./what-is-kubect.md)
+   - [Understanding the kubectl](./beginners/what-is-kubect.md)
    - Single and multi-node clusters
-   - [Examining the control plane](./Kubernetes_Control_Plane.md)<br>
+   - [Examining the control plane](./beginners/Kubernetes_Control_Plane.md)<br>
    - Persisting changes in etcd
    - Syncing changes with RAFT
    - Event-based architecture
@@ -32,7 +32,7 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 # Installation & Getting Started
 
-- [Getting Started with K8s on PWK Platform](./getting-started-on-pwk.md)
+- [Getting Started with K8s on PWK Platform](./beginners/getting-started-on-pwk.md)
 
 - Setting up Kubernetes on
    - Linux
