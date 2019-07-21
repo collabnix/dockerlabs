@@ -6,8 +6,8 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 # Getting Started with Kubernetes
 
-- [What is Kubernetes & Why is it damn popular?](./what-is-kubernetes/README.md#what-is-kubernetes)
-- [Deep Dive into Kubernetes Architecture](./what-is-kubernetes/README.md#what-is-k8s-made-up-of)
+- [What is Kubernetes & Why is it damn popular?](../beginners/what-is-kubernetes/README.md#what-is-kubernetes)
+- [Deep Dive into Kubernetes Architecture](./beginners/what-is-kubernetes/README.md#what-is-k8s-made-up-of)
 
 # Kubernetes Architecture
    - [Understanding the kubectl](./beginners/what-is-kubect.md)
