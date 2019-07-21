@@ -44,7 +44,7 @@ Below are the list of categories:
 
 - [Kubernetes for Beginners](./kubernetes/README.md)
 
-- [Kubernetes for Intermediate](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+- [Kubernetes for Intermediate](./kubernetes/Intermediate/README.md)
 
 - [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
