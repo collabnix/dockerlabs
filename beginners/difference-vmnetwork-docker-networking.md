@@ -9,4 +9,4 @@ description: collabnix | DockerLab | Docker - Beginners Track
 
  ![Component View](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/docker-networking-vs-vm-network.png)
 
-[Proceed >> Understanding Docker Underlying Technologies](https://github.com/collabnix/dockerlabs/blob/master/beginners/understanding-docker-underlying-technology/README.md)
+[Proceed >> Understanding Docker Underlying Technologies](https://collabnix.github.io/dockerlabs/beginners/understanding-docker-underlying-technology/README.html)
