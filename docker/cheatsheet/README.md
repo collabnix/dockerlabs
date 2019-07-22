@@ -5,7 +5,7 @@
 
 
 
-![full](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet8.png)
+![full](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet8.png)
 
 <br>
 <br>
@@ -15,30 +15,30 @@
 <br>
 
 
-![container_management](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet1.png)
+![container_management](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet1.png)
 
 ## Inspecting The Container 
 <br>
 
-![Inspecting The Container](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet3.png)
+![Inspecting The Container](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet3.png)
 ## Interacting with Container
-![Interacting with Container1](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet4.png)
+![Interacting with Container1](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet4.png)
 
 ## Image Management Commands 
 <br>
 
- ![image management commands](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet5.png)
+ ![image management commands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet5.png)
  
  ## Image Transfer Comnands 
  <br>
  
- ![Image Transfer Comnands](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet6.png)
+ ![Image Transfer Comnands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png)
 
 
 ## Builder Main Commands
 <br>
 
-![Builder Main Commands](https://github.com/sangam14/dockercheatsheets/blob/master/dockercheatsheet7.png)
+![Builder Main Commands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet7.png)
 
 
 
@@ -510,6 +510,6 @@ docker kill $(docekr ps -q )
 
 ## Contributor - 
 
-Sangam biradar - smbiradar14@gmail.com - engineITops.github.io 
+Sangam biradar - smbiradar14@gmail.com - engineITops.icu
 
 
