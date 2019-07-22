@@ -1,6 +1,5 @@
 # Install and configure a multi-master Kubernetes cluster with kubeadm 
 
-![img](https://github.com/apurvabhandari/kubernetes/blob/master/kubernets-logo.png)
 
 ### Prerequisites
 For this lab, we will use a standard Ubuntu 16.04 or 18.04 installation as a base image for the seven machines needed. The machines will all be configured on the same network, 10.10.10.0/24, and this network needs to have access to the Internet.
