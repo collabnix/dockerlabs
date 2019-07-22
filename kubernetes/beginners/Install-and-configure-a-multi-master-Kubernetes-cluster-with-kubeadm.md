@@ -14,7 +14,7 @@ We also need an IP range for the pods. This range will be 10.30.0.0/16, but it i
 
 I will use my Linux desktop as a client machine to generate all the necessary certificates, but also to manage the Kubernetes cluster. If you don't have a Linux desktop, you can use the HAProxy machine to do the same thing.<br>
 
-![img](https://github.com/apurvabhandari/kubernetes/blob/master/multi-master-with-HA.png) <br>
+![img](https://raw.githubusercontent.com/apurvabhandari/kubernetes/master/multi-master-with-HA.png) <br>
 
 ### Installing the client tools
 We will need two tools on the client machine: the Cloud Flare SSL tool to generate the different certificates, and the Kubernetes client, kubectl, to manage the Kubernetes cluster.
