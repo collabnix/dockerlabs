@@ -5,6 +5,8 @@ description: collabnix | DockerLab | Docker - Beginners Track
 ---
 
 Note: readme.md / dir file name must be like this ` ex:docker_beginner_track `[don't add spaces] 
+
+if your not able to understant how to contribute ? please dm in collabnix slack #issue channel 
 ```
 ---
 layout: default
