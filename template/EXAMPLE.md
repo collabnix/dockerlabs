@@ -1,3 +1,18 @@
+---
+layout: default
+title: Beginners Track
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
+Note: readme.md / dir file name must be like this ` ex:docker_beginner_track `[don't add spaces] 
+```
+---
+layout: default
+title: Track name 
+description: collabnix | DockerLab | Docker/k8s - track name 
+---
+```
+Note: add above code top of the(in header) readme.md  
 
 # Demonstrating Hello World Example
 
@@ -36,7 +51,9 @@ $ docker run hello-world
 
 ```
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b301_helloworld.png)
+If you want to add some img to readme.md make sure it will be like 'https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b301_helloworld.png' raw format. you will get file link from download button.
+
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b301_helloworld.png)
 
 
 
