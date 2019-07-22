@@ -109,11 +109,11 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 Thank you so much for showing your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials.
 
-[Guide to submitting your own tutorial](https://github.com/collabnix/dockerlabs/tree/master/CONTRIBUTING.md)<br>
-[Template for writing Tutorial Page](https://github.com/collabnix/dockerlabs/tree/master/template/EXAMPLE.md)
+[Guide to submitting your own tutorial](./CONTRIBUTING.md)<br>
+[Template for writing Tutorial Page](./template/EXAMPLE.md)
 
 ## License
 
-[MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md)
+[MIT](./LICENSE.md)
 
    [Proceed to Beginners Track >>](./beginners/README.md)
