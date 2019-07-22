@@ -473,4 +473,4 @@ $ kubectl get nodes
 
 ## Contributor
 
-- [Apurva Bhandari](apurvbhandari@gmail.com)
+- [Apurva Bhandari](https://www.linkedin.com/in/apurvabhandari-linux/)
