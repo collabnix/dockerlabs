@@ -46,6 +46,7 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 [Kubernetes Hands-on Lab #1 – Setting up 5-Node K8s Cluster](https://collabnix.com/kubernetes-hands-on-lab-1-setting-up-5-node-k8s-cluster/)<br>
 [Kubernetes Hands-on Lab #2 – Running Our First Nginx Cluster](https://collabnix.com/kubernetes-hands-on-lab-2-running-our-first-nginx-cluster/)<br>
 [Kubernetes Hands-on Lab #3 – Deploy Istio Mesh on K8s Cluster](https://collabnix.com/kubernetes-hands-on-lab-3-deploy-istio-mesh/)
+[Install and configure a multi-master Kubernetes cluster with kubeadm](./beginners/Install-and-configure-a-multi-master-Kubernetes-cluster-with-kubeadm.md)
 
 
 ## Kubernetes Workshop
