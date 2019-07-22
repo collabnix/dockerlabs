@@ -28,7 +28,7 @@
 
  ![image management commands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet5.png)
  
- ## Image Transfer Comnands 
+## Image Transfer Comnands 
  <br>
  
  ![Image Transfer Comnands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png)
