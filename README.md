@@ -84,7 +84,7 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 - [Docker + Django + PostgreSQL](https://github.com/collabnix/dockerlabs/blob/master/solution/django-postgres/readme.md)
 
 
-## Docker WorkShop for Beginners - 3 Hours
+## Docker WorkShop for Beginners 
 
 ### Getting Started with Docker Image
 
