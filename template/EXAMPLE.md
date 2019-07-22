@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Beginners Track
+title: Beginners Track - template 
 description: collabnix | DockerLab | Docker - Beginners Track
 ---
 
