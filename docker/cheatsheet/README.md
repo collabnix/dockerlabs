@@ -3,8 +3,6 @@
 
 ## Complete Docker CLI 
 
-
-
 ![full](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet8.png)
 
 <br>
@@ -21,6 +19,7 @@
 <br>
 
 ![Inspecting The Container](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet3.png)
+
 ## Interacting with Container
 ![Interacting with Container1](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet4.png)
 
