@@ -48,9 +48,9 @@ Below are the list of categories:
 
 - [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
-- [Kubernetes for CIOs/CEOs](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/leadership/README.md)
+- [Kubernetes for CIOs/CEOs](./kubernetes/leadership/README.md)
 
-- [Kubernetes Cheatsheets](https://github.com/wikitops/dockerlabs/tree/master/kubernetes/cheatsheets)
+- [Kubernetes Cheatsheets](./kubernetes/cheatsheets)
 
 - [Kubernetes Interview Questions]()
 
@@ -59,13 +59,13 @@ Below are the list of categories:
 
 In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
 
-- [Docker + AWS + Kafka + Docker Swarm](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm-mode/beginner-tutorial/swarm-on-aws/README.md)
+- [Docker + AWS + Kafka + Docker Swarm](./intermediate/swarm-mode/beginner-tutorial/swarm-on-aws/README.md)
 
-- [Docker + WordPress + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/solution/wordpress/README.md)
+- [Docker + WordPress + Docker Swarm](./solution/wordpress/README.md)
 
-- [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/ELK/README.md)
+- [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md)
 
-- [Docker, Prometheus Stack + Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/docker-prometheus-swarm/README.md)
+- [Docker, Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md)
 
 - [Docker + Apache Jmeter + Docker Swarm Mode](https://github.com/collabnix/dockerlabs/tree/master/play-with-docker/jmeter-docker/README.md)
 
