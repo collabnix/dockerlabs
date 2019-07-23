@@ -36,7 +36,7 @@ $ docker run hello-world
 
 ```
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b301_helloworld.png)
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b301_helloworld.png)
 
 
 
@@ -175,4 +175,4 @@ $ docker inspect 4ab
 [Ajeet Singh Raina](ajeetraina@gmail.com)
 
 
-[Next: Working with Docker Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/workingwithdockerimage.md)
+[Next: Working with Docker Images](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html)
