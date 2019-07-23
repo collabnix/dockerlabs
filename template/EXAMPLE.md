@@ -190,4 +190,4 @@ $ docker inspect 4ab
 Ajeet Singh Raina
 
 
-[Next: Working with Docker Images](https://github.com/collabnix/dockerlabs/blob/master/beginners/b300/b302-workingwithdockerimage.md)
+[Next: Working with Docker Images](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html)
