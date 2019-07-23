@@ -36,7 +36,7 @@ $ docker run hello-world
 
 ```
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/b301_helloworld.png)
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b301_helloworld.png)
 
 
 
