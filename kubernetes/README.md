@@ -17,7 +17,7 @@
    - Exploring multi-master setup in Monzo
    - Creating a 3 node cluster with kubeadm
    - Installing an overlay network
-   - Installing an Ingress controller
+   - [Installing an Ingress controller](https://github.com/apurvabhandari/dockerlabs/blob/master/kubernetes/beginners/Installing-Nginx-Ingress-controller.md)
    - Exploring the API without kubectl
    - Taking down the cluster one node at the time
    
