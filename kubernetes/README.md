@@ -15,7 +15,7 @@
    - Setting up a multi-master cluster
    - Investigating multi-master setup in EKS
    - Exploring multi-master setup in Monzo
-   - Creating a 3 node cluster with kubeadm
+   - [Creating a 3 node cluster with kubeadm](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/Install-and-configure-a-multi-master-Kubernetes-cluster-with-kubeadm.md)
    - Installing an overlay network
    - [Installing an Ingress controller](https://github.com/apurvabhandari/dockerlabs/blob/master/kubernetes/beginners/Installing-Nginx-Ingress-controller.md)
    - Exploring the API without kubectl
