@@ -94,6 +94,11 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 - [Building Docker Image using Dockerfile](https://collabnix.github.io/dockerlabs/beginners/dockerfile/Writing-dockerfile.html)
 - [Building a Private Docker Registry](https://collabnix.github.io/dockerlabs/beginners/build-private-docker-registry.html)
 
+## Accessing Docker Container
+
+- [Accessing the Container Shell](https://github.com/collabnix/dockerlabs/blob/master/beginners/accessing-the-container.md)<br>
+- [Running a Command inside running Container]()<br>
+
 ### Docker Volumes
 
 - [Creating Volume Mount from Dockerfile](https://collabnix.github.io/dockerlabs/beginners/volume/create-a-volume-mount-from-dockerfile.html)<br>
