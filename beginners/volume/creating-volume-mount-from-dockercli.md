@@ -27,68 +27,107 @@
 
 ## Volumes can be shared across containers
 
-You can start a container with *exactly the same volumes* as another one.
+## Preparations
 
-The new container will have the same volumes, in the same directories.
-
-They will contain exactly the same thing, and remain in sync.
-
-Under the hood, they are actually the same directories on the host anyway.
-
-This is done using the `--volumes-from` flag for `docker run`.
-
-We will see an example in the following slides.
-
-
-## Sharing app server logs with another container
-
-Let's start a Tomcat container:
-
-```bash
-$ docker run --name webapp -d -p 8080:8080 -v /usr/local/tomcat/logs tomcat
-```
-
-Now, start an `alpine` container accessing the same volume:
-
-```bash
-$ docker run --volumes-from webapp alpine sh -c "tail -f /usr/local/tomcat/logs/*"
-```
-
-Then, from another window, send requests to our Tomcat container:
-```bash
-$ curl localhost:8080
-```
-
-
-Create a file with name volume_test and paste the following content:
+ - Clean your docker host using the commands :
 
 ```
-FROM ubuntu:latest
-RUN mkdir /data
-ENV MESSAGE=HI
-ENV FILENAME=test
-WORKDIR /data
-ENTRYPOINT echo ${MESSAGE} > ${FILENAME} && ls
+$ docker rm -f $(docker ps -a -q)
 ```
 
-Execute following commands:
-
 ```
-docker build -f volume_test -t collabnix/volume_test:1 .
+$ docker volume rm $(docker volume ls -q)
+```
 
-docker run --env MESSAGE="GOOD Morning" --env FILENAME=morning_message\
- --mount type=volume,source=demo,target=/data \
- collabnix/volume_test:1
- 
- docker run --env MESSAGE="GOOD Afternoon" --env FILENAME=afternoon_message\
-  --mount type=volume,source=demo,target=/data \
-  collabnix/volume_test:1
+## Task 
 
-docker volume ls
+1. The Task for this lab is to create a volume, call it my_volume.
 
-cd /var/lib/docker/volumes/demo/_data
+2. you should than run a simple an thin container and attach a volume to it.
+use the image selaworkshops/busybox:latest and use any name to the mounted volume directory (e.g : data)
 
-ls
+3. change something in the volume folder , e.g : add a file with some content.
 
-cat morning_message &&  cat afternoon_message
+4. create a second volume mounted to the same volume , make sure the file you created in step 3 exists !
+
+
+## Instructions
+
+ - Display existing volumes:
+```
+$ docker volume ls
+```
+
+ - Create a new volume:
+```
+$ docker volume create my-volume
+```
+
+ - Inspect the new volume to find the mountpoint (volume location):
+```
+$ docker volume inspect my-volume
+```
+```
+[
+    {
+        "CreatedAt": "2018-06-13T20:36:15Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/my-volume/_data",
+        "Name": "my-volume",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+```
+
+ - Let's run a container and mount the created volume to the root:
+```
+$ docker run -it -v my-volume:/data --name my-container selaworkshops/busybox:latest
+```
+
+ - Create a new file under /data:
+```
+$ cd /data
+$ echo "hello" > hello.txt
+$ ls
+```
+
+ - Open other terminal instance and run other container with the same volume:
+```
+$ docker run -it -v my-volume:/data --name my-container-2 selaworkshops/busybox:latest
+```
+
+ - Inspect the /data folder (the created file will be there):
+```
+$ cd data
+$ ls
+```
+
+ - Exit from both containers and delete them:
+```
+$ exit
+$ docker rm -f my-container my-container-2
+```
+
+ - Ensure the containers were deleted
+```
+$ docker ps -a
+```
+
+ - Run a new container attaching the created volume:
+```
+$ docker run -it -v my-volume:/data --name new-container selaworkshops/busybox:latest
+```
+
+ - Inspect the /data folder (the created file will be there):
+```
+$ cd data
+$ ls
+```
+
+ - Exit from the container and delete it:
+```
+$ exit
+$ docker rm -f new-container
 ```
