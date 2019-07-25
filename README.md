@@ -96,9 +96,9 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 ## Accessing & Managing Docker Container
 
-- [Accessing the Container Shell](https://github.com/collabnix/dockerlabs/blob/master/beginners/accessing-the-container.md)<br>
-- [Running a Command inside running Container](https://github.com/collabnix/dockerlabs/blob/master/beginners/running-command-inside-running-container.md)<br>
-- [Managing Docker Containers](https://github.com/collabnix/dockerlabs/blob/master/beginners/managing-containers.md)<br>
+- [Accessing the Container Shell](http://dockerlabs.collabnix.com/beginners/accessing-the-container.html)<br>
+- [Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)<br>
+- [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)<br>
 
 
 ### Docker Volumes
