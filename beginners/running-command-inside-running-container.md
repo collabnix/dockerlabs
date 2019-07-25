@@ -1,3 +1,9 @@
+---
+layout: default
+title: Beginners Track - Running a command inside running Container
+description: collabnix | DockerLab | Docker - Beginners Track
+--- 
+
 # Running a command inside running Container
 
 
