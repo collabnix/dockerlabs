@@ -1,3 +1,8 @@
+---
+layout: default
+title: Beginners Track -  Managing Docker containers
+description: collabnix | DockerLab | Docker - Beginners Track
+---
 # Managing Docker containers
 
 ## Tested Infrastructure
