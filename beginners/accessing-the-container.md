@@ -1,3 +1,9 @@
+---
+layout: default
+title: Beginners Track - Accessing the Container Shell
+description: collabnix | DockerLab | Docker - Beginners Track
+---
+
 # Accessing the Container Shell
 
 
