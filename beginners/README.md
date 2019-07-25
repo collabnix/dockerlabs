@@ -85,6 +85,12 @@ description: collabnix | DockerLab | Docker - Beginners Track
 - [Difference between Docker Compose Vs Dockerfile](./difference-compose-dockerfile.md)
 - [How to use ARG to pass enviornmental variable at runtime](./dockerfile/arg-dockerfile-runtime.md)
 
+## Accessing & Managing Docker Container
+
+- [Accessing the Container Shell](./accessing-the-container.md)<br>
+- [Running a Command inside running Container](./running-command-inside-running-container.md)<br>
+- [Managing Docker Containers](./managing-containers.md)<br>
+
 # Getting Started with Docker Volume
 
 [Creating Volume Mount from Dockerfile](./volume/create-a-volume-mount-from-dockerfile.md)<br>
