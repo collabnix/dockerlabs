@@ -21,4 +21,4 @@ Although no longer recommended, Docker links can also join multiple containers t
 * Please Note - Docker Inc. states that the functionality of Docker links was incorp
 
 
-[Proceed >> Architecture of Docker Platform](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-of-docker.md)
+[Proceed >> Architecture of Docker Platform](http://dockerlabs.collabnix.com/beginners/architecture-of-docker.html)
