@@ -9,4 +9,4 @@ description: collabnix | DockerLab | Docker - Beginners Track
 
 
 
-[Proceed >> Architecture of Docker Enterprise 2.0](https://github.com/collabnix/dockerlabs/blob/master/beginners/architecture-dockeree.md)
+[Proceed >> Architecture of Docker Enterprise 2.0](http://dockerlabs.collabnix.com/beginners/architecture-dockeree.html)
