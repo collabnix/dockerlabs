@@ -1,0 +1,12 @@
+redis-serv:
+    image: redis
+    hostname: redis-serv
+    command: redis-server --requirepass password123
+    ports:
+      - '6379:6379'
+
+redis-client:
+  links:
+    redis-serv:redis-client
+    hostname: redis-client
+    command: redis-cli -h redis-serv 6379
