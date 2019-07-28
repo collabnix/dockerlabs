@@ -1,7 +1,7 @@
 redis:
   image: redis
-  container_name: my_redis
-  command: redis-server --requirepass yourpassword
+  container_name: myredis
+  command: redis-server --requirepass password123
   ports:
     - "6379:6379"
   volumes:
