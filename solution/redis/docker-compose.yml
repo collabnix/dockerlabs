@@ -1,17 +1,8 @@
-version: "3.6"
-
-services:
-
-  redis-serv:
-    image: redis
-    hostname: redis-serv
-    command: redis-server --requirepass password123
-    ports:
-      - '6379:6379'
-
-  redis-client:
-    image: redis
-    links:
-      - redis-serv:redis-client
-    hostname: redis-client
-    command: redis-cli -h redis-serv 6379
+redis:
+  image: redis
+  container_name: my_redis
+  command: redis-server --requirepass yourpassword
+  ports:
+    - "6379:6379"
+  volumes:
+    - ./data:/data
