@@ -201,7 +201,7 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 
 ### Deployment:
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s_deployment.png)
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/kubernetes/beginners/what-is-kubernetes/k8s_deployment.png)
 
 - A deployment is a blueprint for the Pods to be create (see Pod)
 - Handles update of its respective Pods.
@@ -211,9 +211,9 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 - Deployment can scale up replicas of Pods.
 - kubernetes-deployment
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-deployment%20(1).png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-deployment%20(1).png)
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-deployment%20(1).png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-deployment%20(1).png)
 
 
 ### ConfigMap
@@ -232,7 +232,7 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 
 ### Service:
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-service.png)
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/kubernetes/beginners/what-is-kubernetes/k8s-service.png)
 
 - A service is responsible for making our Pods discoverable inside the network or exposing them to the internet
 - A Service identifies Pods by its LabelSelector
