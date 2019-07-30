@@ -70,7 +70,7 @@ Kubernetes Cluster is primarily made up of following components
 
 ## Master Node and its Components:
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubelet.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-kubelet.png)
 
 - The main machine that controls the nodes
 - Main entrypoint for all administrative tasks
@@ -145,7 +145,7 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 ## Worker Node and its components:
 
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-worker-node.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-worker-node.png)
 
 - It is a worker machine in Kubernetes (used to be known as minion)
 - This machine performs the requested tasks. Each Node is controlled by the Master Node
@@ -162,7 +162,7 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 - The kubelet takes a set of PodSpecs that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running and healthy.
 - Kubelet does not manage the container which are not created by Kubernetes .
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubelet.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-kubelet.png)
 
 
 ### Container Runtime
@@ -177,7 +177,7 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 
 - A CLI tool for Kubernetes
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubectl.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-kubectl.png)
 
 
 ### Kubernetes Pod:
@@ -191,7 +191,7 @@ Component on the master that exposes the Kubernetes API. It is the front-end for
 - Pods are up and running until someone (or a controller) destroys them
 - Any data saved inside the Pod will disappear without a persistent storage
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-pod-new.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-pod-new.png)
 
 ### ReplicaSet
 - A Repliaset runs `n` number of pods , based on the provided kubernetes object template.
