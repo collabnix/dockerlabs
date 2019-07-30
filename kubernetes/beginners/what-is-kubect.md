@@ -13,7 +13,8 @@ Consequently, the main job of kubectl is to carry out HTTP requests to the Kuber
 
 
 
-![img](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic.svg)
+![img]()
+<img src= https://raw.githubusercontent.com/sangam14/kubernets101/master/pic.svg>
 
 Kubernetes is a fully resource-centred system. That means, Kubernetes maintains an internal state of resources, and all Kubernetes operations are CRUD operations on these resources. You fully control Kubernetes by manipulating these resources (and Kubernetes figures out what to do based on the current state of resources). For this reason, the Kubernetes API reference is organised as a list of resource types with their associated operations.
 
