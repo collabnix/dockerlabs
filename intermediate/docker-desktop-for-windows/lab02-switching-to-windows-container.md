@@ -74,4 +74,4 @@ Images stored on Docker Hub are available in the web interface, and public image
 
 ### Next Steps
 
-Continue to Step 3: [Multi-Container Applications](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab03-multicontainerapp.md), to see how to build and run a web application which uses an ASP.NET Core web application and a SQL Server database - all using Docker Windows containers.
+Continue to Step 3: [Multi-Container Applications](http://dockerlabs.collabnix.com/intermediate/docker-desktop-for-windows/lab03-multicontainerapp.html), to see how to build and run a web application which uses an ASP.NET Core web application and a SQL Server database - all using Docker Windows containers.
