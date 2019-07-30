@@ -13,7 +13,7 @@ Consequently, the main job of kubectl is to carry out HTTP requests to the Kuber
 
 
 
-![img](https://github.com/sangam14/kubernets101/blob/master/pic.svg)
+![img](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic.svg)
 
 Kubernetes is a fully resource-centred system. That means, Kubernetes maintains an internal state of resources, and all Kubernetes operations are CRUD operations on these resources. You fully control Kubernetes by manipulating these resources (and Kubernetes figures out what to do based on the current state of resources). For this reason, the Kubernetes API reference is organised as a list of resource types with their associated operations.
 
@@ -64,34 +64,34 @@ Assume, you just executed kubectl create -f replicaset.yaml, upon which kubectl 
 What effects causes this in the cluster? Watch it below:
 
 
-![img1](https://github.com/sangam14/kubernets101/blob/master/pic1.svg)
+![img1](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic1.svg)
 
 
 Following ```kubectl create -f replicaset.yaml```, the API server saves your ReplicaSet resource definition in the storage backend.
 
-![img2](https://github.com/sangam14/kubernets101/blob/master/pic2.svg)
+![img2](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic2.svg)
 
 This triggers the ReplicaSet controller in the controller manager, who watches for creations, updates, and deletions of ReplicaSet resources.
 
 
 
-![img3](https://github.com/sangam14/kubernets101/blob/master/pic3.svg)
+![img3](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic3.svg)
 
 The ReplicaSet controller creates a Pod definition for each replica of the ReplicaSet (according to the Pod template in the ReplicaSet definition) and saves them in the storage backend.
 
 
-![img4](https://github.com/sangam14/kubernets101/blob/master/pic4.svg)
+![img4](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic4.svg)
 
 This triggers the scheduler who watches for Pods that have not yet been assigned to a worker node.
 
-![img5](https://github.com/sangam14/kubernets101/blob/master/pic5.svg)
+![img5](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic5.svg)
 
 The scheduler chooses a suitable worker node for each Pod and adds this information to the Pod definitions in the storage backend.
 
-![img6](https://github.com/sangam14/kubernets101/blob/master/pic6.svg)
+![img6](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic6.svg)
 
 This triggers the kubelet on the worker node that the Pods have been scheduled to, who watches for Pods that have been scheduled to its worker node.
-![img7](https://github.com/sangam14/kubernets101/blob/master/pic7.svg)
+![img7](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic7.svg)
 The kubelet reads the Pod definitions from the storage backend and instructs the container runtime (Docker, for example) to run the containers on the worker node.
 
 
@@ -145,7 +145,7 @@ Command completion allows you to auto-complete individual parts of kubectl comma
 
 Here you can see kubectl command completion in action:
 
-![img8](https://github.com/sangam14/kubernets101/blob/master/pic8.gif)
+![img8](https://raw.githubusercontent.com/sangam14/kubernets101/master/pic8.gif)
 
 
 Command completion is available for the Bash and Zsh shells.
