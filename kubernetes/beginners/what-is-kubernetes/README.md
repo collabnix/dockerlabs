@@ -46,7 +46,7 @@ Containers are becoming popular because they have many benefits. Some of the con
 
 # What is K8s made up of?
 
-![alt text](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/what-is-kubernetes/k8s-architecture.png)
+![alt text](https://raw.githubusercontent.com/collabnix/dockerlabs/master/kubernetes/beginners/what-is-kubernetes/k8s-architecture.png)
 
 Kubernetes Cluster is primarily made up of following components
 - Master:
