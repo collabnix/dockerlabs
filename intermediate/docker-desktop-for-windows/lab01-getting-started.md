@@ -70,7 +70,7 @@ PS C:\Users\Ajeet_Raina> docker run -d -p 80:80 nginx
 PS C:\Users\Ajeet_Raina> docker run -d -p 81:80 ajeetraina/hellowhale
 33e673c86f63990cdac2c155bc6bfe20a7b7809b82434908bc38517ae029d0e8
 ```
-![My Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/install/windows/docker-desktop-for-windows/win_image2.png)
+![My Image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/install/windows/docker-desktop-for-windows/win_image2.png)
 
 ## Try running WIndows Based Docker Container
 
@@ -168,4 +168,4 @@ Creating visualizer_visualizer_1 ... done
 PS C:\Users\Ajeet_Raina\docker101\play-with-docker\visualizer>
 ```
 
-[Next >> Switching to Windows Containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-desktop-for-windows/lab02-switching-to-windows-container.md)
+[Next >> Switching to Windows Containers](http://dockerlabs.collabnix.com/intermediate/docker-desktop-for-windows/lab02-switching-to-windows-container.html)
