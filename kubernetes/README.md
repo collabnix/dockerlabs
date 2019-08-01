@@ -26,7 +26,7 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
    - [Installing an Ingress controller](./beginners/Installing-Nginx-Ingress-controller.md)
    - Exploring the API without kubectl
    - Taking down the cluster one node at the time
-   - [Kubernetes Cluster Backup](https://github.com/apurvabhandari/dockerlabs/blob/master/kubernetes/beginners/k8s-cluster-backup-easy-way.md)
+   - [Kubernetes Cluster Backup](./beginners/k8s-cluster-backup-easy-way.md)
    
    
 
