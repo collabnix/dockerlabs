@@ -111,7 +111,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
 
 
 
- [Proceed >> What is Docker?](./beginners/docker/what-is-docker.md)
+ [Proceed >> What is Docker?](http://dockerlabs.collabnix.com/beginners/docker/what-is-docker.html)
 
 
 
