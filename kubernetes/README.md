@@ -72,8 +72,8 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 ## Prometheus 
 
-[How To Setup Prometheus Monitoring On Kubernetes Cluster](./beginners/Kubernetes%20-%20Monitoring%20and%20Alerting/Prometheus_Monitoring_On_Kubernetes_Cluster.md)<br>
-[Setting up Alert Manager on Kubernetes](./beginners/Kubernetes%20-%20Monitoring%20and%20Alerting/alert_manager_on_K8.md)<br>
+[How To Setup Prometheus Monitoring On Kubernetes Cluster](./beginners/Kubernetes_monitoring_alerting/Prometheus_Monitoring_On_Kubernetes_Cluster.md)<br>
+[Setting up Alert Manager on Kubernetes](./beginners/Kubernetes_monitoring_alerting/alert_manager_on_K8.md)<br>
 
 ## Contributors
 
