@@ -82,3 +82,4 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 - [Sangam Biradar](smbiradar14@gmail.com)
 - [Tushar Sappal](sappal.tushar@gmail.com)
 - [Apurva Bhandari](https://www.linkedin.com/in/apurvabhandari-linux)
+- [Saiyam Pathak] (saiyam911@gmail.com)
