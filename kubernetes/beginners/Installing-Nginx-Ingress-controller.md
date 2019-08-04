@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_
 ```
 2- Helm client install
 ```
-hmod 700 get_helm.sh
+chmod 700 get_helm.sh
 ./get_helm.sh
 ```
 3- Init Helm
