@@ -95,6 +95,9 @@ cat pod.json | kubectl create -f -
 
 # Edit the data in docker-registry.yaml in JSON using the v1 API format then create the resource using the edited data.
 kubectl create -f docker-registry.yaml --edit --output-version=v1 -o json
+
+# Create all the resources avaibale in the folder 
+kubeclt create -f <folder_name>
 ```
 
 ### Delete
@@ -122,6 +125,9 @@ kubectl delete pod foo --grace-period=0 --force
 
 # Delete all pods
 kubectl delete pods --all
+
+#Delete all resources available in the folder.
+kubectl delete -f <folder_name>
 ```
 
 ### Edit
@@ -418,6 +424,9 @@ $ kubectl drain foo --force
 
 # As above, but abort if there are pods not managed by a ReplicationController, ReplicaSet, Job, DaemonSet or StatefulSet, and use a grace period of 15 minutes.
 $ kubectl drain foo --grace-period=90
+
+#Drain node by ignoring Deamonsets
+kubectl drain <node_name> --ignore-daemonsets
 ```
 
 ### Taint
