@@ -40,18 +40,16 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 ## Demo Environment
 
-### Play with Kubernetes
-
 - [Getting Started with 5 Node Kubernetes Cluster on Play with Kubernetes Platform](./beginners/getting-started-on-pwk.md)
+
 
 ## Cloud Environment
 
-Cloud Platform
-     - [Google Cloud Platform](./beginners/install-k8s-on-GCP-platform.md)
+- [Google Cloud Platform](./beginners/install-k8s-on-GCP-platform.md)
 
 ## IoT Platform
 
-    - [K3s on Raspberry Pi](./beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
+- [K3s on Raspberry Pi](./beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
    
 
 ## Kubernetes Workshop
