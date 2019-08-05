@@ -115,4 +115,5 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 
 [Karan Singh](karangandhi0007@gmail.com)<br>
 [Ajeet Singh Raina](ajeetraina@gmail.com)<br>
-[Tathagata Sarkar](amitatha82@yahoo.com)
+[Tathagata Sarkar](amitatha82@yahoo.com)<br>
+[Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)
