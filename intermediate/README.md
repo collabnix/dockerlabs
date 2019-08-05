@@ -26,8 +26,9 @@ description: collabnix | DockerLab | Docker - Intermediate Track
   - [Finding IP address of Container](./networking/FindingIPaddressofContainer.md)
   - [Exposing a Container Port on the Host](./networking/ExposingContainerPort.md)
   - [Linking Containers in Docker](./networking/LinkingContainersinDocker.md)
- 
-
+  - [Configuring DNS](./networking/Configuring_DNS.md)
+  - [Advanced network configuration](./networking/Advanced_network_configuration.md)
+  - [Quick Configuration guide](./networking/Quick_configuration_guide.md)
 ## Docker Compose
 
 - [Docker Compose Introduction](./docker-compose/README.md)<br>
