@@ -33,4 +33,10 @@ CMD [ "npm", "start" ]
 
 Here we take out the project-related build instructions and put them in the subproject. Assuming that the name of the base image is `my-node`, the own `Dockerfile` in each project becomes:
 
+```Dockerfile
+FROM my-node
+```
+
+Yes, there is only one such line. When constructing a mirror with this one-line `Dockerfile` in each project directory, the three lines of the previous base image `ONBUILD` will start executing, successfully copy the current project code into the image, and execute for this project. `npm install`, generate an application image.
+
 ## Contributor - [Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)
