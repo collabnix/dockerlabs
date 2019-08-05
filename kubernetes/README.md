@@ -10,7 +10,10 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 - [Deep Dive into Kubernetes Architecture](./beginners/what-is-kubernetes/README.md#what-is-k8s-made-up-of)
 
 
-# Kubernetes Architecture
+## Kubernetes Core Concept
+
+   - [Kubernetes Developer Concept](./beginners/k8s-core-concepts.md)
+   - [Install and configure a multi-master Kubernetes cluster with kubeadm](./beginners/Install-and-configure-a-multi-master-Kubernetes-cluster-with-kubeadm.md)
    - [Understanding the kubectl](./beginners/what-is-kubect.md)
    - Single and multi-node clusters
    - [Examining the control plane](./beginners/Kubernetes_Control_Plane.md)<br>
@@ -50,10 +53,6 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 - [K3s on Raspberry Pi](./beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
    
-## Kubernetes Core Concept
-
-- [Kubernetes Developer Concept](./beginners/k8s-core-concepts.md)
-- [Install and configure a multi-master Kubernetes cluster with kubeadm](./beginners/Install-and-configure-a-multi-master-Kubernetes-cluster-with-kubeadm.md)
 
 ## Kubernetes Workshop
 
