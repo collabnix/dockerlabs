@@ -10,6 +10,7 @@ At the same time, Docker randomly assigns an address in a private unoccupied pri
 
 When creating a Docker container, a pair of veth pair interfaces are created (when the packet is sent to one interface, the other interface can also receive the same packet). The pair is terminated in the container,``` eth0``` ; the other end is local and mounted to the docker0 bridge, with the name starting with veth (for example, ```vethAQI2QT ```). In this way, the host can communicate with the container and the containers can communicate with each other. Docker created a virtual shared network between the host and all containers.
 
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/e6d4ae2d0d265f3331f8c2f7aab455b07e7fb225/intermediate/networking/img/network.png)
 
 we will cover all of Docker's network custom configurations in some scenarios. And adjust, complement, or even replace Docker's default network configuration with Linux commands.
 
