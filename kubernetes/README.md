@@ -9,6 +9,7 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 - [What is Kubernetes & Why is it damn popular?](./beginners/what-is-kubernetes/README.md#what-is-kubernetes)
 - [Deep Dive into Kubernetes Architecture](./beginners/what-is-kubernetes/README.md#what-is-k8s-made-up-of)
 
+
 # Kubernetes Architecture
    - [Understanding the kubectl](./beginners/what-is-kubect.md)
    - Single and multi-node clusters
@@ -34,7 +35,7 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 # Installation & Getting Started
 
 - [Getting Started with K8s on PWK Platform](./beginners/getting-started-on-pwk.md)
-
+- [How to setup 3 Node Kubernetes Cluster on Bare Metal System using MetalLB?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/install/ubuntu/18.04/install-k8s.md#how-to-setup-3-node-kubernetes-cluster-on-bare-metal-system-using-metallb)<br>
 - Setting up Kubernetes on
    - Linux
    - Windows
