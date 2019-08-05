@@ -50,8 +50,10 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 - [K3s on Raspberry Pi](./beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
    
+## Kubernetes Core Concept
 
-[Install and configure a multi-master Kubernetes cluster with kubeadm](./beginners/Install-and-configure-a-multi-master-Kubernetes-cluster-with-kubeadm.md)
+- [Kubernetes Developer Concept](./beginners/k8s-core-concepts.md)
+- [Install and configure a multi-master Kubernetes cluster with kubeadm](./beginners/Install-and-configure-a-multi-master-Kubernetes-cluster-with-kubeadm.md)
 
 ## Kubernetes Workshop
 
@@ -61,9 +63,6 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 - [Lab #03: Creating a Deployment with 3 replicas of NGINX service](./beginners/workshop/lab03-creating-deployment-3replicas-nginx/README.md)<br>
 - [Lab #04: Scaling the Deployment](./beginners/workshop/lab04-scaling-the-deployment/README.md)<br>
 
-## Kubernetes Core Concept
-
-- [Kubernetes Developer Concept](./beginners/k8s-core-concepts.md)
 
 ## Helm
 
