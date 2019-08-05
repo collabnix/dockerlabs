@@ -34,24 +34,36 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 # Installation & Getting Started
 
-- [Getting Started with K8s on PWK Platform](./beginners/getting-started-on-pwk.md)
+## Bare Metal:
+
 - [How to setup 3 Node Kubernetes Cluster on Bare Metal System using MetalLB?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/install/ubuntu/18.04/install-k8s.md#how-to-setup-3-node-kubernetes-cluster-on-bare-metal-system-using-metallb)<br>
-- Setting up Kubernetes on
-   - Linux
-   - Windows
-   - Windows Server
-   - Cloud Platform
+
+## Demo Environment
+
+### Play with Kubernetes
+
+- [Getting Started with 5 Node Kubernetes Cluster on Play with Kubernetes Platform](./beginners/getting-started-on-pwk.md)
+
+## Cloud Environment
+
+Cloud Platform
      - [Google Cloud Platform](./beginners/install-k8s-on-GCP-platform.md)
-   - IoT Platform
-     - [K3s on Raspberry Pi](./beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
+
+## IoT Platform
+
+    - [K3s on Raspberry Pi](./beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
    
+
+## Kubernetes Workshop
+
+## Preparing the Infrastructure
+
 [Kubernetes Hands-on Lab #1 – Setting up 5-Node K8s Cluster](https://collabnix.com/kubernetes-hands-on-lab-1-setting-up-5-node-k8s-cluster/)<br>
 [Kubernetes Hands-on Lab #2 – Running Our First Nginx Cluster](https://collabnix.com/kubernetes-hands-on-lab-2-running-our-first-nginx-cluster/)<br>
 [Kubernetes Hands-on Lab #3 – Deploy Istio Mesh on K8s Cluster](https://collabnix.com/kubernetes-hands-on-lab-3-deploy-istio-mesh/)<br>
 [Install and configure a multi-master Kubernetes cluster with kubeadm](./beginners/Install-and-configure-a-multi-master-Kubernetes-cluster-with-kubeadm.md)
 
-
-## Kubernetes Workshop
+## Lab/WorkShop
 
 - [Lab #00: Running Nginx Pod](./beginners/workshop/lab00-running-nginx-pod/README.md)<br>
 - [Lab #01: Creating Nginx Pod](./beginners/workshop/lab01-creating-nginx-pod/README.md)<br>
