@@ -1,4 +1,4 @@
-# Quick configuration guide
+#  Docker Quick Networking Guide 
 
 Below is a list of commands related to the Docker network.
 
