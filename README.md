@@ -83,6 +83,8 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 - [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
 
+- [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
+
 
 ## Docker WorkShop for Beginners 
 
