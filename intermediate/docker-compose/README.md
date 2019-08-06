@@ -2,6 +2,29 @@
 
 Docker compose is a tool built by docker to ease the task to creating and configring multiple containers in a development environment counter-part of docker-compose for prodcution environment is `docker swarm`. Docker compose takes as input a `YAML` configuration file and creates the resources (*containers*, *networks*, *volumes* etc.) by communicating with the docker daemon through docker api.
 
+
+# Introduction to Compose
+
+`Compose` project is the official open source project for Docker and is responsible for the rapid orchestration of Docker container clusters. Functionally, it is very similar to Heat OpenStack .
+
+The code is currently open sourced at https://github.com/docker/compose .
+
+`Compose` positioned as "Defining and running multi-container Docker applications", and its predecessor is the open source project Fig.
+
+Through the introduction in the first part, we know that using a Dockerfile template file allows users to easily define a separate application container. However, in daily work, it is often the case that multiple containers need to cooperate to complete a certain task. For example, to implement a Web project, in addition to the Web service container itself, it is often necessary to add a back-end database service container, and even a load balancing container.
+
+`Compose` just meets this need. It allows the user to define a set of associated application containers as a project through a separate docker-compose.yml template file (YAML format).
+
+There are two important concepts in Compose :
+
+`Service:` A container for an application that can actually include several container instances running the same image.
+
+Project: A complete business unit consisting of a set of associated application containers, defined in the `docker-compose.yml `file.
+
+`Compose` 's default management object is a project that provides convenient lifecycle management of a set of containers in a project through subcommands.
+
+`Compose` project is written in Python, and the implementation calls the API provided by the Docker service to manage the container. Therefore, as long as the platform being operated supports the Docker API, you can use Compose to manage it.
+
 ## Compose file used in examples
 
 ```yaml
@@ -207,6 +230,7 @@ docker-compose stop web     # Stop containers only for service web.
 
 # Contributor
 
-[Akshit Grover]()
+[Akshit Grover]() <br>
+[Sangam Biradar]()
 
 [Next >> Docker Compose Cheatsheet ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/docker-compose/compose-cheatsheet.md)
