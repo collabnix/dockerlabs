@@ -2,7 +2,7 @@
 
 
 ```
-git clone https://github.com/sangam14/httpserver-go-docker
+git clone https://github.com/collabnix/dockerlabs/tree/master/beginners/httpserver-go-docker
 ```
 As you may know Go 1.11 includes opt-in feature for versioned modules. Before go modules Gophers used dependency managers like `dep` or `glide`, but with go modules you don't need a 3rd-party manager as they are included into standard `go` toolchain.
 
