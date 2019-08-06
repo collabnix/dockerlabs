@@ -1,11 +1,15 @@
 # How to setup 3 Node Docker Enterprise 3.0 Cluster on Bare Metal System
 
-Pre-Requisite:
+## Pre-Requisite:
 
 - Docker Enterprise 3.0 Manager Node should have minimal of 4.00 GB RAM for Universal Control Plane
+- Go to https://hub.docker.com/my-content.
+- Each subscription or trial you have access to is listed. Click the Setup button for Docker Enterprise Edition for Ubuntu.
+- Copy the URL from the field labeled Copy and paste this URL to download your Edition.
 
 
 ## Install packages to allow apt to use a repository over HTTPS:
+
 
 ```
 sudo apt-get install \
@@ -15,16 +19,16 @@ sudo apt-get install \
     software-properties-common
 ```
 
-## Temporarily add a $DOCKER_EE_URL variable into your environment. 
+## Adding $DOCKER_EE_URL variable into your environment
 
-This only persists until you log out of the session. Replace <DOCKER-EE-URL> with the URL you noted down in the prerequisites.
-Replace sub-xxx with your 
+Replace <DOCKER-EE-URL> with the URL you noted down in the prerequisites.
+Replace sub-xxx too.
 
 ```
 curl -fsSL https://storebits.docker.com/ee/m/sub-XXX-44fb-XXX-b6bf-XXXXXX/ubuntu/gpg | sudo apt-key add -
 ```
 
-## 
+## Adding the stable Repository
 
 ```
 sudo add-apt-repository \
@@ -33,10 +37,15 @@ sudo add-apt-repository \
    stable-19.03"
 ```
 
-## 
+## Installing Docker Enterprise
 
 ```
+sudo apt-get install docker-ee docker-ee-cli containerd.io
+```
 
+## Verifying Docker Enterprise Version
+
+```
 cse@ubuntu1804-1:~$ sudo docker version
 Client: Docker Engine - Enterprise
  Version:           19.03.1
@@ -68,7 +77,7 @@ Server: Docker Engine - Enterprise
 cse@ubuntu1804-1:~$
 ```
 
-Testing the Hello World Example
+## Testing the Hello World Example
 
 ```
 cse@ubuntu1804-1:~$ apt-cache madison docker-ee
@@ -115,10 +124,8 @@ docker container run --rm -it --name ucp \
   --interactive
 ```
 
-## 
-
 ```
-cse@ubuntu1804-1:~$ sudo docker container run --rm -it --name ucp \
+@ubuntu1804-1:~$ sudo docker container run --rm -it --name ucp \
 >   -v /var/run/docker.sock:/var/run/docker.sock \
 >   docker/ucp:3.2.0 install \
 >   --host-address 100.98.26.115 \
