@@ -1,5 +1,9 @@
 # How to setup 3 Node Docker Enterprise 3.0 Cluster on Bare Metal System
 
+Pre-Requisite:
+
+- Docker Enterprise 3.0 Manager Node should have minimal of 4.00 GB RAM for Universal Control Plane
+
 
 ## Install packages to allow apt to use a repository over HTTPS:
 
@@ -246,4 +250,11 @@ e12173e6f7b9        docker/ucp-auth:3.2.0         "/usr/local/bin/enzi…"   2 m
 40d316287979        docker/ucp-etcd:3.2.0         "/bin/entrypoint.sh …"   3 minutes ago        Up 3 minutes (healthy)   2380/tcp, 4001/tcp, 7001/tcp, 0.0.0.0:12380->12380/tcp, 0.0.0.0:12379->2379/tcp   ucp-kv
 cse@ubuntu1804-1:~$
 ```
+
+## Accessing the UCP
+
+Now you should be able to access Docker Univeral Control Plane via https://<node-ip>
+    
+
+    
 
