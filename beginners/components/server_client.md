@@ -25,7 +25,7 @@ Server is nothing but a compute compatible machine which runs the product and ge
 
 Now, we understand what client and server means in computing. Let's dive into what is a Docker Client and Docker Server.
 
-![Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/comp_client_server.jpg)
+![Image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/comp_client_server.jpg)
 
 *Image courtesy: https://www.xenonstack.com/blog/docker-application-solutions/*
 
@@ -38,7 +38,7 @@ To communicate with the docker daemon to execute a certain task like runing a co
 
 A subset view of docker's client and server.
 
-![Image](https://github.com/collabnix/dockerlabs/blob/master/beginners/images/comp_subset.png)<br>
+![Image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/comp_subset.png)<br>
 *Image courtesy: https://docs.docker.com/engine/docker-overview/*
 
 
