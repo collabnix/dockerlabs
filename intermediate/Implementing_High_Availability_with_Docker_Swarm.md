@@ -174,6 +174,8 @@ $ sudo docker stack deploy --compose-file=portainer-agent-stack.yml portainer
 ```
 Give it a few seconds to start everything up and deploy all resources. Once all resources provisioned, you will be able to access web interface in browser on http://manager1_ip_address:9000 (replace IP address and port with your corresponding values). You will be first offered to set password for admin user. After this you will see a new and shiny dashboard:
 
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/intermediate/img/docker_ha-2.png)
+
 Congrats! Now you have fully functional Docker Swarm HA cluster with a nice management Web UI.
 
 # Deploy first stack using web interface
@@ -261,6 +263,8 @@ volumes:
   db-data:
   ````
   Finally, click "Deploy Stack" button to deploy this application.
+  
+  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/intermediate/img/docker_ha_1.png)
 
 Now, click on newly created stack and you will see stack services deployment progress:
 
