@@ -7,7 +7,7 @@ The bridge driver creates a private network internal to the host so containers o
 
 Behind the scenes, the Docker Engine creates the necessary Linux bridges, internal interfaces, iptables rules, and host routes to make this connectivity possible. In the example highlighted below, a Docker bridge network is created and two containers are attached to it. With no extra configuration the Docker Engine does the necessary wiring, provides service discovery for the containers, and configures security rules to prevent communication to other networks. A built-in IPAM driver provides the container interfaces with private IP addresses from the subnet of the bridge network.
 
-![alt text](https://github.com/amitatha82/dockerlabs/blob/master/beginners/images/bridge.png)
+![alt text](https://raw.githubusercontent.com/amitatha82/dockerlabs/master/beginners/images/bridge.png)
 
 The above application is now being served on our host at port 8000. The Docker bridge is allowing web to communicate with db by its container name. The bridge driver does the service discovery for us automatically because they are on the same network. All of the port mappings, security rules, and pipework between Linux bridges is handled for us by the networking driver as containers are scheduled and rescheduled across a cluster.
 
