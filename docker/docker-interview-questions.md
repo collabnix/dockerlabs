@@ -10,6 +10,7 @@ Below are top 50 interview questions for candidates who want to prepare on Docke
 
 Docker is not quite like a VM. It uses the host kernel & can’t boot a different operating system. Below are 5 similarities between Docker & VIrtual Machine:
  
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/Picture1.png)
 
 # How is Docker different from Virtual Machine?
  
