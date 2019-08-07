@@ -16,8 +16,8 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 
 ## Introduction to Docker Networking
 
-- [Understanding Docker Container Networking](./beginners/dockercontainernetworking.md)
-- [Difference between Bridge Vs Overlay Network](./beginners/DiffBridgeVsOverlay.md)
+- [Understanding Docker Container Networking](./dockercontainernetworking.md)
+- [Difference between Bridge Vs Overlay Network](./DiffBridgeVsOverlay.md)
 - [Verifying host-level settings that impact Docker networking](./networking/host-settings.md)
 - [What is MacVLAN networking?](./macvlan.md)
    - [Implementing MacVLAN](./beginners/macvlan-010.md)
