@@ -1,3 +1,8 @@
+---
+layout: default
+title:  Docker - Intermediate Track - Docker Networking
+description: collabnix | DockerLab | Docker - Intermediate Track
+---
 # Docker Networking
 
 For Docker containers to communicate with each other and the outside world via the host machine, there has to be a layer of networking involved. Docker supports different types of networks, each fit for certain use cases.
