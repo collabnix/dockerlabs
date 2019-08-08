@@ -16,10 +16,12 @@ Note: For this process as usual I will use Centos7 as it is my favorite Linux di
 
 # Prerequisites
 
-3 or more hosts for managers. When planning Docker Swarm HA cluster for production need to take in account resiliency of master nodes. Swarm uses Raft consensus protocol, which is similar to etcd used in Kubernetes. Swarm cluster can keep full functionality only if more than half of all manager nodes still available. Therefore, if we can tolerate loss of 1 manager node, then we are required to have 3 managers. If we are okay with losing 2 manager nodes, we must have 5 of them in total. And so on.
+3 or more hosts for managers. When planning Docker Swarm HA cluster for production need to take in account resiliency of master nodes. Swarm uses Raft consensus protocol, which is similar to etcd used in Kubernetes. Swarm cluster can keep full functionality only if more than half of all manager nodes still available. Therefore, if we can tolerate loss of 1 manager node, then we are required to have 3 managers. If we are okay with losing 2 manager nodes, we must have 5 of them in total. And so on.<br>
+
 Private networking between all manager and worker nodes. It is not a strict requirement. Newer versions of Swarm use SSL encryption for control plane communication. However, it will send data traffic between containers unencrypted. It is possible to configure encryption on data plane as well, but this needs additional setup. For this example we will use Digital Ocean private networking, which lets us keep data plane unencrypted.
-Access from Internet to access example application. And Internet access on all nodes for installation process and access to Docker resources.
-For this example I will launch 5 nodes. 3 for managers will be named manager1, manager2 and manager3. 2 for workers where our application will be running. Worker nodes will be named worker1 and worker2. All nodes will have public IP address as all DO hosts come with public IP, but also will have private networking enabled to allow communication between nodes. This will result in each node having 2 interfaces eth0 for public access and eth1 for private network. Depending on your environment you may only have one interface with private IP address. This is what happens on AWS, for example.
+Access from Internet to access example application. And Internet access on all nodes for installation process and access to Docker resources.<br>
+
+For this example I will launch 5 nodes. 3 for managers will be named manager1, manager2 and manager3. 2 for workers where our application will be running. Worker nodes will be named worker1 and worker2. All nodes will have public IP address as all DO hosts come with public IP, but also will have private networking enabled to allow communication between nodes. This will result in each node having 2 interfaces eth0 for public access and eth1 for private network. Depending on your environment you may only have one interface with private IP address. This is what happens on AWS, for example.<br>
 
 NOTE: For production cluster you should also take care of security. For public access you ideally should only open ports on which your application will be accessed by legitimate users. Also it is best not to have public access to your manager nodes at all. You can configure VPN or some other secure approach to access them. For internal communication here is the comprehensive list of ports and protocols used.
 
@@ -282,3 +284,7 @@ Unlike deploying Kubernetes HA cluster the process to deploy Docker Swarm HA clu
 - Learn how to properly add/remove managers to ensure cluster normal operations despite doing changes. Also important to learn how to recover from failures such as loss of manager quorum. All of this described in great details in Swarm guide.
       
       
+
+## Contributor -
+
+Sangam biradar -https://engineitops.icu
