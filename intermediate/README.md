@@ -80,7 +80,7 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 
 ## Docker Swarm - High Availability, Placement & Constraints
 
-- [Implementing High Availability with Docker Swarm]()
+- [Implementing High Availability with Docker Swarm](./Implementing_High_Availability_with_Docker_Swarm.md)
 - [Secrets Management with Docker Swarm]()
 - [Scheduling Placement with Docker Swarm]()
 
