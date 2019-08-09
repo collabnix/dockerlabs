@@ -29,11 +29,13 @@
 ## Instructions
 
  - Display all the existent networks in the host:
+
 ```
 $ docker network ls
 ```
 
  - Let's create a new bridge network:
+
 ```
 $ docker network create -d bridge my-bridge-network
 ```
@@ -44,9 +46,11 @@ $ docker run -d -p 8081:8081 -e "port=8081" --name app --network=my-bridge-netwo
 ```
 
  - Find the container internal ip using:
+
 ```
 $ docker inspect app
 ```
+
 ```
 "Networks": {
                 "my-bridge-network": {
@@ -68,46 +72,56 @@ $ docker inspect app
                 }
             }
 ```
- - write down the IPAddress of "my-bridge-network" (you may have diffrent address than the above)
+
+ - Write down the IPAddress of "my-bridge-network" (you may have diffrent address than the above)
  - Open a new terminal windows and run an ubuntu container in interactive mode:
+
 ```
 $ docker run -it --name client alpine:latest
 ```
 
  - Install curl in the client container:
+
 ```
 $ apk --no-cache add curl  
 ```
 
  - From the client container terminal try to browse to the app container:
  (change the IP Address accordingly)
+
 ```
 $ curl 172.21.0.2:8081 --connect-timeout 5
 ```
 
  - You will get no access and the connection will be terminated due to timeout 
- ```
+
+```
 $ curl: (28) Connection timed out after 5000 milliseconds
 ```
 
  - From the regular terminal run the command below to attach the client container to the created network:
+
 ```
 $ docker network connect my-bridge-network client
 ```
 
  - From the client container terminal try to browse to the app container again:
  (change the IP Address accordingly)
+
 ```
 $ curl 172.21.0.2:8081 --connect-timeout 5
 ```
+
 ```
 <h1>Python App</h1>
 ```
 
  - Inspect the network from the regular terminal and look for the linked containers:
+
 ```
 $ docker inspect my-bridge-network
 ```
+
 ```
 "Containers": {
             "793a39c035a8988c1768f6061f1721ac124293502edb46ed16e06111f9bdbd61": {
@@ -128,22 +142,26 @@ $ docker inspect my-bridge-network
 ```
 
  - Disconnect both containers from the created network (regular terminal):
+
 ```
 $ docker network disconnect my-bridge-network app
 $ docker network disconnect my-bridge-network client
 ```
 
  - Delete the network:
+
 ```
 $ docker network rm my-bridge-network
 ```
 
  - Ensure that the network was deleted:
+
 ```
 $ docker network ls
 ```
 
  - Exit from the client container and close the terminal:
+
 ```
 $ exit
 $ exit
