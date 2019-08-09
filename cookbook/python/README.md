@@ -61,5 +61,24 @@ if 5 > 2:
 print("Five is greater than two!")
 ```
 
-It will generate error. Think why?
+It will generate error. Let us try it out:
+
+```
+root@ubuntu1804-1:~/cookbook# cat tryindentation_error.py
+if 5 > 2:
+print ("Five is greater than two!")
+```
+
+Output:
+
+```
+root@ubuntu1804-1:~/cookbook# python3 tryindentation_error.py
+  File "tryindentation_error.py", line 2
+    print ("Five is greater than two!")
+        ^
+IndentationError: expected an indented block
+```
+
+
+
 
