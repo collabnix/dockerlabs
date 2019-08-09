@@ -123,4 +123,4 @@ $
 
 [Ajeet Singh Raina](ajeetraina@gmail.com)
 
-[Building Your First Alpine Image and Pushing it to DockerHub](./beginners/building-your-first-alpine-container.md)
+[Building Your First Alpine Image and Pushing it to DockerHub](http://dockerlabs.collabnix.com/beginners/building-your-first-alpine-container.html)
