@@ -97,3 +97,25 @@ root@ubuntu1804-1:~/cookbook# python3 variables.py
 5
 Hello, World!
 ```
+
+What will be the below output show?
+
+```
+root@ubuntu1804-1:~/cookbook# cat variables.py
+x = 5
+y = "Hello, World!"
+
+print(x)
+print(x,y)
+print(y)
+```
+
+```
+ python3 variables.py
+5
+5 Hello, World!
+Hello, World!
+```
+
+
+
