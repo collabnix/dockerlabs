@@ -4,8 +4,8 @@
 [Writing Your first Hello World Program]()<br>
 [Python Indentations]()<br>
 [Python Variables]()<br>
-
-
+[Multi-Line Comments]()<br>
+[String Variables]()<br>
 
 
 
