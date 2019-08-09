@@ -55,7 +55,7 @@ root@ubuntu1804-1:~/cookbook# python3 tryindentation.py
 Five is greater than two!
 ```
 
-Que: What will be output of the below code:
+Que: What will be the output for the below code:
 
 ```
 if 5 > 2:
