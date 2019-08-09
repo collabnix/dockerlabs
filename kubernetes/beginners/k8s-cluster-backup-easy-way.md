@@ -1,4 +1,4 @@
-# Kubernetes Cluster Backup - Easy Way
+# Kubernetes Cluster Backup - An Easy Way
 ## Resource Configuration Backup
 ### kube-apiserver
 ```
