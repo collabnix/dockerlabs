@@ -70,7 +70,7 @@ if 5 > 2:
 print ("Five is greater than two!")
 ```
 
-Output:
+## Output:
 
 ```
 root@ubuntu1804-1:~/cookbook# python3 tryindentation_error.py
@@ -98,7 +98,7 @@ root@ubuntu1804-1:~/cookbook# python3 variables.py
 Hello, World!
 ```
 
-What will be the below output show?
+## What will be the below output show?
 
 ```
 root@ubuntu1804-1:~/cookbook# cat variables.py
@@ -116,6 +116,72 @@ print(y)
 5 Hello, World!
 Hello, World!
 ```
+
+## Multi-Line Comments
+
+```
+"""
+This is a comment
+written in 
+more than just one line
+"""
+print("Hello, World!")
+```
+
+```
+C:\Users\My Name>python demo_comment5.py
+Hello, World!
+```
+
+## String Variables
+
+String variables can be declared either by using single or double quotes:
+
+```
+x = "John"
+# is the same as
+x = 'John'
+```
+
+## Assign Value to Multiple Variables
+
+Python allows you to assign values to multiple variables in one line:
+
+```
+x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)
+```
+
+```
+C:\Users\My Name>python demo_variables8.py
+Orange
+Banana
+Cherry
+```
+
+##  Assigning the same value to multiple variables in one line
+
+```
+x = y = z = "Orange"
+print(x)
+print(y)
+print(z)
+```
+
+```
+C:\Users\My Name>python demo_variables6.py
+Orange
+Orange
+Orange
+```
+
+## 
+
+## 
+
+## 
 
 
 
