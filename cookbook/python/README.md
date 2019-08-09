@@ -3,6 +3,7 @@
 [Installing Python3 on Ubuntu 18.04]()<br>
 [Writing Your first Hello World Program]()<br>
 [Python Indentations]()<br>
+[Python Variables]<br>
 
 
 
@@ -80,5 +81,19 @@ IndentationError: expected an indented block
 ```
 
 
+## Python Variables
 
+```
+root@ubuntu1804-1:~/cookbook# cat variables.py
+x = 5
+y = "Hello, World!"
 
+print(x)
+print(y)
+```
+
+```
+root@ubuntu1804-1:~/cookbook# python3 variables.py
+5
+Hello, World!
+```
