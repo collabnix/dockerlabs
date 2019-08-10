@@ -26,4 +26,4 @@
 
 ## Introduction to Dockerfile
 
-- [Writing Your First Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md)
+- [Writing Your First Dockerfile](http://dockerlabs.collabnix.com/beginners/dockerfile/Writing-dockerfile.html)
