@@ -57,11 +57,11 @@ Below are the list of categories:
 
 ## Labs Hands-on & Workshop
 
-## [Beginners](./workshop/docker/README.md)
+- [Beginners](./workshop/docker/README.md)
 
-## Intermediate
+- Intermediate
 
-## Advanced
+- Advanced
 
 
 
