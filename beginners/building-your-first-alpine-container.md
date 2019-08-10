@@ -156,7 +156,7 @@ bcf2f368fe23: Mounted from library/alpine
 1.0: digest: sha256:85d50f702e930db9e5b958387e667b7e26923f4de340534085cea184adb8411e size: 740
 [node4] (local) root@192.168.0.20 ~
 ```
-[Next >> Building Docker Image from Scratch](https://github.com/collabnix/dockerlabs/blob/master/beginners/building-docker-image-from-scratch.md)
+[Next >> Building Docker Image from Scratch](https://dockerlabs.collabnix.com/beginners/building-docker-image-from-scratch.html)
 
 
 
