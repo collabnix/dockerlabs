@@ -16,10 +16,11 @@ Docker is not quite like a VM. It uses the host kernel & can’t boot a differen
  
 Figure: Docker Vs VM
 Below are list of 6 difference between Docker container & VM:
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview2.png)
  
 
 # What is the difference between Container Networking & VM Networking?
- 
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-3.png)
 
 
 
@@ -27,6 +28,7 @@ Below are list of 6 difference between Docker container & VM:
 Yes, you can run multiple processes inside Docker container. This approach is discouraged for most use cases. For maximum efficiency and isolation, each container should address one specific area of concern. However, if you need to run multiple services within a single container, you can use tools like supervisor.
 Supervisor is a moderately heavy-weight approach that requires you to package supervisord and its configuration in your image (or base your image on one that includes supervisord), along with the different applications it manages. Then you start supervisord, which manages your processes for you. 
 Example: Here is a Dockerfile using this approach, that assumes the pre-written supervisord.conf, my_first_process, and my_second_process files all exist in the same directory as your Dockerfile.
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-4.png)
  
 
 # Does Docker run on Linux, macOS and Windows?
@@ -93,7 +95,8 @@ Below are top 5 reasons why we need container networking:
 -	Load balance traffic between different containers in a service.
 -	Provide secure multi-tenant services.
 
-16. What does CNM refers to? What are its components?
+16. What does CNM refers to? What are its components? ![img](
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-5.png)
  
 CNM refers to Container Networking Model. The Container Network Model (CNM) is a standard or specification from Docker, Inc. that forms the basis of container networking in a Docker environment.It is Docker’s approach to providing container networking with support for multiple network drivers. The CNM provides the following contract between networks and containers:
 -	All containers on the same network can communicate freely with each other
@@ -106,9 +109,10 @@ The major components of the CNM are:
 -	Sandbox and 
 -	Endpoint.
 Sandbox is a generic term that refers to OS specific technologies used to isolate networks stacks on a Docker host. Docker on Linux uses kernel namespaces to provide this sandbox functionality. Networks “stacks” inside of sandboxes include interfaces, routing tables, DNS etc. A network in CNM terms is one or more endpoints that can communicate.All endpoints on the same network can communicate with each other.Endpoints on different networks cannot communicate without external routing.
- 
+  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-6.png)
 
-17. What are different types of Docker Networking drivers?
+17. What are different types of Docker Networking drivers? 
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-7.png)
 
 Docker’s networking subsystem is pluggable using drivers. Several drivers exist by default, and provide core networking functionality. Below is the snapshot of difference of various Docker networking drivers.
 
@@ -135,6 +139,7 @@ Session stickiness allows you to specify information in the HTTP header which UC
 
 
 19. How is Docker Bridge network different from traditional Linux bridge ?
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-8.png)
  
 In terms of networking, a bridge network is a Link Layer device which forwards traffic between network segments. A bridge can be a hardware device or a software device running within a host machine’s kernel.
 In terms of Docker, a bridge network uses a software bridge which allows containers connected to the same bridge network to communicate, while providing isolation from containers which are not connected to that bridge network. The Docker bridge driver automatically installs rules in the host machine so that containers on different bridge networks cannot communicate directly with each other.
@@ -142,18 +147,22 @@ In terms of Docker, a bridge network uses a software bridge which allows contain
 20. How to create a user-defined Bridge network ?
 To create a user-defined bridge network, one can use the docker network create command - 
 
-$ docker network create mynet
+```$ docker network create mynet```
 
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-9.png)
  
 You can specify the subnet, the IP address range, the gateway, and other options. See the docker network create reference or the output of docker network create --help for details.
 
 21. How to delete a user-defined Bridge network ?
 Use the docker network rm command to remove a user-defined bridge network. If containers are currently connected to the network, disconnect them first.
 
-$ docker network rm mynet
+```$ docker network rm mynet```
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-10.png)
 
  
 22. How to connect Docker container to user-defined bridge network?
+
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-11.png)
  
 When you create a new container, you can specify one or more --network flags. This example connects a Nginx container to the my-net network. It also publishes port 80 in the container to port 8080 on the Docker host, so external clients can access that port. Any other container connected to the my-net network has access to all ports on the my-nginx container, and vice versa.
 
