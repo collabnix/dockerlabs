@@ -165,34 +165,42 @@ Use the docker network rm command to remove a user-defined bridge network. If co
 ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-11.png)
  
 When you create a new container, you can specify one or more --network flags. This example connects a Nginx container to the my-net network. It also publishes port 80 in the container to port 8080 on the Docker host, so external clients can access that port. Any other container connected to the my-net network has access to all ports on the my-nginx container, and vice versa.
-
+```
 $ docker create --name my-nginx \
   --network my-net \
   --publish 8080:80 \
   nginx:latest
+```
 To connect a running container to an existing user-defined bridge, use the docker network connect command. The following command connects an already-running my-nginx container to an already-existing my-net network:
-
+```
 $ docker network connect my-net my-nginx
 
-
+```
 
 
 
 23. Does Docker support IPv6?
+
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-12.png)
+
  
-Yes, Docker support IPv6.  IPv6 networking is only supported on Docker daemons running on Linux hosts.Support for IPv6 address has been there since Docker Engine 1.5 release.To enable IPv6 support in the Docker daemon, you need to edit /etc/docker/daemon.json and set the ipv6 key to true.
+Yes, Docker support IPv6.  IPv6 networking is only supported on Docker daemons running on Linux hosts.Support for IPv6 address has been there since Docker Engine 1.5 release.To enable IPv6 support in the Docker daemon, you need to edit ```/etc/docker/daemon.json ```and set the ipv6 key to true.
+```
 {
   "ipv6": true
 }
+```
 Ensure that you reload the Docker configuration file.
-
+```
 $ systemctl reload docker
-You can now create networks with the --ipv6 flag and assign containers IPv6 addresses using the --ip6 flag.
+```
+You can now create networks with the` --ipv6 `flag and assign containers IPv6 addresses using the `--ip6` flag.
 
 24. Does Docker Compose file format support IPv6 protocol?
 Yes.
 
 25. How is overlay network different from bridge network?
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-13.png)
  
 Bridge networks connect two networks while creating a single aggregate network from multiple communication networks or network segments, hence the name bridge.
 Overlay networks are usually used to create a virtual network between two separate hosts. Virtual, since the network is build over an existing network.
@@ -204,28 +212,29 @@ When you initialize a swarm or join a Docker host to an existing swarm, two new 
 -	a bridge network called docker_gwbridge, which connects the individual Docker daemon to the other daemons participating in the swarm.
 
 27. How shall you disable the networking stack on a container?
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-14.png)
 If you want to completely disable the networking stack on a container, you can use the --network none flag when starting the container. Within the container, only the loopback device is created. The following example illustrates this.
  
 
 28. How can one create MacVLAN network for Docker container?
 To create a Macvlan network which bridges with a given physical network interface, once can use --driver macvlan with the docker network create command. You also need to specify the parent, which is the interface the traffic will physically go through on the Docker host.
-
+```
 $ docker network create -d macvlan \
   --subnet=172.16.86.0/24 \
   --gateway=172.16.86.1  \
   -o parent=eth0 collabnet
-
+```
 
 29. Is it possible to exclude IP address from being used in MacVLAN network?
-If you need to exclude IP addresses from being used in the Macvlan network, such as when a given IP address is already in use, use --aux-addresses:
-
+If you need to exclude IP addresses from being used in the Macvlan network, such as when a given IP address is already in use, use ```--aux-addresses```:
+```
 $ docker network create -d macvlan  \
   --subnet=192.168.32.0/24  \
   --ip-range=192.168.32.128/25 \
   --gateway=192.168.32.254  \
   --aux-address="my-router=192.168.32.129" \
   -o parent=eth0 collabnet32
-
+```
 30. Do I lose my data when the container exits?
 Not at all! Any data that your application writes to disk gets preserved in its container until you explicitly delete the container. The file system for the container persists even after the container halts.
 31. Does Docker Enterprise Edition support Kubernetes?
@@ -236,12 +245,12 @@ Docker Swarm is native clustering for Docker. It turns a pool of Docker hosts in
 
 
 
-33. What is --memory-swap flag?
---memory-swap is a modifier flag that only has meaning if --memory is also set. Using swap allows the container to write excess memory requirements to disk when the container has exhausted all the RAM that is available to it. There is a performance penalty for applications that swap memory to disk often.
+33. What is `--memory-swap` flag?
+`--memory-swap` is a modifier flag that only has meaning if `--memory `is also set. Using swap allows the container to write excess memory requirements to disk when the container has exhausted all the RAM that is available to it. There is a performance penalty for applications that swap memory to disk often.
 
 34. Can you explain different volume mount types  available in Docker?
 There are three mount types available in Docker   	
-· Volumes are stored in a part of the host filesystem which is managed by Docker (/var/lib/docker/volumes/ on Linux). Non-Docker processes should not modify this part of the filesystem. Volumes are the best way to persist data in Docker.
+· Volumes are stored in a part of the host filesystem which is managed by Docker (`/var/lib/docker/volumes/` on Linux). Non-Docker processes should not modify this part of the filesystem. Volumes are the best way to persist data in Docker.
 ·  Bind mounts may be stored anywhere on the host system. They may even be important system files or directories. Non-Docker processes on the Docker host or a Docker container can modify them at any time.
 ·   tmpfs mounts are stored in the host system’s memory only, and are never written to the host system’s filesystem.
  
@@ -255,14 +264,14 @@ Steps to Backup a container
 1)      Launch a new container and mount the volume from the dbstore container
 2)      Mount a local host directory as /backup
 3)      Pass a command that tars the contents of the dbdata volume to a backup.tar file inside our /backup directory.
-$ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata
+`$ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata`
  Restore container from backup
 With the backup just created, you can restore it to the same container, or another that you made elsewhere.
 For example, create a new container named dbstore2:
-$ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash
+`$ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash`
 
 Then un-tar the backup file in the new container`s data volume:
-$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"
+`$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"`
 
 
 37. How to Configure Automated Builds on DockerHub
@@ -293,11 +302,14 @@ Docker Trusted Registry (DTR) is the enterprise-grade image storage solution fro
 
 43. How to declare default environment variables under Docker Compose?
 
+
 Compose supports declaring default environment variables in an environment file named .env placed in the folder where the docker-compose command is executed (current working directory).
 Example: The below example demonstrate how to declare default environmental variable for Docker Compose.
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-16.png)
 
  
 When you run docker-compose up, the web service defined above uses the image alpine:v3.4. You can verify this with the `docker-compose config` command which prints your resolved application config to the terminal:
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-17.png)
 
  
 
@@ -315,28 +327,31 @@ Before the docker CLI sends the context to the docker daemon, it looks for a fil
 46. What is the purpose of EXPOSE command in Dockerfile?
 When writing your Dockerfiles, the instruction EXPOSE tells Docker the running container listens on specific network ports. This acts as a kind of port mapping documentation that can then be used when publishing the ports.
 
-EXPOSE <port> [<port>/<protocol>...]
-
+`EXPOSE <port> [<port>/<protocol>...]`
+![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-18.png)
  
 You can also specify this within a docker run command, such as:
 
-docker run --expose=1234 my_app
+`docker run --expose=1234 my_app`
 
 Please note that EXPOSE will not allow communication via the defined ports to containers outside of the same network or to the host machine. To allow this to happen you need to publish the ports.
 
 47. How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?
 ENTRYPOINT is meant to provide the executable while CMD is to pass the default arguments to the executable.
 To understand it clearly, let us consider the below Dockerfile:
- 
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-19.png)
 
 If you try building this Docker image using `docker build command` -
- 
+
+  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-21.png)
 
  Let us run this image without any argument.
+  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-22.png)
 
  
 
 Let's run it passing a command line argument
+  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-23.png)
  
 This clearly state that ENTRYPOINT is meant to provide the executable while CMD is to pass the default arguments to the executable.
 48. Why Build cache in Docker is so important? 
@@ -349,15 +364,20 @@ If the objects on the file system that Docker is about to produce are unchanged 
  
 
 50. Difference between Windows Containers and Hyper-V Containers
+  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-24.png)
 
 Underlying is the architecture laid out by the Microsoft for the Windows and Hyper-V Containers
  
 Here are few of the differences between them,
+Differences:
+  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-25.png)
  
 
 51. What are main difference between Swarm & Kubernetes?
 Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications. It  was built by Google based on their experience running containers in production using an internal cluster management system called Borg (sometimes referred to as Omega). In the other hand, a Swarm cluster consists of Docker Engine deployed on multiple nodes. Manager nodes perform orchestration and cluster management. Worker nodes receive and execute tasks 
 Below are the major list of differences between Docker Swarm & Kubernetes:
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-26.png)
+ 
 
  	 
 Applications are deployed in the form of  services (or “microservices”) in a Swarm cluster. Docker Compose is a tool which is majorly  used to deploy the app. 	Applications are deployed in the form of a combination of pods, deployments, and services (or “microservices”). 
@@ -390,6 +410,7 @@ You can see the service deployed with the kubectl get services command
 
 55. What is 'docker stack deploy' command meant for?
 The ‘docker stack deploy’ is a command to deploy a new stack or update an existing stack. A stack is a collection of services that make up an application in a specific environment. A stack file is a file in YAML format that defines one or more services, similar to a docker-compose.yml file for Docker Compose but with a few extensions. 
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-27.png)
  
 56. List down major components of Docker EE 2.0?
 Docker EE is more than just a container orchestration solution; it is a full lifecycle management solution for the modernization of traditional applications and microservices across a broad set of infrastructure platforms. It is a Containers-as-a-Service(CaaS) platform for IT that manages and secures diverse applications across disparate infrastructure, both on-premises and in the cloud. Docker EE provides an integrated, tested and certified platform for apps running on enterprise Linux or Windows operating systems and Cloud providers. It is tightly integrated to the underlying infrastructure to provide a native, easy to install experience and an optimized Docker environment.
@@ -402,11 +423,12 @@ Docker EE 2.0 GA consists of 3 major components which together enable a full sof
 HA refers to High Availability. High Availability is a feature where you have multiple instances of your applications running in parallel to handle increased load or failures. These two paradigms fit perfectly into Docker Swarm, the built-in orchestrator that comes with Docker. Deploying your applications like this will improve your uptime which translates to happy users.
 For creating a high availability container in the Docker Swarm, we need to deploy a docker service to the swarm with nginx image. This can be done by using docker swarm create command as specified above.
 # docker service create --name nginx --publish 80:80 nginx
-
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-29.png)
  
 58) Can you explain what is Routing Mesh under Docker Swarm Mode?
 Routing Mesh is a feature which make use of Load Balancer concepts.It provides global publish port for a given service. The routing mesh uses port based service discovery and load balancing. So to reach any service from outside the cluster you need to expose ports and reach them via the Published Port.
 Docker Engine swarm mode makes it easy to publish ports for services to make them available to resources outside the swarm. All nodes participate in an ingress routing mesh. The routing mesh enables each node in the swarm to accept connections on published ports for any service running in the swarm, even if there’s no task running on the node. The routing mesh routes all incoming requests to published ports on available nodes to an active container.
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-30.png)
  
 59. Is Routing Mesh a Load Balancer? 
 Routing Mesh is not Load-Balancer. It makes use of LB concepts.It provides global publish port for a given service. The routing mesh uses port based service discovery and load balancing. So to reach any service from outside the cluster you need to expose ports and reach them via the Published Port.
@@ -414,6 +436,7 @@ In simple words, if you had 3 swarm nodes, A, B and C, and a service which is ru
 
 60. Is it possible to run MacVLAN under Docker Swarm Mode? What features does it offer?
 Starting Docker CE 17.06 release, Docker provides support for local scope networks in Swarm. This includes any local scope network driver. Some examples of these are bridge, host, and macvlan though any local scope network driver, built-in or plug-in, will work with Swarm. Previously only swarm scope networks like overlay were supported. 
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-31.png)
  
 MACVLAN offers a number of unique features and capabilities. It has positive performance implications by virtue of having a very simple and lightweight architecture. It’s use cases includes very low latency applications and networking design that requires containers be on the same subnet as and using IPs as the external host network.The macvlan driver uses the concept of a parent interface. This interface can be a physical interface such as eth0, a sub-interface for 802.1q VLAN tagging like eth0.10 (.10 representing VLAN 10), or even a bonded host adaptor which bundles two Ethernet interfaces into a single logical interface.
 
@@ -425,13 +448,13 @@ MACVLAN offers a number of unique features and capabilities. It has positive per
 
 61. What are Docker secrets and why is it necessary
 In Docker there are three key components to container security and together they result in inherently safer apps.
- 
+  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-32.png)
 Docker Secrets, a container native solution that strengthens the Trusted Delivery component of container security by integrating secret distribution directly into the container platform.
 By integrating secrets into Docker orchestration, we are able to deliver a solution for the secrets management problem that follows these exact principles.
 The following diagram provides a high-level view of how the Docker swarm mode architecture is applied to securely deliver a new type of object to our containers: a secret object.
  
 
-
+ ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-33.png)
 
 
 
