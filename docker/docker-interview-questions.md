@@ -67,17 +67,17 @@ This command will create and start a container.If you want to verify the list of
 $ docker ps -a
 ```
 
-11. What is maximum number of container you can run per host?
+# What is maximum number of container you can run per host?
 This really depends on your environment. The size of your applications as well as the amount of available resources (i.e like CPU) will all affect the number of containers that can be run in your environment. Containers unfortunately are not magical. They can’t create new CPU from scratch. They do, however, provide a more efficient way of utilizing your resources. The containers themselves are super lightweight (remember, shared OS vs individual OS per container) and only last as long as the process they are running. 
 
-12. Is it possible to have my own private Docker registry?
+# Is it possible to have my own private Docker registry?
 Yes, it is possible today using Docker own registry server. if you want to use 3rd party tool, see Portus.
 TBA
 
-13. Does Docker container package up the entire OS?
+# Does Docker container package up the entire OS?
 Docker containers do not package up the OS. They package up the applications with everything that the application needs to run. The engine is installed on top of the OS running on a host. Containers share the OS kernel allowing a single host to run multiple containers.
 
-14. Describe how many ways are available to configure Docker daemon?
+# Describe how many ways are available to configure Docker daemon?
 There are two ways to configure the Docker daemon:
 -	Using a JSON configuration file. 
 This is the preferred option, since it keeps all configurations in a single place.
@@ -95,7 +95,7 @@ Below are top 5 reasons why we need container networking:
 -	Load balance traffic between different containers in a service.
 -	Provide secure multi-tenant services.
 
-16. What does CNM refers to? What are its components? ![img](
+# What does CNM refers to? What are its components? ![img](
  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-5.png)
  
 CNM refers to Container Networking Model. The Container Network Model (CNM) is a standard or specification from Docker, Inc. that forms the basis of container networking in a Docker environment.It is Docker’s approach to providing container networking with support for multiple network drivers. The CNM provides the following contract between networks and containers:
@@ -111,7 +111,7 @@ The major components of the CNM are:
 Sandbox is a generic term that refers to OS specific technologies used to isolate networks stacks on a Docker host. Docker on Linux uses kernel namespaces to provide this sandbox functionality. Networks “stacks” inside of sandboxes include interfaces, routing tables, DNS etc. A network in CNM terms is one or more endpoints that can communicate.All endpoints on the same network can communicate with each other.Endpoints on different networks cannot communicate without external routing.
   ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-6.png)
 
-17. What are different types of Docker Networking drivers? 
+# What are different types of Docker Networking drivers? 
  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-7.png)
 
 Docker’s networking subsystem is pluggable using drivers. Several drivers exist by default, and provide core networking functionality. Below is the snapshot of difference of various Docker networking drivers.
@@ -132,19 +132,19 @@ MacVLAN: Macvlan networks allow you to assign a MAC address to a container, maki
 None: For this container, disable all networking. Usually used in conjunction with a custom network driver. none is not available for swarm services. 
 
 
-18. What features are possible only under Docker Enterprise Edition in comparison to Docker Community Edition?
+# What features are possible only under Docker Enterprise Edition in comparison to Docker Community Edition?
  The following two features are only possible when using Docker EE and managing your Docker services using Universal Control Plane (UCP):
 The HTTP routing mesh allows you to share the same network IP address and port among multiple services. UCP routes the traffic to the appropriate service using the combination of hostname and port, as requested from the client.
 Session stickiness allows you to specify information in the HTTP header which UCP uses to route subsequent requests to the same service task, for applications which require stateful sessions.
 
 
-19. How is Docker Bridge network different from traditional Linux bridge ?
+# How is Docker Bridge network different from traditional Linux bridge ?
 ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-8.png)
  
 In terms of networking, a bridge network is a Link Layer device which forwards traffic between network segments. A bridge can be a hardware device or a software device running within a host machine’s kernel.
 In terms of Docker, a bridge network uses a software bridge which allows containers connected to the same bridge network to communicate, while providing isolation from containers which are not connected to that bridge network. The Docker bridge driver automatically installs rules in the host machine so that containers on different bridge networks cannot communicate directly with each other.
 
-20. How to create a user-defined Bridge network ?
+# How to create a user-defined Bridge network ?
 To create a user-defined bridge network, one can use the docker network create command - 
 
 ```$ docker network create mynet```
@@ -153,14 +153,14 @@ To create a user-defined bridge network, one can use the docker network create c
  
 You can specify the subnet, the IP address range, the gateway, and other options. See the docker network create reference or the output of docker network create --help for details.
 
-21. How to delete a user-defined Bridge network ?
+# How to delete a user-defined Bridge network ?
 Use the docker network rm command to remove a user-defined bridge network. If containers are currently connected to the network, disconnect them first.
 
 ```$ docker network rm mynet```
 ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-10.png)
 
  
-22. How to connect Docker container to user-defined bridge network?
+# How to connect Docker container to user-defined bridge network?
 
 ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-11.png)
  
@@ -179,7 +179,7 @@ $ docker network connect my-net my-nginx
 
 
 
-23. Does Docker support IPv6?
+# Does Docker support IPv6?
 
 ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-12.png)
 
@@ -196,10 +196,10 @@ $ systemctl reload docker
 ```
 You can now create networks with the` --ipv6 `flag and assign containers IPv6 addresses using the `--ip6` flag.
 
-24. Does Docker Compose file format support IPv6 protocol?
+# Does Docker Compose file format support IPv6 protocol?
 Yes.
 
-25. How is overlay network different from bridge network?
+# How is overlay network different from bridge network?
 ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-13.png)
  
 Bridge networks connect two networks while creating a single aggregate network from multiple communication networks or network segments, hence the name bridge.
@@ -211,12 +211,12 @@ When you initialize a swarm or join a Docker host to an existing swarm, two new 
 -	an overlay network called ingress, which handles control and data traffic related to swarm services. When you create a swarm service and do not connect it to a user-defined overlay network, it connects to the ingress network by default.
 -	a bridge network called docker_gwbridge, which connects the individual Docker daemon to the other daemons participating in the swarm.
 
-27. How shall you disable the networking stack on a container?
+# How shall you disable the networking stack on a container?
 ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-14.png)
 If you want to completely disable the networking stack on a container, you can use the --network none flag when starting the container. Within the container, only the loopback device is created. The following example illustrates this.
  
 
-28. How can one create MacVLAN network for Docker container?
+# How can one create MacVLAN network for Docker container?
 To create a Macvlan network which bridges with a given physical network interface, once can use --driver macvlan with the docker network create command. You also need to specify the parent, which is the interface the traffic will physically go through on the Docker host.
 ```
 $ docker network create -d macvlan \
@@ -225,7 +225,7 @@ $ docker network create -d macvlan \
   -o parent=eth0 collabnet
 ```
 
-29. Is it possible to exclude IP address from being used in MacVLAN network?
+# Is it possible to exclude IP address from being used in MacVLAN network?
 If you need to exclude IP addresses from being used in the Macvlan network, such as when a given IP address is already in use, use ```--aux-addresses```:
 ```
 $ docker network create -d macvlan  \
@@ -235,30 +235,30 @@ $ docker network create -d macvlan  \
   --aux-address="my-router=192.168.32.129" \
   -o parent=eth0 collabnet32
 ```
-30. Do I lose my data when the container exits?
+# Do I lose my data when the container exits?
 Not at all! Any data that your application writes to disk gets preserved in its container until you explicitly delete the container. The file system for the container persists even after the container halts.
-31. Does Docker Enterprise Edition support Kubernetes?
+# Does Docker Enterprise Edition support Kubernetes?
 Yes, Docker Enterprise Edition(rightly called EE) support Kubernetes. EE 2.0 allows users to choose either Kubernetes or Swarm at the orchestration layer.
-32. What is Docker Swarm?
+# What is Docker Swarm?
 Docker Swarm is native clustering for Docker. It turns a pool of Docker hosts into a single, virtual Docker host. Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
 
 
 
 
-33. What is `--memory-swap` flag?
+# What is `--memory-swap` flag?
 `--memory-swap` is a modifier flag that only has meaning if `--memory `is also set. Using swap allows the container to write excess memory requirements to disk when the container has exhausted all the RAM that is available to it. There is a performance penalty for applications that swap memory to disk often.
 
-34. Can you explain different volume mount types  available in Docker?
+# Can you explain different volume mount types  available in Docker?
 There are three mount types available in Docker   	
 · Volumes are stored in a part of the host filesystem which is managed by Docker (`/var/lib/docker/volumes/` on Linux). Non-Docker processes should not modify this part of the filesystem. Volumes are the best way to persist data in Docker.
 ·  Bind mounts may be stored anywhere on the host system. They may even be important system files or directories. Non-Docker processes on the Docker host or a Docker container can modify them at any time.
 ·   tmpfs mounts are stored in the host system’s memory only, and are never written to the host system’s filesystem.
  
-35.  How to share data among DockerHost?
+#  How to share data among DockerHost?
 Ways to achieve this when developing your applications. One is to add logic to your application to store files on a cloud object storage system like Amazon S3. Another is to create volumes with a driver that supports writing files to an external storage system like NFS or Amazon S3.
 Volume drivers allow you to abstract the underlying storage system from the application logic. For example, if your services use a volume with an NFS driver, you can update the services to use a different driver, as an example to store data in the cloud, without changing the application logic.
  
-36. How to Backup, Restore, or Migrate data volumes under Docker container?
+# How to Backup, Restore, or Migrate data volumes under Docker container?
  
 Steps to Backup a container
 1)      Launch a new container and mount the volume from the dbstore container
@@ -271,36 +271,37 @@ For example, create a new container named dbstore2:
 `$ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash`
 
 Then un-tar the backup file in the new container`s data volume:
-`$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"`
+```
+$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1
+```
 
-
-37. How to Configure Automated Builds on DockerHub
+#  How to Configure Automated Builds on DockerHub
 You can build your images automatically from a build context stored in a repository. A build context is a Dockerfile and any files at a specific location. For an automated build, the build context is a repository containing a Dockerfile. 
 
-38. How to configure the default logging driver under Docker?
+# How to configure the default logging driver under Docker?
 
 To configure the Docker daemon to default to a specific logging driver, set the value of log-driver to the name of the logging driver in the daemon.json file, which is located in /etc/docker/ on Linux hosts or C:\ProgramData\docker\config\ on Windows server hosts. The default logging driver is json-file.
 
 
-39. Why do my services take 10 seconds to recreate or stop?
+# Why do my services take 10 seconds to recreate or stop?
 
 Compose stop attempts to stop a container by sending a SIGTERM. It then waits for a default timeout of 10 seconds. After the timeout, a SIGKILL is sent to the container to forcefully kill it. If you are waiting for this timeout, it means that your containers aren’t shutting down when they receive the SIGTERM signal.
 
-40. How do I run multiple copies of a Compose file on the same host?
+# How do I run multiple copies of a Compose file on the same host?
 
 Compose uses the project name to create unique identifiers for all of a project’s containers and other resources. To run multiple copies of a project, set a custom project name using the -command line option or the COMPOSE_PROJECT_NAME environment variable.
 
-41. What’s the difference between up, run, and start under Docker Compose?
+# What’s the difference between up, run, and start under Docker Compose?
 
 Typically, you want docker-compose up. Use up to start or restart all the services defined in a docker-compose.yml. In the default “attached” mode, you see all the logs from all the containers. In “detached” mode (-d), Compose exits after starting the containers, but the containers continue to run in the background.
 
 The docker-compose run command is for running “one-off” or “adhoc” tasks. It requires the service name you want to run and only starts containers for services that the running service depends on. Use run to run tests or perform an administrative task such as removing or adding data to a data volume container. The run command acts like docker run -ti in that it opens an interactive terminal to the container and returns an exit status matching the exit status of the process in the container.
 The docker-compose start command is useful only to restart containers that were previously created, but were stopped. It never creates new containers.
 
-42.  What is Docker Trusted Registry?
+#  What is Docker Trusted Registry?
 Docker Trusted Registry (DTR) is the enterprise-grade image storage solution from Docker. You install it behind your firewall so that you can securely store and manage the Docker images you use in your applications.
 
-43. How to declare default environment variables under Docker Compose?
+# How to declare default environment variables under Docker Compose?
 
 
 Compose supports declaring default environment variables in an environment file named .env placed in the folder where the docker-compose command is executed (current working directory).
@@ -313,18 +314,18 @@ When you run docker-compose up, the web service defined above uses the image alp
 
  
 
-44. Can you list out ways to share Compose configurations between files and projects under Docker Compose?
+# Can you list out ways to share Compose configurations between files and projects under Docker Compose?
 
 Compose supports two methods of sharing common configuration:
 1.	Extending an entire Compose file by using multiple Compose files
 2.	Extending individual services with the extends field
 
-45. What is the role of .dockerignore file?
+# What is the role of .dockerignore file?
 To understand the role of .dockerignore file, let us take a practical example. You may have noticed that if you put a Dockerfile in your home directory and launch a docker build you will see a message uploading context. Right? This means docker creates a .tar with all the files in your home and in all the subdirectories, and uploads this tar to the docker daemon. If you have some huge files, this may take a long time.
 In order to avoid this, you might need to create a specific directory, where you put your Dockerfile, and all what is needed for your build. It becomes necessary to tell docker to ignore some files during the build. Hence, you need to put in the .dockerignore all the files not needed for your build
 Before the docker CLI sends the context to the docker daemon, it looks for a file named .dockerignore in the root directory of the context. If this file exists, the CLI modifies the context to exclude files and directories that match patterns in it. This helps to avoid unnecessarily sending large or sensitive files and directories to the daemon and potentially adding them to images using ADD or COPY.
 
-46. What is the purpose of EXPOSE command in Dockerfile?
+# What is the purpose of EXPOSE command in Dockerfile?
 When writing your Dockerfiles, the instruction EXPOSE tells Docker the running container listens on specific network ports. This acts as a kind of port mapping documentation that can then be used when publishing the ports.
 
 `EXPOSE <port> [<port>/<protocol>...]`
@@ -336,7 +337,7 @@ You can also specify this within a docker run command, such as:
 
 Please note that EXPOSE will not allow communication via the defined ports to containers outside of the same network or to the host machine. To allow this to happen you need to publish the ports.
 
-47. How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?
+# How is ENTRYPOINT instruction under Dockerfile different from RUN instruction?
 ENTRYPOINT is meant to provide the executable while CMD is to pass the default arguments to the executable.
 To understand it clearly, let us consider the below Dockerfile:
  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-19.png)
@@ -354,16 +355,16 @@ Let's run it passing a command line argument
   ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-23.png)
  
 This clearly state that ENTRYPOINT is meant to provide the executable while CMD is to pass the default arguments to the executable.
-48. Why Build cache in Docker is so important? 
+# Why Build cache in Docker is so important? 
 If the objects on the file system that Docker is about to produce are unchanged between builds, reusing a cache of a previous build on the host is a great time-saver. It makes building a new container really, really fast. None of those file structures have to be created and written to disk this time — the reference to them is sufficient to locate and reuse the previously built structures.
-49. Why Docker Monitoring is necessary?
+# Why Docker Monitoring is necessary?
 ●	Monitoring helps to identify issues proactively that would help to avoid system outages.
 ●	The monitoring time-series data provide insights to fine-tune applications for better performance and robustness.
 ●	With full monitoring in place, changes could be rolled out safely as issues will be caught early on and be resolved quickly before that transforms into root-cause for an outage.
 ●	The changes are inherent in container based environments and impact of that too gets monitored indirectly.
  
 
-50. Difference between Windows Containers and Hyper-V Containers
+# Difference between Windows Containers and Hyper-V Containers
   ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-24.png)
 
 Underlying is the architecture laid out by the Microsoft for the Windows and Hyper-V Containers
@@ -373,7 +374,7 @@ Differences:
   ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-25.png)
  
 
-51. What are main difference between Swarm & Kubernetes?
+# What are main difference between Swarm & Kubernetes?
 Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications. It  was built by Google based on their experience running containers in production using an internal cluster management system called Borg (sometimes referred to as Omega). In the other hand, a Swarm cluster consists of Docker Engine deployed on multiple nodes. Manager nodes perform orchestration and cluster management. Worker nodes receive and execute tasks 
 Below are the major list of differences between Docker Swarm & Kubernetes:
  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-26.png)
@@ -397,10 +398,10 @@ Out-of-the-box K8S provides a basic logging mechanism to pull aggregate logs for
 
 
 
-52.  Is it possible to run Kubernetes on Docker EE 2.0 Platform?
+#  Is it possible to run Kubernetes on Docker EE 2.0 Platform?
 Yes, it is possible to run Kubernetes under Docker EE 2.0 platform. Docker Enterprise Edition (EE) 2.0 is the only platform that manages and secures applications on Kubernetes in multi-Linux, multi-OS and multi-cloud customer environments. As a complete platform that integrates and scales with your organization, Docker EE 2.0 gives you the most flexibility and choice over the types of applications supported, orchestrators used, and where it’s deployed. It also enables organizations to operationalize Kubernetes more rapidly with streamlined workflows and helps you deliver safer applications through integrated security solutions.
 
-53. Can you use Docker Compose to build up Swarm/Kubernetes Cluster?
+# Can you use Docker Compose to build up Swarm/Kubernetes Cluster?
 Yes, one can deploy a stack on Kubernetes with docker stack deploy command, the docker-compose.yml file, and the name of the stack.
 Example:
 $docker stack deploy --compose-file /path/to/docker-compose.yml mystack
@@ -408,33 +409,33 @@ $docker stack deploy --compose-file /path/to/docker-compose.yml mystack
 You can see the service deployed with the kubectl get services command
                   $kubectl get svc,po,deploy
 
-55. What is 'docker stack deploy' command meant for?
+# What is 'docker stack deploy' command meant for?
 The ‘docker stack deploy’ is a command to deploy a new stack or update an existing stack. A stack is a collection of services that make up an application in a specific environment. A stack file is a file in YAML format that defines one or more services, similar to a docker-compose.yml file for Docker Compose but with a few extensions. 
  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-27.png)
  
-56. List down major components of Docker EE 2.0?
+# List down major components of Docker EE 2.0?
 Docker EE is more than just a container orchestration solution; it is a full lifecycle management solution for the modernization of traditional applications and microservices across a broad set of infrastructure platforms. It is a Containers-as-a-Service(CaaS) platform for IT that manages and secures diverse applications across disparate infrastructure, both on-premises and in the cloud. Docker EE provides an integrated, tested and certified platform for apps running on enterprise Linux or Windows operating systems and Cloud providers. It is tightly integrated to the underlying infrastructure to provide a native, easy to install experience and an optimized Docker environment.
 Docker EE 2.0 GA consists of 3 major components which together enable a full software supply chain, from image creation, to secure image storage, to secure image deployment.
 ●	Universal Control Plane 3.0.0 (application and cluster management) – Deploys applications from images, by managing orchestrators, like Kubernetes and Swarm. UCP is designed for high availability (HA). You can join multiple UCP manager nodes to the cluster, and if one manager node fails, another takes its place automatically without impact to the cluster.
 ●	Docker Trusted Registry 2.5.0 – The production-grade image storage solution from Docker &
 ●	EE Engine 17.06.2- The commercially supported Docker engine for creating images and running them in Docker containers.
 
-57. Explain the concept of HA under Swarm Mode?
+# Explain the concept of HA under Swarm Mode?
 HA refers to High Availability. High Availability is a feature where you have multiple instances of your applications running in parallel to handle increased load or failures. These two paradigms fit perfectly into Docker Swarm, the built-in orchestrator that comes with Docker. Deploying your applications like this will improve your uptime which translates to happy users.
 For creating a high availability container in the Docker Swarm, we need to deploy a docker service to the swarm with nginx image. This can be done by using docker swarm create command as specified above.
 # docker service create --name nginx --publish 80:80 nginx
  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-29.png)
  
-58) Can you explain what is Routing Mesh under Docker Swarm Mode?
+# Can you explain what is Routing Mesh under Docker Swarm Mode?
 Routing Mesh is a feature which make use of Load Balancer concepts.It provides global publish port for a given service. The routing mesh uses port based service discovery and load balancing. So to reach any service from outside the cluster you need to expose ports and reach them via the Published Port.
 Docker Engine swarm mode makes it easy to publish ports for services to make them available to resources outside the swarm. All nodes participate in an ingress routing mesh. The routing mesh enables each node in the swarm to accept connections on published ports for any service running in the swarm, even if there’s no task running on the node. The routing mesh routes all incoming requests to published ports on available nodes to an active container.
  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-30.png)
  
-59. Is Routing Mesh a Load Balancer? 
+# Is Routing Mesh a Load Balancer? 
 Routing Mesh is not Load-Balancer. It makes use of LB concepts.It provides global publish port for a given service. The routing mesh uses port based service discovery and load balancing. So to reach any service from outside the cluster you need to expose ports and reach them via the Published Port.
 In simple words, if you had 3 swarm nodes, A, B and C, and a service which is running on nodes A and C and assigned node port 30000, this would be accessible via any of the 3 swarm nodes on port 30000 regardless of whether the service is running on that machine and automatically load balanced between the 2 running containers. I will talk about Routing Mesh in separate blog if time permits.
 
-60. Is it possible to run MacVLAN under Docker Swarm Mode? What features does it offer?
+# Is it possible to run MacVLAN under Docker Swarm Mode? What features does it offer?
 Starting Docker CE 17.06 release, Docker provides support for local scope networks in Swarm. This includes any local scope network driver. Some examples of these are bridge, host, and macvlan though any local scope network driver, built-in or plug-in, will work with Swarm. Previously only swarm scope networks like overlay were supported. 
  ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-31.png)
  
@@ -446,7 +447,7 @@ MACVLAN offers a number of unique features and capabilities. It has positive per
 
 
 
-61. What are Docker secrets and why is it necessary
+# What are Docker secrets and why is it necessary
 In Docker there are three key components to container security and together they result in inherently safer apps.
   ![img](https://raw.githubusercontent.com/collabnix/dockerlabs/master/docker/img/docker-interview-32.png)
 Docker Secrets, a container native solution that strengthens the Trusted Delivery component of container security by integrating secret distribution directly into the container platform.
