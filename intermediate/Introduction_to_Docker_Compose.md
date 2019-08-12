@@ -35,19 +35,19 @@ Options specified in the `Dockerfile` (e.g., `CMD`, `EXPOSE`, `VOLUME`, `ENV`) a
 
 ## Project's components
 
-We've already created a simple app in `code/guestbook-node` that uses node.js with express and redis.
+We've already created a simple app in `git clone https://github.com/sangam14/docker-compose` that uses node.js with express and redis.
 
-1. Go to `code/guestbook-node` folder
+1. Go to `docker-compose` folder
 
 2. Review `Dockerfile`:
 
 ```
 FROM node:7.7.0-alpine
-RUN mkdir /code
+RUN mkdir /docker-compose
 WORKDIR /code
-ADD package.json /code/
+ADD package.json /docker-compose/
 RUN npm install
-ADD . /code/
+ADD . /docker-compose/
 CMD ["node", "main.js"]
 ```
 
