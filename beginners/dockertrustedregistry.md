@@ -10,7 +10,8 @@ In order for DTR to work UCP has to be insallted and for UCP to be installed you
 Docker EE you can get a free liscense from DockerHub.
 
 ## DTR Features:
-#Image and job management
+
+# Image and job management
 
 DTR can be installed on any platform where  you can store your Docker images securely, behind your firewall.
 DTR has a user interface that allows authorized users in your organization to browse Docker images and review repository events. It even allows you to see what Dockerfile lines were used to produce the image and, if security scanning is enabled, to see a list of all of the software installed in your images.
