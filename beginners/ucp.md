@@ -11,4 +11,5 @@ It has enriching API's provided by Docker which can be used within the code to i
 
 This is what ucp contrale plane looks like: 
 ![My Image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/ucp.png)
+Image taken from official docker docs
 
