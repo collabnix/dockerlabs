@@ -30,6 +30,6 @@ Image Scanning is built in feature provided out of the box by DTR.
 ## Image signing
 DTR has built in Notary, you can use Docker Content Trust to sign snd verify images.
 
-Here is what the UI of DTR looks like :
+This is what the UI of DTR looks like :
 
 ![My Image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/DTR.png)
