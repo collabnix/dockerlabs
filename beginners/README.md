@@ -56,7 +56,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
   - [Building Your own Docker Image from Scratch](./building-docker-image-from-scratch.md)
 - [What is Docker Container?](./components/what-is-container.md)
 - [Difference between Docker Image Vs Docker Container?](./components/container-vs-image.md)
-- What is Docker registry?
+- What is Docker registry?[./dockertrustedregistry.md]
   - [Building a Private Docker Registry](./build-private-docker-registry.md)
   - [Building a Private Docker Registry using Portus](./portus/README.md)
 
