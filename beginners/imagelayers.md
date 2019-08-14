@@ -12,10 +12,10 @@ the image faster.
 If you see above, it is a 4 layered docker image formed by below instruction:
 
 ```
-FROM openjdk
+FROM ubuntu
 COPY . /app
 RUN make /app
-CMD java /app/test.jar
+CMD python /app/test.py
 ```
 Since this is layered architecture now if you change only the last layer and rebuild the image then the only the last layer is pushed 
 and other layers are used as is.
