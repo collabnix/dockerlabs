@@ -7,4 +7,8 @@ There are lot of things thst you can do with UCP out of the box including Build,
 
 When you create a Dcoker Container Cluster of 100 virtual machines, UCP will act as a centralized place to manage your cluster with graphical interface.
 It has Built in security and authencitcation which is also used for DTR. 
-It has enriching API's provided by Docker which can be used within the code to i`nteract with UCP and making the required changes via rest cals.
+It has enriching API's provided by Docker which can be used within the code to interact with UCP and making the required changes via rest calls.
+
+This is what ucp contrale plane looks like: 
+![My Image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/ucp.png)
+
