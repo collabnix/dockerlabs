@@ -18,7 +18,7 @@
 
 - [Building Docker Image using Dockerfile](https://collabnix.github.io/dockerlabs/beginners/dockerfile/Writing-dockerfile.html)
 - [Writing Your First Dockerfile](http://dockerlabs.collabnix.com/beginners/dockerfile/Writing-dockerfile.html)
-- [Building a Private Docker Registry](https://collabnix.github.io/dockerlabs/beginners/build-private-docker-registry.html)
+
 
 ## Creating Private Docker Registry
 
