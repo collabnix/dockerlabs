@@ -30,7 +30,7 @@
 ## Create a directory to permanently store images.
 
 ```
-$ mkdir -p /opt/registry/data
+$ mkdir -p /registry/data
 ```
 
 ## Authenticate with DockerHub
@@ -45,7 +45,7 @@ $docker login
 $ docker run -d \
   -p 5000:5000 \
   --name registry \
-  -v /opt/registry/data:/var/lib/registry \
+  -v /registry/data:/var/lib/registry \
   --restart always \
   registry:2
 ```
@@ -70,26 +70,26 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ## Pull Debian Stretch image from official repository.
 
 ```
-$ docker pull debian:stretch
+$ docker pull alpine:3.6
 
-stretch: Pulling from library/debian
+stretch: Pulling from library/alpine
 723254a2c089: Pull complete
 Digest: sha256:0a5fcee6f52d5170f557ee2447d7a10a5bdcf715dd7f0250be0b678c556a501b
-Status: Downloaded newer image for debian:stretch
+Status: Downloaded newer image for alpine:3.6
 ```
 
-## Tag local Debian Stretch image with an additional tag - local repository address.
+## Tag local alpine 3.6 image with an additional tag - local repository address.
 
 ```
-$ docker tag debian:stretch localhost:5000/debian:stretch
+$ docker tag alpine:3.6 localhost:5000/alpine:3.6
 ```
 
 ## Push image to the local repository.
 
 ```
 [node1] (local) root@192.168.0.23 ~
-$ docker push localhost:5000/debian:stretch
-The push refers to repository [localhost:5000/debian]
+$ docker push localhost:5000/alpine:3.6
+The push refers to repository [localhost:5000/alpine:3.6]
 90d1009ce6fe: Pushed
 stretch: digest: sha256:38236c068c393272ad02db100e09cac36a5465149e2924a035ee60d6c60c38fe size: 529
 [node1] (local) root@192.168.0.23 ~
@@ -99,15 +99,15 @@ stretch: digest: sha256:38236c068c393272ad02db100e09cac36a5465149e2924a035ee60d6
 
 ```
 [node1] (local) root@192.168.0.23 ~
-$ docker image remove debian:stretch
-Untagged: debian:stretch
-Untagged: debian@sha256:df6ebd5e9c87d0d7381360209f3a05c62981b5c2a3ec94228da4082ba07c4f05
+$ docker image remove alpine:3.6
+Untagged: alpine:3.6
+Untagged: alpine@sha256:df6ebd5e9c87d0d7381360209f3a05c62981b5c2a3ec94228da4082ba07c4f05
 ```
 
 ```
 [node1] (local) root@192.168.0.23 ~
-$ docker image remove localhost:5000/debian:stretch
-Untagged: localhost:5000/debian:stretch
+$ docker image remove localhost:5000/alpine:3.6
+Untagged: localhost:5000/alpine:3.6
 Untagged: localhost:5000/debian@sha256:38236c068c393272ad02db100e09cac36a5465149e2924a035ee60d6c60c38fe
 Deleted: sha256:4879790bd60d439cfe39c063660eef7af525d5f6f1cbb701a14c7cfc11cbfcf7
 ```
@@ -116,11 +116,11 @@ Deleted: sha256:4879790bd60d439cfe39c063660eef7af525d5f6f1cbb701a14c7cfc11cbfcf7
 
 ```
 [node1] (local) root@192.168.0.23 ~
-$ docker pull localhost:5000/debian:stretch
-stretch: Pulling from debian
+$ docker pull localhost:5000/alpine:3.6
+stretch: Pulling from alpine
 54f7e8ac135a: Pull complete
 Digest: sha256:38236c068c393272ad02db100e09cac36a5465149e2924a035ee60d6c60c38fe
-Status: Downloaded newer image for localhost:5000/debian:stretch
+Status: Downloaded newer image for localhost:5000/alpine:3.6
 ```
 
 ## List stored images.
@@ -129,7 +129,7 @@ Status: Downloaded newer image for localhost:5000/debian:stretch
 [node1] (local) root@192.168.0.23 ~
 $ docker image ls
 REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
-localhost:5000/debian   stretch             4879790bd60d        12 days ago         101MB
+localhost:5000/alpine   3.6                 4879790bd60d        12 days ago         101MB
 registry                2                   2e2f252f3c88        2 months ago        33.3MB
 
 ```
@@ -212,37 +212,37 @@ e7755af8cbd7        registry:2          "/entrypoint.sh /etc…"   About a minut
 [node1] (local) root@192.168.0.23 ~
 ```
 
-## Pull Debian Stretch image from official repository.
+## Pull Alpine image from official repository.
 
 ```
-$ docker pull debian:stretch
+$ docker pull alpine:3.6
 
-stretch: Pulling from library/debian
+stretch: Pulling from library/alpine
 723254a2c089: Pull complete
 Digest: sha256:0a5fcee6f52d5170f557ee2447d7a10a5bdcf715dd7f0250be0b678c556a501b
-Status: Downloaded newer image for debian:stretch
+Status: Downloaded newer image for alpine:3.6
 ```
 
-## Tag local Debian Stretch image with an additional tag - local repository address.
+## Tag local Alpine image with an additional tag - local repository address.
 
 ```
-$ docker tag debian:stretch registry.collabnix.com/debian:stretch
+$ docker tag alpine:3.6 registry.collabnix.com/alpine:3.6
 ```
 
 This time you need to provide login credentials to use local repository.
 
 ```
-$ docker push registry.collabnix.com/debian:stretch
+$ docker push registry.collabnix.com/alpine:3.6
 
 e27a10675c56: Preparing
 no basic auth credentials
 ```
 
 ```
-$ docker pull registry.collabnix.com/debian:stretch
+$ docker pull registry.collabnix.com/alpine:3.6
 ```
 
-Error response from daemon: Get https://registry.collabnix.com/v2/debian/manifests/stretch: no basic auth credentials
+Error response from daemon: Get https://registry.collabnix.com/v2/alpine/manifests/3.6: no basic auth credentials
 
 ## Log in to the local registry.
 
@@ -256,11 +256,11 @@ Login Succeeded
 ## Push image to the local repository.
 
 ```
-$ docker push registry.collabnix.com/debian:stretch
+$ docker push registry.collabnix.com/alpine:3.6
 ```
 
 ```
-The push refers to repository [registry.collabnix.com/debian]
+The push refers to repository [registry.collabnix.com/alpine]
 e27a10675c56: Pushed
 stretch: digest: sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c size: 529
 ```
@@ -268,17 +268,17 @@ stretch: digest: sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c1
 ## Remove local images.
 
 ```
-$ docker image remove debian:stretch
+$ docker image remove alpine:3.6
 
-Untagged: debian:stretch
-Untagged: debian@sha256:0a5fcee6f52d5170f557ee2447d7a10a5bdcf715dd7f0250be0b678c556a501b
+Untagged: alpine:3.6
+Untagged: alpine@sha256:0a5fcee6f52d5170f557ee2447d7a10a5bdcf715dd7f0250be0b678c556a501b
 ```
 
 ```
-$ docker image remove registry.collabnix.com/debian:stretch
+$ docker image remove registry.collabnix.com/alpine:3.6
 
-Untagged: registry.collabnix.com/debian:stretch
-Untagged: registry.sl.collabnix.com/debian@sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c
+Untagged: registry.collabnix.com/alpine:3.6
+Untagged: registry.sl.collabnix.com/alpine@sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c
 Deleted: sha256:da653cee0545dfbe3c1864ab3ce782805603356a9cc712acc7b3100d9932fa5e
 Deleted: sha256:e27a10675c5656bafb7bfa9e4631e871499af0a5ddfda3cebc0ac401dfe19382
 ```
@@ -286,12 +286,12 @@ Deleted: sha256:e27a10675c5656bafb7bfa9e4631e871499af0a5ddfda3cebc0ac401dfe19382
 ## Pull Debian Stretch image from local repository.
 
 ```
-$ docker pull registry.collabnix.com/debian:stretch
+$ docker pull registry.collabnix.com/alpine:3.6
 
-stretch: Pulling from debian
+stretch: Pulling from alpine
 723254a2c089: Pull complete
 Digest: sha256:02741df16aee1b81c4aaff4c48d75cc2c308bade918b22679df570c170feef7c
-Status: Downloaded newer image for registry.collabnix.com/debian:stretch
+Status: Downloaded newer image for registry.collabnix.com/alpine:3.6
 ```
 
 ## List stored images.
@@ -301,6 +301,6 @@ $ docker image ls
 
 REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
 registry                             2                   d1fd7d86a825        4 weeks ago         33.3MB
-registry.collabnix.com/debian   stretch             da653cee0545        2 months ago        100MB
+registry.collabnix.com/alpine        3.6             da653cee0545        2 months ago        100MB
 hello-world                          latest              f2a91732366c        2 months ago     
 ```
