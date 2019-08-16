@@ -5,7 +5,7 @@
 - [Running Hello World Example](https://collabnix.github.io/dockerlabs/beginners/helloworld/)
 - [Working with Docker Image](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html) 
 - [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
-- [Building a Private Docker Registry](https://collabnix.github.io/dockerlabs/beginners/build-private-docker-registry.html)
+
 
 
 ## Accessing & Managing Docker Container
