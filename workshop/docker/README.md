@@ -5,14 +5,25 @@
 - [Running Hello World Example](https://collabnix.github.io/dockerlabs/beginners/helloworld/)
 - [Working with Docker Image](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html) 
 - [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
-- [Building Docker Image using Dockerfile](https://collabnix.github.io/dockerlabs/beginners/dockerfile/Writing-dockerfile.html)
 - [Building a Private Docker Registry](https://collabnix.github.io/dockerlabs/beginners/build-private-docker-registry.html)
+
 
 ## Accessing & Managing Docker Container
 
 - [Accessing the Container Shell](http://dockerlabs.collabnix.com/beginners/accessing-the-container.html)<br>
 - [Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)<br>
 - [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)<br>
+
+## Introduction to Dockerfile
+
+- [Building Docker Image using Dockerfile](https://collabnix.github.io/dockerlabs/beginners/dockerfile/Writing-dockerfile.html)
+- [Writing Your First Dockerfile](http://dockerlabs.collabnix.com/beginners/dockerfile/Writing-dockerfile.html)
+- [Building a Private Docker Registry](https://collabnix.github.io/dockerlabs/beginners/build-private-docker-registry.html)
+
+## Creating Private Docker Registry
+
+- [Building a Private Docker Registry](https://collabnix.github.io/dockerlabs/beginners/build-private-docker-registry.html)
+- [Building a Private Docker Registry with UI](https://collabnix.github.io/dockerlabs/beginners/portus.md)
 
 
 ### Docker Volumes
@@ -24,6 +35,4 @@
 
  - [Using Docker Networks](http://dockerlabs.collabnix.com/beginners/using-docker-network.html)<br>
 
-## Introduction to Dockerfile
 
-- [Writing Your First Dockerfile](http://dockerlabs.collabnix.com/beginners/dockerfile/Writing-dockerfile.html)
