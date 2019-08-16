@@ -67,7 +67,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 .0:5000->5000/tcp   registry
 ```
 
-## Pull Debian Stretch image from official repository.
+## Pull Alpine 3.6 image from official repository.
 
 ```
 $ docker pull alpine:3.6
@@ -112,7 +112,7 @@ Untagged: localhost:5000/debian@sha256:38236c068c393272ad02db100e09cac36a5465149
 Deleted: sha256:4879790bd60d439cfe39c063660eef7af525d5f6f1cbb701a14c7cfc11cbfcf7
 ```
 
-## Pull Debian Stretch image from local repository.
+## Pull Alpine 3.6 image from local repository.
 
 ```
 [node1] (local) root@192.168.0.23 ~
