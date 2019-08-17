@@ -32,7 +32,7 @@
 - Create an image with expose instruction
 - Create hello.py 
 - Create dockerfile 
-- Buid dockerfile 
+- Build dockerfile 
 -  Run application 
 
 
@@ -92,7 +92,7 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 
 ```
 
-# build dockerfile 
+# building dockerfile 
 
 ```
  docker build -t pythonapp:v1 .
