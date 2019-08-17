@@ -26,5 +26,5 @@ We will go through each of instructions under Dockerfile and see how it is used.
 Let's proceed:
 
 [Lab #1: Create an image with GIT installed](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/lab1_dockerfile_git.md)<br>
-[Lab #2: Create an image with ADD instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Dockerfile-add.md)<br>
+
 
