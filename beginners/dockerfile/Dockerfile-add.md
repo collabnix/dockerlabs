@@ -92,4 +92,4 @@ Please press "Enter" key twice so as to enter into container shell
 -rw-------    1 root     root        195979 Jan  1  1970 master
 ```
 
-RUN Commands lets you untar a file directly from a link or location and copy to the image.
+ADD Command lets you to untar a file directly from a link or location and copy to the container.
