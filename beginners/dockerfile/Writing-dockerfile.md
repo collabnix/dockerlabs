@@ -7,7 +7,7 @@
 
 We will go through each of instructions under Dockerfile and see how it is used.
 
-[Lab #1: Create an image with GIT installed]()<br>
+[Lab #1: Create an image with GIT installed](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/lab1_dockerfile_git.md)<br>
 [Lab #2: Create an image with ADD instruction]()<br>
 [Lab #3: Create an image with COPY instruction]()<br>
 [Lab #4: Create an image with CMD instruction]()<br>
@@ -23,7 +23,8 @@ We will go through each of instructions under Dockerfile and see how it is used.
 [Lab #14: Create an image with SHELL instruction]()<br>
 [Lab #15: Create an image with Python Script]()<br>
 
+Let's proceed:
 
-[Lab #1: Create an image with GIT installed]()<br>
+[Lab #1: Create an image with GIT installed](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/lab1_dockerfile_git.md)<br>
 
 
