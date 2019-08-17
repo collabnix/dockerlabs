@@ -92,7 +92,7 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 
 ```
 
-## building dockerfile 
+## Building dockerfile 
 
 ```
  docker build -t pythonapp:v1 .
