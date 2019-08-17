@@ -46,7 +46,7 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 
 ```
 
-# buid dockerfile 
+# build dockerfile 
 
 ```
  docker build -t pythonapp .
