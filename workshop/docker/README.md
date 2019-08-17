@@ -14,10 +14,23 @@
 - [Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)<br>
 - [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)<br>
 
-## Introduction to Dockerfile
+## Introduction to Dockerfile Labs
 
-- [Building Docker Image using Dockerfile](https://collabnix.github.io/dockerlabs/beginners/dockerfile/Writing-dockerfile.html)
-- [Writing Your First Dockerfile](http://dockerlabs.collabnix.com/beginners/dockerfile/Writing-dockerfile.html)
+- [Lab #1: Create an image with GIT installed]()<br>
+- [Lab #2: Create an image with ADD instruction]()<br>
+- [Lab #3: Create an image with COPY instruction]()<br>
+- [Lab #4: Create an image with CMD instruction]()<br>
+- [Lab #5: Create an image with ENTRYPOINT instruction]()<br>
+- [Lab #6: Create an image with WORKDIR instruction]()<br>
+- [Lab #7: Create an image with RUN instruction]()<br>
+- [Lab #8: Create an image with EXPOSE instruction]()<br>
+- [Lab #9: Create an image with VOLUME instruction]()<br>
+- [Lab #10: Create an image with EXPOSE instruction]()<br>
+- [Lab #11: Create an image with LABEL instruction]()<br>
+- [Lab #12: Create an image with ONBUILD instruction]()<br>
+- [Lab #13: Create an image with HEALTHCHECK instruction]()<br>
+- [Lab #14: Create an image with SHELL instruction]()<br>
+- [Lab #15: Create an image with Python Script]()<br>
 
 
 ## Creating Private Docker Registry
