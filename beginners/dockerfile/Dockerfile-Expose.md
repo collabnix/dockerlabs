@@ -1,9 +1,50 @@
+# Lab #14: Create an image with EXPOSE instruction
 
-#  Create an image with EXPOSE instruction
+## Pre-requisite:
 
-# create directory `mkdir pythonexposeapp`
+## Tested Infrastructure
 
-# `vi hello.py` 
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+- Create an account with [DockerHub](https://hub.docker.com)
+- Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
+- Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
+
+
+## Assignment:
+
+- Create an image with expose instruction
+- Create hello.py 
+- Create dockerfile 
+- Buid dockerfile 
+-  Run application 
+
+
+
+
+## create directory 
+
+``` mkdir pythonexposeapp ```
+
+## create hello.py 
+
+```vi hello.py```
 
 ```from flask import Flask
 app = Flask(__name__)
@@ -16,7 +57,7 @@ if __name__ == "__main__":
     app.run()```
 
 ```
-# create dockerfile 
+## Creating Dockerfile
 ```
 vi Dockerfile
 
@@ -49,13 +90,13 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 # build dockerfile 
 
 ```
- docker build -t pythonapp .
+ docker build -t pythonapp:v1 .
 ```
 
-# 
+# Run Docker image 
 
 ```
-sangam$ docker run -p 5000:5000 pythonapp
+sangam$ docker run -p 5000:5000 pythonapp:v1
  * Serving Flask app "hello.py"
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
