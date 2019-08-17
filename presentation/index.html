@@ -1,0 +1,569 @@
+<!doctype html>
+<!-- vim: tabstop=4:softtabstop=4:shiftwidth=4:noexpandtab
+-->
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Docker Workshop</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/bekk.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/solarized_light.css">
+
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<style>
+		.reveal pre code {
+			width: 100%;
+			font-size: 1.4em;
+			line-height: 1em;
+		}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+
+<!-- Tobias: Her starter slidene -->
+
+<section>
+	<h1>Docker</h1>
+	<img src="images/docker-whale.png" style="border: 0"></img>
+	<p>
+		<small>Tobias Waaler og Stian Mathiassen</small>
+	</p>
+</section>
+
+<section>
+	<h1>The Dream!</h1>
+	<hr/>
+	<code>docker run myapp</code>
+	<aside class="notes">Stian</aside>
+</section>
+
+<section>
+	<h1>Virtualization is NOT the point</h1>
+</section>
+
+<section>
+	<img src="images/1.png" style="border: 0">
+</section>
+
+<section>
+	<img src="images/2.png" style="border: 0">
+</section>
+
+<section>
+	<img src="images/3.png" style="border: 0">
+</section>
+
+<section>
+	<img src="images/4.png" style="border: 0">
+</section>
+
+<section>
+	<img src="images/5.png" style="border: 0">
+</section>
+
+<section>
+	<h2>Image and container</h2>
+	<hr></hr>
+	<h3>Image:</h3>
+	<p>
+		A snapshot of a disk image. Can be created by commiting a container.
+	</p>
+	<hr></hr>
+	<h3>Container</h3>
+	<p>
+		A program running in docker, which uses an image as a base image.
+		Each container start from scratch from the base image.
+	</p>
+	<aside class="notes">Tobias</aside>
+</section>
+
+<section>
+	<h1>Lifecycle in Docker</h1>
+</section>
+
+<section>
+	<h2>Get a base image</h2>
+	<p><code class="bash">docker pull ubuntu:latest</code></p>
+	<p>Pulls an image from <a href="http://index.docker.io">index.docker.io</a></p>
+</section>
+
+<section>
+	<h2>List all images</h2>
+	<hr/>
+	<pre><code class="bash">docker images</code></pre>
+	<pre><code class="bash" data-trim>
+REPOSITORY TAG    IMAGE ID     CREATED     VIRTUAL SIZE
+ubuntu     latest 9cd978db300e 7 weeks ago 204.4 MB
+	</pre></code>
+</section>
+
+<section>
+	<h2>Image layers</h2>
+	<img src="images/docker-filesystems-multilayer.png" style="border: 0"></img>
+</section>
+
+<section>
+	<h2>Start a container</h2>
+	<pre><code class="bash">docker run ubuntu echo "Hello World"</code></pre>
+	<pre><code class="bash">Hello World</code></pre>
+</section>
+
+<section>
+	<h2>List containers</h2>
+	<pre><code class="bash">docker ps --all</code></pre>
+	<pre><code class="bash" data-trim>
+CONTAINER ID IMAGE         COMMAND          CREATED       STATUS ...
+2529384fabd4 ubuntu:latest echo Hello World 8 minutes ago Exit 0 ...
+	</pre></code>
+</section>
+
+<section>
+	<h2>A useful container</h2>
+	<pre><code class="bash">docker run --interactive --tty ubuntu /bin/bash</code></pre>
+	<pre><code class="bash" data-trim>
+root@a9f2bd405f9e:/# echo "Hello World" &gt; /somefile.txt
+root@a9f2bd405f9e:/# exit
+	</code></pre>
+</section>
+
+<section>
+	<h2>Container has died</h2>
+	<pre><code class="bash">docker ps --all</code></pre>
+	<pre><code class="bash" data-trim>
+CONTAINER ID IMAGE         COMMAND          CREATED        STATUS ...
+a9f2bd405f9e ubuntu:latest /bin/bash        3 minutes ago  Exit 0 ...
+2529384fabd4 ubuntu:latest echo Hello World 20 minutes ago Exit 0 ...
+	</pre></code>
+</section>
+
+<section>
+	<h2>Restart a container</h2>
+	<p>Will re-run the same command. Will re-use same disk.</p>
+	<pre><code class="bash">docker start --attach --interactive a9f2bd405f9e</code></pre>
+	<pre><code class="bash" data-trim>
+root@a9f2bd405f9e:/# echo "Hello World" &gt; /anotherfile.txt
+root@a9f2bd405f9e:/# exit
+	</code></pre>
+</section>
+
+<section>
+	<h2>Diff changes to container</h2>
+	<p>Will show changes from base image and the container</p>
+	<pre><code class="bash">docker diff a9f2bd405f9e</code></pre>
+	<pre><code class="bash" data-trim>
+A /.bash_history
+A /anotherfile.txt
+C /dev
+C /dev/console
+C /dev/core
+C /dev/fd
+C /dev/ptmx
+C /dev/stderr
+C /dev/stdin
+C /dev/stdout
+A /somefile.txt
+	</code></pre>
+</section>
+
+<section>
+	<h2>Create a new image</h2>
+	<p>Base the new image on a container. Will create a new layer on top of the base image</p>
+	<pre><code class="bash">docker commit a9f2bd405f9e myimage:mytag</code></pre>
+	<pre><code class="bash" data-trim>
+dbf0e2a6421dfcb3d2194c5e2c3daf2132bd0c172cdaaa3ab90f27d5a0273ba8
+	</code></pre>
+	<hr/>
+	<pre><code class="bash">docker images --tree</code></pre>
+	<pre><code class="bash" data-trim>
+└─511136ea3c5a Virtual Size: 0 B
+  └─6170bb7b0ad1 Virtual Size: 0 B
+    └─9cd978db300e Virtual Size: 204.4 MB Tags: ubuntu:latest
+      └─dbf0e2a6421d Virtual Size: 204.4 MB Tags: myimage:mytag
+	</code></pre>
+</section>
+
+<section>
+	<h2>Setup for assignment</h2>
+	<ul>
+		<li>We are using Vagrant for the assignments</li>
+		<li>Really just a virtual machine in VirtualBox</li>
+		<li><code>vagrant up</code> Starts your virtual machine</li>
+		<li><code>vagrant destroy</code> Resets your virtual machine</li>
+		<li><code>vagrant ssh</code> Log in to the virtual machine</li>
+		<li><code>/vagrant</code> inside the virtual machine is a shared folder</li>
+	</ul>
+</section>
+
+<section id="ass1">
+	<h2>Assignment #1</h2>
+	<ol>
+		<li>Run <code>echo "Hello world"</code> in a container based on the Ubuntu image</li>
+		<li>Run an interactive bash in a container</li>
+		<li>Install node.js (<code>nodejs</code>) in a container (using interactive bash)</li>
+		<ul>
+			<li><code>apt-get update</code> Updates list of available software</li>
+			<li><code>apt-get install</code> Install software</li>
+		</ul>
+		<li>Create an image called <code>assig1</code> with node.js installed</li>
+		<li>Try to run <code>nodejs --version</code> using your new image</li>
+	</ol>
+</section>
+
+<section>
+	<h2>Summary</h2>
+	<ol>
+		<li><code class="bash">docker run --interactive --tty ubuntu /bin/bash</code></li>
+		<li>(do stuff in container)</li>
+		<li><code class="bash">docker commit CONTAINER_ID</code></li>
+	</ol>
+	<aside class="notes">Stian</aside>
+</section>
+
+<section>
+	<h1>Dockerfile</h1>
+	<h3>The Recipe</h3>
+</section>
+
+<section>
+	<h2>Dockerfile</h2>
+	<pre><code class="bash" data-trim>
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y nodejs npm
+	</code></pre>
+	<p>Each RUN-command creates a new layer. Layers are re-used</p>
+</section>
+
+<section>
+	<h2>Build image</h2>
+	<pre><code class="bash">docker build --tag="ubuntu-nodejs" .</code></pre>
+	<hr>
+	<pre><code class="bash">
+$> docker images
+REPOSITORY     TAG      IMAGE ID      CREATED        VIRTUAL SIZE
+ubuntu-nodejs  latest   34b580498f7b  2 minutes ago  248.2 MB
+	</code></pre>
+</section>
+
+<section id="ass2">
+	<h2>Assignment #2</h2>
+	<p>Do the following using a Dockerfile ...</p>
+	<ol>
+		<li>Create an image with <code>nodejs</code> and <code>npm</code> installed</li>
+		<li>Tag your image as <code>ubuntu-nodejs</code></li>
+		<li>Create a container based on that image, and run <code>nodejs --version</code> to check that it is installed correctly</li>
+	</ol>
+</section>
+
+<section>
+	<h2>Dockerfiles pt. 2</h2>
+	<p>ADD, ENTRYPOINT, USER, WORKDIR and EXPOSE</p>
+	<aside class="notes">Tobias</aside>
+</section>
+
+<section>
+	<h2>ADD</h2>
+	<p>Copy a file from the host to the image</p>
+	<pre><code class="bash" data-trim>
+FROM ubuntu-nodejs
+
+ADD ./src /var/apps/nodejs/
+	</code></pre>
+	<p>Same as running <code>docker cp</code></p>
+</section>
+
+<section>
+	<h2>USER</h2>
+	<p>Run command as user</p>
+	<pre><code class="bash" data-trim>
+FROM ubuntu-nodejs
+ADD ./src /var/apps/nodejs/
+
+USER daemon
+	</code></pre>
+</section>
+
+<section>
+	<h2>ENTRYPOINT</h2>
+	<p>Command to run when starting the container</p>
+	<pre><code class="bash" data-trim>
+FROM ubuntu-nodejs
+ADD ./src /var/apps/nodejs/
+USER daemon
+
+ENTRYPOINT ["nodejs", "/var/apps/nodejs/index.js"]
+	</code></pre>
+</section>
+
+
+<section>
+	<h2>WORKDIR</h2>
+	<p>Change current working directory</p>
+	<pre><code class="bash" data-trim>
+FROM ubuntu-nodejs
+WORKDIR /
+RUN rm -fr *
+
+	</code></pre>
+</section>
+
+<section>
+	<h2>EXPOSE</h2>
+	<p>Specify which ports the container should make available</p>
+	<pre><code class="bash" data-trim>
+FROM ubuntu-nodejs
+ADD ./src /var/apps/nodejs/
+USER daemon
+ENTRYPOINT ["nodejs", "/var/apps/nodejs/index.js"]
+
+EXPOSE 8888
+	</code></pre>
+</section>
+
+<section>
+	<h2>Publish ports</h2>
+	<p>Ports are not automatically published</p>
+	<pre><code class="bash">docker run -p 8888:8888 ubuntu-nodejs</code></pre>
+	<p>Maps ports 8888 on host machine to 8888 on container</p>
+</section>
+
+<section id="ass3">
+	<h2>Assignment #3</h2>
+	<p>Based on the <code>ubuntu-nodejs</code> image created in <a href="#/ass2">Assignment #2</a>:
+	<ol>
+		<li>Add <code>/vagrant/app/src</code> to <code>/var/apps/nodejs</code> inside the image</li>
+		<li>Run <code>npm install</code> in <code>/var/apps/nodejs</code> directory in the container</li>
+		<li>The application is started with <code>nodejs /var/apps/nodejs/index.js</code></li>
+		<li>The application is running on port 8888</li>
+		<li>Start the container with the port mapped to port 8888 on the host machine</li>
+		<li>Check that the application is running on <a href="http://localhost:8888/">http://localhost:8888</a></li>
+	</ol>
+</section>
+
+<section>
+	<h2>Volumes</h2>
+	<aside class="notes">Stian</aside>
+</section>
+
+<section>
+	<h2>VOLUME</h2>
+	<p>Add a data volume</p>
+	<pre><code class="bash" data-trim>
+FROM ubuntu:14.04
+...
+ENTRYPOINT mongod
+
+VOLUME /data/db
+</code></pre>
+</section>
+
+<section>
+	<h2>Mounting volumes</h2>
+	<pre><code class="bash">docker run --volume /data:/data/db ubuntu-mongo</code></pre>
+</section>
+
+<section>
+	<h2>Linking containers</h2>
+	<aside class="notes">Tobias</aside>
+</section>
+
+<section>
+<h2>Container #1: MongoDB</h2>
+	<pre><code class="bash">FROM ubuntu:14.04
+
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+RUN apt-get update
+RUN apt-get --yes install mongodb-org
+
+VOLUME /data/db
+EXPOSE 27017
+
+ENTRYPOINT mongod
+</pre></code>
+
+	<pre><code class="bash">$ docker build --tag ubuntu-mongo /path/to/mongodb/Dockerfile</code></pre>
+	<pre><code class="bash">$ docker run --volume /data:/data/db 
+             --name mongodb 
+             --detach ubuntu-mongo</code></pre>
+	<p>MongoDB is running!</p>
+
+	<pre><code style="font-size: 13pt">$ docker ps
+CONTAINER ID  IMAGE         COMMAND               PORTS      NAMES
+43a1d9173209  mongo:latest  /bin/sh -c mongod /b  27017/tcp  mongodb
+	</code></pre>
+
+</section>
+
+<section>
+	<h4>Using --link to get environment properties</h4>
+	<pre><code class="bash" data-trim>
+$ docker run -t -i --link="mongodb:mongodb" ubuntu bash
+
+root@541474c8ccd4:/# env
+...
+MONGODB_PORT_27017_TCP=tcp://172.17.0.30:27017
+MONGODB_PORT=tcp://172.17.0.30:27017
+MONGODB_PORT_27017_TCP_PORT=27017
+MONGODB_PORT_27017_TCP_PROTO=tcp
+MONGODB_PORT_27017_TCP_ADDR=172.17.0.30
+...
+	</code></pre>
+</section>
+
+<section>
+	<h4>Using the environment variables</h4>
+	<p>In our node app:</p>
+	<pre><code class="javascript" data-trim>
+var mongoPort = process.env.MONGODB_PORT_27017_TCP_PORT;
+var ip = process.env.MONGODB_PORT_27017_TCP_ADDR;
+
+var connectionString = 'mongodb://' + ip + ':' + mongoPort + '/local';
+mongoose.connect(connectionString);
+    </code></pre>
+</section>
+
+<section>
+	<h2>Container #2: our NodeJS app</h2>
+	<pre><code class="bash">FROM ubuntu:14.04
+
+RUN apt-get update
+RUN apt-get --yes install nodejs npm
+
+ADD ./src /var/apps/nodejs/
+RUN cd /var/apps/nodejs/; npm install
+
+EXPOSE 8888
+
+CMD nodejs /var/apps/nodejs/index.js
+	</code></pre>
+
+	<pre><code class="bash">$ docker build --tag ubuntu-nodejs /path/to/nodejs/Dockerfile</code></pre>
+	<pre><code class="bash">$ docker run --publish 8888:8888 
+             --link="mongodb:mongodb" 
+             --detach ubuntu-nodejs</code></pre>
+
+</section>
+	
+<section>
+    <h2>Our Nodejs app is now connected to MongoDB</h2>
+	<pre><code class="bash" style="font-size: 11pt">
+$ docker ps
+IMAGE                 COMMAND               PORTS                    NAMES
+ubuntu-nodejs:latest  /bin/sh -c 'nodejs /  0.0.0.0:8888->8888/tcp   lonely_goldstine
+mongo:latest          /bin/sh -c mongod /b  27017/tcp                drunk_ptolemy/mongodb,lonely_goldstine/mongodb,mongodb
+	</code></pre>
+</section>
+
+
+<section id="ass4">
+	<h2>Assignment #4</h2>
+	<ol>
+		<li>
+			Build an image with MongoDB running
+			<p style="font-size: 16pt">(Create the new Dockerfile in a seperate directory. Remember to <code>EXPOSE</code> the port)</p>
+		</li>
+		<li>
+			Run a container based on the newly created Mongod-image 
+			<p style="font-size: 16pt">(remember to give it a <code>--name</code>)</p>
+		</li>
+		<li>
+			Start the Nodejs application with the <code>--link</code> option
+		</li>
+		<li>
+			Verify that the application is connected to MongoDB by visiting <a href="http://localhost:8888/">http://localhost:8888</a>		
+	    </li>
+	</ol>
+</section>
+
+<section id="bonusAss">
+	<h2>Bonus assignment</h2>
+	<p>Build images that you find useful!</p>
+	<p><a>https://registry.hub.docker.com/</a></p>
+</section>
+
+<section>
+	<h2>Building on Docker</h2>
+	<ul>
+		<li><a href="http://www.fig.sh/">Fig</a> - Container management</li>
+		<li><a href="https://github.com/GoogleCloudPlatform/kubernetes">Kubernetes</a> - PaaS by Google</li>
+		<li><a href="https://github.com/progrium/dokku">Dokku</a> - Mini-PaaS in 100 lines of bash</li>
+		<li><a href="http://deis.io/">Deis</a> - PaaS</li>
+		<li><a href="https://flynn.io/">Flynn</a> - PaaS</li>
+	</ul>
+</section>
+
+<section>
+	<h1>Thank you!</h1>
+	<h3>Tobias Waaler and Stian Mathiassen</h3>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
