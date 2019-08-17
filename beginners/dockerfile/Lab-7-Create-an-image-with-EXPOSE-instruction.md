@@ -48,9 +48,10 @@ cd pythonexposeapp
 
 ## create hello.py 
 
-```vi hello.py```
+``` vi hello.py ```
 
-```from flask import Flask
+```
+from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
@@ -58,7 +59,7 @@ def hello():
     return "welcome to Dockerlabs!! successfully done !!"
 
 if __name__ == "__main__":
-    app.run()```
+    app.run() 
 
 ```
 ## Creating Dockerfile
