@@ -93,7 +93,7 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 ## Governance
 
-Dockerlabs is an independent community project founded by Ajeet Singh Raina which is now being built & shaped by a growing community of contributors across the globe.
+Dockerlabs is an independent community project founded by [Ajeet Singh Raina](https://github.com/ajeetraina),a [Docker Captain](https://www.docker.com/captains/ajeet-singh-raina) & Docker Community Leader which is now being built & shaped by a growing community of contributors across the globe.
 
 ## Core Contributors
 
