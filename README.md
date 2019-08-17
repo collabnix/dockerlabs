@@ -4,8 +4,6 @@
 
 ![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/dockerlabs.jpeg)
 
-Are you new to Docker? Looking out for building Your Career in DevOps & Containers Technology?  Welcome ! You are at the right place.
-
 DockerLabs brings you tutorials that help you get hands-on experience using Docker & Kubernetes. Here you will find complete documentation of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://labs.play-with-docker.com/) & [Play with Kubernetes Platform](https://play-with-k8s.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed. Hence, we have everything ready for you to get started with.
 
 ###  Getting Started in 3 Simple Steps
@@ -15,8 +13,6 @@ DockerLabs brings you tutorials that help you get hands-on experience using Dock
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
 -  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
-
-
 
 ### Categories
 
@@ -95,7 +91,22 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 - [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
 
+## Governance
 
+Dockerlabs is an independent community project founded by Ajeet Singh Raina which is now being built & shaped by a growing community of contributors across the globe.
+
+## Core Contributors
+
+- Sangam Biradar
+- Saiyam Pathak
+- Apurva Bhandari
+- [Sarkar Tathagata](https://github.com/amitatha82)
+- Prashansa K
+- Avinash Bendigeri
+- Karan Singh Gandhi
+- Wikitops
+- Akshit Grover
+- Ameya Agashe
 
 
 
