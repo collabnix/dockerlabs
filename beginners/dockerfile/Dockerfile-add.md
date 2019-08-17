@@ -85,7 +85,7 @@ docker attach f094
 Please press "Enter" key twice so as to enter into container shell
 
 
-## Verify if GIT is installed 
+## Verify if the link has been extracted onto the container
 
 ```
 / # ls -ltr
