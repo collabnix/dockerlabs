@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Pune Developer's Community</title>
+
+		<meta name="description" content="ENGINEITOPS">
+		<meta name="author" content="SANGAM BIRADAR">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Pune Developer's Community</h1>
+					<h3></h3>
+					<a href="https://engineitops.github.io">
+					<img data-src="/slides/img/logo/ic_launcher.png"> 
+					<p>
+						<small>Speaker- <a href="https://www.linkedin.com/in/sangambiradar14/">SANGAM BIRADAR</a> and <a href="https://sangam14.github.io">Hire Me!</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>DOCKER</h2>
+					<p>
+						Quick 5 Minutes Guide to CI/CD pipelining using Docker & Circle-CI
+					</p>
+				</section>
+					
+			         <section>
+					
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+				<section>
+					<section id="fragments">
+						<h2>Pre-requisite</h2>
+	
+						<p class="fragment">Create an account with <a href="https://hub.docker.com">[DockerHub]</a></p>
+						<p class="fragment">Open <a href="https://labs.play-with-docker.com/">[PWD]</a> Platform on your browser</p>
+						<p class="fragment">Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side </p>
+						<p class="fragment">circle-ci and github account </p>
+						
+					</section>
+				
+			       </section>	
+				<section>
+					<p> Continous Integration Pipeline - (Without Docker)</p>
+				</section>
+				<section>
+					<img data-src="https://user-images.githubusercontent.com/21982562/47330291-52a7cd00-d695-11e8-8129-1cd48fc2009c.png">
+					
+				</section>
+				<section>
+					<p> Docker comes to Rescue </p>
+				</section>
+				
+				<section>
+					<img data-src="https://user-images.githubusercontent.com/21982562/47330766-0fe6f480-d697-11e8-9c4e-bd2290beae15.png">
+					
+				</section>
+				
+				
+						<section>
+					<h2>1.step</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+
+                                 git clone https://github.com/sangam14/dockerapp1.git
+                                
+				
+					</code></pre>
+					<p> Clone the Repository: <a href="https://github.com/sangam14/dockerapp1.git">Project</a>.</p>
+				</section>
+				<section>
+					<h2>2.step</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+
+                                 cd dockerapp1 
+                              
+					</code></pre>
+					<p> Change directory to dockerapp1 as shown above</p>
+				</section>
+				<section>
+				<h2>3.step</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+
+                              docker-compose up
+                                
+					</code></pre>
+					<p> Bringing up app using Docker Compose</p>
+				</section>
+		              <section>		
+				<section data-background-image="/slides/img/bg1.png">
+	
+                             </section>
+			     </section>
+			     <section>		
+			     <section data-background-image="/slides/img/bg2.png">
+	
+                             </section>
+			     </section>
+			      <section>		
+			     <section data-background-image="/slides/img/bg3.png">
+				   <p class="fragment highlight-blue"> As shown above, we can save key and value by clicking "Save" button.</p>
+                             </section>
+			     </section>
+			<section>	
+			<p> Integrating Cirecle-ci (Before Docker)</h1>
+				 Make sure you add circle-ci config file under .circleci/... 
+				as shown under the example https://github.com/sangam14/dockerapp1/tree/master/.circleci </p>
+				
+			</section>	
+			<section>
+					<pre><code class="hljs" data-trim contenteditable>
+					
+version: 2
+jobs:
+  build:
+    working_directory: /dockerapp1
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --no-cache py-pip=9.0.0-r1
+            pip install docker-compose==1.15.0
+      - run:
+          name: Run tests
+          command: |
+            docker-compose up -d
+            docker-compose run dockerapp1 python test.py
+      - deploy:
+          name: Push application Docker image
+          command: |
+            docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
+            docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp1:$CIRCLE_SHA1
+            docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp1:latest
+            docker push $DOCKER_HUB_USER_ID/dockerapp1:$CIRCLE_SHA1
+            docker push $DOCKER_HUB_USER_ID/dockerapp1:latest 
+	    
+					</code></pre>
+					
+				</section>	
+				<section>
+					<p>
+	As shown above, make sure to add environment variable like $DOCKER_HUB_EMAIL, $DOCKER_HUB_USER_ID,$DOCKER_HUB_PWD 
+	Once you get circleci job running sucessfully, it should automatically be deployed on DockerHub repository.
+					</p>
+				</section>
+				    
+				<section>		
+			     <section data-background-image="/slides/img/bg4.png">
+				</section
+		         <section>
+<p class="fragment highlight-blue"> Login to the circl-ci account https://circleci.com using github. Select project which you want to deploy.</p>
+			</section>     
+			<section>		
+			     <section data-background-image="/slides/img/bg5.png">
+                        </section>
+				<section>
+<p class="fragment highlight-blue">Go to the setting of the project in circleci dashboard and add the environment veriable which declared in .circleci/config.yml file io.
+ You can also provide Github SSH permission.<p>
+				</section.     
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
