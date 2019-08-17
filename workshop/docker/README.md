@@ -14,7 +14,7 @@
 - [Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)<br>
 - [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)<br>
 
-## Introduction to Dockerfile Labs
+## Getting Started with Dockerfile
 
 - [What is Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md#what-is-a-dockerfile)<br>
 - [Lab #1: Create an image with GIT installed](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md)<br>
