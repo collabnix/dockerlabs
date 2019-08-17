@@ -41,7 +41,8 @@
 ## create directory 
 
 ``` mkdir pythonexposeapp 
-   cd pythonexposeapp ```
+   cd pythonexposeapp
+```
 
 ## create hello.py 
 
