@@ -92,13 +92,13 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 
 ```
 
-# building dockerfile 
+## building dockerfile 
 
 ```
  docker build -t pythonapp:v1 .
 ```
 
-# Run Docker image 
+## Run Docker image 
 
 ```
 sangam$ docker run -p 5000:5000 pythonapp:v1
