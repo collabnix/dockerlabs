@@ -38,7 +38,7 @@
 ```
 FROM alpine:3.5
 RUN apk update
-ADD https://codeload.github.com/phayes/geoPHP/legacy.tar.gz/master .
+ADD http://www.vlsitechnology.org/pharosc_8.4.tar.gz .
 ```
 
 ## Build Docker Image
@@ -59,8 +59,8 @@ docker tag saiyam911/alpine-add saiyam911/labs-add:v1.0
 ```
 $ docker images
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-saiyam911/alpine-add        latest              cdf97cb49d48        38 minutes ago      5.22MB
-saiyam911/labs-add          v1.0                cdf97cb49d48        38 minutes ago      5.22MB
+saiyam911/alpine-add        latest              cdf97cb49d48        38 minutes ago       300MB
+saiyam911/labs-add          v1.0                cdf97cb49d48        38 minutes ago       300MB
 ```
 
 
@@ -89,7 +89,7 @@ Please press "Enter" key twice so as to enter into container shell
 
 ```
 / # ls -ltr
--rw-------    1 root     root        195979 Jan  1  1970 master
+-rw-------    1 root     root     295168000 Sep 19  2007 pharosc_8.4.tar.gz
 ```
 
-ADD Command lets you to untar a file directly from a link or location and copy to the container.
+ADD Command lets you to add a tar directly from a link and explode to the container.
