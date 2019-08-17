@@ -38,7 +38,7 @@
 
 
 
-## create directory 
+## Create directory 
 
 ``` 
 mkdir pythonexposeapp 
@@ -46,7 +46,7 @@ cd pythonexposeapp
 
 ```
 
-## create hello.py 
+## Create hello.py 
 
 ``` vi hello.py ```
 
