@@ -24,14 +24,15 @@
 - [Lab #5: Create an image with ENTRYPOINT instruction]()<br>
 - [Lab #6: Create an image with WORKDIR instruction]()<br>
 - [Lab #7: Create an image with RUN instruction]()<br>
-- [Lab #8: Create an image with EXPOSE instruction]()<br>
-- [Lab #9: Create an image with VOLUME instruction]()<br>
-- [Lab #10: Create an image with EXPOSE instruction]()<br>
-- [Lab #11: Create an image with LABEL instruction]()<br>
-- [Lab #12: Create an image with ONBUILD instruction]()<br>
-- [Lab #13: Create an image with HEALTHCHECK instruction]()<br>
-- [Lab #14: Create an image with SHELL instruction]()<br>
-- [Lab #15: Create an image with Python Script]()<br>
+- [Lab #8: Create an image with ARG instruction]()<br>
+- [Lab #9: Create an image with EXPOSE instruction]()<br>
+- [Lab #10: Create an image with VOLUME instruction]()<br>
+- [Lab #11: Create an image with EXPOSE instruction]()<br>
+- [Lab #12: Create an image with LABEL instruction]()<br>
+- [Lab #13: Create an image with ONBUILD instruction]()<br>
+- [Lab #14: Create an image with HEALTHCHECK instruction]()<br>
+- [Lab #15: Create an image with SHELL instruction]()<br>
+- [Lab #16: Create an image with Python Script]()<br>
 
 
 ## Creating Private Docker Registry
