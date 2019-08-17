@@ -97,16 +97,15 @@ Dockerlabs is an independent community project founded by Ajeet Singh Raina whic
 
 ## Core Contributors
 
-- Sangam Biradar
-- Saiyam Pathak
-- Apurva Bhandari
+- [Sangam Biradar](https://github.com/sangam14)
+- [Saiyam Pathak](https://github.com/saiyam1814)
+- [Apurva Bhandari](https://github.com/apurvabhandari)
 - [Sarkar Tathagata](https://github.com/amitatha82)
-- Prashansa K
-- Avinash Bendigeri
-- Karan Singh Gandhi
-- Wikitops
-- Akshit Grover
-- Ameya Agashe
+- [Prashansa K](https://github.com/Prashansa-K)
+- [Wikitops](https://github.com/wikitops)
+- [Akshit Grover](https://github.com/akshitgrover)
+- [Ameya Agashe](https://github.com/ameyaagashe)
+- [Bala](https://github.com/balasu)
 
 
 
