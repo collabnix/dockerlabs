@@ -15,13 +15,13 @@ def hello():
 if __name__ == "__main__":
     app.run()```
 
-
+```
 # create dockerfile 
-
+```
 vi Dockerfile
 
 ```
-
+```
 FROM python:3.5
 
 # Update and install dependencies
