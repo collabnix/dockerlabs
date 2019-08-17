@@ -16,6 +16,7 @@
 
 ## Introduction to Dockerfile Labs
 
+- [What is Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md#what-is-a-dockerfile)<br>
 - [Lab #1: Create an image with GIT installed](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md)<br>
 - [Lab #2: Create an image with ADD instruction]()<br>
 - [Lab #3: Create an image with COPY instruction]()<br>
