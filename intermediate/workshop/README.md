@@ -12,6 +12,8 @@
 - [Lab #3: Inspecting Docker Swarm Service States](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab03-inspecting-state.md)<br>
 - [Lab #4: Scaling Docker Swarm Services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab04-scale-services.md)<br>
 - [Lab #5: Deploy the application components as Docker services ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab05-deploy-application-components-as-docker-services.md)<br>
+- [Lab #6: Drain a node and reschedule the containers](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab06-drain-a-node-and-reschedule-the-containers.md)<br>
+- [Lab #7: Cleaning Up ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab07-cleaning-up.md)<br>
 
 # Docker Desktop for Mac
 
