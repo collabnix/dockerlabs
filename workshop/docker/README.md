@@ -16,8 +16,8 @@
 
 ## Getting Started with Dockerfile
 
-- [What is Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md#what-is-a-dockerfile)<br
-- [Creating Docker Image with]
+- [What is Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md#what-is-a-dockerfile)<br>
+- Creating Docker Image with
    - [Lab #1: GIT installed](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md)<br>
    - [Lab #2: ADD instruction]()<br>
    - [Lab #3: COPY instruction]()<br>
