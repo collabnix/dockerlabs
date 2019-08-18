@@ -1,5 +1,5 @@
 
-# Lab - Writing Dockerfile with Hello Python Script Added
+# Writing Dockerfile with Hello Python Script Added
 
 ## Pre-requisite:
 
