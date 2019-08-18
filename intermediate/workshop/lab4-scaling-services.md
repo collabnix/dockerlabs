@@ -1,4 +1,4 @@
-# Lab04 - Scale Service
+# Lab4 - Scale Service
 
 A Service allows us to scale how many instances of a task is running across the cluster. 
 As it understands how to launch containers and which containers are running, it can easily start, or remove, containers as required. 
@@ -45,4 +45,4 @@ Try scaling the service down to see the result.
 docker service scale http=2
 ```
 
-[Next >> Lab05 - Deploy Applications Components as Docker Services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab05-deploy-application-components-as-docker-services.md)
+[Lab5 - Deploy Applications Components as Docker Services](lab5-deploy-app-component-as-docker-services.md)
