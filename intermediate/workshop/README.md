@@ -5,11 +5,11 @@
 
 # Docker Swarm
 
-## Introduction to Docker Swarm
+### Introduction to Docker Swarm
 
 - [What is Docker Swarm](./what-is-docker-swarm.md)<br>
 
-## Docker Services | Scaling | Draining Node | Rescheduling Containers
+### Docker Services | Scaling | Draining Node | Rescheduling Containers
 
 - [Creating 5-Node Docker Swarm Cluster](./getting-started-with-swarm.md)<br>
 - [Lab #1: Creating Overlay Network](./lab1-docker-network-overlay.md)<br>
