@@ -1,4 +1,4 @@
-# Lab #7: Create an image with EXPOSE instruction
+# Lab #7: Create a Docker image with EXPOSE instruction
 
 ## Pre-requisite:
 
