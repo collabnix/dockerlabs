@@ -1,4 +1,4 @@
-# Layering Concept Explained with Dockerfile
+# Understanding Layering Concept with Dockerfile
 
 Docker container is a runnable instance of an image, which is actually made by writing a readable/writable layer on top of some read-only layers. 
 
