@@ -11,27 +11,27 @@
 - [Lab #5: Write Docker compose To build an production version of your image]()<br>
 - [Lab #6: Launch and Orchestrate Docker Containers With Docker Compose ]()<br>
 - [Compose command description with example]()<br>
-     - [ docker compose using `Build` command ]()<br>
-     - [ docker compose uing`config` command ]()<br>
-     - [ docker compose using` Down` command  ]()<br>
-     - [ Docker compose using` Exec` command ]()<br>
-     - [ Docker compose using `help` command ]()<br>
-     - [ Docker compose using` Images` command ]()<br>
-     - [ Docker compose using `Kill` command ]()<br>
-     - [ Docker compose using `Logs` command ]()<br>
-     - [ Docker compose using` Pause` command ]()<br>
-     - [ Docker compose using `Port` command ]()<br>
-     - [ Docker compose uing ` ps` command ]()<br>
-     - [ docker compose using `Pull` command ]()<br>
-     - [ Docker compose using` Push `command ]()<br>
-     - [ Docker compose using `Restart` command ]()<br>
-     - [ Docker compose using` Rm` command ]()<br>
-     - [ Docker compose using `Run` command ]()<br>
-     - [ Docker compose using` Scale` Command]()<br>
-     - [ Docker compose using `Start` command]()<br>
-     - [ Docker compose using `Unpause` command ]()<br>
-     - [ Docker compose using `up `command ]()<br>
-     - [ Docker comopose usinh `version` command]()<br>
+     - [ Docker Compose Using `Build` Command ]()<br>
+     - [ Docker Compose Uing`config` Command ]()<br>
+     - [ Docker Compose Using` Down` Command  ]()<br>
+     - [ Docker Compose Using` Exec` Command ]()<br>
+     - [ Docker Compose Using `help` Command ]()<br>
+     - [ Docker Compose Using` Images` Command ]()<br>
+     - [ Docker Compose Using `Kill` Command ]()<br>
+     - [ Docker Compose Using `Logs` Command ]()<br>
+     - [ Docker Compose Using` Pause` Command ]()<br>
+     - [ Docker Compose Using `Port` Command ]()<br>
+     - [ Docker Compose Using ` ps` Command ]()<br>
+     - [ Docker Compose Using `Pull` Command ]()<br>
+     - [ Docker Compose Using` Push `Command ]()<br>
+     - [ Docker Compose Using `Restart` Command ]()<br>
+     - [ Docker Compose Using` Rm` Command ]()<br>
+     - [ Docker Compose Using `Run` Command ]()<br>
+     - [ Docker Compose Using` Scale` Command]()<br>
+     - [ Docker Compose Using `Start` Command]()<br>
+     - [ Docker Compose Using `Unpause` Command ]()<br>
+     - [ Docker Compose Using `up `Command ]()<br>
+     - [ Docker Comopose Using `version` Command]()<br>
 
 
 # Docker Swarm
