@@ -3,8 +3,10 @@
 
 ![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/Dockerswarm.png)
 
-Docker Swarm is a container orchestration tool built and managed by Docker, Inc. It is the native clustering tool for Docker. Swarm uses the standard Docker API, i.e., containers can be launched using normal docker run commands and Swarm will take care of selecting an appropriate host to run the container on. This also means
-that other tools that use the Docker API—such as Compose and bespoke scripts—can use Swarm without any changes and take advantage of running on a cluster rather than a single host.
+- Docker Swarm is a container orchestration tool built and managed by Docker, Inc. 
+- It is the native clustering tool for Docker. 
+- Swarm uses the standard Docker API, i.e., containers can be launched using normal docker run commands and Swarm will take care of selecting an appropriate host to run the container on. 
+- The tools that use the Docker API—such as Compose and bespoke scripts—can use Swarm without any changes and take advantage of running on a cluster rather than a single host.
 
 ![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/swarm-orchestration.png)
 
@@ -51,4 +53,4 @@ Swarm managers can use several strategies to run containers, such as “emptiest
 A swarm is made up of multiple nodes, which can be either physical or virtual machines. The basic concept is simple enough: run docker swarm init to enable swarm mode and make our current machine a swarm manager, then run docker swarm join on other machines to have them join the swarm as workers. 
 
 
-[Next >> Difference between Docker Swarm, Docker Swarm Mode and Swarmkit](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/difference-between-docker-swarm-vs-swarm-mode-vs-swarmkit.md)
+[]()
