@@ -43,4 +43,4 @@ If we issue an HTTP request to the public port, it will be processed by the two 
 ```
  curl your_machine_ip:80
 ```
-[Next >> Lab03 - Inspecting State](lab03-inspecting-state.md)
+[Lab3 - Inspecting State](lab3-inspect-services.md)
