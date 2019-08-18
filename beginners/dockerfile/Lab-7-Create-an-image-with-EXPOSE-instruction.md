@@ -38,7 +38,7 @@
 
 
 
-## Create directory 
+## Creating directory 
 
 ``` 
 mkdir pythonexposeapp 
@@ -46,7 +46,7 @@ cd pythonexposeapp
 
 ```
 
-## Create hello.py 
+## Creating hello.py 
 
 ``` vi hello.py ```
 
@@ -92,13 +92,13 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 
 ```
 
-## Building dockerfile 
+## Building Dockerfile 
 
 ```
  docker build -t pythonapp:v1 .
 ```
 
-## Run Docker image 
+## Running Docker image 
 
 ```
 sangam$ docker run -p 5000:5000 pythonapp:v1
@@ -113,5 +113,9 @@ sangam$ docker run -p 5000:5000 pythonapp:v1
 
 ```
 
-Application is runing in browser `http://0.0.0.0:5000/`
+By now, the application should be accessible `http://0.0.0.0:5000/`
+
+# Contibutor
+
+[Sangam Biradar](https://github.com/sangam14)
 
