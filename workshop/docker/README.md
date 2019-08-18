@@ -60,12 +60,7 @@
    - [Lab #6: Connect a Docker container to bridge network]()
    - [Lab #7: Test Network Connectivity]()
    - [Lab #8: Configure NAT for external connectivity]()
- - [Lab #9: Docker Overlay Networking]()
-   - [Lab #10: Create an overlay network]()
-   - [Lab #11: Create a service]()
-   - [Lab #12: Test the Network]()
-   - [Lab #13: Test Service Discovery]()
-   - [Lab #14: Test Routing Mesh]()
+ 
  
 
 
