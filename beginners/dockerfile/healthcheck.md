@@ -51,7 +51,12 @@ Like CMD, ENTRYPOINT, HEALTHCHECK can only appear once. If more than one is writ
 ## Assignment:
 
 - Writing a Dockerfile with HEALTHCHECK instruction
-- 
+- Build a Docker Image
+- Check that the nginx config file exists
+- Check if nginx is healthy
+- Make Docker container Unhealthy and check
+- Create the nginx.conf file and Making the container go healthy
+
 
 
 ## Writing a Dockerfile with HEALTHCHECK instruction
@@ -87,7 +92,7 @@ docker run --name=nginx-proxy -d \
 docker inspect --format='{{.State.Health.Status}}' nginx-proxy
 ```
 
-## Make Docker container Unhleathy and check
+## Make Docker container Unhealthy and check
 
 ```
 docker exec nginx-proxy rm /etc/nginx/nginx.conf
