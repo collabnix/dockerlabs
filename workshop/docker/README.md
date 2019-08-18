@@ -17,22 +17,23 @@
 ## Getting Started with Dockerfile
 
 - [What is Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Writing-dockerfile.md#what-is-a-dockerfile)<br>
+- [Understanding Layering Concept with Dockerfile](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Layering-Dockerfile.md)
 - Creating Docker Image with
    - [Lab #1: GIT installed](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/lab1_dockerfile_git.md)<br>
-   - [Lab #2: ADD instruction]()<br>
+   - [Lab #2: ADD instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/ADD-command.md)<br>
    - [Lab #3: COPY instruction]()<br>
    - [Lab #4: CMD instruction]()<br>
-   - [Lab #5: ENTRYPOINT instruction]()<br>
+   - [Lab #5: ENTRYPOINT instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Dockerfile-ENTRYPOINT.md)<br>
    - [Lab #6: WORKDIR instruction]()<br>
    - [Lab #7: RUN instruction]()<br>
    - [Lab #8: ARG instruction]()<br>
-   - [Lab #9: EXPOSE instruction]()<br>
+   - [Lab #9: EXPOSE instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Lab-7-Create-an-image-with-EXPOSE-instruction.md)<br>
    - [Lab #10: VOLUME instruction]()<br>
    - [Lab #11: EXPOSE instruction]()<br>
    - [Lab #12: LABEL instruction]()<br>
    - [Lab #13: ONBUILD instruction]()<br>
    - [Lab #14: HEALTHCHECK instruction]()<br>
-   - [Lab #15: SHELL instruction]()<br>
+   - [Lab #15: SHELL instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Lab-14-Create-an-image-with-SHELL-instruction.md)<br>
    
 
 
