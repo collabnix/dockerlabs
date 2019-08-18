@@ -31,4 +31,4 @@ docker node ps $(docker node ls -q | head -n1)
 
 In the next step, we will scale the service to run more instances of the container.
 
-[Lab3 - Scale Services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab04-scale-services.md)
+[Lab4 - Scale Services](lab4-scaling-services.md)
