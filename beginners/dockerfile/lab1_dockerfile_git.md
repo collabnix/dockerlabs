@@ -91,6 +91,9 @@ Please press "Enter" key twice so as to enter into container shell
 / # git --version
 git version 2.13.7
 ```
+## Contributor
+
+[Ajeet S Raina](https://github.com/ajeetraina)
 
 [Lab #2: Create an image with ADD instruction]()<br>
 
