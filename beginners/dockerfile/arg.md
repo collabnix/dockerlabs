@@ -8,7 +8,34 @@ The `ARG` directive in `Dockerfile` defines the parameter name and defines its d
 
 In versions prior to 1.13, the parameter name in `--build-arg` must be defined in `Dockerfile` with `ARG`. In other words, the parameter specified by `--build-arg` must be Used in `Dockerfile`. If the corresponding parameter is not used, the error will exit the build. Starting from 1.13, this strict restriction is released, no longer exits with an error, but a warning message is displayed and construction continues. This is useful when using the CI system to build different `Dockerfile`s with the same build process. Avoiding build commands must be modified based on the contents of each Dockerfile.
 
-## Writing a Dockerfile with ARG instruction
+
+# Lab #8: Create an image with ARG instruction
+
+## Pre-requisite:
+
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+- Create an account with [DockerHub](https://hub.docker.com)
+- Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
+- Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
 We are writing a Dockerfile which echo "Welcome $WELCOME_USER, to Docker World!" where default argument value for <b>WELCOME_USER</b> as <b>Collabnix</b>.
 ```
