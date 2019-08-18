@@ -34,6 +34,7 @@
    - [Lab #13: ONBUILD instruction]()<br>
    - [Lab #14: HEALTHCHECK instruction]()<br>
    - [Lab #15: SHELL instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Lab-14-Create-an-image-with-SHELL-instruction.md)<br>
+- [Writing Dockerfile with Hello Python Script Added](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/lab12_python.md)<br>
    
 
 
