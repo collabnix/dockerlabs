@@ -52,20 +52,20 @@
 ## Docker Networking
 
  - [The docker network Command](http://dockerlabs.collabnix.com/beginners/using-docker-network.html)<br>
- - [Listing the Networks]()
- - [Inspecting a Network]()
- - [List network driver plugins]()
- - [Docker Bridge Networking]()
-   - [Basics of Docker Bridge Networking]()
-   - [Connect a Docker container to bridge network]()
-   - [Test Network Connectivity]()
-   - [Configure NAT for external connectivity]()
- - [Docker Overlay Networking]()
-   - [Create an overlay network]()
-   - [Create a service]()
-   - [Test the Network]()
-   - [Test Service Discovery]()
-   - [Test Routing Mesh]()
+ - [Lab #1: Listing the Networks]()
+ - [Lab #2: Inspecting a Network]()
+ - [Lab #3: List network driver plugins]()
+ - [Lab #4: Docker Bridge Networking]()
+   - [Lab #5: Basics of Docker Bridge Networking]()
+   - [Lab #6: Connect a Docker container to bridge network]()
+   - [Lab #7: Test Network Connectivity]()
+   - [Lab #8: Configure NAT for external connectivity]()
+ - [Lab #9: Docker Overlay Networking]()
+   - [Lab #10: Create an overlay network]()
+   - [Lab #11: Create a service]()
+   - [Lab #12: Test the Network]()
+   - [Lab #13: Test Service Discovery]()
+   - [Lab #14: Test Routing Mesh]()
  
 
 
