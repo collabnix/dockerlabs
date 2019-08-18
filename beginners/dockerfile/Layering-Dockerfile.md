@@ -13,7 +13,14 @@ Let's understand this layering using an example:
 
 Consider the Dockerfile given below:
 
-![Docker layers in Dockerfile](https://github.com/Prashansa-K/Docker/blob/master/Writing%20Dockerfiles/layering1.png)
+```
+FROM ubuntu:latest
+RUN mkdir -p /hello/hello
+COPY hello.txt /hello/hello
+RUN chmod 600 /hello/hello/hello.txt
+
+```
+
 
 ### Layer ID
 Each instruction the Dockerfile generates a layer. Each of this layer has a randomly generated unique ID. This ID can be seen at the time of build. See the image below:
