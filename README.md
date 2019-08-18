@@ -55,7 +55,7 @@ Below are the list of categories:
 
 - [Beginners](./workshop/docker/README.md)
 
-- Intermediate
+- [Intermediate](./intermediate/workshop/README.md)
 
 - Advanced
 
