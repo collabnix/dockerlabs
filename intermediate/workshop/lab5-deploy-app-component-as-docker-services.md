@@ -110,4 +110,4 @@ kwmey288bkhp        sleep-app.6         ubuntu:latest       manager3            
 You have successfully scaled a swarm service up and down.
 
 
-[Lab6 - Drain a Node and Reschedule the Containers ](lab6-drain-a-node-and-reschedule-the-containers.md)
+[Lab6 - Drain a Node and Reschedule the Containers ](lab6-drain-a-node-reschedule-md)
