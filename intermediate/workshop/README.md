@@ -8,10 +8,10 @@
 - [What is Docker Swarm](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/what-is-docker-swarm.md)<br>
 - [Creating 5-Node Docker Swarm Cluster](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/README.md)<br>
 - [Lab #1: Creating Overlay Network](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab01-creating-overlay-network.md)<br>
-- []()<br>
-- []()<br>
-- []()<br>
-- []()<br>
+- [Lab #2: Deploy Services ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab02-deploy-services.md)<br>
+- [Lab #3: Inspecting Docker Swarm Service States](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab03-inspecting-state.md)<br>
+- [Lab #4: Scaling Docker Swarm Services](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab04-scale-services.md)<br>
+- [Lab #5: Deploy the application components as Docker services ](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/lab05-deploy-application-components-as-docker-services.md)<br>
 
 # Docker Desktop for Mac
 
