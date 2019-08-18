@@ -95,6 +95,6 @@ git version 2.13.7
 
 [Ajeet S Raina](https://github.com/ajeetraina)
 
-[Lab #2: Create an image with ADD instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/ADD-command.md)<br>
+[Lab #2: Create an image with ADD instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/%20Lab-2-Create-an-image-with-ADD-instruction.md)<br>
 
 
