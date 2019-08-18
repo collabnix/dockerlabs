@@ -93,3 +93,5 @@ Please press "Enter" key twice so as to enter into container shell
 ```
 
 ADD Command lets you to add a tar directly from a link and explode to the container.
+
+[Lab #3: Create a Docker image with COPY instruction]()
