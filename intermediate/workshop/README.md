@@ -5,7 +5,12 @@
 
 # Docker Swarm
 
+## Introduction to Docker Swarm
+
 - [What is Docker Swarm](./what-is-docker-swarm.md)<br>
+
+## Docker Services | Scaling | Draining Node | Rescheduling Containers
+
 - [Creating 5-Node Docker Swarm Cluster](./getting-started-with-swarm.md)<br>
 - [Lab #1: Creating Overlay Network](./lab1-docker-network-overlay.md)<br>
 - [Lab #2: Deploy Services ](./lab2-deploy-services.md)<br>
@@ -14,6 +19,9 @@
 - [Lab #5: Deploy the application components as Docker services ](./lab5-deploy-app-component-as-docker-services.md)<br>
 - [Lab #6: Drain a node and reschedule the containers](./lab6-drain-a-node-reschedule-md)<br>
 - [Lab #7: Cleaning Up ](./lab7-cleaning-up.md)<br>
+
+
+
 
 # Docker Desktop for Mac
 
