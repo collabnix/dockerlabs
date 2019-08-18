@@ -42,4 +42,4 @@ $ docker service create \
   dockersamples/visualizer
 ```
 
-[Proceed >> What is Docker Swarm](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/what-is-docker-swarm.md)
+[Creating an Overlay Network](https://github.com/collabnix/dockerlabs/blob/master/intermediate/workshop/lab1-docker-network-overlay.md)
