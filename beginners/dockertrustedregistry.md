@@ -34,3 +34,5 @@ DTR has built in Notary, you can use Docker Content Trust to sign snd verify ima
 This is what the UI of DTR looks like :
 
 ![My Image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/DTR.png)
+
+## Contributor - [Saiyam Pathak](https://www.linkedin.com/in/saiyam-pathak-97685a64/)
