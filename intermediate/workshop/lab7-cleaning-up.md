@@ -35,5 +35,5 @@ docker swarm leave --force
 
 Congratulations! You’ve completed this lab. You now know how to build a swarm, deploy applications as collections of services, and scale individual services up and down.
 
-[Next >> ]()
+
 
