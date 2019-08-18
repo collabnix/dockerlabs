@@ -8,7 +8,7 @@ The `ARG` directive in `Dockerfile` defines the parameter name and defines its d
 
 In versions prior to 1.13, the parameter name in `--build-arg` must be defined in `Dockerfile` with `ARG`. In other words, the parameter specified by `--build-arg` must be Used in `Dockerfile`. If the corresponding parameter is not used, the error will exit the build. Starting from 1.13, this strict restriction is released, no longer exits with an error, but a warning message is displayed and construction continues. This is useful when using the CI system to build different `Dockerfile`s with the same build process. Avoiding build commands must be modified based on the contents of each Dockerfile.
 
-### Writing a Dockerfile with ARG instruction
+## Writing a Dockerfile with ARG instruction
 
 We are writing a Dockerfile which echo "Welcome $WELCOME_USER, to Docker World!" where default argument value for <b>WELCOME_USER</b> as <b>Collabnix</b>.
 ```
@@ -20,22 +20,22 @@ ARG WELCOME_USER=Collabnix
 RUN echo "Welcome $WELCOME_USER, to Docker World!" > message.txt
 CMD cat message.txt
 ```
-#### Building Docker Image wit default argument
+## Building Docker Image wit default argument
 ```
 docker image build -t arg:v1 .
 ```
-#### Running container argv:v1
+## Running container argv:v1
 ```
 docker run arg:v1
 
 Welcome Collabnix, to Docker World!
 ```
 
-#### Now lets supply the argument(WELCOME_USER) during image build time using <b>--build-arg</b> flag 
+## Now lets supply the argument(WELCOME_USER) during image build time using <b>--build-arg</b> flag 
 ```
 docker image build -t arg:v2 --build-arg WELCOME_USER=Savio .
 ```
-#### Running container argv:v2
+## Running container argv:v2
 ```
 docker run arg:v2
 
@@ -43,4 +43,6 @@ Welcome Savio, to Docker World!
 ```
 <b>NOTE:</b> ARG is the only one instruction which can come before FROM instruction, but then arg value can be used only by FROM.
 
-## Contributor - [Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)
+## Contributor -
+[Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)<br>
+[savio]()
