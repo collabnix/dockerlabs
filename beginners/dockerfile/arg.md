@@ -37,6 +37,14 @@ In versions prior to 1.13, the parameter name in `--build-arg` must be defined i
 - Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
+# Assignment
+- Writing a Dockerfile with ARG instruction
+- Building Docker Image with default argument
+- Running container argv:v1
+- Passing the argument during image build time
+- Running container argv:v2
+
+## Writing a Dockerfile with ARG instruction
 We are writing a Dockerfile which echo "Welcome $WELCOME_USER, to Docker World!" where default argument value for <b>WELCOME_USER</b> as <b>Collabnix</b>.
 ```
 FROM alpine:3.9.3
@@ -47,24 +55,24 @@ ARG WELCOME_USER=Collabnix
 RUN echo "Welcome $WELCOME_USER, to Docker World!" > message.txt
 CMD cat message.txt
 ```
-## Building Docker Image wit default argument
+## Building Docker Image with default argument
 ```
-docker image build -t arg:v1 .
+$ docker image build -t arg:v1 .
 ```
 ## Running container argv:v1
 ```
-docker run arg:v1
+$ docker run arg:v1
 
 Welcome Collabnix, to Docker World!
 ```
 
-## Now lets supply the argument(WELCOME_USER) during image build time using <b>--build-arg</b> flag 
+## Passing the argument(WELCOME_USER) during image build time using <b>--build-arg</b> flag 
 ```
-docker image build -t arg:v2 --build-arg WELCOME_USER=Savio .
+$ docker image build -t arg:v2 --build-arg WELCOME_USER=Savio .
 ```
 ## Running container argv:v2
 ```
-docker run arg:v2
+$ docker run arg:v2
 
 Welcome Savio, to Docker World!
 ```
