@@ -48,4 +48,4 @@ docker network inspect collabnet
 ```
 
 
-[Lab02- Deploy Services](lab02-deploy-services.md)
+[Lab2- Deploy Services](lab2-deploy-services.md)
