@@ -13,7 +13,7 @@ ENTRYPOINT apachectl "-DFOREGROUND"
 ```
 Using <b>docker build</b> commmand we can build an image from a Dockerfile.
 
-<b>Docker Compose</b> is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. By default, docker-compose expects the name of the Compose file as <b>dockercompose.yml</b> or <b>docker-compose.yaml</b>. If the compose file have different name we can specify it with <b>-f</b> flag.
+<b>Docker Compose</b> is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. By default, docker-compose expects the name of the Compose file as <b>docker-compose.yml</b> or <b>docker-compose.yaml</b>. If the compose file have different name we can specify it with <b>-f</b> flag.
 
 A docker-compose.yml looks like this:
 ```
@@ -33,3 +33,6 @@ services:
 volumes:
   logvolume01: {}
 ```
+
+## Contributor -
+[Savio Mathew](https://www.linkedin.com/in/saviovettoor)
