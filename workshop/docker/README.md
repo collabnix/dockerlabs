@@ -41,14 +41,14 @@
 
 ## Creating Private Docker Registry
 
-- [Building a Private Docker Registry](https://collabnix.github.io/dockerlabs/beginners/build-private-docker-registry.html)
-- [Building a Private Docker Registry with UI](https://collabnix.github.io/dockerlabs/beginners/portus.html)
+- [Building a Private Docker Registry](https://dockerlabs.collabnix.com/beginners/build-private-docker-registry.html)
+- [Building a Private Docker Registry with UI](https://dockerlabs.collabnix.com/beginners/portus.html)
 
 
 ### Docker Volumes
 
 - [Managing volumes through Docker CLI](https://collabnix.github.io/dockerlabs/beginners/volume/managing-volumes-via-docker-cli.html)<br>
-- [Creating Volume Mount from **docker run** command & sharing same Volume Mounts among multiple containers](https://collabnix.github.io/beginners/volume/creating-volume-mount-from-dockercli.html)<br>
+- [Creating Volume Mount from **docker run** command & sharing same Volume Mounts among multiple containers](https://collabnix.github.io/dockerlabs/beginners/volume/creating-volume-mount-from-dockercli.html)<br>
 
 ## Docker Networking
 
