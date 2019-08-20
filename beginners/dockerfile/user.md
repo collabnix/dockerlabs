@@ -1,4 +1,4 @@
-### USER specifies the current user
+# Lab 17: User Instruction under Dockerfile
 
 
 The `USER` directive is similar to `WORKDIR`, which changes the state of the environment and affects future layers. `WORKDIR` is to change the working directory, and `USER` is the identity of the commands such as `RUN`, `CMD` and `ENTRYPOINT`.
