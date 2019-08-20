@@ -22,17 +22,17 @@
      - [Lab #14 `Restart` Command ]()<br>
      - [Lab #15: `Rm` Command ]()<br>
      - [Lab #16: `Run` Command ]()<br>
-     - [Lab #16:` Scale` Command]()<br>
-     - [Lab #17: `Start` Command]()<br>
-     - [Lab #18: `Unpause` Command ]()<br>
-     - [Lab #19:  `up `Command ]()<br>
-     - [Lab #20:  `version` Command]()<br>
-- [Lab #21: Create first docker compose file with ngnix and myql]()<br>
-- [Lab #22: To run docker compose without terminal display (as a daemon) ]()<br> 
-- [Lab #23: Use JSON instead of YAML compose file in Docker?]()<br>
-- [Lab #24: Multi-Container Deployment with Docker Compose ]()<br>
-- [Lab #25: Write Docker compose To build an production version of your image]()<br>
-- [Lab #26: Launch and Orchestrate Docker Containers With Docker Compose ]()<br>
+     - [Lab #17:` Scale` Command]()<br>
+     - [Lab #18: `Start` Command]()<br>
+     - [Lab #19: `Unpause` Command ]()<br>
+     - [Lab #20:  `up `Command ]()<br>
+     - [Lab #21:  `version` Command]()<br>
+- [Lab #22: Create first docker compose file with ngnix and myql]()<br>
+- [Lab #23: To run docker compose without terminal display (as a daemon) ]()<br> 
+- [Lab #24: Use JSON instead of YAML compose file in Docker?]()<br>
+- [Lab #25: Multi-Container Deployment with Docker Compose ]()<br>
+- [Lab #26: Write Docker compose To build an production version of your image]()<br>
+- [Lab #27: Launch and Orchestrate Docker Containers With Docker Compose ]()<br>
 
 # Docker Swarm
 
