@@ -21,8 +21,8 @@
 - Creating Docker Image with
    - [Lab #1: GIT installed](https://dockerlabs.collabnix.com/beginners/dockerfile/lab1_dockerfile_git.html)<br>
    - [Lab #2: ADD instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Lab-2-Create-an-image-with-ADD-instruction.md)<br>
-   - [Lab #3: COPY instruction]()<br>
-   - [Lab #4: CMD instruction]()<br>
+   - [Lab #3: COPY instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/lab4_dockerfile_copy.md)<br>
+   - [Lab #4: CMD instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/lab4_cmd.md)<br>
    - [Lab #5: ENTRYPOINT instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Dockerfile-ENTRYPOINT.html)<br>
    - [Lab #6: WORKDIR instruction]()<br>
    - [Lab #7: RUN instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Lab-7-Create-an-image-with-EXPOSE-instruction.md)<br>
