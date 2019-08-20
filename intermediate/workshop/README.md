@@ -1,38 +1,38 @@
 # Docker Workshop for Intermediate Users
 
 ### Docker Compose
-- [What is docker compose]()<br>
-- [ Difference between dockerfile and docker compose ]()<br>
-- [ Docker compose intruction overview and installation ]()<br>
-- [Lab #1: Create first docker compose file with ngnix and myql]()<br>
-- [Lab #2: To run docker compose without terminal display (as a daemon) ]()<br> 
-- [Lab #3: Use JSON instead of YAML compose file in Docker?]()<br>
-- [Lab #4: Multi-Container Deployment with Docker Compose ]()<br>
-- [Lab #5: Write Docker compose To build an production version of your image]()<br>
-- [Lab #6: Launch and Orchestrate Docker Containers With Docker Compose ]()<br>
-- [Compose command description with example]()<br>
-     - [ Docker Compose Using `Build` Command ]()<br>
-     - [ Docker Compose Uing`config` Command ]()<br>
-     - [ Docker Compose Using` Down` Command  ]()<br>
-     - [ Docker Compose Using` Exec` Command ]()<br>
-     - [ Docker Compose Using `help` Command ]()<br>
-     - [ Docker Compose Using` Images` Command ]()<br>
-     - [ Docker Compose Using `Kill` Command ]()<br>
-     - [ Docker Compose Using `Logs` Command ]()<br>
-     - [ Docker Compose Using` Pause` Command ]()<br>
-     - [ Docker Compose Using `Port` Command ]()<br>
-     - [ Docker Compose Using ` ps` Command ]()<br>
-     - [ Docker Compose Using `Pull` Command ]()<br>
-     - [ Docker Compose Using` Push `Command ]()<br>
-     - [ Docker Compose Using `Restart` Command ]()<br>
-     - [ Docker Compose Using` Rm` Command ]()<br>
-     - [ Docker Compose Using `Run` Command ]()<br>
-     - [ Docker Compose Using` Scale` Command]()<br>
-     - [ Docker Compose Using `Start` Command]()<br>
-     - [ Docker Compose Using `Unpause` Command ]()<br>
-     - [ Docker Compose Using `up `Command ]()<br>
-     - [ Docker Comopose Using `version` Command]()<br>
 
+- [Introduction to Docker Compose]()<br>
+- [Dockerfile Vs Docker compose ]()<br>
+- [How to Install Docker Compose? ]()<br>
+- [Instructions of Docker Compose]()<br>
+     - [Lab #1: `Build` Command ]()<br>
+     - [Lab #2: `Config` Command ]()<br>
+     - [Lab #3: `Down` Command  ]()<br>
+     - [Lab #4: `Exec` Command ]()<br>
+     - [Lab #5: `help` Command ]()<br>
+     - [Lab #6: `Images` Command ]()<br>
+     - [Lab #7: `Kill` Command ]()<br>
+     - [Lab #8: `Logs` Command ]()<br>
+     - [Lab #9:  `Pause` Command ]()<br>
+     - [Lab #10: `Port` Command ]()<br>
+     - [Lab #11: `ps` Command ]()<br>
+     - [Lab #12: `Pull` Command ]()<br>
+     - [Lab #13 ` Push `Command ]()<br>
+     - [Lab #14 `Restart` Command ]()<br>
+     - [Lab #15: `Rm` Command ]()<br>
+     - [Lab #16: `Run` Command ]()<br>
+     - [Lab #16:` Scale` Command]()<br>
+     - [Lab #17: `Start` Command]()<br>
+     - [Lab #18: `Unpause` Command ]()<br>
+     - [Lab #19:  `up `Command ]()<br>
+     - [Lab #20:  `version` Command]()<br>
+- [Lab #21: Create first docker compose file with ngnix and myql]()<br>
+- [Lab #22: To run docker compose without terminal display (as a daemon) ]()<br> 
+- [Lab #23: Use JSON instead of YAML compose file in Docker?]()<br>
+- [Lab #24: Multi-Container Deployment with Docker Compose ]()<br>
+- [Lab #25: Write Docker compose To build an production version of your image]()<br>
+- [Lab #26: Launch and Orchestrate Docker Containers With Docker Compose ]()<br>
 
 # Docker Swarm
 
@@ -80,4 +80,10 @@
 ### Implementing MacVLAN
 
 - [Lab #7: Getting Started with MacVLAN](networking/lab7-macvlan.md)
+
+
+# Contributors
+
+[Savio Mathew](https://www.linkedin.com/in/saviovettoor)
+[Ajeet Singh Raina](https://github.com/ajeetraina)
  
