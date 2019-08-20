@@ -20,7 +20,7 @@
 - [Understanding Layering Concept with Dockerfile](https://dockerlabs.collabnix.com/beginners/dockerfile/Layering-Dockerfile.html)
 - Creating Docker Image with
    - [Lab #1: GIT installed](https://dockerlabs.collabnix.com/beginners/dockerfile/lab1_dockerfile_git.html)<br>
-   - [Lab #2: ADD instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/ADD-command.html)<br>
+   - [Lab #2: ADD instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Lab-2-Create-an-image-with-ADD-instruction.md)<br>
    - [Lab #3: COPY instruction]()<br>
    - [Lab #4: CMD instruction]()<br>
    - [Lab #5: ENTRYPOINT instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Dockerfile-ENTRYPOINT.html)<br>
