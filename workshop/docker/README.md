@@ -25,16 +25,17 @@
    - [Lab #4: CMD instruction]()<br>
    - [Lab #5: ENTRYPOINT instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Dockerfile-ENTRYPOINT.html)<br>
    - [Lab #6: WORKDIR instruction]()<br>
-   - [Lab #7: RUN instruction]()<br>
-   - [Lab #8: ARG instruction]()<br>
+   - [Lab #7: RUN instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/Lab-7-Create-an-image-with-EXPOSE-instruction.md)<br>
+   - [Lab #8: ARG instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/arg.md)<br>
    - [Lab #9: EXPOSE instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab-7-Create-an-image-with-EXPOSE-instruction.html)<br>
    - [Lab #10: VOLUME instruction]()<br>
    - [Lab #11: EXPOSE instruction]()<br>
    - [Lab #12: LABEL instruction]()<br>
    - [Lab #13: ONBUILD instruction]()<br>
-   - [Lab #14: HEALTHCHECK instruction]()<br>
+   - [Lab #14: HEALTHCHECK instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/healthcheck.md)<br>
    - [Lab #15: SHELL instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab-14-Create-an-image-with-SHELL-instruction.html)<br>
    - [Lab #16: Entrypoint Vs RUN](https://dockerlabs.collabnix.com/beginners/dockerfile/entrypoint-vs-run.html)<br>
+   - [Lab #17: USER instruction](https://github.com/collabnix/dockerlabs/blob/master/beginners/dockerfile/user.md)
 - [Writing Dockerfile with Hello Python Script Added](https://dockerlabs.collabnix.com/beginners/dockerfile/lab_dockerfile_python.html)<br>
 
 
