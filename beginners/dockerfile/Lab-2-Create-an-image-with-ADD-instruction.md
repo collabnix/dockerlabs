@@ -44,7 +44,7 @@ ADD http://www.vlsitechnology.org/pharosc_8.4.tar.gz .
 ## Build Docker Image
 
 ```
-docker build -t saiyam911/alpine-add .
+docker build -t saiyam911/alpine-add . -f <name of dockerfile>
 ```
 
 ## Tagging image as labs-git
