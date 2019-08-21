@@ -66,5 +66,24 @@ If we didnt specify the <b>image:</b> option the image name will be <b>buid_<ser
 $ docker image ls webapp:v1
 ```
 
+### Quick Notes:
+
+#### build
+
+Specifies the path to the folder where the Dockerfile is located (either an absolute path or a path relative to the docker-compose.yml file). Compose will use it to automatically build this image and then use this image.
+```
+ version: '3' services:  webapp:  build: ./dir 
+You can also use the context directive to specify the path to the folder where the Dockerfile is located.
+```
+Use the dockerfile directive to specify the Dockerfile filename.
+
+Use the arg directive to specify the variables when the image is built.
+```
+ version: '3' services:  webapp:  build:  context: ./dir  dockerfile: Dockerfile-alternate  args:  buildno: 1 
+ ```
+Use cache_from specify the cache to build the image
+```
+ build:  context: .  cache_from:  - alpine: latest  - corp/web_app: 3.14 
+```
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
