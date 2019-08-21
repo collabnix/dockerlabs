@@ -1,4 +1,4 @@
-# Lab #1: Config Command
+# Lab #2: Config Command
 
 
 ## Command instructions
