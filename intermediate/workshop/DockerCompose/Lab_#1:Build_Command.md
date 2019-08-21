@@ -67,4 +67,4 @@ $ docker image ls webapp:v1
 ```
 
 ## Contributor
-[savio Mathew](https://www.linkedin.com/in/saviovettoor)
+[Savio Mathew](https://www.linkedin.com/in/saviovettoor)
