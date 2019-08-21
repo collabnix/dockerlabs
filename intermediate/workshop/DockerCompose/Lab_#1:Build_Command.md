@@ -1,6 +1,28 @@
 # Lab #1: Build Command
 In this lab we are going to look into <b>docker-compose build</b> command.Docker build used to create a new image using the instructions in the Dockerfile. The <b>build</b> can be specified either as a string containing a path to the build context. The newly built image will be used to create the container for the service.
 
+## Command instructions
+
+#### build
+
+The format is docker-compose build [options] [SERVICE...] .
+
+Build (rebuild) the service container in the project.
+
+Once the service container is built, it will be tagged with a tagname, such as a db container in a web project, possibly web_db.
+
+You can rebuild the service at any time by running the docker-compose build in the project directory.
+
+Options include:
+
+`--force-rm` removes the temporary container during the build process.
+
+`--no-cache` does not use cache during the build image process (this will lengthen the build process).
+
+`--pull always` tries to get a mirror of the updated version by `--pull` .
+
+
+
 ## Pre-requisite:
 
 ## Tested Infrastructure
@@ -87,4 +109,5 @@ Use cache_from specify the cache to build the image
  build:  context: .  cache_from:  - alpine: latest  - corp/web_app: 3.14 
 ```
 ## Contributor
+[Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)<br>
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
