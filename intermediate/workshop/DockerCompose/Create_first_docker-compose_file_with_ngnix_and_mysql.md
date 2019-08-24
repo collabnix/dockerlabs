@@ -1,4 +1,4 @@
-## Lab #1: Create first docker compose file with ngnix and myql
+## Lab #1: Create first docker compose file with ngnix and mysql
 
 In this lab we are going to bringup a nginx and mysql containers using docker-compose.
 
@@ -107,4 +107,4 @@ Enter the root password which is in db_root_password.txt
 ```
 
 ## Contributor -
-[savio Mathew](https://www.linkedin.com/in/saviovettoor)
+[Savio Mathew](https://www.linkedin.com/in/saviovettoor)
