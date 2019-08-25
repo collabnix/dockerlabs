@@ -65,31 +65,37 @@ Below are the list of categories:
 
 In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
 
-- [Docker + AWS + Kafka + Docker Swarm](./intermediate/swarm-mode/beginner-tutorial/swarm-on-aws/README.md)
+## Web Framework
 
 - [Docker + WordPress + Docker Swarm](./solution/wordpress/README.md)
+- [Docker + Nginx ](./play-with-docker/nginx/README.md)
+- [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
+- [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
 
-- [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md)
+## Monitoring
 
 - [Docker, Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md)
 
+## Logging
+
+- [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md)
+
+## Testing Tools
+
 - [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md)
+
+## Demos
 
 - [Docker + Voting App Example](./play-with-docker/example-voting-app/README.md)
 
-- [Docker + Photon OS](./play-with-docker/vmware/powercli/README.md)
+## Networking
 
 - [Docker + MacVLAN](./play-with-docker/macvlan/README.md)
-
 - [Docker, Docker Compose & IPv6](./play-with-docker/ipv6/README.md)
 
-- [Docker + GitLab](./play-with-docker/gitlab/README.md)
+## Developer WorkFlow
 
-- [Docker + Nginx ](./play-with-docker/nginx/README.md)
 
-- [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
-
-- [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
 
 ## Governance
 
