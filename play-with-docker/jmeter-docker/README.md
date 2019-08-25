@@ -78,12 +78,14 @@ $docker exec -it <container-on-master-node> bash
 
 <b> Listing the Slave IPs </b>
 
-       $ docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(sudo docker ps -a -q)
-
+```
+$ docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(sudo docker ps -a -q)
+```
 
 <b> Stopping all the containers in a single shot </b>
 
-       $docker stop $(docker ps -a -q)
+```
+$docker stop $(docker ps -a -q)
 ```
 
 # Contributor
