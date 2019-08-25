@@ -6,7 +6,7 @@
 
 DockerLabs brings you tutorials that help you get hands-on experience using Docker & Kubernetes. Here you will find complete documentation of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://labs.play-with-docker.com/) & [Play with Kubernetes Platform](https://play-with-k8s.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed. Hence, we have everything ready for you to get started with.
 
-###  Getting Started in 3 Simple Steps
+#  Getting Started in 3 Simple Steps
 
 - Join 1000+ DockerLabs Contributors in 2 mins via [DockerLabs Slack Channel](https://tinyurl.com/y973wcq8)
 
@@ -14,12 +14,12 @@ DockerLabs brings you tutorials that help you get hands-on experience using Dock
 
 -  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
-### Categories
+# Categories
 
 DockerLabs is a tutorials authored by members of the open community.
 Below are the list of categories:
 
-### Docker
+## Docker
 
 - [Docker for Beginners](./beginners/README.md)
 
@@ -36,7 +36,7 @@ Below are the list of categories:
 - [Docker Interview Questions](./docker/docker-interview-questions.md)
 
 
-### Kubernetes
+## Kubernetes
 
 - [Kubernetes for Beginners](./kubernetes/README.md)
 
@@ -51,7 +51,7 @@ Below are the list of categories:
 - [Kubernetes Interview Questions]()
 
 
-### Labs Hands-on & Workshop for Docker
+# Labs Hands-on & Workshop for Docker
 
 - [Beginners](./workshop/docker/README.md)
 
@@ -61,7 +61,7 @@ Below are the list of categories:
 
 
 
-### Docker-Ready Stack for You
+# Docker-Ready Stack for You
 
 In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
 
@@ -97,14 +97,16 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 
 
 
-## Governance
+# Governance
 
 Dockerlabs is an independent community project founded by [Ajeet Singh Raina](https://github.com/ajeetraina),a [Docker Captain](https://www.docker.com/captains/ajeet-singh-raina) & Docker Community Leader which is now being built & shaped by a growing community of contributors across the globe.
 
-## Core Contributors
+# Core Contributors
 
+- [Ajeet Singh Raina](https://github.com/ajeetraina)
 - [Sangam Biradar](https://github.com/sangam14)
 - [Saiyam Pathak](https://github.com/saiyam1814)
+- [Savio Mathew](https://github.com/savio)
 - [Apurva Bhandari](https://github.com/apurvabhandari)
 - [Sarkar Tathagata](https://github.com/amitatha82)
 - [Prashansa K](https://github.com/Prashansa-K)
