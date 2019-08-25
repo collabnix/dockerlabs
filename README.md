@@ -68,7 +68,6 @@ In case you're looking out to conduct workshop or demo, you can refer these belo
 ## Web Framework
 
 - [Docker + WordPress + Docker Swarm](./solution/wordpress/README.md)
-- [Docker + Nginx ](./play-with-docker/nginx/README.md)
 - [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
 - [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
 
