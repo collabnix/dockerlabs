@@ -48,4 +48,4 @@ This clearly state that ENTRYPOINT is meant to provide the executable while CMD 
 
 ## Contributor
 
-- [Ajeet Singh Raina](ajeetraina@gmail.com)
+- [Ajeet Singh Raina](mailto:ajeetraina@gmail.com)

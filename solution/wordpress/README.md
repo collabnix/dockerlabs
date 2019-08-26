@@ -54,4 +54,4 @@ A Port 8000 will appear instantly. Wait for 20 seconds and then click it to open
 
 ## Contributor
 
-- [Ajeet Singh Raina](ajeetraina@gmail.com)
+- [Ajeet Singh Raina](mailto:ajeetraina@gmail.com)

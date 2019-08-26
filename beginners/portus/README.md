@@ -122,4 +122,4 @@ Once you login to Portus, you will need to provide Docker Registry details:
  
  ## Contributor
  
- - [Ajeet Singh Raina](ajeetraina@gmail.com)
+ - [Ajeet Singh Raina](mailto:ajeetraina@gmail.com)

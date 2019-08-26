@@ -35,15 +35,15 @@ description: collabnix | DockerLab | Docker - Beginners Track
 # Installing, Upgrading & Maintaining Docker 
 
 - Installing Docker on 
-   - [Linux](./beginners/install)
+   - [Linux](./install/README.md)
    - [Windows](./install/windows/docker-desktop-for-windows/README.md)
-   - [IoT Platform](./raspberrypi3)
+   - [IoT Platform](./install/raspberrypi3/README.md)
      - [How to install Docker 18.09.0 on Raspberry Pi 3?](./install/raspberrypi3/README.md)
      - [How to setup Docker Swarm Cluster on Raspberry Pi](./install/raspberrypi3/setting-up-swarm-cluster.md)
      - [Building up K3s Cluster on Raspberry Pi 3 Nodes](./install/raspberrypi3/setting-up-k3s-cluster.md)
      - [How to monitor a Docker Swarm with Blinkt! LED using Raspberry Pi 3](./install/raspberrypi3/monitor-docker-swarm-using-blinkt.md)
      - [Docker on Arduino Uno & Johnny Five](./install/raspberrypi3/Docker-IOT_Using_Arduino_Uno_and_Johnny-Five.md)
-- [Compiling Your Own Docker Binary from Source](./beginners/compiling-docker-from-source.md)
+- [Compiling Your Own Docker Binary from Source](./install/from-source/README.md)
 - [Upgrading Docker from CE to EE](./upgrade-1809ce-1809ee/README.md)
 
 
@@ -66,7 +66,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
 - [Running Hello World Example](./helloworld/README.md)
 - [Working with Docker Image](./workingwithdockerimage.md) 
   - [Saving Images and Containers as Tar Files for Sharing](./saving-images-as-tar/README.md) 
-  - [Versioning an Image with Tags](./versioning-an-image-with-tags/README.md)
+  - [Versioning an Image with Tags](./versioning-an-image-with-tags.md)
 - [Building Your First Alpine Docker Image and Push it to DockerHub](./building-your-first-alpine-container.md)
 - [Building Docker Image from Scratch](./building-docker-image-from-scratch.md)
 - [Creating Docker Base Image](./create-base-image.md)
