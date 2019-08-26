@@ -51,7 +51,7 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 ## IoT Platform
 
-- [K3s on Raspberry Pi](./beginners/install/raspberrypi3/setting-up-k3s-cluster.md)
+- [K3s on Raspberry Pi]()
    
 
 ## Kubernetes Workshop
@@ -78,9 +78,9 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 ## Contributors
 
-- [Karan Singh](karangandhi0007@gmail.com)
-- [Ajeet Singh Raina](ajeetraina@gmail.com)
-- [Sangam Biradar](smbiradar14@gmail.com)
-- [Tushar Sappal](sappal.tushar@gmail.com)
+- [Karan Singh](mailto:karangandhi0007@gmail.com)
+- [Ajeet Singh Raina](mailto:ajeetraina@gmail.com)
+- [Sangam Biradar](mailto:smbiradar14@gmail.com)
+- [Tushar Sappal](mailto:sappal.tushar@gmail.com)
 - [Apurva Bhandari](https://www.linkedin.com/in/apurvabhandari-linux)
-- [Saiyam Pathak](saiyam911@gmail.com)
+- [Saiyam Pathak](mailto:saiyam911@gmail.com)

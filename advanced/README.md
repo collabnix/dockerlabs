@@ -42,12 +42,12 @@ description: collabnix | DockerLab | Docker - Advanced Track
 
 ## Automation Tool - Ansible, Puppet, Terraform & Chef
 
-[Spin Up AWS Infrastructure using Terraform](./automation/terraform/aws/README.md)<br>
-[Spin Up GCP Infrastructure using Terraform](./automation/terraform/googlecloud/building-first-instance/first-docker-container/README.md)<br>
-[Spin Up Azure Infrastruture with Terraform](./automation/terraform/azure/README.md)<br>
+[Spin Up AWS Infrastructure using Terraform]()<br>
+[Spin Up GCP Infrastructure using Terraform]()<br>
+[Spin Up Azure Infrastruture with Terraform]()<br>
 [Using Terraform to build Nginx Docker Container running on Docker for Mac 18.05](./automation/terraform/terraform-mac-nginx.md)<br>
-[Deploy Kubernetes Cluster on Linux Vagrant Instances using Ansible](./automation/vagrant/kubernetes/README.md)<br>
-[Deploy Docker Swarm Cluster on Linux Vagrant Instances using Ansible](./automation/vagrant/swarm/README.md)
+[Deploy Kubernetes Cluster on Linux Vagrant Instances using Ansible]()<br>
+[Deploy Docker Swarm Cluster on Linux Vagrant Instances using Ansible]()
 
 ## Docker Enterprise 
 

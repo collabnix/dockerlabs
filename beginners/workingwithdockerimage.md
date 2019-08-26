@@ -138,7 +138,7 @@ The [REPOSITORY[:TAG]] value must be an “exact match”.
 
 ## Contributor
 
-[Ajeet Singh Raina](ajeetraina@gmail.com)
+[Ajeet Singh Raina](mailto:ajeetraina@gmail.com)
 
 
 ## Supported architectures: (more info)

@@ -20,7 +20,7 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 - [Difference between Bridge Vs Overlay Network](./DiffBridgeVsOverlay.md)
 - [Verifying host-level settings that impact Docker networking](./networking/host-settings.md)
 - [What is MacVLAN networking?](./macvlan.md)
-   - [Implementing MacVLAN](./beginners/macvlan-010.md)
+   - [Implementing MacVLAN](./../beginners/macvlan-010.md)
 - Docker Networking CLI
   - [Disable Networking for Container](./networking/disableNetworkingToContainer.md)
   - [Finding IP address of Container](./networking/FindingIPaddressofContainer.md)
@@ -114,7 +114,7 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 
 ## Contributor:
 
-[Karan Singh](karangandhi0007@gmail.com)<br>
-[Ajeet Singh Raina](ajeetraina@gmail.com)<br>
-[Tathagata Sarkar](amitatha82@yahoo.com)<br>
+[Karan Singh](mailto:karangandhi0007@gmail.com)<br>
+[Ajeet Singh Raina](mailto:ajeetraina@gmail.com)<br>
+[Tathagata Sarkar](mailto:amitatha82@yahoo.com)<br>
 [Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)
