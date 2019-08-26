@@ -74,7 +74,7 @@
    - [Lab #2: Create an overlay network]()
    - [Lab #3: Create a service]()
    - [Lab #4: Test the Network]()
-   - [Lab #5: Test Service Discovery]()
+   - [Lab #5: Test Service Discovery](https://github.com/collabnix/dockerlabs/blob/master/intermediate/workshop/networking/Lab%20%235:Test_Service_Discovery.md)
    - [Lab #6: Test Routing Mesh]()
 
 ### Implementing MacVLAN
