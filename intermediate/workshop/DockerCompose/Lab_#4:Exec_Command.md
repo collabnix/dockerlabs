@@ -86,21 +86,21 @@ http {
 <b>Note:</b> This file will configure our load balancer.
 #### Create the compose containers
 ```
-docker-compose up -d --scale webserver=3
+$ docker-compose up -d --scale webserver=3
 ```
 #### View the containers
 ```
-docker-compose ps
+$ docker-compose ps
 ```
 #### Execute commands in different webservers
 ```
-docker-compose exec --index=1 webserver  sh -c "echo 'Welcome to webserver1' > /usr/share/nginx/html/index.html"
-docker-compose exec --index=2 webserver  sh -c "echo 'This is webserver2' > /usr/share/nginx/html/index.html"
-docker-compose exec --index=3 webserver  sh -c "echo 'Webserver3 is up' > /usr/share/nginx/html/index.html"
+$ docker-compose exec --index=1 webserver  sh -c "echo 'Welcome to webserver1' > /usr/share/nginx/html/index.html"
+$ docker-compose exec --index=2 webserver  sh -c "echo 'This is webserver2' > /usr/share/nginx/html/index.html"
+$ docker-compose exec --index=3 webserver  sh -c "echo 'Webserver3 is up' > /usr/share/nginx/html/index.html"
 ```
 #### Verify changes
 ```
-curl http://localhost
+$ curl http://localhost
 ```
 <b>Note:</b> In order to verify all changes we'll have to use the curl command multiple times.
 
