@@ -189,6 +189,20 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 
 cse@ubuntu1804-1:~$
 ```
+
+## Checking logs in case of any issue
+
+```
+journalctl -xeu kubelet
+```
+
+## Adding Pod Network
+
+```
+sudo kubectl apply -n kube-system -f     "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d '\n')"
+
+```
+
 ## Listing the Nodes
 
 ```
