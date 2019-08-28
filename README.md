@@ -125,6 +125,6 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 ### License
 
-[Apache License 2.0](./LICENSE)
+[Apache License 2.0](./LICENSE.md)
 
    [Proceed to Beginners Track >>](./beginners/README.md)
