@@ -19,7 +19,7 @@
 - [What is Dockerfile](https://dockerlabs.collabnix.com/beginners/dockerfile/Writing-dockerfile.html#what-is-a-dockerfile)<br>
 - [Understanding Layering Concept with Dockerfile](https://dockerlabs.collabnix.com/beginners/dockerfile/Layering-Dockerfile.html)
 - Creating Docker Image with
-   - [Lab #1: GIT installed](https://dockerlabs.collabnix.com/beginners/dockerfile/lab1_dockerfile_git.html)<br>
+   - [Lab #1: Installing GIT](https://dockerlabs.collabnix.com/beginners/dockerfile/lab1_dockerfile_git.html)<br>
    - [Lab #2: ADD instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab-2-Create-an-image-with-ADD-instruction.html)<br>
    - [Lab #3: COPY instruction](https://dockerlabs.collabnix.com//beginners/dockerfile/lab4_dockerfile_copy.html)<br>
    - [Lab #4: CMD instruction](https://dockerlabs.collabnix.com//beginners/dockerfile/lab4_cmd.html)<br>
