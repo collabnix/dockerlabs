@@ -76,6 +76,7 @@
    - [Lab #4: Test the Network]()
    - [Lab #5: Test Service Discovery](./networking/Lab%20%235:Test_Service_Discovery.md)
    - [Lab #6: Test Routing Mesh](./networking/Lab%236:Test_Routing_Mesh.md)
+   - [Lab #8: Test standalone containersinOverlayNetwork]()
 
 ### Implementing MacVLAN
 
