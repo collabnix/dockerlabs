@@ -27,8 +27,6 @@ Below are the list of categories:
 
 - [Docker for Advanced](./advanced/README.md)
 
-- [Docker for CIOs/CEOs](./docker/leadership/README.md)
-
 - [Docker Cheatsheet](./docker/cheatsheet/README.md)
 
 - [Docker Certificate Associate Exam Preparation](./docker/dca.md)
@@ -43,8 +41,6 @@ Below are the list of categories:
 - [Kubernetes for Intermediate](./kubernetes/Intermediate/README.md)
 
 - [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
-
-- [Kubernetes for CIOs/CEOs](./kubernetes/leadership/README.md)
 
 - [Kubernetes Cheatsheets](./kubernetes/cheatsheets/kubectl.md)
 
@@ -104,8 +100,8 @@ Dockerlabs is an independent community project founded by [Ajeet Singh Raina](ht
 
 - [Ajeet Singh Raina](https://github.com/ajeetraina)
 - [Sangam Biradar](https://github.com/sangam14)
-- [Saiyam Pathak](https://github.com/saiyam1814)
 - [Savio Mathew](https://github.com/savio)
+- [Saiyam Pathak](https://github.com/saiyam1814)
 - [Apurva Bhandari](https://github.com/apurvabhandari)
 - [Sarkar Tathagata](https://github.com/amitatha82)
 - [Prashansa K](https://github.com/Prashansa-K)
