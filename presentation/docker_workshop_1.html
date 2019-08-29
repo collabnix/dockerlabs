@@ -39,11 +39,11 @@
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+			<div class="slides"> 
 				<section>
-					<h1>DockerLabs</h1>
+					<h1>DockerLabs Workshop </h1>
 					
-					<a href="https://Dockerlabs.collabnix.com"> </a>
+					<a href="https://Dockerlabs.collabnix.com"></a>
 					
 				</section>
 
@@ -100,13 +100,11 @@
 					
 				</section>
 				<section>
-				<p>
-          
-          Explanation
+	<h1> Explanation </h1>
 
 This image is a prime example of using the scratch image effectively. See hello.c in https://github.com/docker-library/hello-world for the source code of the hello binary included in this image.
 
-So what’s happened here? We’ve called the docker run command, which is responsible for launching containers.
+So what’s happened here? We’ve called the docker run command, which is responsible for launching containers. <br>
 
 The argument hello-world is the name of the image someone created on dockerhub for us. It will first search for "hello-world" image locally and then search in Dockerhub.
 
@@ -128,105 +126,125 @@ hello-world         latest              4ab4c602aa5e        6 weeks ago         
 					
 				</section>
 				
-				
 						<section>
-					<h2>1.step</h2>
 			
-					<p> Clone the Repository: <a href="https://github.com/sangam14/dockerapp1.git">Project</a>.</p>
-				</section>
-				<section>
-					<h2>2.step</h2>
+<p>2.While running docker ps command, it doesn't display any running container. Reason - It gets executed once and exit immediately. </p>
+					
 					<pre><code class="hljs" data-trim contenteditable>
 
-                                 cd dockerapp1 
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS.         PORTS               NAMES
                               
-					</code></pre>
-					<p> Change directory to dockerapp1 as shown above</p>
+					</code></pre>	
+							
 				</section>
 				<section>
-				<h2>3.step</h2>
-					<pre><code class="hljs" data-trim contenteditable>
+					
+					<p>3. You can use ` docker inspect <imagename> ` command to inspect about this particular Docker Image</p>
+<pre><code class="hljs" data-trim contenteditable>
+$ docker inspect 4ab
+[
+    {
+        "Id": "sha256:4ab4c602aa5eed5528a6620ff18a1dc4faef0e1ab3a5eddeddb410714478c67f",
+        "RepoTags": [
+            "hello-world:latest"
+        ],
+        "RepoDigests": [
+            "hello-world@sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2018-09-07T19:25:39.809797627Z",
+        "Container": "15c5544a385127276a51553acb81ed24a9429f9f61d6844db1fa34f46348e420",
+        "ContainerConfig": {
+            "Hostname": "15c5544a3851",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"/hello\"]"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:9a5813f1116c2426ead0a44bbec252bfc5c3d445402cc1442ce9194fc1397027",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "DockerVersion": "17.06.2-ce",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/hello"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:9a5813f1116c2426ead0a44bbec252bfc5c3d445402cc1442ce9194fc1397027",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1840,
+        "VirtualSize": 1840,
+        "GraphDriver": {
+            "Data": {
+                "MergedDir": "/var/lib/docker/overlay2/e494ae30abc49ad403ef5c2a32bcb894629ea4da6d4d226fbca70d27ed9a74d8/merged",
+                "UpperDir": "/var/lib/docker/overlay2/e494ae30abc49ad403ef5c2a32bcb894629ea4da6d4d226fbca70d27ed9a74d8/diff",
+                "WorkDir": "/var/lib/docker/overlay2/e494ae30abc49ad403ef5c2a32bcb894629ea4da6d4d226fbca70d27ed9a74d8/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:428c97da766c4c13b19088a471de6b622b038f3ae8efa10ec5a37d6d31a2df0b"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
+		</code></pre>				
+						
+						
+						
+				</section>
+				<section>
+				<a href="https://asciinema.org/a/210117" target="_blank"><img src="https://asciinema.org/a/210117.svg" /></a>
+					
 
-                              docker-compose up
+                     
                                 
-					</code></pre>
-					<p> Bringing up app using Docker Compose</p>
 				</section>
-		              <section>		
-				<section data-background-image="/slides/img/bg1.png">
-	
-                             </section>
-			     </section>
-			     <section>		
-			     <section data-background-image="/slides/img/bg2.png">
-	
-                             </section>
-			     </section>
-			      <section>		
-			     <section data-background-image="/slides/img/bg3.png">
-				   <p class="fragment highlight-blue"> As shown above, we can save key and value by clicking "Save" button.</p>
-                             </section>
-			     </section>
-			<section>	
-			<p> Integrating Cirecle-ci (Before Docker)</h1>
-				 Make sure you add circle-ci config file under .circleci/... 
-				as shown under the example https://github.com/sangam14/dockerapp1/tree/master/.circleci </p>
-				
-			</section>	
-			<section>
-					<pre><code class="hljs" data-trim contenteditable>
-					
-version: 2
-jobs:
-  build:
-    working_directory: /dockerapp1
-    docker:
-      - image: docker:17.05.0-ce-git
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Install dependencies
-          command: |
-            apk add --no-cache py-pip=9.0.0-r1
-            pip install docker-compose==1.15.0
-      - run:
-          name: Run tests
-          command: |
-            docker-compose up -d
-            docker-compose run dockerapp1 python test.py
-      - deploy:
-          name: Push application Docker image
-          command: |
-            docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
-            docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp1:$CIRCLE_SHA1
-            docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp1:latest
-            docker push $DOCKER_HUB_USER_ID/dockerapp1:$CIRCLE_SHA1
-            docker push $DOCKER_HUB_USER_ID/dockerapp1:latest 
-	    
-					</code></pre>
-					
-				</section>	
-				<section>
-					<p>
-	As shown above, make sure to add environment variable like $DOCKER_HUB_EMAIL, $DOCKER_HUB_USER_ID,$DOCKER_HUB_PWD 
-	Once you get circleci job running sucessfully, it should automatically be deployed on DockerHub repository.
-					</p>
-				</section>
-				    
-				<section>		
-			     <section data-background-image="/slides/img/bg4.png">
-				</section
-		         <section>
-<p class="fragment highlight-blue"> Login to the circl-ci account https://circleci.com using github. Select project which you want to deploy.</p>
-			</section>     
-			<section>		
-			     <section data-background-image="/slides/img/bg5.png">
-                        </section>
-				<section>
-<p class="fragment highlight-blue">Go to the setting of the project in circleci dashboard and add the environment veriable which declared in .circleci/config.yml file io.
- You can also provide Github SSH permission.<p>
-				</section.     
+		                 
 			</div>
 
 		</div>
