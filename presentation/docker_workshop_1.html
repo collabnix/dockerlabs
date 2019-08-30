@@ -388,13 +388,14 @@ alpine              3.9                 5cb3aa00f899        7 days ago          
 	<section>
 		
 		<p> If you want to filter out just alpine </p>
+		<pre><code class="hljs" data-trim contenteditable>
 $ docker images --filter=reference='alpine'
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              3.6                 43773d1dba76        7 days ago          4.03MB
 alpine              3.7                 6d1ef012b567        7 days ago          4.21MB
 alpine              3.8                 dac705114996        7 days ago          4.41MB
 alpine              3.9                 5cb3aa00f899        7 days ago          5.53MB
-		
+		</code></pre>
 		<p> Explanation <br>
 
 The [REPOSITORY[:TAG]] value must be an “exact match”. </p>
