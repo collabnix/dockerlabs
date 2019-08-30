@@ -2,6 +2,9 @@
 
 ### Getting Started with Docker Image
 
+
+| Topic        | Presentation          
+| ------------- |:-------------:|
 | [Running Hello World Example](https://collabnix.github.io/dockerlabs/beginners/helloworld/) | [slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/) | <br>
 | [Working with Docker Image](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html) | [slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/12) |
 - [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
