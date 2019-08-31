@@ -647,7 +647,53 @@ container# gcc -o hello -static -nostartfiles hello.c
 	 </code></pre>
 	
 	<p> This example creates the hello-world image used in the tutorials. If you want to test it out, you can clone the image repo. </p>
+</section>
+<section>
+	<h2> Accessing the Container Shell </h2>
+</section>
+<section>
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+<section>
+	<p> Create Ubuntu Container </p>
+	<pre><code class="hljs" data-trim contenteditable>
+         docker run -dit ubuntu 
+	 </code></pre>
+	
 </section>	
+<section>
+	<p> Accessing the container shell </p>
+	<pre><code class="hljs" data-trim contenteditable>
+         docker exec -t <container-id> bash
+	 </code></pre>
+	
+</section>	
+<section>
+	<p> Accesssing the container shell </p>
+	<pre><code class="hljs" data-trim contenteditable>
+        docker attach <container-id>
+	 </code></pre>
+	
+</section>	
+		
 		
 		
 		
