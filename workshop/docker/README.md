@@ -16,6 +16,7 @@
 ## Accessing & Managing Docker Container
 
 - [Accessing the Container Shell](http://dockerlabs.collabnix.com/beginners/accessing-the-container.html)<br>
+   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/41)
 - [Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)<br>
 - [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)<br>
 
