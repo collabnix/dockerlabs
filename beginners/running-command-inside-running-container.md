@@ -43,3 +43,5 @@ docker run -dit ubuntu
 ```
 docker exec -t <container-id> bash
 ```
+
+Proceed » [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)
