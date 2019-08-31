@@ -48,4 +48,7 @@ docker exec -t <container-id> bash
 
 ```
 docker attach <container-id>
+
 ```
+
+[Proceed >> Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)
