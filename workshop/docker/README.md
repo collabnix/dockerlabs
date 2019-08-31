@@ -6,6 +6,7 @@
   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/)
 - [Working with Docker Image](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html)
   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/12)
+- [Saving Images and Containers as Tar Files for Sharing](http://dockerlabs.collabnix.com/beginners/saving-images-as-tar/)
 - [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/22)
 - [Building Docker Image from Scratch ](https://dockerlabs.collabnix.com/beginners/building-docker-image-from-scratch.html)  
