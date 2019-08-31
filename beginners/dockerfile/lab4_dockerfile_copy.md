@@ -52,3 +52,4 @@ COPY git-1.8.3.1.tar.gz /home/
 ```
 docker build -t ajeetraina/lab2_dockerfile_lab2 . -f Dockerfile_copy
 ```
+[Lab #4: CMD instruction](https://dockerlabs.collabnix.com//beginners/dockerfile/lab4_cmd.html)
