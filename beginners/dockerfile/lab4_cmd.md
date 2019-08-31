@@ -46,3 +46,4 @@ docker build -t ajeetraina/lab3_cmd . -f Dockerfile_cmd
 ```
 docker run ajeetraina/lab3_cmd:latest
 ```
+[Lab #5: ENTRYPOINT instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Dockerfile-ENTRYPOINT.html)
