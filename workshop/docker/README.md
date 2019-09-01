@@ -7,17 +7,18 @@
 - [Working with Docker Image](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html)
   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/12)
 - [Saving Images and Containers as Tar Files for Sharing](http://dockerlabs.collabnix.com/beginners/saving-images-as-tar/)
-- [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/22)
+- [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
+  - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/33)
 - [Building Docker Image from Scratch ](https://dockerlabs.collabnix.com/beginners/building-docker-image-from-scratch.html)  
-  - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/35)
+  - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/46)
 
 
 
 ## Accessing & Managing Docker Container
 
 - [Accessing the Container Shell](http://dockerlabs.collabnix.com/beginners/accessing-the-container.html)<br>
-   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/41)
+   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/52)
 - [Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)<br>
 - [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)<br>
 
