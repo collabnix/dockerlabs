@@ -960,9 +960,186 @@ $ docker restart app2
 	 </code></pre>
 		
 	</section>
+	<section>
+		<p> Display the docker host information with: </p>
+		<pre><code class="hljs" data-trim contenteditable>
+           $ docker info
+             	 </code></pre>	
+		<p> Show the running processes in the first container using: </p>
+	  <pre><code class="hljs" data-trim contenteditable>
+$ docker top app1
+	         </code></pre>	
+		<p> Retrieve the history of the second container:</p>
+		<pre><code class="hljs" data-trim contenteditable>
+$ docker history selaworkshops/python-app:2.0
+	         </code></pre>
+	</section>
+	<section> 
+		<p> Inspect the second container image: </p>
+
+			  <pre><code class="hljs" data-trim contenteditable>
+$ docker inspect selaworkshops/python-app:2.0
+	         </code></pre>
+				<p>Inspect the first container and look for the internal ip: </p>
+
+			  <pre><code class="hljs" data-trim contenteditable>
+$ docker inspect app1
+	         </code></pre>
+	</section> 
+	<section>
+		<pre><code class="hljs" data-trim contenteditable>
 		
-			
+		"Networks": {
+             "bridge": {
+                 "IPAMConfig": null,
+                 "Links": null,
+                 "Aliases": null,
+                 "NetworkID": "822cb66790c6358d9decab874916120f3bdeff7193a4375c94ca54d50832303d",
+                 "EndpointID": "9aa96dc29be08eddc6d8f429ebecd2285c064fda288681a3611812413cbdfc1f",
+                 "Gateway": "172.17.0.1",
+                 "IPAddress": "172.17.0.3",
+                 "IPPrefixLen": 16,
+                 "IPv6Gateway": "",
+                 "GlobalIPv6Address": "",
+                 "GlobalIPv6PrefixLen": 0,
+                 "MacAddress": "02:42:ac:11:00:03",
+                 "DriverOpts": null
+             }
+         }
+		 </code></pre>
 		
+	</section>	
+	<section>
+		
+		<p> Show the logs of the second container using the flag –follow: </p>
+	<pre><code class="hljs" data-trim contenteditable>
+	
+	$ docker logs --follow app2
+	 </code></pre>
+		<p> Browse to the application and see the containers logs from the terminal:</p> 
+		<pre><code class="hljs" data-trim contenteditable>
+http://localhost:5001
+       </code></pre>
+		<p> Stop to tracking logs: </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+$ CTRL + C
+ </code></pre>
+	</section> 
+	
+	<section>	
+	<h2> What is a Dockerfile? </h2>
+</section>
+<section> 
+	<p>  - A Dockerfile is a text file which contains a series of commands or instructions.<br>
+- These instructions are executed in the order in which they are written.<br>
+- Execution of these instructions takes place on a base image.<br>
+- On building the Dockerfile, the successive actions form a new image from the base parent image.<br>
+- We will go through each of instructions under Dockerfile and see how it is used.</p>
+	
+</section>	
+<section>
+	
+	<h2> Deep Drive Into Dockerfile   </h2>
+</section>
+<section>
+	<section>
+		<p> Lab #1: Create an image with GIT installed </p> 
+	
+	</section>	
+	
+<section>
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+<section>
+	
+<p> Assignment:<br> 
+
+- Create an image with GIT installed <br>
+- Tag your image as labs-git:v1.0. <br>
+- Create a container based on that image, and run git –version to check that it is installed correctly <br>
+	
+</section>
+<section>
+	<p> Creating Dockerfile </p> 
+		<pre><code class="hljs" data-trim contenteditable>
+FROM alpine:3.5
+RUN apk update
+RUN apk add git
+ 
+ </code></pre>	
+</section>
+<section>
+	<p> Build Docker Image </p>
+			<pre><code class="hljs" data-trim contenteditable>
+docker build -t ajeetraina/alpine-git .
+ 
+ </code></pre>	
+	<p>Tagging image as labs-git </p>
+			<pre><code class="hljs" data-trim contenteditable>
+docker tag ajeetraina/alpine-git ajeetraina/labs-git:v1.0
+ 
+ </code></pre>	
+	
+</section> 
+<section> 
+	<p> Verify the Images </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+	
+$ docker images
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+ajeetraina/alpine-git   latest              cb913e37a593        16 seconds ago      26.6MB
+ajeetraina/labs-git     v1.0                cb913e37a593        16 seconds ago      26.6MB
+
+	 </code></pre>	
+	<p> Create a container </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+	
+docker run -itd ajeetraina/labs-git:v1.0 /bin/sh
+
+	 </code></pre>	
+	<pre><code class="hljs" data-trim contenteditable>
+	
+$ docker ps
+CONTAINER ID        IMAGE                      COMMAND             CREATED             STATUS              PORTS               NAMES
+3e26a5268f55        ajeetraina/labs-git:v1.0   "/bin/sh"           4 seconds ago       Up 2 seconds                            elated_neumann
+	 </code></pre>
+	
+</section>
+<section>
+	<p> Enter into Container Shell </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+	docker attach 3e26
+	</code></pre>
+	<p> Please press “Enter” key twice so as to enter into container shell </p> 
+</section> 
+<section> 
+	<p> Verify if GIT is installed <p> 
+<pre><code class="hljs" data-trim contenteditable>
+/ # git --version
+git version 2.13.7
+</code></pre>	
+</section> 	
+	
+	
+	
 		
 		
 		                 
