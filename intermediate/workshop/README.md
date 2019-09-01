@@ -3,15 +3,15 @@
 ### Docker Compose
 
 - [Introduction to Docker Compose]()<br>
-- [Dockerfile Vs Docker compose ](./DockerCompose/Difference_between_dockerfile_and_docker_compose.html)<br>
-- [How to Install Docker Compose? ](./DockerCompose/How_to_Install_Docker_Compose.html)<br>
+- [Dockerfile Vs Docker compose ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Difference_between_dockerfile_and_docker_compose.html)<br>
+- [How to Install Docker Compose? ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/How_to_Install_Docker_Compose.html)<br>
 - [Instructions of Docker Compose]()<br>
-     - [Lab #1: `Build` Command ](./DockerCompose/Lab_%231:Build_Command.html)<br>
+     - [Lab #1: `Build` Command ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231:Build_Command.html)<br>
      - [Lab #2: `Config` Command ]()<br>
-     - [Lab #3: `Down` Command  ](./DockerCompose/Lab_%233:Down_Command.html)<br>
-     - [Lab #4: `Exec` Command ](./DockerCompose/Lab_%234:Exec_Command.html)<br>
-     - [Lab #5: `help` Command ](./DockerCompose/Lab_%235:help_Command.html)<br>
-     - [Lab #6: `Images` Command ](./DockerCompose/Lab_%236:Images_Command.html)<br>
+     - [Lab #3: `Down` Command  ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%233:Down_Command.html)<br>
+     - [Lab #4: `Exec` Command ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234:Exec_Command.html)<br>
+     - [Lab #5: `help` Command ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%235:help_Command.html)<br>
+     - [Lab #6: `Images` Command ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%236:Images_Command.html)<br>
      - [Lab #7: `Kill` Command ]()<br>
      - [Lab #8: `Logs` Command ]()<br>
      - [Lab #9:  `Pause` Command ]()<br>
