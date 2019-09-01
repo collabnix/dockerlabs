@@ -111,3 +111,5 @@ Use cache_from specify the cache to build the image
 ## Contributor
 [Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)<br>
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
+
+[Lab #2: Config Command ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%232:Config_Command.html)<br>
