@@ -45,3 +45,5 @@ Verify that the Compose file format is correct. If it is correct, the configurat
 ## Contributor
 []()<br>
 []()
+
+[Lab #3: Down Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%233:Down_Command.html)<br>
