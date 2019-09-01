@@ -842,8 +842,127 @@ container# gcc -o hello -static -nostartfiles hello.c
         docker attach <container-id>
 	 </code></pre>
 	
-</section>	
+</section>
+<section>	
+	<h2> 7.Running a command inside running Container </h2>
+<section>
+<section>
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+<section>
+	
+	<p> Create Ubuntu Container </p>
+	
+	<pre><code class="hljs" data-trim contenteditable>
+ docker run -dit ubuntu
+	 </code></pre>
+	<p> Opening up the bash shell </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+docker exec -t <container-id> bash
+	 </code></pre>
+	
+</section>
+<section>	
+	<h2> 8.Managing Docker containers </h2>
+<section>
+<section>
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+<section>
+	
+	<p> Preparations <br>
+	Clean your docker host using the commands (in bash): </p>
+		<pre><code class="hljs" data-trim contenteditable>
+$ docker rm -f $(docker ps -a -q)
+	 </code></pre>
+	
+	</section>	
+	<section>
+	
+	<p> Instructions <br>
+Run the following containers from the dockerhub: </p>
+		<pre><code class="hljs" data-trim contenteditable>
+$ docker run -d -p 5000:5000 --name app1 selaworkshops/python-app:1.0
+	 </code></pre>
+		<pre><code class="hljs" data-trim contenteditable>
+$ docker run -d -p 5001:5001 -e "port=5001" --name app2 selaworkshops/python-app:2.0
+	 </code></pre>
+	
+	</section>
+	<section>
+		<p> Ensure the containers are running: </p>
+		<pre><code class="hljs" data-trim contenteditable>
+$ docker ps
+	 </code></pre>
+		<p> Stop the first container: </p>
+		<pre><code class="hljs" data-trim contenteditable>
+$ docker stop app1
+	 </code></pre>
+		<p> Kill the second container: </p>
+		<pre><code class="hljs" data-trim contenteditable>
+$ docker kill app2
+	 </code></pre>
+		<p> Display running containers: </p>
+		<pre><code class="hljs" data-trim contenteditable>
+docker ps
+	 </code></pre>
+	
+	</section>
+	<section>
+		<p> Show all the containers (includind non running containers): </p>
+		<pre><code class="hljs" data-trim contenteditable>
+docker ps -a 
+	 </code></pre>
+	<p> Let’s start both containers again: </p>
+		<pre><code class="hljs" data-trim contenteditable>
+$ docker start app1 app2
+	 </code></pre>
+<p> Restart the second container: </p>
+		<pre><code class="hljs" data-trim contenteditable>
+$ docker restart app2
+	 </code></pre>
 		
+	</section>
+		
+		
+		
+	</section>	
 		
 		
 		
