@@ -25,11 +25,11 @@ RUN chmod 600 /hello/hello/hello.txt
 ### Layer ID
 Each instruction the Dockerfile generates a layer. Each of this layer has a randomly generated unique ID. This ID can be seen at the time of build. See the image below:
 
-![Docker layers during Build](https://github.com/Prashansa-K/Docker/blob/master/Writing%20Dockerfiles/layering2.png)
+![Docker layers during Build](https://raw.githubusercontent.com/Prashansa-K/Docker/master/Writing%20Dockerfiles/layering2.png)
 
 To view all these layers once an image is built from a Dockerfile, we can use docker history command.
 
-![Docker history](https://github.com/Prashansa-K/Docker/blob/master/Writing%20Dockerfiles/layering3.png)
+![Docker history](https://raw.githubusercontent.com/Prashansa-K/Docker/master/Writing%20Dockerfiles/layering3.png)
 
 
 To see more information about the Docker image and the layers use 'docker inspect' command as such:
