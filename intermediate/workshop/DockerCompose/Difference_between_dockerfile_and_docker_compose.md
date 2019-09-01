@@ -34,5 +34,7 @@ volumes:
   logvolume01: {}
 ```
 
-## Contributor -
+## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
+
+[How to Install Docker Compose?](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/How_to_Install_Docker_Compose.html)<br>
