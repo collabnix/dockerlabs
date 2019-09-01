@@ -38,18 +38,18 @@
 
 ### Introduction to Docker Swarm
 
-- [What is Docker Swarm](./what-is-docker-swarm.html)<br>
+- [What is Docker Swarm](http://dockerlabs.collabnix.com/intermediate/workshop/what-is-docker-swarm.html)<br>
 
 ### Docker Services | Scaling | Draining Node | Rescheduling Containers
 
-- [Creating 5-Node Docker Swarm Cluster](./getting-started-with-swarm.html)<br>
-- [Lab #1: Creating Overlay Network](./lab1-docker-network-overlay.html)<br>
-- [Lab #2: Deploy Services ](./lab2-deploy-services.md)<br>
-- [Lab #3: Inspecting Docker Swarm Service States](./lab3-inspect-services.html)<br>
-- [Lab #4: Scaling Docker Swarm Services](./lab4-scaling-services.html)<br>
-- [Lab #5: Deploy the application components as Docker services ](./lab5-deploy-app-component-as-docker-services.html)<br>
-- [Lab #6: Drain a node and reschedule the containers](./lab6-drain-a-node-reschedule.html)<br>
-- [Lab #7: Cleaning Up ](./lab7-cleaning-up.html)<br>
+- [Creating 5-Node Docker Swarm Cluster](http://dockerlabs.collabnix.com/intermediate/workshop/getting-started-with-swarm.html)<br>
+- [Lab #1: Creating Overlay Network](http://dockerlabs.collabnix.com/intermediate/workshop/lab1-docker-network-overlay.html)<br>
+- [Lab #2: Deploy Services ](http://dockerlabs.collabnix.com/intermediate/workshop/lab2-deploy-services.html)<br>
+- [Lab #3: Inspecting Docker Swarm Service States](http://dockerlabs.collabnix.com/intermediate/workshop/lab3-inspect-services.html)<br>
+- [Lab #4: Scaling Docker Swarm Services](http://dockerlabs.collabnix.com/intermediate/workshop/lab4-scaling-services.html)<br>
+- [Lab #5: Deploy the application components as Docker services ](http://dockerlabs.collabnix.com/intermediate/workshop/lab5-deploy-app-component-as-docker-services.html)<br>
+- [Lab #6: Drain a node and reschedule the containers](http://dockerlabs.collabnix.com/intermediate/workshop/lab6-drain-a-node-reschedule.html)<br>
+- [Lab #7: Cleaning Up ](http://dockerlabs.collabnix.com/intermediate/workshop/lab7-cleaning-up.html)<br>
 
 
 
@@ -70,17 +70,17 @@
 
 ### Overlay Networking
 
-- [Lab #1: Docker Overlay Networking](./networking/Lab%231:Docker_Overlay_Networking.md)
-   - [Lab #2: Create an overlay network](./networking/Lab_%232:Create_an_overlay_network.md)
-   - [Lab #3: Create a service](./networking/Lab_%233:Create_a_service.md)
+- [Lab #1: Docker Overlay Networking](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%231:Docker_Overlay_Networking.html)<br>
+   - [Lab #2: Create an overlay network](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%232:Create_an_overlay_network.html)<br>
+   - [Lab #3: Create a service](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%233:Create_a_service.html)<br>
    - [Lab #4: Test the Network]
-   - [Lab #5: Test Service Discovery](./networking/Lab%20%235:Test_Service_Discovery.md)
-   - [Lab #6: Test Routing Mesh](./networking/Lab%236:Test_Routing_Mesh.md)
+   - [Lab #5: Test Service Discovery](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%235:Test_Service_Discovery.html)
+   - [Lab #6: Test Routing Mesh](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%236:Test_Routing_Mesh.html)<br>
    - [Lab #8: Test standalone containersinOverlayNetwork]
 
 ### Implementing MacVLAN
 
-- [Lab #7: Getting Started with MacVLAN](networking/lab7-macvlan.md)
+- [Lab #7: Getting Started with MacVLAN](http://dockerlabs.collabnix.com/intermediate/workshop/networking/lab7-macvlan.html)<br>
 
 
 # Contributors
