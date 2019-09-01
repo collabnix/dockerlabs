@@ -107,3 +107,5 @@ $ curl http://localhost
 ## Contributor
 [Om Anand](https://www.linkedin.com/in/om-anand/)<br>
 []()
+
+[Lab #5: help Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%235:help_Command.html)<br>
