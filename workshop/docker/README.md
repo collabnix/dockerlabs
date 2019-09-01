@@ -27,6 +27,7 @@
 ## Getting Started with Dockerfile
 
 - [What is Dockerfile](https://dockerlabs.collabnix.com/beginners/dockerfile/Writing-dockerfile.html#what-is-a-dockerfile)<br>
+  - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/70)
 - [Understanding Layering Concept with Dockerfile](https://dockerlabs.collabnix.com/beginners/dockerfile/Layering-Dockerfile.html)
 - Creating Docker Image with
    - [Lab #1: Installing GIT](https://dockerlabs.collabnix.com/beginners/dockerfile/lab1_dockerfile_git.html)<br>
