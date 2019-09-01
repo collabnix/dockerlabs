@@ -20,7 +20,9 @@
 - [Accessing the Container Shell](http://dockerlabs.collabnix.com/beginners/accessing-the-container.html)<br>
    - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/52)
 - [Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)<br>
+   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/57)
 - [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)<br>
+   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/60)
 
 ## Getting Started with Dockerfile
 
