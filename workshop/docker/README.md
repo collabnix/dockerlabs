@@ -64,9 +64,9 @@
 ## Docker Networking
 
  - [The docker network Command](http://dockerlabs.collabnix.com/beginners/using-docker-network.html)<br>
- - [Lab #1: Listing the Networks]
- - [Lab #2: Inspecting a Network]
- - [Lab #3: List network driver plugins]
+ - [Lab #1: Listing the Networks](https://github.com/collabnix/dockerlabs/blob/master/networking/A1-network-basics.md#step-2-list-networks)
+ - [Lab #2: Inspecting a Network](https://github.com/collabnix/dockerlabs/blob/master/networking/A1-network-basics.md#step-3-inspect-a-network)
+ - [Lab #3: List network driver plugins](https://github.com/collabnix/dockerlabs/blob/master/networking/A1-network-basics.md#step-4-list-network-driver-plugins)
  - [Lab #4: Docker Bridge Networking]
    - [Lab #5: Basics of Docker Bridge Networking]
    - [Lab #6: Connect a Docker container to bridge network]
