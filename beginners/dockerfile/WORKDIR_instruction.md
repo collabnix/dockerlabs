@@ -123,4 +123,4 @@ $ docker run -it workdir:v4 pwd
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next [ARG Instruction](https://dockerlabs.collabnix.com//beginners/dockerfile/arg.html)
+Next [Lab #8: Create an image with ARG instruction](https://dockerlabs.collabnix.com//beginners/dockerfile/arg.html)
