@@ -67,11 +67,11 @@
  - [Lab #1: Listing the Networks](https://github.com/collabnix/dockerlabs/blob/master/networking/A1-network-basics.md#step-2-list-networks)
  - [Lab #2: Inspecting a Network](https://github.com/collabnix/dockerlabs/blob/master/networking/A1-network-basics.md#step-3-inspect-a-network)
  - [Lab #3: List network driver plugins](https://github.com/collabnix/dockerlabs/blob/master/networking/A1-network-basics.md#step-4-list-network-driver-plugins)
- - [Lab #4: Docker Bridge Networking]
-   - [Lab #5: Basics of Docker Bridge Networking]
-   - [Lab #6: Connect a Docker container to bridge network]
-   - [Lab #7: Test Network Connectivity]
-   - [Lab #8: Configure NAT for external connectivity]
+ - [Lab #4: Docker Bridge Networking](https://github.com/collabnix/dockerlabs/blob/master/networking/A2-bridge-networking.md)
+   - [Lab #5: Basics of Docker Bridge Networking](https://github.com/collabnix/dockerlabs/blob/master/networking/A2-bridge-networking.md#step-1-the-default-bridge-network)
+   - [Lab #6: Connect a Docker container to bridge network](https://github.com/collabnix/dockerlabs/blob/master/networking/A2-bridge-networking.md#step-2-connect-a-container)
+   - [Lab #7: Test Network Connectivity](https://github.com/collabnix/dockerlabs/blob/master/networking/A2-bridge-networking.md#step-3-test-network-connectivity)
+   - [Lab #8: Configure NAT for external connectivity](https://github.com/collabnix/dockerlabs/blob/master/networking/A2-bridge-networking.md#step-4-configure-nat-for-external-connectivity)
  
  
 
