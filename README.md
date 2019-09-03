@@ -102,19 +102,6 @@ Dockerlabs is an independent community project founded by [Ajeet Singh Raina](ht
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [<img src="https://avatars1.githubusercontent.com/u/34628205?s=400&v=4" width="48px;" alt="Wikitops"/><br /><sub><b>Wikitops</b></sub>](https://github.com/wikitops)<br /> | [<img src="https://avatars0.githubusercontent.com/u/20920080?s=400&v=4" width="48px;" alt="Akshit Grover"/><br /><sub><b>Akshit Grover</b></sub>](https://github.com/akshitgrover)<br /> | [<img src="https://avatars3.githubusercontent.com/u/18344557?s=400&v=4" width="48px;" alt="Ameya Agashe"/><br /><sub><b>Ameya Agashe</b></sub>](https://github.com/ameyaagashe)<br /> | [<img src="https://avatars1.githubusercontent.com/u/39425180?s=400&v=4" width="48px;" alt="Bala"/><br /><sub><b>Bala</b></sub>](https://github.com/balasu)<br /> | 
 
-- [Ajeet Singh Raina](https://github.com/ajeetraina)
-- [Sangam Biradar](https://github.com/sangam14)
-- [Savio Mathew](https://github.com/savio)
-- [Saiyam Pathak](https://github.com/saiyam1814)
-- [Apurva Bhandari](https://github.com/apurvabhandari)
-- [Sarkar Tathagata](https://github.com/amitatha82)
-- [Prashansa K](https://github.com/Prashansa-K)
-- [Wikitops](https://github.com/wikitops)
-- [Akshit Grover](https://github.com/akshitgrover)
-- [Ameya Agashe](https://github.com/ameyaagashe)
-- [Bala](https://github.com/balasu)
-
-
 
 ### How to Contribute
 
