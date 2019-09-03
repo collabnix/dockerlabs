@@ -81,3 +81,5 @@ $ docker container exec -it volume-test ls myvol
 
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
+
+Next >> [Lab #11: EXPOSE instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab%2311:EXPOSE_instruction.html)
