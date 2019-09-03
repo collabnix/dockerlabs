@@ -49,3 +49,5 @@ This clearly state that ENTRYPOINT is meant to provide the executable while CMD 
 ## Contributor
 
 - [Ajeet Singh Raina](mailto:ajeetraina@gmail.com)
+
+Next >> [Lab #17: USER instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/user.html)
