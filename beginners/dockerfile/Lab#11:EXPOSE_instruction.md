@@ -72,3 +72,5 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
+
+Next >> [Lab #12: LABEL instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Label_instruction.html)
