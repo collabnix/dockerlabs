@@ -76,7 +76,7 @@
    - [Lab #4: Test the Network]
    - [Lab #5: Test Service Discovery](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%235:Test_Service_Discovery.html)
    - [Lab #6: Test Routing Mesh](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%236:Test_Routing_Mesh.html)<br>
-   - [Lab #8: Test standalone containersinOverlayNetwork]
+   - [Lab #8: Test standalone containersinOverlayNetwork](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%238:%20Test_standalone_containers_in_OverlayNetwork.html)
 
 ### Implementing MacVLAN
 
