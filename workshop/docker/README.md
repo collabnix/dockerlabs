@@ -53,7 +53,7 @@
 ## Creating Private Docker Registry
 
 - [Building a Private Docker Registry](https://dockerlabs.collabnix.com/beginners/build-private-docker-registry.html)
-- [Building a Private Docker Registry with UI](https://dockerlabs.collabnix.com/beginners/portus.html)
+- [Building a Private Docker Registry with UI](https://dockerlabs.collabnix.com/beginners/portus/)
 
 
 ### Docker Volumes
