@@ -1492,6 +1492,8 @@ $ docker image build -t cpy:v1 .
 <pre><code class="hljs" data-trim contenteditable>
 
 $ docker container run -d --rm --name myapp1 -p 80:80 cpy:v1
+
+</code></pre>
 <p> Checking index file </p> 
 
 <pre><code class="hljs" data-trim contenteditable>
@@ -1499,10 +1501,12 @@ $ docker container run -d --rm --name myapp1 -p 80:80 cpy:v1
 $ curl localhost
 Welcome to Dockerlabs !
 
+</code></pre>
 </section> 
 
 <section>
 <p> COPY instruction in Multi-stage Builds</p> 
+
 <pre><code class="hljs" data-trim contenteditable>
 
 
