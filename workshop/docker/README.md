@@ -38,7 +38,7 @@
    - [Lab #6: WORKDIR instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/WORKDIR_instruction.html)<br>
    - [Lab #7: RUN instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab-7-Create-an-image-with-EXPOSE-instruction.html)<br>
    - [Lab #8: ARG instruction](https://dockerlabs.collabnix.com//beginners/dockerfile/arg.html)<br>
-   - [Lab #9: EXPOSE instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab-7-Create-an-image-with-EXPOSE-instruction.html)<br>
+   - [Lab #9: ENV instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab_%239:ENV_instruction.html)<br>
    - [Lab #10: VOLUME instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab%2310:VOLUME_instruction.html)<br>
    - [Lab #11: EXPOSE instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab%2311:EXPOSE_instruction.html)<br>
    - [Lab #12: LABEL instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Label_instruction.html)<br>
