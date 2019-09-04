@@ -1550,8 +1550,211 @@ Welcome to Docker Labs !
 
 </code></pre>
 </section> 
+<section>
 
+<p> NOTE: You can name your stages, by adding an AS to the FROM instruction.By default, the stages are not named, and you can refer to them by their integer number, starting with 0 for the first FROM instruction.You are not limited to copying from stages you created earlier in your Dockerfile, you can use the COPY --from instruction to copy from a separate image, either using the local image name, a tag available locally or on a Docker registry.
+</p>
+<pre><code class="hljs" data-trim contenteditable>
+COPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf
+</code></pre>
+</section>
+
+<section>
+		<p> Lab #4: Create an image with CMD instruction</p> 
 	
+	</section>	
+	
+<section>
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+<section> 
+
+<p> Creating Dockerfile </p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+
+FROM alpine:3.6
+
+RUN apk update
+CMD ["top"]
+
+</code></pre>
+<p> Building Docker Container </p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+docker build -t ajeetraina/lab3_cmd . -f Dockerfile_cmd
+
+</code></pre>
+<p> Running the Docker container
+
+ </p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+docker run ajeetraina/lab3_cmd:latest
+
+</code></pre>
+
+</section>
+<section>
+		<p> Lab #5 : Create an image with ENTRYPOINT instruction </p> 
+	
+	</section>	
+	
+<section>
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+<section>
+<p> 
+The ENTRYPOINT instruction make your container run as an executable. <br>
+ENTRYPOINT can be configured in two forms:<br>
+
+Exec Form <br>
+ENTRYPOINT [“executable”, “param1”, “param2”] <br>
+Shell Form<br>
+ENTRYPOINT command param1 param2 <br>
+If an image has an ENTRYPOINT if you pass an argument it, while running container it wont override the existing entrypoint, it will append what you passed with the entrypoint.To override the existing ENTRYPOINT you should user –entrypoint flag when running container.
+</p>
+
+</section>
+<section>
+<p> 
+Assignment: <br>
+
+Create an image with ENTRYPOINT instruction(Exec Form) <br>
+ENTRYPOINT instruction in Shell Form <br>
+Override the existing ENTRYPOINT <br>
+</p>
+
+</section>
+<section>
+<p> Create an image with ENTRYPOINT instruction(Exec Form <br>  
+
+Dockerfile </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+
+FROM alpine:3.5
+LABEL maintainer="Collabnix"
+
+ENTRYPOINT ["/bin/echo", "Hi, your ENTRYPOINT instruction in Exec Form !"]
+
+</code></pre>
+<p> Build Docker Image  </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+$ docker build -t entrypoint:v1 .
+</code></pre>
+
+</section>
+<section> 
+<p> Verify the Image  </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+$ docker image ls
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+entrypoint          v1                  1d06f06c2062        2 minutes ago       4MB
+alpine              3.5                 f80194ae2e0c        7 months ago        4MB
+
+</code></pre>
+<p>  Create a container </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+
+$ docker container run entrypoint:v1
+Hi, your ENTRYPOINT instruction in Exec Form !
+
+
+</code></pre>
+
+
+</section> 
+<section>
+<p> ENTRYPOINT instruction in Shell Form </p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+$ cat Dockerfile 
+FROM alpine:3.5
+LABEL maintainer="Collabnix"
+
+ENTRYPOINT echo "Hi, your ENTRYPOINT instruction in Shell Form !"
+
+</code></pre>
+<p> Build Docker Image </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+$ docker build -t entrypoint:v2 .
+
+</code></pre>
+
+</section>
+<section> 
+<p> Verify the Image </p>
+
+<pre><code class="hljs" data-trim contenteditable>
+$ docker image ls
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+entrypoint          v2                  cde521f13080        2 minutes ago       4MB
+entrypoint          v1                  1d06f06c2062        5 minutes ago      4MB
+alpine              3.5                 f80194ae2e0c        7 months ago        4MB
+</code></pre>
+<p>Create a container </p>
+
+<pre><code class="hljs" data-trim contenteditable>
+
+
+$ docker container run entrypoint:v2
+Hi, your ENTRYPOINT instruction in Shell Form !
+</code></pre>
+<p> Override the existing ENTRYPOINT </p> 
+<pre><code class="hljs" data-trim contenteditable>
+$ docker container run --entrypoint "/bin/echo" entrypoint:v2 "Hello, Welocme to Docker Meetup! "
+Hello, Welocme to Docker Meetup! 
+
+</code></pre>
+
+
+</section>
+
+
+
 	
 	
 		
