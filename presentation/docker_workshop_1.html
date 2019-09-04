@@ -1248,7 +1248,7 @@ Each instruction the Dockerfile generates a layer. Each of this layer has a rand
 - Create an image with GIT installed <br>
 - Tag your image as labs-git:v1.0. <br>
 - Create a container based on that image, and run git –version to check that it is installed correctly <br>
-	
+	</p>
 </section>
 <section>
 	<p> Creating Dockerfile </p> 
@@ -1412,6 +1412,119 @@ docker attach f094
 		<p> ADD Command lets you to add a tar directly from a link and explode to the container.</p> 
 		
 	</section>	
+	
+
+	<section>
+		<p> Lab #3: Create an image with COPY instruction </p> 
+	
+	</section>	
+	
+<section>
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>	
+<section>
+<p> The COPY instruction copies files or directories from source and adds them to the filesystem of the container at destinatio.
+
+	Two form of COPY instruction <br> </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+COPY [--chown=<user>:<group>] <src>... <dest>
+COPY [--chown=<user>:<group>] ["<src>",... "<dest>"] (this form is required for paths containing whitespace)
+
+
+	</code></pre>
+	
+</section>	
+<section> 
+<p> Assignment:<br>
+
+- Create an image with COPY instruction <br>
+- COPY instruction in Multi-stage Builds
+</p>
+<p> Create an image with COPY instruction <br> </p>
+
+<p> Dockerfile </p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+FROM nginx:alpine
+LABEL maintainer="Collabnix"
+COPY index.html /usr/share/nginx/html/
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+</code></pre>
+</section>
+<section> 
+<p> Lets create the index.html file </p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+$ echo "Welcome to Dockerlabs !" > index.html
+
+</code></pre>
+<p> Building Docker Image </p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+$ docker image build -t cpy:v1 .
+
+</code></pre>
+<p> Staring the container </p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+$ docker container run -d --rm --name myapp1 -p 80:80 cpy:v1
+<p> Checking index file </p> 
+<pre><code class="hljs" data-trim contenteditable>
+$ curl localhost
+Welcome to Dockerlabs !
+
+<section> 
+
+<p> COPY instruction in Multi-stage Builds</p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+
+FROM alpine AS stage1
+LABEL maintainer="Collabnix"
+RUN echo "Welcome to Docker Labs!" > /opt/index.html
+
+FROM nginx:alpine
+LABEL maintainer="Collabnix"
+COPY --from=stage1 /opt/index.html /usr/share/nginx/html/
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+</code></pre>
+</section>
+<section> 
+<p> Building Docker Image </p> 
+<pre><code class="hljs" data-trim contenteditable>
+$ docker image build -t cpy:v2 .
+</code></pre>
+<p> Staring the container </p>
+<pre><code class="hljs" data-trim contenteditable>
+$ docker container run -d --rm --name myapp2 -p 8080:80 cpy:v2
+</code></pre>
+<p> Checking index file </p>
+<pre><code class="hljs" data-trim contenteditable>
+$ curl localhost:8080
+Welcome to Docker Labs !
+
+</code></pre>
+</section> 
 
 	
 	
