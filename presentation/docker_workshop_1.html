@@ -1452,8 +1452,11 @@ COPY [--chown=<user>:<group>] ["<src>",... "<dest>"] (this form is required for 
 
 	</code></pre>
 	
-</section>	
+</section>
+
+
 <section> 
+
 <p> Assignment:<br>
 
 - Create an image with COPY instruction <br>
@@ -1471,6 +1474,7 @@ ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 </code></pre>
 </section>
+
 <section> 
 <p> Lets create the index.html file </p> 
 <pre><code class="hljs" data-trim contenteditable>
@@ -1489,11 +1493,15 @@ $ docker image build -t cpy:v1 .
 
 $ docker container run -d --rm --name myapp1 -p 80:80 cpy:v1
 <p> Checking index file </p> 
+
 <pre><code class="hljs" data-trim contenteditable>
+
 $ curl localhost
 Welcome to Dockerlabs !
 
 </section> 
+
+
 <section>
 
 <p> COPY instruction in Multi-stage Builds</p> 
@@ -1508,21 +1516,32 @@ FROM nginx:alpine
 LABEL maintainer="Collabnix"
 COPY --from=stage1 /opt/index.html /usr/share/nginx/html/
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
 </code></pre>
 </section>
 
 
 <section> 
 <p> Building Docker Image </p> 
+
 <pre><code class="hljs" data-trim contenteditable>
+
 $ docker image build -t cpy:v2 .
+
 </code></pre>
+
 <p> Staring the container </p>
+
 <pre><code class="hljs" data-trim contenteditable>
+
 $ docker container run -d --rm --name myapp2 -p 8080:80 cpy:v2
+
 </code></pre>
+
 <p> Checking index file </p>
+
 <pre><code class="hljs" data-trim contenteditable>
+
 $ curl localhost:8080
 Welcome to Docker Labs !
 
