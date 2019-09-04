@@ -1310,6 +1310,109 @@ CONTAINER ID        IMAGE                      COMMAND             CREATED      
 git version 2.13.7
 </code></pre>	
 </section> 	
+
+	<section>
+		<p> Lab #2: Create an image with ADD instruction </p> 
+	
+	</section>	
+	
+<section>
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+<section>
+	Assignment:<br>
+
+- Create an image with ADD instruction
+- Tag your image as labs-add:v1.0
+- Create a container based on that image, and see the extracted tar file.
+</section>
+<section>
+	<p> Creating Dockerfile </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+
+FROM alpine:3.5
+RUN apk update
+ADD http://www.vlsitechnology.org/pharosc_8.4.tar.gz .
+
+	</code></pre>
+	<p> Build Docker Image </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+
+docker build -t saiyam911/alpine-add . -f <name of dockerfile>
+
+	</code></pre>	
+	<p> Tagging image as labs-git </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+
+docker tag saiyam911/alpine-add saiyam911/labs-add:v1.0
+
+	</code></pre>	
+	
+		
+</section>	
+	
+<section>
+	<p> Verify the Images</p> 
+	<pre><code class="hljs" data-trim contenteditable>
+
+$ docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+saiyam911/alpine-add        latest              cdf97cb49d48        38 minutes ago       300MB
+saiyam911/labs-add          v1.0                cdf97cb49d48        38 minutes ago       300MB
+
+
+	</code></pre>
+	<p> Create a container </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+
+docker run -itd saiyam911/labs-add:v1.0 /bin/sh
+
+$ docker ps
+CONTAINER ID        IMAGE                      COMMAND             CREATED             STATUS              PORTS               NAMES
+f0940750f61a        saiyam911/labs-add:v1.0   "/bin/sh"           20 seconds ago      Up 18 seconds                           distracted_darwin
+
+	</code></pre>
+	
+	
+	</section>	
+	<section>
+	<p> Enter into Container Shell </p> 
+	<pre><code class="hljs" data-trim contenteditable>
+
+docker attach f094
+	</code></pre>
+		<p> Please press “Enter” key twice so as to enter into container shell <br>  </p> 
+
+<p> Verify if the link has been extracted onto the container <p> 
+<pre><code class="hljs" data-trim contenteditable>
+
+/ # ls -ltr
+-rw-------    1 root     root     295168000 Sep 19  2007 pharosc_8.4.tar.gz
+
+
+	</code></pre>
+		<p> ADD Command lets you to add a tar directly from a link and explode to the container.</p> 
+		
+	</section>	
+
 	
 	
 	
