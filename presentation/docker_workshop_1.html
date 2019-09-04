@@ -1493,7 +1493,8 @@ $ docker container run -d --rm --name myapp1 -p 80:80 cpy:v1
 $ curl localhost
 Welcome to Dockerlabs !
 
-<section> 
+</section> 
+<section>
 
 <p> COPY instruction in Multi-stage Builds</p> 
 <pre><code class="hljs" data-trim contenteditable>
@@ -1509,6 +1510,8 @@ COPY --from=stage1 /opt/index.html /usr/share/nginx/html/
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 </code></pre>
 </section>
+
+
 <section> 
 <p> Building Docker Image </p> 
 <pre><code class="hljs" data-trim contenteditable>
