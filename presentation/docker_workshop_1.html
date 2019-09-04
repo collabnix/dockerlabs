@@ -1752,8 +1752,125 @@ Hello, Welocme to Docker Meetup!
 
 
 </section>
+<section>
+		<p> Lab #6: WORKDIR instruction </p> 
+	
+	</section>	
+	
+<section>
+					<p>
+						Tested Infrastructure
 
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with Docker</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+<section>
+<p> 
+The WORKDIR directive in Dockerfile defines the working directory for the rest of the instructions in the Dockerfile. The WORKDIR instruction wont create a new layer in the image but will add metadata to the image config. If the WORKDIR doesn’t exist, it will be created even if it’s not used in any subsequent Dockerfile instruction. you can have multiple WORKDIR in same Dockerfile. If a relative path is provided, it will be relative to the previous WORKDIR instruction.
 
+`WORKDIR /path/to/workdir`
+If no WORKDIR is specified in the Dockerfile then the default path is `/.` The WORKDIR instruction can resolve environment variables previously set in Dockerfile using ENV.
+</p> 
+
+</section>
+<section> 
+<p> 
+Assignment: <br>
+Dockerfile with WORKDIR instruction <br>
+WORKDIR with Relative path <br>
+WORKDIR with Absolute path <br>
+WORKDIR with environment variables as path
+</p> 
+</section>
+<section>
+
+<p> Dockerfile with WORKDIR instruction </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+FROM alpine:3.9.3
+LABEL maintainer="Collabnix"
+WORKDIR /opt
+
+</code></pre>
+</section>
+<section>
+
+<p> Building Docker image </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+$ docker build -t workdir:v1 .
+
+</code></pre>
+<p> Testing current WORKDIR by running container </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+$ docker run -it workdir:v1 pwd
+
+</code></pre>
+</section>
+<section> 
+<p> WORKDIR with relative path </p> 
+<p> 
+Dockerfile </P>
+<pre><code class="hljs" data-trim contenteditable>
+FROM alpine:3.9.3
+LABEL maintainer="Collabnix"
+
+WORKDIR /opt
+RUN echo "Welcome to Docker Labs" > opt.txt
+WORKDIR folder1
+RUN echo "Welcome to Docker Labs" > folder1.txt
+WORKDIR folder2
+RUN echo "Welcome to Docker Labs" > folder2.txt
+
+</code></pre>
+<p> Building Docker image.  </p>
+<pre><code class="hljs" data-trim contenteditable>
+$ docker build -t workdir:v2 .
+
+</code></pre>
+<p> Testing current WORKDIR by running container </p> 
+<pre><code class="hljs" data-trim contenteditable>
+$ docker run -it workdir:v2 pwd
+
+</code></pre>
+</section>
+<section> 
+<p> WORKDIR with environment variables as path </p> 
+
+<p> Dockerfile </p> 
+<pre><code class="hljs" data-trim contenteditable>
+FROM alpine:3.9.3
+LABEL maintainer="Collabnix"
+
+ENV DIRPATH /myfolder
+WORKDIR $DIRPATH
+</code></pre>
+<p> Building Docker image </p>
+<pre><code class="hljs" data-trim contenteditable>
+
+$ docker build -t workdir:v4 .
+</code></pre>
+
+	<p> Testing current WORKDIR by running container </p> 
+<pre><code class="hljs" data-trim contenteditable>
+$ docker run -it workdir:v4 pwd
+</code></pre>
+</section> 
 
 	
 	
