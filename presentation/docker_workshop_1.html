@@ -1460,7 +1460,7 @@ COPY [--chown=<user>:<group>] ["<src>",... "<dest>"] (this form is required for 
 <p> Assignment:<br>
 
 - Create an image with COPY instruction <br>
-- COPY instruction in Multi-stage Builds
+- COPY instruction in Multi-stage Builds <br>
 </p>
 <p> Create an image with COPY instruction <br> </p>
 
@@ -1501,23 +1501,22 @@ Welcome to Dockerlabs !
 
 </section> 
 
-
 <section>
-
 <p> COPY instruction in Multi-stage Builds</p> 
 <pre><code class="hljs" data-trim contenteditable>
 
 
-FROM alpine AS stage1
-LABEL maintainer="Collabnix"
-RUN echo "Welcome to Docker Labs!" > /opt/index.html
+    FROM alpine AS stage1
+    LABEL maintainer="Collabnix"
+    RUN echo "Welcome to Docker Labs!" > /opt/index.html
 
-FROM nginx:alpine
-LABEL maintainer="Collabnix"
-COPY --from=stage1 /opt/index.html /usr/share/nginx/html/
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+   FROM nginx:alpine
+   LABEL maintainer="Collabnix"
+   COPY --from=stage1 /opt/index.html /usr/share/nginx/html/
+   ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 </code></pre>
+
 </section>
 
 
@@ -1526,7 +1525,7 @@ ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 <pre><code class="hljs" data-trim contenteditable>
 
-$ docker image build -t cpy:v2 .
+  $ docker image build -t cpy:v2 .
 
 </code></pre>
 
@@ -1534,7 +1533,7 @@ $ docker image build -t cpy:v2 .
 
 <pre><code class="hljs" data-trim contenteditable>
 
-$ docker container run -d --rm --name myapp2 -p 8080:80 cpy:v2
+   $ docker container run -d --rm --name myapp2 -p 8080:80 cpy:v2
 
 </code></pre>
 
