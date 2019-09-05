@@ -1,7 +1,5 @@
 # Lab #6: WORKDIR instruction
 
-## Lab #8: Create an image with ARG instruction
-
 
 The `WORKDIR` directive in `Dockerfile` defines the working directory for the rest of the instructions in the Dockerfile. The WORKDIR instruction wont create a new layer in the image but will add metadata to the image config. If the WORKDIR doesn’t exist, it will be created even if it’s not used in any subsequent Dockerfile instruction. you can have multiple WORKDIR in same Dockerfile. If a relative path is provided, it will be relative to the previous WORKDIR instruction.
 
@@ -123,4 +121,4 @@ $ docker run -it workdir:v4 pwd
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next [Lab #8: Create an image with ARG instruction](https://dockerlabs.collabnix.com//beginners/dockerfile/arg.html)
+Next >> [Lab #7: RUN instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/)
