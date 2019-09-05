@@ -1,4 +1,4 @@
-## Lab #8: Create an image with ARG instruction
+# Lab #8: Create an image with ARG instruction
 
 
 The `ARG` directive in `Dockerfile` defines the parameter name and defines its default value. This default value can be overridden by the `--build-arg <parameter name>=<value>` in the build command `docker build`.
@@ -80,6 +80,6 @@ Welcome Savio, to Docker World!
 
 ## Contributor -
 [Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)<br>
-[savio](https://www.linkedin.com/in/saviovettoor)
+[Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next >> [Lab #9: EXPOSE instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab-7-Create-an-image-with-EXPOSE-instruction.html)
+Next >> [Lab #9: ENV instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab_%239:ENV_instruction.html)
