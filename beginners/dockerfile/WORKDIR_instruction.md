@@ -121,4 +121,4 @@ $ docker run -it workdir:v4 pwd
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next >> [Lab #7: RUN instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/)
+Next >> [Lab #7: RUN instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab%237:RUN_instruction.html)
