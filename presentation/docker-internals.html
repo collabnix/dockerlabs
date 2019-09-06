@@ -134,5 +134,90 @@ $ docker inspect 83e6db363153
     }
 ]
 
+$ docker history sangam14/dockerapp:latest 
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+83e6db363153        10 months ago       /bin/sh -c #(nop)  CMD ["python" "app.py"]      0B                  
+<missing>           10 months ago       /bin/sh -c #(nop) WORKDIR /app                  0B                  
+<missing>           10 months ago       /bin/sh -c #(nop) COPY dir:a3f65691c461225ae…   1.75kB              
+<missing>           10 months ago       /bin/sh -c #(nop)  USER [admin]                 0B                  
+<missing>           10 months ago       /bin/sh -c useradd -ms /bin/bash admin          333kB               
+<missing>           10 months ago       /bin/sh -c pip install Flask==0.11.1 redis==…   11.4MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  CMD ["python3"]              0B                  
+<missing>           10 months ago       /bin/sh -c set -ex;   wget -O get-pip.py 'ht…   5.92MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV PYTHON_PIP_VERSION=18…   0B                  
+<missing>           10 months ago       /bin/sh -c cd /usr/local/bin  && ln -s idle3…   32B                 
+<missing>           10 months ago       /bin/sh -c set -ex   && wget -O python.tar.x…   64.1MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV PYTHON_VERSION=3.5.6     0B                  
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV GPG_KEY=97FC712E4C024…   0B                  
+<missing>           10 months ago       /bin/sh -c apt-get update && apt-get install…   16.8MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV LANG=C.UTF-8             0B                  
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV PATH=/usr/local/bin:/…   0B                  
+<missing>           10 months ago       /bin/sh -c set -ex;  apt-get update;  apt-ge…   556MB               
+<missing>           10 months ago       /bin/sh -c apt-get update && apt-get install…   142MB               
+<missing>           10 months ago       /bin/sh -c set -ex;  if ! command -v gpg > /…   7.8MB               
+<missing>           10 months ago       /bin/sh -c apt-get update && apt-get install…   23.2MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  CMD ["bash"]                 0B                  
+<missing>           10 months ago       /bin/sh -c #(nop) ADD file:b3598c18dc395846a…   101MB               
+[node1] (local) root@192.168.0.38 ~
+[node1] (local) root@192.168.0.38 ~
+
+$ docker run -d --hostname  c1 --name test1 nicolaka/netshoot:latest sleep 50000
+151085f99ccee4ddf5b4bab822970aa3bfa321e844ae818c5a2a8140d5cefc16
+[node1] (local) root@192.168.0.38 ~
+$ ps aux | grep sleep
+  976 1000      0:00 sleep 50000
+ 1365 root      0:00 sleep 50000
+ 1412 root      0:00 grep sleep
+[node1] (local) root@192.168.0.38 ~
+$ docker exec -it test1 sh
+/ # ls
+bin    dev    etc    home   lib    lib64  media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # cd home/
+/home # hostname 
+c1
+/home # ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:42:AC:11:00:03  
+          inet addr:172.17.0.3  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+/home # exit
+[node1] (local) root@192.168.0.38 ~
+
+ $ cat /proc/976/cgroup 
+11:cpuset:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+10:freezer:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+9:pids:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+8:net_cls,net_prio:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+7:perf_event:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+6:devices:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+5:blkio:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+4:cpu,cpuacct:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+3:hugetlb:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+2:memory:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+1:name=systemd:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+[node1] (local) root@192.168.0.38 ~
+    
+$ docker ps
+CONTAINER ID        IMAGE                       COMMAND             CREATED             STATUS              PORTS               NAMES
+151085f99cce        nicolaka/netshoot:latest    "sleep 50000"       19 minutes ago      Up 19 minutes                           test1
+2db351326c6d        sangam14/dockerapp:latest   "sleep 50000"       25 minutes ago      Up 25 minutes                           test
+[node1] (local) root@192.168.0.38 ~
+$ cat /sys/fs/cgroup/memory/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f/memory.limit_in_bytes
+9223372036854771712    
+    
+    
+    
 
 
