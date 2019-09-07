@@ -1,3 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>DockerLabs Workshop</title>
+
+		<meta name="description" content="DockerLabs">
+		<meta name="author" content="Ajeet Singh Raina">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides"> 
+				<section>
+					<h1>Docker Internal </h1>
+					
+					<a href="https://Dockerlabs.collabnix.com"></a>
+					
+				</section>
+<section> 
+    <p> pull any image from docker hub </p> 
+          
+ 
+<pre><code class="hljs" data-trim contenteditable>
 node1] (local) root@192.168.0.38 ~
 $ docker pull sangam14/dockerapp:latest
 latest: Pulling from sangam14/dockerapp
@@ -17,11 +70,21 @@ Digest: sha256:85af81f78a2049238d51fdfd40851e83b38ec782508f5226b6ac4a4f026a4517
 Status: Downloaded newer image for sangam14/dockerapp:latest
 docker.io/sangam14/dockerapp:latest
 [node1] (local) root@192.168.0.38 ~
+	</code></pre>
+</section>
+<section> 
+
+<pre><code class="hljs" data-trim contenteditable>
 $ docker images
 REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
 nicolaka/netshoot    latest              7aee1b82c22c        7 weeks ago         204MB
 sangam14/dockerapp   latest              83e6db363153        10 months ago       928MB
 [node1] (local) root@192.168.0.38 ~
+    	</code></pre>
+ </section> 
+<section>
+    <p> inspect doker image </p> 
+    <pre><code class="hljs" data-trim contenteditable>
 $ docker inspect 83e6db363153  
 [
     {
@@ -133,7 +196,13 @@ $ docker inspect 83e6db363153
         }
     }
 ]
-
+</code></pre>
+    
+</section> 
+<section>
+    <p> docker history </p>
+    <pre><code class="hljs" data-trim contenteditable>
+    
 $ docker history sangam14/dockerapp:latest 
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
 83e6db363153        10 months ago       /bin/sh -c #(nop)  CMD ["python" "app.py"]      0B                  
@@ -159,8 +228,11 @@ IMAGE               CREATED             CREATED BY                              
 <missing>           10 months ago       /bin/sh -c #(nop)  CMD ["bash"]                 0B                  
 <missing>           10 months ago       /bin/sh -c #(nop) ADD file:b3598c18dc395846a…   101MB               
 [node1] (local) root@192.168.0.38 ~
+    </code></pre>
+    
 [node1] (local) root@192.168.0.38 ~
-
+<section> 
+<pre><code class="hljs" data-trim contenteditable>
 $ docker run -d --hostname  c1 --name test1 nicolaka/netshoot:latest sleep 50000
 151085f99ccee4ddf5b4bab822970aa3bfa321e844ae818c5a2a8140d5cefc16
 [node1] (local) root@192.168.0.38 ~
@@ -194,7 +266,10 @@ lo        Link encap:Local Loopback
 
 /home # exit
 [node1] (local) root@192.168.0.38 ~
-
+</code></pre>
+</section>
+<section>
+<pre><code class="hljs" data-trim contenteditable>
  $ cat /proc/976/cgroup 
 11:cpuset:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
 10:freezer:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
@@ -208,7 +283,10 @@ lo        Link encap:Local Loopback
 2:memory:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
 1:name=systemd:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
 [node1] (local) root@192.168.0.38 ~
-    
+</code></pre>
+</section>
+<section>
+<pre><code class="hljs" data-trim contenteditable>
 $ docker ps
 CONTAINER ID        IMAGE                       COMMAND             CREATED             STATUS              PORTS               NAMES
 151085f99cce        nicolaka/netshoot:latest    "sleep 50000"       19 minutes ago      Up 19 minutes                           test1
@@ -216,10 +294,51 @@ CONTAINER ID        IMAGE                       COMMAND             CREATED     
 [node1] (local) root@192.168.0.38 ~
 $ cat /sys/fs/cgroup/memory/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f/memory.limit_in_bytes
 9223372036854771712    
-    
-    
-    
+   </code></pre> 
+   </section>
+   <section>
+   <pre><code class="hljs" data-trim contenteditable>
 $ sudo nscenter --target 976 --net 
     
 $ sudo nscenter --target 976 --net --mount
+  </code></pre> 
+  </section> 
+  
+  
+  
+  </div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
+
 
