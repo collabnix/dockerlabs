@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>DockerLabs Workshop</title>
+		<title>Docker internal - sangam </title>
 
 		<meta name="description" content="DockerLabs">
 		<meta name="author" content="Ajeet Singh Raina">
@@ -201,6 +201,7 @@ $ docker inspect 83e6db363153
 </section> 
 <section>
     <p> docker history </p>
+	
     <pre><code class="hljs" data-trim contenteditable>
     
 $ docker history sangam14/dockerapp:latest 
@@ -231,6 +232,7 @@ IMAGE               CREATED             CREATED BY                              
     </code></pre>
     
 [node1] (local) root@192.168.0.38 ~
+</section> 
 <section> 
 <pre><code class="hljs" data-trim contenteditable>
 $ docker run -d --hostname  c1 --name test1 nicolaka/netshoot:latest sleep 50000
