@@ -44,7 +44,7 @@ ADD http://www.vlsitechnology.org/pharosc_8.4.tar.gz .
 ## Build Docker Image
 
 ```
-docker build -t saiyam911/alpine-add .
+docker build -t saiyam911/alpine-add . -f <name of dockerfile>
 ```
 
 ## Tagging image as labs-git
@@ -95,4 +95,4 @@ Please press "Enter" key twice so as to enter into container shell
 ADD Command lets you to add a tar directly from a link and explode to the container.
 ## Contributor - [Saiyam Pathak](https://www.linkedin.com/in/saiyam-pathak-97685a64/)
 
-[Lab #3: Create a Docker image with COPY instruction]()
+[Lab #3: Create a Docker image with COPY instruction](https://dockerlabs.collabnix.com//beginners/dockerfile/lab4_dockerfile_copy.html)
