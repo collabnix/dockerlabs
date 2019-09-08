@@ -60,3 +60,6 @@ if you want to build without existing cache then;
 here in above commands '.' represents the current directory where Dockerfile kept. If you want to build the Image from remote or different directory then paste the path of dockerfile <br>
 
 If the name of the Dockerfile is different than 'Dockerfile' then need to give file name in command line as ```-f Dockerfile_name```
+
+
+Next >> [Lab #16: Entrypoint Vs RUN](https://dockerlabs.collabnix.com/beginners/dockerfile/entrypoint-vs-run.html)
