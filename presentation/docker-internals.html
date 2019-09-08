@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Docker internal - sangam </title>
+
+		<meta name="description" content="DockerLabs">
+		<meta name="author" content="Ajeet Singh Raina">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides"> 
+				<section>
+					<h1>Docker Internal </h1>
+					
+					<a href="https://Dockerlabs.collabnix.com"></a>
+					
+				</section>
+<section> 
+    <p> pull any image from docker hub </p> 
+          
+ 
+<pre><code class="hljs" data-trim contenteditable>
+node1] (local) root@192.168.0.38 ~
+$ docker pull sangam14/dockerapp:latest
+latest: Pulling from sangam14/dockerapp
+bc9ab73e5b14: Pull complete 
+193a6306c92a: Pull complete 
+e5c3f8c317dc: Pull complete 
+a587a86c9dcb: Pull complete 
+72744d0a318b: Pull complete 
+6598fc9d11d1: Pull complete 
+74d2ee7772b2: Pull complete 
+ab2e66176e69: Pull complete 
+2c4175ee7cad: Pull complete 
+789162b0d7d2: Pull complete 
+f60124694c7d: Pull complete 
+a1967c52a9d1: Pull complete 
+Digest: sha256:85af81f78a2049238d51fdfd40851e83b38ec782508f5226b6ac4a4f026a4517
+Status: Downloaded newer image for sangam14/dockerapp:latest
+docker.io/sangam14/dockerapp:latest
+[node1] (local) root@192.168.0.38 ~
+	</code></pre>
+</section>
+<section> 
+
+<pre><code class="hljs" data-trim contenteditable>
+$ docker images
+REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
+nicolaka/netshoot    latest              7aee1b82c22c        7 weeks ago         204MB
+sangam14/dockerapp   latest              83e6db363153        10 months ago       928MB
+[node1] (local) root@192.168.0.38 ~
+    	</code></pre>
+ </section> 
+<section>
+    <p> inspect doker image </p> 
+    <pre><code class="hljs" data-trim contenteditable>
+$ docker inspect 83e6db363153  
+[
+    {
+        "Id": "sha256:83e6db363153fe557da238a6ca870e497d66d4108cc11565dd3e61f6247ff8f3",
+        "RepoTags": [
+            "sangam14/dockerapp:latest"
+        ],
+        "RepoDigests": [
+            "sangam14/dockerapp@sha256:85af81f78a2049238d51fdfd40851e83b38ec782508f5226b6ac4a4f026a4517"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2018-10-24T22:24:11.290507481Z",
+        "Container": "f5b0531f2b9e9cd810043dd8427b2b821e7e16ca6869c3c82cbc93df9fa09516",
+        "ContainerConfig": {
+            "Hostname": "f5b0531f2b9e",
+            "Domainname": "",
+            "User": "admin",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=97FC712E4C024BBEA48A61ED3A5CA953F73C700D",
+                "PYTHON_VERSION=3.5.6",
+                "PYTHON_PIP_VERSION=18.1"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"python\" \"app.py\"]"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:97dcd837db0793a83e84578aaa436c0c4fb73b13b133dfdb1430633ae490d4c3",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "OnBuild": [],
+            "Labels": {}
+        },
+        "DockerVersion": "17.09.0-ce",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "admin",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=97FC712E4C024BBEA48A61ED3A5CA953F73C700D",
+                "PYTHON_VERSION=3.5.6",
+                "PYTHON_PIP_VERSION=18.1"
+            ],
+            "Cmd": [
+                "python",
+                "app.py"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:97dcd837db0793a83e84578aaa436c0c4fb73b13b133dfdb1430633ae490d4c3",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "OnBuild": [],
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 928403545,
+        "VirtualSize": 928403545,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/933c99ebfa9c3d769fb6ca6e7a74a98da1cf99511cfc12e2d0a66b1e82bdd925/diff:/var/lib/docker/overlay2/8c9c2fac9ff435b9925e8ab27bd8b9cea76b4e4ce549f643fdfb81e427e4543d/diff:/var/lib/docker/overlay2/6201f524de51b46688cb280e300d255294a57a4a1ca41f0f5e651d5576af14e2/diff:/var/lib/docker/overlay2/8cacd218afe992c661fa85053b3dded4cad1d97e1786f313d9536e89780f6c78/diff:/var/lib/docker/overlay2/1b540160d3742f2bcd2ee23a7ea8b7d9c4e2dee554bb09d690f02a2523eacb6c/diff:/var/lib/docker/overlay2/30f6e875d27ab69d789acb6ec05c3cfb8f64a7cb8a08fd84aa91f49b5a38e067/diff:/var/lib/docker/overlay2/0febbfec2582b51b17de2f4ad6d1c90159aa4e3e3cd3fb22d8d975562f669c32/diff:/var/lib/docker/overlay2/cd85010031ef17376451c38405f089142d938a66a3b4cc4f224cbd5c0bfa1ce5/diff:/var/lib/docker/overlay2/0d40a5632dfa87824b152cea7af3a3e1a0c2498622c9c6d7042ef51e19435395/diff:/var/lib/docker/overlay2/ac1e5f00f5240ca03c71a0b08d3507cec25b0c96c2416fa2ea8aa6804f6ad773/diff:/var/lib/docker/overlay2/00210fd1e43aaff1f2c72d06e2893da04b7155e320a843bf5b200280847e1e00/diff",
+                "MergedDir": "/var/lib/docker/overlay2/de139dfea3177bb918b0df263ed6c4f6b1914ff4e8c3987d50a5385124789f2f/merged",
+                "UpperDir": "/var/lib/docker/overlay2/de139dfea3177bb918b0df263ed6c4f6b1914ff4e8c3987d50a5385124789f2f/diff",
+                "WorkDir": "/var/lib/docker/overlay2/de139dfea3177bb918b0df263ed6c4f6b1914ff4e8c3987d50a5385124789f2f/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:f715ed19c28b66943ac8bc12dbfb828e8394de2530bbaf1ecce906e748e4fdff",
+                "sha256:8bb25f9cdc41e7d085033af15a522973b44086d6eedd24c11cc61c9232324f77",
+                "sha256:08a01612ffca33483a1847c909836610610ce523fb7e1aca880140ee84df23e9",
+                "sha256:1191b3f5862aa9231858809b7ac8b91c0b727ce85c9b3279932f0baacc92967d",
+                "sha256:9978d084fd771e0b3d1acd7f3525d1b25288ababe9ad8ed259b36101e4e3addd",
+                "sha256:2f4f74d3821ecbdd60b5d932452ea9e30cecf902334165c4a19837f6ee636377",
+                "sha256:d43a37baac4bdbb691f01331562e2f383295db93d7542fa0b134976c77446258",
+                "sha256:aaa5e8fca5a449d01fc834b0a5a7df7f87e4977972241c14abb3d55f02410e12",
+                "sha256:9fdef360c1b961c36c63eac703aaca2f923c796537bc9d24b8252caf7c766853",
+                "sha256:943b307641ec639376c7e507a9950f550e249dcd4380c3bcb92b7b57b977ae43",
+                "sha256:31badc7263aab2db2286d51b22bc31be6958f7593dc169b2bf53d8d5323abfd4",
+                "sha256:aae0023198f11bacc3cfe14ac21def1371f92d96461b5b4b463acc6547e83dc5"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
+</code></pre>
+    
+</section> 
+<section>
+    <p> docker history </p>
+	
+    <pre><code class="hljs" data-trim contenteditable>
+    
+$ docker history sangam14/dockerapp:latest 
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+83e6db363153        10 months ago       /bin/sh -c #(nop)  CMD ["python" "app.py"]      0B                  
+<missing>           10 months ago       /bin/sh -c #(nop) WORKDIR /app                  0B                  
+<missing>           10 months ago       /bin/sh -c #(nop) COPY dir:a3f65691c461225ae…   1.75kB              
+<missing>           10 months ago       /bin/sh -c #(nop)  USER [admin]                 0B                  
+<missing>           10 months ago       /bin/sh -c useradd -ms /bin/bash admin          333kB               
+<missing>           10 months ago       /bin/sh -c pip install Flask==0.11.1 redis==…   11.4MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  CMD ["python3"]              0B                  
+<missing>           10 months ago       /bin/sh -c set -ex;   wget -O get-pip.py 'ht…   5.92MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV PYTHON_PIP_VERSION=18…   0B                  
+<missing>           10 months ago       /bin/sh -c cd /usr/local/bin  && ln -s idle3…   32B                 
+<missing>           10 months ago       /bin/sh -c set -ex   && wget -O python.tar.x…   64.1MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV PYTHON_VERSION=3.5.6     0B                  
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV GPG_KEY=97FC712E4C024…   0B                  
+<missing>           10 months ago       /bin/sh -c apt-get update && apt-get install…   16.8MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV LANG=C.UTF-8             0B                  
+<missing>           10 months ago       /bin/sh -c #(nop)  ENV PATH=/usr/local/bin:/…   0B                  
+<missing>           10 months ago       /bin/sh -c set -ex;  apt-get update;  apt-ge…   556MB               
+<missing>           10 months ago       /bin/sh -c apt-get update && apt-get install…   142MB               
+<missing>           10 months ago       /bin/sh -c set -ex;  if ! command -v gpg > /…   7.8MB               
+<missing>           10 months ago       /bin/sh -c apt-get update && apt-get install…   23.2MB              
+<missing>           10 months ago       /bin/sh -c #(nop)  CMD ["bash"]                 0B                  
+<missing>           10 months ago       /bin/sh -c #(nop) ADD file:b3598c18dc395846a…   101MB               
+[node1] (local) root@192.168.0.38 ~
+    </code></pre>
+    
+[node1] (local) root@192.168.0.38 ~
+</section> 
+<section> 
+<pre><code class="hljs" data-trim contenteditable>
+$ docker run -d --hostname  c1 --name test1 nicolaka/netshoot:latest sleep 50000
+151085f99ccee4ddf5b4bab822970aa3bfa321e844ae818c5a2a8140d5cefc16
+[node1] (local) root@192.168.0.38 ~
+$ ps aux | grep sleep
+  976 1000      0:00 sleep 50000
+ 1365 root      0:00 sleep 50000
+ 1412 root      0:00 grep sleep
+[node1] (local) root@192.168.0.38 ~
+$ docker exec -it test1 sh
+/ # ls
+bin    dev    etc    home   lib    lib64  media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # cd home/
+/home # hostname 
+c1
+/home # ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:42:AC:11:00:03  
+          inet addr:172.17.0.3  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+/home # exit
+[node1] (local) root@192.168.0.38 ~
+</code></pre>
+</section>
+<section>
+<pre><code class="hljs" data-trim contenteditable>
+ $ cat /proc/976/cgroup 
+11:cpuset:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+10:freezer:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+9:pids:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+8:net_cls,net_prio:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+7:perf_event:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+6:devices:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+5:blkio:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+4:cpu,cpuacct:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+3:hugetlb:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+2:memory:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+1:name=systemd:/docker/74d7a9a473c427f9ffd14a937033fab7d553e3e919d0f606eb2e4ab42640945c/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f
+[node1] (local) root@192.168.0.38 ~
+</code></pre>
+</section>
+<section>
+<pre><code class="hljs" data-trim contenteditable>
+$ docker ps
+CONTAINER ID        IMAGE                       COMMAND             CREATED             STATUS              PORTS               NAMES
+151085f99cce        nicolaka/netshoot:latest    "sleep 50000"       19 minutes ago      Up 19 minutes                           test1
+2db351326c6d        sangam14/dockerapp:latest   "sleep 50000"       25 minutes ago      Up 25 minutes                           test
+[node1] (local) root@192.168.0.38 ~
+$ cat /sys/fs/cgroup/memory/docker/2db351326c6dc1d1a267ec0f4321ba0302e0f98b2daf0ddeaaaecab9498c256f/memory.limit_in_bytes
+9223372036854771712    
+   </code></pre> 
+   </section>
+   <section>
+   <pre><code class="hljs" data-trim contenteditable>
+$ sudo nscenter --target 976 --net 
+    
+$ sudo nscenter --target 976 --net --mount
+  </code></pre> 
+  </section> 
+  
+  
+  
+  </div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
+
+
