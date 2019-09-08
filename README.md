@@ -49,6 +49,8 @@ Below are the list of categories:
 
 # Labs Hands-on & Workshop for Docker
 
+- [Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/intro-slides/DockerLabs-workshop.html)
+
 - [Beginners](./workshop/docker/README.md)
 
 - [Intermediate](./intermediate/workshop/README.md)
