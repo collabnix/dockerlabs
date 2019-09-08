@@ -72,7 +72,7 @@ Server: Docker Engine - Community
   Built:            Wed Nov  7 00:16:44 2018
   OS/Arch:          linux/amd64
   Experimental:     false
-  ```
+```
   
 ## Running Nginx Docker container
 
@@ -88,7 +88,8 @@ Status: Downloaded newer image for nginx:latest
 ba4a5822d7c991c04418b2fbbcadb86057eef4d98ba3f930bff569ac8058468e
 ```
 
-```$ sudo docker ps
+```
+$ sudo docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
 ba4a5822d7c9        nginx               "nginx -g 'daemon of…"   5 seconds ago       Up 3 seconds        0.0.0.0:80->80/tcp   peaceful_swanson
 ```
@@ -96,6 +97,9 @@ ba4a5822d7c9        nginx               "nginx -g 'daemon of…"   5 seconds ago
 
 ```
 ~$ sudo curl localhost:80
+```
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -132,7 +136,6 @@ WARNING! Your password will be stored unencrypted in /home/joginderkour1950/.doc
 Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 Login Succeeded
- 
 ```
 
 ## Downloading Your Docker Enterprise License
@@ -203,6 +206,6 @@ Cheers ~
 
 ## Contributor
 
-- [Ajeet Singh Raina](ajeetraina@gmail.com)
+- [Ajeet Singh Raina](mailto:ajeetraina@gmail.com)
 
 
