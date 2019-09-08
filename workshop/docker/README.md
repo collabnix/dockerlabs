@@ -10,8 +10,7 @@
   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/22)
 - [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/33)
-- [Building Docker Image from Scratch ](https://dockerlabs.collabnix.com/beginners/building-docker-image-from-scratch.html)  
-  - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/46)
+
 
 
 
