@@ -361,4 +361,4 @@ web1-58cc9c58c7-tvlhc   1/1       Running   0          57s
 
 ## Contributor
 
-[Ajeet S Raina](ajeetraina@gmail.com)
+[Ajeet S Raina](mailto:ajeetraina@gmail.com)
