@@ -51,3 +51,4 @@ docker inspect demo
 ```
 docker volume rm demo
 ```
+Next >> [Creating Volume Mount from docker run command & sharing same Volume Mounts among multiple containers](https://collabnix.github.io/dockerlabs/beginners/volume/creating-volume-mount-from-dockercli.html)
