@@ -81,7 +81,7 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 ## Docker Swarm - High Availability, Placement & Constraints
 
 - [Implementing High Availability with Docker Swarm](./Implementing_High_Availability_with_Docker_Swarm.md)
-- Secrets Management with Docker Swarm
+- [Secrets Management with Docker Swarm](https://medium.com/acmvit/docker-secret-in-out-94c66eb4376b)
 - Scheduling Placement with Docker Swarm
 
 ## Docker Swarm - HealthCheck Solution
@@ -117,4 +117,5 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 [Karan Singh](mailto:karangandhi0007@gmail.com)<br>
 [Ajeet Singh Raina](mailto:ajeetraina@gmail.com)<br>
 [Tathagata Sarkar](mailto:amitatha82@yahoo.com)<br>
-[Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)
+[Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)<br/>
+[Akshit Grover](https://www.linkedin.com/in/akshit-grover)
