@@ -53,7 +53,7 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 - [Lab05 - Deploy the application components as Docker services](./swarm/lab05-deploy-application-components-as-docker-services.md)
 - [Lab06 - Drain a node and reschedule the containers](./swarm/lab06-drain-a-node-and-reschedule-the-containers.md)
 - [Demonstrating Service Discovery under Docker Swarm Mode](http://collabnix.com/how-service-discovery-works-under-docker-1-12/)
-- How to Lock Docker Swarm
+- [How to Lock Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/swarm/swarm-lock.md)
 - Demonstrating Swarm Synchronous Services
 - NFS Volume with Docker Swarm
 - Building Docker Swarm Topology using Script 
