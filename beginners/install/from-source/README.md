@@ -11,6 +11,10 @@
 
 # How to install latest Docker 19.03.0 Beta 1 Test Build?
 
+# Setting up Docker Enterprise 3.0 using Cluster CLI 
+
+[Azure]()
+
 
 ## Downloading the static binary archive. 
 
