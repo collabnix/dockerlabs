@@ -2,7 +2,7 @@
 
 ### Pre-requisite:
 
-- [Creating Your DockerHub Account]()
+- [Creating Your DockerHub Account](https://github.com/collabnix/dockerlabs/blob/master/workshop/docker/dockerhub.md)
 
 ### Getting Started with Docker Image
 
