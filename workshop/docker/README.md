@@ -1,5 +1,7 @@
 ## Docker WorkShop for Beginners 
 
+### Pre-requisite:
+
 - [Creating Your DockerHub Account]()
 
 ### Getting Started with Docker Image
