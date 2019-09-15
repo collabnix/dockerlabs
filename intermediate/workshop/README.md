@@ -7,11 +7,11 @@
 - [How to Install Docker Compose? ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/How_to_Install_Docker_Compose.html)<br>
 - [Instructions of Docker Compose]<br>
      - [Lab #1: `version` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/version_Command.html)<br>
-     - [Lab #2: `help` Command]<br>
-     - [Lab #3: `Config` Command]<br>
-     - [Lab #4: `Build` Command]<br>
-     - [Lab #5: `Pull` Command]<br>
-     - [Lab #6: `Push` Command]<br>
+     - [Lab #2: `help` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/help_command.html)<br>
+     - [Lab #3: `Config` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/config_command.html)<br>
+     - [Lab #4: `Build` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231:Build_Command.html)<br>
+     - [Lab #5: `Pull` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pull_command.html)<br>
+     - [Lab #6: `Push` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/push_command.html)<br>
      - [Lab #7: `Images` Command]<br>
      - [Lab #8: `up` Command]<br>
      - [Lab #9: `ps` Command]<br>
@@ -24,7 +24,7 @@
      - [Lab #16: `Port` Command]<br>
      - [Lab #17: `Run` Command]<br>
      - [Lab #18: `Scale` Command]<br>
-     - [Lab #19: `Exec` Command]<br>
+     - [Lab #19: `Exec` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234:Exec_Command.html)<br>
      - [Lab #20: `Kill` Command]<br>
      - [Lab #21: `Rm` Command]<br>
      - [Lab #22: `Down` Command]<br>
