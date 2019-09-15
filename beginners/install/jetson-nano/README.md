@@ -102,6 +102,18 @@ Server: Docker Engine - Community
 jetson@jetson-desktop:~$
 ```
 
+## Installing Docker Compose
+
+```
+root@jetson-desktop:/home/jetson# /usr/bin/docker-compose version
+docker-compose version 1.17.1, build unknown
+docker-py version: 2.5.1
+CPython version: 2.7.15+
+OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+root@jetson-desktop:/home/jetson#
+```
+
+## 
 
 
 
