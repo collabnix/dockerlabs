@@ -113,10 +113,15 @@ OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
 root@jetson-desktop:/home/jetson#
 ```
 
-## 
+## Connecting Logictech Webcam
 
 
-
+```
+root@jetson-desktop:~/docker-cctv-raspbian# docker ps
+CONTAINER ID        IMAGE                             COMMAND             CREATED             STATUS              PORTS                    NAMES
+b6ff860d4f2a        ajeetraina/docker-cctv-raspbian   "motion"            6 seconds ago       Up 2 seconds        0.0.0.0:8081->8081/tcp   hopeful_newton
+root@jetson-desktop:~/docker-cctv-raspbian#
+```
 
 
 
