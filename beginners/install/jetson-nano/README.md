@@ -1,4 +1,4 @@
-# How to install Docker 19.03 on Jetson Nano
+# How to install Docker 19.03 on NVIDIA Jetson Nano
 
 ## Pre-requisite:
 
