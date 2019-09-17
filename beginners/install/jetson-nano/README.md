@@ -1,5 +1,15 @@
 # How to install Docker 19.03 on NVIDIA Jetson Nano
 
+The NVIDIA® Jetson Nano™ Developer Kit is an AI computer for makers, learners, and developers that brings the power of modern artificial intelligence to a low-power, easyto-use platform. Get started quickly with out-of-the-box support for many popular
+peripherals, add-ons, and ready-to-use projects.
+
+Jetson Nano is supported by the comprehensive NVIDIA® JetPack™ SDK, and has the performance and capabilities needed to run modern AI workloads. JetPack includes:
+
+• Full desktop Linux with NVIDIA drivers
+• AI and Computer Vision libraries and APIs
+• Developer tools
+• Documentation and sample code
+
 ## Pre-requisite:
 
 - Flash Jetson Nano SD card Image
@@ -123,5 +133,70 @@ b6ff860d4f2a        ajeetraina/docker-cctv-raspbian   "motion"            6 seco
 root@jetson-desktop:~/docker-cctv-raspbian#
 ```
 
+```
+jetson@jetson-desktop:~$ docker run arm64v8/hello-world
+Unable to find image 'arm64v8/hello-world:latest' locally
+latest: Pulling from arm64v8/hello-world
+3b4173355427: Pull complete
+Digest: sha256:5970f71561c8ff01d1d97782f37b0142315c53f31ad23c22883488e36a6dcbcb
+Status: Downloaded newer image for arm64v8/hello-world:latest
 
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (arm64v8)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+jetson@jetson-desktop:~$
+```
+
+```
+jetson@jetson-desktop:~$ sudo docker info | grep nvidia
+ Runtimes: nvidia runc
+jetson@jetson-desktop:~$ sudo dpkg --get-selections | grep nvidia
+libnvidia-container-tools                       install
+libnvidia-container0:arm64                      install
+nvidia-container-runtime                        install
+nvidia-container-runtime-hook                   install
+nvidia-docker2                                  deinstall
+nvidia-l4t-3d-core                              install
+nvidia-l4t-apt-source                           install
+nvidia-l4t-bootloader                           install
+nvidia-l4t-camera                               install
+nvidia-l4t-ccp-t210ref                          install
+nvidia-l4t-configs                              install
+nvidia-l4t-core                                 install
+nvidia-l4t-cuda                                 install
+nvidia-l4t-firmware                             install
+nvidia-l4t-graphics-demos                       install
+nvidia-l4t-gstreamer                            install
+nvidia-l4t-init                                 install
+nvidia-l4t-kernel                               install
+nvidia-l4t-kernel-dtbs                          install
+nvidia-l4t-kernel-headers                       install
+nvidia-l4t-multimedia                           install
+nvidia-l4t-multimedia-utils                     install
+nvidia-l4t-oem-config                           install
+nvidia-l4t-tools                                install
+nvidia-l4t-wayland                              install
+nvidia-l4t-weston                               install
+nvidia-l4t-x11                                  install
+nvidia-l4t-xusb-firmware                        install
+jetson@jetson-desktop:~$
+```
 
