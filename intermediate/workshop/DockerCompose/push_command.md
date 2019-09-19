@@ -28,12 +28,12 @@ The `docker-compose push` command help you tou push the service images to Docker
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
 # Assignment
-- Dockerfile for custome docker image
+- Dockerfile for custom docker image
 - Create a docker-compose.yml file
 - Build the image using docker-compose
 - Upload the image to Docker registry
 
-### Dockerfile for custome docker image
+### Dockerfile for custom docker image
 $ mkdir -p dockerlabs/{nginx,httpd} ; cd dockerlabs
 
 Dockerfile_nginx
