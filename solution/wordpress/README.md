@@ -41,7 +41,7 @@ $ cd solution/wordpress
 ## Bring up WordPress Application Stack
 
 ```
-$ docker stack deploy -c docker-stack.yml myapp4
+$ docker stack deploy -c stack.yml myapp4
 
 Creating network myapp4_default
 Creating service myapp4_db
