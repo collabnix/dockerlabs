@@ -31,6 +31,7 @@ The `docker-compose start` command help us to start containers of a service.
 - Create a docker-compose.yml file
 - Bringup the containers
 - Stop the container of a single service
+- Starting the stopped container
 
 ### Create a docker-compose.yml file
 ```
@@ -96,7 +97,7 @@ Mysqldb   docker-entrypoint.sh mysqld   Up       0.0.0.0:3306->3306/tcp, 33060/t
 Nginx     nginx -g daemon off;          Exit 0                               
 ```
 
-### starting the stoped container
+### Starting the stopped container
 ```
 $  docker-compose start webserver
 Starting webserver ... done
