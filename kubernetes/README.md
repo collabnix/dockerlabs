@@ -64,7 +64,7 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 
 ## K3s on Bare Metal
 
-[Installing K3s on Ubuntu 18.04]()
+[Installing K3s on Ubuntu 18.04](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/install/k3s/install-on-ubuntu01804.md)
 
 
 ## Helm
