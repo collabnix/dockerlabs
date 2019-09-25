@@ -5,7 +5,7 @@
 - [Introduction to Docker Compose](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/introduction_to_docker_compose.html)<br>
 - [Dockerfile Vs Docker compose ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Difference_between_dockerfile_and_docker_compose.html)<br>
 - [How to Install Docker Compose? ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/How_to_Install_Docker_Compose.html)<br>
-- [Instructions of Docker Compose]<br>
+
      - [Lab #1: `version` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/version_Command.html)<br>
      - [Lab #2: `help` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/help_command.html)<br>
      - [Lab #3: `Config` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/config_command.html)<br>
