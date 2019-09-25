@@ -54,8 +54,6 @@
 
 # Docker Networking - II
 
-- [Docker Networking- How to connect multiple containers]<br>
-
 ### Overlay Networking
 
    - [Lab #1: Docker Overlay Networking](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%231:Docker_Overlay_Networking.html)<br>
