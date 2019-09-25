@@ -28,3 +28,21 @@ dell-virtual-machine   Ready    master   4m22s   v1.15.4-k3s.1
 ~$
 ```
 
+## How to Join nodes?
+
+
+```
+ sudo cat /var/lib/rancher/k3s/server/node-token
+K10d5edc8ace87358c74XXXXXXf81013e963dd576a7025eXXafa88fabb::node:a844dff9b4e26acb26104c090f363489
+```
+
+##
+
+```
+curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=XXX sh -
+```
+
+
+
+
+
