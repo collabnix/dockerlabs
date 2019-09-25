@@ -52,19 +52,6 @@
 - [Lab #6: Drain a node and reschedule the containers](http://dockerlabs.collabnix.com/intermediate/workshop/lab6-drain-a-node-reschedule.html)<br>
 - [Lab #7: Cleaning Up ](http://dockerlabs.collabnix.com/intermediate/workshop/lab7-cleaning-up.html)<br>
 
-
-
-
-# Docker Desktop for Mac
-
-
-# Docker Desktop for Windows
-
-
-# Docker on Windows Server
-
-
-
 # Docker Networking - II
 
 - [Docker Networking- How to connect multiple containers]<br>
