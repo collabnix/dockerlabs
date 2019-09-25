@@ -8,18 +8,24 @@ DockerLabs brings you tutorials that help you get hands-on experience using Dock
 
 #  Getting Started in 3 Simple Steps
 
-- Join 1000+ DockerLabs Contributors in 2 mins via [DockerLabs Slack Channel](https://tinyurl.com/y973wcq8)
+- Join 1400+ DockerLabs Contributors in 2 mins via [DockerLabs Slack Channel](https://tinyurl.com/y973wcq8)
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
 -  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
-# Categories
 
-DockerLabs is a tutorials authored by members of the open community.
-Below are the list of categories:
+# Docker Workshop
 
-## Docker
+- [Pre-requisite: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
+
+- [Beginners](./workshop/docker/README.md)
+
+- [Intermediate](./intermediate/workshop/README.md)
+
+- [Advanced](./advanced/workshop/README.md)
+
+## Docker Labs
 
 - [Docker for Beginners](./beginners/README.md)
 
@@ -34,7 +40,7 @@ Below are the list of categories:
 - [Docker Interview Questions](./docker/docker-interview-questions.md)
 
 
-## Kubernetes
+## Kubernetes Labs
 
 - [Kubernetes for Beginners](./kubernetes/README.md)
 
@@ -45,18 +51,6 @@ Below are the list of categories:
 - [Kubernetes Cheatsheets](./kubernetes/cheatsheets/kubectl.md)
 
 - [Kubernetes Interview Questions]()
-
-
-# Labs Hands-on & Workshop for Docker
-
-- [Pre-requisite: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
-
-- [Beginners](./workshop/docker/README.md)
-
-- [Intermediate](./intermediate/workshop/README.md)
-
-- Advanced
-
 
 
 # Docker-Ready Stack for You
