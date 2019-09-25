@@ -62,6 +62,10 @@ description: collabnix | DockerLab | Kubernetes - Beginners Track
 - [Lab #03: Creating a Deployment with 3 replicas of NGINX service](./beginners/workshop/lab03-creating-deployment-3replicas-nginx/README.md)<br>
 - [Lab #04: Scaling the Deployment](./beginners/workshop/lab04-scaling-the-deployment/README.md)<br>
 
+## K3s on Bare Metal
+
+[Installing K3s on Ubuntu 18.04]()
+
 
 ## Helm
 
