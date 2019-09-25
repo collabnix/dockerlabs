@@ -29,7 +29,9 @@ The `docker-compose up` command help you to bring up a multi-container applicati
 
 # Assignment
 - Create a docker-compose.yml with custom image
-- Bringup the containers 
+- Build container and network
+- Bringup the containers
+
 
 ### Create a docker-compose.yml with custom image
 
@@ -55,6 +57,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: webapp:v1
+    container_name: Nginx
     ports:
       - "80:80"
   dbserver:
@@ -73,7 +76,22 @@ services:
 volumes:
   db_data:
 ```
-
+### Build container and network
+Won't start the container
+```
+$ docker-compose up --no-start
+Creating network "build_default" with the default driver
+Creating Nginx   ... done
+Creating Mysqldb ... done
+```
+#### Checking the status
+```
+$ docker-compose ps
+ Name               Command             State    Ports
+------------------------------------------------------
+Mysqldb   docker-entrypoint.sh mysqld   Exit 0        
+Nginx     nginx -g daemon off;          Exit 0    
+```
 ### Bringup the containers
 ```
 $ docker-compose up -d
@@ -100,4 +118,4 @@ $ docker-compose up -d --build
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next » [Lab #9: ps Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/)
+Next » [Lab #9: ps Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/ps_command.html)
