@@ -17,7 +17,7 @@ DockerLabs brings you tutorials that help you get hands-on experience using Dock
 
 # Docker Workshop
 
-- [Pre-requisite: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
+- [Getting Started: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
 
 - [Beginners](./workshop/docker/README.md)
 
