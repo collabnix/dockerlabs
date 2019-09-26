@@ -45,7 +45,7 @@ services:
      ports:
        - "80:80"
        - "443:443"
-  dbserver:
+   dbserver:
      image: mysql:5.7
      container_name: Mysqldb
      restart: unless-stopped
