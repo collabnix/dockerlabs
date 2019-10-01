@@ -13,13 +13,13 @@
      - [Lab #5: `Pull` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pull_command.html)<br>
      - [Lab #6: `Push` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/push_command.html)<br>
      - [Lab #7: `Images` Command]<br>
-     - [Lab #8: `up` Command]<br>
-     - [Lab #9: `ps` Command]<br>
-     - [Lab #10: `Stop` Command]<br>
-     - [Lab #11: `Start` Command]<br>
-     - [Lab #12: `Restart` Command]<br>
-     - [Lab #13: `pause` Command]<br>
-     - [Lab #14: `Unpause` Command]<br>
+     - [Lab #8: `up` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/up_command.html)<br>
+     - [Lab #9: `ps` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/ps_command.html)<br>
+     - [Lab #10: `Stop` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/stop_command.html)<br>
+     - [Lab #11: `Start` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/start_command.html)<br>
+     - [Lab #12: `Restart` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/restart_command.html)<br>
+     - [Lab #13: `pause` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pause_command.html)<br>
+     - [Lab #14: `Unpause` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/unpause_command.html)<br>
      - [Lab #15: `Logs` Command]<br>
      - [Lab #16: `Port` Command]<br>
      - [Lab #17: `Run` Command]<br>
