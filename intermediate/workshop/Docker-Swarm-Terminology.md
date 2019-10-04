@@ -1,3 +1,5 @@
+# Docker Swarm : Terminology
+
 - Docker Swarm : The cluster management and orchestration features embedded in the Docker Engine are built
 using swarmkit.<br>
 - A swarm consists of multiple Docker hosts which run
