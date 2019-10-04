@@ -40,6 +40,7 @@
 ### Introduction to Docker Swarm
 
 - [What is Docker Swarm](http://dockerlabs.collabnix.com/intermediate/workshop/what-is-docker-swarm.html)<br>
+- [Docker Swarm : Terminology]
 
 ### Docker Services | Scaling | Draining Node | Rescheduling Containers
 
