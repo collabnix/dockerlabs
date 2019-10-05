@@ -7,5 +7,4 @@ In a production environment, minimizing downtime for critical services is critic
 ## UCP
 UCP runs a global service called all cluster nodes ucp-agent. This agent installs one UCP controller on each of the Swarm management nodes. There is a one-to-one correspondence between the Swarm management node and the UCP controller, but they assume different roles. UCPs that use this agent rely on Swarm to implement Ha, but also include some replicated data stores that rely on their own raft consistency set different from Swarm: ucp-auth-store (a replicate database for identity management data) and ucp- Kv (copy key-value storage for UCP configuration data).
 
-- [UCP architecture](/ee/ucp/ucp-architecture.md)
-- [DTR architecture](/ee/dtr/architecture.md)
+
