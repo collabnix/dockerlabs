@@ -14,6 +14,8 @@ Docker EE License - a Docker EE license (either trial or purchased) will be prov
 
 For this, i will be using [Redhat](assets/ucp_HA_setup-824ff.png) and all the packages.
 
+[Details](https://github.com/pradhans0906/dockerlabs/blob/master/docker-ee/Redhat/docker-ee-ucp/assets/Screenshot%202019-10-06%20at%2012.17.23%20AM.png)
+
 Installation :
  Am using GCP for this demo and taking total 5 nodes - 3 UCP nodes and 2 worker nodes (DTR will be installed )
    see ucpdocs for more info https://docs.docker.com/datacenter/ucp/2.2/guides/admin/install/system-requirements/
