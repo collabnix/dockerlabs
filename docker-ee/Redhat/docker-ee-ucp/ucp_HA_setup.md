@@ -29,7 +29,8 @@ Create 3 vms and install docker-ee on those machine.
 
 These are the steps i have followed to install docker-ee on the RHEL box
 ```shell
-  export DOCKERURL="https://storebits.docker.com/ee/rhel/sub-b752795b-73da-4bb0-9ca2-cea3cd04dacd" # this link you will get once you subscribed to docker EE
+export DOCKERURL="https://storebits.docker.com/ee/rhel/sub-b752795b-73da-4bb0-9ca2-cea3cd04dacd" # this link you will get once you subscribed to docker EE
+  
   sudo -E sh -c 'echo "$DOCKERURL/rhel" > /etc/yum/vars/dockerurl'
   sudo sh -c 'echo "7" > /etc/yum/vars/dockerosversion'
   sudo yum install -y yum-utils wget device-mapper-persistent-data  lvm2 # uses devicemapper/thinpool storage driver
@@ -43,7 +44,7 @@ There are 2 ways to do it :
    2. get the tar.gz file and store it where your prod nodes will be having access and load it with
    ```shell
     docker load -i ucp_tar.gz
-    ```
+ ```
 
 we will see both the ways, so that you can opt based on your case.
 
@@ -75,7 +76,6 @@ login to the 2nd and 3rd node and install docker and download ucp.tar.gz
 wget https://packages.docker.com/caas/ucp_images_3.2.1.tar.gz
 Length: 671958665 (641M) [application/x-gzip]
 Saving to: ‘ucp_images_3.2.1.tar.gz’
-
 100%[=========================================================================>] 671,958,665 12.4MB/s   in 56s    
 2019-10-05 20:00:42 (11.5 MB/s) - ‘ucp_images_3.2.1.tar.gz’ saved [671958665/671958665]
 [is@ucp2 ~]$ sudo docker load -i ucp_images_3.2.1.tar.gz
