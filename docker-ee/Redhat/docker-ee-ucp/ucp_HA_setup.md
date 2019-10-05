@@ -17,4 +17,5 @@ For this, i will be using Redhat-ee lic and all the packages.
 Installation :
  Am using GCP for this demo and taking total 5 nodes - 3 UCP nodes and 2 worker nodes (DTR will be installed )
    see ucpdocs for more info https://docs.docker.com/datacenter/ucp/2.2/guides/admin/install/system-requirements/
-[](https://github.com/pradhans0906/dockerlabs/blob/master/docker-ee/Redhat/docker-ee-ucp/explorer/Screenshot%202019-10-05%20at%2011.26.02%20PM.png)
+   
+[ARchi](https://github.com/pradhans0906/dockerlabs/blob/master/docker-ee/Redhat/docker-ee-ucp/explorer/Screenshot%202019-10-05%20at%2011.26.02%20PM.png)
