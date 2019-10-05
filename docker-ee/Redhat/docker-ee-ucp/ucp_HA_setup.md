@@ -12,7 +12,7 @@ UCP runs a global service called all cluster nodes ucp-agent. This agent install
 ## License
 Docker EE License - a Docker EE license (either trial or purchased) will be provided in your Docker Store account: https://store.docker.com/?overlay=subscriptions . You can license your install after the install has completed through the Web UI of Universal Control Plane.
 
-For this, i will be using Redhat-ee lic and all the packages.
+For this, i will be using [Redhat](assets/ucp_HA_setup-824ff.png) and all the packages.
 
 Installation :
  Am using GCP for this demo and taking total 5 nodes - 3 UCP nodes and 2 worker nodes (DTR will be installed )
