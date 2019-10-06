@@ -98,5 +98,7 @@ Networking > Network services > loadbalancing > create loadbalancer > tcp
 
 [Lb config](https://github.com/pradhans0906/dockerlabs/blob/master/docker-ee/Redhat/docker-ee-ucp/assets/ucp_HA_setup-eb04b295.png)
 
-Now login with LB ip and now your you have enabled HA on ucp
+Now login with LB ip and now your you have enabled HA on ucp.
+
+--pradhans0906 aka swapnasagar pradhan
 
