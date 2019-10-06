@@ -30,7 +30,7 @@ Create 3 vms and install docker-ee on those machine.
 These are the steps i have followed to install docker-ee on the RHEL box
 ```shell
 export DOCKERURL="https://storebits.docker.com/ee/rhel/sub-b752795b-73da-4bb0-9ca2-cea3cd04dacd" # this link you will get once you subscribed to docker EE
-  
+
   sudo -E sh -c 'echo "$DOCKERURL/rhel" > /etc/yum/vars/dockerurl'
   sudo sh -c 'echo "7" > /etc/yum/vars/dockerosversion'
   sudo yum install -y yum-utils wget device-mapper-persistent-data  lvm2 # uses devicemapper/thinpool storage driver
@@ -81,7 +81,7 @@ Saving to: ‘ucp_images_3.2.1.tar.gz’
 [is@ucp2 ~]$ sudo docker load -i ucp_images_3.2.1.tar.gz
 ```
 
-join the node by creating master toekn
+join the node by creating master token
 
 ```shell
 docker swarm join-token manager
@@ -90,8 +90,14 @@ Get the token and paste the output on the 2nd and 3rd node after sucessful loadi
 
 This node joined a swarm as a manager.
 
-After this you have a cluster of 3 nodes of ucp ready and all these are manager nodes.
+After this you have a cluster of 3 nodes of ucp ready and all these are manager nodes But these are not load balanced and to do that we will need a LB.
 
 ### Create LB on GCP
 Navigate
 Networking > Network services > loadbalancing > create loadbalancer > tcp
+
+[Lb config]()
+
+Now login with LB ip and now your you have enabled HA on ucp
+
+[]()
