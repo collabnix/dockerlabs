@@ -97,6 +97,15 @@ After this you have a cluster of 3 nodes of ucp ready and all these are manager 
 Navigate
 Networking > Network services > loadbalancing > create loadbalancer > tcp
 
+<<<<<<< HEAD
 [Lb config]![](assets/ucp_HA_setup-eb04b295.png)
 
 Now login with LB ip - https://35.209.137.120:443 and you will be redirected to one of the service UCP on the LB and now your you have enabled HA on ucp
+=======
+[Lb config](https://github.com/pradhans0906/dockerlabs/blob/master/docker-ee/Redhat/docker-ee-ucp/assets/ucp_HA_setup-eb04b295.png)
+
+Now login with LB ip and now your you have enabled HA on ucp.
+
+--pradhans0906 aka swapnasagar pradhan
+
+>>>>>>> 316e46541a48961295360b75a54c181e198667cd
