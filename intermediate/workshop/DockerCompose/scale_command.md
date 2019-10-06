@@ -1,4 +1,4 @@
-# Lab #12: Restart Command
+# Lab #18: Scale Command
 The `docker-compose scale <service name> = <no of instances>` sets the number of containers to run for a service.
 
 <b>NOTE:</b>The `scale` command is deprecated, instead Use the up command with the --scale flag.<br>
