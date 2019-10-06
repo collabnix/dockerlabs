@@ -43,6 +43,7 @@ There are 2 ways to do it :
    1. Usually prod nodes wont be having access to the internet , so it wont pull the images , you need to pull it and push it to your private dtr or image repo and then you can pull and start using it.
    2. get the tar.gz file and store it where your prod nodes will be having access and load it with
    ```shell
+    wget https://packages.docker.com/caas/ucp_images_3.2.1.tar.gz
     docker load -i ucp_tar.gz
  ```
 
@@ -96,8 +97,6 @@ After this you have a cluster of 3 nodes of ucp ready and all these are manager 
 Navigate
 Networking > Network services > loadbalancing > create loadbalancer > tcp
 
-[Lb config]()
+[Lb config]![](assets/ucp_HA_setup-eb04b295.png)
 
-Now login with LB ip and now your you have enabled HA on ucp
-
-[]()
+Now login with LB ip - https://35.209.137.120:443 and you will be redirected to one of the service UCP on the LB and now your you have enabled HA on ucp
