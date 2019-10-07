@@ -404,4 +404,26 @@ deployment.extensions/coredns   1/1     1            1           13m
 deployment.extensions/traefik   1/1     1            1           11m
 ```
 
+```
+sudo k3s kubectl proxy
+Starting to serve on 127.0.0.1:8001
+```
+
+```
+ sudo kubectl get po,deploy,svc -n kube-system
+NAME                             READY   STATUS      RESTARTS   AGE
+pod/coredns-66f496764-dgftj      1/1     Running     0          17m
+pod/helm-install-traefik-skl9c   0/1     Completed   0          17m
+pod/svclb-traefik-bxxpf          3/3     Running     0          16m
+pod/traefik-d869575c8-wfnfx      1/1     Running     0          16m
+pod/svclb-traefik-nkfms          3/3     Running     0          10m
+
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.extensions/coredns   1/1     1            1           17m
+deployment.extensions/traefik   1/1     1            1           16m
+
+NAME               TYPE           CLUSTER-IP      EXTERNAL-IP               PORT(S)                                     AGE
+service/kube-dns   ClusterIP      10.43.0.10      <none>                    53/UDP,53/TCP,9153/TCP                      17m
+service/traefik    LoadBalancer   10.43.213.124   192.168.1.3,192.168.1.6   80:32651/TCP,443:32650/TCP,8080:30917/TCP   16m
+```
 
