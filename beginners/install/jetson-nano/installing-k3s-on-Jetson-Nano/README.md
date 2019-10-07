@@ -253,4 +253,44 @@ mynginx-568f57494d-8jpwq   1/1     Running   0          113s
 jetson@jetson-desktop:~$
 ```
 
+```
+$ sudo k3s kubectl expose deployment mynginx --port 80
+service/mynginx exposed
+```
 
+```
+:~$ sudo k3s kubectl get endpoints mynginx
+NAME      ENDPOINTS                                AGE
+mynginx   10.42.0.6:80,10.42.0.7:80,10.42.0.8:80   27s
+```
+
+
+```
+$ sudo curl 10.42.0.6
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+jetson@jetson
+```
