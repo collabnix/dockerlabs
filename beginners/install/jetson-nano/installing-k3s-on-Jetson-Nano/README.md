@@ -138,3 +138,119 @@ Chain KUBE-SERVICES (3 references)
 target     prot opt source               destination
 jetson@jetson-desktop:~$
 ```
+
+```
+jetson@jetson-desktop:~$ sudo k3s kubectl get po,svc,deploy
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.43.0.1    <none>        443/TCP   57s
+
+jetson@jetson-desktop:~$
+```
+
+```
+$ sudo k3s kubectl get all --all-namespaces
+NAMESPACE     NAME                             READY   STATUS              RESTARTS   AGE
+kube-system   pod/coredns-66f496764-bf7qn      1/1     Running             0          79s
+kube-system   pod/traefik-d869575c8-wsq2b      0/1     ContainerCreating   0          12s
+kube-system   pod/svclb-traefik-gtqpd          0/3     ContainerCreating   0          12s
+kube-system   pod/helm-install-traefik-4tjpc   0/1     Completed           0          79s
+
+
+NAMESPACE     NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                                     AGE
+kube-system   service/kube-dns     ClusterIP      10.43.0.10      <none>        53/UDP,53/TCP,9153/TCP                      99s
+default       service/kubernetes   ClusterIP      10.43.0.1       <none>        443/TCP                                     97s
+kube-system   service/traefik      LoadBalancer   10.43.140.218   <pending>     80:31655/TCP,443:31667/TCP,8080:31486/TCP   13s
+
+NAMESPACE     NAME                           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+kube-system   daemonset.apps/svclb-traefik   1         1         0       1            0           <none>          13s
+
+NAMESPACE     NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+kube-system   deployment.apps/coredns   1/1     1            1           99s
+kube-system   deployment.apps/traefik   0/1     1            0           13s
+
+NAMESPACE     NAME                                DESIRED   CURRENT   READY   AGE
+kube-system   replicaset.apps/coredns-66f496764   1         1         1       80s
+kube-system   replicaset.apps/traefik-d869575c8   1         1         0       13s
+
+
+
+NAMESPACE     NAME                             COMPLETIONS   DURATION   AGE
+kube-system   job.batch/helm-install-traefik   1/1           69s        98s
+
+jetson@jetson-desktop:~$
+```
+
+```
+$ sudo k3s kubectl run mynginx --image=nginx --replicas=3 --port=80
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/mynginx created
+```
+
+```
+sudo k3s kubectl get po
+NAME                       READY   STATUS              RESTARTS   AGE
+mynginx-568f57494d-8jpwq   0/1     ContainerCreating   0          69s
+mynginx-568f57494d-czl9x   0/1     ContainerCreating   0          69s
+mynginx-568f57494d-pnphb   0/1     ContainerCreating   0          69s
+```
+
+```
+sudo k3s kubectl describe po mynginx-568f57494d-8jpwq
+Name:           mynginx-568f57494d-8jpwq
+Namespace:      default
+Priority:       0
+Node:           jetson-desktop/192.168.1.3
+Start Time:     Mon, 07 Oct 2019 20:57:14 +0530
+Labels:         pod-template-hash=568f57494d
+                run=mynginx
+Annotations:    <none>
+Status:         Pending
+IP:
+Controlled By:  ReplicaSet/mynginx-568f57494d
+Containers:
+  mynginx:
+    Container ID:
+    Image:          nginx
+    Image ID:
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-zjsrt (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             False
+  ContainersReady   False
+  PodScheduled      True
+Volumes:
+  default-token-zjsrt:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-zjsrt
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From                     Message
+  ----    ------     ----  ----                     -------
+  Normal  Scheduled  98s   default-scheduler        Successfully assigned default/mynginx-568f57494d-8jpwq to jetson-desktop
+  Normal  Pulling    94s   kubelet, jetson-desktop  Pulling image "nginx"
+```
+
+```
+jetson@jetson-desktop:~$ sudo k3s kubectl get po
+NAME                       READY   STATUS    RESTARTS   AGE
+mynginx-568f57494d-pnphb   1/1     Running   0          113s
+mynginx-568f57494d-czl9x   1/1     Running   0          113s
+mynginx-568f57494d-8jpwq   1/1     Running   0          113s
+jetson@jetson-desktop:~$
+```
+
+
