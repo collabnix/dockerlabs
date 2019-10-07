@@ -77,4 +77,64 @@ CoreDNS is running at https://127.0.0.1:6443/api/v1/namespaces/kube-system/servi
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ```
 
+```
+jetson@jetson-desktop:~$ sudo iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+KUBE-FIREWALL  all  --  anywhere             anywhere
+KUBE-SERVICES  all  --  anywhere             anywhere             ctstate NEW /* kubernetes service portals */
+KUBE-EXTERNAL-SERVICES  all  --  anywhere             anywhere             ctstate NEW /* kubernetes externally-visible service portals */
 
+Chain FORWARD (policy DROP)
+target     prot opt source               destination
+KUBE-FORWARD  all  --  anywhere             anywhere             /* kubernetes forwarding rules */
+KUBE-SERVICES  all  --  anywhere             anywhere             ctstate NEW /* kubernetes service portals */
+DOCKER-USER  all  --  anywhere             anywhere
+DOCKER-ISOLATION-STAGE-1  all  --  anywhere             anywhere
+ACCEPT     all  --  anywhere             anywhere             ctstate RELATED,ESTABLISHED
+DOCKER     all  --  anywhere             anywhere
+ACCEPT     all  --  anywhere             anywhere
+ACCEPT     all  --  anywhere             anywhere
+ACCEPT     all  --  jetson-desktop/16    anywhere
+ACCEPT     all  --  anywhere             jetson-desktop/16
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+KUBE-FIREWALL  all  --  anywhere             anywhere
+KUBE-SERVICES  all  --  anywhere             anywhere             ctstate NEW /* kubernetes service portals */
+
+Chain DOCKER (1 references)
+target     prot opt source               destination
+
+Chain DOCKER-ISOLATION-STAGE-1 (1 references)
+target     prot opt source               destination
+DOCKER-ISOLATION-STAGE-2  all  --  anywhere             anywhere
+RETURN     all  --  anywhere             anywhere
+
+Chain DOCKER-ISOLATION-STAGE-2 (1 references)
+target     prot opt source               destination
+DROP       all  --  anywhere             anywhere
+RETURN     all  --  anywhere             anywhere
+
+Chain DOCKER-USER (1 references)
+target     prot opt source               destination
+RETURN     all  --  anywhere             anywhere
+
+Chain KUBE-EXTERNAL-SERVICES (1 references)
+target     prot opt source               destination
+
+Chain KUBE-FIREWALL (2 references)
+target     prot opt source               destination
+DROP       all  --  anywhere             anywhere             /* kubernetes firewall for dropping marked packets */ mark match 0x8000/0x8000
+
+Chain KUBE-FORWARD (1 references)
+target     prot opt source               destination
+DROP       all  --  anywhere             anywhere             ctstate INVALID
+ACCEPT     all  --  anywhere             anywhere             /* kubernetes forwarding rules */ mark match 0x4000/0x4000
+ACCEPT     all  --  jetson-desktop/16    anywhere             /* kubernetes forwarding conntrack pod source rule */ ctstate RELATED,ESTABLISHED
+ACCEPT     all  --  anywhere             jetson-desktop/16    /* kubernetes forwarding conntrack pod destination rule */ ctstate RELATED,ESTABLISHED
+
+Chain KUBE-SERVICES (3 references)
+target     prot opt source               destination
+jetson@jetson-desktop:~$
+```
