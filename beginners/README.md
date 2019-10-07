@@ -40,7 +40,7 @@ description: collabnix | DockerLab | Docker - Beginners Track
    - [IoT Platform](./install/raspberrypi3/README.md)
      - [How to install Docker 18.09.0 on Raspberry Pi 3?](./install/raspberrypi3/README.md)
      - [How to setup Docker Swarm Cluster on Raspberry Pi](./install/raspberrypi3/setting-up-swarm-cluster.md)
-     - [ How to install Docker 19.03 on NVIDIA Jetson Nano)(https://github.com/collabnix/dockerlabs/tree/master/beginners/install/jetson-nano)
+     - [How to install Docker 19.03 on NVIDIA Jetson Nano](https://github.com/collabnix/dockerlabs/tree/master/beginners/install/jetson-nano)
      - [Building up K3s Cluster on Raspberry Pi 3 Nodes](./install/raspberrypi3/setting-up-k3s-cluster.md)
      - [How to monitor a Docker Swarm with Blinkt! LED using Raspberry Pi 3](./install/raspberrypi3/monitor-docker-swarm-using-blinkt.md)
      - [Docker on Arduino Uno & Johnny Five](./install/raspberrypi3/Docker-IOT_Using_Arduino_Uno_and_Johnny-Five.md)
