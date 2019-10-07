@@ -58,5 +58,15 @@ jetson-desktop   Ready    master   71m   v1.15.4-k3s.1
 
 ```
 
+```
+jetson@jetson-desktop:~$ sudo k3s kubectl run mynginx --image=nginx --replicas=3 --port=80
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+Error from server (InternalError): Internal error occurred: resource quota evaluates timeout
+jetson@jetson-desktop:~$ sudo k3s kubectl get po,svc,deploy
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.43.0.1    <none>        443/TCP   76m
+Error from server (InternalError): an error on the server ("unknown") has prevented the request from succeeding (get pods)
+Error from server (Timeout): the server was unable to return a response in the time allotted, but may still be processing the request (get deployments.extensions)
+```
 
 
