@@ -68,5 +68,13 @@ kubernetes   ClusterIP   10.43.0.1    <none>        443/TCP   76m
 Error from server (InternalError): an error on the server ("unknown") has prevented the request from succeeding (get pods)
 Error from server (Timeout): the server was unable to return a response in the time allotted, but may still be processing the request (get deployments.extensions)
 ```
+```
+ sudo k3s kubectl cluster-info
+[sudo] password for jetson:
+Kubernetes master is running at https://127.0.0.1:6443
+CoreDNS is running at https://127.0.0.1:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+```
 
 
