@@ -51,3 +51,12 @@ jetson-desktop   Ready    master   3m55s   v1.15.4-k3s.1   192.168.1.3   <none> 
 jetson@jetson-desktop:~$
 ```
 
+```
+jetson@jetson-desktop:~$ sudo k3s kubectl get nodes
+NAME             STATUS   ROLES    AGE   VERSION
+jetson-desktop   Ready    master   71m   v1.15.4-k3s.1
+
+```
+
+
+
