@@ -23,6 +23,18 @@ jetson@jetson-desktop:~$ sudo cat /boot/cmdline.txt
 dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p7 rootfstype=ext4 elevator=deadline rootwait fbcon=map:10 fbcon=font:ProFont6x11 logo.nologo
 ```
 
+## Changing the hostname
+
+```
+sudo vi /etc/hostname
+master1.dell.com
+```
+
+Reboot the system.
+
+## Installing K3s
+
+
 ```
 jetson@jetson-desktop:~$ sudo curl -sfL https://get.k3s.io | sh -
 [INFO]  Finding latest release
@@ -294,3 +306,39 @@ Commercial support is available at
 </html>
 jetson@jetson
 ```
+
+## Joining Nodes
+
+I assume that the worker node hostname is "worker1.dell.com"
+
+```
+ sudo cat /var/lib/rancher/k3s/server/node-token
+[sudo] password for jetson:
+K1062243e4f7c5bef777a082ae9919d3d2bf13d446bff423275XXXXd08::node:a761a49be1XXXXXXc7c9cc7ccd9baaf
+```
+
+```
+$ curl -sfL https://get.k3s.io | K3S_URL=https://192.168.1.3:6443 K3S_TOKEN=K1062243e4f7c5bef777a082ae9919d3d2bf13d446bff423275fd177dd84d212d08::node:a761a49be12e71126c7c9cc7ccd9baaf sh -
+[INFO]  Finding latest release
+[INFO]  Using v0.9.1 as release
+[INFO]  Downloading hash https://github.com/rancher/k3s/releases/download/v0.9.1/sha256sum-arm64.txt
+[INFO]  Skipping binary downloaded, installed k3s matches hash
+[INFO]  Skipping /usr/local/bin/kubectl symlink to k3s, already exists
+[INFO]  Skipping /usr/local/bin/crictl symlink to k3s, already exists
+[INFO]  Skipping /usr/local/bin/ctr symlink to k3s, command exists in PATH at /usr/bin/ctr
+[INFO]  Creating killall script /usr/local/bin/k3s-killall.sh
+[INFO]  Creating uninstall script /usr/local/bin/k3s-agent-uninstall.sh
+[INFO]  env: Creating environment file /etc/systemd/system/k3s-agent.service.env
+[INFO]  systemd: Creating service file /etc/systemd/system/k3s-agent.service
+[INFO]  systemd: Enabling k3s-agent unit
+Created symlink /etc/systemd/system/multi-user.target.wants/k3s-agent.service → /etc/systemd/system/k3s-agent.service.
+[INFO]  systemd: Starting k3s-agent
+jetson@jetson-desktop:~$
+```
+
+# Uninstalling k3s
+
+```
+/usr/local/bin/k3s-uninstall.sh 
+```
+
