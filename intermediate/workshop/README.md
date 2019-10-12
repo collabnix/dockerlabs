@@ -20,14 +20,14 @@
      - [Lab #12: `Restart` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/restart_command.html)<br>
      - [Lab #13: `pause` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pause_command.html)<br>
      - [Lab #14: `Unpause` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/unpause_command.html)<br>
-     - [Lab #15: `Logs` Command]<br>
+     - [Lab #15: `Logs` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/logs_command.html)<br>
      - [Lab #16: `Port` Command]<br>
-     - [Lab #17: `Run` Command]<br>
-     - [Lab #18: `Scale` Command]<br>
+     - [Lab #17: `Run` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/run_command.html)<br>
+     - [Lab #18: `Scale` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/scale_command.html)<br>
      - [Lab #19: `Exec` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234:Exec_Command.html)<br>
-     - [Lab #20: `Kill` Command]<br>
-     - [Lab #21: `Rm` Command]<br>
-     - [Lab #22: `Down` Command]<br>
+     - [Lab #20: `Kill` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%237:Kill_Command.html)<br>
+     - [Lab #21: `Rm` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/rm_command.html)<br>
+     - [Lab #22: `Down` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/down_command.html)<br>
 - [Create first docker compose file with ngnix and mysql](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Create_first_docker-compose_file_with_ngnix_and_mysql.html)<br>
 - [To run docker compose without terminal display (as a daemon) ]()<br> 
 - [Use JSON instead of YAML compose file in Docker?](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%2324:_Use_JSON_instead_of_YAML_compose_file_in_Docker%3F.html)<br>
