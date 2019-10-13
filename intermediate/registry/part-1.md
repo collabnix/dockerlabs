@@ -38,6 +38,7 @@ $ docker run -d -p 5000:5000 --name registry registry:2
   ]
 }
 ```
+Please refer the Docker Registry HTTP API(v2) [specification] to explore further.
 
 ## Pushing to the Local Registry
 
