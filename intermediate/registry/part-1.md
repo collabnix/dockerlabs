@@ -21,7 +21,7 @@ In Docker for Mac, the `Preferences` menu lets you set the address for an insecu
 ![MacOS menu](images/docker_osx_insecure_registry.png)
 
 In Docker for Windows, the `Settings` menu lets you set the address for an insecure registry under the `Daemon` panel:
-![MacOS menu](images/docker_windows_insecure_registry.png)
+![Windows menu](images/docker_windows_insecure_registry.png)
 ## Testing the Registry Image
 First we'll test that the registry image is working correctly, by running it without any special configuration:
 ```
