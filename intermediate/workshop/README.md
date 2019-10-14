@@ -29,10 +29,8 @@
      - [Lab #21: `Rm` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/rm_command.html)<br>
      - [Lab #22: `Down` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/down_command.html)<br>
 - [Create first docker compose file with ngnix and mysql](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Create_first_docker-compose_file_with_ngnix_and_mysql.html)<br>
-- [To run docker compose without terminal display (as a daemon) ]()<br> 
 - [Use JSON instead of YAML compose file in Docker?](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%2324:_Use_JSON_instead_of_YAML_compose_file_in_Docker%3F.html)<br>
-- [Write Docker compose To build an production version of your image]<br>
-- [Launch and Orchestrate Docker Containers With Docker Compose ]<br>
+
 
 # Docker Swarm
 
