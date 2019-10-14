@@ -14,11 +14,7 @@ $ sudo docker run --entrypoint htpasswd registry:latest -Bbn moby gordon > auth/
 The options are:
 
 - --entrypoint Overwrite the default ENTRYPOINT of the image
-<<<<<<< HEAD
-- -B to force bcrypt vs default md5
-=======
 - -B Use bcrypt encryption (required)
->>>>>>> master
 - -b run in batch mode 
 - -n display results
 
