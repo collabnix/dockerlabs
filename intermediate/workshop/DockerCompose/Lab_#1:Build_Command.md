@@ -1,4 +1,4 @@
-# Lab #1: Build Command
+# Lab #4: Build Command
 In this lab we are going to look into <b>docker-compose build</b> command.Docker build used to create a new image using the instructions in the Dockerfile. The <b>build</b> can be specified either as a string containing a path to the build context. The newly built image will be used to create the container for the service.
 
 ## Command instructions
@@ -112,4 +112,4 @@ Use cache_from specify the cache to build the image
 [Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)<br>
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-[Lab #2: Config Command ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%232:Config_Command.html)<br>
+[Lab #5: Pull Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pull_command.html)<br>
