@@ -100,4 +100,4 @@ v1: digest: sha256:aa83133b840728922ad95133ff17ed95fed7d3fb89e9919925a874cf848cd
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next » [Lab #7: Images Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/)
+Next » [Lab #7: up Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/up_command.html)
