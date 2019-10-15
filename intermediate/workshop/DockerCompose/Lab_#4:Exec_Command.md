@@ -1,4 +1,4 @@
-# Lab #4: Exec Command
+# Lab #19: Exec Command
 In this lab we are going to look into <b>docker-compose exec</b> command. Docker <b>exec</b> is used to run commands in a running container, similarly <b>docker-compose exec</b> runs commands in your services.
 
 ## Command instructions
@@ -108,4 +108,4 @@ $ curl http://localhost
 [Om Anand](https://www.linkedin.com/in/om-anand/)<br>
 []()
 
-[Lab #5: help Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%235:help_Command.html)<br>
+[Lab #20: Kill Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%237:Kill_Command.html)<br>
