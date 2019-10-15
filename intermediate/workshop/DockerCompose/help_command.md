@@ -115,4 +115,4 @@ Options:
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next » [Lab #3: Config Command]()
+Next » [Lab #3: Config Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/config_command.html)
