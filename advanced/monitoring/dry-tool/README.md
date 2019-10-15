@@ -148,13 +148,13 @@ Stop
 ```
 ## Verifying the Results
 
-![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/pic2.png)
+![](https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/pic2.png)
 
 
 
 ## 2.Interacting with Docker images:
 
-![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture1.png)
+![](https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture1.png)
 
  - Press [2] to switch to Docker images. It will show a list of your Docker images.
  - Select any image from the list and hit [enter] to show the details of the selected image.
@@ -166,12 +166,12 @@ You can use the shortcuts in Dry:<br>
 
 ## 3.Interacting with Docker Networks:
 
-![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture1.png)
+![](https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture1.png)
 
 - Press [3] to switch to Docker networks. It will show a list of your active Docker networks. 
 - Select any network from the list and hit [enter] to fetch and show the details of the selected network. The output will look similar to the below: 
 
-![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture3.png)
+![](https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture3.png)
 
 # Manual method 
 
@@ -204,7 +204,7 @@ Next, time to tun dry.
 Type dry in the command and hit [enter]. 
 
 You should get the similar output where your containers are running.
-![](https://github.com/sangam14/Docker-Containers-with-Dry-Tool/blob/master/Picture1.png)
+![](https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture1.png)
 
 
 # Reference:
@@ -213,5 +213,5 @@ You should get the similar output where your containers are running.
 
 ## Contributor - 
 
-[Sangam biradar](mailto:smbiradar14@gmail.com) -https://engineitops.github.io 
+[Sangam biradar](mailto:smbiradar14@gmail.com) -https://engineitops.com 
 
