@@ -79,4 +79,4 @@ This pulldown only the webserver service image(nginx:alpine).
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next » [Lab #6: Push Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/)
+Next » [Lab #6: Push Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/push_command.html)
