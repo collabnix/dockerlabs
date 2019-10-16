@@ -1,4 +1,4 @@
-# Lab #8: up Command
+# Lab #7: up Command
 The `docker-compose up` command help you to bring up a multi-container application, which you have described in your docker-compose file.
 
 ## Pre-requisite:
@@ -118,4 +118,4 @@ $ docker-compose up -d --build
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next » [Lab #9: ps Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/ps_command.html)
+Next » [Lab #8: Images Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/images_command.html)
