@@ -1,4 +1,4 @@
-# Lab #7: Kill Command
+# Lab #20: Kill Command
 
 
 ## Command instructions
@@ -79,3 +79,4 @@ $ docker-compose kill
 $ docker-compose ps
 ```
 
+Next » [Lab #21: Rm Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/rm_command.html)
