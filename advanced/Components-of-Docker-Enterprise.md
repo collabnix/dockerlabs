@@ -1,4 +1,5 @@
-# Docker Enterprise Components
+# Components of Docker Enterprise 
+
 Docker Enterprise enables deploying your workloads for high availability (HA) onto the orchestrator of your choice. Docker Enterprise system components can run on multiple manager nodes in the cluster, and if one manager node fails, another takes its place automatically, without impact to the cluster. <br>
 
 Docker Enterprise has three major components, which together enable a full software supply chain, from image creation, to secure image storage, to secure image deployment ```Docker Engine```, ```DTR```, ```UCP```. <br>
