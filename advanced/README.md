@@ -56,7 +56,7 @@ description: collabnix | DockerLab | Docker - Advanced Track
 
 [What is Docker Enterprise and why do we need it?](./enterprise/what-is-docker-enterprise.md)<br>
 [What are Docker Enterprise Supported Platforms?]<br>
-[What are components of Docker Enterprise?]<br>
+[What are components of Docker Enterprise?](./Components-of-Docker-Enterprise.md)<br>
 [Overview of Universal Control Plane]<br>
 [Deep Dive into Docker Enterprise Architecture]<br>
 [What Kubernetes Features are included under Docker Enterprise 2.1?]<br>
