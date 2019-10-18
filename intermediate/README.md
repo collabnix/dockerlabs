@@ -7,6 +7,10 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 
 # Intermediate Track
 
+## Docker for Developers
+
+[Multi-Stage Build]()<br>
+
 ## Docker Desktop for Windows
 
 [Install Docker Desktop for Windows](./docker-desktop-for-windows/lab01-getting-started.md)<br>
