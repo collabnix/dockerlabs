@@ -27,15 +27,9 @@ In a Ubuntu-based system, this package can be downloaded as such:
 ```
 # apt install auditd
 ```
-![Install auditd](https://github.com/Prashansa-K/Docker/blob/master/Security/auditd-running.PNG)
+![Install auditd](https://github.com/Prashansa-K/Docker/blob/master/Security/install-auditd.PNG)
 
-The service of auditd should automatically start. If it doesn't use the following commands:
 
-```
-# systemctl start auditd
-# systemctl status auditd
-```
-![View the Auditd service Running](https://github.com/Prashansa-K/Docker/blob/master/Security/auditd-running.PNG)
 Now, let's create a audit trail for /etc/shadow file. This is one of the most critical Linux files, as it saves the passwords of all Linux users. Though the passwords saved are hashed, it is essential to keep this file from getting compromised.
 
 ```
