@@ -1,0 +1,6 @@
+Open https://console.cloud.google.com and login with your Admin account.
+Activate Google Cloud Shell from the top right corner of your screen. [To know more about Google Cloud Shell visit:- https://cloud.google.com/shell/]
+
+Run the following command to create a Gcloud Project:-
+divyajeet89@cloudshell:~$ gcloud projects create --name=My-GKE-Project
+Press Y to accept the randomly generate project id from GCP and let the Gcloud do its magic.
