@@ -175,7 +175,7 @@ kubectl expose rs nginx --port=80 --target-port=8000
 kubectl expose deployment nginx --port=80 --target-port=8000
 
 # Access Pod without exposing as service using kubectl --raw
-kubectl get pod <pod_name> |grep selfLink
+kubectl get pod <pod_name> -o yaml|grep selfLink
 kubectl get --raw <selfLink>:port/proxy/<filename>
 ```
 
