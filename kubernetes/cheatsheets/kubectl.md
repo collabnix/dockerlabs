@@ -173,6 +173,10 @@ kubectl expose rs nginx --port=80 --target-port=8000
 
 # Create a service for an nginx deployment, which serves on port 80 and connects to the containers on port 8000.
 kubectl expose deployment nginx --port=80 --target-port=8000
+
+# Access Pod without exposing as service using kubectl --raw
+kubectl get pod <pod_name> |grep selfLink
+kubectl get --raw <selfLink>:port/proxy/<filename>
 ```
 
 ### Get
