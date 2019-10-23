@@ -110,3 +110,6 @@ $ docker trust revoke dtr.example.com/admin/demo:1
 Enter passphrase for signer key with ID 8ae710e:
 Successfully deleted signature for dtr.example.com/admin/demo:1
 ```
+
+## Contributor
+- [Apurva Bhandari](https://www.linkedin.com/in/apurvabhandari-linux)
