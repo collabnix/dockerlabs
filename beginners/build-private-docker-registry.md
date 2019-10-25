@@ -304,3 +304,5 @@ registry                             2                   d1fd7d86a825        4 w
 registry.collabnix.com/alpine        3.6             da653cee0545        2 months ago        100MB
 hello-world                          latest              f2a91732366c        2 months ago     
 ```
+
+Next >> [Building a Private Docker Registry with UI](https://dockerlabs.collabnix.com/beginners/portus/)

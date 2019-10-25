@@ -7,6 +7,10 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 
 # Intermediate Track
 
+## Docker for Developers
+
+[Multi-Stage Build]()<br>
+
 ## Docker Desktop for Windows
 
 [Install Docker Desktop for Windows](./docker-desktop-for-windows/lab01-getting-started.md)<br>
@@ -20,7 +24,7 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 - [Difference between Bridge Vs Overlay Network](./DiffBridgeVsOverlay.md)
 - [Verifying host-level settings that impact Docker networking](./networking/host-settings.md)
 - [What is MacVLAN networking?](./macvlan.md)
-   - [Implementing MacVLAN](./beginners/macvlan-010.md)
+   - [Implementing MacVLAN](./../beginners/macvlan-010.md)
 - Docker Networking CLI
   - [Disable Networking for Container](./networking/disableNetworkingToContainer.md)
   - [Finding IP address of Container](./networking/FindingIPaddressofContainer.md)
@@ -53,7 +57,7 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 - [Lab05 - Deploy the application components as Docker services](./swarm/lab05-deploy-application-components-as-docker-services.md)
 - [Lab06 - Drain a node and reschedule the containers](./swarm/lab06-drain-a-node-and-reschedule-the-containers.md)
 - [Demonstrating Service Discovery under Docker Swarm Mode](http://collabnix.com/how-service-discovery-works-under-docker-1-12/)
-- How to Lock Docker Swarm
+- [How to Lock Docker Swarm](https://github.com/collabnix/dockerlabs/tree/master/swarm/swarm-lock.md)
 - Demonstrating Swarm Synchronous Services
 - NFS Volume with Docker Swarm
 - Building Docker Swarm Topology using Script 
@@ -81,7 +85,7 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 ## Docker Swarm - High Availability, Placement & Constraints
 
 - [Implementing High Availability with Docker Swarm](./Implementing_High_Availability_with_Docker_Swarm.md)
-- Secrets Management with Docker Swarm
+- [Secrets Management with Docker Swarm](https://medium.com/acmvit/docker-secret-in-out-94c66eb4376b)
 - Scheduling Placement with Docker Swarm
 
 ## Docker Swarm - HealthCheck Solution
@@ -114,7 +118,8 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 
 ## Contributor:
 
-[Karan Singh](karangandhi0007@gmail.com)<br>
-[Ajeet Singh Raina](ajeetraina@gmail.com)<br>
-[Tathagata Sarkar](amitatha82@yahoo.com)<br>
-[Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)
+[Karan Singh](mailto:karangandhi0007@gmail.com)<br>
+[Ajeet Singh Raina](mailto:ajeetraina@gmail.com)<br>
+[Tathagata Sarkar](mailto:amitatha82@yahoo.com)<br>
+[Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)<br/>
+[Akshit Grover](https://www.linkedin.com/in/akshit-grover)

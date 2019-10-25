@@ -133,6 +133,11 @@ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 
 ## Installing Kubeadm
 
+
+```
+sudo apt update
+```
+
 ```
 sudo apt install kubeadm
 ```
@@ -154,7 +159,7 @@ sudo swapoff -a
 ## Script to setup K8s Cluster
 
 ```
-kubeadm init --apiserver-advertise-address $(hostname -i)
+sudo kubeadm init --apiserver-advertise-address $(hostname -i)
 mkdir -p $HOME/.kube
 chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -n kube-system -f \
@@ -184,6 +189,20 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 
 cse@ubuntu1804-1:~$
 ```
+
+## Checking logs in case of any issue
+
+```
+journalctl -xeu kubelet
+```
+
+## Adding Pod Network
+
+```
+sudo kubectl apply -n kube-system -f     "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d '\n')"
+
+```
+
 ## Listing the Nodes
 
 ```

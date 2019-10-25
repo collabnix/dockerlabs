@@ -1,14 +1,39 @@
-# httpserver Gomodule and Docker 
+# Demonstrating Docker-Ready solution for GoModule 
 
+## Tested Infrastructure
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+## Pre-requisite
+
+- Create an account with [DockerHub](https://hub.docker.com)
+- Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
+- Click on "New Instances" to bring up console on the right side of the screen
+
+
+## Cloning the Repository
 
 ```
 git clone https://github.com/collabnix/dockerlabs/tree/master/beginners/httpserver-go-docker
 ```
-As you may know Go 1.11 includes opt-in feature for versioned modules. Before go modules Gophers used dependency managers like `dep` or `glide`, but with go modules you don't need a 3rd-party manager as they are included into standard `go` toolchain.
 
-Also modules allow for the deprecation of the GOPATH, which was a blocker for some newcomers in Go.
+Go 1.11 includes opt-in feature for versioned modules. Before go modules Gophers used dependency managers like `dep` or `glide`, but with go modules you don't need a 3rd-party manager as they are included into standard `go` toolchain.Modules allow for the deprecation of the GOPATH, which was a blocker for some newcomers in Go.
 
-I am going to demonstrate how to enable go modules for your program and then package it with Docker. And you will see how easy it is.
+This tutorial will show you how to enable go modules for your program and then package it with Docker. 
 
 ## Create a project
 
@@ -23,7 +48,7 @@ go mod init
 go get github.com/sirupsen/logrus
 ```
 
-2 new files have been created in our folder: go.mod and go.sum.
+By now, 2 new files gets created in our folder: go.mod and go.sum.
 
 ```go
 package main
@@ -59,7 +84,7 @@ go build
 ./httpserver
 ```
 
-## Package with Docker
+## Packaging with Docker
 
 Let's create a simple Dockerfile for our server.
 
@@ -83,7 +108,7 @@ docker build -t httpserver .
 docker run -p 8080:8080 httpserver
 ```
 
-## Cache go modules
+## Caching go modules
 
 As you can see `go build` downloads our dependencies. But what is not good here is that it will do it every time we build an image. And imagine if your project have a lot of dependencies, it will slow down your build process. Let's change something in main.go file and run build again.
 
@@ -147,4 +172,4 @@ So I think go modules is a nice feature, and you definitely should try it, I use
 
 ## Contributor - 
 
-Sangam biradar - smbiradar14@gmail.com -https://engineitops.icu
+[Sangam biradar](https://engineitops.icu)

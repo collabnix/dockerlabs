@@ -41,7 +41,7 @@ $ cd solution/wordpress
 ## Bring up WordPress Application Stack
 
 ```
-$ docker stack deploy -c docker-stack.yml myapp4
+$ docker stack deploy -c stack.yml myapp4
 
 Creating network myapp4_default
 Creating service myapp4_db
@@ -54,4 +54,4 @@ A Port 8000 will appear instantly. Wait for 20 seconds and then click it to open
 
 ## Contributor
 
-- [Ajeet Singh Raina](ajeetraina@gmail.com)
+- [Ajeet Singh Raina](mailto:ajeetraina@gmail.com)

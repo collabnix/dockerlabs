@@ -8,7 +8,7 @@ You get maximum of 5 instances of Linux system to play around with Docker.
 
 - Click on Icon near to Instance to choose 3 Managers & 2 Worker Nodes
 
-![My image](https://github.com/collabnix/dockerlabs/blob/master/images/pwd_1.png)
+![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/pwd_1.png)
 
 - Wait for few seconds to bring up 5-Node Swarm Cluster
 
@@ -29,7 +29,7 @@ cd docker-swarm-visualizer
 docker-compose up -d
 ```
 
-![My image](https://github.com/collabnix/dockerlabs/blob/master/images/visualizer.png)
+![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/visualizer.png)
 
 To run in a docker swarm:
 
@@ -42,4 +42,4 @@ $ docker service create \
   dockersamples/visualizer
 ```
 
-[Creating an Overlay Network](https://github.com/collabnix/dockerlabs/blob/master/intermediate/workshop/lab1-docker-network-overlay.md)
+[Creating an Overlay Network](http://dockerlabs.collabnix.com/intermediate/workshop/lab1-docker-network-overlay.html)

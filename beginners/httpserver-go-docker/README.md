@@ -1,5 +1,6 @@
-# httpserver Gomodule and Docker 
 
+<<<<<<< HEAD
+=======
 
 ```
 git clone https://github.com/sangam14/httpserver-go-docker
@@ -142,3 +143,5 @@ ENTRYPOINT ["/app/httpserver"]
 ## Conclusion
 
 So I think go modules is a nice feature, and you definitely should try it, I use it in all my services I write. Of course it needs some improvements, but it works well in practice.
+
+>>>>>>> 92ac0a1e08268a15f149bf1f07041a3ea7509110

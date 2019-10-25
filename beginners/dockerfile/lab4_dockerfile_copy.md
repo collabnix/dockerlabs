@@ -1,4 +1,11 @@
-# Lab #2: Create an image with COPY instruction
+# Lab #3: Create an image with COPY instruction
+The COPY instruction copies files or directories from source and adds them to the filesystem of the container at destinatio.
+
+Two form of COPY instruction
+```
+COPY [--chown=<user>:<group>] <src>... <dest>
+COPY [--chown=<user>:<group>] ["<src>",... "<dest>"] (this form is required for paths containing whitespace)
+```
 
 ## Pre-requisite:
 
@@ -26,29 +33,71 @@
 - Open [PWD](https://labs.play-with-docker.com/) Platform on your browser 
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
+## Assignment:
 
-## Create a Dockerfile_1 under the same directory.
+- Create an image with COPY instruction
+- COPY instruction in Multi-stage Builds
 
-If you want to store a multiple Dockerfile, you can just rename them as Dockerfile_1 or Dockerfile_ADD and pass -f while you build Docker Image using ```docker build``` command.
+### Create an image with COPY instruction
+Dockerfile
+```
+FROM nginx:alpine
+LABEL maintainer="Collabnix"
 
-Let us download GIT Tar file with the below command under the root directory:
+COPY index.html /usr/share/nginx/html/
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+```
+Lets create the <b>index.html</b> file
+```
+$ echo "Welcome to Dockerlabs !" > index.html
+```
+#### Building Docker Image
+```
+$ docker image build -t cpy:v1 .
+```
+#### Staring the container
+```
+$ docker container run -d --rm --name myapp1 -p 80:80 cpy:v1
+```
+#### Checking index file
+```
+$ curl localhost
+Welcome to Dockerlabs !
+```
+
+### COPY instruction in Multi-stage Builds
+Dockerfile
+```
+FROM alpine AS stage1
+LABEL maintainer="Collabnix"
+RUN echo "Welcome to Docker Labs!" > /opt/index.html
+
+FROM nginx:alpine
+LABEL maintainer="Collabnix"
+COPY --from=stage1 /opt/index.html /usr/share/nginx/html/
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+```
+#### Building Docker Image
+```
+$ docker image build -t cpy:v2 .
+```
+#### Staring the container
+```
+$ docker container run -d --rm --name myapp2 -p 8080:80 cpy:v2
+```
+#### Checking index file
+```
+$ curl localhost:8080
+Welcome to Docker Labs !
+```
+
+<b>NOTE:</b> You can name your stages, by adding an AS <NAME> to the FROM instruction.By default, the stages are not named, and you can refer to them by their integer number, starting with 0 for the first FROM instruction.You are not limited to copying from stages you created earlier in your Dockerfile, you can use the COPY --from instruction to copy from a separate image, either using the local image name, a tag available locally or on a Docker registry.
 
 ```
-wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-1.8.3.1.tar.gz
+COPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf
 ```
 
-Now copy the content from the below Dockerfile and save it under a file named "DockerFile_COPY"
+## Contributor
+[Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-```
-$ cat Dockerfile_copy
-FROM alpine:3.6
-MAINTAINER ajeetraina@gmail.com
-COPY git-1.8.3.1.tar.gz /home/
-#ADD https://mirrors.edge.kernel.org/pub/software/scm/git/git-1.8.3.1.tar.gz /
-```
-
-## Building Docker Image
-
-```
-docker build -t ajeetraina/lab2_dockerfile_lab2 . -f Dockerfile_copy
-```
+Next » [Lab #4: CMD instruction](https://dockerlabs.collabnix.com//beginners/dockerfile/lab4_cmd.html)

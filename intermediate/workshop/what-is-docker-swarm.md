@@ -1,14 +1,14 @@
 
 # What is Docker Swarm?
 
-![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/Dockerswarm.png)
+![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/intermediate/swarm/Dockerswarm.png)
 
 - Docker Swarm is a container orchestration tool built and managed by Docker, Inc. 
 - It is the native clustering tool for Docker. 
 - Swarm uses the standard Docker API, i.e., containers can be launched using normal docker run commands and Swarm will take care of selecting an appropriate host to run the container on. 
 - The tools that use the Docker API—such as Compose and bespoke scripts—can use Swarm without any changes and take advantage of running on a cluster rather than a single host.
 
-![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/swarm-orchestration.png)
+![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/intermediate/swarm/swarm-orchestration.png)
 
 
 # But why do we need Container orchestration System?
@@ -37,7 +37,7 @@ Yes, it works very well with the Docker command line tools like docker and docke
 
 # How does Swarm Cluster look like?
 
-![My image](https://github.com/collabnix/dockerlabs/blob/master/intermediate/swarm/swarm-arch.png)
+![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/intermediate/swarm/swarm-arch.png)
 
 The basic architecture of Swarm is fairly straightforward: each host runs a Swarm agent and one host runs a Swarm manager (on small test clusters this host may also run an agent). The manager is responsible for the orchestration and scheduling of containers on the hosts. Swarm can be run in a high-availability mode where one of etcd, Consul or ZooKeeper is used to handle fail-over to a back-up manager. There are several different methods for how hosts are found and added to a cluster, which is known as discovery in Swarm. By default, token based discovery is used, where the addresses of hosts are kept in a list stored on the Docker Hub.
 
@@ -53,4 +53,4 @@ Swarm managers can use several strategies to run containers, such as “emptiest
 A swarm is made up of multiple nodes, which can be either physical or virtual machines. The basic concept is simple enough: run docker swarm init to enable swarm mode and make our current machine a swarm manager, then run docker swarm join on other machines to have them join the swarm as workers. 
 
 
-[Getting Started with Docker Swarm](https://github.com/collabnix/dockerlabs/blob/master/intermediate/workshop/getting-started-with-swarm.md)
+[Getting Started with Docker Swarm](http://dockerlabs.collabnix.com/intermediate/workshop/getting-started-with-swarm.html)
