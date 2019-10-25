@@ -1,7 +1,7 @@
-I am using Azure Kubernetes Service and Azure CLI for this demonstration purpose. AKS cluster deployment is similar to GKE with Azure specific parameters. This demo will create Nginx Pods and expose them to internet in a declaritive fashion. For non-declaritive method visit:- http://dockerlabs.collabnix.com/kubernetes/beginners/workshop/lab00-running-nginx-pod/
-To start with, login and open Azure CLI. If you are opening Azure CLI for the first time, azure automatically creates an Cloud Shell Storage for you to save your files for future use.
+I am using Azure Kubernetes Service and Azure CLI for this demonstration purpose. AKS cluster deployment is similar to GKE with Azure specific parameters. This demo will create Nginx Pods and expose them to internet in a declarative fashion. For non-declarative method visit: - http://dockerlabs.collabnix.com/kubernetes/beginners/workshop/lab00-running-nginx-pod/
+To start with, login and open Azure CLI. If you are opening Azure CLI for the first time, azure automatically creates a Cloud Shell Storage for you to save your files for future use.
 
-Once you are in the cloud shell and AKS cluster deployed run the following command to get connected to your kubernetes cluster:-
+Once you are in the cloud shell and AKS cluster deployed run the following command to get connected to your Kubernetes cluster: -
 
 divyajeet@Azure:$ az aks get-credentials -n my-aks-cluster -g AKS-TEST
 Merged "my-aks-cluster" as current context in /home/divyajeet/.kube/config
@@ -52,7 +52,7 @@ spec:
 
 Save the file using "Ctrl + X" and then "Y".
 
-Now we need ask AKS to schedule our deployment in AKS cluster and we would monitor them using the following commands:-
+Now we need ask AKS to schedule our deployment in AKS cluster and we would monitor them using the following commands: -
 
 divyajeet@Azure:~/Nginx$ kubectl apply -f nginx-deploy.yaml
 deployment.apps/my-nginx created
@@ -67,13 +67,13 @@ divyajeet@Azure:~/Nginx$ kubectl get svc
 NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
 kubernetes   ClusterIP   10.0.0.1     <none>        443/TCP   34m
 
-You can get more information on deployment and pods by using the following commands:-
+You can get more information on deployment and pods by using the following commands: -
 
 divyajeet@Azure:~/Nginx$ kubectl describe pods my-nginx-64d6456549-gv8rr
 divyajeet@Azure:~/Nginx$ kubectl describe deployment my-nginx
 
-Once you have completed the deployment now its the time to expose your deployment to the web so that consumers can consume your service. We achieve this by creating the service in a declaritive manner.
-We already created nginx-svc.yaml, now lets ask AKS to deploy a loadbalancer for us and expose our deployment to the web. This can be achieved by running the following commands:-
+Once you have completed the deployment now its the time to expose your deployment to the web so that consumers can consume your service. We achieve this by creating the service in a declarative manner.
+We already created nginx-svc.yaml, now let’s ask AKS to deploy a load balancer for us and expose our deployment to the web. This can be achieved by running the following commands: -
 
 divyajeet@Azure:~/Nginx$ kubectl apply -f nginx-svc.yaml
 service/nginx-svc created
@@ -116,15 +116,15 @@ Commercial support is available at
 </body>
 </html>
 
-Congrulations you have sucessfully deployed Nginx and exposed it to web using a declaritive model.
+Congratulations you have successfully deployed Nginx and exposed it to web using a declarative model.
 
 Now you can modify any changes to the YAML file and ask the AKS to update the changes to your deployment. Magic happens at the backend and you would be able to see the changes.
 
-Last and final step:- Delete your deployment and remove your cluster to avoid any extra charges in your account. Following are the commands to do it.
+Last and final step: - Delete your deployment and remove your cluster to avoid any extra charges in your account. Following are the commands to do it.
 
 divyajeet@Azure:~/Nginx$ az aks delete -n my-aks-cluster -g AKS-TEST
 
-Or directly remove the resource group by using the following command:-
+Or directly remove the resource group by using the following command: -
 
 divyajeet@Azure:~/Nginx$ az group delete -n AKS-TEST
 divyajeet@Azure:~/Nginx$ az group delete -n MC_AKS-TEST_my-aks-cluster_westus2
