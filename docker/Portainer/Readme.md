@@ -1,9 +1,6 @@
-<h1> Portainer Docker Management User Interface </h1>
+# Portainer Docker Management User Interface 
 
-
-
-
-         Portainer is a lightweight management UI which allows you to easily manage you  different Docker environments (Docker hosts or Swarm clusters)
+Portainer is a lightweight management UI which allows you to easily manage you  different Docker environments (Docker hosts or Swarm clusters)
 
 
 Installation:
