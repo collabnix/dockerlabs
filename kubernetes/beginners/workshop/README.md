@@ -21,6 +21,11 @@
 
 [Creating a Deployment with 3 replicas of NGINX service](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab03-creating-deployment-3replicas-nginx)<br>
 
+## Using Helm
+
+[Installing Helm]()
+[Installing WordPress using Helm on PWK]()
+
 # Tips & Tricks
 
 ## #1: My system rebooted and now the ```kubectl get nodes``` is unable to display my K8s nodes. What shall I do?
