@@ -24,7 +24,7 @@
 ## Using Helm
 
 [Installing Helm](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/helm/getting-started.md)<br>
-[Installing WordPress using Helm on PWK]()<br>
+[Installing WordPress using Helm on PWK](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/helm/installing-wordpress.md)<br>
 
 # Tips & Tricks
 
