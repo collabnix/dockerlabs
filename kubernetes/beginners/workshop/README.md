@@ -23,8 +23,8 @@
 
 ## Using Helm
 
-[Installing Helm]()
-[Installing WordPress using Helm on PWK]()
+[Installing Helm]()<br>
+[Installing WordPress using Helm on PWK]()<br>
 
 # Tips & Tricks
 
