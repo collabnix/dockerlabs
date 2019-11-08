@@ -23,7 +23,7 @@
 
 ## Using Helm
 
-[Installing Helm]()<br>
+[Installing Helm](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/helm/getting-started.md)<br>
 [Installing WordPress using Helm on PWK]()<br>
 
 # Tips & Tricks
