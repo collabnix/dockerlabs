@@ -82,33 +82,32 @@ $ kubectl get pods
 
 ##  Create a Deployment
 
-The folowing example will create a Deployment with 3 replicas of NGINX base image. Let's begin with the template:
-
-	apiVersion: extensions/v1beta1
-	kind: Deployment # kubernetes object type
-	metadata:
-	  name: nginx-deployment # deployment name
-	spec:
-	  replicas: 3 # number of replicas
-	  template:
-	    metadata:
-	      labels:
-	        app: nginx # pod labels
-	    spec:
-	      containers:
-	      - name: nginx # container name
-	        image: nginx:1.12.1 # nginx image
-	        imagePullPolicy: IfNotPresent # if exists, will not pull new image
-	        ports: # container and host port assignments
-	        - containerPort: 80
-	        - containerPort: 443
-
-This deployment will create 3 instances of NGINX image.
+Say, we need to create 3 instances of NGINX image.
 
 Run the following command to create Deployment:
 
-	$ kubectl create -f nginx-deployment.yaml 
-	deployment "nginx-deployment" created
+	
+```
+$ kubectl create -f nginx-deployment.yaml 
+```
+
+```
+[node1 ~]$ kubectl get po,svc,deploy
+NAME                                   READY     STATUS    RESTARTS   AGE
+pod/nginx-deployment-84bfcbdd5-2256x   1/1       Running   0          3m
+pod/nginx-deployment-84bfcbdd5-2dcn6   1/1       Running   0          3m
+pod/nginx-deployment-84bfcbdd5-sqrjz   1/1       Running   0          3m
+pod/nginx-pod                          1/1       Running   0          9m
+
+NAME                       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes         ClusterIP   10.96.0.1        <none>        443/TCP   19m
+service/my-nginx           ClusterIP   10.104.151.230   <none>        80/TCP    13m
+service/nginx-deployment   ClusterIP   10.99.154.211    <none>        80/TCP    2m
+
+NAME                                     DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.extensions/nginx-deployment   3         3         3            3           3m
+[node1 ~]$
+```
 
 
 ## Verify that the pod came up fine:
