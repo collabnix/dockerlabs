@@ -80,6 +80,36 @@ $ kubectl get pods
 	nginx-pod   1/1       Running   0          22s
 ```
 
+##  Create a Deployment
+
+The folowing example will create a Deployment with 3 replicas of NGINX base image. Let's begin with the template:
+
+	apiVersion: extensions/v1beta1
+	kind: Deployment # kubernetes object type
+	metadata:
+	  name: nginx-deployment # deployment name
+	spec:
+	  replicas: 3 # number of replicas
+	  template:
+	    metadata:
+	      labels:
+	        app: nginx # pod labels
+	    spec:
+	      containers:
+	      - name: nginx # container name
+	        image: nginx:1.12.1 # nginx image
+	        imagePullPolicy: IfNotPresent # if exists, will not pull new image
+	        ports: # container and host port assignments
+	        - containerPort: 80
+	        - containerPort: 443
+
+This deployment will create 3 instances of NGINX image.
+
+Run the following command to create Deployment:
+
+	$ kubectl create -f nginx-deployment.yaml 
+	deployment "nginx-deployment" created
+
 
 ## Verify that the pod came up fine:
 
