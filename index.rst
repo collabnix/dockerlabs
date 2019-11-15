@@ -1,4 +1,4 @@
-# Welcome to Collabnix Labs
+# Welcome to Docker Labs
 
 ![My image](https://github.com/collabnix/dockerlabs/blob/master/images/dockerlabs.jpeg)
 
