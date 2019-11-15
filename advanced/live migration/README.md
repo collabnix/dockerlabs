@@ -25,10 +25,10 @@ For more information regarding criu project, you can visit the following link an
 echo "{\"experimental\": true}" >> /etc/docker/daemon.json
 systemctl restart docker
 ```
-In addition to having a recent version of Docker, you need CRIU 2.0 or later installed on your system. 
+In addition to having a recent version of Docker, you need CRIU 3.0 or later installed on your system. 
 
-# Experimentation of docker checkpoint/restore on Play-with-Docker platform. 
-First of all spin up the nodes for implementation on which we run a simple shell script inside the container which display a simple loop for counting the number.i.e.
+# Experimentation of docker checkpoint/restore . 
+On the local system we run a simple shell script inside the container which display a simple loop for counting the number.i.e.
 
 ```
 docker run -d --name looper --security-opt seccomp:unconfined busybox  \
@@ -58,9 +58,8 @@ docker start --checkpoint checkpoint1 looper
 Now if you check the log file of container you can see the integer incrementing from the last point. 
 
 
-Docker also support migrating task form one containers to another containers form which we have to checkpoint the currently running container and have to store the 
-metadata of the running container into specific location of contaienr with the help of --checkpoint-dir option. Later stored metadata can be pointed form another contaienrs and restore the previously checkpointed task but unfortunately docker has removed this functionality and exported to the Moby project. 
-
+Docker also has feature to migrate task form one containers to another containers form which we can checkpoint the currently running container.
+The checkpointed metadata of the container can be stored into specific location of contaienr with the help of --checkpoint-dir option. Later  the stored metadata can be pointed form another contaienr and restore the task but unfortunately docker has removed this functionality and exported to the Moby project for further experimentation. 
 
 
 
