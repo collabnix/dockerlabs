@@ -80,6 +80,35 @@ $ kubectl get pods
 	nginx-pod   1/1       Running   0          22s
 ```
 
+##  Create a Deployment
+
+Say, we need to create 3 instances of NGINX image.
+
+Run the following command to create Deployment:
+
+	
+```
+$ kubectl create -f nginx-deployment.yaml 
+```
+
+```
+[node1 ~]$ kubectl get po,svc,deploy
+NAME                                   READY     STATUS    RESTARTS   AGE
+pod/nginx-deployment-84bfcbdd5-2256x   1/1       Running   0          3m
+pod/nginx-deployment-84bfcbdd5-2dcn6   1/1       Running   0          3m
+pod/nginx-deployment-84bfcbdd5-sqrjz   1/1       Running   0          3m
+pod/nginx-pod                          1/1       Running   0          9m
+
+NAME                       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes         ClusterIP   10.96.0.1        <none>        443/TCP   19m
+service/my-nginx           ClusterIP   10.104.151.230   <none>        80/TCP    13m
+service/nginx-deployment   ClusterIP   10.99.154.211    <none>        80/TCP    2m
+
+NAME                                     DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.extensions/nginx-deployment   3         3         3            3           3m
+[node1 ~]$
+```
+
 
 ## Verify that the pod came up fine:
 

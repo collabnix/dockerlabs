@@ -134,39 +134,16 @@ kubernetes        ClusterIP   10.96.0.1       <none>        443/TCP          2d
 nginx             ClusterIP   10.105.96.0     <none>        80/TCP           20h
 ```
 
-## Exposing your pods to the internet
+## Accessing it through localhost
 
 ```
-Ajeets-MacBook-Air:~ ajeetraina$ kubectl expose deployment my-nginx --port=80
-service "my-nginx" exposed
-Ajeets-MacBook-Air:~ ajeetraina$ kubectl get services
-NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-example-service   NodePort    10.106.252.68    <none>        8080:31477/TCP   19h
-kubernetes        ClusterIP   10.96.0.1        <none>        443/TCP          2d
-my-nginx          ClusterIP   10.101.119.153   <none>        80/TCP           4s
-```
-
-## Introspection
-
-```
-[node1 lab01-creating-nginx-pod]$ kubectl get pods
-NAME                      READY   STATUS    RESTARTS   AGE
-my-nginx-7b64f649-258lb   1/1     Running   0          8m43s
-my-nginx-7b64f649-8zcdr   1/1     Running   0          8m43s
+IP=$(kubectl get svc my-nginx -o go-template --template '{{ .spec.clusterIP }}')
 ```
 
 ```
-[node1 lab01-creating-nginx-pod]$ kubectl get services
-NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP   33m
-my-nginx     ClusterIP   10.106.231.19   <none>        80/TCP    4m47s
+curl $IP:80
 ```
 
-```
-[node1 lab01-creating-nginx-pod]$ kubectl get deployments
-NAME       READY   UP-TO-DATE   AVAILABLE   AGE
-my-nginx   2/2     2            2           8m45s
-```
 
 ## Cleaning Up
 
