@@ -1,4 +1,4 @@
-# Getting started with container live migration using docker containers.
+# Getting started with Container Live Migration using Docker container
 
 ## Pre-requisites
 - Understanding of virtualization concepts
