@@ -35,6 +35,9 @@ The `docker-compose config` command validate the docker-compose file and view th
 
 
 ### Create a docker-compose.yml file
+
+Copy the below contents:
+
 ```
 version: '3.1'
 services:
@@ -47,6 +50,15 @@ services:
        - "80:80"
        - "443:443"
 ```
+
+Or Clone the repository:
+
+```
+git clone https://github.com/collabnix/dockerlabs
+cd intermediate/workshop/compose/lab/3/config/
+cat docker-compose.yml
+```
+
 
 ### Validate the docker-compose file
 ```
