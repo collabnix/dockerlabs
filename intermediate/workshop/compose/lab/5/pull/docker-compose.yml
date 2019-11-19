@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  #Nginx Service
+   webserver:
+     image: nginx:alpine
+     container_name: webserver
+     restart: unless-stopped
+     ports:
+       - "80:80"
+       - "443:443"
+   dbserver:
+     image: mysql:5.7
+     container_name: Mysqldb
+     restart: unless-stopped
+     ports:
+       - "3306:3306"
