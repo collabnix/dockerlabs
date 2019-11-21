@@ -1,8 +1,10 @@
 # Docker Workshop for Intermediate Users
 
-[Compose101 Slides]()
+
 
 ### Docker Compose
+
+- [Compose101 Slides]()
 
 - [Introduction to Docker Compose](http://dockerlabs.collabnix.com/intermediate/docker-compose/)
 - [Dockerfile Vs Docker compose ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Difference_between_dockerfile_and_docker_compose.html)
