@@ -10,8 +10,9 @@ A service allows you to define how applications should be deployed at scale. By 
 required in a managed way.
 
 ## Task
-In this case, we are deploying the Docker Image katacoda/docker-http-server. We are defining a friendly name of a service called 
-http and that it should be attached to the newly created skynet network.
+
+In this case, we are deploying the Docker Image ajeetraina/hellowhale. We are defining a friendly name of a service called 
+http and that it should be attached to the newly created collabnet network.
 
 For ensuring replication and availability, we are running two instances, of replicas, of the container across our cluster.
 
