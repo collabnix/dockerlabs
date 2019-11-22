@@ -33,6 +33,7 @@
      - [Lab #22: `Down` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/down_command.html)<br>
 - [Create first docker compose file with ngnix and mysql](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Create_first_docker-compose_file_with_ngnix_and_mysql.html)<br>
 - [Use JSON instead of YAML compose file in Docker?](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%2324:_Use_JSON_instead_of_YAML_compose_file_in_Docker%3F.html)<br>
+- [A Simple Wordpress Application running on Single Node using Docker Compose](https://github.com/collabnix/dockerlabs/blob/master/intermediate/workshop/DockerCompose/single-node-wordpress.md)
 
 
 # Docker Swarm
