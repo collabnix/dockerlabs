@@ -8,9 +8,9 @@ Docker machine is a tool which lets you to install docker engine in remote hosts
 
 You can install docker-machine in various flavours of linux operating system and since I am using fedora so this file contain installation steps required to install in it.  
 
-## Install [Docker](https://docs.docker.com/install/)
+1. Install [Docker](https://docs.docker.com/install/)
 
-## Execute the following command which download the docker-machine binary and put it into your $PATH. 
+Execute the following command which download the docker-machine binary and put it into your $PATH. 
 
 ```
 base=https://github.com/docker/machine/releases/download/v0.16.0 &&
@@ -19,7 +19,7 @@ sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
 chmod +x /usr/local/bin/docker-machine
 ```
 
-## Verify the installation
+2. Verify the installation
 
 ```
 docker-machine version
