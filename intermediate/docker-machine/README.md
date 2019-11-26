@@ -8,9 +8,10 @@ Docker machine is a tool which lets you to install docker engine in remote hosts
 
 You can install docker-machine in various flavours of linux operating system and since I am using fedora so this file contain installation steps required to install in it.  
 
-Install [Docker](https://docs.docker.com/install/)
+## Install [Docker](https://docs.docker.com/install/)
 
-Execute the following command which download the docker-machine binary and put it into your $PATH. 
+## Execute the following command which download the docker-machine binary and put it into your $PATH. 
+
 ```
 base=https://github.com/docker/machine/releases/download/v0.16.0 &&
 curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
@@ -18,7 +19,7 @@ sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
 chmod +x /usr/local/bin/docker-machine
 ```
 
-Verify the installation
+## Verify the installation
 
 ```
 docker-machine version
@@ -40,7 +41,7 @@ curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0
 chmod +x /usr/local/bin/docker-machine-driver-kvm 
 ```
 
-Configuring in Debian based system. 
+## Configuring in Debian based system. 
 
 ```  
 curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0/docker-machine-driver-kvm-ubuntu14.04 \
@@ -48,7 +49,7 @@ curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0
 chmod +x /usr/local/bin/docker-machine-driver-kvm   
 ```
 
-VritualBox
+## VritualBox
 
 Virtualbox uses vboxdrv driver and installation is quite simple than that of KVM. Install virtualbox and you are all set to use docker-machine. 
 
@@ -60,7 +61,11 @@ To create docker host locally you can simply execute ```docker-machine create do
 
 You can create as many docker vm as per your requirements. You can use ``` docker-machine ls ``` command to list all the docker machines installed locally. This command also provides information of vm like name, status, driver, state, ip, etc.
 
-To start the stoped docker machine enter ``` docker-machine start docker_machine_name ```
+To start the stoped docker machine enter 
+
+``` 
+docker-machine start docker_machine_name 
+```
 
 ## Running containers on docker machine
 
@@ -70,7 +75,9 @@ After creating docker machine you can execute command from the host system to th
 
 Now you can simply execute the commands in newly created docker_docker_vm from your local system. i.e. 
 
-```docker run -it --security-opt seccomp:unconfined ubuntu /bin/bash```
+```
+docker run -it --security-opt seccomp:unconfined ubuntu /bin/bash
+```
 
 This command pull the ubuntu image in docker_machine_name from the docker reigistry and invoke bash terminal from it. 
 
