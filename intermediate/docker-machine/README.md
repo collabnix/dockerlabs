@@ -55,7 +55,7 @@ Virtualbox uses vboxdrv driver and installation is quite simple than that of KVM
 
 ## Provision of docker host locally
 
-To create docker host locally you can simply execute ```docker-machine create docker-vm-name```. This command go forward to create docker virtual machine locally on top of your hypervisor. In palce of docker-vm-name I've used vm1 for simplicity.  You can also specify the particular driver for instantiating vm depending upon your requirements, for e.g. to use virtualbox driver you can simply append ```virtualbox``` with ```-d``` as a driver option.  
+To create docker host locally you can simply execute ```docker-machine create docker-vm-name```. This command goes forward to create docker virtual machine locally on top of your hypervisor. In palce of docker-vm-name I've used vm1 for simplicity.  You can also specify the particular driver for instantiating vm depending upon your requirements, for e.g. to use virtualbox driver you can simply append ```virtualbox``` with ```-d``` as a driver option i.e.   
 
 ``` docker-machine create -d virtualbox vm1 ```
 
@@ -81,7 +81,7 @@ docker run -it --security-opt seccomp:unconfined ubuntu /bin/bash
 
 This command pull the ubuntu image in vm1 from the docker reigistry and invoke bash terminal from it. 
 
-You can switch between different vm1 with the help of ```eval``` command. 
+You can switch between different docker virtual machines with the help of ```eval``` command. 
 
 
 
