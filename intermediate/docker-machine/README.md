@@ -10,7 +10,7 @@ You can install docker-machine in various flavours of linux operating system and
 
 1. Install [Docker](https://docs.docker.com/install/)
 
-Execute the following command which download the docker-machine binary and put it into your $PATH. 
+2. Execute the following command which download the docker-machine binary and put it into your $PATH. 
 
 ```
 base=https://github.com/docker/machine/releases/download/v0.16.0 &&
@@ -19,7 +19,7 @@ sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
 chmod +x /usr/local/bin/docker-machine
 ```
 
-2. Verify the installation
+3. Verify the installation
 
 ```
 docker-machine version
@@ -31,9 +31,9 @@ For installation of docker-machine in other operating systems, kindly follow the
 
 For using docker-machine to create, use and manage the docker host locally, you should have virtualization driver installed in your system. There are different drivers availabe which supports docker-machine depending upon the type of virtualizaiton technology you use. For KVM, docker-machine use docker-machine-driver-kvm where as for Virtualbox it uses virtualbox driver. 
 
-KVM driver
+1. KVM driver
 
-Configuring in RHEL/CentOS based system.  
+- Configuring in RHEL/CentOS based system.  
 
 ```
 curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0/docker-machine-driver-kvm-centos7 \
@@ -41,7 +41,7 @@ curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0
 chmod +x /usr/local/bin/docker-machine-driver-kvm 
 ```
 
-## Configuring in Debian based system. 
+- Configuring in Debian based system. 
 
 ```  
 curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0/docker-machine-driver-kvm-ubuntu14.04 \
@@ -49,7 +49,7 @@ curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.10.0
 chmod +x /usr/local/bin/docker-machine-driver-kvm   
 ```
 
-## VritualBox
+2. VritualBox
 
 Virtualbox uses vboxdrv driver and installation is quite simple than that of KVM. Install virtualbox and you are all set to use docker-machine. 
 
