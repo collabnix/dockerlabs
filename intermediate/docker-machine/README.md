@@ -55,33 +55,33 @@ Virtualbox uses vboxdrv driver and installation is quite simple than that of KVM
 
 ## Provision of docker host locally
 
-To create docker host locally you can simply execute ```docker-machine create docker-vm-name```. This command go forward to create docker virtual machine locally on top of your hypervisor. You can also specify the particular driver for instantiating vm depending upon your requirements i.e.
+To create docker host locally you can simply execute ```docker-machine create docker-vm-name```. This command go forward to create docker virtual machine locally on top of your hypervisor. In palce of docker-vm-name I've used vm1 for simplicity.  You can also specify the particular driver for instantiating vm depending upon your requirements, for e.g. to use virtualbox driver you can simply append ```virtualbox``` with ```-d``` as a driver option.  
 
-``` docker-machine create -d virtualbox docker_vm_name ```
+``` docker-machine create -d virtualbox vm1 ```
 
 You can create as many docker vm as per your requirements. You can use ``` docker-machine ls ``` command to list all the docker machines installed locally. This command also provides information of vm like name, status, driver, state, ip, etc.
 
-To start the stoped docker machine enter 
+To start the stoped docker_machine, execute:
 
 ``` 
-docker-machine start docker_machine_name 
+docker-machine start vm1 
 ```
 
 ## Running containers on docker machine
 
-After creating docker machine you can execute command from the host system to the docker_machine_name. For this you need to connect your shell to the docker machine.i.e.  
+After creating docker machine you can execute command from the host system to the vm1. For this you need to connect your shell to the docker machine.i.e.  
 
-```eval $(docker-machine env docker_vm_name)```
+```eval $(docker-machine env vm1)```
 
-Now you can simply execute the commands in newly created docker_docker_vm from your local system. i.e. 
+Now you can simply execute the commands in newly created docker_machine_vm from your local system. i.e. 
 
 ```
 docker run -it --security-opt seccomp:unconfined ubuntu /bin/bash
 ```
 
-This command pull the ubuntu image in docker_machine_name from the docker reigistry and invoke bash terminal from it. 
+This command pull the ubuntu image in vm1 from the docker reigistry and invoke bash terminal from it. 
 
-You can switch between different docker_machine_vm with the help of ```eval``` command. 
+You can switch between different vm1 with the help of ```eval``` command. 
 
 
 
