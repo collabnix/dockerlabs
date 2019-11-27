@@ -7,6 +7,7 @@
 
 ## Pods101
 
+ - [Introductory Slides]()
  - [Deploying Your First Nginx Pod]()
  - [Viewing Your Pod]()
  - [Where is your Pod running on?]()
@@ -18,6 +19,7 @@
 
 ## ReplicaSet101
 
+ - [Introductory Slides]()
  - [Creating Your First ReplicaSet - 4 Pods serving Nginx]()
  - [Removing a Pod from ReplicaSet]()
  - [Scaling & Autoscaling a ReplicaSet]()
@@ -26,7 +28,7 @@
  
  ## Deployment101
  
- - []()
+ - [Introductory Slides]()
  - [Performing Updates with Zero Downtime (Deployment Rolling Updates)]()
  - [Kubernetes Deployments Strategies Overview]()
     - [Rolling Updates]()
@@ -37,6 +39,7 @@
 
 ## Scheduler101
 
+ - [Introductory Slides]()
  - [How Kubernetes Selects the Right node?]()
  - [Node Affinity]()
  - [Anti-Node Affinity]()
