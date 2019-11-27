@@ -8,7 +8,7 @@
 ## Pods101
 
  - [Introductory Slides]()
- - [Deploying Your First Nginx Pod]()
+ - [Deploying Your First Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md)
  - [Viewing Your Pod]()
  - [Where is your Pod running on?]()
  - [Pod Output in JSON]()
