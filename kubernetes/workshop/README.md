@@ -2,14 +2,14 @@
 
 ## Pre-requisite:
 
-- [Understanding Kubernetes Architecture]()
-- [Preparing 5-Node Kubernetes Cluster]()
+- [Understanding Kubernetes Architecture]() - Pending
+- [Preparing 5-Node Kubernetes Cluster]() - Pending
 
 ## Pods101
 
- - [Introductory Slides]()
- - [Deploying Your First Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md)
- - [Viewing Your Pod]()
+ - [Introductory Slides]() - Pending
+ - [Deploying Your First Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md) - In-Progress
+ - [Viewing Your Pod]() 
  - [Where is your Pod running on?]()
  - [Pod Output in JSON]()
  - [Executing Commands against Pod]()
