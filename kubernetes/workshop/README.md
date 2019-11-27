@@ -13,7 +13,7 @@
  - [Where is your Pod running on?]()
  - [Pod Output in JSON]()
  - [Executing Commands against Pod]()
- - [Terminatin a Pod]()
+ - [Terminating a Pod]()
  - [Adding a 2nd container to a Pod]()
  - [Troublehsooting Pod]()
 
