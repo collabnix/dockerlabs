@@ -35,7 +35,7 @@ kubectl get pods -o wide
 ```
 
 ```
-dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101 (fresh-heuristic-260312)$ kubectl describe po webserver
+$ kubectl describe po webserver
 Name:               webserver
 Namespace:          default
 Priority:           0
@@ -92,7 +92,7 @@ Events:
  ## Output in JSON
  
 ```
- dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl get pods -o json
+$ kubectl get pods -o json
 {
     "apiVersion": "v1",
     "items": [
@@ -138,10 +138,10 @@ tainers\":[{\"image\":\"nginx:latest\",\"name\":\"webserver\",\"ports\":[{\"cont
  ## Deleting the Pod
   
 ```
-  dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101 (fresh-heuristic-260312)$ kubectl delete -f pod01.yaml
+$ kubectl delete -f pod01.yaml
 pod "webserver" deleted
 
-dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101 (fresh-heuristic-260312)$ kubectl get po -o wide
+$ kubectl get po -o wide
 No resources found.
 ```
 
@@ -150,10 +150,16 @@ No resources found.
 Let us re-create the Pod and try to execute command against the Pod
 
 ```
-dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl apply -f pod01.yaml
+$ kubectl apply -f pod01.yaml
 pod/webserver created
-dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl exec -it webserver -- /bin/bash
+```
+
+```
+$ kubectl exec -it webserver -- /bin/bash
 root@webserver:/#
+```
+
+```
 root@webserver:/# cat /etc/os-release
 PRETTY_NAME="Debian GNU/Linux 10 (buster)"
 NAME="Debian GNU/Linux"
@@ -179,13 +185,13 @@ Having both containers on the same pod allows them to communicate through the lo
 Let us see  how a pod can host more than one container. Let’s create another YAML file. Call it pods02.yaml and add the following:
 
 ```
-dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl get po -o wide
+$ kubectl get po -o wide
 NAME        READY   STATUS              RESTARTS   AGE   IP       NODE                                                NOMINATED NODE   READINESS GATES
 webserver   0/2     ContainerCreating   0          13s   <none>   gke-standard-cluster-1-default-pool-78257330-5hs8   <none>           <none>
  ```
  
  ```
- dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl get po,svc,deploy
+$ kubectl get po,svc,deploy
 NAME            READY   STATUS    RESTARTS   AGE
 pod/webserver   2/2     Running   0          3m6s
 NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
