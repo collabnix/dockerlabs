@@ -8,13 +8,13 @@
 ## Pods101
 
  - [Introductory Slides]() 
- - [Deploying Your First Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md) - In-Progress
- - [Viewing Your Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#viewing-your-pods) 
- - [Where is your Pod running on?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#which-node-is-this-pod-running-on)
- - [Pod Output in JSON](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#output-in-json)
- - [Executing Commands against Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#executing-commands-against-pods)
- - [Terminating a Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#deleting-the-pod)
- - [Adding a 2nd container to a Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#ading-a-2nd-container-to-a-pod)
+ - [Deploying Your First Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md) - Done
+ - [Viewing Your Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#viewing-your-pods) - Done
+ - [Where is your Pod running on?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#which-node-is-this-pod-running-on) - Done
+ - [Pod Output in JSON](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#output-in-json) - Done
+ - [Executing Commands against Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#executing-commands-against-pods) - Done
+ - [Terminating a Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#deleting-the-pod) - Done
+ - [Adding a 2nd container to a Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#ading-a-2nd-container-to-a-pod) - Done
 
  
 
