@@ -76,11 +76,11 @@ Events:
   Normal  Pulled     2m50s  kubelet, gke-standard-cluster-1-default-pool-78257330-5hs8  Successfully pulled image "nginx:latest"
   Normal  Created    2m48s  kubelet, gke-standard-cluster-1-default-pool-78257330-5hs8  Created container
   Normal  Started    2m48s  kubelet, gke-standard-cluster-1-default-pool-78257330-5hs8  Started container
-  ```
+ ```
   
  ## Output in JSON
  
- ```
+```
  dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl get pods -o json
 {
     "apiVersion": "v1",
@@ -120,19 +120,18 @@ tainers\":[{\"image\":\"nginx:latest\",\"name\":\"webserver\",\"ports\":[{\"cont
                         },
                         "terminationMessagePath": "/dev/termination-log",
                         "terminationMessagePolicy": "File",
-             ```
- 
+             
+ ```
  
  
  ## Deleting the Pod
   
-  ```
+```
   dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101 (fresh-heuristic-260312)$ kubectl delete -f pod01.yaml
 pod "webserver" deleted
 
 dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101 (fresh-heuristic-260312)$ kubectl get po -o wide
 No resources found.
-
 ```
 
 ## Executing Commands Against Pods
@@ -154,7 +153,49 @@ ID=debian
 HOME_URL="https://www.debian.org/"
 SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
-root@webserver:/#
+```
+
+
+## Ading a 2nd container to a Pod
+
+Let us see  how a pod can host more than one container. Let’s create another YAML file. Call it pods02.yaml and add the following:
+
+```
+dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl get po -o wide
+NAME        READY   STATUS              RESTARTS   AGE   IP       NODE                                                NOMINATED NODE   READINESS GATES
+webserver   0/2     ContainerCreating   0          13s   <none>   gke-standard-cluster-1-default-pool-78257330-5hs8   <none>           <none>
+ ```
+ 
+ ```
+ dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl get po,svc,deploy
+NAME            READY   STATUS    RESTARTS   AGE
+pod/webserver   2/2     Running   0          3m6s
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.12.0.1    <none>        443/TCP   107m
+```
+
+
+```
+kubectl get po -o wide
+NAME        READY   STATUS    RESTARTS   AGE     IP         NODE                                                NOMINATED NODE   READINESS GATES
+webserver   2/2     Running   0          3m37s   10.8.0.5   gke-standard-cluster-1-default-pool-78257330-5hs8   <none>           <none>
+```
+
+Since we have two containers in a pod, we will need to use the -c option with kubectl when we need to address a specific container. For example:
+
+
+dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl exec -it webserver -c webwatcher -- /bin/bash
+
+```
+root@webserver:/# cat /etc/hosts
+# Kubernetes-managed hosts file.
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+fe00::0 ip6-mcastprefix
+fe00::1 ip6-allnodes
+fe00::2 ip6-allrouters
+10.8.0.5        webserver
 ```
 
 
