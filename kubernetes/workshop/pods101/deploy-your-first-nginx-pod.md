@@ -207,10 +207,9 @@ webserver   2/2     Running   0          3m37s   10.8.0.5   gke-standard-cluster
 
 Since we have two containers in a pod, we will need to use the -c option with kubectl when we need to address a specific container. For example:
 
-
-dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl exec -it webserver -c webwatcher -- /bin/bash
-
 ```
+$ kubectl exec -it webserver -c webwatcher -- /bin/bash
+
 root@webserver:/# cat /etc/hosts
 # Kubernetes-managed hosts file.
 127.0.0.1       localhost
