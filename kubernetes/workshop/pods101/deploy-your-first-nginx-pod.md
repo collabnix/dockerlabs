@@ -78,7 +78,53 @@ Events:
   Normal  Started    2m48s  kubelet, gke-standard-cluster-1-default-pool-78257330-5hs8  Started container
   ```
   
-  ## Deleting the Pod
+ ## Output in JSON
+ 
+ ```
+ dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl get pods -o json
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"webserver\",\"namespace\":\"default\"},\"spec\":{\"con
+tainers\":[{\"image\":\"nginx:latest\",\"name\":\"webserver\",\"ports\":[{\"containerPort\":80}]}]}}\n",
+                    "kubernetes.io/limit-ranger": "LimitRanger plugin set: cpu request for container webserver"
+                },
+                "creationTimestamp": "2019-11-28T08:48:28Z",
+                "name": "webserver",
+                "namespace": "default",
+                "resourceVersion": "20080",
+                "selfLink": "/api/v1/namespaces/default/pods/webserver",
+                "uid": "d8e0b56b-11bb-11ea-a1bf-42010a800006"
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "image": "nginx:latest",
+                        "imagePullPolicy": "Always",
+                        "name": "webserver",
+                        "ports": [
+                            {
+                                "containerPort": 80,
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "resources": {
+                            "requests": {
+                                "cpu": "100m"
+                            }
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+             ```
+ 
+ 
+ 
+ ## Deleting the Pod
   
   ```
   dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101 (fresh-heuristic-260312)$ kubectl delete -f pod01.yaml
