@@ -14,9 +14,9 @@
  - [Pod Output in JSON](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#output-in-json)
  - [Executing Commands against Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#executing-commands-against-pods)
  - [Terminating a Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#deleting-the-pod)
- - [Adding a 2nd container to a Pod]()
- - [Troublehsooting Pod]()
- - [Pods Networking at a Glance]()
+ - [Adding a 2nd container to a Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#ading-a-2nd-container-to-a-pod)
+
+ 
 
 ## ReplicaSet101
 
