@@ -1,5 +1,16 @@
 # Deploying Your First Nginx Pod
 
+## What are K8s Pods?
+
+- Kubernetes pods are the foundational unit for all higher Kubernetes objects.
+- A pod hosts one or more containers.
+- It can be created using either a command or a YAML/JSON file.
+- Use kubectl to create pods, view the running ones, modify their configuration, or terminate them. Kuberbetes will attempt to restart a failing pod by default.
+- If the pod fails to start indefinitely, we can use the kubectl describe command to know what went wrong.
+
+
+
+
 ## Pre-requisite:
 
 
@@ -157,6 +168,13 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 
 
 ## Ading a 2nd container to a Pod
+
+But wait...Why 2 containers in a Pod?
+
+In the microservices architecture, each module should live in its own space and communicate with other modules following a set of rules. But, sometimes we need to deviate a little from this principle. Suppose you have an Nginx web server running  We need to analyze Nginx logs in real-time. The logs we need to parse are obtained from GET requests to the web server. The developers created a log watcher application that will do this job, and they built a container for it. In typical conditions, you’d have a pod for Nginx and another for the log watcher. However, we need to eliminate any network latency so that the watcher can analyze logs the moment they are available. A solution for this is to place both containers on the same pod.
+
+Having both containers on the same pod allows them to communicate through the loopback interface as if they were two processes running on the same host. They also share the same storage volume.
+
 
 Let us see  how a pod can host more than one container. Let’s create another YAML file. Call it pods02.yaml and add the following:
 
