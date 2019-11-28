@@ -10,9 +10,9 @@
  - [Introductory Slides]() - Pending
  - [Deploying Your First Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md) - In-Progress
  - [Viewing Your Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#viewing-your-pods) 
- - [Where is your Pod running on?]()
+ - [Where is your Pod running on?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#which-node-is-this-pod-running-on)
  - [Pod Output in JSON]()
- - [Executing Commands against Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#which-node-is-this-pod-running-on)
+ - [Executing Commands against Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#executing-commands-against-pods)
  - [Terminating a Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#deleting-the-pod)
  - [Adding a 2nd container to a Pod]()
  - [Troublehsooting Pod]()
