@@ -88,3 +88,27 @@ dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101 (fresh-heuri
 No resources found.
 
 ```
+
+## Executing Commands Against Pods
+
+Let us re-create the Pod and try to execute command against the Pod
+
+```
+dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl apply -f pod01.yaml
+pod/webserver created
+dockercaptain81@cloudshell:~/dockerlabs/kubernetes/workshop/pods101$ kubectl exec -it webserver -- /bin/bash
+root@webserver:/#
+root@webserver:/# cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 10 (buster)"
+NAME="Debian GNU/Linux"
+VERSION_ID="10"
+VERSION="10 (buster)"
+VERSION_CODENAME=buster
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+root@webserver:/#
+```
+
+
