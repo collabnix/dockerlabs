@@ -26,7 +26,16 @@
 [ Rolling update of nginx application via two methods] <br> 
 [ Rolling out deployement with revision ] <br>
 
-## Lab #06 Service Networking -- coming soon 
+## Lab #06 Service Networking
+## Lab #07 Ingress for kubernetes 
+## lab #08 Deploying a Load Balancer
+## lab #09 Configure and Use Cluster DNS
+## lab #10 Persistent Storage
+## lab #11 Kubernetes Self-Healing
+## lab #12 Liveness Probes in Kubernetes
+## lab #13 Auto-Scaling
+## lab #14 Horizontal Pod Auto-Scaling
+## lab #15 monitoring 
 
 
 ## Using Helm
