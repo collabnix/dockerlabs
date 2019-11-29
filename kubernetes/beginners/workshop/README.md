@@ -26,6 +26,9 @@
 [ Rolling update of nginx application via two methods] <br> 
 [ Rolling out deployement with revision ] <br>
 
+## Lab #06 Service Networking -- coming soon 
+
+
 ## Using Helm
 
 [Installing Helm](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/helm/getting-started.md)<br>
