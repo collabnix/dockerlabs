@@ -22,9 +22,9 @@
 [Creating a Deployment with 3 replicas of NGINX service](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/beginners/workshop/lab03-creating-deployment-3replicas-nginx)<br>
 
 # Lab #05 Deployments, Rolling Updates and Rollbacks
-[ creating deployement nginx with 2 replicals ]
-[ Rolling update of nginx application via two methods]
-[ Rolling out deployement with revision ]
+[ creating deployement nginx with 2 replicals ] <br> 
+[ Rolling update of nginx application via two methods] <br> 
+[ Rolling out deployement with revision ] <br>
 
 ## Using Helm
 
