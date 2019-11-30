@@ -20,5 +20,16 @@ The Deployment will start up a few nginx containers as the application. The Depl
 Biradars-MacBook-Air-4:~ sangam$ kubectl apply -f blue-deploy.yaml
 deployment.extensions/nginx-1.10 created
 ```
+The service is of type=LoadBalancer so it can be accessed via a Network Load Balancer on GCP. It uses the name and version labels specified in the Deployment to select the pods for the service.
+
+```
+Biradars-MacBook-Air-4:~ sangam$ kubectl apply -f service.yaml
+service/nginx created
+Biradars-MacBook-Air-4:~ sangam$ 
+```
+Create the Service:
+```
+$ kubectl apply -f service.yaml
+```
 
 
