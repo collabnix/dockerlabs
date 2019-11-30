@@ -30,7 +30,7 @@
  ## Deployment101
  
  - [Introductory Slides]()
- - [Performing Updates with Zero Downtime (Deployment Rolling Updates)]()
+ - [Performing Updates with Zero Downtime (Deployment Rolling Updates)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md)
  - [Kubernetes Deployments Strategies Overview]()
     - [Rolling Updates]()
     - [Recreate Updates]()
