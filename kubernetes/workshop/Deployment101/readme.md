@@ -419,6 +419,19 @@ Biradars-MacBook-Air-4:~ sangam$
 
 After the rollout succeeds, you may want to get the Deployment.
 
+The output shows the update progress until all the pods use the new container image.
+
+The algorithm that Kubernetes Deployments use when deciding how to roll updates is to keep at least 25% of the pods running. Accordingly, it doesn’t kill old pods unless a sufficient number of new ones are up. In the same sense, it does not create new pods until enough pods are no longer running. Through this algorithm, the application is always available during updates.
+
+You can use the following command to determine the update strategy that the Deployment is using:
+```
+Biradars-MacBook-Air-4:~ sangam$ kubectl describe deployments | grep Strategy
+StrategyType:           RollingUpdate
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Biradars-MacBook-Air-4:~ sangam$ 
+```
+
+
 ## Step #5. Cleanup
 
 Finally you can clean up the resources you created in your cluster:
