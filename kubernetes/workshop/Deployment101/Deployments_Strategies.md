@@ -31,5 +31,46 @@ Create the Service:
 ```
 $ kubectl apply -f service.yaml
 ```
+You can update the Blue Deployment's file directly or use a tool like sed:
+
+Create the new Deployment:
+```
+Biradars-MacBook-Air-4:~ sangam$ sed 's/1\.10/1.11/' blue-deploy.yaml | kubectl apply -f -
+deployment.extensions/nginx-1.11 created
+```
+test new version 
+
+## Automating Blue/Green Deployments
+
+While ideally Blue/Green Deployments would be implemented server side, one way to automate them is on the client-side using scripts. This very simple bash script creates the new Deployment and waits for it to become ready before updating the Service's selector.
+
+```
+#!/bin/bash
+
+# bg-deploy.sh <servicename> <version> <green-deployment.yaml>
+# Deployment name should be <service>-<version>
+
+DEPLOYMENTNAME=$1-$2
+SERVICE=$1
+VERSION=$2
+DEPLOYMENTFILE=$3
+
+kubectl apply -f $DEPLOYMENTFILE
+
+# Wait until the Deployment is ready by checking the MinimumReplicasAvailable condition.
+READY=$(kubectl get deploy $DEPLOYMENTNAME -o json | jq '.status.conditions[] | select(.reason == "MinimumReplicasAvailable") | .status' | tr -d '"')
+while [[ "$READY" != "True" ]]; do
+    READY=$(kubectl get deploy $DEPLOYMENTNAME -o json | jq '.status.conditions[] | select(.reason == "MinimumReplicasAvailable") | .status' | tr -d '"')
+    sleep 5
+done
+
+# Update the service selector with the new version
+kubectl patch svc $SERVICE -p "{\"spec\":{\"selector\": {\"name\": \"${SERVICE}\", \"version\": \"${VERSION}\"}}}"
+
+echo "Done."
+
+
+```
+
 
 
