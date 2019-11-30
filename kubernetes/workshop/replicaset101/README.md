@@ -30,3 +30,34 @@ To be able to create new pods if necessary, the ReplicaSet definition includes a
 
 # Creating Your First ReplicaSet
 
+```
+git clone https://github.com/collabnix/dockerlabs
+cd dockerlabs/workshop/replicaset101
+```
+
+```
+kubectl apply -f nginx_replicaset.yaml
+```
+
+```
+kubectl get rs
+```
+
+```
+NAME   DESIRED   CURRENT   READY   AGE
+web	4     	4     	4   	2m
+```
+
+# A Peep into the ReplicaSet definition file
+
+Let’s examine the definition file that was used to create our ReplicaSet:
+
+- The apiVersion for this object is currently app/v1
+- The kind of this object is ReplicaSet
+- In the metadata part, we define the name by which we can refer to this ReplicaSet. We also define a number of labels through which we can identify it.
+- The spec part is mandatory in the ReplicaSet object. It defines:
+- The number of replicas this controller should maintain. It default to 1 if it was not specified.
+- The selection criteria by which the ReplicaSet will choose its pods. Be careful not to use a label that is already in use by another controller. Otherwise, another ReplicaSet may acquire the pod(s) first. Also notice that the labels defined in the pod template (spec.template.metadata.label) cannot be different than those defined in the matchLabels part (spec.selector).
+- The pod template is used to create (or recreate) new pods. It has its own metadata, and spec where the containers are specified. You can refer to our article for more information about pods.
+
+
