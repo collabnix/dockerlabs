@@ -9,6 +9,30 @@ require a way to distribute the traffic to all of them. Services have an integra
 distribute network traffic to all Pods of an exposed Deployment.
 Services will monitor continuously the running Pods using endpoints, to ensure the traffic is sent only to available Pods.
 
+```
+# vi nginx-dep.yaml
+
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 8
+  ```      
+
 To list your deployments use the get deployments command:
 
 
