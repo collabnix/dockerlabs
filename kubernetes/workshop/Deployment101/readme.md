@@ -133,16 +133,9 @@ Biradars-MacBook-Air-4:~ sangam$
 
 ## Step #3. Perform rolling updates to application deployment
 
-If you have multiple instances of an Application running, there could be scenarios where old instances can clash with the new instances and if you shutdown the cluster for updates,downtime could never be not acceptable.Users expect applications to be available all the time and 
-developers are expected to deploy new versions of them several times a day.
-In Kubernetes this is done with rolling updates. Rolling updates allow Deployments update to take place with zero downtime by incrementally updating Pods instances with new ones. The new Pods will be scheduled on Nodes with available resources.
+So far, everything our Deployment did is no different than a typical ReplicaSet. The real power of a Deployment lies in its ability to update the pod templates without causing application outage.
 
-Rolling updates allow the following actions:
-
-   -  Promote an application from one environment to another (via container image updates)
-   -  Rollback to previous versions
-    - Continuous Integration and Continuous Delivery of applications with zero downtime
-
+Let’s say that you have finished testing the nginx 1.7.9 , and you are ready to use it in production. The current pods are using the older nginx version . The following command changes the deployment pod template to use the new image:
 
 To update the image of the application to new version, use the set image command,
 followed by the deployment name and the new image version:
