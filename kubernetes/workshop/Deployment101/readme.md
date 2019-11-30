@@ -454,8 +454,8 @@ After the rollout succeeds, you may want to get the Deployment.
 
 Finally you can clean up the resources you created in your cluster:
 ```
-kubectl delete service my-nginx
-kubectl delete deployment my-nginx
+kubectl delete service nginx-deployment
+kubectl delete deployment nginx-deployment
 ```
 
 
