@@ -30,10 +30,21 @@ spec:
       - name: nginx
         image: nginx:1.7.9
         ports:
-        - containerPort: 8
+        - containerPort: 80
   ```      
+  
+  ```
+  kubectl create -f nginx-dep.yaml
+  deployment.apps/nginx-deployment created
+  ```
 
 To list your deployments use the get deployments command:
+```
+Biradars-MacBook-Air-4:~ sangam$ kubectl get deployments
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   2/2     2            2           63s
+
+```
 
 
 We should have 1 Pod. If not, run the command again. This shows:
