@@ -39,6 +39,17 @@ Biradars-MacBook-Air-4:~ sangam$ sed 's/1\.10/1.11/' blue-deploy.yaml | kubectl 
 deployment.extensions/nginx-1.11 created
 ```
 test new version 
+```
+Biradars-MacBook-Air-4:~ sangam$ kubectl get pods --output=wide
+NAME                          READY   STATUS    RESTARTS   AGE     IP           NODE             NOMINATED NODE   READINESS GATES
+nginx-1.10-547948f549-9wvhd   1/1     Running   0          48m     10.1.0.244   docker-desktop   <none>           <none>
+nginx-1.10-547948f549-grf5m   1/1     Running   0          48m     10.1.0.246   docker-desktop   <none>           <none>
+nginx-1.10-547948f549-j5cqk   1/1     Running   0          48m     10.1.0.245   docker-desktop   <none>           <none>
+nginx-1.11-848b9b487-4l5nh    1/1     Running   0          7m15s   10.1.0.250   docker-desktop   <none>           <none>
+nginx-1.11-848b9b487-sggtp    1/1     Running   0          7m16s   10.1.0.249   docker-desktop   <none>           <none>
+nginx-1.11-848b9b487-zf4k8    1/1     Running   0          7m15s   10.1.0.251   docker-desktop   <none>           <none>
+Biradars-MacBook-Air-4:~ sangam$ 
+```
 
 ## Automating Blue/Green Deployments
 
