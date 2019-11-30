@@ -15,7 +15,7 @@ Let’s dig deeper into Deployment Controllers and patterns.
 
 ## Creating Your First Deployment
 
-The following Deployment definition deploys four pods with Apache as their hosted application:
+The following Deployment definition deploys four pods with nginx as their hosted application:
 
 ```
 git clone https://github.com/collabnix/dockerlabs
