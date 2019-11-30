@@ -1,7 +1,21 @@
 # Deployment 101
 
-Pre-requisite:
-Steps
+
+We looked at ReplicaSets earlier. However, ReplicaSet have one major drawback: 
+once you select the pods that are managed by a ReplicaSet, you cannot change their pod templates. 
+So for example, if you are using a ReplicaSet to deploy four pods with NodeJS running and you want to change the NodeJS image to a newer version, 
+you need to delete the ReplicaSet and recreate it. 
+Restarting the pods causes downtime till the images are available and the pods are running again.
+
+A Deployment resource uses a ReplicaSet to manage the pods. However, it handles updating them in a controlled way. 
+Let’s dig deeper into Deployment Controllers and patterns.
+
+
+
+## Creating Your First Deployment
+
+The following Deployment definition deploys four pods with Apache as their hosted application:
+
 ```
 git clone https://github.com/collabnix/dockerlabs
 cd dockerlabs/kubernetes/workshop/Deployment101
@@ -9,12 +23,15 @@ kubectl create -f nginx-dep.yaml
 deployment.apps/nginx-deployment created
 ```
 
-## Step #1. Check the list of application deployment
+## Checking the list of application deployment
 
 
-Run command would have created only one Pod for running our application. But in the real life scenario,when traffic increases, 
-we will need to scale the application to keep up with user demand. Running multiple instances of an application will 
-require a way to distribute the traffic to all of them. Services have an integrated load-balancer that will 
+Run command would have created only one Pod for running our application. 
+But in the real life scenario,when traffic increases, 
+we will need to scale the application to keep up with user demand. 
+Running multiple instances of an application will 
+require a way to distribute the traffic to all of them.
+ Services have an integrated load-balancer that will 
 distribute network traffic to all Pods of an exposed Deployment.
 Services will monitor continuously the running Pods using endpoints, to ensure the traffic is sent only to available Pods.
 
