@@ -1,5 +1,14 @@
 # Deployment 101
 
+Pre-requisite:
+Steps
+```
+git clone https://github.com/collabnix/dockerlabs
+cd dockerlabs/kubernetes/workshop/Deployment101
+kubectl create -f nginx-dep.yaml
+deployment.apps/nginx-deployment created
+```
+
 ## Step #1. Check the list of application deployment
 
 
