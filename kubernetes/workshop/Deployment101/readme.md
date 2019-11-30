@@ -3,7 +3,8 @@
 
 We looked at ReplicaSets earlier. However, ReplicaSet have one major drawback: 
 once you select the pods that are managed by a ReplicaSet, you cannot change their pod templates. 
-So for example, if you are using a ReplicaSet to deploy four pods with NodeJS running and you want to change the NodeJS image to a newer version, 
+
+For example, if you are using a ReplicaSet to deploy four pods with NodeJS running and you want to change the NodeJS image to a newer version, 
 you need to delete the ReplicaSet and recreate it. 
 Restarting the pods causes downtime till the images are available and the pods are running again.
 
