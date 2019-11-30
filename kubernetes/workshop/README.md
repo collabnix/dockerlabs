@@ -24,7 +24,7 @@
  - [Creating Your First ReplicaSet - 4 Pods serving Nginx](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#creating-your-first-replicaset) - Done
  - [Removing a Pod from ReplicaSet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#removing-a-pod-from-a-replicaset) - Done
  - [Scaling & Autoscaling a ReplicaSet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#scaling-and-autoscaling-replicasets) - Done
- - [Best Practices]() - Done
+ - [Best Practices](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#best-practices) - Done
  - [Deleting ReplicaSets](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#deleting-replicaset) - Done
  
  ## Deployment101
