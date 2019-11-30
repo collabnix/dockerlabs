@@ -19,3 +19,14 @@ It creates and maintains a specific number of similar pods (replicas).
 
 Under this lab, we’ll discuss how we can define a ReplicaSet and what are the different options that can be used for fine-tuning it.
 
+# How Does ReplicaSet Manage Pods?
+
+- In order for a ReplicaSet to work, it needs to know which pods it will manage so that it can restart the failing ones or kill the unneeded. 
+- It also requires to understand how to create new pods from scratch in case it needs to spawn new ones.
+
+A ReplicaSet uses labels to match the pods that it will manage. It also needs to check whether the target pod is already managed by another controller (like a Deployment or another ReplicaSet). So, for example if we need our ReplicaSet to manage all pods with the label role=webserver, the controller will search for any pod with that label. It will also examine the ownerReferences field of the pod’s metadata to determine whether or not this pod is already owned by another controller. If it isn’t, the ReplicaSet will start controlling it. Subsequently, the ownerReferences field of the target pods will be updated to reflect the new owner’s data.
+
+To be able to create new pods if necessary, the ReplicaSet definition includes a template part containing the definition for new pods. 
+
+# Creating Your First ReplicaSet
+
