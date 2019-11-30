@@ -15,7 +15,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 -  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
 
-# Docker Workshop
+# Docker Workshop/Labs
 
 - [Getting Started: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
 
@@ -25,7 +25,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 - [Advanced](./advanced/workshop/README.md)
 
-## Docker Labs
+## Docker Tutorials
 
 - [Docker for Beginners](./beginners/README.md)
 
@@ -39,8 +39,16 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 - [Docker Interview Questions](./docker/docker-interview-questions.md)
 
+## Kubernetes Workshop/Labs
 
-## Kubernetes Labs
+- [Kubernetes for Beginners](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/workshop)
+
+- [Kubernetes for Intermediate](./kubernetes/Intermediate/README.md)
+
+- [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+
+
+## Kubernetes Tutorials
 
 - [Kubernetes for Beginners](./kubernetes/README.md)
 
