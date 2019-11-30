@@ -19,11 +19,11 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 - [Getting Started: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
 
-- [Beginners](./workshop/docker/README.md)
+- [Docker101](./workshop/docker/README.md)
 
-- [Intermediate](./intermediate/workshop/README.md)
+- [Docker201](./intermediate/workshop/README.md)
 
-- [Advanced](./advanced/workshop/README.md)
+- [Docker301](./advanced/workshop/README.md)
 
 ## Docker Tutorials
 
@@ -41,11 +41,11 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 ## Kubernetes Workshop/Labs
 
-- [Kubernetes for Beginners](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/workshop)
+- [Kubernetes101](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/workshop)
 
-- [Kubernetes for Intermediate](./kubernetes/Intermediate/README.md)
+- [Kubernetes201](./kubernetes/Intermediate/README.md)
 
-- [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
+- [Kubernetes301](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
 
 
 ## Kubernetes Tutorials
