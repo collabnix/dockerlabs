@@ -3,18 +3,18 @@ kind: ReplicaSet
 metadata:
   name: web
   labels:
-	env: dev
-	role: web
+    env: dev
+    role: web
 spec:
   replicas: 4
   selector:
-	matchLabels:
-  	  role: web
+    matchLabels:
+    role: web
   template:
-	metadata:
-  	  labels:
-    	    role: web
-	spec:
-  	  containers:
-  	  - name: nginx
-    	    image: nginx
+    metadata:
+    labels:
+      role: web
+ spec:
+   containers:
+   - name: nginx
+     image: nginx
