@@ -112,6 +112,96 @@ kubectl autoscale rs web --max=5
 
 This will use the Horizontal Pod Autoscaler (HPA) with the ReplicaSet to increase the number of pods when the CPU load gets higher, but it should not exceed five pods. When the load decreases, it cannot have less than the number of pods specified before (two in our example).
 
+# Best Practices
+
+The recommended practice is to always use the ReplicaSet’s template for creating and managing pods. However, because of the way ReplicaSets work, if you create a bare pod (not owned by any controller) with a label that matches the ReplicaSet selector, the controller will automatically adopt it. This has a number of undesirable consequences. Let’s have a quick lab to demonstrate them.
+
+Deploy a pod by using a definition file like the following:
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: orphan
+  labels:
+	role: web
+spec:
+  containers:
+  - name: orphan
+	image: httpd
+```
+
+It looks a lot like the other pods, but it is using Apache (httpd) instead of Nginx for an image. Using kubectl, we can apply this definition like:
+
+```
+kubectl apply -f orphan.yaml
+```
+
+Give it a few moments for the image to get pulled and the container is spawned then run kubectl get pods. You should see an output that looks like the following:
+
+```
+NAME    	READY   STATUS    	RESTARTS   AGE
+orphan  	0/1 	Terminating   0      	1m
+web-6n9cj   1/1 	Running   	0      	25m
+web-7kqbm   1/1 	Running   	0      	25m
+web-9src7   1/1 	Running   	0      	25m
+web-fvxzf   1/1 	Running   	0      	25m
+```
+
+The pod is being terminated by the ReplicaSet because, by adopting it, the controller has more pods than it was configured to handle. So, it is killing the excess one.
+
+Another scenario where the ReplicaSet won’t terminate the bare pod is that the latter gets created before the ReplicaSet does. To demonstrate this case, let’s destroy our ReplicaSet:
+
+```
+kubectl delete -f nginx_replicaset.yaml
+```
+
+Now, let’s create it again (our orphan pod is still running):
+
+```
+kubectl apply -f nginx_replicaset.yaml
+```
+
+Let’s have a look at our pods status by running kubectl get pods. The output should resemble the following:
+
+```
+orphan  	1/1 	Running   0      	29s
+web-44cjb   1/1 	Running   0      	12s
+web-hcr9j   1/1 	Running   0      	12s
+web-kc4r9   1/1 	Running   0      	12s
+```
+
+The situation now is that we’re having three pods running Nginx, and one pod running Apache (the httpd image). As far as the ReplicaSet is concerned, it is handling four pods (the desired number), and their labels match its selector. But what if the Apache pod went down? 
+
+Let’s do just that:
+
+```
+kubectl delete pods orphan
+```
+
+Now, let’s see how the ReplicaSet responded to this event:
+
+```
+kubectl get pods
+```
+The output should be something like:
+
+```
+NAME    	READY   STATUS          	RESTARTS   AGE
+web-44cjb   1/1 	Running         	0      	24s
+web-5kjwx   0/1 	ContainerCreating   0      	3s
+web-hcr9j   1/1 	Running         	0      	24s
+web-kc4r9   1/1 	Running         	0      	24s
+```
+
+The ReplicaSet is doing what is was programmed to: creating a new pod to reach the desired state using the template that was added in its definition. Obviously, it is creating a new Nginx container instead of the Apache one that was deleted.
+
+So, although the ReplicaSet is supposed to maintain the state of the pods it manages, it failed to respawn the Apache web server. It replaced it with an Nginx one.
+
+The bottom line: you should never create a pod with a label that matches the selector of a controller unless its template matches the pod definition. The more-encouraged procedure is to always use a controller like a ReplicaSet or, even better, a Deployment to create and maintain your pods.
+
+
+
 # Deleting Replicaset
 
 ```
