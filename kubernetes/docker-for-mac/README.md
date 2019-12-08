@@ -1,4 +1,4 @@
-# How to install Metrics Server using Helm on Docker Desktop for Mac
+# How to install Helm on Docker Desktop for Mac
 
 Metrics Server is a cluster-wide aggregator of resource usage data. Metrics server collect metrics from Summary API, exposed by Kubelet on each node.
 
