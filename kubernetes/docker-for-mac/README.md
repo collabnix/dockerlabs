@@ -73,6 +73,12 @@ Server: &version.Version{SemVer:"v2.12.1", GitCommit:"02a47c7249b1fc6d8fd3b94e6b
 [Captains-Bay]🚩 >
 ```
 
+## Installing Metrics Server using Helm
+
+
+```
+helm repo add bitnami https://charts.bitnami.com/bitnami
+```
 
 ```
 [Captains-Bay]🚩 >  helm install --name collabmetric bitnami/metrics-server
