@@ -197,4 +197,24 @@ command:
 {"kind":"NodeMetricsList","apiVersion":"metrics.k8s.io/v1beta1","metadata":{"selfLink":"/apis/metrics.k8s.io/v1beta1/nodes"},"items":[]}
 ```
 
+```
+[Captains-Bay]🚩 >  kubectl get po
+NAME                                           READY     STATUS    RESTARTS   AGE
+collabmetric-metrics-server-77f467bdb9-cx8fx   1/1       Running   0          2m
+[Captains-Bay]🚩 >  
+```
 
+
+```
+[Captains-Bay]🚩 >  kubectl get po,svc,deploy
+NAME                                              READY     STATUS    RESTARTS   AGE
+po/collabmetric-metrics-server-77f467bdb9-cx8fx   1/1       Running   0          2m
+
+NAME                              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+svc/collabmetric-metrics-server   ClusterIP   10.102.200.195   <none>        443/TCP   2m
+svc/kubernetes                    ClusterIP   10.96.0.1        <none>        443/TCP   10d
+
+NAME                                 DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deploy/collabmetric-metrics-server   1         1         1            1           2m
+[Captains-Bay]🚩 >  
+```
