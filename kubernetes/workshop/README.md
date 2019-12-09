@@ -58,3 +58,8 @@
  - [Listing the created components]()
  - [Connecting one pod to another through the Headless Service]()
  - [Deleting the StatefulSet]()
+
+#Contributors
+
+- Ajeet Singh Raina
+- Sangam Biradar
