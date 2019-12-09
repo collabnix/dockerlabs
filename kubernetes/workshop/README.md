@@ -59,7 +59,7 @@
  - [Connecting one pod to another through the Headless Service]()
  - [Deleting the StatefulSet]()
 
-#Contributors
+# Contributors
 
 - Ajeet Singh Raina
 - Sangam Biradar
