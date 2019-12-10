@@ -281,3 +281,115 @@ Events:
   Normal  Created    5m    kubelet, docker-desktop  Created container metrics-server
   Normal  Started    5m    kubelet, docker-desktop  Started container metrics-server
   ```
+  
+  ## Installing Prometheus using Helm
+  
+  ```
+  [Captains-Bay]🚩 >  helm list
+NAME            	REVISION	UPDATED                 	STATUS  	CHART           	APP VERSION	NAMESPACE
+triangular-moose	1       	Tue Dec 10 09:12:22 2019	DEPLOYED	prometheus-6.7.0	2.2.1      	default  
+[Captains-Bay]🚩 >  helm status triangle-moose
+Error: getting deployed release "triangle-moose": release: "triangle-moose" not found
+[Captains-Bay]🚩 >  helm status triangular-moose
+LAST DEPLOYED: Tue Dec 10 09:12:22 2019
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/ConfigMap
+NAME                                      DATA  AGE
+triangular-moose-prometheus-alertmanager  1     2m29s
+triangular-moose-prometheus-server        3     2m29s
+
+==> v1beta1/ClusterRoleBinding
+NAME                                            AGE
+triangular-moose-prometheus-kube-state-metrics  2m28s
+triangular-moose-prometheus-server              2m28s
+
+==> v1/Service
+NAME                                            TYPE       CLUSTER-IP     EXTERNAL-IP  PORT(S)   AGE
+triangular-moose-prometheus-alertmanager        ClusterIP  10.99.237.104  <none>       80/TCP    2m28s
+triangular-moose-prometheus-kube-state-metrics  ClusterIP  None           <none>       80/TCP    2m28s
+triangular-moose-prometheus-node-exporter       ClusterIP  None           <none>       9100/TCP  2m28s
+triangular-moose-prometheus-pushgateway         ClusterIP  10.103.52.228  <none>       9091/TCP  2m28s
+triangular-moose-prometheus-server              ClusterIP  10.98.245.167  <none>       80/TCP    2m28s
+
+==> v1beta1/Deployment
+NAME                                            DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+triangular-moose-prometheus-alertmanager        1        1        1           1          2m28s
+triangular-moose-prometheus-kube-state-metrics  1        1        1           1          2m28s
+triangular-moose-prometheus-pushgateway         1        1        1           1          2m28s
+triangular-moose-prometheus-server              1        1        1           1          2m28s
+
+==> v1/Pod(related)
+NAME                                                             READY  STATUS   RESTARTS  AGE
+triangular-moose-prometheus-node-exporter-k5fvb                  1/1    Running  0         2m28s
+triangular-moose-prometheus-alertmanager-7c7697975-hl5lc         2/2    Running  0         2m28s
+triangular-moose-prometheus-kube-state-metrics-8664457b84-wfvvw  1/1    Running  0         2m28s
+triangular-moose-prometheus-pushgateway-78445cccf4-zvxx8         1/1    Running  0         2m28s
+triangular-moose-prometheus-server-85bc78855d-s9vsm              2/2    Running  0         2m28s
+
+==> v1/PersistentVolumeClaim
+NAME                                      STATUS  VOLUME                                    CAPACITY  ACCESS MODES  STORAGECLASS  AGE
+triangular-moose-prometheus-alertmanager  Bound   pvc-e67f7850-0774-40b5-90ef-66b3bf4b7481  2Gi       RWO           hostpath      2m29s
+triangular-moose-prometheus-server        Bound   pvc-8b926d7a-d67d-4c0d-ae42-2bcd2b33beed  8Gi       RWO           hostpath      2m29s
+
+==> v1/ServiceAccount
+NAME                                            SECRETS  AGE
+triangular-moose-prometheus-alertmanager        1        2m29s
+triangular-moose-prometheus-kube-state-metrics  1        2m29s
+triangular-moose-prometheus-node-exporter       1        2m29s
+triangular-moose-prometheus-pushgateway         1        2m29s
+triangular-moose-prometheus-server              1        2m29s
+
+==> v1beta1/ClusterRole
+NAME                                            AGE
+triangular-moose-prometheus-kube-state-metrics  2m29s
+triangular-moose-prometheus-server              2m28s
+
+==> v1beta1/DaemonSet
+NAME                                       DESIRED  CURRENT  READY  UP-TO-DATE  AVAILABLE  NODE SELECTOR  AGE
+triangular-moose-prometheus-node-exporter  1        1        1      1           1          <none>         2m28s
+
+
+NOTES:
+The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
+triangular-moose-prometheus-server.default.svc.cluster.local
+
+
+Get the Prometheus server URL by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=server" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace default port-forward $POD_NAME 9090
+
+
+The Prometheus alertmanager can be accessed via port 80 on the following DNS name from within your cluster:
+triangular-moose-prometheus-alertmanager.default.svc.cluster.local
+
+
+Get the Alertmanager URL by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=alertmanager" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace default port-forward $POD_NAME 9093
+
+
+The Prometheus PushGateway can be accessed via port 9091 on the following DNS name from within your cluster:
+triangular-moose-prometheus-pushgateway.default.svc.cluster.local
+
+
+Get the PushGateway URL by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=pushgateway" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace default port-forward $POD_NAME 9091
+
+For more information on running Prometheus, visit:
+https://prometheus.io/
+
+[Captains-Bay]🚩 >  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=server" -o jsonpath="{.items[0].metadata.name}")
+[Captains-Bay]🚩 >  kubectl --namespace default port-forward $POD_NAME 9090
+Forwarding from 127.0.0.1:9090 -> 9090
+
+Handling connection for 9090
+Handling connection for 9090
+Handling connection for 9090
+Handling connection for 9090
+Handling connection for 9090
+Handling connection for 9090
+```
