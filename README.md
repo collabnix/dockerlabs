@@ -41,7 +41,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 ## Kubernetes Workshop/Labs
 
-- [Kubernetes101](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/workshop) - In-Progress
+- [Kubernetes101](./kubernetes/workshop/README.md) - In-Progress
 
 - [Kubernetes201]() - Pending
 
