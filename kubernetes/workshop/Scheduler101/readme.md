@@ -4,6 +4,8 @@
 
 ## what is the scheduler for?
 
+![](https://raw.githubusercontent.com/collabnix/dockerlabs/master/kubernetes/workshop/Scheduler101/schedulerhow.png)
+
 The Kubernetes scheduler is in charge of scheduling pods onto nodes. Basically it works like this:
 
    1. You create a pod
