@@ -41,7 +41,7 @@
 ## Scheduler101
 
  - [Introductory Slides]()
- - [How Kubernetes Selects the Right node?]()
+ - [How Kubernetes Selects the Right node?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/readme.md)
  - [Node Affinity]()
  - [Anti-Node Affinity]()
  - [Nodes taints and tolerations]()
