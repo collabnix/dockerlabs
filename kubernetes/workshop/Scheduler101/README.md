@@ -7,8 +7,4 @@
 - The kubelet on the chosen node is notified that there is a pod that is pending execution.
 - The kubelet executes the Pod, and the later starts running on the node.
 
-![](https://raw.githubusercontent.com/collabnix/dockerlabs/master/kubernetes/workshop/img/pod.jpg)
-
-- 
-- 
-- 
+![](https://github.com/Rachitmehrotra/dockerlabs/blob/master/kubernetes/workshop/img/pod.jpg)
