@@ -89,14 +89,11 @@ ID           Name    Public IPv4
   ## Using docker context
   
   
-  ```
-  sudo systemctl edit docker.service
+```
+sudo systemctl edit docker.service
 ```
 
 Add the below entry:
-
-```
-
 
 ```
 [Service]
