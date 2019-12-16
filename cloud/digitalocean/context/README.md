@@ -13,7 +13,7 @@ brew install doctl
 
 ```
 [Captains-Bay]🚩 >  doctl auth init
-Using token [e76eccd97dadb6c47240d9dd8ede816048848155c286a23cd424aa4bfc2d0032]
+Using token [<>]
 
 Validating token... OK
 
@@ -65,14 +65,16 @@ ID           Name    Public IPv4
 ## Bring up Node #1
 
 ```
- docker-machine create --driver digitalocean --digitalocean-access-token 3de3171cc6ffa313804d6a8f1f5dd639aec627f0612ac73d0afff149ab97229d node1
+ docker-machine create --driver digitalocean --digitalocean-access-token 3xxxxxx49ab97229d node1
  ```
  
  ## Bring up Node #2
  
  ```
-  docker-machine create --driver digitalocean --digitalocean-access-token 3de3171cc6ffa313804d6a8f1f5dd639aec627f0612ac73d0afff149ab97229d node2
+  docker-machine create --driver digitalocean --digitalocean-access-token 3xxxxxff149ab97229d node2
   ```
+  
+  
 
 
 ```
