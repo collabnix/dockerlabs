@@ -1,12 +1,11 @@
 # How Kubernetes Selects The Right node?
 
--  Perhaps the hardest part of the above steps is when the Scheduler decides which node it should select for running the pod.
-- Indeed, this part takes the most work as there are several algorithms that the Scheduler must use to make this decision. Some of those algorithms depend on user-supplied options, while Kubernetes itself calculates others.
-- They can be explained like a set of questions that the Scheduler asks the node to decide it.
+- This part takes the most work as there are several algorithms that the Scheduler must use to make this decision. Some of those algorithms depend on user-supplied options, while Kubernetes itself calculates others.
+- In simple world we can explain in simple questions - just assume schduler ask these questions to nodes-
 # Do You Have What it Takes To Run This Pod?
 
 - A node may be overloaded with so many busy pods consuming most of its CPU and memory. So, when the scheduler has a Pod to deploy, it determines whether or not the node has the necessary resources.
-- If a Pod deploy to node that doesnot have enough memeory(example) that pod has requesting that hosted appliction might behave unexpectedly or even crash.
+- If a Pod deploy to node that doesnot have enough memeory(just an example ) that pod has requesting that hosted appliction might behave unexpectedly or even crash.
 
 # Are You a Better Candidate For Having This Pod ?
 
