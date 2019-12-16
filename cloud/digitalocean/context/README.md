@@ -1,9 +1,81 @@
-# Demonstrating Context Switching in Digital Ocean
+# Building & Managing Containerized Application on Cloud Platform
 
+Pre-requisite:
 
+- Docker Desktop for Mac 2.1.7.0+
+- Install doctl - doctl is a command line interface for the DigitalOcean API.
+
+```
+brew install doctl
+```
+
+## Method #1: Using doctl
+
+```
+[Captains-Bay]🚩 >  doctl auth init
+Using token [e76eccd97dadb6c47240d9dd8ede816048848155c286a23cd424aa4bfc2d0032]
+
+Validating token... OK
+
+[Captains-Bay]🚩 > 
+```
+
+## Retrieving DO Account Information
+
+```
+[Captains-Bay]🚩 >  doctl account get
+Email                    Droplet Limit    Email Verified    UUID                                    Status
+contact@collabnix.com    10               true              e0786fe2-d4f5-4d54-9e67-47db69390f46    active
+[Captains-Bay]🚩 >
+```
+
+## Interacting with all your DO resources
+
+doctl is able to interact with all of your DigitalOcean resources. Below are a few common usage examples.
+
+```
+[Captains-Bay]🚩 >  doctl compute droplet list
+ID    Name    Public IPv4    Private IPv4    Public IPv6    Memory    VCPUs    Disk    Region    Image    Status    Tags    Features    Volumes
+[Captains-Bay]🚩 >  
+```
+
+## Creating a new Debian Instance
+
+```
+doctl compute droplet create test --size s-1vcpu-1gb    --image debian-10-x64 --region nyc1
+```
+
+```
+[Captains-Bay]🚩 >  doctl compute droplet list
+ID           Name    Public IPv4        Private IPv4    Public IPv6    Memory    VCPUs    Disk    Region    Image              Status    Tags    Features    Volumes
+171726228    test    206.189.207.163                                   1024      1        25      nyc1      Debian 10.0 x64    active    
 ```
 
 
+```
+[Captains-Bay]🚩 >  doctl compute droplet list --format "ID,Name,PublicIPv4"
+ID           Name    Public IPv4
+171726228    test    206.189.207.163
+```
+
+## Method-2: Using Docker Machine
+
+- Grab the token from DO site
+
+## Bring up Node #1
+
+```
+ docker-machine create --driver digitalocean --digitalocean-access-token 3de3171cc6ffa313804d6a8f1f5dd639aec627f0612ac73d0afff149ab97229d node1
+ ```
+ 
+ ## Bring up Node #2
+ 
+ ```
+  docker-machine create --driver digitalocean --digitalocean-access-token 3de3171cc6ffa313804d6a8f1f5dd639aec627f0612ac73d0afff149ab97229d node2
+  ```
+
+
+```
 [Captains-Bay]🚩 >  sudo docker context create --docker host=tcp://68.183.148.254:2375 mydo
 Password:
 mydo
