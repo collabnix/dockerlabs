@@ -7,6 +7,7 @@
 - A node may be overloaded with so many busy pods consuming most of its CPU and memory. So, when the scheduler has a Pod to deploy, it determines whether or not the node has the necessary resources.
 - If a Pod deploy to node that doesnot have enough memeory(just an example ) that pod has requesting that hosted appliction might behave unexpectedly or even crash.
 
+ ![](https://github.com/Rachitmehrotra/dockerlabs/blob/master/kubernetes/workshop/img/schduler1.PNG)
 # Are You a Better Candidate For Having This Pod ?
 
 - In addition to true/false decisions a.k.a predicates, the scheduler executes some calculations (or functions) to determine which node is more suited to be hosting the pod in question.
