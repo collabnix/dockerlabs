@@ -30,7 +30,7 @@
  ## Deployment101
  
  - [Introductory Slides]()
- - [Performing Updates with Zero Downtime (Deployment Rolling Updates)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md)
+ - [Performing Updates with Zero Downtime (Deployment Rolling Updates)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md) - Done 
  - [Kubernetes Deployments Strategies Overview]()
     - [Rolling Updates]()
     - [Recreate Updates]()
@@ -42,9 +42,9 @@
 
  - [Introductory Slides]()
  - [How Kubernetes Selects the Right node?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/readme.md)
- - [Node Affinity](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/node_affinity.md)
- - [Anti-Node Affinity](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/Anti-Node-Affinity.md)
- - [Nodes taints and tolerations](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/Nodes_taints_and%20_tolerations.md)
+ - [Node Affinity](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/node_affinity.md) - Done
+ - [Anti-Node Affinity](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/Anti-Node-Affinity.md) - Done
+ - [Nodes taints and tolerations](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/Nodes_taints_and%20_tolerations.md) - Done
  
  ## StatefulSets101
  
