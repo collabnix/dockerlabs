@@ -34,8 +34,8 @@
  - [Kubernetes Deployments Strategies Overview]()
     - [Rolling Updates]()
     - [Recreate Updates]()
- -  [Updating a Deployment while another is in progress (Rollover Updates)]()
- - [Undoing a deployment (aka Rolling Back)]()
+ -  [Updating a Deployment while another is in progress (Rollover Updates)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#step-3-perform-rolling-updates-to-application-deployment) - Done 
+ - [Undoing a deployment (aka Rolling Back)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#step-4-rollback-updates-to-application-deployment) - Done 
  - [Scaling and Autoscaling Deployments]()
 
 ## Scheduler101
