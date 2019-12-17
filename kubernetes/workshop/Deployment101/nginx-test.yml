@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-test
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      service: http-server
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        service: http-server
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.10.2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
