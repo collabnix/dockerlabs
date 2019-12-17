@@ -44,7 +44,7 @@
  - [How Kubernetes Selects the Right node?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/readme.md)
  - [Node Affinity](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/node_affinity.md)
  - [Anti-Node Affinity](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/Anti-Node-Affinity.md)
- - [Nodes taints and tolerations]()
+ - [Nodes taints and tolerations](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/Nodes_taints_and%20_tolerations.md)
  
  ## StatefulSets101
  
