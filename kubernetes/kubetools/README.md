@@ -1,7 +1,7 @@
 # Kubetools - Curated List of Kubernetes Tools
 
 
-## Kubernetes Cluster Management
+## K8s Cluster Management
 
 Popeye - [A Kubernetes cluster resource sanitizer](https://github.com/derailed/popeye) <br>
 kops - [Production Grade K8s Installation, Upgrades, and Management](https://github.com/kubernetes/kops) <br>
@@ -11,17 +11,17 @@ Crash-diagnostic - [Crash-Diagnostics is a tool to help investigate, analyze, an
 K9s - [Kubernetes CLI To Manage Your Clusters In Style!](https://github.com/derailed/k9s) <br>
 Metalk8s - [An opinionated Kubernetes distribution with a focus on long-term on-prem deployments](https://github.com/scality/metalk8s) <br>
 
-## Kubernetes Monitoring
+## K8s  Monitoring
 Kiali - [Kiali project, observability for the Istio service mesh](https://github.com/kiali/kiali) <br>
 Prometheus - [The Prometheus monitoring system and time series database.](https://github.com/prometheus/prometheus) <br>
 Grafana - [The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More](https://github.com/grafana/grafana)  <br>
 
-## Kubernetes Troubleshooting
+## K8s Troubleshooting
 
 ## Kubernetes CI integration Tools
 Skaffold - [Easy and Repeatable Kubernetes Development](https://github.com/GoogleContainerTools/skaffold) <br>
 
-## Kubernetes Load Testing
+## K8s Load Testing
 k6 - [A modern load testing tool, using Go and JavaScript](https://github.com/loadimpact/k6) <br>
 
 ## Service Mesh
