@@ -3,13 +3,13 @@
 
 ## Kubernetes Cluster Management
 
-[Popeye - A Kubernetes cluster resource sanitizer](https://github.com/derailed/popeye) <br>
+Popeye - [A Kubernetes cluster resource sanitizer](https://github.com/derailed/popeye) <br>
 kops - [Production Grade K8s Installation, Upgrades, and Management](https://github.com/kubernetes/kops) <br>
-[Kubernetes Operational View - read-only system dashboard for multiple K8s clusters](https://github.com/sangam14/kube-ops-view) <br>
-[Kubernetes prompt info](https://github.com/jlesquembre/kubeprompt) <br>
-[Crash-Diagnostics is a tool to help investigate, analyze, and troubleshoot unresponsive or crashed Kubernetes clusters](https://github.com/vmware-tanzu/crash-diagnostics) <br>
-[Kubernetes CLI To Manage Your Clusters In Style!](https://github.com/derailed/k9s) <br>
-[An opinionated Kubernetes distribution with a focus on long-term on-prem deployments](https://github.com/scality/metalk8s) <br>
+Kube-ops-view - [Kubernetes Operational View - read-only system dashboard for multiple K8s clusters](https://github.com/sangam14/kube-ops-view) <br>
+Kubeprompt - [Kubernetes prompt info](https://github.com/jlesquembre/kubeprompt) <br>
+Crash-diagnostic - [Crash-Diagnostics is a tool to help investigate, analyze, and troubleshoot unresponsive or crashed Kubernetes clusters](https://github.com/vmware-tanzu/crash-diagnostics) <br>
+K9s - [Kubernetes CLI To Manage Your Clusters In Style!](https://github.com/derailed/k9s) <br>
+Metalk8s - [An opinionated Kubernetes distribution with a focus on long-term on-prem deployments](https://github.com/scality/metalk8s) <br>
 
 ## Kubernetes Monitoring
 Kiali - [Kiali project, observability for the Istio service mesh](https://github.com/kiali/kiali) <br>
