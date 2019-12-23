@@ -12,7 +12,7 @@ jetson@master1:~$ docker network create jetnet
 
 ## Run Redis Server
 
-
+```
 jetson@master1:~$ docker run --name myredis -d arm64v8/redis redis-server --appendonly yes
 Unable to find image 'arm64v8/redis:latest' locally
 latest: Pulling from arm64v8/redis
@@ -22,7 +22,6 @@ b4732d44fe3a: Pull complete
 8d7b209a7506: Pull complete
 9e4b3a6b2cf6: Waiting
 cce4db8cec51: Download complete
-
 ```
 
 ## Connect Redis Client running inside Docker container to Redis Server using rediscli
