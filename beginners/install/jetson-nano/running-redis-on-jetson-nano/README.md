@@ -1,4 +1,4 @@
-# How to run Redis Open Source on Jetson Nano
+# How to run Dockerized Redis DB on  Jetson Nano
 
 Please note that Jetson Nano is ARMv8 (64bit) and hence we need to verify if ARM64v8 Redis image is available or not.
 
