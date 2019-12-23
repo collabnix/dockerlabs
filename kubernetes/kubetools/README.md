@@ -39,4 +39,4 @@ Cri-tools - [CLI and validation tools for Kubelet Container Runtime Interface (C
 KubeEdge - [Kubernetes Native Edge Computing Framework](https://github.com/kubeedge/kubeedge) <br>
 
 ## Non categorize
-Rude - [A Kubernetes implementation of the Open Application Model specification](https://github.com/oam-dev/rudr) <br>
+Rudr - [A Kubernetes implementation of the Open Application Model specification](https://github.com/oam-dev/rudr) <br>
