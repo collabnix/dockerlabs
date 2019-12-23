@@ -33,7 +33,7 @@ Popeye - [A Kubernetes cluster resource sanitizer](https://github.com/derailed/p
 Stern - [Multi pod and container log tailing for Kubernetes](https://github.com/wercker/stern) <br>
 Cri-tools - [CLI and validation tools for Kubelet Container Runtime Interface (CRI)](https://github.com/kubernetes-sigs/cri-tools) <br>
 
-## AI ML IoT Toools 
+## Machine Learning/Deep Learning
 
 ## Compute Edge Tools
 KubeEdge - [Kubernetes Native Edge Computing Framework](https://github.com/kubeedge/kubeedge) <br>
