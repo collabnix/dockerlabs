@@ -10,7 +10,7 @@ Kubeprompt - [Kubernetes prompt info](https://github.com/jlesquembre/kubeprompt)
 Metalk8s - [An opinionated Kubernetes distribution with a focus on long-term on-prem deployments](https://github.com/scality/metalk8s) <br>
 kind - [Kubernetes IN Docker - local clusters for testing Kubernetes](https://github.com/kubernetes-sigs/kind)<br>
 
-## K8s Cluster core CLI tools with 
+## K8s Cluster with core CLI tools
 
 Bootkube - [bootkube - Launch a self-hosted Kubernetes cluster](https://github.com/kubernetes-sigs/bootkube) <br>
 kubectx + kubens - [Switch faster between clusters and namespaces in kubectl](https://github.com/ahmetb/kubectx)<br>
