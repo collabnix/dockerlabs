@@ -3,29 +3,79 @@
 Please note that Jetson Nano is ARMv8 (64bit) and hence we need to verify if ARM64v8 Redis image is available or not.
 
 
-## Create a network
-
-```
-jetson@master1:~$ docker network create jetnet
-3ec1dd0052978e999ccd27dab8b581644e7113b956a2b9c14fef03128731d3ae
-```
-
 ## Run Redis Server
 
 ```
-jetson@master1:~$ docker run --name myredis -d arm64v8/redis redis-server --appendonly yes
-Unable to find image 'arm64v8/redis:latest' locally
-latest: Pulling from arm64v8/redis
-a4f3dd4087f9: Pull complete
-b4732d44fe3a: Pull complete
-31356b9173df: Pull complete
-8d7b209a7506: Pull complete
-9e4b3a6b2cf6: Waiting
-cce4db8cec51: Download complete
-```
-
-## Connect Redis Client running inside Docker container to Redis Server using rediscli
+jetson@master1:~$ docker run --name redis-server -d arm64v8/redis redis-server --appendonly yes
+6b80312b1e05499d565c6962b03f852db7064d5be97acb11dae31791b55ef320
+jetson@master1:~$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+6b80312b1e05        arm64v8/redis       "docker-entrypoint.s…"   6 seconds ago       Up 3 seconds        6379/tcp            redis-server
+jetson@master1:~$
 
 ```
-docker run -it --network jetnet --rm arm64v8/redis redis-cli -h myredis
+
+```
+jetson@master1:~$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+340437cc7c7c        arm64v8/redis       "docker-entrypoint.s…"   35 seconds ago      Up 32 seconds       6379/tcp            myredis
+```
+
+```
+jetson@master1:~$ docker logs -f 4e194
+1:C 23 Dec 2019 15:49:21.819 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 23 Dec 2019 15:49:21.819 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 23 Dec 2019 15:49:21.819 # Configuration loaded
+1:M 23 Dec 2019 15:49:21.828 * Running mode=standalone, port=6379.
+1:M 23 Dec 2019 15:49:21.828 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+1:M 23 Dec 2019 15:49:21.828 # Server initialized
+1:M 23 Dec 2019 15:49:21.828 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 23 Dec 2019 15:49:21.829 * Ready to accept connections
+
+```
+
+## Run the Redis CLI in the container
+
+```
+jetson@master1:~$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                        NAMES
+4e1941c5be9b        arm64v8/redis       "docker-entrypoint.s…"   5 minutes ago       Up 4 minutes        192.168.1.7:6379->6379/tcp   redis-server
+jetson@master1:~$ docker exec -it 4e1941 sh
+# redis-cli
+127.0.0.1:6379>
+
+```
+
+```
+# redis-cli
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379>
+```
+```
+# redis-cli
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379> set name collabnix
+OK
+127.0.0.1:6379> get name
+"collabnix"
+```
+
+```
+127.0.0.1:6379> incr counter
+(integer) 1
+127.0.0.1:6379> incr counter
+(integer) 2
+127.0.0.1:6379>
+```
+
+## Connect from another linked container
+
+```
+jetson@master1:~$ docker run -it --rm --link redis-server:redis --name client1 arm64v8/redis sh
+# redis-cli -h redis
+redis:6379> get name
+"collabnix"
+redis:6379>
 ```
