@@ -1,6 +1,6 @@
 ## Docker WorkShop for Beginners 
 
-![](https://github.com/collabnix/dockerlabs/blob/master/workshop/docker/dockerlabs.png)
+![](https://raw.githubusercontent.com/collabnix/dockerlabs/master/workshop/docker/dockerlabs.png)
 
 
 
