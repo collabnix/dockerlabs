@@ -28,10 +28,10 @@ k6 - [A modern load testing tool, using Go and JavaScript](https://github.com/lo
 Istio - [Connect, secure, control, and observe services](https://github.com/istio/istio) <br>
 
 ## Observability
-[Tools for observing Kubernetes resources in real time](https://github.com/pulumi/kubespy) <br>
-[A Kubernetes cluster resource sanitizer](https://github.com/derailed/popeye?utm_sq=g9348xrxix) <br>
-[Multi pod and container log tailing for Kubernetes](https://github.com/wercker/stern) <br>
-[CLI and validation tools for Kubelet Container Runtime Interface (CRI)](https://github.com/kubernetes-sigs/cri-tools) <br>
+Kubespy - [Tools for observing Kubernetes resources in real time](https://github.com/pulumi/kubespy) <br>
+Popeye - [A Kubernetes cluster resource sanitizer](https://github.com/derailed/popeye?utm_sq=g9348xrxix) <br>
+Stern - [Multi pod and container log tailing for Kubernetes](https://github.com/wercker/stern) <br>
+Cri-tools - [CLI and validation tools for Kubelet Container Runtime Interface (CRI)](https://github.com/kubernetes-sigs/cri-tools) <br>
 
 ## AI ML IoT Toools 
 
@@ -39,4 +39,4 @@ Istio - [Connect, secure, control, and observe services](https://github.com/isti
 KubeEdge - [Kubernetes Native Edge Computing Framework](https://github.com/kubeedge/kubeedge) <br>
 
 ## Non categorize
-[A Kubernetes implementation of the Open Application Model specification](https://github.com/oam-dev/rudr) <br>
+Rude - [A Kubernetes implementation of the Open Application Model specification](https://github.com/oam-dev/rudr) <br>
