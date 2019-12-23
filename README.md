@@ -58,7 +58,7 @@ Collabnix Labs brings you tutorials that help you get hands-on experience using 
 
 - [Kubernetes Cheatsheets](./kubernetes/cheatsheets/kubectl.md)
 
-- [Kubetools](./kubernetes/kubetools/README.md)
+- [Kubetools](./kubernetes/kubetools/)
 
 
 # Docker-Ready Stack for You
