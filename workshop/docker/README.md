@@ -1,5 +1,7 @@
 ## Docker WorkShop for Beginners 
 
+![img](https://github.com/collabnix/dockerlabs/blob/master/workshop/docker/dockerlabs.png)
+
 
 
 ### Pre-requisite:
