@@ -1,10 +1,10 @@
-# Welcome to Collabnix Labs  [![Say Thanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/collabnix) [![Slack ](https://img.shields.io/badge/collabnix/dockerlabs-pink.svg)](https://tinyurl.com/y973wcq8) ![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fcollabnix.github.io%2Fdockerlabs%2F) [![Open Source Helpers](https://www.codetriage.com/collabnix/dockerlabs/badges/users.svg)](https://www.codetriage.com/collabnix/dockerlabs)
+# Welcome to Docker Labs  [![Say Thanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/collabnix) [![Slack ](https://img.shields.io/badge/collabnix/dockerlabs-pink.svg)](https://tinyurl.com/y973wcq8) ![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fcollabnix.github.io%2Fdockerlabs%2F) [![Open Source Helpers](https://www.codetriage.com/collabnix/dockerlabs/badges/users.svg)](https://www.codetriage.com/collabnix/dockerlabs)
 
 
 
 ![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/dockerlabs.jpeg)
 
-Collabnix Labs brings you tutorials that help you get hands-on experience using Docker & Kubernetes. Here you will find complete documentation of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://labs.play-with-docker.com/) & [Play with Kubernetes Platform](https://training.play-with-kubernetes.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed. Hence, we have everything ready for you to get started with.
+Docker Labs brings you tutorials that help you get hands-on experience using Docker & Kubernetes. Here you will find complete documentation of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer. Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with Docker Platform](https://labs.play-with-docker.com/) & [Play with Kubernetes Platform](https://training.play-with-kubernetes.com). This is a free browser based learning platform for you. Docker tools like Docker Engine, Docker Compose & Docker Machine are already installed. Hence, we have everything ready for you to get started with.
 
 #  Getting Started in 3 Simple Steps
 
