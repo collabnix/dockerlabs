@@ -12,7 +12,7 @@ kops - [Production Grade K8s Installation, Upgrades, and Management](https://git
 [An opinionated Kubernetes distribution with a focus on long-term on-prem deployments](https://github.com/scality/metalk8s) <br>
 
 ## Kubernetes Monitoring
-Kaili - [Kiali project, observability for the Istio service mesh](https://github.com/kiali/kiali) <br>
+Kiali - [Kiali project, observability for the Istio service mesh](https://github.com/kiali/kiali) <br>
 Prometheus - [The Prometheus monitoring system and time series database.](https://github.com/prometheus/prometheus) <br>
 Grafana - [The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More](https://github.com/grafana/grafana)  <br>
 
