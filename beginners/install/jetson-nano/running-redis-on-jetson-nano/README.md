@@ -79,3 +79,11 @@ redis:6379> get name
 "collabnix"
 redis:6379>
 ```
+
+## Important Notes
+
+Redis database is not an equivalent of database names in DBMS like mysql. It is a way to create isolation and namespacing for the keys, and only provides index based naming, not custom names like my_database.
+
+By default, redis has 0-15 indexes for databases, you can change that number databases NUMBER in redis.conf.
+
+And then you use SELECT command to select the database you want to work on.
