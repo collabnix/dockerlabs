@@ -1,2 +1,2 @@
-Django==2.1.11
+Django==2.1.15
 psycopg2
