@@ -2,7 +2,7 @@
 
 ## Pre-requisite:
 
-- [Introductory Slides]() - Pending
+- [Introductory Slides](http://dockerlabs.collabnix.com/kubernetes/workshop/Kubernetes_Intro_slides-1/Kubernetes_Intro_slides-1.html) - Done
 - [Deep Dive into Kubernetes Architecture](./Kubernetes_Architecture.md) - Done 
 - [Preparing 5-Node Kubernetes Cluster](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/kube101.md) - Done
 
