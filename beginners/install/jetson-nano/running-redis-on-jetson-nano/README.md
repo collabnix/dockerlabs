@@ -1,6 +1,6 @@
 # How to run Dockerized Redis DB on  Jetson Nano
 
-Why Redis on IoT?
+## Why Redis on IoT?
 
 If things connected with network it doesn’t mean it’s “smart”.Truly smart devices provide valuable services, are trusted, and are easy to use. This Make your life easier by implementing your own IoT solution as smart way.
 
