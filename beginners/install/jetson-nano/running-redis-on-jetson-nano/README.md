@@ -1,5 +1,13 @@
 # How to run Dockerized Redis DB on  Jetson Nano
 
+Why Redis on IoT?
+
+If things connected with network it doesn’t mean it’s “smart”.Truly smart devices provide valuable services, are trusted, and are easy to use. This Make your life easier by implementing your own IoT solution as smart way.
+
+Redis is an open source in memory database,cache and message broker. Redis supports various types of data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries.
+Most Off other database require considerable amount of resources for handle millions of transactions.Also it may be difficult to handle real-time analytics.
+Redis use minimum amount of resources and it has in built data structures, modules are advantage in delivering reliable IoT solutions.
+
 Please note that Jetson Nano is ARMv8 (64bit) and hence we need to verify if ARM64v8 Redis image is available or not.
 
 
