@@ -2,7 +2,8 @@
 
 ## Pre-requisite:
 
-- [Understanding Kubernetes Architecture](./Kubernetes_Architecture.md) - Done 
+- [Introductory Slides]() - Pending
+- [Deep Dive into Kubernetes Architecture](./Kubernetes_Architecture.md) - Done 
 - [Preparing 5-Node Kubernetes Cluster]() - Pending
 
 ## Pods101
