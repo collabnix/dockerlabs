@@ -8,7 +8,7 @@
 
 ## Pods101
 
- - [Introductory Slides]() 
+ - [Introductory Slides]() - Pending
  - [Deploying Your First Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md) - Done
  - [Viewing Your Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#viewing-your-pods) - Done
  - [Where is your Pod running on?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#which-node-is-this-pod-running-on) - Done
@@ -21,7 +21,7 @@
 
 ## ReplicaSet101
 
- - [Introductory Slides]()
+ - [Introductory Slides]() - Pending
  - [Creating Your First ReplicaSet - 4 Pods serving Nginx](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#creating-your-first-replicaset) - Done
  - [Removing a Pod from ReplicaSet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#removing-a-pod-from-a-replicaset) - Done
  - [Scaling & Autoscaling a ReplicaSet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#scaling-and-autoscaling-replicasets) - Done
@@ -30,7 +30,7 @@
  
  ## Deployment101
  
- - [Introductory Slides]()
+ - [Introductory Slides]() - Pending
  - [Performing Updates with Zero Downtime (Deployment Rolling Updates)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md) - Done 
  - [Kubernetes Deployments Strategies Overview]()
     - [Rolling Updates]()
@@ -41,7 +41,7 @@
 
 ## Scheduler101
 
- - [Introductory Slides]()
+ - [Introductory Slides]() - Pending
  - [How Kubernetes Selects the Right node?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/readme.md)
  - [Node Affinity](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/node_affinity.md) - Done
  - [Anti-Node Affinity](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/Anti-Node-Affinity.md) - Done
@@ -49,6 +49,7 @@
  
  ## StatefulSets101
  
+ - [Introductory Slides]() - Pending
  - [The difference between a Statefulset and a Deployment]()
  - [Deploying a Stateful Application Using Kubernetes Statefulset?]()
  - [Storage Class]()
