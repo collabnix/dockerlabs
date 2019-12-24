@@ -4,7 +4,7 @@
 
 - [Introductory Slides]() - Pending
 - [Deep Dive into Kubernetes Architecture](./Kubernetes_Architecture.md) - Done 
-- [Preparing 5-Node Kubernetes Cluster]() - Pending
+- [Preparing 5-Node Kubernetes Cluster](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/kube101.md) - Done
 
 ## Pods101
 
