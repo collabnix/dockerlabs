@@ -1,4 +1,4 @@
-# Kubernetes Workshop for Beginners
+# Kubernetes101 Workshop 
 
 ## Pre-requisite:
 
