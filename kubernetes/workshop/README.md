@@ -8,7 +8,7 @@
 
 ## Pods101
 
- - [Introductory Slides]() - Pending
+ - [Introductory Slides](http://dockerlabs.collabnix.com/kubernetes/workshop/Pods101_slides/Pods101.html) - Done
  - [Deploying Your First Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md) - Done
  - [Viewing Your Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#viewing-your-pods) - Done
  - [Where is your Pod running on?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#which-node-is-this-pod-running-on) - Done
