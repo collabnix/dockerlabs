@@ -1,10 +1,26 @@
-# Kubernetes Scheduler
+## What is Kubernetes Scheduling?
 
--  The task of the Kubernetes Scheduler is to choose a placement.
-- While scanning the API server (which it is continuously doing), the Kubernetes Scheduler detects that there is a new Pod without a nodeName parameter. The nodeName is what shows which node should be owning this Pod.
-- For every Pod that the scheduler discovers, the scheduler becomes responsible for finding the best Node for that Pod to run on. 
-- The Scheduler selects a suitable node for this Pod and updates the Pod definition with the node name (though the nodeName parameter).
-- The kubelet on the chosen node is notified that there is a pod that is pending execution.
-- The kubelet executes the Pod, and the later starts running on the node.
+- The Kubernetes Scheduler is a core component of Kubernetes: After a user or a controller creates a Pod, the Kubernetes Scheduler, monitoring the Object Store for unassigned Pods, will assign the Pod to a Node. Then, the Kubelet, monitoring the Object Store for assigned Pods, will execute the Pod.
 
-![](https://github.com/Rachitmehrotra/dockerlabs/blob/master/kubernetes/workshop/img/pod.jpg)
+## what is the scheduler for?
+
+![](https://raw.githubusercontent.com/collabnix/dockerlabs/master/kubernetes/workshop/Scheduler101/schedulerhow.png)
+
+The Kubernetes scheduler is in charge of scheduling pods onto nodes. Basically it works like this:
+
+   1. You create a pod
+   2. The scheduler notices that the new pod you created doesn’t have a node assigned to it
+   3. The scheduler assigns a node to the pod
+
+It’s not responsible for actually running the pod – that’s the kubelet’s job. So it basically just needs to make sure every pod has a node assigned to it. Easy, right?
+
+Kubernetes in general has this idea of a “controller”. A controller’s job is to:
+
+  - look at the state of the system
+  - notice ways in which the actual state does not match the desired state (like “this pod needs to be assigned a node”)
+  - repeat
+
+The scheduler is a kind of controller. There are lots of different controllers and they all have different jobs and operate independently.
+
+
+## How Kubernetes Selects The Right node?
