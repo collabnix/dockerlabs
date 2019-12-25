@@ -28,7 +28,7 @@
  - [Best Practices](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#best-practices) - Done
  - [Deleting ReplicaSets](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/replicaset101/README.md#deleting-replicaset) - Done
  
- ## Deployment101
+## Deployment101
  
  - [Introductory Slides]() - Pending
  - [Performing Updates with Zero Downtime (Deployment Rolling Updates)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md) - Done 
@@ -47,7 +47,7 @@
  - [Anti-Node Affinity](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/Anti-Node-Affinity.md) - Done
  - [Nodes taints and tolerations](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Scheduler101/Nodes_taints_and%20_tolerations.md) - Done
  
- ## StatefulSets101
+## StatefulSets101
  
  - [Introductory Slides]() - Pending
  - [The difference between a Statefulset and a Deployment]()
