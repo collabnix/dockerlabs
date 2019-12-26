@@ -12,13 +12,13 @@ Any developer can package up applications and deploy them on Kubernetes with bas
 
 - A CLI tool for Kubernetes
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubectl.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-kubectl.png)
 
 
 
 ## Master Node:
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubelet.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-kubelet.png)
 
 - The main machine that controls the nodes
 - Main entrypoint for all administrative tasks
@@ -26,7 +26,7 @@ Any developer can package up applications and deploy them on Kubernetes with bas
 
 ## Worker Node
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-worker-node.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-worker-node.png)
 
 - It is a worker machine in Kubernetes (used to be known as minion)
 - This machine performs the requested tasks. Each Node is controlled by the Master Node
@@ -35,7 +35,7 @@ Any developer can package up applications and deploy them on Kubernetes with bas
 
 ## Kubelet
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-kubelet.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-kubelet.png)
 
 - Primary node agent
 - Ensures that containers are running and healthy
@@ -51,7 +51,7 @@ Any developer can package up applications and deploy them on Kubernetes with bas
 - Pods are up and running until someone (or a controller) destroys them
 - Any data saved inside the Pod will disappear without a persistent storage
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-pod-new.png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-pod-new.png)
 
 
 ## Deployment:
@@ -64,9 +64,9 @@ Any developer can package up applications and deploy them on Kubernetes with bas
 - Deployment can scale up replicas of Pods.
 - kubernetes-deployment
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-deployment%20(1).png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-deployment%20(1).png)
 
-![alt text](https://github.com/ajeetraina/kubernetes101/blob/master/architecture/kubernetes-deployment%20(1).png)
+![alt text](https://raw.githubusercontent.com/ajeetraina/kubernetes101/master/architecture/kubernetes-deployment%20(1).png)
 
 ## Secret:
 
