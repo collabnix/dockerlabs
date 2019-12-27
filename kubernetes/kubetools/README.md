@@ -84,6 +84,7 @@ kube-state-metrics - [Add-on agent to generate and expose cluster-level metrics]
 Sloop - [Kubernetes History Visualization](https://github.com/salesforce/sloop?utm_sq=g90yo8t8s1)<br>
 kubectl tree 🎄 - [Kubectl plugin to observe object hierarchies through ownerReferences](https://github.com/ahmetb/kubectl-tree)<br>
 chaoskube - [chaoskube periodically kills random pods in your Kubernetes cluster](https://github.com/linki/chaoskube?utm_sq=g93lr8l8sf)<br>
+BotKube - [Helps you monitor your Kubernetes cluster(s), debug critical deployments and gives recommendations for standard practices](https://www.botkube.io/)
 
 ## Machine Learning/Deep Learning
 
