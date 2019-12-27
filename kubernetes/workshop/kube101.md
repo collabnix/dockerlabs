@@ -2,7 +2,7 @@
 
 To get started with Kubernetes, follow the below steps:
 
--  Open https://labs.play-with-kubernetes.com on your browser
+-  Open https://play-with-k8s.com on your browser
 
 ![Image](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/img/pwk1.png)
 
