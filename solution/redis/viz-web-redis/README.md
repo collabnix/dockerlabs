@@ -1,1 +1,1 @@
-# Vizualizer + Redis + Docker Swarm
+# Visualizer + Redis + Docker Swarm
