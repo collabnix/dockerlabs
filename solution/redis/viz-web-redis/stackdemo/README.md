@@ -5,6 +5,7 @@
 $ docker-compose build
 ```
 
+```
 redis uses an image, skipping
 Building web
 Step 1/5 : FROM python:3.4-alpine
