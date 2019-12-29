@@ -62,6 +62,34 @@ $ docker volume inspect myredis_data
 ]
 ```
 
+# Checking the redis logs 
+
+```
+$ docker service logs -f myredis_redis
+myredis_redis.1.p9kmflmsd999@manager3    |                 _._                                                  
+myredis_redis.1.p9kmflmsd999@manager3    |            _.-``__ ''-._                                             
+myredis_redis.1.p9kmflmsd999@manager3    |       _.-``    `.  `_.  ''-._           Redis 3.0.6 (00000000/0) 64 bit
+myredis_redis.1.p9kmflmsd999@manager3    |   .-`` .-```.  ```\/    _.,_ ''-._                                   
+myredis_redis.1.p9kmflmsd999@manager3    |  (    '      ,       .-`  | `,    )     Running in standalone mode
+myredis_redis.1.p9kmflmsd999@manager3    |  |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+myredis_redis.1.p9kmflmsd999@manager3    |  |    `-._   `._    /     _.-'    |     PID: 1
+myredis_redis.1.p9kmflmsd999@manager3    |   `-._    `-._  `-./  _.-'    _.-'                                   
+myredis_redis.1.p9kmflmsd999@manager3    |  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+myredis_redis.1.p9kmflmsd999@manager3    |  |    `-._`-._        _.-'_.-'    |           http://redis.io        
+myredis_redis.1.p9kmflmsd999@manager3    |   `-._    `-._`-.__.-'_.-'    _.-'                                   
+myredis_redis.1.p9kmflmsd999@manager3    |  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+myredis_redis.1.p9kmflmsd999@manager3    |  |    `-._`-._        _.-'_.-'    |                                  
+myredis_redis.1.p9kmflmsd999@manager3    |   `-._    `-._`-.__.-'_.-'    _.-'                                   
+myredis_redis.1.p9kmflmsd999@manager3    |       `-._    `-.__.-'    _.-'                                       
+myredis_redis.1.p9kmflmsd999@manager3    |           `-._        _.-'                                           
+myredis_redis.1.p9kmflmsd999@manager3    |               `-.__.-'                                               
+myredis_redis.1.p9kmflmsd999@manager3    | 
+myredis_redis.1.p9kmflmsd999@manager3    | 1:M 29 Dec 02:18:02.749 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+myredis_redis.1.p9kmflmsd999@manager3    | 1:M 29 Dec 02:18:02.749 # Server started, Redis version 3.0.6
+myredis_redis.1.p9kmflmsd999@manager3    | 1:M 29 Dec 02:18:02.749 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+myredis_redis.1.p9kmflmsd999@manager3    | 1:M 29 Dec 02:18:02.749 * The server is now ready to accept connections on port 6379
+```
+
 
 # [Optional] Running Redis Service under Docker Swarm Mode
 
