@@ -15,7 +15,7 @@ services:
           cpus: "0.1"
           memory: 50M
     ports:
-      - "80:80"
+      - "8000:8000"
     networks:
       - webnet
   visualizer:
