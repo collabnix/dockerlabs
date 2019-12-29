@@ -27,6 +27,8 @@ ih89yqze2bnx        myredis_web          replicated          5/5                
 [manager1] (local) root@192.168.0.45 ~/dockerlabs/solution/redis/viz-web-redis
 ```
 
+![My Image](https://github.com/collabnix/dockerlabs/blob/master/solution/redis/viz-web-redis/redis1.png)
+
 # Verifying if redis is running successfully
 
 ```
