@@ -21,9 +21,9 @@ docker stack deploy -c docker-compose.yml myredis
 ```
 $ docker service ls
 ID                  NAME                 MODE                REPLICAS            IMAGE                             PORTS
-hmistkdxnird        myredis_redis        replicated          1/1                 redis:6.0-rc1                     *:6379->6379/tcp
-xnvbfxjhhoy2        myredis_visualizer   replicated          1/1                 dockersamples/visualizer:stable   *:8080->8080/tcp
-f49rjg16u1n8        myredis_web          replicated          5/5                 ajeetraina/hellowhale:latest      *:80->80/tcp
+ydgp8j56apek        myredis_redis        replicated          1/1                 redis:3.0.6                       *:6379->6379/tcp
+ofqnb4282zo1        myredis_visualizer   replicated          1/1                 dockersamples/visualizer:stable   *:8080->8080/tcp
+bkxd3aklxhj7        myredis_web          replicated          5/5                 ajeetraina/redis-flask:latest     *:8000->8000/tcp
 ```
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/solution/redis/viz-web-redis/images/redis5.png)
