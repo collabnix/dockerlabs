@@ -2,7 +2,10 @@ version: "3"
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: ajeetraina/redis-flask-demo
+    image: ajeetraina/redis-flask
+    build:
+      context: ./stackdemo
+      dockerfile: Dockerfile
     deploy:
       replicas: 5
       restart_policy:
