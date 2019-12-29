@@ -26,7 +26,7 @@ xnvbfxjhhoy2        myredis_visualizer   replicated          1/1                
 f49rjg16u1n8        myredis_web          replicated          5/5                 ajeetraina/hellowhale:latest      *:80->80/tcp
 ```
 
-![My Image](https://github.com/collabnix/dockerlabs/blob/master/solution/redis/viz-web-redis/redis1.png)
+![My Image](https://github.com/collabnix/dockerlabs/blob/master/solution/redis/viz-web-redis/images/redis5.png)
 
 # Verifying if redis is running successfully
 
