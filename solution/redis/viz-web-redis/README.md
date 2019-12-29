@@ -282,6 +282,17 @@ Cluster Manager Commands:
 For check, fix, reshard, del-node, set-timeout you can specify the host and port of any working node in the cluster.
 ```
 
+```
+$ curl localhost:8000
+Hello World! I have been seen 6 times.
+[manager1] (local) root@192.168.0.30 ~/dockerlabs/solution/redis/viz-web-redis
+$ curl localhost:8000
+Hello World! I have been seen 7 times.
+[manager1] (local) root@192.168.0.30 ~/dockerlabs/solution/redis/viz-web-redis
+$ curl localhost:8000
+Hello World! I have been seen 8 times.
+[manager1] (local) root@192.168.0.30 ~/dockerlabs/solution/redis/viz-web-redis
+```
 
 ## Running RedisInSight
 
