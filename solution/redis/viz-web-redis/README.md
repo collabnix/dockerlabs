@@ -314,6 +314,7 @@ overall progress: 2 out of 2 tasks
 2/2: running   
 verify: Service converged 
 ```
+![My Image](https://github.com/collabnix/dockerlabs/blob/master/solution/redis/viz-web-redis/images/rebrow.png)
 
 # [Optional] Running Redis Service under Docker Swarm Mode
 
