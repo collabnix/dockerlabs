@@ -21,10 +21,9 @@ docker stack deploy -c docker-compose.yml myredis
 ```
 $ docker service ls
 ID                  NAME                 MODE                REPLICAS            IMAGE                             PORTS
-kbs2qhmqq81b        myredis_redis        replicated          1/1                 redis:3.0.6                       *:6379->6379/tcp
-om5yzf5jxkka        myredis_visualizer   replicated          1/1                 dockersamples/visualizer:stable   *:8080->8080/tcp
-ih89yqze2bnx        myredis_web          replicated          5/5                 ajeetraina/hellowhale:latest      *:80->80/tcp
-[manager1] (local) root@192.168.0.45 ~/dockerlabs/solution/redis/viz-web-redis
+hmistkdxnird        myredis_redis        replicated          1/1                 redis:6.0-rc1                     *:6379->6379/tcp
+xnvbfxjhhoy2        myredis_visualizer   replicated          1/1                 dockersamples/visualizer:stable   *:8080->8080/tcp
+f49rjg16u1n8        myredis_web          replicated          5/5                 ajeetraina/hellowhale:latest      *:80->80/tcp
 ```
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/solution/redis/viz-web-redis/redis1.png)
@@ -33,11 +32,8 @@ ih89yqze2bnx        myredis_web          replicated          5/5                
 
 ```
 $ docker service ps myredis_redis
-ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE           ERROR               PORTS
-p9kmflmsd999        myredis_redis.1     redis:3.0.6         manager3            Running             Running 4 minutes ago                       
-[manager1] (local) root@192.168.0.45 ~/dockerlabs/solution/redis/viz-web-redis
-$ 
-
+ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE                ERROR               PORTS
+robvimouagqj        myredis_redis.1     redis:6.0-rc1       manager1            Running             Running about a minute ago 
 ```
 
 
@@ -65,38 +61,191 @@ $ docker volume inspect myredis_data
 # Checking the redis logs 
 
 ```
+[manager1] (local) root@192.168.0.45 ~/dockerlabs/solution/redis/viz-web-redis
+$ docker service ps myredis_redis
+ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE                ERROR               PORTS
+robvimouagqj        myredis_redis.1     redis:6.0-rc1       manager1            Running             Running about a minute ago                       
+[manager1] (local) root@192.168.0.45 ~/dockerlabs/solution/redis/viz-web-redis
 $ docker service logs -f myredis_redis
-myredis_redis.1.p9kmflmsd999@manager3    |                 _._                                                  
-myredis_redis.1.p9kmflmsd999@manager3    |            _.-``__ ''-._                                             
-myredis_redis.1.p9kmflmsd999@manager3    |       _.-``    `.  `_.  ''-._           Redis 3.0.6 (00000000/0) 64 bit
-myredis_redis.1.p9kmflmsd999@manager3    |   .-`` .-```.  ```\/    _.,_ ''-._                                   
-myredis_redis.1.p9kmflmsd999@manager3    |  (    '      ,       .-`  | `,    )     Running in standalone mode
-myredis_redis.1.p9kmflmsd999@manager3    |  |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
-myredis_redis.1.p9kmflmsd999@manager3    |  |    `-._   `._    /     _.-'    |     PID: 1
-myredis_redis.1.p9kmflmsd999@manager3    |   `-._    `-._  `-./  _.-'    _.-'                                   
-myredis_redis.1.p9kmflmsd999@manager3    |  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
-myredis_redis.1.p9kmflmsd999@manager3    |  |    `-._`-._        _.-'_.-'    |           http://redis.io        
-myredis_redis.1.p9kmflmsd999@manager3    |   `-._    `-._`-.__.-'_.-'    _.-'                                   
-myredis_redis.1.p9kmflmsd999@manager3    |  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
-myredis_redis.1.p9kmflmsd999@manager3    |  |    `-._`-._        _.-'_.-'    |                                  
-myredis_redis.1.p9kmflmsd999@manager3    |   `-._    `-._`-.__.-'_.-'    _.-'                                   
-myredis_redis.1.p9kmflmsd999@manager3    |       `-._    `-.__.-'    _.-'                                       
-myredis_redis.1.p9kmflmsd999@manager3    |           `-._        _.-'                                           
-myredis_redis.1.p9kmflmsd999@manager3    |               `-.__.-'                                               
-myredis_redis.1.p9kmflmsd999@manager3    | 
-myredis_redis.1.p9kmflmsd999@manager3    | 1:M 29 Dec 02:18:02.749 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
-myredis_redis.1.p9kmflmsd999@manager3    | 1:M 29 Dec 02:18:02.749 # Server started, Redis version 3.0.6
-myredis_redis.1.p9kmflmsd999@manager3    | 1:M 29 Dec 02:18:02.749 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
-myredis_redis.1.p9kmflmsd999@manager3    | 1:M 29 Dec 02:18:02.749 * The server is now ready to accept connections on port 6379
+myredis_redis.1.robvimouagqj@manager1    | 1:C 29 Dec 2019 02:35:54.400 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+myredis_redis.1.robvimouagqj@manager1    | 1:C 29 Dec 2019 02:35:54.400 # Redis version=5.9.101, bits=64, commit=00000000, modified=0, pid=1, just started
+myredis_redis.1.robvimouagqj@manager1    | 1:C 29 Dec 2019 02:35:54.400 # Configuration loaded
+myredis_redis.1.robvimouagqj@manager1    | 1:M 29 Dec 2019 02:35:54.402 * Running mode=standalone, port=6379.
+myredis_redis.1.robvimouagqj@manager1    | 1:M 29 Dec 2019 02:35:54.402 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+myredis_redis.1.robvimouagqj@manager1    | 1:M 29 Dec 2019 02:35:54.402 # Server initialized
+myredis_redis.1.robvimouagqj@manager1    | 1:M 29 Dec 2019 02:35:54.402 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+myredis_redis.1.robvimouagqj@manager1    | 1:M 29 Dec 2019 02:35:54.402 * Ready to accept connections
 ```
 
+# Where is my redis service running?
+
+```
+$ docker service ps myredis_redis
+ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE           ERROR               PORTS
+robvimouagqj        myredis_redis.1     redis:6.0-rc1       manager1            Running             Running 3 minutes ago
+```
+
+# Inspecting Redis Service
+
+```
+$ docker service inspect myredis_redis
+[
+    {
+        "ID": "hmistkdxnirdm5vq2f41aaqr9",
+        "Version": {
+            "Index": 127
+        },
+        "CreatedAt": "2019-12-29T02:35:47.7810801Z",
+        "UpdatedAt": "2019-12-29T02:35:47.78773254Z",
+        "Spec": {
+            "Name": "myredis_redis",
+            "Labels": {
+                "com.docker.stack.image": "redis:6.0-rc1",
+                "com.docker.stack.namespace": "myredis"
+            },
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "redis:6.0-rc1@sha256:c2227b1e5c4755cb94f18eef10b34fb4eac116ce8c5ea0a40d0ca806927b8311",
+                    "Labels": {
+                        "com.docker.stack.namespace": "myredis"
+                    },
+                    "Args": [
+                        "redis-server",
+                        "--appendonly",
+                        "yes"
+                    ],
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    },
+                    "Mounts": [
+                        {
+                            "Type": "volume",
+                            "Source": "myredis_data",
+                            "Target": "/home/docker/data",
+                            "VolumeOptions": {
+                                "Labels": {
+                                    "com.docker.stack.namespace": "myredis"
+                                }
+                            }
+                        }
+                    ],
+                    "StopGracePeriod": 10000000000,
+                    "DNSConfig": {},
+                    "Isolation": "default"
+                },
+                "Resources": {},
+                "RestartPolicy": {
+                    "Condition": "any",
+                    "Delay": 5000000000,
+                    "MaxAttempts": 0
+                },
+                "Placement": {
+                    "Constraints": [
+                        "node.role == manager"
+                    ],
+                    "Platforms": [
+                        {
+                            "Architecture": "amd64",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "386",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "ppc64le",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "s390x",
+                            "OS": "linux"
+                        }
+                    ]
+                },
+                "Networks": [
+                    {
+                        "Target": "rolenrgn8nqibx2h16wd2tac6",
+                        "Aliases": [
+                            "redis"
+                        ]
+                    }
+                ],
+                "ForceUpdate": 0,
+                "Runtime": "container"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 1
+                }
+            },
+            "UpdateConfig": {
+                "Parallelism": 1,
+                "FailureAction": "pause",
+                "Monitor": 5000000000,
+                "MaxFailureRatio": 0,
+                "Order": "stop-first"
+            },
+            "RollbackConfig": {
+                "Parallelism": 1,
+                "FailureAction": "pause",
+                "Monitor": 5000000000,
+                "MaxFailureRatio": 0,
+                "Order": "stop-first"
+            },
+            "EndpointSpec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "TargetPort": 6379,
+                        "PublishedPort": 6379,
+                        "PublishMode": "ingress"
+                    }
+                ]
+            }
+        },
+        "Endpoint": {
+            "Spec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "TargetPort": 6379,
+                        "PublishedPort": 6379,
+                        "PublishMode": "ingress"
+                    }
+                ]
+            },
+            "Ports": [
+                {
+                    "Protocol": "tcp",
+                    "TargetPort": 6379,
+                    "PublishedPort": 6379,
+                    "PublishMode": "ingress"
+                }
+            ],
+            "VirtualIPs": [
+                {
+                    "NetworkID": "sl1ecujt79razdyhjvmbohhjo",
+                    "Addr": "10.255.0.26/16"
+                },
+                {
+                    "NetworkID": "rolenrgn8nqibx2h16wd2tac6",
+                    "Addr": "10.0.1.15/24"
+                }
+            ]
+        }
+    }
+]
+```
 
 # [Optional] Running Redis Service under Docker Swarm Mode
 
 Method: 2
 
 ```
-$ docker service create --name myredis --publish 6379:6379 --replicas 5 --mount type=volume,source=data,destination=/home/docker/data redis:3.0.6
+$ docker service create --name myredis --publish 6379:6379 --replicas 5 --mount type=volume,source=data,destination=/home/docker/data redis:6.0-rc1
 dkbe281eyx1ixadec1q6iexq7
 overall progress: 5 out of 5 tasks 
 1/5: running   
