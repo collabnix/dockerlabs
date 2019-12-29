@@ -1,4 +1,4 @@
-# Visualizer + Redis + Docker Swarm
+# Visualizing Redis Open Source + Docker Swarm + Rebrow for UI
 
 # Pre-requisite:
 
