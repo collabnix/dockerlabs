@@ -40,3 +40,5 @@ services:
       - webnet
 networks:
   webnet:
+volumes:
+  data:
