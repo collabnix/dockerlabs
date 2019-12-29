@@ -306,6 +306,15 @@ overall progress: 2 out of 2 tasks
 verify: Service converged
 ```
 
+```
+$ docker service create --name myrebrow --publish 5001:5001 --replicas 2  marian/rebrow
+p9qfx8bfmk7doamfxwy65eicu
+overall progress: 2 out of 2 tasks 
+1/2: running   
+2/2: running   
+verify: Service converged 
+```
+
 # [Optional] Running Redis Service under Docker Swarm Mode
 
 Method: 2
