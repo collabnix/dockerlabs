@@ -316,6 +316,7 @@ verify: Service converged
 ```
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/solution/redis/viz-web-redis/images/rebrow.png)
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/solution/redis/viz-web-redis/images/rebrow2.png)
+![My Image](https://github.com/collabnix/dockerlabs/blob/master/solution/redis/viz-web-redis/images/rebrow3.png)
 
 # [Optional] Running Redis Service under Docker Swarm Mode
 
