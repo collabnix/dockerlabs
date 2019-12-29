@@ -2,8 +2,7 @@ version: "3"
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: ajeetraina/redisdemo
-    build: .
+    image: ajeetraina/redis-flask-demo
     deploy:
       replicas: 5
       restart_policy:
