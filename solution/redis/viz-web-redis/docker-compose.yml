@@ -30,7 +30,7 @@ services:
     networks:
       - webnet
   redis:
-    image: redis:3.0.6
+    image: redis:6.0-rc1
     ports:
       - "6379:6379"
     volumes:
