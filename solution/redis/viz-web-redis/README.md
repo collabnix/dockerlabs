@@ -283,6 +283,18 @@ For check, fix, reshard, del-node, set-timeout you can specify the host and port
 ```
 
 
+## Running RedisInSight
+
+```
+$ docker service create --name myredisinsight --publish 8001:8001 --replicas 2 --mount type=volume,source=r
+edisinsight,destination=/db redislabs/redisinsight
+p6m2mngz9m95jp7k0ws5oxe1u
+overall progress: 2 out of 2 tasks 
+1/2: running   
+2/2: running   
+verify: Service converged
+```
+
 # [Optional] Running Redis Service under Docker Swarm Mode
 
 Method: 2
