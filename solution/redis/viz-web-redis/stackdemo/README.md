@@ -1,9 +1,10 @@
 # Building Docker + Redis + Flask 
 
 ```
-docker-compose build
 [manager1] (local) root@192.168.0.16 ~/dockerlabs/solution/redis/viz-web-redis/stackdemo
 $ docker-compose build
+```
+
 redis uses an image, skipping
 Building web
 Step 1/5 : FROM python:3.4-alpine
@@ -50,6 +51,45 @@ Successfully built 475549cb6f91
 Successfully tagged ajeetraina/redis-flask:latest
 ```
 
+# Bringing up Stack
+
 ```
 docker-compose up -d
+```
+```
+$ docker-compose up
+WARNING: The Docker Engine you're using is running in swarm mode.
+
+Compose does not use swarm mode to deploy services to multiple nodes in a swarm. All containers will be scheduled on the current node.
+
+To deploy your application across the swarm, use `docker stack deploy`.
+
+Pulling redis (redis:6.0-rc1)...
+6.0-rc1: Pulling from library/redis
+8ec398bc0356: Pull complete
+da01136793fa: Pull complete
+cf1486a2c0b8: Pull complete
+42449759d57e: Pull complete
+09156b7c9086: Pull complete
+9dd670e81afb: Pull complete
+Creating stackdemo_web_1   ... done
+Creating stackdemo_redis_1 ... done
+Attaching to stackdemo_redis_1, stackdemo_web_1
+redis_1  | 1:C 29 Dec 2019 02:58:19.421 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis_1  | 1:C 29 Dec 2019 02:58:19.421 # Redis version=5.9.101, bits=64, commit=00000000, modified=0, pid=1, just started
+redis_1  | 1:C 29 Dec 2019 02:58:19.421 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis_1  | 1:M 29 Dec 2019 02:58:19.423 * Running mode=standalone, port=6379.
+redis_1  | 1:M 29 Dec 2019 02:58:19.424 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+redis_1  | 1:M 29 Dec 2019 02:58:19.424 # Server initialized
+redis_1  | 1:M 29 Dec 2019 02:58:19.424 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+redis_1  | 1:M 29 Dec 2019 02:58:19.424 * Ready to accept connections
+web_1    |  * Serving Flask app "app" (lazy loading)
+web_1    |  * Environment: production
+web_1    |    WARNING: This is a development server. Do not use it in a production deployment.
+web_1    |    Use a production WSGI server instead.
+web_1    |  * Debug mode: on
+web_1    |  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+web_1    |  * Restarting with stat
+web_1    |  * Debugger is active!
+web_1    |  * Debugger PIN: 141-807-004
 ```
