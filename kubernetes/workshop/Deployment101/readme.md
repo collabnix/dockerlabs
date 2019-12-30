@@ -77,6 +77,12 @@ We should have 1 Pod. If not, run the command again. This shows:
     The CURRENT state show how many replicas are running now
     The UP-TO-DATE is the number of replicas that were updated to match the desired (configured) state
     The AVAILABLE state shows how many replicas are actually AVAILABLE to the users
+    
+```
+[node1 Deployment101]$ kubectl get deployments
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   2/2     2            2           2m57s
+```
 
 ## Step #2. Scale up/down application deployment
 
