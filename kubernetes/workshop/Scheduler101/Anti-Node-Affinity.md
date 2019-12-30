@@ -4,6 +4,7 @@
 - Those nodes shouldn’t have many resources due to the nature of their role. Thus, if other pods than those which have the monitoring app are scheduled to those nodes, they hurt monitoring and also degrades the application they are hosting.
 - In such a case, you need to use node anti-affinity to keep pods away from a set of nodes.
 
+## Steps
 ```
 git clone https://github.com/collabnix/dockerlabs
 cd dockerlabs/kubernetes/workshop/Scheduler101/
@@ -11,7 +12,7 @@ kubectl label nodes node2 mynode=worker-1
 kubectl label nodes node3 mynode=worker-3
 kubectl apply -f pod-anti-node-affinity.yaml
 ```
-## Which Node Is This Pod Running On?
+## Viewing Your Pods
 
 ```
 [node1 Scheduler101]$ kubectl get pods --output=wide
@@ -19,12 +20,14 @@ NAME    READY   STATUS    RESTARTS   AGE     IP          NODE    NOMINATED NODE 
 nginx   1/1     Running   0          2m37s   10.44.0.1   node2   <none>           <none>
 
 ```
+## Get nodes label detail
 ```
 [node1 Scheduler101]$ kubectl get nodes --show-labels | grep mynode
 node2   Ready    <none>   166m   v1.14.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node2,kubernetes.io/os=linux,mynode=worker-1,role=dev
 node3   Ready    <none>   165m   v1.14.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node3,kubernetes.io/os=linux,mynode=worker-3
 
 ```
+## Get pod describe 
 ```
 [node1 Scheduler101]$ kubectl describe pods nginx
 Name:               nginx
