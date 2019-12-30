@@ -495,6 +495,13 @@ kubectl delete service nginx-deployment
 kubectl delete deployment nginx-deployment
 ```
 
+# Contributors
+
+[Sangam Biradar](https://twitter.com/BiradarSangam)
+
+# Reviewers
+
+[Ajeet Singh Raina](https://twitter.com/ajeetsraina)
 
 
 
