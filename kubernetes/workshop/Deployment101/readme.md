@@ -4,9 +4,7 @@
 We looked at ReplicaSets earlier. However, ReplicaSet have one major drawback: 
 once you select the pods that are managed by a ReplicaSet, you cannot change their pod templates. 
 
-For example, if you are using a ReplicaSet to deploy four pods with NodeJS running and you want to change the NodeJS image to a newer version, 
-you need to delete the ReplicaSet and recreate it. 
-Restarting the pods causes downtime till the images are available and the pods are running again.
+For example, if you are using a ReplicaSet to deploy four pods with NodeJS running and you want to change the NodeJS image to a newer version, you need to delete the ReplicaSet and recreate it. Restarting the pods causes downtime till the images are available and the pods are running again.
 
 A Deployment resource uses a ReplicaSet to manage the pods. However, it handles updating them in a controlled way. 
 Let’s dig deeper into Deployment Controllers and patterns.
@@ -112,8 +110,8 @@ nginx-deployment   4/4     4            4           4m
 
 ```
 
-There are 4 Pods now, with different IP addresses. 
-he change was registered in the Deployment events log. To check that, use the describe command:
+There are 4 Pods now, with different IP addresses. The change was registered in the Deployment events log. To check that, use the describe command:
+
 ```
 $ kubectl describe deployments/nginx-deployment
 Name:                   nginx-deployment
@@ -166,7 +164,11 @@ Biradars-MacBook-Air-4:~ sangam$
 
 You can also view in the output of this command that there are 4 replicas now.
 
+
+# Scaling the service to 2 Replicas 
+
 To scale down the Service to 2 replicas, run again the scale command:
+
 ```
 $ kubectl scale deployments/nginx-deployment --replicas=2
 deployment.extensions/nginx-deployment scaled
@@ -174,7 +176,6 @@ $ kubectl get deployments
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 nginx-deployment   2/2     2            2           7m23s
 Biradars-MacBook-Air-4:~ sangam$ 
-
 ```
 
 
@@ -296,14 +297,16 @@ Events:
   ```
 
 The command notified the Deployment to use a different image for your app and initiated a rolling update. Check the status of the new Pods, and view the old one terminating with the get pods command:
+
 ```
 Biradars-MacBook-Air-4:~ sangam$ kubectl set image  deployments/nginx-deployment nginx=nginx:1.9.1
 deployment.extensions/nginx-deployment image updated
 ```
-check description of pod again 
+
+# Checking description of pod again 
 
 ```
-Biradars-MacBook-Air-4:~ sangam$ kubectl describe pods
+$ kubectl describe pods
 Name:               nginx-deployment-6dd86d77d-b4v7k
 Namespace:          default
 Priority:           0
@@ -454,16 +457,19 @@ Events:
   Normal  Pulling    35s   kubelet, docker-desktop  Pulling image "nginx:1.9.1"
 Biradars-MacBook-Air-4:~ sangam$ 
 ```
+
 ## Step #4. Rollback updates to application deployment
 
 
 The rollout command reverted the deployment to the previous known state. Updates are versioned and you can revert to any previously know state of a Deployment. List again the Pods:
+
 ```
-Biradars-MacBook-Air-4:~ sangam$ kubectl rollout undo deployments/nginx-deployment
+$ kubectl rollout undo deployments/nginx-deployment
 deployment.extensions/nginx-deployment rolled back
-Biradars-MacBook-Air-4:~ sangam$ kubectl rollout status deployments/nginx-deployment 
+
+$ kubectl rollout status deployments/nginx-deployment 
 deployment "nginx-deployment" successfully rolled out
-Biradars-MacBook-Air-4:~ sangam$ 
+
 ```
 
 After the rollout succeeds, you may want to get the Deployment.
