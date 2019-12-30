@@ -33,3 +33,11 @@ NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
 service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   9m4s
 ```
 
+Exposing the port
+
+```
+kubectl expose deployment my-nginx --port=80
+```
+
+
+# Example #2: 
