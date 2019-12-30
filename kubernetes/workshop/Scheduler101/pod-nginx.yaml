@@ -10,4 +10,4 @@ spec: #specifications for our object
     image: nginx #which container image should be pulled
     imagePullPolicy: IfNotPresent #image pull policy 
   nodeSelector: #Nodeselector condition 
-    disktype: ssd # label on the node where pod is going to deploy
+    mynode: worker-1 # label on the node where pod is going to deploy

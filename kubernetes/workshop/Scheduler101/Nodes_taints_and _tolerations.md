@@ -9,10 +9,14 @@
 
 ```
 git clone https://github.com/collabnix/dockerlabs
-cd dockerlabs/kubernetes/workshop/Scheduler101
+cd dockerlabs/kubernetes/workshop/Scheduler101/
+kubectl label nodes node2 role=dev
+kubectl label nodes node3 role=dev
 
-kubectl taint nodes kube-slave1 role=monitoring:NoSchedule
-node/kube-slave1 tainted
+[node1 Scheduler101]$ kubectl taint nodes node2 role=dev:NoSchedule
+node/node2 tainted
+[node1 Scheduler101]$
+
 
 kubectl apply -f pod-taint-node.yaml
 ```
@@ -26,62 +30,64 @@ kubectl get pods --output=wide
 ## Get nodes label detail
 
 ```
-kubectl get nodes --show-labels|grep slave |grep role
-kube-slave1   Ready    worker   31d   v1.16.2   disktype=ssd,nodeName=best-node,role=monitoring
-kube-slave2   Ready    worker   31d   v1.16.3   disktype=ssd,nnodeName=foo-node,role=monitoring
+[node1 Scheduler101]$ kubectl get nodes --show-labels|grep mynode |grep role
+node2   Ready    <none>   175m   v1.14.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node2,kubernetes.io/os=linux,mynode=worker-1,role=dev
+node3   Ready    <none>   175m   v1.14.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node3,kubernetes.io/os=linux,mynode=worker-3,role=dev
 
 ```
 ## Get pod describe 
 ```
-kubectl describe pods nginx
-Name:         nginx
-Namespace:    default
-Priority:     0
-Node:         kube-slave2/10.91.224.244
-Start Time:   Mon, 16 Dec 2019 07:52:39 +0000
-Labels:       <none>
-Annotations:  kubectl.kubernetes.io/last-applied-configuration:
-                {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"affinity":{"nodeAffinity":{"re...
-Status:       Pending
-IP:
-IPs:          <none>
+[node1 Scheduler101]$ kubectl describe pods nginx
+Name:               nginx
+Namespace:          default
+Priority:           0
+PriorityClassName:  <none>
+Node:               node3/192.168.0.16
+Start Time:         Mon, 30 Dec 2019 19:13:45 +0000
+Labels:             <none>
+Annotations:        kubectl.kubernetes.io/last-applied-configuration:
+                      {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"affinity":{"nodeAffinity":{"re...
+Status:             Running
+IP:                 10.36.0.1
 Containers:
   nginx:
-    Container ID:
+    Container ID:   docker://57d032f4358be89e2fcad7536992b175503565af82ce4f66f4773f6feaf58356
     Image:          nginx
-    Image ID:
+    Image ID:       docker-pullable://nginx@sha256:b2d89d0a210398b4d1120b3e3a7672c16a4ba09c2c4a0395f18b9f7999b768f2
     Port:           <none>
     Host Port:      <none>
-    State:          Waiting
-      Reason:       ContainerCreating
-    Ready:          False
+    State:          Running
+      Started:      Mon, 30 Dec 2019 19:14:45 +0000
+    Ready:          True
     Restart Count:  0
     Environment:    <none>
     Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-2672d (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-qpgxq (ro)
 Conditions:
   Type              Status
   Initialized       True
-  Ready             False
-  ContainersReady   False
+  Ready             True
+  ContainersReady   True
   PodScheduled      True
 Volumes:
-  default-token-2672d:
+  default-token-qpgxq:
     Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-2672d
+    SecretName:  default-token-qpgxq
     Optional:    false
 QoS Class:       BestEffort
 Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
                  node.kubernetes.io/unreachable:NoExecute for 300s
 Events:
-  Type     Reason            Age              From                  Message
-  ----     ------            ----             ----                  -------
-  Normal   Scheduled         <unknown>        default-scheduler     Successfully assigned default/nginx to kube-slave2
-
-  Normal   Pulling           4s               kubelet, kube-slave2  Pulling image "nginx"
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  105s  default-scheduler  Successfully assigned default/nginx to node3
+  Normal  Pulling    101s  kubelet, node3     Pulling image "nginx"
+  Normal  Pulled     57s   kubelet, node3     Successfully pulled image "nginx"
+  Normal  Created    47s   kubelet, node3     Created container nginx
+  Normal  Started    45s   kubelet, node3     Started container nginx
 ```
-- Deployed pod on slave2.
+- Deployed pod on node3.
 
 ## Step  Cleanup
 
@@ -98,7 +104,7 @@ kubectl delete -f pod-tain-node.yaml
 
 ```
 git clone https://github.com/collabnix/dockerlabs
-cd dockerlabs/kubernetes/workshop/Scheduler101
+cd dockerlabs/kubernetes/workshop/Scheduler101/
 kubectl apply -f pod-tolerations-node.yaml
 ```
 ## Viewing Your Pods
@@ -109,55 +115,53 @@ kubectl get pods --output=wide
 
 ## Which Node Is This Pod Running On?
 ```
-kubectl describe pods nginx
-Name:         nginx
-Namespace:    default
-Priority:     0
-Start Time:   Mon, 16 Dec 2019 09:59:16 +0000
-Labels:       env=test
-Annotations:  kubectl.kubernetes.io/last-applied-configuration:
-                {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"labels":{"env":"test"},"name":"nginx","namespace":"default"},"spec":{"contai...
-Status:       Running
-IP:           10.47.0.2
-IPs:
-  IP:  10.47.0.2
+[node1 Scheduler101]$ kubectl describe pods nginx
+Name:               nginx
+Namespace:          default
+Priority:           0
+PriorityClassName:  <none>
+Node:               node3/192.168.0.16
+Start Time:         Mon, 30 Dec 2019 19:20:35 +0000
+Labels:             env=test
+Annotations:        kubectl.kubernetes.io/last-applied-configuration:
+                      {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"labels":{"env":"test"},"name":"nginx","namespace":"default"},"spec":{"contai...
+Status:             Pending
+IP:
 Containers:
   nginx:
-    Container ID:   docker://8768971083bca73fbf30c6ca30899b1d9ab7489de08289df5f5579130fba30f6
+    Container ID:
     Image:          nginx:1.7.9
-    Image ID:       docker-pullable://nginx@sha256:e3456c851a152494c3e4ff5fcc26f240206abac0c9d794affb40e0714846c451
+    Image ID:
     Port:           <none>
     Host Port:      <none>
-    State:          Running
-      Started:      Mon, 16 Dec 2019 09:59:18 +0000
-    Ready:          True
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
     Restart Count:  0
     Environment:    <none>
     Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-2672d (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-qpgxq (ro)
 Conditions:
   Type              Status
   Initialized       True
-  Ready             True
-  ContainersReady   True
+  Ready             False
+  ContainersReady   False
   PodScheduled      True
 Volumes:
-  default-token-2672d:
+  default-token-qpgxq:
     Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-2672d
+    SecretName:  default-token-qpgxq
     Optional:    false
 QoS Class:       BestEffort
 Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
                  node.kubernetes.io/unreachable:NoExecute for 300s
-                 role=monitoring:NoSchedule
+                 role=dev:NoSchedule
 Events:
-  Type     Reason            Age                From                  Message
-  ----     ------            ----               ----                  -------
-  Normal   Scheduled         <unknown>          default-scheduler     Successfully assigned default/nginx to kube-slave1
-  Normal   Pulled            32s                kubelet, kube-slave1  Container image "nginx:1.7.9" already present on machine
-  Normal   Created           32s                kubelet, kube-slave1  Created container nginx
-  Normal   Started           31s                kubelet, kube-slave1  Started container nginx
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  4s    default-scheduler  Successfully assigned default/nginx to node3
+  Normal  Pulling    1s    kubelet, node3     Pulling image "nginx:1.7.9
 ```
 
 

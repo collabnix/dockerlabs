@@ -6,50 +6,52 @@
 
 ```
 git clone https://github.com/collabnix/dockerlabs
-cd dockerlabs/kubernetes/workshop/Scheduler101
+cd dockerlabs/kubernetes/workshop/Scheduler101/
+kubectl label nodes node2 mynode=worker-1
+kubectl label nodes node3 mynode=worker-3
 kubectl apply -f pod-anti-node-affinity.yaml
 ```
 ## Which Node Is This Pod Running On?
 
 ```
-kubectl get pods --output=wide
-NAME                 READY   STATUS    RESTARTS   AGE     IP          NODE          NOMINATED NODE   READINESS GATES
-nginx                1/1     Running   0          3m27s   10.44.0.2   kube-slave1   <none>           <none>
+[node1 Scheduler101]$ kubectl get pods --output=wide
+NAME    READY   STATUS    RESTARTS   AGE     IP          NODE    NOMINATED NODE   READINESS GATES
+nginx   1/1     Running   0          2m37s   10.44.0.1   node2   <none>           <none>
 
 ```
 ```
-kubectl get nodes --show-labels | grep disk
-kube-slave1   Ready    worker   31d   v1.16.2  cpu=eight-cores,disktype=ssd,nodeName=best-node,role=testing
-kube-slave2   Ready    worker   31d   v1.16.3   disktype=ssd,nodeName=foo-node,role=monitoring
+[node1 Scheduler101]$ kubectl get nodes --show-labels | grep mynode
+node2   Ready    <none>   166m   v1.14.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node2,kubernetes.io/os=linux,mynode=worker-1,role=dev
+node3   Ready    <none>   165m   v1.14.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node3,kubernetes.io/os=linux,mynode=worker-3
+
 ```
 ```
-kubectl describe pods nginx
-Name:         nginx
-Namespace:    default
-Priority:     0
-Node:         kube-slave1/10.91.224.249
-Start Time:   Mon, 16 Dec 2019 07:24:52 +0000
-Labels:       <none>
-Annotations:  kubectl.kubernetes.io/last-applied-configuration:
-                {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"affinity":{"nodeAffinity":{"re...
-Status:       Running
-IP:           10.44.0.2
-IPs:
-  IP:  10.44.0.2
+[node1 Scheduler101]$ kubectl describe pods nginx
+Name:               nginx
+Namespace:          default
+Priority:           0
+PriorityClassName:  <none>
+Node:               node2/192.168.0.17
+Start Time:         Mon, 30 Dec 2019 19:02:46 +0000
+Labels:             <none>
+Annotations:        kubectl.kubernetes.io/last-applied-configuration:
+                      {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"affinity":{"nodeAffinity":{"re...
+Status:             Running
+IP:                 10.44.0.1
 Containers:
   nginx:
-    Container ID:   docker://d60b1e34783ef7be836f3a566d8bb18a964722e09de1b9c2b5b43c3159dd3c37
+    Container ID:   docker://2bdc20d79c360e1cd857eeb9bbb9424c726b2133e78f25bf4587e0befe3fbcc7
     Image:          nginx
-    Image ID:       docker-pullable://nginx@sha256:50cf965a6e08ec5784009d0fccb380fc479826b6e0e65684d9879170a9df8566
+    Image ID:       docker-pullable://nginx@sha256:b2d89d0a210398b4d1120b3e3a7672c16a4ba09c2c4a0395f18b9f7999b768f2
     Port:           <none>
     Host Port:      <none>
     State:          Running
-      Started:      Mon, 16 Dec 2019 07:24:55 +0000
+      Started:      Mon, 30 Dec 2019 19:03:07 +0000
     Ready:          True
     Restart Count:  0
     Environment:    <none>
     Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-2672d (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-qpgxq (ro)
 Conditions:
   Type              Status
   Initialized       True
@@ -57,27 +59,26 @@ Conditions:
   ContainersReady   True
   PodScheduled      True
 Volumes:
-  default-token-2672d:
+  default-token-qpgxq:
     Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-2672d
+    SecretName:  default-token-qpgxq
     Optional:    false
 QoS Class:       BestEffort
 Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
                  node.kubernetes.io/unreachable:NoExecute for 300s
 Events:
-  Type     Reason            Age                From                  Message
-  ----     ------            ----               ----                  -------
-  Normal   Scheduled         <unknown>          default-scheduler     Successfully assigned default/nginx to kube-slave1
-  Normal   Pulling           29s                kubelet, kube-slave1  Pulling image "nginx"
-  Normal   Pulled            27s                kubelet, kube-slave1  Successfully pulled image "nginx"
-  Normal   Created           27s                kubelet, kube-slave1  Created container nginx
-  Normal   Started           27s                kubelet, kube-slave1  Started container nginx
-
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  60s   default-scheduler  Successfully assigned default/nginx to node2
+  Normal  Pulling    56s   kubelet, node2     Pulling image "nginx"
+  Normal  Pulled     54s   kubelet, node2     Successfully pulled image "nginx"
+  Normal  Created    40s   kubelet, node2     Created container nginx
+  Normal  Started    39s   kubelet, node2     Started container nginx
 ```
 
 
-- Adding another key to the matchExpressions with the operator NotIn will avoid scheduling the nginx pods on any node labelled role=monitoring.
+- Adding another key to the matchExpressions with the operator NotIn will avoid scheduling the nginx pods on any node labelled worker-1.
 
 
 ## Step  Cleanup
