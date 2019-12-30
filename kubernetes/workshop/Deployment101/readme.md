@@ -30,7 +30,7 @@ deployment.apps/nginx-deployment created
 
 To list your deployments use the get deployments command:
 ```
-Biradars-MacBook-Air-4:~ sangam$ kubectl get deployments
+$ kubectl get deployments
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 nginx-deployment   2/2     2            2           63s
 
@@ -93,7 +93,7 @@ let’s check if the number of Pods changed:
 
 Now There should be 4 pods running in the cluster
 ```
-Biradars-MacBook-Air-4:~ sangam$ kubectl get deployments
+$ kubectl get deployments
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 nginx-deployment   4/4     4            4           4m
 
@@ -102,7 +102,7 @@ nginx-deployment   4/4     4            4           4m
 There are 4 Pods now, with different IP addresses. 
 he change was registered in the Deployment events log. To check that, use the describe command:
 ```
-Biradars-MacBook-Air-4:~ sangam$ kubectl describe deployments/nginx-deployment
+$ kubectl describe deployments/nginx-deployment
 Name:                   nginx-deployment
 Namespace:              default
 CreationTimestamp:      Sat, 30 Nov 2019 20:04:34 +0530
@@ -141,7 +141,7 @@ Biradars-MacBook-Air-4:~ sangam$
 
 
 ```
-Biradars-MacBook-Air-4:~ sangam$ kubectl get pods -o wide
+$ kubectl get pods -o wide
 NAME                               READY   STATUS    RESTARTS   AGE     IP           NODE             NOMINATED NODE   READINESS GATES
 nginx-deployment-6dd86d77d-b4v7k   1/1     Running   0          4m32s   10.1.0.237   docker-desktop   <none>           <none>
 nginx-deployment-6dd86d77d-bnc5m   1/1     Running   0          4m32s   10.1.0.236   docker-desktop   <none>           <none>
@@ -155,9 +155,9 @@ You can also view in the output of this command that there are 4 replicas now.
 
 To scale down the Service to 2 replicas, run again the scale command:
 ```
-Biradars-MacBook-Air-4:~ sangam$ kubectl scale deployments/nginx-deployment --replicas=2
+$ kubectl scale deployments/nginx-deployment --replicas=2
 deployment.extensions/nginx-deployment scaled
-Biradars-MacBook-Air-4:~ sangam$ kubectl get deployments
+$ kubectl get deployments
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 nginx-deployment   2/2     2            2           7m23s
 Biradars-MacBook-Air-4:~ sangam$ 
@@ -175,10 +175,10 @@ Let’s say that you have finished testing the nginx 1.7.9 , and you are ready t
 To update the image of the application to new version, use the set image command,
 followed by the deployment name and the new image version:
 ```
-Biradars-MacBook-Air-4:~ sangam$ kubectl get deployments
+$ kubectl get deployments
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 nginx-deployment   2/2     2            2           7m23s
-Biradars-MacBook-Air-4:~ sangam$ kubectl describe pods
+$ kubectl describe pods
 Name:               nginx-deployment-6dd86d77d-b4v7k
 Namespace:          default
 Priority:           0
