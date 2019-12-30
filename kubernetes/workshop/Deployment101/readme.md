@@ -84,6 +84,13 @@ NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 nginx-deployment   2/2     2            2           2m57s
 ```
 
+```
+[node1 Deployment101]$ kubectl get po
+NAME                               READY   STATUS    RESTARTS   AGE
+nginx-deployment-6dd86d77d-84fwp   1/1     Running   0          3m44s
+nginx-deployment-6dd86d77d-xnrqp   1/1     Running   0          3m44s
+```
+
 ## Step #2. Scale up/down application deployment
 
 Now let’s scale the Deployment to 4 replicas. We are going to use the kubectl scale command,
