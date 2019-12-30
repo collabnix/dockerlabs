@@ -187,6 +187,7 @@ Let’s say that you have finished testing the nginx 1.7.9 , and you are ready t
 
 To update the image of the application to new version, use the set image command,
 followed by the deployment name and the new image version:
+
 ```
 $ kubectl get deployments
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
