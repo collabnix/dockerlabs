@@ -8,10 +8,10 @@ spec:
      requiredDuringSchedulingIgnoredDuringExecution:
        nodeSelectorTerms:
        - matchExpressions:
-         - key: disktype
+         - key: role
            operator: In
            values:
-           - ssd
+           - dev
  containers:
  - name: nginx
    image: nginx

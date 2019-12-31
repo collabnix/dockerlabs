@@ -8,19 +8,18 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          - key: disktype
+          - key: mynode
             operator: In
             values:
-            - ssd
-            - magnetic
+            - worker-1
       preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference:
           matchExpressions:
-          - key: nodeName
+          - key: mynode
             operator: In
             values:
-            - foo-node
+            - worker-3
   containers:
   - name: nginx
     image: nginx

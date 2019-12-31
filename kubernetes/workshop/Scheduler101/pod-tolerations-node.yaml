@@ -12,5 +12,5 @@ spec:
   tolerations:
   - key: "role"
     operator: "Equal"
-    value: "monitoring"
+    value: "dev"
     effect: "NoSchedule"
