@@ -1,4 +1,4 @@
-# Setting up k3sup on macOS to build Kubernetes Cluster remotely on Jetson Nano
+# Setting up k3sup on macOS to build K3s Cluster remotely on Jetson Nano
 
 # Pre-requisite:
 
