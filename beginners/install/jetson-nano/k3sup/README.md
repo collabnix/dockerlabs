@@ -90,4 +90,16 @@ Error: Error received processing command: Process exited with status 1
 [Captains-Bay]🚩 >
 ```
 
+## Possible Culprit:
+
+
+It's expecting an interactive terminal on a tty device on the intermediate server.
+
+If you try this command, it should work:
+
+```
+ssh user@computer1 -t "ssh otheruser@computer2"
+```
+
+
 
