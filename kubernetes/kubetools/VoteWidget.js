@@ -39,4 +39,3 @@ init: function() {
 
 
 VoteWidget.init();
-
