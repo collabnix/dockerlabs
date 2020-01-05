@@ -10,7 +10,8 @@ spec:
        - matchExpressions:
          - key: mynode
            operator: In
-           values: worker-1       
+           values: 
+           - worker-1       
          - key: mynode
            operator: NotIn
            values:
