@@ -8,7 +8,7 @@
   HUGO_VERSION = "0.55.5"
 
 [context.production.environment]
-  HUGO_BASEURL = "http://dockerlabs.collabnix.com/"
+  HUGO_BASEURL = "http://collabnix.netlify.com/"
 
 [context.deploy-preview]
   command = "hugo -s exampleSite -b $DEPLOY_PRIME_URL"
