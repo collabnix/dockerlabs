@@ -3,16 +3,16 @@
 
 name = "Learn"
 license = "MIT"
-licenselink = "https://github.com/matcornic/hugo-theme-learn/blob/master/LICENSE.md"
+licenselink = "https://github.com/collabnix/dockerlabs/blob/master/LICENSE"
 description = "Documentation theme for Hugo, based on Grav Learn theme"
-homepage = "https://github.com/EngineITOps/hogo-test"
-repo = "https://github.com/EngineITOps/hogo-test"
+homepage = "https://github.com/collabnix/dockerlabs"
+repo = "https://github.com/collabnix/dockerlabs"
 tags = ["documentation", "grav", "learn", "doc", "search"]
 features = ["documentation", "menu", "nested sections", "search", "mermaid"]
 min_version = 0.25
 
 [author]
-  name = "Mathieu Cornic"
+  name = "sangam biradar"
   homepage = "engineitops.com"
 
 [original]
