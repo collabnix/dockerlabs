@@ -1,0 +1,25 @@
+---
+  dataSource: "prs"
+  prefix: "v"
+  onlyMilestones: false
+  changelogFilename: "CHANGELOG.md"
+  includeMessages: "all"
+  ignoreIssuesWith:
+    - "support"
+  ignoreLabels:
+    - "duplicate"
+    - "invalid"
+    - "wontfix"
+  groupBy:
+    New features:
+      - "feature"
+    Bug Fixes:
+      - "bug"
+    Enhancements:
+      - "enhancement"
+    Internationalisation:
+      - "i18n"
+    Theme Meta:
+      - "meta"
+    Uncategorised:
+      - "closed"
