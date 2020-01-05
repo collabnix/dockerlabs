@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "http://dockerlabs.collabnix.com/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
