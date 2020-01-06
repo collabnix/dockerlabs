@@ -14,3 +14,72 @@ A Kubernetes Service acts as an abstraction layer. In a stateless application li
 
 # Deploying a Stateful Application Using Kubernetes Statefulset
 
+In below code snippet we are deploying a stateful application. For simplicity, are using Apache as the pod image. The deployment is made up of three Apache web servers; all of them are connected to a persistent volume. For example, look at web_stategul.yaml file under the current location.
+
+Before we start discussing the details of this definition, notice that the file actually contains two definitions: the storage class that the StatefulSet is using and the StatefulSet itself.
+
+
+## Storage Class
+
+Storage classes are Kubernetes objects that let the users specify which type of storage they need from the cloud provider. Different storage classes represent various service quality, such as disk latency and throughput, and are selected depending on the scenario they are used for and the cloud provider’s support. Persistent Volumes and Persistent Volume Claims use Storage Classes.
+
+## Persistent Volumes and Persistent Volume Claims
+
+Persistent volumes act as an abstraction layer to save the user from going into the details of how storage is managed and provisioned by each cloud provider (in this example, we are using Google GCE). By definition, StatefulSets are the most frequent users of Persistent Volumes since they need permanent storage for their pods.
+
+A Persistent Volume Claim is a request to use a Persistent Volume. If we are to use the Pods and Nodes analogy, then consider Persistent Volumes as the “nodes” and Persistent Volume Claims as the “pods” that use the node resources. The resources we are talking about here are storage properties, such as storage size, latency, throughput, etc.
+
+
+
+## Creating The StatefulSet
+
+Now that we have the definition file in place, we can use kubectl to apply it as follows:
+
+```
+kubectl apply -f apache-stateful.yaml
+```
+
+Since the definition file contains a StorageClass and a StatefulSet resource, the following output is displayed:
+
+```
+storageclass.storage.k8s.io/www-disk created
+statefulset.apps/webapp created
+```
+
+Our resources are available. Let’s see whether or not we have pods:
+
+```
+kubectl get pods
+NAME   	READY   STATUS          	RESTARTS   AGE
+webapp-0   0/1 	ContainerCreating   0      	8s
+```
+
+You may notice two things here: 
+(1) there is only one pod created while we asked for three, and 
+(2) the pod name contains the StatefulSet name.
+
+This is the expected behavior. The StatefulSet will not create all the pods at once, like a Deployment, for example. It maintains order when starting and stopping the pods. Since StatefulSets maintain the pod identity, the pod name is the StatefulSet name followed by an incremental number.
+
+Wait a few seconds and issue kubectl get pods again, you should see an output similar to the following:
+
+```
+NAME   	READY   STATUS          	RESTARTS   AGE
+webapp-0   1/1 	Running         	0      	43s
+webapp-1   0/1 	ContainerCreating   0      	11s
+```
+
+Later on, the output becomes:
+
+```
+NAME   	READY   STATUS	RESTARTS   AGE
+webapp-0   1/1 	Running   0      	112m
+webapp-1   1/1 	Running   0      	111m
+webapp-2   1/1 	Running   0      	111m
+```
+
+All our pods are now started.
+
+## Creating a Headless Service For Our StatefulSet
+
+Right now, the pods are running. But how can a web server access another one? This is done through the Service, so we need to create one. Open a new YAML file called apache_statefulset_service.yaml and add the following to it:
+
