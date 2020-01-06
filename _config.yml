@@ -1,0 +1,10 @@
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-cayman
+jekyll_admin:
+  hidden_links:
+    - posts
+    - pages
+    - staticfiles
+    - datafiles
+    - configuration
