@@ -36,7 +36,7 @@ A Persistent Volume Claim is a request to use a Persistent Volume. If we are to 
 Now that we have the definition file in place, we can use kubectl to apply it as follows:
 
 ```
-kubectl apply -f apache-stateful.yaml
+kubectl apply -f web-stateful.yaml
 ```
 
 Since the definition file contains a StorageClass and a StatefulSet resource, the following output is displayed:
@@ -83,3 +83,67 @@ All our pods are now started.
 
 Right now, the pods are running. But how can a web server access another one? This is done through the Service, so we need to create one. Open a new YAML file called apache_statefulset_service.yaml and add the following to it:
 
+## Create the service by using kubectl:
+
+```
+kubectl apply -f Web_statefulset_service.yamlservice/web-access-svc created
+```
+
+## Listing The Created Components
+
+Let’s have a look at the created components:
+
+ ```
+ $ kubectl get statefulset
+NAME 	READY   AGE
+webapp   3/3 	21h
+```
+
+```
+$ kubectl get pv
+NAME                                   	CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM              	STORAGECLASS   REASON   AGE
+pvc-077a1891-a25b-11e9-9ecf-42010a800184   1Gi    	RWO        	Delete       	Bound	default/www-webapp-2   www-disk            	21h
+pvc-e79d8843-a25a-11e9-9ecf-42010a800184   1Gi    	RWO        	Delete       	Bound	default/www-webapp-0   www-disk            	21h
+pvc-fa398e2a-a25a-11e9-9ecf-42010a800184   1Gi    	RWO        	Delete       	Bound	default/www-webapp-1   www-disk            	21h
+```
+
+We have the Persistent Volumes
+
+```
+$ kubectl get pvc
+NAME       	STATUS   VOLUME                                 	CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+www-webapp-0   Bound	pvc-e79d8843-a25a-11e9-9ecf-42010a800184   1Gi    	RWO        	www-disk   	21h
+www-webapp-1   Bound	pvc-fa398e2a-a25a-11e9-9ecf-42010a800184   1Gi    	RWO        	www-disk   	21h
+www-webapp-2   Bound	pvc-077a1891-a25b-11e9-9ecf-42010a800184   1Gi    	RWO        	www-disk   	21h
+```
+
+And the Persistent Volume Claims. Let’s see how we can connect and use our pods.
+
+# Connecting One Pod To Another Through The Headless Service
+
+We need to test our setup. Let’s open a bash shell to one of the pods:
+
+```
+kubectl exec -it webapp-0 bash
+```
+The httpd image isn’t shipped with curl by default, so we need to install it:
+
+
+```
+apt update && apt install curl
+```
+Once it is installed, we can try connecting to the Service:
+
+```
+root@webapp-0:/usr/local/apache2# curl web-svc<html><body><h1>It works!</h1></body></html>>
+```
+
+This is the default page that Apache displays. The Service is routing the request to the backend pods.
+
+The StatefulSet is all about uniquely identifying pods. So, let’s try connecting to a specific pod:
+
+```
+root@webapp-0:/usr/local/apache2# curl webapp-1.web-svc<html><body><h1>It works!</h1></body></html>
+```
+
+By prefixing the service name to the pod name, you can connect to that specific pod.
