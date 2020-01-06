@@ -147,3 +147,21 @@ root@webapp-0:/usr/local/apache2# curl webapp-1.web-svc<html><body><h1>It works!
 ```
 
 By prefixing the service name to the pod name, you can connect to that specific pod.
+
+
+# Deleting The StatefulSet
+
+We start by deleting the Headless Service:
+
+```
+kubectl delete -f apache_stateful_service.yamlservice "web-svc" deleted
+```
+We could equally achieve the same result by running kubectl delete service web-svc
+
+To delete the StatefulSet with the Persistent Volume and the Persistent Volume Claims, we use the definition file:
+
+```
+kubectl delete -f apache_stateful.yaml storageclass.storage.k8s.io "www-disk" deletedstatefulset.apps "webapp" deleted
+```
+
+The controller honors the ten seconds grace time and gives the pods time to clean up. In our example, Apache should not take more than a few milliseconds to shut down. But, if it were serving thousands of requests, it would take more time to terminate.
