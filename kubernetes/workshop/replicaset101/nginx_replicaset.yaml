@@ -9,12 +9,12 @@ spec:
   replicas: 4
   selector:
     matchLabels:
-    role: web
+      role: web
   template:
     metadata:
-    labels:
-      role: web
-spec:
-  containers:
-  - name: nginx
-    image: nginx
+      labels:
+        role: web
+    spec:
+      containers:
+      - name: testnginx
+        image: nginx
