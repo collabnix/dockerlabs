@@ -50,16 +50,13 @@
 ## StatefulSets101
  
  - [Introductory Slides]() - Pending
- - [The difference between a Statefulset and a Deployment]()
- - [Deploying a Stateful Application Using Kubernetes Statefulset?]()
- - [Storage Class]()
- - [Demonstrating Persistent Volumes and Persistent Volume Claims]()
- - [Provisioning The StatefulSet]()
- - [Creating the StatefulSet]()
- - [Creating a Headless Service for our StatefulSet]()
- - [Listing the created components]()
- - [Connecting one pod to another through the Headless Service]()
- - [Deleting the StatefulSet]()
+ - [The difference between a Statefulset and a Deployment](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/StatefulSets101/readme.md#what-is-statefulset-and-how-is-it-different-from-deployment)
+ - [Deploying a Stateful Application Using Kubernetes Statefulset?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/StatefulSets101/readme.md#deploying-a-stateful-application-using-kubernetes-statefulset)
+ - [Creating the StatefulSet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/StatefulSets101/readme.md#creating-the-statefulset)
+ - [Creating a Headless Service for our StatefulSet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/StatefulSets101/readme.md#creating-a-headless-service-for-our-statefulset)
+ - [Listing the created components](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/StatefulSets101/readme.md#listing-the-created-components)
+ - [Connecting one pod to another through the Headless Service](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/StatefulSets101/readme.md#connecting-one-pod-to-another-through-the-headless-service)
+ - [Deleting the StatefulSet](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/StatefulSets101/readme.md#deleting-the-statefulset)
 
 # Contributors
 
