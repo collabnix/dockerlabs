@@ -8,7 +8,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 #  Getting Started in 3 Simple Steps
 
-- Join 2020+ Collabnix Labs Contributors in 2 mins via [DockerLabs Slack Channel](https://join.slack.com/t/collabnix/shared_invite/enQtNTI4Mjc1NTg4MTAzLTg1NzQzZjg0MjhjZDNkYzQwNWQ3NmQ1YTZhOWVjODA4NzdlNDFhY2ZkNWQ2MGVlNTI5YmFlNWU5N2I5NDJmMDU)
+- Join 2020+ Collabnix Labs Contributors in 2 mins via [DockerLabs Slack Channel](https://join.slack.com/t/collabnix/shared_invite/enQtODgyMjk0MzU5ODQyLTM1MGI0M2EzMGM3MTNlYTI0OGFiNjY2NzI1OTY2N2E1Yjk1N2NjZDMzZDk1NmYyMTJiYTA1ODMyNDNlNzc3MjU)
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
