@@ -1,4 +1,4 @@
-# Kubectl for Docker Users
+# Kubectl for Docker Beginners
 
 # Example: Running Nginx Service
 
