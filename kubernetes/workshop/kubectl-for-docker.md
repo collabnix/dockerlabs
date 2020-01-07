@@ -79,13 +79,13 @@ Commercial support is available at
 
 # Example: Listing Containers Vs Pods
 
-# PWD
+## PWD
 
 ```
 docker ps -a
 ```
 
-# PWK
+## PWK
 
 ```
 kubectl get po
@@ -112,7 +112,7 @@ kubectl attach -it nginx-app-5jyvm
 
 # Example: To execute a command in a container,
 
-# PWD
+## PWD
 
 ```
 docker ps
@@ -125,7 +125,7 @@ docker exec 55c103fa1296 cat /etc/hostname
 55c103fa1296
 ```
 
-# PWK
+## PWK
 
 ```
 kubectl get po
