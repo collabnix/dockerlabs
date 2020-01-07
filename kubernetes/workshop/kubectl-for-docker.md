@@ -137,3 +137,18 @@ kubectl exec nginx-app-5jyvm -- cat /etc/hostname
 nginx-app-5jyvm
 ```
 
+# Example: To use interactive commands.
+
+## PWD
+
+```
+docker exec -ti 55c103fa1296 /bin/sh
+# exit
+```
+
+## PWK
+
+```
+kubectl exec -ti nginx-app-5jyvm -- /bin/sh      
+# exit
+```
