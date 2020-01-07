@@ -41,7 +41,7 @@ To be able to create new pods if necessary, the ReplicaSet definition includes a
 
 ```
 git clone https://github.com/collabnix/dockerlabs
-cd dockerlabs/workshop/replicaset101
+cd dockerlabs/kubernetes/workshop/replicaset101
 ```
 
 ```
