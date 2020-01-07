@@ -147,4 +147,4 @@ kube-fledged - [A kubernetes add-on for creating and managing a cache of contain
 - [Apurva Bhandari](https://www.linkedin.com/in/apurvabhandari-linux/)
 
 
-                                             [Last Updated Sections (07th Jan 2020]
+                                             Last Updated Sections - 7th Jan 2020
