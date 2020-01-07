@@ -152,3 +152,21 @@ docker exec -ti 55c103fa1296 /bin/sh
 kubectl exec -ti nginx-app-5jyvm -- /bin/sh      
 # exit
 ```
+
+# Example: To follow stdout/stderr of a process that is running
+
+## PWD
+
+```
+docker logs -f a9e
+192.168.9.1 - - [14/Jul/2015:01:04:02 +0000] "GET / HTTP/1.1" 200 612 "-" "curl/7.35.0" "-"
+192.168.9.1 - - [14/Jul/2015:01:04:03 +0000] "GET / HTTP/1.1" 200 612 "-" "curl/7.35.0" "-"
+```
+
+## PWK
+
+```
+kubectl logs -f nginx-app-zibvs
+10.240.63.110 - - [14/Jul/2015:01:09:01 +0000] "GET / HTTP/1.1" 200 612 "-" "curl/7.26.0" "-"
+10.240.63.110 - - [14/Jul/2015:01:09:02 +0000] "GET / HTTP/1.1" 200 612 "-" "curl/7.26.0" "-"
+```
