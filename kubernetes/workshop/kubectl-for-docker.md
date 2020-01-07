@@ -1,5 +1,7 @@
 # Kubectl for Docker
 
+# Example: Running Nginx Service
+
 ## PWD:
 
 ```
@@ -74,3 +76,64 @@ Commercial support is available at
 </html>
 
 ```
+
+# Example: Listing Containers Vs Pods
+
+# PWD
+
+```
+docker ps -a
+```
+
+# PWK
+
+```
+kubectl get po
+```
+
+
+# Example: Attach a process that is already running in a container
+
+```
+docker ps
+docker attach <containerid>
+```
+
+```
+kubectl get pods
+NAME              READY     STATUS    RESTARTS   AGE
+nginx-app-5jyvm   1/1       Running   0          10m
+```
+
+```
+kubectl attach -it nginx-app-5jyvm
+...
+```
+
+# Example: To execute a command in a container,
+
+# PWD
+
+```
+docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+55c103fa1296        nginx               "nginx -g 'daemon of…"   6 minutes ago       Up 6 minutes        0.0.0.0:80->80/tcp   nginx-app
+```
+
+```
+docker exec 55c103fa1296 cat /etc/hostname
+55c103fa1296
+```
+
+# PWK
+
+```
+kubectl get po
+NAME              READY     STATUS    RESTARTS   AGE
+nginx-app-5jyvm   1/1       Running   0          10m
+```
+```
+kubectl exec nginx-app-5jyvm -- cat /etc/hostname
+nginx-app-5jyvm
+```
+
