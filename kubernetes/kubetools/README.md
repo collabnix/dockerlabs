@@ -142,7 +142,7 @@ Chaos Toolkit Kubernetes Support - [Kubernetes driver extension of the Chaos Too
 kube-fledged - [A kubernetes add-on for creating and managing a cache of container images directly on the cluster worker nodes, so application pods start almost instantly](https://github.com/senthilrch/kube-fledged)<br>
 
 
-## Last Updated Sections (7th Jan 2020)
+## Last Updated Sections (07th Jan 2020)
 
 
 ## Maintainer
