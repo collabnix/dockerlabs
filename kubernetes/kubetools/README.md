@@ -37,6 +37,7 @@ Kubetail - [Bash script to tail Kubernetes logs from multiple pods at the same t
 Searchlight - [Alerts for Kubernetes](https://github.com/searchlight/searchlight)<br>
 linkerd2 Monitoring Mixin for Grafana - [Grafana dashboards for linkerd2 monitoring and can work in standalone (default) or in multi cluster setup](https://github.com/andrew-waters/linkerd2-mixin)<br>
 kuberhaus - [Kubernetes resource dashboard with node/pod layout and resource requests](https://github.com/stevelacy/kuberhaus)<br>
+Kubernetes Job/CronJob Notifier - [This tool sends an alert to slack whenever there is a Kubernetes cronJob/Job failure/success](https://github.com/sukeesh/k8s-job-notify)<br>
 
 ## K8s Troubleshooting
 
@@ -69,6 +70,7 @@ Apollo - [Apollo - The logz.io continuous deployment solution over kubernetes](h
 Helm Cabin - [Web UI that visualizes Helm releases in a Kubernetes cluster](https://github.com/Nick-Triller/helm-cabin)<br>
 flagger - [Progressive delivery Kubernetes operator (Canary, A/B Testing and Blue/Green deployments)](https://github.com/weaveworks/flagger)<br>
 Kubeform - [Kubernetes CRDs for Terraform providers https://kubeform.com](https://github.com/kubeform/kubeform)<br>
+Spinnaker - [Spinnaker is an open source, multi-cloud continuous delivery platform for releasing software changes with high velocity and confidence. http://www.spinnaker.io/](https://github.com/spinnaker/spinnaker)<br>
 
 ## Network Policies
 
@@ -137,21 +139,10 @@ Funktion - [CLI tool for working with funktion](https://github.com/funktionio/fu
 Alterant - [A simple Kubernetes configuration modifier](https://github.com/cloud66-oss/alterant)<br>
 BUCK - [Brigade Universal Controller for Kubernetes](https://github.com/brigadecore/buck)<br>
 Chaos Toolkit Kubernetes Support - [Kubernetes driver extension of the Chaos Toolkit probes and actions API](https://github.com/chaostoolkit/chaostoolkit-kubernetes)<br>
+kube-fledged - [A kubernetes add-on for creating and managing a cache of container images directly on the cluster worker nodes, so application pods start almost instantly](https://github.com/senthilrch/kube-fledged)<br>
 
 
-## Last Updated Sections (5th Jan 2020)
-### K8s Troubleshooting
-### K8s Developement Tools
-### Non-categorize
-### K8s Alert and Monitoring
-### Observability
-### K8s Cluster Management
-### K8s Alternative Tools for Developement
-### Network Policies
-### K8s Alert and Monitoring
-### K8s CI/CD integration Tools
-### Machine Learning/Deep Learning
-### Service Mesh 
+## Last Updated Sections (7th Jan 2020)
 
 
 ## Maintainer
