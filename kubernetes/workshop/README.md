@@ -4,19 +4,19 @@
 
 - [Introductory Slides](http://dockerlabs.collabnix.com/kubernetes/workshop/Kubernetes_Intro_slides-1/Kubernetes_Intro_slides-1.html) - Done
 - [Deep Dive into Kubernetes Architecture](./Kubernetes_Architecture.md) - Done 
-- [Preparing 5-Node Kubernetes Cluster](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/kube101.md) - Done
+- [Preparing 5-Node Kubernetes Cluster](./kube101.md) - Done
 - [Kubectl for Docker Beginners](./kubectl-for-docker.md) - Done
 
 ## Pods101
 
  - [Introductory Slides](http://dockerlabs.collabnix.com/kubernetes/workshop/Pods101_slides/Pods101.html) - Done
- - [Deploying Your First Nginx Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md) - Done
- - [Viewing Your Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#viewing-your-pods) - Done
- - [Where is your Pod running on?](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#which-node-is-this-pod-running-on) - Done
- - [Pod Output in JSON](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#output-in-json) - Done
- - [Executing Commands against Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#executing-commands-against-pods) - Done
- - [Terminating a Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#deleting-the-pod) - Done
- - [Adding a 2nd container to a Pod](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/deploy-your-first-nginx-pod.md#ading-a-2nd-container-to-a-pod) - Done
+ - [Deploying Your First Nginx Pod](./pods101/deploy-your-first-nginx-pod.md) - Done
+ - [Viewing Your Pod](./pods101/deploy-your-first-nginx-pod.md#viewing-your-pods) - Done
+ - [Where is your Pod running on?](./pods101/deploy-your-first-nginx-pod.md#which-node-is-this-pod-running-on) - Done
+ - [Pod Output in JSON](./pods101/deploy-your-first-nginx-pod.md#output-in-json) - Done
+ - [Executing Commands against Pod](./pods101/deploy-your-first-nginx-pod.md#executing-commands-against-pods) - Done
+ - [Terminating a Pod](./pods101/deploy-your-first-nginx-pod.md#deleting-the-pod) - Done
+ - [Adding a 2nd container to a Pod](./pods101/deploy-your-first-nginx-pod.md#ading-a-2nd-container-to-a-pod) - Done
 
  
 
