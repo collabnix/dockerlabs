@@ -4,7 +4,9 @@
 
 - [Introductory Slides](http://dockerlabs.collabnix.com/kubernetes/workshop/Kubernetes_Intro_slides-1/Kubernetes_Intro_slides-1.html) - Done
 - [Deep Dive into Kubernetes Architecture](./Kubernetes_Architecture.md) - Done 
-- [Preparing 5-Node Kubernetes Cluster](./kube101.md) - Done
+- [Preparing 3-Node Kubernetes Cluster]
+  - [Preparing 3-Node Kubernetes Cluster](./kube101.md) - Done
+  - [Setting up GKE Cluster]() - Pending
 - [Kubectl for Docker Beginners](./kubectl-for-docker.md) - Done
 
 ## Pods101
