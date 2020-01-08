@@ -34,13 +34,12 @@
  - [Introductory Slides]() - Pending
  - [Creating Your First Deployment](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#creating-your-first-deployment)
  - [Checking the list of application deployment](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#checking-the-list-of-application-deployment)
- - [Performing Updates with Zero Downtime (Deployment Rolling Updates)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md) - Done 
- - [Kubernetes Deployments Strategies Overview]()
-    - [Rolling Updates]()
-    - [Recreate Updates]()
- -  [Updating a Deployment while another is in progress (Rollover Updates)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#step-3-perform-rolling-updates-to-application-deployment) - Done 
- - [Undoing a deployment (aka Rolling Back)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#step-4-rollback-updates-to-application-deployment) - Done 
- - [Scaling and Autoscaling Deployments](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/workshop/Deployment101#step-2-scale-updown-application-deployment)- Done 
+ - [Scale up/down application deployment](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#step-2-scale-updown-application-deployment)
+ - [Scaling the service to 2 Replicas](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#scaling-the-service-to-2-replicas)
+ - [Perform rolling updates to application deployment](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#step-3-perform-rolling-updates-to-application-deployment) 
+ - [Rollback updates to application deployment](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#step-4-rollback-updates-to-application-deployment)
+- [Cleaning Up](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#step-5-cleanup)
+
 
 ## Scheduler101
 
