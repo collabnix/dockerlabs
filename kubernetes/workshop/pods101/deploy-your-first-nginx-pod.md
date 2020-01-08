@@ -285,10 +285,28 @@ Kubernetes Volumes enables data to survive container restarts, but these volumes
 
 A standard use case for a multi-container Pod with a shared Volume is when one container writes logs or other files to the shared directory, and the other container reads from the shared directory. For example, we can create a Pod like so:
 
-In the below example, we will define a volume named html. Its type is emptyDir, which means that the volume is first created when a Pod is assigned to a node, and exists as long as that Pod is running on that node. As the name says, it is initially empty. The 1st container runs nginx server and has the shared volume mounted to the directory /usr/share/nginx/html. The 2nd container uses the Debian image and has the shared volume mounted to the directory /html. Every second, the 2nd container adds the current date and time into the index.html file, which is located in the shared volume. When the user makes an HTTP request to the Pod, the Nginx server reads this file and transfers it back to the user in response to the request.
+If you look at pods03.yaml file, we define a volume named html. Its type is emptyDir, which means that the volume is first created when a Pod is assigned to a node, and exists as long as that Pod is running on that node. As the name says, it is initially empty. The 1st container runs nginx server and has the shared volume mounted to the directory /usr/share/nginx/html. The 2nd container uses the Debian image and has the shared volume mounted to the directory /html. Every second, the 2nd container adds the current date and time into the index.html file, which is located in the shared volume. When the user makes an HTTP request to the Pod, the Nginx server reads this file and transfers it back to the user in response to the request.
 
 
 ![Image](https://github.com/collabnix/dockerlabs/blob/b7e2a1f40523991e57c6ffa8e1ec6cce20293808/kubernetes/workshop/pods101/multicontainerpod.png)
+
+```
+kubectl apply -f pods03.yaml
+```
+
+
+```
+kubectl exec mc1 -c 1st -- /bin/cat /usr/share/nginx/html/index.html
+...
+ Fri Aug 25 18:36:06 UTC 2017
+ 
+ $ kubectl exec mc1 -c 2nd -- /bin/cat /html/index.html
+ ...
+ Fri Aug 25 18:36:06 UTC 2017
+ Fri Aug 25 18:36:07 UTC 2017
+```
+
+
 
 
 
