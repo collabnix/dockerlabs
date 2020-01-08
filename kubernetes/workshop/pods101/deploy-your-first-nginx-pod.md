@@ -301,7 +301,7 @@ A standard use case for a multi-container Pod with a shared Volume is when one c
 If you look at pods03.yaml file, we define a volume named html. Its type is emptyDir, which means that the volume is first created when a Pod is assigned to a node, and exists as long as that Pod is running on that node. As the name says, it is initially empty. The 1st container runs nginx server and has the shared volume mounted to the directory /usr/share/nginx/html. The 2nd container uses the Debian image and has the shared volume mounted to the directory /html. Every second, the 2nd container adds the current date and time into the index.html file, which is located in the shared volume. When the user makes an HTTP request to the Pod, the Nginx server reads this file and transfers it back to the user in response to the request.
 
 
-![Image](https://github.com/collabnix/dockerlabs/kubernetes/workshop/pods101/multicontainerpod.png)
+![Image](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/pods101/multicontainerpod.png)
 
 ```
 kubectl apply -f pods03.yaml
