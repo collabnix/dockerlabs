@@ -265,7 +265,7 @@ fe00::2 ip6-allrouters
 
 # Example of Multi-Container Pod
 
-![Image]()
+![Image](https://github.com/collabnix/dockerlabs/blob/b7e2a1f40523991e57c6ffa8e1ec6cce20293808/kubernetes/workshop/pods101/multicontainerpod.png)
 
 
 
