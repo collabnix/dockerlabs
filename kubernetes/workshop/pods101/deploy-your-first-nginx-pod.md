@@ -134,25 +134,10 @@ tainers\":[{\"image\":\"nginx:latest\",\"name\":\"webserver\",\"ports\":[{\"cont
              
  ```
  
- 
- ## Deleting the Pod
-  
-```
-$ kubectl delete -f pods01.yaml
-pod "webserver" deleted
 
-$ kubectl get po -o wide
-No resources found.
-```
 
 ## Executing Commands Against Pods
 
-Let us re-create the Pod and try to execute command against the Pod
-
-```
-$ kubectl apply -f pods01.yaml
-pod/webserver created
-```
 
 ```
 $ kubectl exec -it webserver -- /bin/bash
@@ -173,7 +158,19 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 ```
 
 
-## Ading a 2nd container to a Pod
+
+## Deleting the Pod
+  
+```
+$ kubectl delete -f pods01.yaml
+pod "webserver" deleted
+
+$ kubectl get po -o wide
+No resources found.
+```
+
+
+# Ading a 2nd container to a Pod
 
 But wait...Why 2 containers in a Pod?
 
@@ -183,6 +180,9 @@ Having both containers on the same pod allows them to communicate through the lo
 
 
 Let us see  how a pod can host more than one container. Let’s create another YAML file. Call it pods02.yaml and add the following:
+
+
+[ENSURE THAT YOU DELETE OLD PODS IF ITS RUNNING BY ANY CHANCE]
 
 
 ```
