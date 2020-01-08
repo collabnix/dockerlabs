@@ -32,6 +32,8 @@
 ## Deployment101
  
  - [Introductory Slides]() - Pending
+ - [Creating Your First Deployment](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#creating-your-first-deployment)
+ - [Checking the list of application deployment](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md#checking-the-list-of-application-deployment)
  - [Performing Updates with Zero Downtime (Deployment Rolling Updates)](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/Deployment101/readme.md) - Done 
  - [Kubernetes Deployments Strategies Overview]()
     - [Rolling Updates]()
