@@ -263,4 +263,10 @@ fe00::2 ip6-allrouters
 10.8.0.5        webserver
 ```
 
+# Example of Multi-Container Pod
+
+![Image]()
+
+
+
 
