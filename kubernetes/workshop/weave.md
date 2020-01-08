@@ -1,4 +1,4 @@
-# Setting up WeaveScope
+# Setting up WeaveScope for visualizing Kubernetes Resources(Pods, Services, Containers & Processes)
 
 
 ## Pre-requisite
