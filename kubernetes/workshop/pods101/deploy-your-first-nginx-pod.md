@@ -138,7 +138,7 @@ tainers\":[{\"image\":\"nginx:latest\",\"name\":\"webserver\",\"ports\":[{\"cont
  ## Deleting the Pod
   
 ```
-$ kubectl delete -f pod01.yaml
+$ kubectl delete -f pods01.yaml
 pod "webserver" deleted
 
 $ kubectl get po -o wide
