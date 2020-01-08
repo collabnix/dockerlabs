@@ -184,6 +184,13 @@ Having both containers on the same pod allows them to communicate through the lo
 
 Let us see  how a pod can host more than one container. Let’s create another YAML file. Call it pods02.yaml and add the following:
 
+
+```
+$ kubectl apply -f pods02.yaml
+```
+
+
+
 ```
 $ kubectl get po -o wide
 NAME        READY   STATUS              RESTARTS   AGE   IP       NODE                                                NOMINATED NODE   READINESS GATES
@@ -204,6 +211,41 @@ kubectl get po -o wide
 NAME        READY   STATUS    RESTARTS   AGE     IP         NODE                                                NOMINATED NODE   READINESS GATES
 webserver   2/2     Running   0          3m37s   10.8.0.5   gke-standard-cluster-1-default-pool-78257330-5hs8   <none>           <none>
 ```
+
+## How to verify 2 containers are running inside a Pod?
+
+
+```
+$kubectl describe po
+```
+
+```
+Containers:
+  webserver:
+    Container ID:   docker://0564fcb88f7c329610e7da24cba9de6555c0183814cf517e55d2816c6539b829
+    Image:          nginx:latest
+    Image ID:       docker-pullable://nginx@sha256:36b77d8bb27ffca25c7f6f53cadd059aca2747d46fb6ef34064e31727325784e
+    Port:           80/TCP
+    State:          Running
+      Started:      Wed, 08 Jan 2020 13:21:57 +0530
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        100m
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-xhgmm (ro)
+  webwatcher:
+    Container ID:   docker://4cebbb220f7f9695f4d6492509e58152ba661f3ab8f4b5d0a7adec6c61bdde26
+    Image:          afakharany/watcher:latest
+    Image ID:       docker-pullable://afakharany/watcher@sha256:43d1b12bb4ce6e549e85447678a28a8e7b9d4fc398938a6f3e57d2908a9b7d80
+    Port:           <none>
+    State:          Running
+      Started:      Wed, 08 Jan 2020 13:22:26 +0530
+    Ready:          True
+    Restart Count:  0
+    Requests:
+ ```
 
 Since we have two containers in a pod, we will need to use the -c option with kubectl when we need to address a specific container. For example:
 
