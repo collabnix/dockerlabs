@@ -273,6 +273,12 @@ fe00::2 ip6-allrouters
 10.8.0.5        webserver
 ```
 
+## Cleaning up
+
+```
+kubectl delete -f pods02.yaml
+```
+
 # Example of Multi-Container Pod
 
 Let's talk about communication between containers in a Pod. Having multiple containers in a single Pod makes it relatively straightforward for them to communicate with each other. They can do this using several different methods.
