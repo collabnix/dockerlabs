@@ -294,16 +294,105 @@ If you look at pods03.yaml file, we define a volume named html. Its type is empt
 kubectl apply -f pods03.yaml
 ```
 
+```
+[Captains-Bay]🚩 >  kubectl get po,svc
+NAME      READY     STATUS    RESTARTS   AGE
+po/mc1    2/2       Running   0          11s
+
+NAME             TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+svc/kubernetes   ClusterIP   10.15.240.1   <none>        443/TCP   1h
+[Captains-Bay]🚩 >  kubectl describe po mc1
+Name:         mc1
+Namespace:    default
+Node:         gke-k8s-lab1-default-pool-fd9ef5ad-pc18/10.140.0.16
+Start Time:   Wed, 08 Jan 2020 14:29:08 +0530
+Labels:       <none>
+Annotations:  kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"mc1","namespace":"default"},"spec":{"containers":[{"image":"nginx","name":"1st","v...
+              kubernetes.io/limit-ranger=LimitRanger plugin set: cpu request for container 1st; cpu request for container 2nd
+Status:       Running
+IP:           10.12.2.6
+Containers:
+  1st:
+    Container ID:   docker://b08eb646f90f981cd36c605bf8fead3ca62178c7863598fd4558cb026ed067dd
+    Image:          nginx
+    Image ID:       docker-pullable://nginx@sha256:36b77d8bb27ffca25c7f6f53cadd059aca2747d46fb6ef34064e31727325784e
+    Port:           <none>
+    State:          Running
+      Started:      Wed, 08 Jan 2020 14:29:09 +0530
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        100m
+    Environment:  <none>
+    Mounts:
+      /usr/share/nginx/html from html (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-xhgmm (ro)
+  2nd:
+    Container ID:  docker://63180b4128d477810d6062342f4b8e499de684ffd69ad245c29118e1661eafcb
+    Image:         debian
+    Image ID:      docker-pullable://debian@sha256:c99ed5d068d4f7ff36c7a6f31810defebecca3a92267fefbe0e0cf2d9639115a
+    Port:          <none>
+    Command:
+      /bin/sh
+      -c
+    Args:
+      while true; do date >> /html/index.html; sleep 1; done
+    State:          Running
+      Started:      Wed, 08 Jan 2020 14:29:14 +0530
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        100m
+    Environment:  <none>
+    Mounts:
+      /html from html (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-xhgmm (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  html:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  default-token-xhgmm:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-xhgmm
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From                                              Message
+  ----    ------     ----  ----                                              -------
+  Normal  Scheduled  18s   default-scheduler                                 Successfully assigned default/mc1 to gke-k8s-lab1-default-pool-fd9ef5ad-pc18
+  Normal  Pulling    17s   kubelet, gke-k8s-lab1-default-pool-fd9ef5ad-pc18  pulling image "nginx"
+  Normal  Pulled     17s   kubelet, gke-k8s-lab1-default-pool-fd9ef5ad-pc18  Successfully pulled image "nginx"
+  Normal  Created    17s   kubelet, gke-k8s-lab1-default-pool-fd9ef5ad-pc18  Created container
+  Normal  Started    17s   kubelet, gke-k8s-lab1-default-pool-fd9ef5ad-pc18  Started container
+  Normal  Pulling    17s   kubelet, gke-k8s-lab1-default-pool-fd9ef5ad-pc18  pulling image "debian"
+  Normal  Pulled     13s   kubelet, gke-k8s-lab1-default-pool-fd9ef5ad-pc18  Successfully pulled image "debian"
+  Normal  Created    12s   kubelet, gke-k8s-lab1-default-pool-fd9ef5ad-pc18  Created container
+  Normal  Started    12s   kubelet, gke-k8s-lab1-default-pool-fd9ef5ad-pc18  Started container
+```
+
+
 
 ```
 kubectl exec mc1 -c 1st -- /bin/cat /usr/share/nginx/html/index.html
 ...
- Fri Aug 25 18:36:06 UTC 2017
+ Wed Jan  8 08:59:14 UTC 2020
+Wed Jan  8 08:59:15 UTC 2020
+Wed Jan  8 08:59:16 UTC 2020
  
  $ kubectl exec mc1 -c 2nd -- /bin/cat /html/index.html
  ...
- Fri Aug 25 18:36:06 UTC 2017
- Fri Aug 25 18:36:07 UTC 2017
+ Wed Jan  8 08:59:14 UTC 2020
+Wed Jan  8 08:59:15 UTC 2020
+Wed Jan  8 08:59:16 UTC 2020
 ```
 
 
