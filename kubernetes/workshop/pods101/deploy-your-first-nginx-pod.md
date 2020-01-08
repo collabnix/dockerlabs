@@ -283,6 +283,13 @@ kubectl delete -f pods02.yaml
 
 Let's talk about communication between containers in a Pod. Having multiple containers in a single Pod makes it relatively straightforward for them to communicate with each other. They can do this using several different methods.
 
+## Use Cases for Multi-Container Pods
+
+The primary purpose of a multi-container Pod is to support co-located, co-managed helper processes for a primary application. There are some general patterns for using helper processes in Pods:
+
+Sidecar containers “help” the main container. Some examples include log or data change watchers, monitoring adapters, and so on. A log watcher, for example, can be built once by a different team and reused across different applications. Another example of a sidecar container is a file or data loader that generates data for the main container.
+Proxies, bridges, and adapters connect the main container with the external world. For example, Apache HTTP server or nginx can serve static files. It can also act as a reverse proxy to a web application in the main container to log and limit HTTP requests. Another example is a helper container that re-routes requests from the main container to the external world. This makes it possible for the main container to connect to localhost to access, for example, an external database, but without any service discovery.
+
 ## Shared volumes in a Kubernetes Pod
 
 In Kubernetes, you can use a shared Kubernetes Volume as a simple and efficient way to share data between containers in a Pod. For most cases, it is sufficient to use a directory on the host that is shared with all containers within a Pod.
@@ -401,6 +408,12 @@ Wed Jan  8 08:59:15 UTC 2020
 Wed Jan  8 08:59:16 UTC 2020
 ```
 
+
+# Contributor
+
+[Ajeet S Raina](https://twitter.com/ajeetsraina)
+
+# Reviewer
 
 
 
