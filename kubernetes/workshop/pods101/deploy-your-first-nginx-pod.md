@@ -150,7 +150,7 @@ No resources found.
 Let us re-create the Pod and try to execute command against the Pod
 
 ```
-$ kubectl apply -f pod01.yaml
+$ kubectl apply -f pods01.yaml
 pod/webserver created
 ```
 
