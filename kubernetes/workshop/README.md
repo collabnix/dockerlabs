@@ -7,7 +7,7 @@
 - Preparing 3-Node Kubernetes Cluster
   - [Preparing 3-Node Kubernetes Cluster](./kube101.md) - Done
   - [Setting up GKE Cluster]() - Pending
-  - [Setting up Weavescope for Visualization ok GKE](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/weave.md) - Done
+  - [Setting up Weavescope for Visualization on GKE](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/weave.md) - Done
   - [Setting up WeaveScope For Visualizatioon on Katakoda/PWK](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/weave-Katakoda-PWD.md) - Done
 - [Kubectl for Docker Beginners](./kubectl-for-docker.md) - Done
 
