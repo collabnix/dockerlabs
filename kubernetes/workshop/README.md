@@ -69,3 +69,4 @@
 - Ajeet Singh Raina
 - Sangam Biradar
 - Rachit Mehrotra
+- Saiyam Pathak
