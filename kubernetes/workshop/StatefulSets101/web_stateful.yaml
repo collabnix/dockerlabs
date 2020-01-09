@@ -1,44 +1,46 @@
-kind: StorageClass
-apiVersion: storage.k8s.io/v1
+apiVersion: v1
+kind: Service
 metadata:
-  name: www-disk
-provisioner: kubernetes.io/gce-pd
-parameters:
-  type: pd-ssd
-  zone: us-central1-a
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None
+  selector:
+    app: nginx
 ---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: webapp
+  name: web
 spec:
+  serviceName: "nginx"
+  replicas: 2
   selector:
-	matchLabels:
-  	app: web
-  serviceName: web-svc
-  replicas: 3
+    matchLabels:
+      app: nginx
   template:
-	metadata:
-  	labels:
-    	app: web
-	spec:
-  	terminationGracePeriodSeconds: 10
-  	containers:
-  	- name: web
-    	image: httpd:2.4
-    	ports:
-    	- containerPort: 80
-      	name: http
-    	volumeMounts:
-    	- name: www
-      	mountPath: /var/www/html
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: k8s.gcr.io/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
   volumeClaimTemplates:
   - metadata:
-  	name: www
-  	annotations:
-    	volume.beta.kubernetes.io/storage-class: www-disk
-	spec:
-  	accessModes: [ "ReadWriteOnce" ]
-  	resources:
-    	requests:
-      	storage: 1Gi
+      name: www
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
