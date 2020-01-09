@@ -14,7 +14,7 @@ A Kubernetes Service acts as an abstraction layer. In a stateless application li
 
 # Deploying a Stateful Application Using Kubernetes Statefulset
 
-If you look at web_stateful.yaml file, you will find a snippet around how we are deploying a stateful application. For simplicity, are we using Apache web  as the pod image. The deployment is made up of three Apache web servers; all of them are connected to a persistent volume. For example, look at web_stategul.yaml file under the current location.
+If you look at web_stateful.yaml file, you will find a snippet around how we are deploying a stateful application. For simplicity, are we using Nginx  as the pod image. The deployment is made up of 2 Nginx web servers; both of them are connected to a persistent volume. For example, look at web_stateful.yaml file under the current location.
 
 Before we start discussing the details of this definition, notice that the file actually contains two definitions: the storage class that the StatefulSet is using and the StatefulSet itself.
 
