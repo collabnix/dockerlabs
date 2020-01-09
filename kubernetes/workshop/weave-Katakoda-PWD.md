@@ -26,8 +26,9 @@ kubectl get svc -n weave -o yaml > svc.yaml && sed -i "s/ClusterIP/NodePort/g" s
 ```
 
 ## Open Scope in Your Browser
+
 ```
-From the kubectl get svc -n weave take the Nodeport and hit open Katakoda/PWK on that port 
+From the kubectl get svc -n weave take the Nodeport and hit open PWK on that port 
 ```
 
 ![My Image](https://github.com/collabnix/dockerlabs/blob/master/kubernetes/workshop/weave-service.png)
