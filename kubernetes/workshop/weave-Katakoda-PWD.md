@@ -2,8 +2,8 @@
 
 ## Pre-requisite
 
-- Docker for Mac
-- PWK or Katakoda cluster
+- Docker for Mac OR
+- PWK 
 
 
 ## Installing WeaveScope
