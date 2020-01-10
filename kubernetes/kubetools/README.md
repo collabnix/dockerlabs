@@ -133,13 +133,13 @@ Skupper - [Multicloud communication for Kubernetes](https://skupper.io/)<br>
 
 ## Kubernetes Storage Providers
 
-ChubaoFS - [distributed file system and object storage](https://github.com/chubaofs/chubaofs)
-Longhorn - [Cloud-Native distributed block storage built on and for Kubernetes](https://github.com/longhorn/longhorn)
+ChubaoFS - [distributed file system and object storage](https://github.com/chubaofs/chubaofs) <br>
+Longhorn - [Cloud-Native distributed block storage built on and for Kubernetes](https://github.com/longhorn/longhorn)<br>
 OpenEBS - [Kubernetes native - hyperconverged block storage with multiple storage engines](https://github.com/openebs/openebs)
-Rook - [Storage Orchestration for Kubernetes](https://github.com/rook/rook)
-TiKV - [Distributed transactional key-value database](https://github.com/tikv/tikv)
-velero - [Backup and migrate Kubernetes applications and their persistent volumes](https://github.com/vmware-tanzu/velero)
-Vitess - [Vitess is a database clustering system for horizontal scaling of MySQL](https://github.com/vitessio/vitess)
+Rook - [Storage Orchestration for Kubernetes](https://github.com/rook/rook)<br>
+TiKV - [Distributed transactional key-value database](https://github.com/tikv/tikv)<br>
+velero - [Backup and migrate Kubernetes applications and their persistent volumes](https://github.com/vmware-tanzu/velero)<br>
+Vitess - [Vitess is a database clustering system for horizontal scaling of MySQL](https://github.com/vitessio/vitess)<br>
 
 ## Non-categorize
 
