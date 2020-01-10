@@ -44,7 +44,9 @@
     <marquee behavior="scroll" direction="left"> <h3> Upcoming Event : 18- Jan-2020: Docker Bangalore Community ,Hurry Up, RSVP! </h3>
     <center> <button class="btn-hover color-1"><a href="https://events.docker.com/events/details/docker-bangalore-presents-meetup-50-kickstart-your-2020-container-journey-with-docker-kubernetes-kubernetes101-workshop/#/"> Log in to RSVP  </a> </button></marquee>
     </header>
-
+ {% if site.show_downloads %}   
+      <right> <a href="https://github.com/collabnix/dockerlabs/edit/master/{{ page.path }}" class="btn"> edit_me_on_github </a>
+      {% endif %}
     <main id="content" class="main-content" role="main">
         {% if site.show_downloads %}   
   <a href="https://github.com/collabnix/dockerlabs/edit/master/{{ page.path }}" class="btn"> edit_me_on_github </a>
