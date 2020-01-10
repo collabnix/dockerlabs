@@ -135,7 +135,7 @@ Skupper - [Multicloud communication for Kubernetes](https://skupper.io/)<br>
 
 ChubaoFS - [distributed file system and object storage](https://github.com/chubaofs/chubaofs) <br>
 Longhorn - [Cloud-Native distributed block storage built on and for Kubernetes](https://github.com/longhorn/longhorn)<br>
-OpenEBS - [Kubernetes native - hyperconverged block storage with multiple storage engines](https://github.com/openebs/openebs)
+OpenEBS - [Kubernetes native - hyperconverged block storage with multiple storage engines](https://github.com/openebs/openebs)<br>
 Rook - [Storage Orchestration for Kubernetes](https://github.com/rook/rook)<br>
 TiKV - [Distributed transactional key-value database](https://github.com/tikv/tikv)<br>
 velero - [Backup and migrate Kubernetes applications and their persistent volumes](https://github.com/vmware-tanzu/velero)<br>
