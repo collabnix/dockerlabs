@@ -131,6 +131,16 @@ Draft: Streamlined Kubernetes Development - [A tool for developers to create clo
 helm-ssm - [A low dependency tool for retrieving and injecting secrets from AWS SSM into Helm](https://github.com/totango/helm-ssm)<br>
 Skupper - [Multicloud communication for Kubernetes](https://skupper.io/)<br>
 
+## Kubernetes Storage Providers
+
+ChubaoFS - [distributed file system and object storage](https://github.com/chubaofs/chubaofs)
+Longhorn - [Cloud-Native distributed block storage built on and for Kubernetes](https://github.com/longhorn/longhorn)
+OpenEBS - [Kubernetes native - hyperconverged block storage with multiple storage engines](https://github.com/openebs/openebs)
+Rook - [Storage Orchestration for Kubernetes](https://github.com/rook/rook)
+TiKV - [Distributed transactional key-value database](https://github.com/tikv/tikv)
+velero - [Backup and migrate Kubernetes applications and their persistent volumes](https://github.com/vmware-tanzu/velero)
+Vitess - [Vitess is a database clustering system for horizontal scaling of MySQL](https://github.com/vitessio/vitess)
+
 ## Non-categorize
 
 Rudr - [A Kubernetes implementation of the Open Application Model specification](https://github.com/oam-dev/rudr) <br>
