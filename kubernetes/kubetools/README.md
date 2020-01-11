@@ -1,7 +1,11 @@
 # Kubetools - Curated List of Kubernetes Tools
 
 
-Kubetools is built for a purpose. It is being used by Collabnix Slack community internally to target the most popular tools and technique and coming up with the best practices around these tools. The community is planning to conduct webinar for the most voted tools based on the popularity. Do visit http://webinar.collabnix.com for the upcoming webinars around these tools.
+Kubetools was built with a purpose. It is being used by Collabnix Slack community internally to target the most popular tools and technique and coming up with the best practices around these tools. The community is planning to conduct webinar for the most voted tools based on the popularity. Do visit http://webinar.collabnix.com for the upcoming webinars around these tools.
+
+# Upcoming Kubetools Webinar
+
+[Awesome Traefik: Ingress Controller for Kubernetes](https://zoom.us/webinar/register/WN_vx_lvFp4To6E2ldb4HfIwg )
 
 ## K8s Cluster Management
 
