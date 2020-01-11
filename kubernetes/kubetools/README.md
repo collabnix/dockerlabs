@@ -8,7 +8,7 @@ Kubetools was built with a purpose. It is being used by Collabnix Slack communit
 ### Year: 2020
 
 | Date     | Topic        | Registration Link | Presenter   | Presentation          | Video  | Chat |
-| ------------- | ------------- | ------------- | ------------- | ------------- | --------| 
+| ------------- | ---------- |  ------------- | ------------- | ------------- | ------------- | --------| 
 | 11-Jan   | [Awesome Traefik - Ingress Controller for Kubernetes] | [Register Here]((https://zoom.us/webinar/register/WN_vx_lvFp4To6E2ldb4HfIwg)) [Swapnasagar Pradhan ](https://www.linkedin.com/in/swapnasagar-pradhan-724b2649) | [-]() | [-]() | [-](-) |
 | 8-Feb   | Building docker images without Dockerfile - Cloud Native Buildpack |  [Suman Chakraborty ](https://www.linkedin.com/in/schakraborty007) | [-]() | [-]() | [-](-) |
 
