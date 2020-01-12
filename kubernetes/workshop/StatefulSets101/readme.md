@@ -1,12 +1,11 @@
 ## What is Statefulset and how is it different from Deployment?
 
-A Statefulset is a Kubernetes controller that is used to manage and maintain one or more Pods. However, so do other controllers like ReplicaSets and, the more robust, Deployments. So what does Kubernetes use StatefulSets for? To answer this question, we need to discuss stateless versus stateful applications.
+Deployments and ReplicaSets look great because they make sure that our containers are always in our desired state. If a container fails for some reason, a new one is created to replace it. But what do we do when the deployment order of our containers matters? For that, we look for help from Kubernetes StatefulSets.
 
-A stateless application is one that does not care which network it is using, and it does not need permanent storage. Examples of stateless apps may include web servers (Apache, Nginx, or Tomcat).
+OK, now that we know how the deployment of a StatefulSet works, what about the failure of a pod that is part of a StatefulSet? Well, the order is preserved. If we lose pod-2 due to a host failure, the StatefulSet won’t just deploy another pod, it will deploy a new “pod-2” because the identity matters in a StatefulSet.
 
-On the other hand, we have stateful apps. Let’s say you have a Solr database cluster that is managed by several Zookeeper instances. For such an application to function correctly, each Solr instance must be aware of the Zookeeper instances that are controlling it. Similarly, the Zookeeper instances themselves establish connections between each other to elect a master node. Due to such a design, Solr clusters are an example of stateful applications. If you deploy Zookeeper on Kubernetes, you’ll need to ensure that pods can reach each other through a unique identity that does not change (hostnames, IPs...etc.). Other examples of stateful applications include MySQL clusters, Redis, Kafka, MongoDB, and others.
+StatefulSets currently require a “headless” service to manage the identities. This is a service that has the same selectors that you’re used to, but won’t receive a clusterIP address, meaning that you can’t route traffic to the containers through this service object.
 
-Given this difference, Deployment is more suited to work with stateless applications. As far as a Deployment is concerned, Pods are interchangeable. While a StatefulSet keeps a unique identity for each Pod it manages. It uses the same identity whenever it needs to reschedule those Pods.
 
 ## Exposing a StatefulSet
 
