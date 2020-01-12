@@ -31,12 +31,6 @@ A Persistent Volume Claim is a request to use a Persistent Volume. If we are to 
 
 ## Creating Persistent Volumes and Claims
 
-```
-kubectl apply -f volumes.yaml
-```
-
-
-=============
 
 
 
