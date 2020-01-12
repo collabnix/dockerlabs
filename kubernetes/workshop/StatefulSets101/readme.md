@@ -29,6 +29,17 @@ Persistent volumes act as an abstraction layer to save the user from going into 
 A Persistent Volume Claim is a request to use a Persistent Volume. If we are to use the Pods and Nodes analogy, then consider Persistent Volumes as the “nodes” and Persistent Volume Claims as the “pods” that use the node resources. The resources we are talking about here are storage properties, such as storage size, latency, throughput, etc.
 
 
+## Creating Persistent Volumes and Claims
+
+```
+kubectl apply -f volumes.yaml
+```
+
+
+=============
+
+
+
 
 ## Creating The StatefulSet
 
