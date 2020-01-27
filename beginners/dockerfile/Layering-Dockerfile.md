@@ -134,8 +134,13 @@ To see more information about the Docker image and the layers use 'docker inspec
 
 ```
 
+# Do you want to visualize layers of Docker Image?
 
+```
+docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_API_VERSION=1.37  wagoodman/dive testimage
+```
 
 ## Contributor
 
 [Prashansa Kulshrestha](https://github.com/Prashansa-K/)
+[Ajeet S Raina](https://github.com/ajeetraina)
