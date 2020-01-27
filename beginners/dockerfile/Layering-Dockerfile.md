@@ -137,8 +137,49 @@ To see more information about the Docker image and the layers use 'docker inspec
 # Do you want to visualize layers of Docker Image?
 
 ```
-docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_API_VERSION=1.37  wagoodman/dive testimage
+docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock  wagoodman/dive testimage
 ```
+
+```
+[● Layers]───────────────────────────────────────────────────────────────────────────── [Current Layer Contents]───────────────────────────────────────────────────────────────
+Cmp   Size  Command                                                                     Permission     UID:GID       Size  Filetree
+     63 MB  FROM e388568efdf7281                                                        drwxr-xr-x         0:0     4.8 MB  ├── bin
+    988 kB  [ -z "$(apt-get indextargets)" ]                                            -rwxr-xr-x         0:0     1.1 MB  │   ├── bash
+     745 B  set -xe   && echo '#!/bin/sh' > /usr/sbin/policy-rc.d  && echo 'exit 101' > -rwxr-xr-x         0:0      35 kB  │   ├── bunzip2
+       7 B  mkdir -p /run/systemd && echo 'docker' > /run/systemd/container             -rwxr-xr-x         0:0        0 B  │   ├── bzcat → bin/bunzip2
+       0 B  mkdir -p /hello/hello                                                       -rwxrwxrwx         0:0        0 B  │   ├── bzcmp → bzdiff
+      37 B  #(nop) COPY file:666735678ded52c6f9e0693ca27b4dc3d466e3d79c585a58c3b9a91357 -rwxr-xr-x         0:0     2.1 kB  │   ├── bzdiff
+      37 B  chmod 600 /hello/hello/hello.txt                                            -rwxrwxrwx         0:0        0 B  │   ├── bzegrep → bzgrep
+                                                                                        -rwxr-xr-x         0:0     4.9 kB  │   ├── bzexe
+[Layer Details]──────────────────────────────────────────────────────────────────────── -rwxrwxrwx         0:0        0 B  │   ├── bzfgrep → bzgrep
+                                                                                        -rwxr-xr-x         0:0     3.6 kB  │   ├── bzgrep
+Tags:   (unavailable)                                                                   -rwxr-xr-x         0:0        0 B  │   ├── bzip2 → bin/bunzip2
+Id:     e388568efdf72814bd6439a80d822ce06b631689a82292a2b96382d020d63a4c                -rwxr-xr-x         0:0      14 kB  │   ├── bzip2recover
+Digest: sha256:43c67172d1d182ca5460fc962f8f053f33028e0a3a1d423e05d91b532429e73d         -rwxrwxrwx         0:0        0 B  │   ├── bzless → bzmore
+Command:                                                                                -rwxr-xr-x         0:0     1.3 kB  │   ├── bzmore
+#(nop) ADD file:08e718ed0796013f5957a1be7da3bef6225f3d82d8be0a86a7114e5caad50cbc in /   -rwxr-xr-x         0:0      35 kB  │   ├── cat
+                                                                                        -rwxr-xr-x         0:0      64 kB  │   ├── chgrp
+[Image Details]──────────────────────────────────────────────────────────────────────── -rwxr-xr-x         0:0      60 kB  │   ├── chmod
+                                                                                        -rwxr-xr-x         0:0      68 kB  │   ├── chown
+Total Image size: 64 MB                                                                 -rwxr-xr-x         0:0     142 kB  │   ├── cp
+Potential wasted space: 308 B                                                           -rwxr-xr-x         0:0     121 kB  │   ├── dash
+Image efficiency score: 99 %                                                            -rwxr-xr-x         0:0     101 kB  │   ├── date
+                                                                                        -rwxr-xr-x         0:0      76 kB  │   ├── dd
+Count   Total Space  Path                                                               -rwxr-xr-x         0:0      85 kB  │   ├── df
+    2         234 B  /var/lib/dpkg/diversions                                           -rwxr-xr-x         0:0     134 kB  │   ├── dir
+    2          74 B  /hello/hello/hello.txt                                             -rwxr-xr-x         0:0      72 kB  │   ├── dmesg
+                                                                                        -rwxrwxrwx         0:0        0 B  │   ├── dnsdomainname → hostname
+                                                                                        -rwxrwxrwx         0:0        0 B  │   ├── domainname → hostname
+                                                                                        -rwxr-xr-x         0:0      35 kB  │   ├── echo
+                                                                                        -rwxr-xr-x         0:0       28 B  │   ├── egrep
+                                                                                        -rwxr-xr-x         0:0      31 kB  │   ├── false
+                                                                                        -rwxr-xr-x         0:0       28 B  │   ├── fgrep
+                                                                                        -rwxr-xr-x         0:0      65 kB  │   ├── findmnt
+                                                                                        -rwxr-xr-x         0:0     220 kB  │   ├── grep
+                                                                                        -rwxr-xr-x         0:0     2.3 kB  │   ├── gunzip
+                                                                                        -rwxr-xr-x         0:0     5.9 kB  │   ├── gzexe
+                                                                                        -rwxr-xr-x         0:0     102 kB  │   ├── gzip
+ ```
 
 ## Contributor
 
