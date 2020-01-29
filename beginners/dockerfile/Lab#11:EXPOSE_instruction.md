@@ -55,7 +55,7 @@ $  docker container run --rm -d --name expose-inst expose:v1
 
 ### Inspecting the EXPOSE port in the image
 ```
-$ docker image inspect --format {{.ContainerConfig.ExposedPorts}} expose:v1
+$ docker image inspect --format \{\{.ContainerConfig.ExposedPorts\}\} expose:v1
 ```
 
 ### Publish all exposed ports
