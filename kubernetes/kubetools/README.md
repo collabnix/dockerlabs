@@ -26,6 +26,9 @@ katafygio - [Dump, or continuously backup Kubernetes objets as yaml files in git
 Sealed Secrets - [A Kubernetes controller and tool for one-way encrypted Secrets](https://github.com/bitnami-labs/sealed-secrets)<br>
 OpenKruise/Kruise - [Automate application workloads management on Kubernetes https://openkruise.io](https://github.com/openkruise/kruise)<br>
 kubectl snapshot - [Take Cluster Snapshots](https://github.com/fbrubbo/kubectl-snapshot)<br>
+Kubernetes Job/CronJob Notifier - [Kuberenets Job/CronJob Notifier](https://github.com/sukeesh/k8s-job-notify)<br>
+Kubernetes Janitor - [Clean up (delete) Kubernetes resources after a configured TTL](https://github.com/hjacobs/kube-janitor)<br>
+Grafana Tanka - [Tanka is a composable configuration utility for Kubernetes. It leverages the Jsonnet language to realize flexible, reusable and concise configuration](https://tanka.dev)<br>
 
 ## K8s Cluster with core CLI tools
 
@@ -35,7 +38,8 @@ kube-shell - [Kubernetes shell: An integrated shell for working with the Kuberne
 kuttle: kubectl wrapper for sshuttle without SSH - [Kubernetes wrapper for sshuttle](https://github.com/kayrus/kuttle)<br>
 kubectl sudo - [Run kubernetes commands with the security privileges of another user](https://github.com/postfinance/kubectl-sudo)<br>
 K9s - [Kubernetes CLI To Manage Your Clusters In Style!](https://github.com/derailed/k9s) <br>
-Ktunnel - [A cli that exposes your local resources to kubernetes](https://github.com/omrikiei/ktunnel?utm_sq=g93l33gmsu)<br>
+Ktunnel - [A cli that exposes your local resources to kubernetes](https://github.com/omrikiei/ktunnel)<br>
+Kubemqctl - [Kubemqctl is a command line interface (CLI) for KubeMQ , Kubernetes Message Broker https://kubemq.io](https://github.com/kubemq-io/kubemqctl)<br>
 
 ## K8s Alert and Monitoring
 
@@ -56,7 +60,7 @@ K9s - [Kubernetes CLI To Manage Your Clusters In Style!](https://github.com/dera
 Kubernetes CLI Plugin - Doctor - [kubectl cluster triage plugin for k8s - 🏥 (brew doctor equivalent)](https://github.com/emirozer/kubectl-doctor)<br>
 Knative Inspect - [A light-weight debugging tool for Knative's system components](https://github.com/nimakaviani/knative-inspect)<br>
 Kubeman - [To find information from Kubernetes clusters, and to investigate issues related to Kubernetes and Istio](https://github.com/walmartlabs/kubeman)<br>
-
+Kubectl-debug - [Debug your pod by a new container with every troubleshooting tools pre-installed](https://github.com/aylei/kubectl-debug)<br>
 
 ## K8s Developement Tools
 
@@ -66,13 +70,17 @@ Garden: Kubernetes from source to finish - [Development orchestrator for Kuberne
 KuberNix - [Single dependency Kubernetes clusters for local testing, experimenting and development](https://github.com/saschagrunert/kubernix)<br>
 Copper - [A configuration file validator for Kubernetes](https://github.com/cloud66-oss/copper?utm_sq=g93mop70o8)<br>
 ko - [Build and deploy Go applications on Kubernetes](https://github.com/google/ko)<br>
+Makisu - [Fast and flexible Docker image building tool, works in unprivileged containerized environments like Mesos and Kubernetes](https://github.com/uber/makisu)<br>
+KUDO [Kubernetes Universal Declarative Operator (KUDO) provides a declarative approach to building production-grade Kubernetes operators](https://kudo.dev/docs/)<br>
+Aegir - [Validation Webhook for Kubernetes based on LIVR rules (https://livr-spec.org)](https://github.com/grupozap/aegir)<br>
 
 ## K8s Alternative Tools for Developement
 
 KubeSphere - [Easy-to-use Production Ready Container Platform https://kubesphere.io](https://github.com/kubesphere/kubesphere)<br>
 skippbox - [A Desktop application for k8s](https://github.com/skippbox/skippbox)<br>
+Micronetes - [Micronetes is a local orchestrator inspired by kubernetes that makes developing and testing microservices and distributed applications easier](https://github.com/davidfowl/Micronetes)<br>
 
-## K8s CI/CD integration Tools
+## K8s CI/CD integration Automation Tools
 
 Skaffold - [Easy and Repeatable Kubernetes Development](https://github.com/GoogleContainerTools/skaffold) <br>
 Apollo - [Apollo - The logz.io continuous deployment solution over kubernetes](https://github.com/logzio/apollo)<br>
@@ -80,6 +88,8 @@ Helm Cabin - [Web UI that visualizes Helm releases in a Kubernetes cluster](http
 flagger - [Progressive delivery Kubernetes operator (Canary, A/B Testing and Blue/Green deployments)](https://github.com/weaveworks/flagger)<br>
 Kubeform - [Kubernetes CRDs for Terraform providers https://kubeform.com](https://github.com/kubeform/kubeform)<br>
 Spinnaker - [Spinnaker is an open source, multi-cloud continuous delivery platform for releasing software changes with high velocity and confidence. http://www.spinnaker.io/](https://github.com/spinnaker/spinnaker)<br>
+Helmsman - [Helm Charts as Code](https://github.com/Praqma/helmsman/)<br>
+Argo - [Argo Workflows: Get stuff done with Kubernetes](https://github.com/argoproj/argo)<br>
 
 ## Network Policies
 
@@ -149,6 +159,12 @@ Rook - [Storage Orchestration for Kubernetes](https://github.com/rook/rook)<br>
 TiKV - [Distributed transactional key-value database](https://github.com/tikv/tikv)<br>
 velero - [Backup and migrate Kubernetes applications and their persistent volumes](https://github.com/vmware-tanzu/velero)<br>
 Vitess - [Vitess is a database clustering system for horizontal scaling of MySQL](https://github.com/vitessio/vitess)<br>
+Ubiquity - [Ubiquity Storage Service for Container Ecosystems](https://github.com/IBM/ubiquity)<br>
+
+## Kubernetes Security tools
+
+kube-hunter - [Hunt for security weaknesses in Kubernetes clusters](https://github.com/aquasecurity/kube-hunter)<br>
+kube-bench - [Checks whether Kubernetes is deployed according to security best practices as defined in the CIS Kubernetes Benchmark](https://github.com/aquasecurity/kube-bench)<br>
 
 ## Non-categorize
 
