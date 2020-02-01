@@ -58,7 +58,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 - [Kubernetes Cheatsheets](./kubernetes/cheatsheets/kubectl.md)
 
-- [Kubetools](./kubernetes/kubetools/)
+- [Kubetools](https://collabnix.github.io/kubetools/)
 
 
 # Docker-Ready Stack for You
