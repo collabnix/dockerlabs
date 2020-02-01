@@ -120,7 +120,7 @@ Litmus - [Cloud-Native Chaos Engineering; Kubernetes-Native Chaos Engineering; C
 ## Service Mesh / Ingress
 
 Istio - [Connect, secure, control, and observe services](https://github.com/istio/istio) <br>
-Traefik - [The Cloud Native Edge Router](https://github.com/containous/traefik)<br> - [Jan 2020](https://zoom.us/webinar/register/WN_vx_lvFp4To6E2ldb4HfIwg)
+Traefik - [The Cloud Native Edge Router](https://github.com/containous/traefik)<br> - [Jan 2020](https://zoom.us/webinar/register/WN_vx_lvFp4To6E2ldb4HfIwg) <br>
 NGINX Ingress Controller - [NGINX and NGINX Plus Ingress Controllers for Kubernetes](https://github.com/nginxinc/kubernetes-ingress)<br>
 Autopilot - [THE SERVICE MESH SDK](https://docs.solo.io/autopilot/latest)<br>
 linkerd-config - [A Kubernetes controller that knows how to reconcile the Linkerd configuration](https://github.com/ihcsim/linkerd-config)<br>
