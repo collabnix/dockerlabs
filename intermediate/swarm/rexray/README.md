@@ -9,7 +9,13 @@
 ## Ensure that you have 3-Node Docker Swarm Cluster
 
 ```
-docker node ls
+dockercaptain1981@node1:~$ sudo docker node ls
+ID                            HOSTNAME            STATUS              AVAIL
+ABILITY        MANAGER STATUS      ENGINE VERSION
+u7f4lsnzjswaesc8gk6qo69m2 *   node1               Ready               Active              Leader              19.03.5
+nhp0mnp2a0ciakxyzu9n6u0wz     node2               Ready               Active                                  19.03.5
+u1xqjql3i9fvu9kvhfsy8c3kc     node3               Ready               Active                                  19.03.5
+dockercaptain1981@node1:~$ 
 ```
 
 ## Ensure that Docker Compose is installed on the Manager Node
@@ -49,4 +55,70 @@ ID                  NAME                  DESCRIPTION
   true
 dockercaptain1981@node1:~/dockerlabs/solution/viz$ 
 ```
+
+# Creating Docker Volumes
+
+```
+dockercaptain1981@node1:~$ sudo docker volume create --driver rexray/gcepd 
+--name storage1 --opt=size=32
+storage1
+dockercaptain1981@node1:~$ sudo docker volume create --driver rexray/gcepd 
+--name storage2 --opt=size=32
+storage2
+dockercaptain1981@node1:~$ 
+```
+
+```
+dockercaptain1981@node1:~$ sudo docker volume ls
+DRIVER                VOLUME NAME
+rexray/gcepd:latest   storage1
+rexray/gcepd:latest   storage2
+rexray/gcepd:latest   storage11
+dockercaptain1981@node1:~$ 
+```
+
+We need to setup RexRay Plugin on all those nodes. It can be done manually or we have swarm-exec.sh script which can install RexRay in a single shot on all Swarm Nodes.
+
+```
+git clone https://github.com/mavenugo/swarm-exec
+sudo ./swarm-exec.sh docker plugin install –grant-all-permissions rexray/gcepd GCEPD_TAG=rexray
+```
+
+OR 
+
+You can run the below command on all the nodes
+
+```
+sudo docker plugin install --grant-all-permissions rexray/gcepd GCEPD_TAG=rexray
+```
+
+## Listing the Volumes on all the worker nodes 
+
+```
+dockercaptain1981@node3:~$ sudo docker volume ls
+DRIVER                VOLUME NAME
+rexray/gcepd:latest   storage1
+rexray/gcepd:latest   storage2
+dockercaptain1981@node3:~$ 
+```
+
+## Creating Collabnet Network
+
+```
+dockercaptain1981@node1:~/dockerlabs/solution/viz/swarm-exec$ sudo docker network create -d overlay collabnet
+n017dxky7i44eoxdk6nweep7v
+```
+
+
+## Creating MySQL DB Service
+
+```
+dockercaptain1981@node1:~/dockerlabs/solution/viz/swarm-exec$ sudo docker service create --replicas 4 --name wordpressdb1 --network=collabnet --mount type=volume,source=storage1,target=/var/lib/mysql,volume-driver=rexray/gcepd -e MYSQL_ROOT_PASSWORD=collab123 --env MYSQL_DATABASE=wordpress mysql:5.7
+wrdv3ci6so28vm9gv30szvsyu
+overall progress: 0 out of 4 tasks 
+1/4: preparing 
+2/4: preparing 
+3/4: preparing 
+```
+
 
