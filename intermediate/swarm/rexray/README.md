@@ -121,4 +121,30 @@ overall progress: 0 out of 4 tasks
 3/4: preparing 
 ```
 
-
+```
+dockercaptain1981@node1:~/dockerlabs/solution/viz/swarm-exec$ sudo docker v
+olume inspect storage1
+[
+    {
+        "CreatedAt": "0001-01-01T00:00:00Z",
+        "Driver": "rexray/gcepd:latest",
+        "Labels": {},
+        "Mountpoint": "",
+        "Name": "storage1",
+        "Options": {
+            "size": "32"
+        },
+        "Scope": "global",
+        "Status": {
+            "availabilityZone": "asia-east1-b",
+            "fields": null,
+            "iops": 0,
+            "name": "storage1",
+            "server": "gcepd",
+            "service": "gcepd",
+            "size": 32,
+            "type": "pd-ssd"
+        }
+    }
+]
+```
