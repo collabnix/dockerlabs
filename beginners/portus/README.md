@@ -105,7 +105,7 @@ Once you login to Portus, you will need to provide Docker Registry details:
 
 ![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/portus/Portus_3.png)
 
- ## Creating Users & Team
+## Creating Users & Team
  
  Say, you have 4-5 teams inside your organization namely,
  
@@ -120,7 +120,7 @@ Once you login to Portus, you will need to provide Docker Registry details:
  
  
  
- ## Contributor
+## Contributor
  
  - [Ajeet Singh Raina](mailto:ajeetraina@gmail.com)
  
