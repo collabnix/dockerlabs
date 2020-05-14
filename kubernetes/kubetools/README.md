@@ -45,6 +45,7 @@ Ktunnel - [A cli that exposes your local resources to kubernetes](https://github
 Kubemqctl - [Kubemqctl is a command line interface (CLI) for KubeMQ , Kubernetes Message Broker https://kubemq.io](https://github.com/kubemq-io/kubemqctl)<br>
 kubectl-aliases - [Programmatically generated handy kubectl aliases. https://ahmet.im/blog/kubectl-aliases/](https://github.com/ahmetb/kubectl-aliases)<br>
 go-kubectx - [5x-10x faster alternative to kubectx. Uses client-go](https://github.com/aca/go-kubectx)<br>
+mkubectx - [single command across all your selected kubernetes contexts](https://github.com/witalisoft/mkubectx)<br>
 
 ## K8s Alert and Monitoring
 
