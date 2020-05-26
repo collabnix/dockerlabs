@@ -1,15 +1,15 @@
 
-#stop and Remove ALL containers
+# Stop and Remove ALL containers
 	docker stop $(docker ps -aq); docker rm $(docker ps -aq)
 
-#stop ALL containers
+# Stop ALL containers
 	docker stop $(docker ps -a -q)
 
-# remove ALL containers
+# Remove ALL containers
 	docker rm -f $(docker ps -a -q) 
 	
 	
-For Containers :
+# For Containers :
 	docker stop $(docker ps -qa)
 	docker rm $(docker ps -qa)
 
