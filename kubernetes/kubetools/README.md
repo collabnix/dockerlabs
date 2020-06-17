@@ -71,6 +71,7 @@ ksniff - [Kubectl plugin to ease sniffing on kubernetes pods using tcpdump and w
 
 ## K8s Developement Tools
 
+Podtnl: A CLI for Kubernetes Developers & Administrators - [Expose your pod to Online easily from any kubernetes clusters without creating a kubernetes service](https://github.com/narendranathreddythota/podtnl)<br>
 Okteto: A Tool for Cloud Native Developers - [Build better applications by developing and testing your code directly in Kubernetes](https://github.com/okteto/okteto)<br>
 Tilt: Tilt manages local development instances for teams that deploy to Kubernetes - [Local Kubernetes development with no stress](https://github.com/windmilleng/tilt)<br>
 Garden: Kubernetes from source to finish - [Development orchestrator for Kubernetes, containers and functions.](https://github.com/garden-io/garden)<br>
