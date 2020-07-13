@@ -39,31 +39,10 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 - [Docker Interview Questions](./docker/docker-interview-questions.md)
 
-## Kubernetes Workshop/Labs
-
-- [Kubernetes101](https://collabnix.github.io/kubelabs/)
-
-- [Kubernetes201]() - Pending
-
-- [Kubernetes301]() - Pending
-
-
-## Kubernetes Tutorials
-
-- [Kubernetes for Beginners](./kubernetes/README.md)
-
-- [Kubernetes for Intermediate](./kubernetes/Intermediate/README.md)
-
-- [Kubernetes for Advanced](https://github.com/collabnix/dockerlabs/tree/master/kubernetes/README.md)
-
-- [Kubernetes Cheatsheets](./kubernetes/cheatsheets/kubectl.md)
-
-- [Kubetools](https://collabnix.github.io/kubetools/)
 
 
 # Docker-Ready Stack for You
 
-In case you're looking out to conduct workshop or demo, you can refer these below links to bring up Application Stack in no time.
 
 ## Web Framework
 
