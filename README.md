@@ -15,7 +15,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 -  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
 
-# Docker Workshop/Labs
+# Docker Hands-on Workshop/Labs
 
 - [Getting Started: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
 
@@ -25,7 +25,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 - [Docker301](./advanced/workshop/README.md) 
 
-## Docker Tutorials
+## A Journey from Docker Fundamentals to Expert 
 
 - [Docker for Beginners](./beginners/README.md)
 
