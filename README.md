@@ -8,7 +8,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 #  Getting Started in 3 Simple Steps
 
-- Join 3000+ Collabnix Labs Contributors in 2 mins via [DockerLabs Slack Channel](https://join.slack.com/t/collabnix/shared_invite/enQtODgyMjk0MzU5ODQyLTM1MGI0M2EzMGM3MTNlYTI0OGFiNjY2NzI1OTY2N2E1Yjk1N2NjZDMzZDk1NmYyMTJiYTA1ODMyNDNlNzc3MjU)
+- Join 4000+ Collabnix Labs Contributors in 2 mins via [DockerLabs Slack Channel](https://join.slack.com/t/collabnix/shared_invite/enQtODgyMjk0MzU5ODQyLTM1MGI0M2EzMGM3MTNlYTI0OGFiNjY2NzI1OTY2N2E1Yjk1N2NjZDMzZDk1NmYyMTJiYTA1ODMyNDNlNzc3MjU)
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
@@ -19,11 +19,11 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 - [Getting Started: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
 
-- [Docker101](./workshop/docker/README.md) - Completed
+- [Docker101](./workshop/docker/README.md) 
 
-- [Docker201](./intermediate/workshop/README.md) - Completed
+- [Docker201](./intermediate/workshop/README.md) 
 
-- [Docker301](./advanced/workshop/README.md) - In-Progress
+- [Docker301](./advanced/workshop/README.md) 
 
 ## Docker Tutorials
 
