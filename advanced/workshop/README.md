@@ -30,3 +30,19 @@
 - [Lab03 - Test the App](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#test)
 - [Lab04 - View the Secret](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#view)
 
+
+## Docker Network Security 
+
+- [Lab01 - Create an encrypted overlay network](http://dockerlabs.collabnix.com/advanced/security/networking/#network_create)
+- [Lab02 - List networks](http://dockerlabs.collabnix.com/advanced/security/networking/#list_networks)
+- [Lab03 - Deploy a service](http://dockerlabs.collabnix.com/advanced/security/networking/#deploy_service)
+- [Lab04 - Clean-up](http://dockerlabs.collabnix.com/advanced/security/networking/#clean)
+
+
+## Security Scanning
+
+- [Lab01 - Create a private Hub repo](http://dockerlabs.collabnix.com/advanced/security/scanning/#repo)
+- [Lab02 - Pull an image](http://dockerlabs.collabnix.com/advanced/security/scanning/#pull)
+- [Lab03 - Tag and push an image](http://dockerlabs.collabnix.com/advanced/security/scanning/#tag_push)
+- [Lab04 - View scan results](http://dockerlabs.collabnix.com/advanced/security/scanning/#results)
+- [Lab05 - Clean-up](http://dockerlabs.collabnix.com/advanced/security/scanning/#clean)
