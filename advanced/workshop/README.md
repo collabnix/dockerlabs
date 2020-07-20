@@ -51,7 +51,7 @@
 
 - [Lab01- Create a new Swarm](http://dockerlabs.collabnix.com/advanced/security/swarm/#swarm_init)
 - [Lab02 - Add a new Manager](http://dockerlabs.collabnix.com/advanced/security/swarm/#add_mgr)
-- [Lab3 - Add a new Worker](http://dockerlabs.collabnix.com/advanced/security/swarm/#add_wrkr)
+- [Lab03 - Add a new Worker](http://dockerlabs.collabnix.com/advanced/security/swarm/#add_wrkr)
 - [Lab04 - Rotate Join Keys](http://dockerlabs.collabnix.com/advanced/security/swarm/#rotate_join)
 - [Lab05 - View certificates](http://dockerlabs.collabnix.com/advanced/security/swarm/#certs)
 - [Lab06 - Rotate certificates](http://dockerlabs.collabnix.com/advanced/security/swarm/#rotate_certs)
