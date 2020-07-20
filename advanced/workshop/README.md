@@ -24,10 +24,10 @@
 - [Spin Up AWS Infrastructure using Terraform]
 - [Spin Up GCP Infrastructure using Terraform]
 - [Spin Up Azure Infrastruture with Terraform]
-- Using Terraform to build Nginx Docker Container running on Docker for Mac 18.05
+- [Using Terraform to build Nginx Docker Container running on Docker for Mac 18.05](http://dockerlabs.collabnix.com/advanced/automation/terraform/terraform-mac-nginx.html)
 - [Deploy Kubernetes Cluster on Linux Vagrant Instances using Ansible]
 - [Deploy Docker Swarm Cluster on Linux Vagrant Instances using Ansible]
 
 # Docker in Production
 
-- [Best Practices for Deploying Production-Level Web Services using Docker] 
+- [Best Practices for Deploying Production-Level Web Services using Docker] (http://dockerlabs.collabnix.com/advanced/bestpractices/docker-in-production-1.html)
