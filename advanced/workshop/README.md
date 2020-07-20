@@ -30,4 +30,4 @@
 
 # Docker in Production
 
-- [Best Practices for Deploying Production-Level Web Services using Docker] (http://dockerlabs.collabnix.com/advanced/bestpractices/docker-in-production-1.html)
+- [Best Practices for Deploying Production-Level Web Services using Docker](http://dockerlabs.collabnix.com/advanced/bestpractices/docker-in-production-1.html)
