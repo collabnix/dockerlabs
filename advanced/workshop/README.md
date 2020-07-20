@@ -21,12 +21,9 @@
 
 # Automation Tool - Ansible, Puppet, Terraform & Chef
 
-- [Spin Up AWS Infrastructure using Terraform]
-- [Spin Up GCP Infrastructure using Terraform]
-- [Spin Up Azure Infrastruture with Terraform]
+
 - [Using Terraform to build Nginx Docker Container running on Docker for Mac 18.05](http://dockerlabs.collabnix.com/advanced/automation/terraform/terraform-mac-nginx.html)
-- [Deploy Kubernetes Cluster on Linux Vagrant Instances using Ansible]
-- [Deploy Docker Swarm Cluster on Linux Vagrant Instances using Ansible]
+
 
 # Docker in Production
 
