@@ -9,24 +9,24 @@
 - [Lab03 - Docker Content Trust](http://dockerlabs.collabnix.com/advanced/security/trust/README.html#trust)
 - [Lab04 - Official Images](http://dockerlabs.collabnix.com/advanced/security/trust/README.html#official)
 - [Lab05 - Extra for experts](http://dockerlabs.collabnix.com/advanced/security/trust/README.html#extra)
+- [Lab06 - Enable Docker Content Trust](http://dockerlabs.collabnix.com/advanced/security/trust-basics/#enable_dct)
+- [Lab07 - Push & Sign an Image](http://dockerlabs.collabnix.com/advanced/security/trust-basics/#push)
+- [Lab08 - Cleaning Up](http://dockerlabs.collabnix.com/advanced/security/trust-basics/#clean)
+
+
+## Docker Secrets Management
+
+- [Lab01- Create a Secret](http://dockerlabs.collabnix.com/advanced/security/secrets/#create)
+- [Lab02 - Manage Secrets](http://dockerlabs.collabnix.com/advanced/security/secrets/#manage)
+- [Lab03 - Access the secret within an app](http://dockerlabs.collabnix.com/advanced/security/secrets/#use)
+- [Lab04 - Clean-up](http://dockerlabs.collabnix.com/advanced/security/secrets/#clean)
 
 
 
+## Docker Secret Management with UCP
 
-# Docker Monitoring
-- [Manage and Monitor the Docker Containers with Dry Tool in 5 Min](http://dockerlabs.collabnix.com/advanced/monitoring/dry-tool/README.html)
+- [Lab01 - Create a Secret](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#secret)
+- [Lab02 - Deploy an App](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#deploy)
+- [Lab03 - Test the App](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#test)
+- [Lab04 - View the Secret](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#view)
 
-# Continous Integration & Deployment(CI-CD)
-
-- [5 min CI/CD pipelining using Docker & circle-ci](http://dockerlabs.collabnix.com/advanced/ci-cd/cicd-circleci.html)
-- [CI - CD using Docker & Azure DevOps integrated with MS Teams](http://dockerlabs.collabnix.com/advanced/ci-cd/cicd-azuredevops.html)
-
-# Automation Tool - Ansible, Puppet, Terraform & Chef
-
-
-- [Using Terraform to build Nginx Docker Container running on Docker for Mac 18.05](http://dockerlabs.collabnix.com/advanced/automation/terraform/terraform-mac-nginx.html)
-
-
-# Docker in Production
-
-- [Best Practices for Deploying Production-Level Web Services using Docker](http://dockerlabs.collabnix.com/advanced/bestpractices/docker-in-production-1.html)
