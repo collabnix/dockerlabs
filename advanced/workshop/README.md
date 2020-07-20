@@ -9,14 +9,15 @@
 - [Docker Network Security Basics](http://dockerlabs.collabnix.com/advanced/security/networking/)
 - [Docker Security Scanning](http://dockerlabs.collabnix.com/advanced/security/scanning/)
 - [Swarm Mode Security](http://dockerlabs.collabnix.com/advanced/security/swarm/)
+- [Is Docker Really Secure](http://dockerlabs.collabnix.com/advanced/security/ByPassing-Linux-Security-Audit.html)
 
 # Docker Monitoring
 - [Manage and Monitor the Docker Containers with Dry Tool in 5 Min](http://dockerlabs.collabnix.com/advanced/monitoring/dry-tool/README.html)
 
 # Continous Integration & Deployment(CI-CD)
 
-- 5 min CI/CD pipelining using Docker & circle-ci
-- CI - CD using Docker & Azure DevOps integrated with MS Teams
+- [5 min CI/CD pipelining using Docker & circle-ci](http://dockerlabs.collabnix.com/advanced/ci-cd/cicd-circleci.html)
+- [CI - CD using Docker & Azure DevOps integrated with MS Teams](http://dockerlabs.collabnix.com/advanced/ci-cd/cicd-azuredevops.html)
 
 # Automation Tool - Ansible, Puppet, Terraform & Chef
 
