@@ -1,4 +1,4 @@
-# Welcome to Docker Labs  [![Say Thanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/collabnix) [![Slack ](https://img.shields.io/badge/collabnix/dockerlabs-pink.svg)](https://tinyurl.com/y973wcq8) ![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fcollabnix.github.io%2Fdockerlabs%2F) [![Open Source Helpers](https://www.codetriage.com/collabnix/dockerlabs/badges/users.svg)](https://www.codetriage.com/collabnix/dockerlabs)
+# Welcome to Docker Labs  [![Say Thanks](https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg)](https://saythanks.io/to/collabnix) [![Slack ](https://img.shields.io/badge/collabnix/dockerlabs-pink.svg)](https://tinyurl.com/y973wcq8) ![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https://collabnix.github.io/dockerlabs) [![Open Source Helpers](https://www.codetriage.com/collabnix/dockerlabs/badges/users.svg)](https://www.codetriage.com/collabnix/dockerlabs)
 
 
 
@@ -8,7 +8,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 #  Getting Started in 3 Simple Steps
 
-- Join 4000+ Collabnix Labs Contributors in 2 mins via [DockerLabs Slack Channel](https://join.slack.com/t/collabnix/shared_invite/enQtODgyMjk0MzU5ODQyLTM1MGI0M2EzMGM3MTNlYTI0OGFiNjY2NzI1OTY2N2E1Yjk1N2NjZDMzZDk1NmYyMTJiYTA1ODMyNDNlNzc3MjU)
+- Join 4500+ Collabnix Labs Contributors in 2 mins via [DockerLabs Slack Channel](https://join.slack.com/t/collabnix/shared_invite/enQtODgyMjk0MzU5ODQyLTM1MGI0M2EzMGM3MTNlYTI0OGFiNjY2NzI1OTY2N2E1Yjk1N2NjZDMzZDk1NmYyMTJiYTA1ODMyNDNlNzc3MjU)
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
