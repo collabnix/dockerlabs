@@ -81,6 +81,7 @@ ko - [Build and deploy Go applications on Kubernetes](https://github.com/google/
 Makisu - [Fast and flexible Docker image building tool, works in unprivileged containerized environments like Mesos and Kubernetes](https://github.com/uber/makisu)<br>
 KUDO [Kubernetes Universal Declarative Operator (KUDO) provides a declarative approach to building production-grade Kubernetes operators](https://kudo.dev/docs/)<br>
 Aegir - [Validation Webhook for Kubernetes based on LIVR rules (https://livr-spec.org)](https://github.com/grupozap/aegir)<br>
+Telepresence - [Debug a Kubernetes service locally, using your favorite debugging tool](https://www.telepresence.io/)<br>
 
 ## K8s Alternative Tools for Developement
 
