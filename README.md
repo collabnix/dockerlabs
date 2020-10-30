@@ -51,6 +51,10 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 ## Web Framework
 
 - [Docker + WordPress + Docker Swarm](./solution/wordpress/README.md)
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/69G7xerFows/0.jpg)](https://www.youtube.com/watch?v=69G7xerFows)
+
+
 - [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
 - [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
 
