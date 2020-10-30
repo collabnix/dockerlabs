@@ -65,6 +65,9 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 - [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md)
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/CoC_tz9ab7A/0.jpg)](https://www.youtube.com/watch?v=CoC_tz9ab7A)
+
+
 ## Testing Tools
 
 - [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md)
