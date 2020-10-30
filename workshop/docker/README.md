@@ -10,6 +10,10 @@
 
 ### Getting Started with Docker Image
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nfuTEBPONhY/0.jpg)](https://www.youtube.com/watch?v=nfuTEBPONhY)
+
+
+
 - [Running Hello World Example](https://collabnix.github.io/dockerlabs/beginners/helloworld/) 
   - [Slides](http://dockerlabs.collabnix.com/presentation/docker_workshop_1.html#/)
 - [Working with Docker Image](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html)
