@@ -548,5 +548,11 @@ Amazon Kinesis is a platform for streaming data on AWS, offering powerful servic
 AWS provides tools and services that aid developers in the serverless application development process. AWS and its partner ecosystem offer tools for continuous integration and delivery, testing, deployments, monitoring and diagnostics, SDKs, frameworks, and integrated development environment (IDE) plugins.
 
 
+# DCA Mock questions
 
+## 1. How can we limit the number of CPUs provided to a container?
 
+a) Using `--cap-add CPU` . <br>
+b) Using` --cpuset-cpus` . <br>
+c) Using` --cpus `. <br>
+d) It is not possible to specify the number of CPUs;we have to use `--cpu-shares` and define the CPU slices. <br>
