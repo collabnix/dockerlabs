@@ -556,3 +556,16 @@ a) Using `--cap-add CPU` . <br>
 b) Using` --cpuset-cpus` . <br>
 c) Using` --cpus `. <br>
 d) It is not possible to specify the number of CPUs;we have to use `--cpu-shares` and define the CPU slices. <br>
+
+
+## 2. How can we limit the amount of memory available to a container?
+a) It is not possible to limit the amount of memory available to a container.<br>
+b) Using `--cap-drop MEM `.<br>
+c) Using `--memory` .<br>
+d) Using `--memory-reservation` .<br>
+
+## 3.What environment variables should be exported to start using a trusted environment with the Docker client?
+a) `export DOCKER_TRUSTED_ENVIRONMENT=1 `<br>
+b) `export DOCKER_CONTENT_TRUST=1`<br>
+c) `export DOCKER_TRUST=1`<br>
+d) `export DOCKER_TRUSTED=1`<br>
