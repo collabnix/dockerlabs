@@ -372,7 +372,7 @@ GEM
       railties (>= 3.2.0)
     websocket-driver (0.5.4)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.2)
+    websocket-extensions (0.1.5)
     wirb (2.0.0)
       paint (>= 0.9, < 2.0)
     wirble (0.1.3)
