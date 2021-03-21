@@ -12,7 +12,7 @@ Docker Labs brings you tutorials that help you get hands-on experience using Doc
 
 #  Getting Started in 3 Simple Steps
 
-- Join 4500+ Collabnix Labs Contributors in 2 mins via [DockerLabs Slack Channel](https://launchpass.com/collabnix)
+- Join 5200+ Collabnix Labs Contributors in 2 mins via [DockerLabs Slack Channel](https://launchpass.com/collabnix)
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
