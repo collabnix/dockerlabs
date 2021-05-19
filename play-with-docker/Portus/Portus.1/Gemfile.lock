@@ -186,6 +186,7 @@ GEM
     mysql2 (0.3.18)
     nenv (0.3.0)
     net-ldap (0.11)
+    nio4r (2.5.7)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.8)
@@ -217,7 +218,8 @@ GEM
       activerecord (>= 3.0)
       i18n (>= 0.5.0)
       railties (>= 3.0.0)
-    puma (3.7.0)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     pundit (1.0.1)
       activesupport (>= 3.0.0)
     quiet_assets (1.1.0)
@@ -420,7 +422,7 @@ DEPENDENCIES
   poltergeist
   pry-rails
   public_activity
-  puma (~> 3.7.0)
+  puma (~> 4.3.8)
   pundit
   quiet_assets
   rack-mini-profiler
