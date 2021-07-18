@@ -118,6 +118,7 @@ Network bandwith and load testing - [Test suite for Kubernetes](https://github.c
 test-infra - [Test infrastructure for the Kubernetes project](https://github.com/kubernetes/test-infra)<br>
 kube-score - [Kubernetes object analysis with recommendations for improved reliability and security](https://github.com/zegl/kube-score)<br>
 Litmus - [Cloud-Native Chaos Engineering; Kubernetes-Native Chaos Engineering; Chaos Engineering for Kubernetes](https://github.com/litmuschaos/litmus)<br>
+Datree - [A CLI tool to prevent Kubernetes misconfigurations by ensuring that manifests and Helm charts follow best practices as well as your organization’s policies](https://github.com/datreeio/datree)<br>
 
 
 ## Service Mesh / Ingress
