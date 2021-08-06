@@ -5,7 +5,7 @@
 Docker image is the one that is shipped with code and can be run on any platform where docker Engine is installed. Lets take an example:
 Think a developer writes code and then he packages all the code, dependencies , installables etc in one file called Dockerfile and create an image out of it .
 Now this Image if give to any developer across any platform will run on Docker Engine as a container . 
-Docker images is the core of the whole Dcoker as a platform. Docker Image followed a layered architecture which helps to rebuild
+Docker images is the core of the whole Docker as a platform. Docker Image followed a layered architecture which helps to rebuild
 the image faster. 
 ![My Image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/layer.png)
 

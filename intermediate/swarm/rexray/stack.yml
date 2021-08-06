@@ -1,10 +1,10 @@
-version: '3.6'
+version: '3.1'
 
 services:
   db:
     image: mysql:5.7
     volumes:
-      - db_data:/var/lib/mysql
+      - storage1:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: wordpress
@@ -42,4 +42,5 @@ services:
         condition: on-failure
 
 volumes:
-    db_data:
+  storage1:
+    external: true

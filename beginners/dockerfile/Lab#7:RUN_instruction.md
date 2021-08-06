@@ -74,8 +74,8 @@ Its 8.42MB
 ```
 FROM alpine:3.9.3
 LABEL maintainer="Collabnix"
-RUN apk add --update \ &&
-	apk add curl \ &&  
+RUN apk add --update && \
+	apk add curl  && \  
 	rm -rf /var/cache/apk/
 ```
 #### Building Docker image
