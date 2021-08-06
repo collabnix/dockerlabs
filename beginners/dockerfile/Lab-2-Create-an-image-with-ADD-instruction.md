@@ -53,7 +53,7 @@ ADD http://www.vlsitechnology.org/pharosc_8.4.tar.gz .
 docker build -t saiyam911/alpine-add . -f <name of dockerfile>
 ```
 
-## Tagging image as labs-git
+## Tagging image as labs-add
 
 ```
 docker tag saiyam911/alpine-add saiyam911/labs-add:v1.0
