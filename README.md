@@ -4,7 +4,7 @@
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
 ![forks](https://img.shields.io/github/forks/collabnix/dockerlabs)
 ![issues](https://img.shields.io/github/issues/collabnix/dockerlabs)
-![Twitter](https://img.shields.io/twitter/follow/kubetools?style=social)
+![Twitter](https://img.shields.io/twitter/follow/collabnix?style=social)
 
 
 
