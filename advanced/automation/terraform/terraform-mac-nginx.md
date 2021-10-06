@@ -22,6 +22,39 @@ Terraform v0.11.7
 
 ## Initializing Terraform
 
+Ensure that you clone this repository so as to get access to main.tf under this repository.
+
+The content of main.tf looks like as shown below:
+
+```
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "~> 2.13.0"
+    }
+  }
+}
+
+provider "docker" {}
+
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = false
+}
+
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.latest
+  name  = "tutorial"
+  ports {
+    internal = 80
+    external = 8000
+  }
+}
+```
+
+Run the below CLI:
+
 ```
 [Captains-Bay]🚩 >  terraform init
 
