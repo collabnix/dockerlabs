@@ -138,81 +138,96 @@ can't guarantee that exactly these actions will be performed if
 ##
 
 ```
-[Captains-Bay]🚩 >  terraform apply
+ terraform apply
 
-An execution plan has been generated and is shown below.
-Resource actions are indicated with the following symbols:
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
 
-  + docker_container.nginx
-      id:                        <computed>
-      bridge:                    <computed>
-      gateway:                   <computed>
-      image:                     "${docker_image.nginx.latest}"
-      ip_address:                <computed>
-      ip_prefix_length:          <computed>
-      log_driver:                "json-file"
-      must_run:                  "true"
-      name:                      "mynginx"
-      ports.#:                   "1"
-      ports.4028926921.external: "84"
-      ports.4028926921.internal: "80"
-      ports.4028926921.ip:       ""
-      ports.4028926921.protocol: "tcp"
-      restart:                   "no"
+  # docker_container.nginx will be created
+  + resource "docker_container" "nginx" {
+      + attach           = false
+      + bridge           = (known after apply)
+      + command          = (known after apply)
+      + container_logs   = (known after apply)
+      + entrypoint       = (known after apply)
+      + env              = (known after apply)
+      + exit_code        = (known after apply)
+      + gateway          = (known after apply)
+      + hostname         = (known after apply)
+      + id               = (known after apply)
+      + image            = (known after apply)
+      + init             = (known after apply)
+      + ip_address       = (known after apply)
+      + ip_prefix_length = (known after apply)
+      + ipc_mode         = (known after apply)
+      + log_driver       = "json-file"
+      + logs             = false
+      + must_run         = true
+      + name             = "tutorial"
+      + network_data     = (known after apply)
+      + read_only        = false
+      + remove_volumes   = true
+      + restart          = "no"
+      + rm               = false
+      + security_opts    = (known after apply)
+      + shm_size         = (known after apply)
+      + start            = true
+      + stdin_open       = false
+      + tty              = false
 
-  + docker_image.nginx
-      id:                        <computed>
-      latest:                    <computed>
-      name:                      "nginx:latest"
+      + healthcheck {
+          + interval     = (known after apply)
+          + retries      = (known after apply)
+          + start_period = (known after apply)
+          + test         = (known after apply)
+          + timeout      = (known after apply)
+        }
 
+      + labels {
+          + label = (known after apply)
+          + value = (known after apply)
+        }
+
+      + ports {
+          + external = 8000
+          + internal = 80
+          + ip       = "0.0.0.0"
+          + protocol = "tcp"
+        }
+    }
+
+  # docker_image.nginx will be created
+  + resource "docker_image" "nginx" {
+      + id           = (known after apply)
+      + keep_locally = false
+      + latest       = (known after apply)
+      + name         = "nginx:latest"
+      + output       = (known after apply)
+      + repo_digest  = (known after apply)
+    }
 
 Plan: 2 to add, 0 to change, 0 to destroy.
 
 Do you want to perform these actions?
   Terraform will perform the actions described above.
   Only 'yes' will be accepted to approve.
-```
 
-Type "yes" and then you will see the below output:
-
-```
- Enter a value: yes
+  Enter a value: yes
 
 docker_image.nginx: Creating...
-  latest: "" => "<computed>"
-  name:   "" => "nginx:latest"
-docker_image.nginx: Still creating... (10s elapsed)
-docker_image.nginx: Still creating... (20s elapsed)
-docker_image.nginx: Still creating... (30s elapsed)
-docker_image.nginx: Creation complete after 36s (ID: sha256:3c5a051232223f9ccf4a604d611696e9...8c9e567d3ecd2af881c9f93101nginx:latest)
+docker_image.nginx: Creation complete after 0s [id=sha256:4cdc5dd7eaadff5080649e8d0014f2f8d36d4ddf2eff2fdf577dd13da85c5d2fnginx:latest]
 docker_container.nginx: Creating...
-  bridge:                    "" => "<computed>"
-  gateway:                   "" => "<computed>"
-  image:                     "" => "sha256:3c5a051232223f9ccf4a604d611696e98392648c9e567d3ecd2af881c9f93101"
-  ip_address:                "" => "<computed>"
-  ip_prefix_length:          "" => "<computed>"
-  log_driver:                "" => "json-file"
-  must_run:                  "" => "true"
-  name:                      "" => "mynginx"
-  ports.#:                   "" => "1"
-  ports.3418040461.external: "" => "84"
-  ports.3418040461.internal: "" => "80"
-  ports.3418040461.ip:       "" => ""
-  ports.3418040461.protocol: "" => "tcp"
-  restart:                   "" => "no"
-docker_container.nginx: Creation complete after 0s (ID: c0a71d28b97e41a2c38a4cf976d506609a130e0afd3ca41aed54da76da6c1986)
+docker_container.nginx: Creation complete after 1s [id=a9a11bbfc354285374fffd6adc24f85c991ee336cf93c6a7435e589e9d824339]
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
-[Captains-Bay]🚩 >
 ```
 
 ## Verifying
 
 ```
-[Captains-Bay]🚩 >  curl localhost:84
+ curl localhost:8000
 <!DOCTYPE html>
 <html>
 <head>
@@ -238,5 +253,4 @@ Commercial support is available at
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
-[Captains-Bay]🚩 >
 ```
