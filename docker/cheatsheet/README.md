@@ -28,7 +28,7 @@
 
  ![image management commands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet5.png)
  
-## Image Transfer Comnands 
+## Image Transfer Commands 
  <br>
  
  ![Image Transfer Comnands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png)
@@ -489,7 +489,7 @@ To remove all images which are not in use containers , add - a
 ```
 docker image prune -a 
 ```
-To Purne your entire system 
+To prune your entire system 
 ```
 docker system prune 
 ```
