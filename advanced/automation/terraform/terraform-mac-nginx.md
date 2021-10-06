@@ -56,21 +56,13 @@ resource "docker_container" "nginx" {
 Run the below CLI:
 
 ```
-[Captains-Bay]🚩 >  terraform init
+ terraform init
+
+Initializing the backend...
 
 Initializing provider plugins...
-- Checking for available provider plugins on https://releases.hashicorp.com...
-- Downloading plugin for provider "docker" (1.0.0)...
-
-The following providers do not have any version constraints in configuration,
-so the latest version was installed.
-
-To prevent automatic upgrades to new major versions that may contain breaking
-changes, it is recommended to add version = "..." constraints to the
-corresponding provider blocks in configuration, with the constraint strings
-suggested below.
-
-* provider.docker: version = "~> 1.0"
+- Reusing previous version of kreuzwerker/docker from the dependency lock file
+- Using previously-installed kreuzwerker/docker v2.13.0
 
 Terraform has been successfully initialized!
 
@@ -81,7 +73,6 @@ should now work.
 If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
-[Captains-Bay]🚩 >
 ```
 
 ##
