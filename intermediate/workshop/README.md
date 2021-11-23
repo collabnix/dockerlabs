@@ -12,7 +12,7 @@
      - [Lab #1: `version` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/version_Command.html)<br>
      - [Lab #2: `help` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/help_command.html)<br>
      - [Lab #3: `Config` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/config_command.html)<br>
-     - [Lab #4: `Build` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231:Build_Command.html)<br>
+     - [Lab #4: `Build` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231_Build_Command.html)<br>
      - [Lab #5: `Pull` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pull_command.html)<br>
      - [Lab #6: `Push` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/push_command.html)<br>
      - [Lab #7: `up` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/up_command.html)<br>
