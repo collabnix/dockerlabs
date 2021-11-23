@@ -46,4 +46,4 @@ Verify that the Compose file format is correct. If it is correct, the configurat
 []()<br>
 []()
 
-[Lab #3: Down Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%233:Down_Command.html)<br>
+[Lab #3: Down Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%233_Down_Command.html)<br>
