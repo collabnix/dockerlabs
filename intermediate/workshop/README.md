@@ -27,7 +27,7 @@
      - [Lab #16: `Port` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/port_command.html)<br>
      - [Lab #17: `Run` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/run_command.html)<br>
      - [Lab #18: `Scale` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/scale_command.html)<br>
-     - [Lab #19: `Exec` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234:Exec_Command.html)<br>
+     - [Lab #19: `Exec` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234_Exec_Command.html)<br>
      - [Lab #20: `Kill` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%237:Kill_Command.html)<br>
      - [Lab #21: `Rm` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/rm_command.html)<br>
      - [Lab #22: `Down` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/down_command.html)<br>

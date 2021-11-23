@@ -47,4 +47,4 @@ This command will stop the container started by the up command and remove the ne
 []()<br>
 []()
 
-[Lab #4: Exec Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234:Exec_Command.html)<br>
+[Lab #4: Exec Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234_Exec_Command.html)<br>
