@@ -48,4 +48,4 @@ Get help with a command.
 []()<br>
 []()
 
-[Lab #6: Images Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%236:Images_Command.html)<br>
+[Lab #6: Images Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%236_Images_Command.html)<br>
