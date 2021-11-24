@@ -66,4 +66,4 @@ Welcome to Docker Workshop
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-[Lab #10: VOLUME instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab%2310:VOLUME_instruction.html)
+[Lab #10: VOLUME instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab%2310_VOLUME_instruction.html)

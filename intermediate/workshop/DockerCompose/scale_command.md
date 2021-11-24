@@ -106,4 +106,4 @@ webserver            docker-entrypoint.sh redis ...   Up         0.0.0.0:32768->
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next >> [Lab #19: Exec Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234:Exec_Command.html)
+Next >> [Lab #19: Exec Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234_Exec_Command.html)

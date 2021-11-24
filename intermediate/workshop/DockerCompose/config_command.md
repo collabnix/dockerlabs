@@ -88,4 +88,4 @@ For more on the Compose file format versions, see https://docs.docker.com/compos
 ## Contributor
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next » [Lab #4: Build Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231:Build_Command.html)
+Next » [Lab #4: Build Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231_Build_Command.html)

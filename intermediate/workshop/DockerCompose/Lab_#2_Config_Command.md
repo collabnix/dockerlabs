@@ -1,11 +1,11 @@
-# Lab #5: help Command
+# Lab #2: Config Command
 
 
 ## Command instructions
 
-#### help
+#### Config
 
-Get help with a command.
+Verify that the Compose file format is correct. If it is correct, the configuration is displayed. If the format is incorrect, the cause of the error is displayed.
 
 
 
@@ -39,13 +39,11 @@ Get help with a command.
 
 ### Quick Notes:
 
-#### help
-
-Get help with a command.
+#### Config
 
 
 ## Contributor
 []()<br>
 []()
 
-[Lab #6: Images Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%236:Images_Command.html)<br>
+[Lab #3: Down Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%233_Down_Command.html)<br>

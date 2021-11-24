@@ -1,11 +1,12 @@
-# Lab #2: Config Command
+# Lab #3: Down Command
 
 
 ## Command instructions
 
-#### Config
+#### Down
 
-Verify that the Compose file format is correct. If it is correct, the configuration is displayed. If the format is incorrect, the cause of the error is displayed.
+
+This command will stop the container started by the up command and remove the network.
 
 
 
@@ -39,11 +40,11 @@ Verify that the Compose file format is correct. If it is correct, the configurat
 
 ### Quick Notes:
 
-#### Config
+#### Down
 
 
 ## Contributor
 []()<br>
 []()
 
-[Lab #3: Down Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%233:Down_Command.html)<br>
+[Lab #4: Exec Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234_Exec_Command.html)<br>

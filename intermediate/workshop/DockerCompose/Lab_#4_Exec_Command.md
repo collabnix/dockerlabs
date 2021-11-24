@@ -108,4 +108,4 @@ $ curl http://localhost
 [Om Anand](https://www.linkedin.com/in/om-anand/)<br>
 []()
 
-[Lab #20: Kill Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%237:Kill_Command.html)<br>
+[Lab #20: Kill Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%237_Kill_Command.html)<br>

@@ -12,7 +12,7 @@
      - [Lab #1: `version` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/version_Command.html)<br>
      - [Lab #2: `help` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/help_command.html)<br>
      - [Lab #3: `Config` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/config_command.html)<br>
-     - [Lab #4: `Build` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231:Build_Command.html)<br>
+     - [Lab #4: `Build` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231_Build_Command.html)<br>
      - [Lab #5: `Pull` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pull_command.html)<br>
      - [Lab #6: `Push` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/push_command.html)<br>
      - [Lab #7: `up` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/up_command.html)<br>
@@ -27,12 +27,12 @@
      - [Lab #16: `Port` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/port_command.html)<br>
      - [Lab #17: `Run` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/run_command.html)<br>
      - [Lab #18: `Scale` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/scale_command.html)<br>
-     - [Lab #19: `Exec` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234:Exec_Command.html)<br>
-     - [Lab #20: `Kill` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%237:Kill_Command.html)<br>
+     - [Lab #19: `Exec` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234_Exec_Command.html)<br>
+     - [Lab #20: `Kill` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%237_Kill_Command.html)<br>
      - [Lab #21: `Rm` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/rm_command.html)<br>
      - [Lab #22: `Down` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/down_command.html)<br>
 - [Create first docker compose file with ngnix and mysql](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Create_first_docker-compose_file_with_ngnix_and_mysql.html)<br>
-- [Use JSON instead of YAML compose file in Docker?](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%2324:_Use_JSON_instead_of_YAML_compose_file_in_Docker%3F.html)<br>
+- [Use JSON instead of YAML compose file in Docker?](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%2324_Use_JSON_instead_of_YAML_compose_file_in_Docker.html)<br>
 - [A Simple Wordpress Application running on Single Node using Docker Compose](https://github.com/collabnix/dockerlabs/blob/master/intermediate/workshop/DockerCompose/single-node-wordpress.md)
 
 
@@ -59,11 +59,11 @@
 ### Overlay Networking
 
    - [Lab #1: Docker Overlay Networking](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%231:Docker_Overlay_Networking.html)<br>
-   - [Lab #2: Create an overlay network](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%232:Create_an_overlay_network.html)<br>
-   - [Lab #3: Create a service](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%233:Create_a_service.html)<br>
-   - [Lab #4: Test Service Discovery](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%235:Test_Service_Discovery.html)
+   - [Lab #2: Create an overlay network](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%232_Create_an_overlay_network.html)<br>
+   - [Lab #3: Create a service](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%233_Create_a_service.html)<br>
+   - [Lab #4: Test Service Discovery](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%235_Test_Service_Discovery.html)
    - [Lab #5: Test Routing Mesh](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%236:Test_Routing_Mesh.html)<br>
-   - [Lab #6: Test standalone containersinOverlayNetwork](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%238:%20Test_standalone_containers_in_OverlayNetwork.html)
+   - [Lab #6: Test standalone containersinOverlayNetwork](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%238_%20Test_standalone_containers_in_OverlayNetwork.html)
 
 ### Implementing MacVLAN
 

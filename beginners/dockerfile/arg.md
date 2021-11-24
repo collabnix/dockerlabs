@@ -82,4 +82,4 @@ Welcome Savio, to Docker World!
 [Sangam Biradar](https://www.linkedin.com/in/sangambiradar14/)<br>
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)
 
-Next >> [Lab #9: ENV instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab_%239:ENV_instruction.html)
+Next >> [Lab #9: ENV instruction](https://dockerlabs.collabnix.com/beginners/dockerfile/Lab_%239_ENV_instruction.html)

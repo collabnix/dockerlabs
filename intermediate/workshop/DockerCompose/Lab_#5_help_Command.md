@@ -1,12 +1,11 @@
-# Lab #3: Down Command
+# Lab #5: help Command
 
 
 ## Command instructions
 
-#### Down
+#### help
 
-
-This command will stop the container started by the up command and remove the network.
+Get help with a command.
 
 
 
@@ -40,11 +39,13 @@ This command will stop the container started by the up command and remove the ne
 
 ### Quick Notes:
 
-#### Down
+#### help
+
+Get help with a command.
 
 
 ## Contributor
 []()<br>
 []()
 
-[Lab #4: Exec Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234:Exec_Command.html)<br>
+[Lab #6: Images Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%236_Images_Command.html)<br>
