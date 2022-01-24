@@ -47,6 +47,7 @@ kubectl-aliases - [Programmatically generated handy kubectl aliases. https://ahm
 go-kubectx - [5x-10x faster alternative to kubectx. Uses client-go](https://github.com/aca/go-kubectx)<br>
 mkubectx - [single command across all your selected kubernetes contexts](https://github.com/witalisoft/mkubectx)<br>
 
+
 ## K8s Alert and Monitoring
 
 Kiali - [Kiali project, observability for the Istio service mesh](https://github.com/kiali/kiali) <br>
@@ -69,6 +70,7 @@ Kubeman - [To find information from Kubernetes clusters, and to investigate issu
 Kubectl-debug - [Debug your pod by a new container with every troubleshooting tools pre-installed](https://github.com/aylei/kubectl-debug)<br>
 ksniff - [Kubectl plugin to ease sniffing on kubernetes pods using tcpdump and wireshark](https://github.com/eldadru/ksniff)<br>
 
+
 ## K8s Developement Tools
 
 Konveyor Move2Kube - [Accelerate re-replatforming to Kubernetes of your Docker Compose, Cloud Foundry and non-containerized applications](https://konveyor.io/move2kube/)<br>
@@ -84,6 +86,7 @@ KUDO [Kubernetes Universal Declarative Operator (KUDO) provides a declarative ap
 Aegir - [Validation Webhook for Kubernetes based on LIVR rules (https://livr-spec.org)](https://github.com/grupozap/aegir)<br>
 Telepresence - [Debug a Kubernetes service locally, using your favorite debugging tool](https://www.telepresence.io/)<br>
 
+
 ## K8s Alternative Tools for Developement
 
 KubeSphere - [Easy-to-use Production Ready Container Platform https://kubesphere.io](https://github.com/kubesphere/kubesphere)<br>
@@ -91,6 +94,7 @@ skippbox - [A Desktop application for k8s](https://github.com/skippbox/skippbox)
 Micronetes - [Micronetes is a local orchestrator inspired by kubernetes that makes developing and testing microservices and distributed applications easier](https://github.com/davidfowl/Micronetes)<br>
 k3c - Classic Docker for a Kubernetes world - [Lightweight local container engine for container development](https://github.com/rancher/k3c)<br>
 Tilt - [Local Kubernetes development with no stress https://tilt.dev/](https://github.com/windmilleng/tilt)<br>
+
 
 ## K8s CI/CD integration Automation Tools
 
