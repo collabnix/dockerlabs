@@ -35,17 +35,17 @@
 -  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
 
-# Docker Hands-on Workshop/Labs
+# Docker Hands-on Workshop/Labs (Practical)
 
 - [Getting Started: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
 
-- [Docker101](./workshop/docker/README.md) 
+- [Docker101](./workshop/docker/README.md) - (Docker Image, Container, Dockerfile, Volumes, Networking)
 
-- [Docker201](./intermediate/workshop/README.md) 
+- [Docker201](./intermediate/workshop/README.md) - (Docker Compose, Docker Swarm, Advanced Networking)
 
-- [Docker301](./advanced/workshop/README.md) 
+- [Docker301](./advanced/workshop/README.md) - (Docker Security, Content Trust, Image Scanning, Swarm Mode Security)
 
-## A Journey from Docker Fundamentals to Expert 
+## A Journey from Docker Fundamentals to Expert (Theoretical)
 
 - [Docker for Beginners](./beginners/README.md)
 
@@ -61,7 +61,7 @@
 
 
 
-# Docker-Ready Stack for You
+# Docker-Ready Stack for You (Projects)
 
 
 ## Web Framework
