@@ -16,7 +16,7 @@ etcd.services
 ```
 ### OR
 
- ### Backup by ETCD backup command line 
+### Backup by ETCD backup command line 
  1- Take snapshot with certs
 ```
 ETCDCTL_API=3 etcdctl snapshot save snapshot.db \
@@ -30,7 +30,7 @@ ETCDCTL_API=3 etcdctl snapshot save snapshot.db \
 ETCDCTL_API=3 etcdctl snapshot status snapshot.db
 ```
 ### Restore ETCD
-1- Stop kube-apiserver
+1- Stop `kube-apiserver`
 ```
 service kube-apiserver stop
 ```
@@ -48,7 +48,7 @@ etcd.service
 --initial-cluster-token etcd-cluster-1
 --data-dir=/var/lib/etcd
 ```
-4- Reload daemon, restart etcd, start kube-apiserver
+4- Reload daemon, restart `etcd`, start `kube-apiserver`
 ```
 systemctl daemon-relod
 service etcd restart

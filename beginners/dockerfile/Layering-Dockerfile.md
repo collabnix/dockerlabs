@@ -32,7 +32,7 @@ To view all these layers once an image is built from a Dockerfile, we can use do
 ![Docker history](https://raw.githubusercontent.com/Prashansa-K/Docker/master/Writing%20Dockerfiles/layering3.png)
 
 
-To see more information about the Docker image and the layers use 'docker inspect' command as such:
+To see more information about the Docker image and the layers use `docker inspect` command as such:
 
 ```
 # docker inspect testimage:latest
