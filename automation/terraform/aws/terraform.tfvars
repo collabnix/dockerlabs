@@ -1,7 +1,0 @@
-aws_access_key_id = "$PEVT_AWS_KEYS_INTEGRATION_ACCESSKEY"
-aws_secret_access_key = "$PEVT_AWS_KEYS_INTEGRATION_SECRETKEY"
-region = "$REGION"
-test_vpc = "$TEST_VPC"
-test_network_cidr = "$TEST_NETWORK_CIDR"
-test_public_01_cidr = "$TEST_PUBLIC_01_CIDR"
-test_public_02_cidr = "$TEST_PUBLIC_02_CIDR"

@@ -1,6 +1,0 @@
----
-
-- name: MARATHON REDHAT | Add repository
-  yum:
-    pkg: "{{ marathon_rpm_repository }}"
-    state: present

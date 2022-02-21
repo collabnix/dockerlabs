@@ -1,8 +1,0 @@
----
-
-###
-# ZOOKEEPER
-###
-
-# Zookeeper home
-zookeeper_home: /etc/zookeeper
