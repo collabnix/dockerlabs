@@ -6,7 +6,7 @@ Docker Trusted Registry (DTR) is the enterprise-grade image storage solution fro
 Docker trusted registry or simply Docker registry is an enterprise offering from Docker. the most common terminology that you will hear 
 with Docker Enterprise Edition is DTR and UCP (universal control plane).
 
-In order for DTR to work UCP has to be insallted and for UCP to be installed you owuld need Docker Enterprise Edition. Once you install 
+In order for DTR to work UCP has to be insallted and for UCP to be installed you would need Docker Enterprise Edition. Once you install 
 Docker EE you can get a free liscense from DockerHub.
 
 ## DTR Features:
