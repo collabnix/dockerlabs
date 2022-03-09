@@ -26,7 +26,7 @@ Docker Labs  - The #1 Docker Tutorials for All Levels
 - [Play with Docker Platform](https://labs.play-with-docker.com/) 
 
 
-#  Getting Started in 3 Simple Steps
+##  Getting Started in 3 Simple Steps
 
 - Join 6500+ DevOps Engineers in 2 mins via [DockerLabs Slack Channel](https://launchpass.com/collabnix)
 
@@ -35,7 +35,7 @@ Docker Labs  - The #1 Docker Tutorials for All Levels
 -  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
 
-# Docker Hands-on Workshop/Labs (Practical)
+## Docker Hands-on Workshop/Labs (Practical)
 
 - [Getting Started: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
 
@@ -61,10 +61,10 @@ Docker Labs  - The #1 Docker Tutorials for All Levels
 
 
 
-# Docker-Ready Stack for You (Projects)
+## Docker-Ready Stack for You (Projects)
 
 
-## Docker for Developer Community
+### Docker for Developer Community
 
 - [Docker for Java Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/java/) 
 - [Docker for .NET Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/dotnet/)
@@ -73,46 +73,46 @@ Docker Labs  - The #1 Docker Tutorials for All Levels
 - [Docker for Go Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/go/)
 
 
-## Web Framework
+### Web Framework
 
 - [Docker + WordPress + Docker Swarm](./solution/wordpress/README.md)
 - [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
 - [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
 
-## Monitoring
+### Monitoring
 
 - [Docker, Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md)
 
-## Logging
+### Logging
 
 - [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md)
 
 
-## Testing Tools
+### Testing Tools
 
 - [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md)
 
-## Demos
+### Demos
 
 - [Docker + Voting App Example](./play-with-docker/example-voting-app/README.md)
 
-## Networking
+### Networking
 
 - [Docker + MacVLAN](./play-with-docker/macvlan/README.md)
 - [Docker, Docker Compose & IPv6](./play-with-docker/ipv6/README.md)
 
 
-## Docker Security
+### Docker Security
 
 - [Introduction to Docker Security]((./advanced/workshop/README.md) )
 - [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md)
 
 
-# Governance
+## Governance
 
 Dockerlabs is an independent community project founded by [Ajeet Singh Raina](https://github.com/ajeetraina),a [Docker Captain](https://www.docker.com/captains/ajeet-singh-raina) & Docker Community Leader which is now being built & shaped by a growing community of contributors across the globe.
 
-# Core Contributors
+## Core Contributors
 
 | [<img src="https://avatars1.githubusercontent.com/u/313480?s=400&v=4" width="48px;" alt="Ajeet Singh Raina"/><br /><sub><b> Ajeet Singh Raina</b></sub>](https://github.com/ajeetraina)<br /> | [<img src="https://avatars1.githubusercontent.com/u/21982562?s=460&v=4" width="48px;" alt="Sangam Biradar"/><br /><sub><b>Sangam Biradar</b></sub>](https://github.com/sangam14)<br /> | [<img src="https://avatars0.githubusercontent.com/u/7204666?s=400&v=4" width="48px;" alt="Savio Mathew"/><br /><sub><b>Savio Mathew</b></sub>](https://github.com/saviovettoor)<br /> | [<img src="https://avatars1.githubusercontent.com/u/8190114?s=400&v=4" width="48px;" alt="Saiyam Pathak"/><br /><sub><b>Saiyam Pathak</b></sub>](https://github.com/saiyam1814)<br /> | [<img src="https://avatars2.githubusercontent.com/u/38501348?s=400&v=4" width="48px;" alt="Apurva Bhandari"/><br /><sub><b>Apurva Bhandari</b></sub>](https://github.com/apurvabhandari)<br /> | [<img src="https://avatars2.githubusercontent.com/u/25828217?s=400&v=4" width="48px;" alt="Sarkar Tathagata"/><br /><sub><b>Sarkar Tathagata</b></sub>](https://github.com/amitatha82)<br /> | [<img src="https://avatars2.githubusercontent.com/u/33524591?s=400&v=4" width="48px;" alt="Prashansa K"/><br /><sub><b>Prashansa K</b></sub>](https://github.com/Prashansa-K)<br /> |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -130,4 +130,4 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 [Apache License 2.0](./LICENSE.md)
 
-   [Proceed to Beginners Track >>](./beginners/README.md)
+[Proceed to Beginners Track >>](./beginners/README.md)
