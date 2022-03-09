@@ -14,7 +14,7 @@
 - The tutorials are well tested on Docker Desktop  and can be run on Browser (no Infrastructure required)
 
 
-## 👷 Target Audience
+## 🧑‍💻 Target Audience
 
 - DevOps 
 - Developers
