@@ -9,7 +9,7 @@
 
 ![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/dockerlabs.jpeg)
 
-- A $0 Learning Platform for DevOps Engineer
+- A $0 Learning Platform for all Levels
 - Over 500+ Highly Interactive Docker Tutorials and Guides
 - The tutorials are well tested on Docker Desktop  and can be run on Browser (no Infrastructure required)
 
