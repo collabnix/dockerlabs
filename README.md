@@ -1,4 +1,4 @@
-# Welcome to Docker Labs  
+# Welcome to Docker Labs  - The #1 Docker Tutorials for All Levels
 
 
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
@@ -10,25 +10,25 @@
 ![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/dockerlabs.jpeg)
 
 - A $0 Learning Platform for DevOps Engineer
-- Over 500+ Highly Interactive Docker Tutorials
-- Completely runs on Browser (no Infrastructure required)
+- Over 500+ Highly Interactive Docker Tutorials and Guides
+- The tutorials are well tested on Docker Desktop  and can be run on Browser (no Infrastructure required)
 
 
 ## Target Audience
 
-- Beginners
-- Intermediate
-- Advanced
+- DevOps 
+- Developers
+- Architects
 
 ## Platform 
 
-- Any Browser(Tested on Chrome, Firefox, IE, Safari)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - [Play with Docker Platform](https://labs.play-with-docker.com/) 
 
 
 #  Getting Started in 3 Simple Steps
 
-- Join 6300+ Collabnix Labs Contributors in 2 mins via [DockerLabs Slack Channel](https://launchpass.com/collabnix)
+- Join 6500+ DevOps Engineers in 2 mins via [DockerLabs Slack Channel](https://launchpass.com/collabnix)
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
