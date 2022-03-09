@@ -101,7 +101,7 @@
 - [Docker, Docker Compose & IPv6](./play-with-docker/ipv6/README.md)
 
 
-### 🔐 Docker Security
+### 🔐 Security
 
 - [Introduction to Docker Security]((./advanced/workshop/README.md) )
 - [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md)
