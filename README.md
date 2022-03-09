@@ -17,8 +17,9 @@
 ## 🧑‍💻 Target Audience
 
 - DevOps 
-- Developers
-- Architects
+- Application Developers
+- Solution Architects
+
 
 ## 🚀 Platform 
 
