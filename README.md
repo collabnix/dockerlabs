@@ -1,4 +1,4 @@
-Docker Labs  - The #1 Docker Tutorials for All Levels
+## 🏗️ Docker Labs  - The #1 Docker Tutorials for All Levels
 
 
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
@@ -14,19 +14,19 @@ Docker Labs  - The #1 Docker Tutorials for All Levels
 - The tutorials are well tested on Docker Desktop  and can be run on Browser (no Infrastructure required)
 
 
-## Target Audience
+## 👷 Target Audience
 
 - DevOps 
 - Developers
 - Architects
 
-## Platform 
+## 🚀 Platform 
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - [Play with Docker Platform](https://labs.play-with-docker.com/) 
 
 
-##  Getting Started in 3 Simple Steps
+## 📝 Getting Started in 3 Simple Steps
 
 - Join 6500+ DevOps Engineers in 2 mins via [DockerLabs Slack Channel](https://launchpass.com/collabnix)
 
@@ -43,7 +43,7 @@ Docker Labs  - The #1 Docker Tutorials for All Levels
 
 - [Docker201](./intermediate/workshop/README.md) - (Docker Compose, Docker Swarm, Advanced Networking)
 
-- [Docker301](./advanced/workshop/README.md) - (Docker Security, Content Trust, Image Scanning, Swarm Mode Security)
+- [Docker301](./advanced/workshop/README.md) - (🔒️ Docker Security, Content Trust, Image Scanning, Swarm Mode Security)
 
 ## A Journey from Docker Fundamentals to Expert (Theoretical)
 
