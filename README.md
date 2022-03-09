@@ -127,7 +127,7 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 ## 🔥 Popular Blogs
 
-## 🔖 Docker Desktop
+### 🔖 Docker Desktop
 
 - [Awesome-Compose: What It is and Why You Should Really Care About It](https://collabnix.com/awesome-compose-what-it-is-and-why-you-should-really-care-about-it/)
 - [Getting Started with ArgoCD on Docker Desktop](https://collabnix.com/getting-started-with-argocd-on-docker-desktop/)
@@ -141,7 +141,7 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 - [Running Automated Tasks with a CronJob over Kubernetes running on Docker Desktop 4.1.1](https://collabnix.com/running-automated-tasks-with-a-cronjob-over-kubernetes-running-on-docker-desktop-4-1-1/)
 - 
 
-## 💩 Docker and IoT
+### 💩 Docker and IoT
 
 - [Getting Started with Docker and AI workloads on NVIDIA Jetson AGX Xavier Developer Platform](https://collabnix.com/getting-started-with-docker-and-ai-on-nvidia-jetson-agx-xavier-developer-platform/)
 - [Building a Real-Time Crowd Face Mask Detection System using Docker on NVIDIA Jetson Nano](https://collabnix.com/building-a-real-time-crowd-face-mask-detection-system-on-nvidia-jetson-nano/)
@@ -149,7 +149,7 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 
 
-### License
+## License
 
 [Apache License 2.0](./LICENSE.md)
 
