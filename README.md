@@ -70,7 +70,7 @@ Docker Labs  - The #1 Docker Tutorials for All Levels
 - [Docker for .NET Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/dotnet/)
 - [Docker for Python Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/python/)
 - [Docker for React & Express Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/react/)
-- [Docker for Go Developers](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/go/)
+- [Docker for Go Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/go/)
 
 
 ## Web Framework
