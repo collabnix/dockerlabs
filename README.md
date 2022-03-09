@@ -1,4 +1,4 @@
-# Welcome to Docker Labs  - The #1 Docker Tutorials for All Levels
+Docker Labs  - The #1 Docker Tutorials for All Levels
 
 
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
