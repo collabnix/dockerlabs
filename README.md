@@ -64,6 +64,15 @@ Docker Labs  - The #1 Docker Tutorials for All Levels
 # Docker-Ready Stack for You (Projects)
 
 
+## Docker for Developer Community
+
+- [Docker for Java Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/java/) 
+- [Docker for .NET Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/dotnet/)
+- [Docker for Python Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/python/)
+- [Docker for React & Express Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/react/)
+- [Docker for Go Developers](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/go/)
+
+
 ## Web Framework
 
 - [Docker + WordPress + Docker Swarm](./solution/wordpress/README.md)
@@ -92,9 +101,6 @@ Docker Labs  - The #1 Docker Tutorials for All Levels
 - [Docker + MacVLAN](./play-with-docker/macvlan/README.md)
 - [Docker, Docker Compose & IPv6](./play-with-docker/ipv6/README.md)
 
-## Developer WorkFlow
-
-- [Docker for Java Developer]()  - Coming soon
 
 ## Docker Security
 
