@@ -29,7 +29,7 @@
 
 ## 📝 Getting Started in 3 Simple Steps
 
-- Join 6500+ DevOps Engineers in 2 mins via [DockerLabs Slack Channel](https://launchpass.com/collabnix)
+- Join 6500+ DevOps Engineers in 2 mins via [Community Slack](https://launchpass.com/collabnix)
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
