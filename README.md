@@ -125,7 +125,7 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 [Template for writing Tutorial Page](./template/EXAMPLE.md)
 
 
-### Popular Blogs
+## Popular Blogs
 
 ## Docker Desktop
 
@@ -136,7 +136,16 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 - [How to Build a Sample Album Viewer Application using Windows containers](https://collabnix.com/how-to-build-a-sample-album-viewer-application-using-windows-containers/)
 - [How to Build and Run a Python app in a Docker container](https://collabnix.com/how-to-build-and-run-a-python-app-in-a-container/)
 - [Top 5 Docker Myths and Facts That You Should be Aware of](https://collabnix.com/top-5-docker-myths-and-facts-that-you-should-be-aware-of/)
-- [https://collabnix.com/top-6-docker-security-scanning-practices/](https://collabnix.com/top-6-docker-security-scanning-practices/)
+- [Top 6 Docker Security Scanning Practices/](https://collabnix.com/top-6-docker-security-scanning-practices/)
+- [How to build and run a Python app in a container – Docker Python Tutorial](https://collabnix.com/how-to-build-and-run-a-python-app-in-a-container/)
+- [Running Automated Tasks with a CronJob over Kubernetes running on Docker Desktop 4.1.1](https://collabnix.com/running-automated-tasks-with-a-cronjob-over-kubernetes-running-on-docker-desktop-4-1-1/)
+- 
+
+## Docker and IoT
+
+- [Getting Started with Docker and AI workloads on NVIDIA Jetson AGX Xavier Developer Platform](https://collabnix.com/getting-started-with-docker-and-ai-on-nvidia-jetson-agx-xavier-developer-platform/)
+- [Building a Real-Time Crowd Face Mask Detection System using Docker on NVIDIA Jetson Nano](https://collabnix.com/building-a-real-time-crowd-face-mask-detection-system-on-nvidia-jetson-nano/)
+- [Visualizing Time Series Data directly over IoT Edge device using Dockerized RedisTimeSeries & Grafana](https://collabnix.com/visualizing-time-series-data-directly-over-iot-edge-device-using-dockerized-redistimeseries-grafana/)
 
 
 
