@@ -45,7 +45,7 @@
 
 - [Docker301](./advanced/workshop/README.md) - (🔒️ Docker Security, Content Trust, Image Scanning, Swarm Mode Security)
 
-## A Journey from Docker Fundamentals to Expert (Theoretical)
+## 🔥 A Journey from Docker Fundamentals to Expert (Theoretical)
 
 - [Docker for Beginners](./beginners/README.md)
 
@@ -61,10 +61,10 @@
 
 
 
-## Docker-Ready Stack for You (Projects)
+## 🗃️ Docker-Ready Stack for You (Projects)
 
 
-### Docker for Developer Community
+### 👷 Docker for Developer Community
 
 - [Docker for Java Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/java/) 
 - [Docker for .NET Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/dotnet/)
@@ -73,42 +73,40 @@
 - [Docker for Go Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/go/)
 
 
-### Web Framework
+### 🔖 Web Framework
 
 - [Docker + WordPress + Docker Swarm](./solution/wordpress/README.md)
 - [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
 - [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
+- [Docker + Voting App Example](./play-with-docker/example-voting-app/README.md)
 
-### Monitoring
+### 🧐 Monitoring
 
 - [Docker, Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md)
 
-### Logging
+### 📝 Logging
 
 - [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md)
 
 
-### Testing Tools
+### 🧪 Testing Tools
 
 - [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md)
 
-### Demos
 
-- [Docker + Voting App Example](./play-with-docker/example-voting-app/README.md)
-
-### Networking
+### 🌐 Networking
 
 - [Docker + MacVLAN](./play-with-docker/macvlan/README.md)
 - [Docker, Docker Compose & IPv6](./play-with-docker/ipv6/README.md)
 
 
-### Docker Security
+### 🔐 Docker Security
 
 - [Introduction to Docker Security]((./advanced/workshop/README.md) )
 - [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md)
 
 
-## Governance
+## 👥 Governance
 
 Dockerlabs is an independent community project founded by [Ajeet Singh Raina](https://github.com/ajeetraina),a [Docker Captain](https://www.docker.com/captains/ajeet-singh-raina) & Docker Community Leader which is now being built & shaped by a growing community of contributors across the globe.
 
