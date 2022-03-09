@@ -76,14 +76,14 @@
 
 ### 🔖 Web Framework
 
-- [Docker + WordPress + Docker Swarm](./solution/wordpress/README.md)
+- [WordPress + MySQL + Docker Swarm](./solution/wordpress/README.md)
 - [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
 - [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
-- [Docker + Voting App Example](./play-with-docker/example-voting-app/README.md)
+- [Docker + Voting App](./play-with-docker/example-voting-app/README.md)
 
 ### 🧐 Monitoring
 
-- [Docker, Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md)
+- [Docker + Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md)
 
 ### 📝 Logging
 
@@ -98,7 +98,7 @@
 ### 🌐 Networking
 
 - [Docker + MacVLAN](./play-with-docker/macvlan/README.md)
-- [Docker, Docker Compose & IPv6](./play-with-docker/ipv6/README.md)
+- [Docker + Docker Compose & IPv6](./play-with-docker/ipv6/README.md)
 
 
 ### 🔐 Security
