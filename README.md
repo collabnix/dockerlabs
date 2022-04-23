@@ -67,11 +67,10 @@
 
 ### 👷 Docker for Developer Community
 
-- [Docker for Java Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/java/) 
-- [Docker for .NET Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/dotnet/)
-- [Docker for Python Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/python/)
-- [Docker for React & Express Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/react/)
-- [Docker for Go Developer](https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/go/)
+- [Docker for Java Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/JAVA/agenda/_index.md)
+- [Docker for Python Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/python/agenda/_index.md)
+- [Docker for React & Express Developer](hhttps://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/react/agenda/_index.md)
+- [Docker for Go Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/go/agenda/_index.md)
 
 
 ### 🔖 Web Framework
