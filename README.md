@@ -70,7 +70,7 @@
 - [Docker for Java Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/JAVA/agenda/_index.md)
 - [Docker for Python Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/python/agenda/_index.md)
 - [Docker for React & Express Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/react/agenda/_index.md)
-- [Docker for Go Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/go/agenda/_index.md)
+- [Docker for Go Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/Go/agenda/_index.md)
 
 
 ### 🔖 Web Framework
