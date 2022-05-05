@@ -10,19 +10,12 @@
 
 ![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/dockerlabs.jpeg)
 
-- A $0 Learning Platform for All Levels - from the ground up
+- A $0 Learning Platform for All Levels - from the ground Up
 - Over 500+ Highly Interactive Docker Tutorials and Guides
 - Well tested on Docker Desktop  and can be run on Browser (no Infrastructure required)
 
 
-## 🧑‍💻 Target Audience
-
-- DevOps 
-- Application Developers
-- Solution Architects
-
-
-## 🚀 Platform 
+## 🚀 Tested Platform 
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - [Play with Docker Platform](https://labs.play-with-docker.com/) 
@@ -30,7 +23,7 @@
 
 ## 📝 Getting Started in 3 Simple Steps
 
-- Join 6500+ DevOps Engineers in 2 mins via [Community Slack](https://launchpass.com/collabnix)
+- Join 6500+ DevOps Engineers today via [Community Slack](https://launchpass.com/collabnix)
 
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 
@@ -63,15 +56,8 @@
 
 
 
-## 🗃️ Docker-Ready Stack for You (Projects)
+# 🗃️ Docker-Ready Stack for You (Projects)
 
-
-### 👷 Docker for Developer Community
-
-- [Docker for Java Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/JAVA/agenda/_index.md)
-- [Docker for Python Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/python/agenda/_index.md)
-- [Docker for React & Express Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/react/agenda/_index.md)
-- [Docker for Go Developer](https://github.com/docker/get-involved/blob/master/content/en/docs/CommunityLeaders/EventHandbooks/Go/agenda/_index.md)
 
 
 ### 🔖 Web Framework
@@ -106,6 +92,28 @@
 - [Introduction to Docker Security]((./advanced/workshop/README.md) )
 - [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md)
 
+## 🔥 Popular Blogs
+
+### 🔖 Docker Desktop
+
+- [Awesome-Compose: What It is and Why You Should Really Care About It](https://collabnix.com/awesome-compose-what-it-is-and-why-you-should-really-care-about-it/)
+- [Getting Started with Argo CD on Docker Desktop](https://collabnix.com/getting-started-with-argocd-on-docker-desktop/)
+- [A First Look at Dev Environments Feature under Docker Desktop 3.5.0](https://collabnix.com/getting-started-with-docker-dev-environments/)
+- [How to setup and Run Redis in a Docker container](https://collabnix.com/how-to-setup-and-run-redis-in-a-docker-container/)
+- [How to Build a Sample Album Viewer Application using Windows containers](https://collabnix.com/how-to-build-a-sample-album-viewer-application-using-windows-containers/)
+- [How to Build and Run a Python app in a Docker container](https://collabnix.com/how-to-build-and-run-a-python-app-in-a-container/)
+- [Top 5 Docker Myths and Facts That You Should be Aware of](https://collabnix.com/top-5-docker-myths-and-facts-that-you-should-be-aware-of/)
+- [Top 6 Docker Security Scanning Practices/](https://collabnix.com/top-6-docker-security-scanning-practices/)
+- [How to build and run a Python app in a container – Docker Python Tutorial](https://collabnix.com/how-to-build-and-run-a-python-app-in-a-container/)
+- [Running Automated Tasks with a CronJob over Kubernetes running on Docker Desktop 4.1.1](https://collabnix.com/running-automated-tasks-with-a-cronjob-over-kubernetes-running-on-docker-desktop-4-1-1/)
+- 
+
+### 💩 Docker and IoT
+
+- [Getting Started with Docker and AI workloads on NVIDIA Jetson AGX Xavier Developer Platform](https://collabnix.com/getting-started-with-docker-and-ai-on-nvidia-jetson-agx-xavier-developer-platform/)
+- [Building a Real-Time Crowd Face Mask Detection System using Docker on NVIDIA Jetson Nano](https://collabnix.com/building-a-real-time-crowd-face-mask-detection-system-on-nvidia-jetson-nano/)
+- [Visualizing Time Series Data directly over IoT Edge device using Dockerized RedisTimeSeries & Grafana](https://collabnix.com/visualizing-time-series-data-directly-over-iot-edge-device-using-dockerized-redistimeseries-grafana/)
+
 
 ## 👥 Governance
 
@@ -124,29 +132,6 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 [Guide to submitting your own tutorial](./CONTRIBUTING.md)<br>
 [Template for writing Tutorial Page](./template/EXAMPLE.md)
-
-
-## 🔥 Popular Blogs
-
-### 🔖 Docker Desktop
-
-- [Awesome-Compose: What It is and Why You Should Really Care About It](https://collabnix.com/awesome-compose-what-it-is-and-why-you-should-really-care-about-it/)
-- [Getting Started with ArgoCD on Docker Desktop](https://collabnix.com/getting-started-with-argocd-on-docker-desktop/)
-- [A First Look at Dev Environments Feature under Docker Desktop 3.5.0](https://collabnix.com/getting-started-with-docker-dev-environments/)
-- [How to setup and Run Redis in a Docker container](https://collabnix.com/how-to-setup-and-run-redis-in-a-docker-container/)
-- [How to Build a Sample Album Viewer Application using Windows containers](https://collabnix.com/how-to-build-a-sample-album-viewer-application-using-windows-containers/)
-- [How to Build and Run a Python app in a Docker container](https://collabnix.com/how-to-build-and-run-a-python-app-in-a-container/)
-- [Top 5 Docker Myths and Facts That You Should be Aware of](https://collabnix.com/top-5-docker-myths-and-facts-that-you-should-be-aware-of/)
-- [Top 6 Docker Security Scanning Practices/](https://collabnix.com/top-6-docker-security-scanning-practices/)
-- [How to build and run a Python app in a container – Docker Python Tutorial](https://collabnix.com/how-to-build-and-run-a-python-app-in-a-container/)
-- [Running Automated Tasks with a CronJob over Kubernetes running on Docker Desktop 4.1.1](https://collabnix.com/running-automated-tasks-with-a-cronjob-over-kubernetes-running-on-docker-desktop-4-1-1/)
-- 
-
-### 💩 Docker and IoT
-
-- [Getting Started with Docker and AI workloads on NVIDIA Jetson AGX Xavier Developer Platform](https://collabnix.com/getting-started-with-docker-and-ai-on-nvidia-jetson-agx-xavier-developer-platform/)
-- [Building a Real-Time Crowd Face Mask Detection System using Docker on NVIDIA Jetson Nano](https://collabnix.com/building-a-real-time-crowd-face-mask-detection-system-on-nvidia-jetson-nano/)
-- [Visualizing Time Series Data directly over IoT Edge device using Dockerized RedisTimeSeries & Grafana](https://collabnix.com/visualizing-time-series-data-directly-over-iot-edge-device-using-dockerized-redistimeseries-grafana/)
 
 
 
