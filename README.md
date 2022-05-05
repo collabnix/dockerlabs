@@ -5,11 +5,12 @@
 ![forks](https://img.shields.io/github/forks/collabnix/dockerlabs)
 ![issues](https://img.shields.io/github/issues/collabnix/dockerlabs)
 ![Twitter](https://img.shields.io/twitter/follow/collabnix?style=social)
+![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)
 
 
 ![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/dockerlabs.jpeg)
 
-- A $0 Learning Platform for all Levels - from the ground up
+- A $0 Learning Platform for All Levels - from the ground up
 - Over 500+ Highly Interactive Docker Tutorials and Guides
 - Well tested on Docker Desktop  and can be run on Browser (no Infrastructure required)
 
