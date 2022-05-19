@@ -1,2 +1,0 @@
-In this Article we are ging to see how we can make a HA UCP cluster backed by HA DTR. 
-Some parts like LB are not covered in this article, but i can provide all the deatils , so that you can assume or you can perform this on your on prem or cloud provider.
