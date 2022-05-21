@@ -106,7 +106,6 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 - [Introduction to Docker Security]((./advanced/workshop/README.md) )
 - [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md)
 
-## 🔥 Popular Blogs
 
 ### 🔖 Docker Desktop
 
@@ -120,11 +119,10 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 - [Top 6 Docker Security Scanning Practices/](https://collabnix.com/top-6-docker-security-scanning-practices/)
 - [How to build and run a Python app in a container – Docker Python Tutorial](https://collabnix.com/how-to-build-and-run-a-python-app-in-a-container/)
 - [Running Automated Tasks with a CronJob over Kubernetes running on Docker Desktop 4.1.1](https://collabnix.com/running-automated-tasks-with-a-cronjob-over-kubernetes-running-on-docker-desktop-4-1-1/)
-- 
 
-### 💩 Docker and IoT
 
-### Raspberry Pi
+### 💩 Docker and Raspberry Pi
+
 
 - [Getting Started with Docker and AI workloads on NVIDIA Jetson AGX Xavier Developer Platform](https://collabnix.com/getting-started-with-docker-and-ai-on-nvidia-jetson-agx-xavier-developer-platform/)
 - [Building a Real-Time Crowd Face Mask Detection System using Docker on NVIDIA Jetson Nano](https://collabnix.com/building-a-real-time-crowd-face-mask-detection-system-on-nvidia-jetson-nano/)
@@ -148,43 +146,42 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 - [Docker 1.12.1 on Raspberry Pi 3 in 5 minutes](https://collabnix.com/docker-1-12-1-on-raspberry-pi-3-in-5-minutes/)
 - [The Rise of Pico: At the Grace Hopper Celebration India](https://collabnix.com/the-rise-of-pico-at-the-grace-hopper-celebration-india/)
 
-### NVIDIA Jetson Nano
+### Docker on NVIDIA Jetson Nano
 
 - [NVIDIA Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/README.md)
-  - [Object Detection with Yolo Made Simple using Docker on NVIDIA Jetson Nano](https://collabnix.com/object-detection-with-yolo-using-docker-19-03-on-nvidia-jetson-nano/)
-  - [Multi Node k3s Cluster on NVIDIA Jetsin Nano in 5 Minutes](https://collabnix.com/multi-node-k3s-cluster-on-nvidia-jetson-nano-in-5-minutes/)
-  - [Running Minecraft inside Docker Container](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/minecraft/README.md)
-  - [How to run Docker Compose on Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/README.md#installing-docker-compose-on-nvidia-jetson-nano)
-  - [Pico goes Cloudless: Running RTMP & Nginx for Video Streaming using Docker on Jetson Nano locally](https://collabnix.com/running-rtmp-nginx-for-video-streaming-using-docker-on-jetson-nano/)
-  - [Redis running inside Docker container on NVIDIA Jetson Nano](https://collabnix.com/running-redis-inside-docker-container-on-jetson-nano/)
-  - [How to enable RDP on Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/enable-rdp.md)
+- [Object Detection with Yolo Made Simple using Docker on NVIDIA Jetson Nano](https://collabnix.com/object-detection-with-yolo-using-docker-19-03-on-nvidia-jetson-nano/)
+- [Multi Node k3s Cluster on NVIDIA Jetsin Nano in 5 Minutes](https://collabnix.com/multi-node-k3s-cluster-on-nvidia-jetson-nano-in-5-minutes/)
+- [Running Minecraft inside Docker Container](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/minecraft/README.md)
+- [How to run Docker Compose on Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/README.md#installing-docker-compose-on-nvidia-jetson-nano)
+- [Pico goes Cloudless: Running RTMP & Nginx for Video Streaming using Docker on Jetson Nano locally](https://collabnix.com/running-rtmp-nginx-for-video-streaming-using-docker-on-jetson-nano/)
+- [Redis running inside Docker container on NVIDIA Jetson Nano](https://collabnix.com/running-redis-inside-docker-container-on-jetson-nano/)
+- [How to enable RDP on Jetson Nano](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonnano/enable-rdp.md)
+- [NVIDIA Jetson AGX Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md)
+- [Getting Started](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#getting-started-with-jetson-agx-xavier)
+- [Identifying the Jetson Board](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#identify-the-jetson-board)
+- [Running Docker on Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#installing-docker)
+- [Running JTOP on Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#installing-jtop)
+- [Running DeepStreaming on Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#running-the-deepstreaming-container)
+
+### Docker and PineBook(Manjaro OS)
 
 
-## 👥 Governance
+- [Pine64](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/README.md)
+- [An Overview of $200 Pinebook Pro ARM Laptop](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/README.md) 
+- [A First look at Docker on Pinebook Pro](https://github.com/collabnix/ioetplanet/blob/master/pine64/docker/install.md)
+- [Docker Compose on Pinebook Pro Laptop](https://github.com/collabnix/ioetplanet/blob/master/pine64/docker/install.md#installing-docker-compose)
+- [Installing K3s on Manjaro](https://github.com/collabnix/ioetplanet/blob/master/pine64/kubernetes/k3s/README.md)
+- [Running Portainer on Pine64](https://github.com/collabnix/ioetplanet/blob/master/pine64/kubernetes/k3s/README.md)
+
+### 👥 Governance
 
 Dockerlabs is an independent community project founded by [Ajeet Singh Raina](https://github.com/ajeetraina), a [Docker Captain from India](https://www.docker.com/captains/ajeet-singh-raina) & Docker Community Leader which is now being built & shaped by a growing community of contributors across the globe.
 
-## Core Contributors
+### Core Contributors
 
 | [<img src="https://avatars1.githubusercontent.com/u/313480?s=400&v=4" width="48px;" alt="Ajeet Singh Raina"/><br /><sub><b> Ajeet Singh Raina</b></sub>](https://github.com/ajeetraina)<br /> | [<img src="https://avatars1.githubusercontent.com/u/21982562?s=460&v=4" width="48px;" alt="Sangam Biradar"/><br /><sub><b>Sangam Biradar</b></sub>](https://github.com/sangam14)<br /> | [<img src="https://avatars0.githubusercontent.com/u/7204666?s=400&v=4" width="48px;" alt="Savio Mathew"/><br /><sub><b>Savio Mathew</b></sub>](https://github.com/saviovettoor)<br /> | [<img src="https://avatars1.githubusercontent.com/u/8190114?s=400&v=4" width="48px;" alt="Saiyam Pathak"/><br /><sub><b>Saiyam Pathak</b></sub>](https://github.com/saiyam1814)<br /> | [<img src="https://avatars2.githubusercontent.com/u/38501348?s=400&v=4" width="48px;" alt="Apurva Bhandari"/><br /><sub><b>Apurva Bhandari</b></sub>](https://github.com/apurvabhandari)<br /> | [<img src="https://avatars2.githubusercontent.com/u/25828217?s=400&v=4" width="48px;" alt="Sarkar Tathagata"/><br /><sub><b>Sarkar Tathagata</b></sub>](https://github.com/amitatha82)<br /> | [<img src="https://avatars2.githubusercontent.com/u/33524591?s=400&v=4" width="48px;" alt="Prashansa K"/><br /><sub><b>Prashansa K</b></sub>](https://github.com/Prashansa-K)<br /> |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [<img src="https://avatars1.githubusercontent.com/u/34628205?s=400&v=4" width="48px;" alt="Wikitops"/><br /><sub><b>Wikitops</b></sub>](https://github.com/wikitops)<br /> | [<img src="https://avatars0.githubusercontent.com/u/20920080?s=400&v=4" width="48px;" alt="Akshit Grover"/><br /><sub><b>Akshit Grover</b></sub>](https://github.com/akshitgrover)<br /> | [<img src="https://avatars3.githubusercontent.com/u/18344557?s=400&v=4" width="48px;" alt="Ameya Agashe"/><br /><sub><b>Ameya Agashe</b></sub>](https://github.com/ameyaagashe)<br /> | [<img src="https://avatars1.githubusercontent.com/u/39425180?s=400&v=4" width="48px;" alt="Bala"/><br /><sub><b>Bala</b></sub>](https://github.com/balasu)<br /> | 
-
-
-- [NVIDIA Jetson AGX Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md)
-    - [Getting Started](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#getting-started-with-jetson-agx-xavier)
-    - [Identifying the Jetson Board](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#identify-the-jetson-board)
-    - [Running Docker on Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#installing-docker)
-    - [Running JTOP on Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#installing-jtop)
-    - [Running DeepStreaming on Xavier](https://github.com/collabnix/ioetplanet/blob/master/nvidia/jetsonxavier/README.md#running-the-deepstreaming-container)
-
-- [Pine64](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/README.md)
-
-    - [An Overview of $200 Pinebook Pro ARM Laptop](https://github.com/collabnix/ioetplanet/blob/master/pine64/overview/README.md) 
-    - [A First look at Docker on Pinebook Pro](https://github.com/collabnix/ioetplanet/blob/master/pine64/docker/install.md)
-    - [Docker Compose on Pinebook Pro Laptop](https://github.com/collabnix/ioetplanet/blob/master/pine64/docker/install.md#installing-docker-compose)
-    - [Installing K3s on Manjaro](https://github.com/collabnix/ioetplanet/blob/master/pine64/kubernetes/k3s/README.md)
-    - [Running Portainer on Pine64](https://github.com/collabnix/ioetplanet/blob/master/pine64/kubernetes/k3s/README.md)
 
 
 
