@@ -24,34 +24,24 @@
 ## 📝 Getting Started in 3 Simple Steps
 
 - Join 6500+ DevOps Engineers today via [Community Slack](https://launchpass.com/collabnix)
-
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
-
 -  Click and Follow us over Twitter [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
 
 ## 📌 Docker Hands-on Workshop/Labs (Practical)
 
 - [Getting Started: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
-
 - [Docker101](./workshop/docker/README.md) - (Docker Image, Container, Dockerfile, Volumes, Networking)
-
 - [Docker201](./intermediate/workshop/README.md) - (Docker Compose, Docker Swarm, Advanced Networking)
-
 - [Docker301](./advanced/workshop/README.md) - (🔒️ Docker Security, Content Trust, Image Scanning, Swarm Mode Security)
 
 ## 🔥 A Journey from Docker Fundamentals to Expert (Theoretical)
 
 - [Docker for Beginners](./beginners/README.md)
-
 - [Docker for Intermediate](./intermediate/README.md)
-
 - [Docker for Advanced](./advanced/README.md)
-
 - [Docker Cheatsheet](./docker/cheatsheet/README.md)
-
 - [Docker Certificate Associate Exam Preparation](./docker/dca.md)
-
 - [Docker Interview Questions](./docker/docker-interview-questions.md)
 
 
@@ -134,7 +124,7 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 - [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md)
 
 
-### 🔖 Docker Desktop
+### 🔖 Docker Desktop Blogs
 
 - [Awesome-Compose: What It is and Why You Should Really Care About It](https://collabnix.com/awesome-compose-what-it-is-and-why-you-should-really-care-about-it/)
 - [Getting Started with Argo CD on Docker Desktop](https://collabnix.com/getting-started-with-argocd-on-docker-desktop/)
