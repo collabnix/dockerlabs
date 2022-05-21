@@ -56,16 +56,23 @@
 
 
 
-# 🗃️ Docker-Ready Stack for You (Projects)
+# 🗃️ Docker Ready-to-use Sample Application
 
-
-
+ 
 ### 🔖 Web Framework
 
 - [WordPress + MySQL + Docker Swarm](./solution/wordpress/README.md)
 - [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
 - [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
 - [Docker + Voting App](./play-with-docker/example-voting-app/README.md)
+- [Spring + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/spring-postgres) 
+- [React + Nginx](https://github.com/docker/awesome-compose/tree/master/react-nginx)
+- [Python + Flask + Redis](https://github.com/docker/awesome-compose/tree/master/flask-redis) 
+- [React + Spring + MySQL](https://github.com/docker/awesome-compose/tree/master/react-java-mysql) 
+- [React + Express + MySQL](https://github.com/docker/awesome-compose/tree/master/react-express-mysql) 
+- [React + Express + MongoDB](https://github.com/docker/awesome-compose/tree/master/react-express-mongodb) 
+- [React + Rust + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/react-rust-postgres) 
+- [NGINX + Flask + MongoDB](https://github.com/docker/awesome-compose/tree/master/nginx-flask-mongo) 
 
 ### 🧐 Monitoring
 
