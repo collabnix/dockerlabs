@@ -1,0 +1,21 @@
+
+if (window.location.pathname == '/admin/users') {
+  // We are on the admin panel.
+  var enabled = <%= user.enabled? %>;
+  var element = $("#user_<%= user.id %> .enabled-btn .fa");
+
+  if (enabled) {
+    element.removeClass("fa-toggle-off")
+    element.addClass("fa-toggle-on")
+    $('#float-alert p').html("User '<%= user.username %>' has been enabled.");
+  } else {
+    element.removeClass("fa-toggle-on")
+    element.addClass("fa-toggle-off")
+    $('#float-alert p').html("User '<%= user.username %>' has been disabled.");
+  }
+  $('#float-alert').fadeIn(setTimeOutAlertDelay());
+} else {
+  // The user profile page.
+  window.location.pathname = '/';
+}
+

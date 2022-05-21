@@ -1,0 +1,44 @@
+.destroy_comments_btn {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border: 0px;
+}
+
+.comment-row {
+  padding: .5em 1em;
+  display: flex;
+  &:hover {
+    background: $comment-row-hover;
+  }
+  .comment-thumbnail {
+    margin-right: 20px;
+    width: 40px;
+    img {
+      border-radius: 100%;
+      border: 4px solid $gray-light;
+      width: 40px;
+    }
+  }
+
+  .comment-content {
+    width: 100%;
+  }
+
+  .comment-content,
+  .comment-thumbnail {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .destroy_comments_btn {
+    display: none;
+  }
+  &:hover .destroy_comments_btn {
+    display: inline-block;
+  }
+}
+
+.no-comments-found {
+  padding: 0 1em;
+  text-align: center;
+}
+

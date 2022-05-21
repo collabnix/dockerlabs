@@ -1,0 +1,84 @@
+version: '3'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:3.4.6
+    volumes:
+      - /opt/data/zookeeper:/opt/zookeeper-3.4.6/data
+    ports:
+      - 2181
+    networks:
+      custom-network:
+        aliases:
+          - zookeeper
+  kafka-1:
+    image: wurstmeister/kafka:1.1.0
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 3
+      KAFKA_MIN_INSYNC_REPLICAS: 2
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 3000
+      KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE: 'true'
+      KAFKA_CONTROLLER_SHUTDOWN_ENABLE: 'true'
+      KAFKA_LISTENERS: INSIDE://:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_LOG_RETENTION_BYTES: -1
+      KAFKA_LOG_RETENTION_DAYS: 2
+      KAFKA_LOG_DIRS: /kafka/kafka-logs
+    volumes:
+      - /opt/data/kafka-1:/kafka/kafka-logs
+    networks:
+      custom-network:
+        aliases:
+          - kafka-1
+
+  kafka-2:
+    image: wurstmeister/kafka:1.1.0
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 3
+      KAFKA_MIN_INSYNC_REPLICAS: 2
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 3000
+      KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE: 'true'
+      KAFKA_CONTROLLER_SHUTDOWN_ENABLE: 'true'
+      KAFKA_LISTENERS: INSIDE://:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_LOG_RETENTION_BYTES: -1
+      KAFKA_LOG_RETENTION_DAYS: 2
+      KAFKA_LOG_DIRS: /kafka/kafka-logs
+    volumes:
+      - /opt/data/kafka-2:/kafka/kafka-logs
+    networks:
+      custom-network:
+        aliases:
+          - kafka-2
+
+  kafka-3:
+    image: wurstmeister/kafka:1.1.0
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 3
+      KAFKA_MIN_INSYNC_REPLICAS: 2
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 3000
+      KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE: 'true'
+      KAFKA_CONTROLLER_SHUTDOWN_ENABLE: 'true'
+      KAFKA_LISTENERS: INSIDE://:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_LOG_RETENTION_BYTES: -1
+      KAFKA_LOG_RETENTION_DAYS: 2
+      KAFKA_LOG_DIRS: /kafka/kafka-logs
+    volumes:
+      - /opt/data/kafka-3:/kafka/kafka-logs
+    networks:
+      custom-network:
+        aliases:
+          - kafka-3
+
+networks:
+  custom-network:
+    external: true

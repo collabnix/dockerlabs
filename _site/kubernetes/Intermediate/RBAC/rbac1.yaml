@@ -1,0 +1,15 @@
+#RBAC is Role Based Access Control 
+#This yaml file  allows a user to execute  operations on Deployments, Pods and ReplicaSets,
+which belong to the core (expressed by "" in the yaml file), apps, and extensions API Group.
+
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: cloudyuga
+  name: deployment-manager
+rules:
+- apiGroups: ["", "apps"]
+  resources: ["deployments", "replicasets", "pods"]
+  verbs: ["get", "list", "watch", "create", "update"]
+
+## Contributor - [Saiyam Pathak](https://www.linkedin.com/in/saiyam-pathak-97685a64/)

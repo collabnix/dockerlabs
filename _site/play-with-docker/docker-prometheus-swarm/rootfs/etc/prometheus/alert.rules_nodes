@@ -1,0 +1,48 @@
+
+ALERT high_cpu_usage_on_node
+  IF sum(rate(process_cpu_seconds_total[5m])) by (instance) * 100 > 70
+  FOR 5m
+  ANNOTATIONS {
+      summary = "HIGH CPU USAGE WARNING ON '{{ $labels.instance }}'",
+      description = "{{ $labels.instance }} is using a LOT of CPU. CPU usage is {{ humanize $value}}%.",
+  }
+
+ALERT high_memory_usage_on_node
+  IF ((node_memory_MemTotal-node_memory_MemAvailable)/node_memory_MemTotal)*100 > 80
+  FOR 5m
+  ANNOTATIONS {
+      summary = "HIGH MEMORY USAGE WARNING TASK ON '{{ $labels.host }}'",
+      description = "{{ $labels.instance }} is using a LOT of MEMORY. MEMORY usage is over {{ humanize $value}}%.",
+  }
+
+ALERT high_la_usage_on_node
+  IF node_load5 > 5
+  FOR 5m
+  ANNOTATIONS {
+      summary = "HIGH LOAD AVERAGE WARNING ON '{{ $labels.instance }}'",
+      description = "{{ $labels.instance }} has a high load average. Load Average 5m is {{ humanize $value}}.",
+  }
+
+ALERT monitoring_service_down
+  IF up == 0
+  FOR 5m
+  ANNOTATIONS {
+      summary = "MONITORING SERVICE DOWN WARNING: NODE '{{ $labels.host }}'",
+      description = "The monitoring service '{{ $labels.job }}' is down.",
+  }
+
+ALERT node_running_out_of_disk_space
+  IF (node_filesystem_size{mountpoint="/"} - node_filesystem_free{mountpoint="/"}) * 100/ node_filesystem_size{mountpoint="/"} > 80
+  FOR 5m
+  ANNOTATIONS {
+      summary = "LOW DISK SPACE WARING: NODE '{{ $labels.host }}'",
+      description = "More than 80% of disk used. Disk usage {{ humanize $value }}%.",
+  }
+
+ALERT disk_will_fill_in_8_hours
+   IF predict_linear(node_filesystem_free{mountpoint="/"}[1h], 8*3600) < 0
+   FOR 5m
+   ANNOTATIONS {
+       summary = "DISK SPACE FULL IN 8 HOURS: NODE '{{ $labels.host }}'",
+       description = "{{ $labels.instance }} is writing a lot.",
+   }

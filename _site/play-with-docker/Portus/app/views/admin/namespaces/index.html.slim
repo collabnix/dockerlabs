@@ -1,0 +1,46 @@
+.panel.panel-default
+  .panel-heading
+    h5
+      ' Special namespaces
+  .panel-body
+    .table-responsive
+      table.table.table-stripped.table-hover
+        col.col-40
+        col.col-15
+        col.col-15
+        col.col-20
+        col.col-10
+        thead
+          tr
+            th Name
+            th Repositories
+            th Webhooks
+            th Created At
+            th Visibility
+        tbody
+          - @special_namespaces.each do |namespace|
+            = render partial: 'namespaces/namespace', locals: {namespace: namespace}
+
+.panel.panel-default
+  .panel-heading
+    h5
+      ' Other namespaces
+  .panel-body
+    .table-responsive
+      table.table.table-stripped.table-hover
+        col.col-40
+        col.col-15
+        col.col-15
+        col.col-20
+        col.col-10
+        thead
+          tr
+            th Name
+            th Repositories
+            th Webhooks
+            th Created At
+            th Visibility
+        tbody
+          - @namespaces.each do |namespace|
+            = render partial: 'namespaces/namespace', locals: {namespace: namespace}
+  .panel-footer= paginate(@namespaces)

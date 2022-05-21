@@ -1,0 +1,44 @@
+.search {
+  .category-panel {
+    .result-counter {
+      float: right;
+      background-color: $primary-colour;
+      border-radius: 0.5rem;
+      padding: 0 0.5rem;
+      font-weight: bold;
+      color: $white;
+      :hover {
+        background-color: $primary-colour;
+      }
+    }
+    .nav-pills {
+      .category {
+        border-radius: 0;
+        :hover {
+          border-radius: 0;
+          background-color: lighten($gray-light, 15);
+        }
+      }
+      .active-cetegory {
+        background-color: lighten($gray-light, 15);
+        border-left: 0.5rem solid $primary-colour;
+      }
+    }
+    .nav-tabs {
+      .category {
+        border: 1px solid $gray-light;
+        border-bottom: 0;
+        border-top: 0.5rem solid $gray-light;
+        border-radius: 0.5rem 0.5rem 0 0;
+        background-color: lighten($gray-light, 15);
+      }
+      .active-cetegory {
+        border-top: 0.5rem solid $primary-colour;
+        background-color: $white;
+      }
+      .result-counter {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

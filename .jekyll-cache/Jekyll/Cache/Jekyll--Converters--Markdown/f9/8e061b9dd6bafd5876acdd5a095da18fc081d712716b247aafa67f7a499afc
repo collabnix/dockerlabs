@@ -1,0 +1,46 @@
+I"�<h1 id="difference-between-containers-and-virtual-machines">Difference between Containers and Virtual Machines</h1>
+
+<p>Let us look at the component view of how virtual machines and containers are implemented.</p>
+
+<p><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/difference-vm-containers.png" alt="Component View" /></p>
+
+<h2 id="virtual-machine">Virtual Machine</h2>
+
+<p>If we closely look at how Virtual Machines are built over the physical hardware, there is a layer of Hypervisor which sits between physical hardware and operating systems. In a broader view, Hypervisor is used to virtualize the hardware which is then configured with the way a user wants it to.</p>
+
+<p>Virtual Machines our physical machine is divided into following parts :-</p>
+
+<p><strong>Example:</strong></p>
+
+<p>Say, you are using a system having 8GB RAM. If you create 2 VMs each with 4GB RAM, you are basically dividing your server into two components - each with 4GB RAM and would never be able to use that underlying 8GB RAM altogether again.</p>
+
+<p><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/docker-vs-vm.png" alt="Component View" /></p>
+
+<h2 id="containers">Containers</h2>
+
+<p>Unlike virtual machines where hypervisor divides physical hardware into parts, Containers are like normal operating system processes. Now the question is, if containers are like normal processes then how come there are isolated from other processes. This is where namespaces come into picture.</p>
+
+<p>Namespaces is an advance concept in linux where each namespace has its own isolated resources without actual partitioning of the underlying hardware. Namesapces are used to virtualize the underlying operating system.</p>
+
+<p>Since containers are nothing other than OS processes, This is the reason why lifting a container takes seconds and lifting a virtual machine takes minutes.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Prime differnce between Containers and Virtual Machine is the virtualization of <em>Operating System</em> and <em>Hardware</em> respectively. While using Virtual machine each virtual machine has its own underlying operating system whereas, While using containers, Each container runs on same underlying operating system instance, While underlying OS is the same containers can still have different OS environment in their respective namespace.</p>
+
+<h2 id="contributors">Contributors:</h2>
+
+<ul>
+  <li>Ajeet Singh Raina</li>
+  <li>Akshit Grover</li>
+</ul>
+
+<h2 id="further-references">Further References</h2>
+
+<ul>
+  <li>https://blog.netapp.com/blogs/containers-vs-vms/</li>
+  <li>https://www.toptal.com/linux/separation-anxiety-isolating-your-system-with-linux-namespaces</li>
+</ul>
+
+<p><a href="https://collabnix.github.io/dockerlabs/beginners/difference-vmnetwork-docker-networking.html">Proceed » Difference between VM Networking &amp; Container Networking</a></p>
+:ET

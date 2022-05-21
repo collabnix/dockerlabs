@@ -1,0 +1,237 @@
+.TH PORTUSCTL 1 "portusctl User manuals" "SUSE LLC." "AUGUST 2016"
+.SH NAME
+.PP
+portusctl setup \- Configure a Portus instance
+.SH SYNOPSIS
+.PP
+\fBportusctl setup\fP [options...]
+.SH DESCRIPTION
+.PP
+The \fBsetup\fP command allows administrators to configure a Portus instance. Note
+that this command will effectively wipe out any previous configuration. For this
+reason, it's recommended to use this command only when setting up Portus for the
+first time.
+.SH OPTIONS
+.TP
+\fB\-\-secure\fP
+Toggle SSL usage for Portus. It defaults to true and we really encourage the
+default behavior.
+.TP
+\fB\-\-ssl\-gen\-self\-signed\-certs\fP
+Both Portus and the Docker registry need to have SSL certificates to encrypt all
+the communications. With this flag, you are telling \fBportusctl\fP to
+automatically generate self\-signed certificates. This is useful when testing
+Portus, but for production cases we recommend using the \fBssl\-certs\-dir\fP option.
+.TP
+\fB\-\-ssl\-certs\-dir\fP
+Provide \fBportusctl\fP the location of your SSL certificates. These certificates
+are going to be used to encrypt the communications between the Docker registry
+and Portus. Note that under the specified directory, \fBportusctl\fP will look for
+a certificate key named \fI<hostname>\-ca.key\fP and a certificate file named
+\fI<hostname>\-ca.crt\fP\&.
+.TP
+\fB\-\-ssl\-organization\fP
+The organization of the SSL certificate. This only applied if you have used the
+.TP
+\fB\-\-ssl\-organization\-unit\fP
+The organization unit of the SSL certificate. This only applied if you have used
+the \fBssl\-gen\-self\-signed\-certs\fP option. Defaults to "SUSE Portus example".
+.TP
+\fB\-\-ssl\-email\fP
+The email to be used for the SSL certificate. This only applied if you have used
+the \fBssl\-gen\-self\-signed\-certs\fP option. Defaults to "k\[la]kontact-de@novell.com\[ra]".
+.TP
+\fB\-\-ssl\-country\fP
+The country code for the SSL certificate. This only applied if you have used
+the \fBssl\-gen\-self\-signed\-certs\fP option. Defaults to "DE".
+.TP
+\fB\-\-ssl\-city\fP
+The city to be used for the SSL certificate. This only applied if you have used
+the \fBssl\-gen\-self\-signed\-certs\fP option. Defaults to "Nuernberg".
+.TP
+\fB\-\-ssl\-state\fP
+The state to be used for the SSL certificate. This only applied if you have used
+the \fBssl\-gen\-self\-signed\-certs\fP option. Defaults to "Bayern".
+.TP
+\fB\-\-db\-host\fP
+The host to be set for the database. Defaults to "localhost".
+.TP
+\fB\-\-db\-username\fP
+The username that accesses the database. Defaults to "portus".
+.TP
+\fB\-\-db\-password\fP
+The password to access the database. Defaults to "portus".
+.TP
+\fB\-\-db\-name\fP
+The name of the database to be used. Defaults to "portus_production".
+.TP
+\fB\-\-local\-registry\fP
+Make \fBportusctl\fP aware that the Docker registry to be used is running locally.
+.TP
+\fB\-\-ldap\-enable\fP
+Enable LDAP mode. By passing this flag you are telling \fBportusctl\fP that you
+want to use an LDAP server for authentication purposes. All the options starting
+with \fBldap\-\fP need this flag to be set.
+.TP
+\fB\-\-ldap\-hostname\fP
+The hostname of the LDAP server.
+.TP
+\fB\-\-ldap\-port\fP
+The port on which the LDAP server is listening.
+.TP
+\fB\-\-ldap\-method\fP
+The encryption method that the LDAP server is using. You have three options:
+\fBplain\fP (default), \fBsimple_tls\fP and \fBstarttls\fP\&. Even if \fBplain\fP is the
+default value, we strongly recommend using \fBstarttls\fP in production environments.
+.TP
+\fB\-\-ldap\-base\fP
+The LDAP base to be considered when fetching users. It defaults to
+"ou=users, dc=example, dc=com".
+.TP
+\fB\-\-ldap\-filter\fP
+A filter that can be passed to further regulate the lookup of users. By default
+this is disabled.
+.TP
+\fB\-\-ldap\-uid\fP
+The key being used to identify the UID of the user being searched. It defaults
+to "uid".
+.TP
+\fB\-\-ldap\-authentication\-enable\fP
+Enable authentication mode. That is, instruct Portus that in order to fetch
+users from the LDAP server, it needs to send some credentials first. These
+credentials are passed by the options \fBldap\-authentication\-bind\-dn\fP and
+\fBldap\-authentication\-password\fP; and they both need this option to be set in
+order for them to be set.
+.TP
+\fB\-\-ldap\-authentication\-bind\-dn\fP
+When using \fBldap\-authentication\-enable\fP, use the given DN to bind into the
+LDAP server. The default is an empty string.
+.TP
+\fB\-\-ldap\-authentication\-password\fP
+When using \fBldap\-authentication\-enable\fP, use the given password. It defaults
+to an empty string.
+.TP
+\fB\-\-ldap\-guess\-email\-enable\fP
+Toggle email guessing. When signing in with LDAP for the first time, Portus
+needs an email but LDAP servers not always require an email to be set for each
+user. By enabling email guessing, you instruct Portus to be clever about it and
+use the given DN to guess the email for each user. Note that users can always
+change their emails in the future.
+.TP
+\fB\-\-ldap\-guess\-email\-attr\fP
+When in combination with \fBldap\-guess\-email\-enable\fP, Portus will use the given
+\fBattr\fP to fetch the email instead of guessing it from the DN.
+.TP
+\fB\-\-email\-from\fP
+The email to be used as the sender for emails. It defaults to "portus@<hostname>".
+.TP
+\fB\-\-email\-name\fP
+The name to be used as the sender for emails. It defaults to "Portus".
+.TP
+\fB\-\-email\-reply\-to\fP
+The reply\-to to be used when sending emails. It defaults to "no\-reply@<hostname>".
+.TP
+\fB\-\-email\-smtp\-enable\fP
+Use SMTP instead of sendmail (the default method of delivery). All the options
+starting with \fBemail\-smtp\-\fP require this option to be set.
+.TP
+\fB\-\-email\-smtp\-address\fP
+The address of the SMTP server to be used for delivering mail. It defaults to "smtp.example.com".
+.TP
+\fB\-\-email\-smtp\-port\fP
+The port in which the SMTP server is listening to. Defaults to 587.
+.TP
+\fB\-\-email\-smtp\-username\fP
+The username of the SMTP account to be used when sending mail.
+.TP
+\fB\-\-email\-smtp\-password\fP
+The password of the SMTP account to be used when sending mail.
+.TP
+\fB\-\-email\-smtp\-domain\fP
+The domain of the SMTP server. It defaults to "example.com".
+.TP
+\fB\-\-signup\-enable\fP
+Toggle signup enabling. That is, if set to true, then users will be able to
+signup by themselves. Otherwise, administrators are responsible for adding new
+users. By default signup is enabled.
+.TP
+\fB\-\-gravatar\-enable\fP
+Use the Gravatar service for displaying icons of users. It defaults to true.
+.TP
+\fB\-\-jwt\-expiration\-time\fP
+Expiration time for the JWT token used by Portus. Set this option only if you
+\fIreally\fP know what you are doing since it will affect how Portus interacts with
+your Docker registry. It defaults to 5 minutes.
+.TP
+\fB\-\-catalog\-page\fP
+Set a custom pagination value to be used for API calls with the registry. Only
+set this value if you \fIreally\fP know what you are doing.
+.TP
+\fB\-\-first\-user\-admin\-enable\fP
+When enabled, the first user to register into Portus will become an
+administrator. It's enabled by default.
+.TP
+\fB\-\-display\-name\-enable\fP
+When enabled, users will be able to use a nick (also known as "display
+name"). It's disabled by default.
+.TP
+\fB\-\-delete\-enable\fP
+This flag controls whether users should be able to remove images and tags from
+within Portus. This will only work if the version of the target Docker registry
+is at least 2.4. This option is disabled by default.
+.TP
+\fB\-\-change\-visibility\-enable\fP
+When enabled, users will be able to change the visibility of their
+namespaces. It's enabled by default.
+.TP
+\fB\-\-manage\-namespace\-enable\fP
+Allow users to modify namespaces if they are an owner of it. If this
+is disabled, only an admin will be able to do this. This defaults to true.
+.TP
+\fB\-\-create\-namespace\-enable\fP
+Allow users to create namespaces. If this is disabled, only an admin will
+be able to do this. This defaults to true.
+.TP
+\fB\-\-manage\-team\-enable\fP
+Allow users to modify teams if they are an owner of it. If this is
+disabled only an admin will be able to do this. This defaults to true.
+.TP
+\fB\-\-create\-team\-enable\fP
+Allow users to create teams. If this is disabled only an admin will be
+able to do this. This defaults to true.
+.SH EXAMPLES
+.PP
+The simplest example is:
+.PP
+.RS
+.nf
+$ portusctl setup
+.fi
+.RE
+.PP
+The command above will configure Portus by taking all the default values. Note
+that this will also assume that your registry is running somewhere else. If
+that's not your case, then you can inform \fBportusctl\fP about this:
+.PP
+.RS
+.nf
+$ portusctl setup \-\-local\-registry
+.fi
+.RE
+.PP
+This is important to get SSL certificates right from the very
+beginning. Moreover, this command also allows administrators to deviate from
+the default configuration. For example:
+.PP
+.RS
+.nf
+$ portusctl setup \-\-ldap\-enable \-\-ldap\-hostname="ldap.example.org"
+.fi
+.RE
+.PP
+The above command will instruct \fBportusctl\fP that you are running an LDAP
+server in \fIldap.example.org\fP and that you want Portus to authenticate through
+this LDAP server.
+.SH HISTORY
+.PP
+August 2016, created by Miquel Sabaté Solà \[la]msabate@suse.com\[ra]

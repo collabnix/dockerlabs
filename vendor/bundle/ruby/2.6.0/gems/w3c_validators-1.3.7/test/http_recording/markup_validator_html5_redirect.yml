@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://validator.w3.org/check
+    body:
+      encoding: UTF-8
+      string: "--349832898984244898448024464570528145\r\nContent-Disposition: form-data;
+        name=\"fragment\"\r\n\r\n<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Hello</title></head><body><h1>H
+        \   i!</h1></body>\r\n--349832898984244898448024464570528145\r\nContent-Disposition:
+        form-data; name=\"output\"\r\n\r\njson\r\n--349832898984244898448024464570528145--\r\n"
+    headers:
+      Content-Type:
+      - multipart/form-data; boundary=349832898984244898448024464570528145
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 307
+      message: Temporary Redirect
+    headers:
+      Date:
+      - Sat, 17 Dec 2016 22:18:41 GMT
+      Server:
+      - Apache/2.4.10 (Debian)
+      Location:
+      - https://validator.w3.org/nu/#textarea
+      Transfer-Encoding:
+      - chunked
+      Strict-Transport-Security:
+      - max-age=15552015; preload
+      Public-Key-Pins:
+      - pin-sha256="cN0QSpPIkuwpT6iP2YjEo1bEwGpH/yiUn6yhdy+HNto="; pin-sha256="WGJkyYjx1QMdMe0UqlyOKXtydPDVrk7sl2fV+nNm1r4=";
+        pin-sha256="LrKdTxZLRTvyHM4/atX2nquX9BeHRZMCxg3cf4rhc2I="; max-age=864000
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: "Status: 302 Found\r\nLocation: https://validator.w3.org/nu/?doc=upload%3A%2F%2FForm%20Submission&out=json\r\n\r\nContent-Type:
+        application/json; charset=UTF-8\nX-W3C-Validator-Recursion: 1\nX-W3C-Validator-Status:
+        Valid\nX-W3C-Validator-Errors: 0\nX-W3C-Validator-Warnings: 2\n\n{\n    \"url\":
+        \"upload://Form Submission\",\n    \"messages\": [\n        \n          {\n
+        \             \n              \n              \"message\": ,\n              \"messageid\":
+        \"html5\",\n              \"explanation\": \"    <p class=\\\"helpwanted\\\">\\n
+        \     <a\\n        href=\\\"feedback.html?uri=;errmsg_id=html5#errormsg\\\"\\n\\ttitle=\\\"Suggest
+        improvements on this error message through our feedback channels\\\" \\n      >&#x2709;</a>\\n
+        \   </p>\\n\",\n              \"type\": \"info\"\n          }\n        \n
+        \       ],\n    \"source\": {\n        \"encoding\": \"utf-8\",\n        \"type\":
+        \"\"\n    }\n}\n"
+    http_version: 
+  recorded_at: Sat, 17 Dec 2016 22:18:41 GMT
+- request:
+    method: post
+    uri: https://validator.w3.org/check
+    body:
+      encoding: UTF-8
+      string: "--349832898984244898448024464570528145\r\nContent-Disposition: form-data;
+        name=\"url\"\r\n\r\nhttps://validator.w3.org/nu/#textarea\r\n--349832898984244898448024464570528145--\r\n"
+    headers:
+      Content-Type:
+      - multipart/form-data; boundary=349832898984244898448024464570528145
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Sat, 17 Dec 2016 22:18:42 GMT
+      Server:
+      - Apache/2.4.10 (Debian)
+      Location:
+      - http://validator.w3.org/check?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%23textarea
+      Content-Length:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=15552015; preload
+      Public-Key-Pins:
+      - pin-sha256="cN0QSpPIkuwpT6iP2YjEo1bEwGpH/yiUn6yhdy+HNto="; pin-sha256="WGJkyYjx1QMdMe0UqlyOKXtydPDVrk7sl2fV+nNm1r4=";
+        pin-sha256="LrKdTxZLRTvyHM4/atX2nquX9BeHRZMCxg3cf4rhc2I="; max-age=864000
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sat, 17 Dec 2016 22:18:42 GMT
+recorded_with: VCR 3.0.3

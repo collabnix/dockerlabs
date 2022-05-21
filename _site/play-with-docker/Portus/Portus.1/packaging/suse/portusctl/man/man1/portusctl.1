@@ -1,0 +1,119 @@
+.TH PORTUSCTL 1 "portusctl User manuals" "SUSE LLC." "AUGUST 2016"
+.SH NAME
+.PP
+portusctl \- A tool to administrate your Portus instance
+.SH SYNOPSIS
+.PP
+\fBportusctl\fP command [command options] [arguments...]
+.SH DESCRIPTION
+.PP
+\fBportusctl\fP is a tool that helps administrators perform operation on the
+installed Portus instance. For this, administrators will be able to execute
+various commands, \fBconfigure\fP the Portus instance, fetch the \fBlogs\fP produced
+by Portus, etc.
+.SH COMMANDS
+.TP
+\fBsetup\fP
+Configure your Portus instance. It accepts a wide variety of flags that can be
+used to instruct the values to be set for each configurable value and more.
+See \fB
+.BR portusctl-setup (1)\fP 
+for full documentation on the \fBsetup\fP command.
+.TP
+\fBmake_admin\fP
+If called without arguments, it will simply list the usernames that are
+available. Otherwise, if you pass a valid username, then the selected user
+will become an administrator.
+See \fB
+.BR portusctl-make-admin (1)\fP 
+for more information on this command.
+.TP
+\fBrake\fP
+Run any of the rake tasks defined within Portus.
+See \fB
+.BR portusctl-rake (1)\fP 
+to understand how to list the available rake tasks
+and invoke them.
+.TP
+\fBexec\fP
+Run an arbitrary command within the context of Portus. More precisely, it will
+run the command by wrapping it with a \fIbundler exec\fP call pinned to the
+context of Portus.
+See \fB
+.BR portusctl-exec (1)\fP 
+for more information on this command.
+.TP
+\fBlogs\fP
+Collect all the logs produced by Portus to further debug an incident.
+See \fB
+.BR portusctl-logs (1)\fP 
+for more information on the \fBlogs\fP command.
+.SH EXAMPLES
+.PP
+The most common task to be run with \fBportusctl\fP is the \fBsetup\fP command. So,
+people installing Portus through the given RPM usually perform the following
+commands:
+.PP
+.RS
+.nf
+$ zypper in portus
+$ portusctl setup \-\-local\-registry \-\-db\-name=portus_test
+.fi
+.RE
+.PP
+In the previous example, the administrator instructs \fBportusctl\fP that the host
+machine is running the registry to be targeted, and the DB to be picked is
+\fIportus_test\fP\&. For the rest of the values, \fBportusctl\fP will assume the
+default value. Take a look at the \fB
+.BR portusctl-setup (1)\fP 
+man page for further
+information on this setup.
+.PP
+Another common scenario is reporting a bug. For this, in order to help
+developers to discover what's going on, one can perform the following actions:
+.PP
+.RS
+.nf
+$ portusctl rake portus:info
+$ portusctl logs
+.fi
+.RE
+.PP
+The first command executes the \fIportus:info\fP rake task defined within
+Portus. This task will generate detailed output about the current version of
+Portus, the configuration being used (with sensible data shadowed with stars)
+and so on. The second command will give you a tarball in \fI/tmp\fP containing all
+the logs that have been produced by Portus. With all this information on your
+hands, you will be able to report the issue you are experiencing.
+.PP
+As an advanced example, you can use the \fBexec\fP command to further inspect your
+Portus installation. For example, with the following command you will be able to
+access a Ruby environment with Portus loaded in it:
+.PP
+.RS
+.nf
+$ portusctl exec rails c
+.fi
+.RE
+.PP
+By executing the previous command, you will enter a different console that only
+accepts Ruby code (in which all Portus' code is available!). With this, and some
+knowledge of the Ruby programming language, you will be able to perform tasks
+such as:
+.PP
+.RS
+.nf
+> puts User.all
+> puts Team.find_by(name: "myteam").namespaces
+.fi
+.RE
+.PP
+With the previous two commands, you will be able to list all the users on the
+system and all the namespaces of the \fImyteam\fP team. Needless to say, only do
+this if you \fIreally\fP know what you are doing! We only recommend this in
+development/staging/test environments, or to experienced Ruby on Rails
+developers that are just performing \fIread\fP statements for further inspecting
+an issue.
+.SH HISTORY
+.PP
+August 2016, created by Miquel Sabaté Solà \[la]msabate@suse.com\[ra]

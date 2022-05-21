@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://validator.w3.org/nu/?out=json&parser=html&showsource=yes
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html>\n<html lang=\"en-ca\">\n  <head>\n    <!--<meta http-equiv=\"Content-type\"
+        content=\"text/html; charset=iso-8859-1\">-->\n    <title>HTML 5 Example</title>\n
+        \ </head>\n  <body>\n  \t<!-- should have one error (missing </section>) and
+        one warning (no content type) -->\n    <p>This is a sample HTML 5 document.</p>\n
+        \   <section>\n\t  <h1>Example of paragraphs</h1>\n\t  This is the <em>first</em>
+        paragraph in this example.\n\t  <p>This is the second.</p>\n\t  <p>Test<br>test</p>\n
+        \ </body>\n</html>\n"
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Jun 2017 19:24:01 GMT
+      Accept-Encoding:
+      - gzip
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - content-type
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - Jetty(9.2.9.v20150224)
+      Strict-Transport-Security:
+      - max-age=15552015; preload
+      Public-Key-Pins:
+      - pin-sha256="cN0QSpPIkuwpT6iP2YjEo1bEwGpH/yiUn6yhdy+HNto="; pin-sha256="WGJkyYjx1QMdMe0UqlyOKXtydPDVrk7sl2fV+nNm1r4=";
+        pin-sha256="LrKdTxZLRTvyHM4/atX2nquX9BeHRZMCxg3cf4rhc2I="; max-age=864000
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJtZXNzYWdlcyI6W3sidHlwZSI6ImVycm9yIiwibGFzdExpbmUiOjE1LCJsYXN0Q29sdW1uIjo5LCJmaXJzdENvbHVtbiI6MywibWVzc2FnZSI6IkVuZCB0YWcgZm9yICDigJxib2R54oCdIHNlZW4sIGJ1dCB0aGVyZSB3ZXJlIHVuY2xvc2VkIGVsZW1lbnRzLiIsImV4dHJhY3QiOiJlc3Q8L3A+XG4gIDwvYm9keT5cbjwvaHRtIiwiaGlsaXRlU3RhcnQiOjEwLCJoaWxpdGVMZW5ndGgiOjd9LHsidHlwZSI6ImVycm9yIiwibGFzdExpbmUiOjEwLCJsYXN0Q29sdW1uIjoxMywiZmlyc3RDb2x1bW4iOjUsIm1lc3NhZ2UiOiJVbmNsb3NlZCBlbGVtZW50IOKAnHNlY3Rpb27igJ0uIiwiZXh0cmFjdCI6Ii48L3A+XG4gICAgPHNlY3Rpb24+XG5cdCAgPGgiLCJoaWxpdGVTdGFydCI6MTAsImhpbGl0ZUxlbmd0aCI6OX1dLCJzb3VyY2UiOnsidHlwZSI6InRleHQvaHRtbCIsImVuY29kaW5nIjoiVVRGLTgiLCJjb2RlIjoiPCFET0NUWVBFIGh0bWw+XG48aHRtbCBsYW5nPVwiZW4tY2FcIj5cbiAgPGhlYWQ+XG4gICAgPCEtLTxtZXRhIGh0dHAtZXF1aXY9XCJDb250ZW50LXR5cGVcIiBjb250ZW50PVwidGV4dC9odG1sOyBjaGFyc2V0PWlzby04ODU5LTFcIj4tLT5cbiAgICA8dGl0bGU+SFRNTCA1IEV4YW1wbGU8L3RpdGxlPlxuICA8L2hlYWQ+XG4gIDxib2R5PlxuICBcdDwhLS0gc2hvdWxkIGhhdmUgb25lIGVycm9yIChtaXNzaW5nIDwvc2VjdGlvbj4pIGFuZCBvbmUgd2FybmluZyAobm8gY29udGVudCB0eXBlKSAtLT5cbiAgICA8cD5UaGlzIGlzIGEgc2FtcGxlIEhUTUwgNSBkb2N1bWVudC48L3A+XG4gICAgPHNlY3Rpb24+XG5cdCAgPGgxPkV4YW1wbGUgb2YgcGFyYWdyYXBoczwvaDE+XG5cdCAgVGhpcyBpcyB0aGUgPGVtPmZpcnN0PC9lbT4gcGFyYWdyYXBoIGluIHRoaXMgZXhhbXBsZS5cblx0ICA8cD5UaGlzIGlzIHRoZSBzZWNvbmQuPC9wPlxuXHQgIDxwPlRlc3Q8YnI+dGVzdDwvcD5cbiAgPC9ib2R5PlxuPC9odG1sPiJ9fQo=
+    http_version: 
+  recorded_at: Thu, 29 Jun 2017 19:24:01 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Beginners Track - Understanding Docker Underlying Technology</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Beginners Track - Understanding Docker Underlying Technology" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="collabnix DockerLab Docker - Beginners Track" />
+<meta property="og:description" content="collabnix DockerLab Docker - Beginners Track" />
+<link rel="canonical" href="http://localhost:4000/beginners/understanding-docker-underlying-technology/README.html" />
+<meta property="og:url" content="http://localhost:4000/beginners/understanding-docker-underlying-technology/README.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Beginners Track - Understanding Docker Underlying Technology" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"collabnix DockerLab Docker - Beginners Track","headline":"Beginners Track - Understanding Docker Underlying Technology","url":"http://localhost:4000/beginners/understanding-docker-underlying-technology/README.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+   
+
+    <header class="page-header" role="banner">
+      <center><a href="http://dockerlabs.collabnix.com"><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png"></a></center>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
+     <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
+      <h1 class="project-name">Beginners Track - Understanding Docker Underlying Technology</h1>
+      <h2 class="project-tagline">collabnix | DockerLab | Docker - Beginners Track</h2> 
+      
+      
+        <a href="https://launchpass.com/collabnix" class="btn">Join Slack</a>
+     
+      
+        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">Docker Cheatsheet</a>
+     
+        
+        <a href="https://collabnix.com/docker-compose-cheatsheet/" class="btn">Docker Compose Cheatsheet</a>
+     
+          
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      
+      <h1 id="understanding-docker-underlying-technology">Understanding Docker Underlying Technology</h1>
+
+<p>To understand Docker underlying technology, let us first understand the core container technology.</p>
+
+<p>At the core of container technology are cGroups and namespaces. Additionally, Docker uses union file systems(UFS) for added benefits to the container development process. Control groups (cGroups) work by allowing the host to share and also limit the resources each process or container can consume. This is important for both, resource utilization and security, as it prevents denial-of-service attacks on the host’s hardware resources. Several containers can share CPU and memory while staying within the predefined constraints.</p>
+
+<p>Namespaces offer another form of isolation in the way of processes. Processes are limited to see only the process ID in the same namespace. Namespaces from other system processes would not be accessible from a container process. For example, a network namespace would isolate access to the network interfaces and configuration, which allows the separation of network interfaces, routes, and firewall rules.</p>
+
+<p><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/understanding-docker-underlying-technology/image1.png" alt="New Image" /></p>
+
+<p>Union file systems are also a key advantage to using Docker containers. The easiest way to understand union file systems is to think of them like a layer cake with each layer baked independently. The Linux kernel is our base layer; then, we might add an OS like Red Hat
+Linux or Ubuntu. Next, we might add an application like Nginx or Apache. Every change creates a new layer. Finally, as you make changes and new layers are added, you’ll always have a top layer (think frosting) that is a writable layer.</p>
+
+<p><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/understanding-docker-underlying-technology/image2.png" alt="New Image" /></p>
+
+<p>What makes this truly efficient is that Docker caches the layers the first time we build
+them. So, let’s say that we have an image with Ubuntu and then add Apache and build the
+image. Next, we build MySQL with Ubuntu as the base. The second build will be much
+faster because the Ubuntu layer is already cached. Essentially, our chocolate and vanilla
+layers, from Figure 1.2, are already baked. We simply need to bake the pistachio (MySQL)
+layer, assemble, and add the icing (writable layer).</p>
+
+<p><a href="https://collabnix.github.io/dockerlabs/beginners/linux-comm-containers.html">Proceed » Can container communication cross over to noncontainerized apps?</a></p>
+
+
+    
+      
+      <footer class="site-footer">
+  
+     
+              <h3> Practice Docker Tutorial </h3>
+        <button> <a href=" https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386"> free Ubuntu VM </a></button>
+    
+        <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div><script src="https://hackr.io/widget.js?v=1.0"></script>
+        
+              
+       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+         <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
+<!-- End of HubSpot Embed Code -->
+         <div id="wcb" class="carbonbadge"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
+        </span> 
+      </footer>
+    </main>
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

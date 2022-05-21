@@ -1,0 +1,129 @@
+version: "3"
+
+networks:
+  monitoring:
+
+volumes:
+  prometheus:
+    driver: rexray/gcepd:latest
+
+services:
+  cadvisor:
+    image: google/cadvisor:${CADVISOR_VERSION:-v0.24.1}
+    networks:
+      - monitoring
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock,readonly
+      - /:/rootfs
+      - /var/run:/var/run
+      - /sys:/sys
+      - /var/lib/docker/:/var/lib/docker
+    deploy:
+      mode: global
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 128M
+        reservations:
+          cpus: '0.10'
+          memory: 64M
+
+  node-exporter:
+    image: basi/node-exporter:${NODE_EXPORTER_VERSION:-v1.13.0}
+    networks:
+      - monitoring
+    volumes:
+      - /proc:/host/proc
+      - /sys:/host/sys
+      - /:/rootfs
+      - /etc/hostname:/etc/host_hostname
+    environment:
+      HOST_HOSTNAME: /etc/host_hostname
+    command: -collector.procfs "/host/proc" -collector.sysfs /host/sys -collector.textfile.directory /etc/node-exporter/ -collectors.enabled 'conntrack,diskstats,entropy,filefd,filesystem,loadavg,mdadm,meminfo,netdev,netstat,stat,textfile,time,vmstat,ipvs' # -collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)"
+    deploy:
+      mode: global
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 32M
+        reservations:
+          cpus: '0.10'
+          memory: 16M
+
+  docker-exporter:
+    image: basi/socat:${DOCKER_EXPORTER_VERSION:-v0.1.0}
+    networks:
+      - monitoring
+    deploy:
+      mode: global
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 6M
+        reservations:
+          cpus: '0.05'
+          memory: 4M
+
+  alertmanager:
+    image: basi/alertmanager:${ALERTMANAGER_VERSION:-v0.1.0}
+    networks:
+      - monitoring
+      # - logging
+    ports:
+     - "9093:9093"
+    environment:
+      SLACK_API: ${SLACK_API:-YOURTOKENGOESHERE}
+      LOGSTASH_URL: http://logstash:8080/
+    command: -config.file=/etc/alertmanager/config.yml
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 32M
+        reservations:
+          cpus: '0.01'
+          memory: 16M
+
+  prometheus:
+    image: basi/prometheus-swarm:${PROMETHEUS_SWARM_VERSION:-v0.4.1}
+    ports:
+      - "9090"
+    networks:
+      - monitoring
+    command: -config.file=/etc/prometheus/prometheus.yml -storage.local.path=/prometheus -web.console.libraries=/etc/prometheus/console_libraries -web.console.templates=/etc/prometheus/consoles -alertmanager.url=http://alertmanager:9093
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1024M
+        reservations:
+          cpus: '0.50'
+          memory: 128M
+
+  grafana:
+    image: basi/grafana:${GRAFANA_VERSION:-v4.1.1}
+    ports:
+      - "3000:3000"
+    networks:
+      - monitoring
+    environment:
+      GF_SERVER_ROOT_URL: http://grafana.${CLUSTER_DOMAIN}
+      GF_SECURITY_ADMIN_PASSWORD: $GF_PASSWORD
+      PROMETHEUS_ENDPOINT: http://prometheus:9090
+      ELASTICSEARCH_ENDPOINT: $ES_ADDRESS
+      ELASTICSEARCH_USER: $ES_USERNAME
+      ELASTICSEARCH_PASSWORD: $ES_PASSWORD
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 64M
+        reservations:
+          cpus: '0.50'
+          memory: 32M

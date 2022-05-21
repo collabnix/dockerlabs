@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Kubernetes - Beginners Track - Setting Up Alert Manager for Prometheus On Kubernetes</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Kubernetes - Beginners Track - Setting Up Alert Manager for Prometheus On Kubernetes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="collabnix DockerLab Kubernetes - Beginners Track" />
+<meta property="og:description" content="collabnix DockerLab Kubernetes - Beginners Track" />
+<link rel="canonical" href="http://localhost:4000/kubernetes/beginners/Kubernetes_monitoring_alerting/alert_manager_on_K8.html" />
+<meta property="og:url" content="http://localhost:4000/kubernetes/beginners/Kubernetes_monitoring_alerting/alert_manager_on_K8.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Kubernetes - Beginners Track - Setting Up Alert Manager for Prometheus On Kubernetes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"collabnix DockerLab Kubernetes - Beginners Track","headline":"Kubernetes - Beginners Track - Setting Up Alert Manager for Prometheus On Kubernetes","url":"http://localhost:4000/kubernetes/beginners/Kubernetes_monitoring_alerting/alert_manager_on_K8.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+   
+
+    <header class="page-header" role="banner">
+      <center><a href="http://dockerlabs.collabnix.com"><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png"></a></center>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
+     <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
+      <h1 class="project-name">Kubernetes - Beginners Track - Setting Up Alert Manager for Prometheus On Kubernetes</h1>
+      <h2 class="project-tagline">collabnix | DockerLab | Kubernetes - Beginners Track</h2> 
+      
+      
+        <a href="https://launchpass.com/collabnix" class="btn">Join Slack</a>
+     
+      
+        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">Docker Cheatsheet</a>
+     
+        
+        <a href="https://collabnix.com/docker-compose-cheatsheet/" class="btn">Docker Compose Cheatsheet</a>
+     
+          
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      
+      <h1 id="setting-up-alert-manager-for-prometheus-on-kubernetes">Setting Up Alert Manager for Prometheus On Kubernetes</h1>
+
+<p>AlertManager is an opensource alerting system which works with Prometheus Monitoring system.
+In the earlier tutorial, we discussed around how to setup Prometheus under Kubernetes Cluster.</p>
+
+<p>Note: all the Alert Manager Kubernetes objects will be created inside a namespace called monitoring. 
+If you use a different namespace, you can replace it in the YAML files.</p>
+
+<h2 id="alert-manager-on-kubernetes">Alert Manager On Kubernetes</h2>
+
+<p>Alert Manager setup has the following key configurations.</p>
+
+<p>1.A config map for Alert Manager configuration<br />
+2.A config Map for Alert Manager alert templates<br />
+3.Alert Manager Deployment.<br />
+4.Alert Manager service to access the web UI.<br /></p>
+
+<h2 id="key-things-to-note">Key Things To Note</h2>
+
+<p>1.You should have a working Prometheus setup up and running. Follow this lab for Prometheus setup ==&gt; <a href="https://github.com/sangam14/Prometheus-Monitoring-with-k8/blob/master/README.md">Prometheus Setup On Kubernetes</a><br />
+2.Prometheus should have the correct alert manager service endpoint in its config.yaml as shown below. Only then, Prometheus will be able to send the alert to Alert Manager.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alerting:
+   alertmanagers:
+      - scheme: http
+        static_configs:
+        - targets:
+          - "alertmanager.monitoring.svc:9093"
+</code></pre></div></div>
+<p>3.All the alerting rules have to be present on Prometheus config based on your needs. It should be created as part of the Prometheus config map with a file named prometheus.rules and added to the config.yaml in the following way.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule_files:
+      - /etc/prometheus/prometheus.rules
+      
+</code></pre></div></div>
+
+<ol>
+  <li>Alerts can be written based on the metrics you receive on Prometheus.</li>
+  <li>For receiving emails for alerts, you need to have a valid SMTP host in the alert manager config.yaml (smarthost prameter). You can customize the email template as per your needs in the Alert Template config map. We have given the generic template in this guide.
+Let’s get started with the setup.</li>
+</ol>
+
+<p>Alert Manager reads its configuration from a config.yaml file. It contains the configuration of alert template path, email and other alert receiving configuration. In this setup, we are using email and slack receivers. You can have a look at all the supported alert <a href="https://prometheus.io/docs/alerting/configuration/#%3Creceiver%3E">receivers from here</a>.</p>
+
+<p>Create a file named AlertManagerConfigmap.yaml and copy the following contents.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: alertmanager-config
+  namespace: monitoring
+data:
+  config.yml: |-
+    global:
+    templates:
+    - '/etc/alertmanager/*.tmpl'
+    route:
+      receiver: alert-emailer
+      group_by: ['alertname', 'priority']
+      group_wait: 10s
+      repeat_interval: 30m
+      routes:
+        - receiver: slack_demo
+        # Send severity=slack alerts to slack.
+          match:
+            severity: slack
+          group_wait: 10s
+          repeat_interval: 1m
+ 
+    receivers:
+    - name: alert-emailer
+      email_configs:
+      - to: demo@engineitops.icu
+        send_resolved: false
+        from: from-email@email.com
+        smarthost: email-host-here
+        require_tls: false
+    - name: slack_demo
+      slack_configs:
+      - api_url: enter url of slack hook 
+        channel: '#enterchannel_name'
+
+</code></pre></div></div>
+<h2 id="lets-create-the-config-map-using-kubectl">Let’s create the config map using kubectl.</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create -f AlertManagerConfigmap.yaml
+
+
+</code></pre></div></div>
+<h2 id="config-map-for-alert-template">Config Map For Alert Template</h2>
+
+<p>We need alert templates for all the receivers we use (email, slack etc). Alert manager will dynamically substitute the values and delivers alerts to the receivers based on the template. You can customize these templates based on your needs.</p>
+
+<p>Create a file named AlertManagerConfigmap.yaml and copy the contents from this file link ==&gt; Alert Manager Template YAML</p>
+
+<h2 id="create-the-configmap-using-kubectl">Create the configmap using kubectl.</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create -f AlertTemplateConfigMap.yaml
+
+</code></pre></div></div>
+<h2 id="create-a-deployment">Create A Deployment</h2>
+
+<p>In this deployment, we will mount the two config maps we created.</p>
+
+<p>Create a file called Deployment.yaml with the following contents.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertmanager
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alertmanager
+  template:
+    metadata:
+      name: alertmanager
+      labels:
+        app: alertmanager
+    spec:
+      containers:
+      - name: alertmanager
+        image: prom/alertmanager:latest
+        args:
+          - "--config.file=/etc/alertmanager/config.yml"
+          - "--storage.path=/alertmanager"
+        ports:
+        - name: alertmanager
+          containerPort: 9093
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/alertmanager
+        - name: templates-volume
+          mountPath: /etc/alertmanager-templates
+        - name: alertmanager
+          mountPath: /alertmanager
+      volumes:
+      - name: config-volume
+        configMap:
+          name: alertmanager-config
+      - name: templates-volume
+        configMap:
+          name: alertmanager-templates
+      - name: alertmanager
+        emptyDir: {}
+</code></pre></div></div>
+
+<h2 id="create-the-deployment-using-kubectl">Create the deployment using kubectl.</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create -f Deployment.yaml
+
+</code></pre></div></div>
+<h2 id="create-a-service">Create A Service</h2>
+
+<p>We need to expose the alert manager using NodePort or Load Balancer just to access the Web UI. Prometheus will talk to alert manager using the internal service endpoint.</p>
+
+<p>Create a Service.yaml file with the following contents.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apiVersion: v1
+kind: Service
+metadata:
+  name: alertmanager
+  namespace: monitoring
+  annotations:
+      prometheus.io/scrape: 'true'
+      prometheus.io/path:   /
+      prometheus.io/port:   '8080'
+spec:
+  selector: 
+    app: alertmanager
+  type: NodePort  
+  ports:
+    - port: 9093
+      targetPort: 9093
+      nodePort: 31000
+      
+</code></pre></div></div>
+<h2 id="create-the-service-using-kubectl">Create the service using kubectl.</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create -f Service.yaml
+
+</code></pre></div></div>
+<p>Now, you will be able to access Alert Manager on Node Port 31000. For example,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://35.114.150.153:31000
+
+</code></pre></div></div>
+
+<h2 id="contributor--">Contributor -</h2>
+
+<p>Sangam biradar - smbiradar14@gmail.com - engineITops.icu</p>
+
+    
+      
+      <footer class="site-footer">
+  
+     
+              <h3> Practice Docker Tutorial </h3>
+        <button> <a href=" https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386"> free Ubuntu VM </a></button>
+    
+        <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div><script src="https://hackr.io/widget.js?v=1.0"></script>
+        
+              
+       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+         <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
+<!-- End of HubSpot Embed Code -->
+         <div id="wcb" class="carbonbadge"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
+        </span> 
+      </footer>
+    </main>
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

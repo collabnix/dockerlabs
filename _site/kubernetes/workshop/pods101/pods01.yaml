@@ -1,0 +1,23 @@
+apiVersion: v1      # apiVersion: this is the version of the API used by the cluster. 
+                    # With new versions of Kubernetes being released, new functionality is introduced and, hence, new API versions may be defined. 
+                    # For the pod object, we use API version v1.
+
+kind: Pod           
+                    
+metadata:           # Metadata: here we can define data about the object we are about to create.
+  name: webserver   # In this example, we only provide the name of the pod. But you can provide other details like the namespace.
+spec:               #The spec part defines the characteristics that a given Kubernetes object should have. 
+                    # It is the cluster’s responsibility to update the status of the object to always match the desired configuration. 
+                    # In our example, the spec instructs that this object (the pod) should have one container with some attributes.
+  containers:
+  - name: webserver  # The name that this container will have.
+    image: nginx:latest # The image on which it is based.
+    ports:               # The port(s) that will be open.
+    - containerPort: 80
+    
+    
+    
+
+
+
+

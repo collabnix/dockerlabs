@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Beginners Track - Architecture of Docker Enteprise Edition 2.0</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Beginners Track - Architecture of Docker Enteprise Edition 2.0" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="collabnix DockerLab Docker - Beginners Track" />
+<meta property="og:description" content="collabnix DockerLab Docker - Beginners Track" />
+<link rel="canonical" href="http://localhost:4000/beginners/architecture-dockeree.html" />
+<meta property="og:url" content="http://localhost:4000/beginners/architecture-dockeree.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Beginners Track - Architecture of Docker Enteprise Edition 2.0" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"collabnix DockerLab Docker - Beginners Track","headline":"Beginners Track - Architecture of Docker Enteprise Edition 2.0","url":"http://localhost:4000/beginners/architecture-dockeree.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+   
+
+    <header class="page-header" role="banner">
+      <center><a href="http://dockerlabs.collabnix.com"><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png"></a></center>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
+     <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
+      <h1 class="project-name">Beginners Track -  Architecture of Docker Enteprise Edition 2.0</h1>
+      <h2 class="project-tagline">collabnix | DockerLab | Docker - Beginners Track</h2> 
+      
+      
+        <a href="https://launchpass.com/collabnix" class="btn">Join Slack</a>
+     
+      
+        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">Docker Cheatsheet</a>
+     
+        
+        <a href="https://collabnix.com/docker-compose-cheatsheet/" class="btn">Docker Compose Cheatsheet</a>
+     
+          
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      
+      <h1 id="architecture-of-docker-enteprise-edition-20">Architecture of Docker Enteprise Edition 2.0</h1>
+
+<h2 id="introduction-to-docker-ee-20">Introduction to Docker EE 2.0</h2>
+
+<ul>
+  <li>Docker EE is more than just a container orchestration solution.</li>
+  <li>It is a full lifecycle management solution for the modernization of traditional applications and microservices across a broad set of infrastructure platforms.</li>
+  <li>It is a Containers-as-a-Service(CaaS) platform for IT that manages and secures diverse applications across disparate infrastructure, both on-premises and in the cloud.</li>
+  <li>Docker EE provides an integrated, tested and certified platform for apps running on enterprise Linux or Windows operating systems and Cloud providers.</li>
+  <li>It is tightly integrated to the underlying infrastructure to provide a native, easy to install experience and an optimized Docker environment.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b005-arch2.png" alt="alt text" /></p>
+
+<p>Docker EE 2.0 GA consists of 3 major components which together enable a full software supply chain, from image creation, to secure image storage, to secure image deployment.</p>
+
+<h2 id="universal-control-plane-300-application-and-cluster-management">Universal Control Plane 3.0.0 (application and cluster management):</h2>
+
+<p>Deploys applications from images, by managing orchestrators, like Kubernetes and Swarm. UCP is designed for high availability (HA). You can join multiple UCP manager nodes to the cluster, and if one manager node fails, another takes its place automatically without impact to the cluster.</p>
+
+<h2 id="docker-trusted-registry-250">Docker Trusted Registry 2.5.0:</h2>
+
+<p>The production-grade image storage solution from Docker.</p>
+
+<h2 id="ee-engine-17062">EE Engine 17.06.2:</h2>
+
+<p>The commercially supported Docker engine for creating images and running them in Docker containers.</p>
+
+<h2 id="does-docker-ee-support-kubernetes">Does Docker EE support Kubernetes?</h2>
+
+<p>Yes, Kubernetes in Docker EE fully supports all Docker EE features, including role-based access control, LDAP/AD integration, scanning,  signing enforcement, and security policies.</p>
+
+<h2 id="kubernetes-features-on-docker-ee-include">Kubernetes features on Docker EE include:</h2>
+
+<ul>
+  <li>Kubernetes orchestration full feature set</li>
+  <li>CNCF Certified Kubernetes conformance</li>
+  <li>Kubernetes app deployment by using web UI or CLI</li>
+  <li>Compose stack deployment for Swarm and Kubernetes apps</li>
+  <li>Role-based access control for Kubernetes workloads</li>
+  <li>Pod-based autoscaling, to increase and decrease pod count based on CPU usage</li>
+  <li>Blue-Green deployments, for load balancing to different app versions</li>
+  <li>Ingress Controllers with Kubernetes L7 routing</li>
+  <li>Interoperability between Swarm and Kubernetes workloads for networking and storage.</li>
+</ul>
+
+<h2 id="architecture-of-docker-ee">Architecture of Docker EE</h2>
+
+<p><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b005-arch1.png" alt="alt text" /></p>
+
+<p>At the base of the architecture, we have Docker Enterprise Engine. All the nodes in the cluster runs Docker Enterprise Edition as the base engine. Currently the stable release is 17.06 EE. It is a lightweight and powerful containerization technology combined with a work flow for building and containerizing your applications.</p>
+
+<p>Sitting on top of the Docker Engine is what we call “Enterprise Edition Stack” where all of these components run as containers(shown below in the picture), except Swarm Mode. Swarm Mode is integrated into Docker Engine and you can turn it on/off based on your choice.Swarm Mode is enabled when Universal Control Plane (UCP) is up &amp; running.</p>
+
+<p>In case you’re new to UCP, Docker Universal Control Plane is a solution designed to deploy, manage and scale Dockerized applications and infrastructure. As a Docker native solution, full support for the Docker API ensures seamless transition of your app from development to test to production – no code changes required, support for the Docker tool-set and compatibility with the Docker ecosystem.</p>
+
+<p>From infrastructure clustering and container scheduling with the embedded Docker Swarm Mode, Kubernetes to multi-container application definition with Docker Compose and image management with Trusted Registry, Universal Control Plane simplifies the process of managing infrastructure, deploying, managing applications and monitoring their activity, with a mix of graphical dashboards and Docker command line driven user interface</p>
+
+<p>There are 3 orchestrators sitting on top of Docker Enterprise Engine – Docker Swarm Mode, Classic Swarm &amp; Kubernetes. For both Classic Swarm and Kubernetes, there is the same underlying etcd instance which is highly available based on setup you have in your cluster.</p>
+
+<p>Docker EE provides access to the full API sets of three popular orchestrators:</p>
+
+<p><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b005-arch3.png" alt="alt text" /></p>
+
+<ul>
+  <li>Kubernetes: Full YAML object support</li>
+  <li>SwarmKit: Service-centric, Compose file version 3</li>
+  <li>“Classic” Swarm: Container-centric, Compose file version 2</li>
+</ul>
+
+<p>Docker EE proxies the underlying API of each orchestrator, giving you access to all of the capabilities of each orchestrator, along with the benefits of Docker EE, like role-based access control and Docker Content Trust.</p>
+
+<p>To manage lifecycle of orchestrator, we have a component called Agents and reconciler which manages both the promotion and demotion flows as well as certification renewal rotation and deal with patching and upgrading.</p>
+
+<p>Agent is the core component of UCP and is a globally-scheduled service. When you install UCP on a node, or join a node to a swarm that’s being managed by UCP, the agent service starts running on that node. Once this service is running, it deploys containers with other UCP components, and it ensures they keep running. The UCP components that are deployed on a node depend on whether the node is a manager or a worker. In nutshell, it monitors the node and ensures the right UCP services are running.</p>
+
+<p>Another important component is Reconciler. When UCP agent detects that the node is not running the right UCP components, it starts the reconciler container to converge the node to its desired state. It is expected for the UCP reconciler container to remain in an exited state when the node is healthy.</p>
+
+<p>In order to integrate with K8s and support authentication, Docker Team built open ID connect provider. In case you’re completely new to OIDC, OpenID Connect is a simple identity layer on top of the OAuth 2.0 protocol. It allows Clients to verify the identity of the End-User based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the End-User in an inter-operable and REST-like manner.</p>
+
+<p>As Swarm Mode is designed, we have central certificate authority that manages all the certificates and cryptographic node identity of the cluster. All component uses mutual TLS communication and they are using nodes which are issue by certificate authority. We are using unmodified version of Kubernetes.</p>
+
+<p>Sitting on the top of the stack, there is GUI which uses Swarm APIs and Kubernetes APIs. Right next to GUI, we have Docker Trusted Registry which is an enterprise-ready on-premises service for storing, distributing and securing images. It gives enterprises the ability to ensure secure collaboration between developers and sysadmins to build, ship and run applications. Finally we have Docker &amp; Kubernetes CLI capability integrated. Please note that this uses un-modified version of Kubernetes API.</p>
+
+<p>Contributor:</p>
+<ul>
+  <li>Ajeet Singh Raina</li>
+</ul>
+
+<p><a href="http://dockerlabs.collabnix.com/beginners/arhcitecture-of-docker-ce.html">Proceed »  Architecture of Docker Community Edition</a></p>
+
+    
+      
+      <footer class="site-footer">
+  
+     
+              <h3> Practice Docker Tutorial </h3>
+        <button> <a href=" https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386"> free Ubuntu VM </a></button>
+    
+        <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div><script src="https://hackr.io/widget.js?v=1.0"></script>
+        
+              
+       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+         <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
+<!-- End of HubSpot Embed Code -->
+         <div id="wcb" class="carbonbadge"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
+        </span> 
+      </footer>
+    </main>
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

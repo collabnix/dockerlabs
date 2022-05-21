@@ -1,0 +1,7 @@
+ALERT monitoring_service_group_missing_members
+  IF count(rate(container_last_seen{container_label_com_docker_stack_namespace=~"monitoring"}[5m])) < 9
+  FOR 5m
+  ANNOTATIONS {
+      summary = "SERVICE GROUP WARNING: SERVICE GROUP '{{ $labels.container_label_com_docker_stack_namespace }}'",
+      description = "{{ $labels.container_label_com_docker_stack_namespace }} is missing containers. Container count is {{ $value }}/9.",
+  }

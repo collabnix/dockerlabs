@@ -1,0 +1,50 @@
+.panel.panel-default
+  .panel-heading
+    h5
+      'Registry:
+      strong
+        = @registry.name
+  .panel-body
+    = form_for @registry, url: admin_registry_path(@registry.id), html: {class: 'form-horizontal', role: 'form'} do |f|
+      .form-group
+        = f.label :name, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.text_field(:name, class: 'form-control', required: true, value: @registry.name)
+      - if @can_change_hostname
+        .form-group
+          = f.label :hostname, {class: 'control-label col-md-2'}
+          .col-md-7
+            = f.text_field(:hostname, class: 'form-control', placeholder: 'registry.test.lan', required: true)
+      .form-group
+        = f.label :use_ssl, "Use SSL", {class: 'control-label col-md-2', title: 'Set this to enable SSL in the communication between Portus and the Registry', checked: @registry.use_ssl?}
+        .col-md-7
+          = f.check_box(:use_ssl)
+      div.collapse#advanced
+        .form-group
+          = f.label :external_hostname, "External Registry Name", {class:'control-label col-md-2', title: 'Set this if the name that clients use to communicate with the registry is different than the name that Portus uses to connect'}
+          .col-md-7
+            - if params[:external_hostname]
+              = f.text_field(:external_hostname, class: 'form-control', value: params[:external_hostname], placeholder: '(Optional)', required: false)
+            - else
+              = f.text_field(:external_hostname, class: 'form-control', placeholder: '(Optional)', required: false)
+            span.help-block
+              | Portus uses the hostname field to communicate with the registry,
+                but this may be on an internal network and inaccessible to the
+                client.
+                Clients may connect to the registry by a name different to the
+                hostname above, for example if it is behind a reverse proxy.
+                This field must be set to prevent Portus from ignoring registry
+                events originating from this external hostname.
+      .form-group
+        .col-md-offset-2.col-md-7
+          div.btn-toolbar role='toolbar'
+            div.btn-group role='group'
+              = f.submit('Update', class: 'btn btn-primary')
+            div.btn-group role='group'
+              span data-toggle='collapse' data-target='#advanced'
+                button.btn.btn-primary#advancedButton type='button' data-toggle='button' aria-expanded='false' aria-controls='advanced' Show Advanced
+                javascript:
+                  $('#advancedButton').click(function() {
+                    $(this).text($(this).text() == 'Show Advanced' ? 'Hide Advanced' : 'Show Advanced');
+                  });
+

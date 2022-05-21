@@ -1,0 +1,36 @@
+version: '3'
+services:
+  zookeeper:
+    image: qnib/plain-zookeeper:2018-04-25
+    ports:
+      - "2181:2181"
+  zkui:
+    image: qnib/plain-zkui@sha256:30c4aa1236ee90e4274a9059a5fa87de2ee778d9bfa3cb48c4c9aafe7cfa1a13
+    ports:
+      - "9090:9090"
+  broker: 
+    image: qnib/plain-kafka:2019-01-28_2.1.0
+    hostname: "{{.Service.Name}}.{{.Task.Slot}}.{{.Task.ID}}"
+    ports:
+      - "9092:9092"
+    deploy:
+      replicas: 3
+    environment:
+      - KAFKA_BROKER_ID={{.Task.Slot}}
+  manager:
+    image: qnib/plain-kafka-manager:2018-04-25@sha256:8a30ced91432b9b3ef21bc66c4b5635690e1af823684fe6e29ab866d839d10ca
+    ports:
+      - "9000:9000"
+    environment:
+      ZOOKEEPER_HOSTS: "tasks.zookeeper:2181"
+  producer:
+    image: qnib/golang-kafka-producer:2018-05-01.12
+    deploy:
+      replicas: 3
+    depends_on:
+      - broker
+    environment:
+      - KAFKA_BROKER=tasks.broker
+      - KAFKA_CREATE_TOPICS=test:1:1,scaled:2:2
+      - KAFKA_TOPIC=scaled
+      - MSG_COUNT=-1

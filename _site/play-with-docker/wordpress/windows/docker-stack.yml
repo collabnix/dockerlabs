@@ -1,0 +1,44 @@
+version: "3.3"
+services:
+
+  backend:
+    image: nanoserver/mysql
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Password123
+    ports:
+      - mode: host
+        target: 3306
+        published: 3306
+    networks:
+     - collabnet
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - 'node.platform.os == windows'
+
+  
+   
+  frontend:
+    depends_on:
+      - backend
+    image: wordpress:latest
+    environment:
+      WORDPRESS_DB_HOST: backend:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: Password123
+    ports:
+      - mode: host
+        target: 80
+        published: 80
+    networks:
+      - collabnet
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - 'node.platform.os == linux'
+
+networks:
+  collabnet:

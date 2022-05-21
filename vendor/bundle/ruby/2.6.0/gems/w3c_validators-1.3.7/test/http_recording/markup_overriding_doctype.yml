@@ -1,0 +1,208 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://validator.w3.org/check?doctype=HTML%203.2&fbd=0&output=soap12&uri=https://w3c-validators.github.io/w3c_validators/invalid_markup.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Oct 2016 19:49:42 GMT
+      Server:
+      - Apache/2.4.10 (Debian)
+      X-W3c-Validator-Recursion:
+      - '1'
+      X-W3c-Validator-Status:
+      - Invalid
+      X-W3c-Validator-Errors:
+      - '5'
+      X-W3c-Validator-Warnings:
+      - '3'
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/soap+xml; charset=UTF-8
+      Strict-Transport-Security:
+      - max-age=15552015; preload
+      Public-Key-Pins:
+      - pin-sha256="cN0QSpPIkuwpT6iP2YjEo1bEwGpH/yiUn6yhdy+HNto="; pin-sha256="WGJkyYjx1QMdMe0UqlyOKXtydPDVrk7sl2fV+nNm1r4=";
+        pin-sha256="LrKdTxZLRTvyHM4/atX2nquX9BeHRZMCxg3cf4rhc2I="; max-age=864000
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\">\n<env:Body>\n<m:markupvalidationresponse
+        env:encodingStyle=\"http://www.w3.org/2003/05/soap-encoding\" xmlns:m=\"http://www.w3.org/2005/10/markup-validator\">\n
+        \   \n    <m:uri>https://w3c-validators.github.io/w3c_validators/invalid_markup.html</m:uri>\n
+        \   <m:checkedby>http://validator.w3.org/</m:checkedby>\n    <m:doctype>-//W3C//DTD
+        HTML 3.2 Final//EN</m:doctype>\n    <m:charset>utf-8</m:charset>\n    <m:validity>false</m:validity>\n
+        \   <m:warnings>\n        <m:warningcount>3</m:warningcount>\n        <m:warninglist>\n
+        \          \n\n\n\n\n\n\n\n\n\n\n\n\n  <m:warning><m:messageid>W11</m:messageid><m:message>Namespace
+        Found in non-XML Document</m:message></m:warning>\n\n\n\n  <m:warning><m:messageid>W13</m:messageid><m:message>DOCTYPE
+        Override in effect!</m:message></m:warning>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+        \       \n            <m:warning>\n                <m:line>4</m:line>\n                <m:col>69</m:col>\n
+        \               <m:message>NET-enabling start-tag requires SHORTTAG YES</m:message>\n
+        \                 <m:messageid>247</m:messageid>\n                  <m:explanation>
+        \ <![CDATA[\n                        <p class=\"helpwanted\">\n      <a\n
+        \       href=\"feedback.html?uri=https%3A%2F%2Fw3c-validators.github.io%2Fw3c_validators%2Finvalid_markup.html;errmsg_id=247#errormsg\"\n\ttitle=\"Suggest
+        improvements on this error message through our feedback channels\" \n      >&#x2709;</a>\n
+        \   </p>\n\n    <div class=\"ve mid-247\">\n    <p>\n      For the current
+        document, the validator interprets strings like\n      <code class=\"inline\">&lt;FOO
+        /&gt;</code> according to legacy rules that\n      break the expectations
+        of most authors and thus cause confusing warnings\n      and error messages
+        from the validator. This interpretation is triggered\n      by HTML 4 documents
+        or other SGML-based HTML documents. To avoid the\n      messages, simply remove
+        the \"/\" character in such contexts. NB: If you\n      expect <code class=\"inline\">&lt;FOO
+        /&gt;</code> to be interpreted as an\n      XML-compatible \"self-closing\"
+        tag, then you need to use XHTML or HTML5.\n    </p>\n    <p>\n      This warning
+        and related errors may also be caused by an unquoted\n      attribute value
+        containing one or more \"/\". Example:\n      <code class=\"inline\">&lt;a
+        href=http://w3c.org&gt;W3C&lt;/a&gt;</code>.\n      In such cases, the solution
+        is to put quotation marks around the value.\n    </p>\n  </div>\n\n                    ]]>\n
+        \                 </m:explanation>\n                  <m:source><![CDATA[\t&#60;meta
+        http-equiv=&#34;Content-type&#34; content=&#34;text/html; charset=utf-8&#34;
+        <strong title=\"Position where error was detected.\">/</strong>&#62;]]></m:source>\n
+        \           </m:warning>\n        </m:warninglist>\n    </m:warnings>\n    <m:errors>\n
+        \       <m:errorcount>5</m:errorcount>\n        <m:errorlist>\n\n            <m:error>\n
+        \               <m:line>2</m:line>\n                <m:col>13</m:col>\n                <m:message>there
+        is no attribute &quot;XMLNS&quot;</m:message>\n                <m:messageid>108</m:messageid>\n
+        \               <m:explanation>  <![CDATA[\n                      <p class=\"helpwanted\">\n
+        \     <a\n        href=\"feedback.html?uri=https%3A%2F%2Fw3c-validators.github.io%2Fw3c_validators%2Finvalid_markup.html;errmsg_id=108#errormsg\"\n\ttitle=\"Suggest
+        improvements on this error message through our feedback channels\" \n      >&#x2709;</a>\n
+        \   </p>\n\n    <div class=\"ve mid-108\">\n    <p>\n      You have used the
+        attribute named above in your document, but the\n      document type you are
+        using does not support that attribute for this\n      element. This error
+        is often caused by incorrect use of the \"Strict\"\n      document type with
+        a document that uses frames (e.g. you must use\n      the \"Transitional\"
+        document type to get the \"target\" attribute), or\n      by using vendor
+        proprietary extensions such as \"marginheight\" (this\n      is usually fixed
+        by using CSS to achieve the desired effect instead).\n    </p>\n    <p>\n
+        \     This error may also result if the element itself is not supported in\n
+        \     the document type you are using, as an undefined element will have no\n
+        \     supported attributes; in this case, see the element-undefined error\n
+        \     message for further information.\n    </p>\n    <p>\n      How to fix:
+        check the spelling and case of the element and attribute, \n      (Remember
+        XHTML is all lower-case) and/or \n      check that they are both allowed in
+        the chosen document type, and/or\n      use CSS instead of this attribute.
+        If you received this error when using the \n      &lt;embed&gt; element to
+        incorporate flash media in a Web page, see the \n      <a href=\"docs/help.html#faq-flash\">FAQ
+        item on valid flash</a>.\n    </p>\n  </div>\n\n                  ]]>\n                </m:explanation>\n
+        \               <m:source><![CDATA[&#60;html xmlns=<strong title=\"Position
+        where error was detected.\">&#34;</strong>http://www.w3.org/1999/xhtml&#34;
+        xml:lang=&#34;en-ca&#34; lang=&#34;en-ca&#34;&#62;]]></m:source>\n            </m:error>\n
+        \          \n            <m:error>\n                <m:line>2</m:line>\n                <m:col>53</m:col>\n
+        \               <m:message>there is no attribute &quot;XML:LANG&quot;</m:message>\n
+        \               <m:messageid>108</m:messageid>\n                <m:explanation>
+        \ <![CDATA[\n                      <p class=\"helpwanted\">\n      <a\n        href=\"feedback.html?uri=https%3A%2F%2Fw3c-validators.github.io%2Fw3c_validators%2Finvalid_markup.html;errmsg_id=108#errormsg\"\n\ttitle=\"Suggest
+        improvements on this error message through our feedback channels\" \n      >&#x2709;</a>\n
+        \   </p>\n\n    <div class=\"ve mid-108\">\n    <p>\n      You have used the
+        attribute named above in your document, but the\n      document type you are
+        using does not support that attribute for this\n      element. This error
+        is often caused by incorrect use of the \"Strict\"\n      document type with
+        a document that uses frames (e.g. you must use\n      the \"Transitional\"
+        document type to get the \"target\" attribute), or\n      by using vendor
+        proprietary extensions such as \"marginheight\" (this\n      is usually fixed
+        by using CSS to achieve the desired effect instead).\n    </p>\n    <p>\n
+        \     This error may also result if the element itself is not supported in\n
+        \     the document type you are using, as an undefined element will have no\n
+        \     supported attributes; in this case, see the element-undefined error\n
+        \     message for further information.\n    </p>\n    <p>\n      How to fix:
+        check the spelling and case of the element and attribute, \n      (Remember
+        XHTML is all lower-case) and/or \n      check that they are both allowed in
+        the chosen document type, and/or\n      use CSS instead of this attribute.
+        If you received this error when using the \n      &lt;embed&gt; element to
+        incorporate flash media in a Web page, see the \n      <a href=\"docs/help.html#faq-flash\">FAQ
+        item on valid flash</a>.\n    </p>\n  </div>\n\n                  ]]>\n                </m:explanation>\n
+        \               <m:source><![CDATA[&#60;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34;
+        xml:lang=<strong title=\"Position where error was detected.\">&#34;</strong>en-ca&#34;
+        lang=&#34;en-ca&#34;&#62;]]></m:source>\n            </m:error>\n           \n
+        \           <m:error>\n                <m:line>2</m:line>\n                <m:col>66</m:col>\n
+        \               <m:message>there is no attribute &quot;LANG&quot;</m:message>\n
+        \               <m:messageid>108</m:messageid>\n                <m:explanation>
+        \ <![CDATA[\n                      <p class=\"helpwanted\">\n      <a\n        href=\"feedback.html?uri=https%3A%2F%2Fw3c-validators.github.io%2Fw3c_validators%2Finvalid_markup.html;errmsg_id=108#errormsg\"\n\ttitle=\"Suggest
+        improvements on this error message through our feedback channels\" \n      >&#x2709;</a>\n
+        \   </p>\n\n    <div class=\"ve mid-108\">\n    <p>\n      You have used the
+        attribute named above in your document, but the\n      document type you are
+        using does not support that attribute for this\n      element. This error
+        is often caused by incorrect use of the \"Strict\"\n      document type with
+        a document that uses frames (e.g. you must use\n      the \"Transitional\"
+        document type to get the \"target\" attribute), or\n      by using vendor
+        proprietary extensions such as \"marginheight\" (this\n      is usually fixed
+        by using CSS to achieve the desired effect instead).\n    </p>\n    <p>\n
+        \     This error may also result if the element itself is not supported in\n
+        \     the document type you are using, as an undefined element will have no\n
+        \     supported attributes; in this case, see the element-undefined error\n
+        \     message for further information.\n    </p>\n    <p>\n      How to fix:
+        check the spelling and case of the element and attribute, \n      (Remember
+        XHTML is all lower-case) and/or \n      check that they are both allowed in
+        the chosen document type, and/or\n      use CSS instead of this attribute.
+        If you received this error when using the \n      &lt;embed&gt; element to
+        incorporate flash media in a Web page, see the \n      <a href=\"docs/help.html#faq-flash\">FAQ
+        item on valid flash</a>.\n    </p>\n  </div>\n\n                  ]]>\n                </m:explanation>\n
+        \               <m:source><![CDATA[&#60;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34;
+        xml:lang=&#34;en-ca&#34; lang=<strong title=\"Position where error was detected.\">&#34;</strong>en-ca&#34;&#62;]]></m:source>\n
+        \           </m:error>\n           \n            <m:error>\n                <m:line>4</m:line>\n
+        \               <m:col>70</m:col>\n                <m:message>character data
+        is not allowed here</m:message>\n                <m:messageid>63</m:messageid>\n
+        \               <m:explanation>  <![CDATA[\n                      <p class=\"helpwanted\">\n
+        \     <a\n        href=\"feedback.html?uri=https%3A%2F%2Fw3c-validators.github.io%2Fw3c_validators%2Finvalid_markup.html;errmsg_id=63#errormsg\"\n\ttitle=\"Suggest
+        improvements on this error message through our feedback channels\" \n      >&#x2709;</a>\n
+        \   </p>\n\n    <div class=\"ve mid-63\">\n    <p>\n      You have used character
+        data somewhere it is not permitted to appear.\n      Mistakes that can cause
+        this error include:\n    </p>\n    <ul>\n      <li>putting text directly in
+        the body of the document without wrapping \n      it in a container element
+        (such as a &lt;p&gt;aragraph&lt;/p&gt;), or</li>\n      <li>forgetting to
+        quote an attribute value\n      (where characters such as \"%\" and \"/\"
+        are common, but cannot appear\n      without surrounding quotes), or</li>\n
+        \     <li>using XHTML-style self-closing tags (such as &lt;meta ... /&gt;)\n
+        \         in HTML 4.01 or earlier. To fix, remove the extra slash ('/')\n
+        \         character. For more information about the reasons for this, see\n
+        \         <a href=\"http://www.cs.tut.fi/~jkorpela/html/empty.html\">Empty\n
+        \         elements in SGML, HTML, XML, and XHTML</a>.\n      </li>\n    </ul>
+        \n  </div>\n\n                  ]]>\n                </m:explanation>\n                <m:source><![CDATA[\t&#60;meta
+        http-equiv=&#34;Content-type&#34; content=&#34;text/html; charset=utf-8&#34;
+        /<strong title=\"Position where error was detected.\">&#62;</strong>]]></m:source>\n
+        \           </m:error>\n           \n            <m:error>\n                <m:line>8</m:line>\n
+        \               <m:col>12</m:col>\n                <m:message>there is no
+        attribute &quot;UNKNOWN&quot;</m:message>\n                <m:messageid>108</m:messageid>\n
+        \               <m:explanation>  <![CDATA[\n                      <p class=\"helpwanted\">\n
+        \     <a\n        href=\"feedback.html?uri=https%3A%2F%2Fw3c-validators.github.io%2Fw3c_validators%2Finvalid_markup.html;errmsg_id=108#errormsg\"\n\ttitle=\"Suggest
+        improvements on this error message through our feedback channels\" \n      >&#x2709;</a>\n
+        \   </p>\n\n    <div class=\"ve mid-108\">\n    <p>\n      You have used the
+        attribute named above in your document, but the\n      document type you are
+        using does not support that attribute for this\n      element. This error
+        is often caused by incorrect use of the \"Strict\"\n      document type with
+        a document that uses frames (e.g. you must use\n      the \"Transitional\"
+        document type to get the \"target\" attribute), or\n      by using vendor
+        proprietary extensions such as \"marginheight\" (this\n      is usually fixed
+        by using CSS to achieve the desired effect instead).\n    </p>\n    <p>\n
+        \     This error may also result if the element itself is not supported in\n
+        \     the document type you are using, as an undefined element will have no\n
+        \     supported attributes; in this case, see the element-undefined error\n
+        \     message for further information.\n    </p>\n    <p>\n      How to fix:
+        check the spelling and case of the element and attribute, \n      (Remember
+        XHTML is all lower-case) and/or \n      check that they are both allowed in
+        the chosen document type, and/or\n      use CSS instead of this attribute.
+        If you received this error when using the \n      &lt;embed&gt; element to
+        incorporate flash media in a Web page, see the \n      <a href=\"docs/help.html#faq-flash\">FAQ
+        item on valid flash</a>.\n    </p>\n  </div>\n\n                  ]]>\n                </m:explanation>\n
+        \               <m:source><![CDATA[&#60;p unknown=<strong title=\"Position
+        where error was detected.\">&#34;</strong>true&#34;&#62;Invalid!&#60;/p&#62;]]></m:source>\n
+        \           </m:error>\n           \n        </m:errorlist>\n    </m:errors>\n</m:markupvalidationresponse>\n</env:Body>\n</env:Envelope>\n"
+    http_version: 
+  recorded_at: Thu, 27 Oct 2016 19:49:43 GMT
+recorded_with: VCR 3.0.3

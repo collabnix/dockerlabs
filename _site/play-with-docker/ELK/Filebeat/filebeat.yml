@@ -1,0 +1,7 @@
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /var/log/nginx/access.log
+
+output.logstash:
+  hosts: ["100.98.26.42:8500"]

@@ -1,0 +1,40 @@
+
+- if @registries.empty?
+  .panel.panel-default
+    .panel-heading
+      h5
+        | Registries
+    .panel-body
+      p No registry configured. Please configure one.
+      = link_to "Create registry", new_admin_registry_path, {class: 'btn btn-primary', role: 'button'}
+- else
+  .panel.panel-default
+    .panel-heading
+      h5
+        | Registries
+    .panel-body
+      .table-responsive
+        table.table.table-stripped.table-hover
+          col.col-40
+          col.col-40
+          col.col-10
+          col.col-10
+          thead
+            tr
+              th Name
+              th Hostname
+              th SSL
+              th
+          tbody
+            - @registries.each do |registry|
+              tr id="registry_#{registry.id}"
+                td= registry.name
+                td= registry.hostname
+                td
+                  i.fa.fa-lg class="fa-toggle-#{registry.use_ssl? ? 'on': 'off'}" title="SSL in the comunication between Portus and this registry is #{registry.use_ssl? ? "enabled" : "disabled"}"
+                td
+                  a href="#{edit_admin_registry_path(registry.id)}" Edit
+
+  .alert.alert-info
+    strong Note well:
+    |  right now Portus is designed to handle only a single private Registry.

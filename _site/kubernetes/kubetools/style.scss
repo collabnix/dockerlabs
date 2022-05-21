@@ -1,0 +1,120 @@
+@-webkit-keyframes bump1 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes bump1 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes bump2 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes bump2 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+body {
+  padding: 50px;
+  background: #ededed;
+}
+
+.vote-count {
+  width: 40px;
+  height: 35px;
+  text-align: center;
+  color: #881d12;
+  font: 20px/1.5 georgia;
+  margin-bottom: 10px;
+  -webkit-animation: bump .3s;
+          animation: bump .3s;
+}
+.vote-count.bumped {
+  -webkit-animation: bump2 .3s;
+          animation: bump2 .3s;
+}
+
+.vote-btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 3px;
+  border: 0;
+  background: #fff;
+  padding: 15px 12px 15px 40px;
+  font: bold 9px/1.2 arial;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #881d12;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  outline: none;
+  position: relative;
+  transition: all .3s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+.vote-btn .icon {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  background: #881d12 url(https://jamesmuspratt.com/codepen/img/checkmark.svg) no-repeat 2px 1px;
+  background-size: 16px auto;
+  transition: all .3s ease-out;
+}
+
+.vote-btn.complete {
+  padding-left: 15px;
+  background: #c1c0bb;
+  color: #fff;
+}
+.vote-btn.complete .icon {
+  opacity: 0;
+  /* transform: rotateX(90deg); */
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}

@@ -1,0 +1,79 @@
+Docker Swarm - Load Balancing 
+
+
+
+                      The swarm manager uses ingress load balancing to expose the services you want to make available externally to the 
+
+swarm. The swarm manager can automatically assign the service a PublishedPort or you can configure a PublishedPort for the service. 
+
+You can specify any unused port. If you do not specify a port, the swarm manager assigns the service a port in the 30000-32767 range.
+
+                      
+
+                      External components, such as cloud load balancers, can access the service on the PublishedPort of any node in 
+
+the cluster whether or not the node is currently running the task for the service. All nodes in the swarm route ingress connections 
+
+to a running task instance.Swarm mode has an internal DNS component that automatically assigns each service in the swarm a DNS entry.
+
+The swarm manager uses internal load balancing to distribute requests among services within the cluster based upon the DNS name 
+
+of the service.
+
+
+
+There are basically two types of load balancing:
+
+                - Internal
+
+                - External
+
+                
+
+                Internal is all about load balancing requests that are made from within the Swarm cluster (from other containers), 
+
+                whereas external load balancing targets ingress traffic that enters a cluster. Both of these functionalities are 
+
+                provided by the Docker Engine itself.
+
+                
+
+Internal Load Balancing :
+
+
+
+           This feature is automatically enabled once a Service is created. So when a Service is created, it get a virtual IP address 
+
+right away, on the Service’s network. As we said before in the Service Discovery part, when a Service is requested the resulting DNS 
+
+query is forwarded to the Docker Engine, which in turn returns the IP of the service, a virtual IP. Traffic sent to that virtual IP 
+
+is load balanced to all of the healthy containers of that service on the network. All the load balancing is done by Docker, 
+
+since only one entry-point is given to the client (one IP). 
+
+
+
+External Load Balacing: 
+
+
+
+        First of all, the load balancing is not activated by default, but rather when you expose a service using the –publish flag 
+
+at creation or update time. When this happens, every node in the cluster starts listening on the published port. This means that 
+
+every node can respond to a request for the service mapped onto that port. What is really interesting is what happens when a node 
+
+receives a request, but it does not have an instance of the container within it. Since Docker 1.12 (same version that integrated
+
+Swarm Mode to the Docker Engine), there is a feature called Routing Mesh, which uses IP Virtual Servers (ipvs) and iptables 
+
+in order to load balance requests in layer 4. Basically, ipvs implements layer 4 load balancing functionalities on the Linux Kernel, 
+
+which allows to redirect requests for TCP/UDP-based services to the real backends (containers in this case). In Swarm’s specific case, 
+
+every node listens on the exposed port, and then forwards the request to the exposed service’s VIP, using a special overlay network 
+
+called ingress. This overlay network is only used when transporting external traffic to the requested services. In this scope, 
+
+the same internal load balancing strategies described in the previous section are used.

@@ -1,0 +1,39 @@
+var ns = $('#namespace_<%= namespace.id %> td a.btn');
+
+<% if namespace.global? %>
+  <% if namespace.visibility_public? %>
+    $(ns[0]).addClass("btn-default")
+    $(ns[0]).removeClass("btn-primary")
+    $(ns[1]).addClass("btn-primary")
+    $(ns[1]).removeClass("btn-default")
+  <% elsif namespace.visibility_protected? %>
+    $(ns[0]).addClass("btn-primary")
+    $(ns[0]).removeClass("btn-default")
+    $(ns[1]).addClass("btn-default")
+    $(ns[1]).removeClass("btn-primary")
+  <% end %>
+<% else %>
+  <% if namespace.visibility_public? %>
+    $(ns[0]).addClass("btn-default")
+    $(ns[0]).removeClass("btn-primary")
+    $(ns[1]).addClass("btn-default")
+    $(ns[1]).removeClass("btn-primary")
+    $(ns[2]).addClass("btn-primary")
+    $(ns[2]).removeClass("btn-default")
+  <% elsif namespace.visibility_protected? %>
+    $(ns[0]).addClass("btn-default")
+    $(ns[0]).removeClass("btn-primary")
+    $(ns[1]).addClass("btn-primary")
+    $(ns[1]).removeClass("btn-default")
+    $(ns[2]).addClass("btn-default")
+    $(ns[2]).removeClass("btn-primary")
+  <% else %>
+    // private
+    $(ns[0]).addClass("btn-primary")
+    $(ns[0]).removeClass("btn-default")
+    $(ns[1]).addClass("btn-default")
+    $(ns[1]).removeClass("btn-primary")
+    $(ns[2]).addClass("btn-default")
+    $(ns[2]).removeClass("btn-primary")
+  <% end %>
+<% end %>

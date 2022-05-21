@@ -1,0 +1,13 @@
+apiVersion: v1 #version of the API to use
+kind: Pod #What kind of object we're deploying
+metadata: #information about our object we're deploying
+  name: nginx #Name of the pod
+  labels: #A tag on the pod created
+    env: test 
+spec: #specifications for our object
+  containers:
+  - name: nginx  #the name of the container within the pod
+    image: nginx #which container image should be pulled
+    imagePullPolicy: IfNotPresent #image pull policy 
+  nodeSelector: #Nodeselector condition 
+    mynode: worker-1 # label on the node where pod is going to deploy

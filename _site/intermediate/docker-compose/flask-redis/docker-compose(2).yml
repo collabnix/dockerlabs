@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    build:
+     context: .
+     dockerfile: Dockerfile
+     args:
+      - PYTHON_VERSION=3.7.0-alpine3.8
+    image: flask-redis:1.0
+    environment:
+      - FLASK_ENV=development
+    ports:
+      - 5000:5000
+
+  redis:
+    image: redis:4.0.11-alpine

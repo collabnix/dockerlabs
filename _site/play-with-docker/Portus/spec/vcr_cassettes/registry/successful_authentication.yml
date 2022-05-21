@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://registry.test.lan/v2/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - registry.test.lan
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Docker-Distribution-Api-Version:
+      - registry/2.0
+      Www-Authenticate:
+      - Bearer realm="http://portus.test.lan/v2/token",service="registry.test.lan"
+      Date:
+      - Mon, 20 Apr 2015 09:44:11 GMT
+      Content-Length:
+      - '114'
+    body:
+      encoding: UTF-8
+      string: |
+        {"errors":[{"code":"UNAUTHORIZED","message":"access to the requested resource is not authorized","detail":null}]}
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 09:44:11 GMT
+- request:
+    method: get
+    uri: http://portus.test.lan/v2/token?account=flavio&service=registry.test.lan
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portus.test.lan
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 20 Apr 2015 09:44:11 GMT
+      Server:
+      - Apache
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.309957'
+      X-Request-Id:
+      - ebea8bde-1cfd-418a-a8aa-5429402f2803
+      Connection:
+      - close
+      X-Powered-By:
+      - Phusion Passenger 5.0.6
+      Set-Cookie:
+      - _portus_session=eGsxNDBXWUtQTkp6MGhXVUVBWWdjL2ZIenZRaTYzT2ZnbzRpSWtxZk00TnA4aW5qNS9KUDRmY1NSTEZZamhuWFFORGgvT280VkgvczZDb3RVbVltd1E9PS0tbUdDRWY4MkVPMFdCOWhHcHQ1aFJiUT09--19afe7c43ac1fe3294746168f90733bede7f4237;
+        path=/; HttpOnly
+      Etag:
+      - W/"c3df63603e82f374bbefa71358bb7886"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlBUV1Q6Rk5KRTo3VFc3OlVMSTc6RFpRQTpKSkpJOlJESlE6Mk03NjpIRDZHOlpSU0M6VlBJRjpPNUJVIn0.eyJpc3MiOiJwb3J0dXMudGVzdC5sYW4iLCJzdWIiOiJmbGF2aW8iLCJhdWQiOiJyZWdpc3RyeS50ZXN0LmxhbiIsImV4cCI6MTQyOTUyMzM1MiwibmJmIjoxNDI5NTIzMDUyLCJpYXQiOjE0Mjk1MjMwNTIsImp0aSI6Inc4YnRUaUVTaDN4TWNYdU5YWlBtZWE5cXRhZWdzRVNOUG9BaFZMNHl3RyJ9.krXq32ehbyly6BXr5sQUwKbvzvY7eyt8Vj3odwffWp7bO-Ysl7Whv0LJcENSw-BStgkiwKPlkMX4oUhQAa0r8EHkDjgJJ2lZWDEsyz5XIoBX2MsNGR4sZLs-gvNTw0X5Pugt2KGlCUbxxxOavSgBiKZmGKh3jvZQdQekKjo8wZUsTCLpMP0efj6LNvNcc3Vb_9Fw7mV3G4TLdopajVX3h2SMNZerOb3KLzjtOmnsV3dqTI69cXRFzCj4Jt7uSq2TsETbx2__UkY0EObuY6_jS0QqDqHpVRxhpZeJRw1pSngZJ6P2mh4iFg-Uhpl2qrF4c3aEbgIW50F9gIkBySY9o77TweagDjIaTy7E9nGRwJToVT8dY-Nm6X7--AFDEQk_VH3IJro8_yx88yR44RPRmh4aEiF6WCQAo87v6YJmMICotBQnUxtRyiwGcAhrbfEI5FuYOZ52_dqJyCOfKOnvqguau_Nv4_85xIzAV4gZaKs0s3qMYuVfcxQDWmqIp1jy7HOH9vQST-GLaa--boX_5am6qjOopLFVXj108FS-moOu9SIOPqRDqF0ZpVDlBsHXviqdPOaItwhh0z4IkfHv1Ngq8EdyWT2-AqZ7W410knA_nOX2jzPreJFbWYVQYhdxQceT9tD4mbePg1qlGY1SGH8NqqI8CHjmuezIo1SLijY"}'
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 09:44:12 GMT
+- request:
+    method: get
+    uri: http://registry.test.lan/v2/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - registry.test.lan
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlBUV1Q6Rk5KRTo3VFc3OlVMSTc6RFpRQTpKSkpJOlJESlE6Mk03NjpIRDZHOlpSU0M6VlBJRjpPNUJVIn0.eyJpc3MiOiJwb3J0dXMudGVzdC5sYW4iLCJzdWIiOiJmbGF2aW8iLCJhdWQiOiJyZWdpc3RyeS50ZXN0LmxhbiIsImV4cCI6MTQyOTUyMzM1MiwibmJmIjoxNDI5NTIzMDUyLCJpYXQiOjE0Mjk1MjMwNTIsImp0aSI6Inc4YnRUaUVTaDN4TWNYdU5YWlBtZWE5cXRhZWdzRVNOUG9BaFZMNHl3RyJ9.krXq32ehbyly6BXr5sQUwKbvzvY7eyt8Vj3odwffWp7bO-Ysl7Whv0LJcENSw-BStgkiwKPlkMX4oUhQAa0r8EHkDjgJJ2lZWDEsyz5XIoBX2MsNGR4sZLs-gvNTw0X5Pugt2KGlCUbxxxOavSgBiKZmGKh3jvZQdQekKjo8wZUsTCLpMP0efj6LNvNcc3Vb_9Fw7mV3G4TLdopajVX3h2SMNZerOb3KLzjtOmnsV3dqTI69cXRFzCj4Jt7uSq2TsETbx2__UkY0EObuY6_jS0QqDqHpVRxhpZeJRw1pSngZJ6P2mh4iFg-Uhpl2qrF4c3aEbgIW50F9gIkBySY9o77TweagDjIaTy7E9nGRwJToVT8dY-Nm6X7--AFDEQk_VH3IJro8_yx88yR44RPRmh4aEiF6WCQAo87v6YJmMICotBQnUxtRyiwGcAhrbfEI5FuYOZ52_dqJyCOfKOnvqguau_Nv4_85xIzAV4gZaKs0s3qMYuVfcxQDWmqIp1jy7HOH9vQST-GLaa--boX_5am6qjOopLFVXj108FS-moOu9SIOPqRDqF0ZpVDlBsHXviqdPOaItwhh0z4IkfHv1Ngq8EdyWT2-AqZ7W410knA_nOX2jzPreJFbWYVQYhdxQceT9tD4mbePg1qlGY1SGH8NqqI8CHjmuezIo1SLijY
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Docker-Distribution-Api-Version:
+      - registry/2.0
+      Date:
+      - Mon, 20 Apr 2015 09:44:12 GMT
+    body:
+      encoding: UTF-8
+      string: "{}"
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 09:44:12 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,14 @@
+<% if @comment.errors.any? %>
+  $('#float-alert p').html("<%= escape_javascript(@comment.errors.full_messages.join('<br/>')) %>");
+<% else %>
+  <% if @repository.comments.count == 0 %>
+    $(".comment_string").text(" Comments");
+    $(".container-full").text("Nobody has left a comment yet.");
+  <% elsif @repository.comments.count == 1 %>
+    $(".comment_string").text(" Comment");
+  <% end %>
+  $("#comment_<%= escape_javascript(@comment.id.to_s) %>").remove();
+  $(".number_of_comments").text("<%= escape_javascript(@repository.comments.count.to_s) %>");
+  $('#float-alert p').html("Comment was deleted successfully");
+<% end %>
+$('#float-alert').fadeIn(setTimeOutAlertDelay());

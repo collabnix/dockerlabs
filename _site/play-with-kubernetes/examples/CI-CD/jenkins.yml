@@ -1,0 +1,76 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: jenkins
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/jenkins/"
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: jenkins-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: jenkins
+    tier: jenkins
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: jenkins
+        tier: jenkins
+    spec:
+      containers:
+      - image: chadmoon/jenkins-docker-kubectl:latest
+        name: jenkins
+        securityContext:
+          privileged: true
+        ports:
+        - containerPort: 8080
+          name: jenkins
+        volumeMounts:
+        - name: jenkins-persistent-storage
+          mountPath: /root/.jenkins
+        - name: docker
+          mountPath: /var/run/docker.sock
+      volumes:
+      - name: docker
+        hostPath:
+          path: /var/run/docker.sock
+      - name: jenkins-persistent-storage
+        persistentVolumeClaim:
+          claimName: jenkins-claim

@@ -1,0 +1,117 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+$stdout.sync = true
+
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+
+require 'html-proofer'
+require 'mercenary'
+
+Mercenary.program(:htmlproofer) do |p|
+  p.version HTMLProofer::VERSION
+  p.description %(Test your rendered HTML files to make sure they're accurate.)
+  p.syntax 'htmlproofer PATH [options]'
+
+  p.description 'Runs the HTML-Proofer suite on the files in PATH. For more details, see the README.'
+
+  p.option 'allow_missing_href', '--allow-missing-href', 'If `true`, does not flag `a` tags missing `href` (this is the default for HTML5).'
+  p.option 'allow_hash_href', '--allow-hash-href', 'If `true`, ignores the `href="#"`'
+  p.option 'as_links', '--as-links', 'Assumes that `PATH` is a comma-separated array of links to check.'
+  p.option 'alt_ignore', '--alt-ignore image1,[image2,...]', Array, 'A comma-separated list of Strings or RegExps containing `img`s whose missing `alt` tags are safe to ignore'
+  p.option 'assume_extension', '--assume-extension', 'Automatically add extension (e.g. `.html`) to file paths, to allow extensionless URLs (as supported by Jekyll 3 and GitHub Pages) (default: `false`).'
+  p.option 'checks_to_ignore', '--checks-to-ignore check1,[check2,...]', Array, 'A comma-separated list of Strings indicating which checks you do not want to run (default: `[]`)'
+  p.option 'check_external_hash', '--check-external-hash', 'Checks whether external hashes exist (even if the webpage exists). This slows the checker down (default: `false`).'
+  p.option 'check_favicon', '--check-favicon', 'Enables the favicon checker (default: `false`).'
+  p.option 'check_html', '--check-html', 'Enables HTML validation errors from Nokogumbo (default: `false`).'
+  p.option 'check_img_http', '--check-img-http', 'Fails an image if it\'s marked as `http` (default: `false`).'
+  p.option 'check_opengraph', '--check-opengraph', 'Enables the Open Graph checker (default: `false`).'
+  p.option 'check_sri', '--check-sri', 'Check that `<link>` and `<script>` external resources use SRI (default: `false`).'
+  p.option 'directory_index_file', '--directory-index-file <filename>', String, 'Sets the file to look for when a link refers to a directory. (default: `index.html`)'
+  p.option 'disable_external', '--disable-external', 'If `true`, does not run the external link checker, which can take a lot of time (default: `false`)'
+  p.option 'empty_alt_ignore', '--empty-alt-ignore', 'If `true`, ignores images with empty alt tags'
+  p.option 'error_sort', '--error-sort <sort>', String, 'Defines the sort order for error output. Can be `:path`, `:desc`, or `:status` (default: `:path`).'
+  p.option 'enforce_https', '--enforce-https', 'Fails a link if it\'s not marked as `https` (default: `false`).'
+  p.option 'extension', '--extension <ext>', String, 'The extension of your HTML files including the dot. (default: `.html`)'
+  p.option 'external_only', '--external_only', 'Only checks problems with external references'
+  p.option 'file_ignore', '--file-ignore file1,[file2,...]', Array, 'A comma-separated list of Strings or RegExps containing file paths that are safe to ignore'
+  p.option 'http_status_ignore', '--http-status-ignore 123,[xxx, ...]', Array, 'A comma-separated list of numbers representing status codes to ignore.'
+  p.option 'internal_domains', '--internal-domains domain1,[domain2,...]', Array, 'A comma-separated list of Strings containing domains that will be treated as internal urls.'
+  p.option 'ignore_empty_mailto', '--ignore-empty-mailto', 'If `true`, allows `mailto:` `href`s which do not contain an email address'
+  p.option 'report_invalid_tags', '--report-invalid-tags', 'When `check_html` is enabled, HTML markup that is unknown to Nokogumbo are reported as errors (default: `false`)'
+  p.option 'report_missing_names', '--report-missing-names', 'When `check_html` is enabled, HTML markup that are missing entity names are reported as errors (default: `false`)'
+  p.option 'report_script_embeds', '--report-script-embeds', 'When `check_html` is enabled, `script` tags containing markup are reported as errors (default: `false`)'
+  p.option 'report_missing_doctype', '--report-missing-doctype', 'When `check_html` is enabled, HTML markup with missing or out-of-order `DOCTYPE` are reported as errors (default: `false`)'
+  p.option 'report_eof_tags', '--report-eof-tags', 'When `check_html` is enabled, HTML markup with tags that are malformed are reported as errors (default: `false`)'
+  p.option 'report_mismatched_tags', '--report-mismatched-tags', 'When `check_html` is enabled, HTML markup with mismatched tags are reported as errors (default: `false`)'
+  p.option 'log_level', '--log-level <level>', String, 'Sets the logging level, as determined by Yell. One of `:debug`, `:info`, `:warn`, `:error`, or `:fatal`. (default: `:info`)'
+  p.option 'only_4xx', '--only-4xx', 'Only reports errors for links that fall within the 4xx status code range'
+  p.option 'storage_dir', '--storage-dir PATH', String, 'Directory where to store the cache log (default: "tmp/.htmlproofer")'
+  p.option 'timeframe', '--timeframe <time>', String, 'A string representing the caching timeframe.'
+  p.option 'typhoeus_config', '--typhoeus-config CONFIG', String, 'JSON-formatted string of Typhoeus config. Will override the html-proofer defaults.'
+  p.option 'hydra_config', '--hydra-config CONFIG', String, 'JSON-formatted string of Hydra config. Will override the html-proofer defaults.'
+  p.option 'url_ignore', '--url-ignore link1,[link2,...]', Array, 'A comma-separated list of Strings or RegExps containing URLs that are safe to ignore. It affects all HTML attributes. Note that non-HTTP(S) URIs are always ignored'
+  p.option 'url_swap', '--url-swap re:string,[re:string,...]', Array, 'A comma-separated list containing key-value pairs of `RegExp => String`. It transforms URLs that match `RegExp` into `String` via `gsub`. The escape sequences `\\:` should be used to produce literal `:`s.'
+  p.option 'root_dir', '--root-dir PATH', String, 'The absolute path to the directory serving your html-files.'
+
+  p.action do |args, opts|
+    args = ['.'] if args.empty?
+    path = args.first
+
+    options = {}
+
+    # prepare everything to go to proofer
+    p.options.reject { |o| opts[o.config_key].nil? }.each do |option|
+      opts[option.config_key] = opts[option.config_key].map { |i| HTMLProofer::Configuration.to_regex?(i) } if opts[option.config_key].is_a?(Array)
+      options[option.config_key.to_sym] = opts[option.config_key]
+    end
+
+    # some minor manipulation of a special option
+    unless opts['url_swap'].nil?
+      options[:url_swap] = {}
+      opts['url_swap'].each do |s|
+        splt = s.split(/(?<!\\):/, 2)
+
+        re = splt[0].gsub(/\\:/, ':')
+        string = splt[1].gsub(/\\:/, ':')
+        options[:url_swap][Regexp.new(re)] = string
+      end
+    end
+
+    options[:error_sort] = opts['error-sort'].to_sym unless opts['error-sort'].nil?
+    options[:log_level] = opts['log_level'].to_sym unless opts['log_level'].nil?
+
+    options[:validation] = HTMLProofer::Configuration::VALIDATION_DEFAULTS.dup
+    options[:validation][:report_script_embeds] = opts['report_script_embeds'] unless opts['report_script_embeds'].nil?
+    options[:validation][:report_missing_names] = opts['report_missing_names'] unless opts['report_missing_names'].nil?
+    options[:validation][:report_invalid_tags] = opts['report_invalid_tags'] unless opts['report_invalid_tags'].nil?
+    options[:validation][:report_missing_doctype] = opts['report_missing_doctype'] unless opts['report_missing_doctype'].nil?
+    options[:validation][:report_eof_tags] = opts['report_eof_tags'] unless opts['report_eof_tags'].nil?
+    options[:validation][:report_mismatched_tags] = opts['report_mismatched_tags'] unless opts['report_mismatched_tags'].nil?
+
+    options[:typhoeus] = HTMLProofer::Configuration.parse_json_option('typhoeus_config', opts['typhoeus_config'], symbolize_names: false) unless opts['typhoeus_config'].nil?
+    options[:hydra] = HTMLProofer::Configuration.parse_json_option('hydra_config', opts['hydra_config']) unless opts['hydra_config'].nil?
+
+    unless opts['timeframe'].nil?
+      options[:cache] ||= {}
+      options[:cache][:timeframe] = opts['timeframe'] unless opts['timeframe'].nil?
+    end
+
+    unless opts['storage_dir'].nil?
+      options[:cache] ||= {}
+      options[:cache][:storage_dir] = opts['storage_dir'] unless opts['storage_dir'].nil?
+    end
+
+    options[:http_status_ignore] = Array(options[:http_status_ignore]).map(&:to_i)
+
+    paths = path.split(',')
+    if opts['as_links']
+      links = path.delete(' ').split(',')
+      HTMLProofer.check_links(links, options).run
+    elsif File.directory?(paths.first)
+      HTMLProofer.check_directories(paths, options).run
+    else
+      HTMLProofer.check_file(path, options).run
+    end
+  end
+end

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Manage and Monitor Your Docker Containers with Dry Tool in 5 Min</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Manage and Monitor Your Docker Containers with Dry Tool in 5 Min" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="collabnix DockerLab Docker - Advanced Track" />
+<meta property="og:description" content="collabnix DockerLab Docker - Advanced Track" />
+<link rel="canonical" href="http://localhost:4000/advanced/monitoring/dry-tool/README.html" />
+<meta property="og:url" content="http://localhost:4000/advanced/monitoring/dry-tool/README.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Manage and Monitor Your Docker Containers with Dry Tool in 5 Min" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"collabnix DockerLab Docker - Advanced Track","headline":"Manage and Monitor Your Docker Containers with Dry Tool in 5 Min","url":"http://localhost:4000/advanced/monitoring/dry-tool/README.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+   
+
+    <header class="page-header" role="banner">
+      <center><a href="http://dockerlabs.collabnix.com"><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png"></a></center>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
+     <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
+      <h1 class="project-name">Manage and Monitor Your Docker Containers with Dry Tool in 5 Min</h1>
+      <h2 class="project-tagline">collabnix | DockerLab | Docker - Advanced Track</h2> 
+      
+      
+        <a href="https://launchpass.com/collabnix" class="btn">Join Slack</a>
+     
+      
+        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">Docker Cheatsheet</a>
+     
+        
+        <a href="https://collabnix.com/docker-compose-cheatsheet/" class="btn">Docker Compose Cheatsheet</a>
+     
+          
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      
+      <h1 id="manage-and-monitor-your-docker-containers-with-dry-tool-in-5-min">Manage and Monitor Your Docker Containers with Dry Tool in 5 Min</h1>
+
+<p>If you are looking out for a tool which can manage Docker &amp; Docker Swarm, you really need to try out “Dry” tool. With close to 1500 stars in short span of time, this tool is a terminal application to manage both Docker Host &amp; Docker Swarm Mode.It shows information about Containers, Images and Networks, and, if running a Swarm cluster, it shows information about Nodes, Service, Stacks and the rest of Swarm constructs. It can be used with both local or remote Docker daemons.</p>
+
+<p>Besides showing information, it can be used to manage Docker. Most of the commands that the official Docker CLI provides, are available in dry with the same behaviour. also, it can also be used as a monitoring tool for Docker containers.Dry can be installed as a single binary and does not require external libraries.</p>
+
+<p>Under this tutorial, I will show you how to get started with this tool to manage and monitor your Docker containers</p>
+
+<h2 id="tested-infrastructure">Tested Infrastructure</h2>
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+<h2 id="pre-requisite">Pre-requisite</h2>
+
+<ul>
+  <li>Create an account with <a href="https://hub.docker.com">DockerHub</a></li>
+  <li>Open <a href="https://labs.play-with-docker.com/">PWD</a> Platform on your browser</li>
+  <li>Click on <strong>Add New Instance</strong> on the left side of the screen to bring up Alpine OS instance on the right side</li>
+</ul>
+
+<h2 id="running-multiple-containers-in-an-interactive-and-detached-mode">Running Multiple containers in an interactive and detached mode.</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+57c14dd66db0: Pull complete
+Digest: sha256:7964ad52e396a6e045c39b5a44438424ac52e12e4d5a25d94895f2058cb863a0
+Status: Downloaded newer image for busybox:latest
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker pull hello-world
+Using default tag: latest
+latest: Pulling from library/hello-world
+1b930d010525: Pull complete
+Digest: sha256:2557e3c07ed1e38f26e389462d03ed943586f744621577a99efb77324b0fe535
+Status: Downloaded newer image for hello-world:latest
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker run -t -d busybox
+7c96cde9894fd9ff42d1c3638cad65cf306cb2757b3925a925f4d421a510a79f
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker run -t -d hello-world
+7a4198a31f61c380ddbe3b06eeb313da74de3d232727b0325937434900e8be8d
+</code></pre></div></div>
+
+<h2 id="verifying-if-containers-are-up-and-running">Verifying if containers are Up and Running:</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker ps
+
+</code></pre></div></div>
+<h2 id="verifying-the-exited-containers">Verifying the exited containers</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker ps -a
+</code></pre></div></div>
+
+<h2 id="observe-the-below-results">Observe the below results:</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS      PORTS               NAMES
+7c96cde9894f        busybox             "sh"                3 minutes ago       Up 3 minutes                          romantic_greider
+[node1] (local) root@192.168.0.33 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS             PORTS               NAMES
+7a4198a31f61        hello-world         "/hello"            3 minutes ago       Exited (0) 3 minutes ago                       stupefied_tu
+7c96cde9894f        busybox             "sh"                3 minutes ago       Up 3 minutes                                 romantic_greider
+
+</code></pre></div></div>
+
+<h1 id="direct-method">Direct method</h1>
+
+<h2 id="running-dry-tool-in-a-single-shot">Running Dry tool in a single Shot</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker run -it -v /var/run/docker.sock:/var/run/docker.sock moncho/dry
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker run -it -v /var/run/docker.sock:/var/run/docker.sock moncho/dry
+Unable to find image 'moncho/dry:latest' locally
+latest: Pulling from moncho/dry
+4fe2ade4980c: Pull complete
+e9c4f9f2a7e3: Pull complete
+28bab79b92a9: Pull complete
+Digest: sha256:ad57f88f39fd910cc42e9416594dd2cf92ae561ddd914fd1c333f989a8d5bd4b
+Status: Downloaded newer image for moncho/dry:latest
+
+</code></pre></div></div>
+
+<h2 id="interacting-with-docker-containers">Interacting with Docker Containers:</h2>
+
+<p>Use the navigation keys mentioned below to interact with the terminal.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[H]:Help [Q]:Quit | [F1]:Sort [F2]:Toggle Show Containers [F5]:Refresh [%]:Filter |
+[m]:Monitor mode [2]:Images [3]:Networks [4]:Nodes [5]:Services | [Enter]:Commands 
+
+</code></pre></div></div>
+
+<h3 id="select-any-container-from-the-list-and-hit-enter-to-open-the-options">Select any container from the list and hit [enter] to open the options:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fetch logs
+Inspect container
+Kill container
+Remove container
+Restart
+Show image history
+Stats + Top
+Stop
+
+</code></pre></div></div>
+<h2 id="verifying-the-results">Verifying the Results</h2>
+
+<p><img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/pic2.png" alt="" /></p>
+
+<h2 id="2interacting-with-docker-images">2.Interacting with Docker images:</h2>
+
+<p><img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture1.png" alt="" /></p>
+
+<ul>
+  <li>Press [2] to switch to Docker images. It will show a list of your Docker images.</li>
+  <li>Select any image from the list and hit [enter] to show the details of the selected image.</li>
+</ul>
+
+<p>You can use the shortcuts in Dry:<br />
+“Ctrl + D” to remove dangling. It is equivalent to docker volume rm with the flag dangling=true <br />
+“Ctrl + E” to remove image. It is equivalent to docker rmi. <br />
+“CTRL + F” to force remove. It is equivalent to docker rmi –force <br /></p>
+
+<h2 id="3interacting-with-docker-networks">3.Interacting with Docker Networks:</h2>
+
+<p><img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture1.png" alt="" /></p>
+
+<ul>
+  <li>Press [3] to switch to Docker networks. It will show a list of your active Docker networks.</li>
+  <li>Select any network from the list and hit [enter] to fetch and show the details of the selected network. The output will look similar to the below:</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture3.png" alt="" /></p>
+
+<h1 id="manual-method">Manual method</h1>
+
+<p>Download the latest version of Dry :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://github.com/moncho/dry/releases/download/v0.9-beta.3/dry-linux-amd64
+
+</code></pre></div></div>
+<h2 id="moving-the-file-to-usrlocalbindry">Moving the file to /usr/local/bin/dry</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mv dry-linux-amd64 /usr/local/bin/dry
+
+</code></pre></div></div>
+<h2 id="providing-the-access-permissions">Providing the access permissions.</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chmod 755 /usr/local/bin/dry
+
+</code></pre></div></div>
+<h2 id="check-the-version-of-dry">Check the version of Dry:</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dry -v
+
+</code></pre></div></div>
+
+<p>Next, time to tun dry. 
+Type dry in the command and hit [enter].</p>
+
+<p>You should get the similar output where your containers are running.
+<img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture1.png" alt="" /></p>
+
+<h1 id="reference">Reference:</h1>
+
+<ul>
+  <li>https://github.com/moncho/dry</li>
+</ul>
+
+<h2 id="contributor--">Contributor -</h2>
+
+<p><a href="mailto:smbiradar14@gmail.com">Sangam biradar</a> -https://engineitops.com</p>
+
+
+    
+      
+      <footer class="site-footer">
+  
+     
+              <h3> Practice Docker Tutorial </h3>
+        <button> <a href=" https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386"> free Ubuntu VM </a></button>
+    
+        <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div><script src="https://hackr.io/widget.js?v=1.0"></script>
+        
+              
+       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+         <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
+<!-- End of HubSpot Embed Code -->
+         <div id="wcb" class="carbonbadge"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
+        </span> 
+      </footer>
+    </main>
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://portus.test.lan/v2/busybox/tags/list?n=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - registry.test.lan
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Docker-Distribution-Api-Version:
+      - registry/2.0
+      Www-Authenticate:
+      - Bearer realm="http://portus.test.lan/v2/token",service="registry.test.lan",scope="registry:catalog:*"
+      Date:
+      - Mon, 10 Aug 2015 15:51:10 GMT
+      Content-Length:
+      - '161'
+    body:
+      encoding: UTF-8
+      string: |
+        {"errors":[{"code":"UNAUTHORIZED","message":"access to the requested resource is not authorized","detail":[{"Type":"registry","Name":"catalog","Action":"*"}]}]}
+    http_version:
+  recorded_at: Mon, 10 Aug 2015 15:51:10 GMT
+- request:
+    method: get
+    uri: http://portus.test.lan/v2/token?account=portus&scope=registry%3Acatalog%3A%2A&service=registry.test.lan
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - portus.test.lan
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 10 Aug 2015 16:06:08 GMT
+      Server:
+      - Apache
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.263900'
+      X-Request-Id:
+      - 72aaedfd-506a-410c-b018-5534b2b7aebb
+      Connection:
+      - close
+      X-Powered-By:
+      - Phusion Passenger 5.0.7
+      Set-Cookie:
+      - _portus_session=YktlejJ3RnNKU1llVDlnVVE2SnlNYkJsMndyQ2dtRWsrR08reEVzeWRRcFE4ZDVOOTFQTDFkYWh1SG8rYjJ1bDBFNmN5WU5WdExjaVpFeXRsMG85V0E9PS0tSVo2NUlMTTZjVThpWjhQVlNWWk1pUT09--e650cb0b5377c519657640423ba49e7bbb55fa21; path=/; HttpOnly
+      Etag:
+      - W/"3e175b01d330eb782809fd66157395db"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlBUV1Q6Rk5KRTo3VFc3OlVMSTc6RFpRQTpKSkpJOlJESlE6Mk03NjpIRDZHOlpSU0M6VlBJRjpPNUJVIn0.eyJpc3MiOiJwb3J0dXMudGVzdC5sYW4iLCJzdWIiOiJwb3J0dXMiLCJhdWQiOiJyZWdpc3RyeS50ZXN0LmxhbiIsImV4cCI6MTQzOTIyMzA2OCwibmJmIjoxNDM5MjIyNzYzLCJpYXQiOjE0MzkyMjI3NjMsImp0aSI6ImlFa3lMSnRrVmhSMzI2aloxdGFhRTR2RHBuWTJSblNWQzhZRWN4dDdGdCIsImFjY2VzcyI6W3sidHlwZSI6InJlZ2lzdHJ5IiwibmFtZSI6ImNhdGFsb2ciLCJhY3Rpb25zIjpbIioiXX1dfQ.K6iX7ESlYcgiLwRZkxRuj6rmfFOu6o_WwbDIeEAOZ6bcPGPuD--fi24Y6HyIWQ5eAppyJaq6kASjMwDzHFnYuIWDhVr4zcED0T4BbKsUNf8VWpPtuZRK1-oJnYrVmHPdWJYGY1RzbfvthCJkfoIRKURPzNwGScJDb2391NsqZfPwrEFix3uLQEsiuLsSJ-c_StkL1kTbTspNrmtn7cVywERbvZo_T1MxhnGqPIz0oWpgL5PchCg8eByMiUW5Q8dBYNDzqVgpSVemJn_a_f5ybevf_0jADLxbRLOg4S73JgZaC_20RCygEkPEObI79MHgrlKTlaquLwQ6F4fYNEdc6oO9_xNjRtZdS_apwtbu_TpiVWaeESvTgNbggihc8tpUUJ8Ga4VwvFtp8akw9mkyvNKGUkyx70cqr2eASdmdNgfZdP5_blhK928wU8kO8s0j13CcDGTmL1nS_3vcJ_e_BFrAdNPSCg99zMUz2k2nHp_begtilU6OfzmWqkhlrGFcsWf19YI79LlQTMWNzC_T_lAsdyTSFnfeU1dJeZXvNT7OIN5zEj32_3U9hRwjtM8cx0T8LfG4In6ZGlPwrPnreQlYoG20-hPfkMCKKCptI3Dr7ecT9N1C_84-IH9IXk-VPhtc2cLg-011U32HYt759-NZetBdMLEuDFW2NlnRAxk"}'
+    http_version:
+  recorded_at: Mon, 10 Aug 2015 16:06:08 GMT
+- request:
+    method: get
+    uri: http://registry.test.lan/v2/busybox/tags/list?n=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - registry.test.lan
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlBUV1Q6Rk5KRTo3VFc3OlVMSTc6RFpRQTpKSkpJOlJESlE6Mk03NjpIRDZHOlpSU0M6VlBJRjpPNUJVIn0.eyJpc3MiOiJwb3J0dXMudGVzdC5sYW4iLCJzdWIiOiJwb3J0dXMiLCJhdWQiOiJyZWdpc3RyeS50ZXN0LmxhbiIsImV4cCI6MTQzOTIyMzU4MiwibmJmIjoxNDM5MjIzMjc3LCJpYXQiOjE0MzkyMjMyNzcsImp0aSI6IjFORmhzY3JjajRrYTdacjF4VkJjM25aVzM3aWJWZFZ1UFplOUVKVE5XRyIsImFjY2VzcyI6W3sidHlwZSI6InJlZ2lzdHJ5IiwibmFtZSI6ImNhdGFsb2ciLCJhY3Rpb25zIjpbIioiXX1dfQ.gvfa38eANCchwKGdNDDJOGmkcBrNvkjIioH46v8N_kp5J06TGFOiXN4MFEzBDI0zGPrGCksrCJwU-vV_2FH8QYULBMGNGNtCrn9HocF9KlsXeRnCOo2yzj5v5zn87htu5clWNW924WWXEn7QU3fbUphwYt7aI_yTbj_3vy5Wxcg0aTZFVWstIzwbYPVyrcelNJpl9FT1A-5qh_UuDFDu8vSg9x4d_YGcACYXiu64E0Pf5lPLqCgD8v4J7C9IhIxu2B2y1STXQYpQ-6EuzBn5P-2WoiH9T7X1VZkwICroziNPHoSLTr7IszBXUcUA_6APkvZpRVZ5TzmF30HOdJeG8yOb5vCgTKZU6mhpXYwpCPXCGkHmBaIVfugzfWAKf51V0MdqMN1DREWmLl7LYKs0qFUi8Q1YTOJFSSPBsiXQWw1h1oMAqLzBTHqhcQX30W8gOHW0x2PD4lbc4eqUs0ThWF3p2hL3Dc4xRk0NV--ll_oeaptVz3JqGvrJQRTuW9yA_50J7j6EU0jTGFGDKhqY7mc2PjxObvZH_1X2t2cfkzkMjVc9KsTafcdlI9ukZ2Y8QwIZksuK_1-wlOiFMSaEVQHdCxuXODjDfy6y3cJQgMLEchdihDOhlkGV4dwltkex3wKXfOoJG23dNKMyy0yN6p-rK47PByyvPXCgcd_Nv6w
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      Docker-Distribution-Api-Version:
+      - registry/2.0
+      Date:
+      - Mon, 10 Aug 2015 16:06:08 GMT
+      link:
+      - '<busybox/tags/list?last=102&n=100>; rel=\"next\"'
+    body:
+      string: |
+        {"name":"busybox", "tags":["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100"]}
+    http_version:
+  recorded_at: Mon, 10 Aug 2015 16:06:08 GMT
+- request:
+    method: get
+    uri: http://registry.test.lan/v2/busybox/tags/list?last=102&n=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - registry.test.lan
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlBUV1Q6Rk5KRTo3VFc3OlVMSTc6RFpRQTpKSkpJOlJESlE6Mk03NjpIRDZHOlpSU0M6VlBJRjpPNUJVIn0.eyJpc3MiOiJwb3J0dXMudGVzdC5sYW4iLCJzdWIiOiJwb3J0dXMiLCJhdWQiOiJyZWdpc3RyeS50ZXN0LmxhbiIsImV4cCI6MTQzOTIyMzU4MiwibmJmIjoxNDM5MjIzMjc3LCJpYXQiOjE0MzkyMjMyNzcsImp0aSI6IjFORmhzY3JjajRrYTdacjF4VkJjM25aVzM3aWJWZFZ1UFplOUVKVE5XRyIsImFjY2VzcyI6W3sidHlwZSI6InJlZ2lzdHJ5IiwibmFtZSI6ImNhdGFsb2ciLCJhY3Rpb25zIjpbIioiXX1dfQ.gvfa38eANCchwKGdNDDJOGmkcBrNvkjIioH46v8N_kp5J06TGFOiXN4MFEzBDI0zGPrGCksrCJwU-vV_2FH8QYULBMGNGNtCrn9HocF9KlsXeRnCOo2yzj5v5zn87htu5clWNW924WWXEn7QU3fbUphwYt7aI_yTbj_3vy5Wxcg0aTZFVWstIzwbYPVyrcelNJpl9FT1A-5qh_UuDFDu8vSg9x4d_YGcACYXiu64E0Pf5lPLqCgD8v4J7C9IhIxu2B2y1STXQYpQ-6EuzBn5P-2WoiH9T7X1VZkwICroziNPHoSLTr7IszBXUcUA_6APkvZpRVZ5TzmF30HOdJeG8yOb5vCgTKZU6mhpXYwpCPXCGkHmBaIVfugzfWAKf51V0MdqMN1DREWmLl7LYKs0qFUi8Q1YTOJFSSPBsiXQWw1h1oMAqLzBTHqhcQX30W8gOHW0x2PD4lbc4eqUs0ThWF3p2hL3Dc4xRk0NV--ll_oeaptVz3JqGvrJQRTuW9yA_50J7j6EU0jTGFGDKhqY7mc2PjxObvZH_1X2t2cfkzkMjVc9KsTafcdlI9ukZ2Y8QwIZksuK_1-wlOiFMSaEVQHdCxuXODjDfy6y3cJQgMLEchdihDOhlkGV4dwltkex3wKXfOoJG23dNKMyy0yN6p-rK47PByyvPXCgcd_Nv6w
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      Docker-Distribution-Api-Version:
+      - registry/2.0
+      Date:
+      - Mon, 10 Aug 2015 16:06:08 GMT
+    body:
+      string: |
+        {"name":"busybox", "tags":["101", "102"]}
+    http_version:
+  recorded_at: Mon, 10 Aug 2015 16:06:08 GMT
+recorded_with: VCR 2.9.3

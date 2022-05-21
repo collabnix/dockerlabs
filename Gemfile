@@ -5,5 +5,7 @@ gemspec
 
 # Site dependencies
 gem 'jekyll-seo-tag'
+gem 'jekyll-theme-cayman'
 gem 'jekyll-sitemap'
-gem 'jekyll-admin', group: :jekyll_plugins
+gem 'webrick'
+gem 'github-pages'

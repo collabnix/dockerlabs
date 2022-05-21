@@ -1,0 +1,33 @@
+db:
+  image: 'postgres:9.4'
+  restart: always
+redis:
+  image: 'redis:latest'
+  restart: always
+result:
+  autoredeploy: true
+  image: 'docker/example-voting-app-result:latest'
+  ports:
+    - '80:80'
+  restart: always
+lb:
+  autoredeploy: true
+  image: 'dockercloud/haproxy:latest'
+  links:
+    - vote
+  ports:
+    - "80:80"
+  roles:
+    - global
+  restart: always
+vote:
+  autoredeploy: true
+  image: 'docker/example-voting-app-vote:latest'
+  restart: always
+  target_num_containers: 5
+
+worker:
+  autoredeploy: true
+  image: 'docker/example-voting-app-worker:latest'
+  restart: always
+  target_num_containers: 3

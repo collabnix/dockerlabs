@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: head
+    uri: https://validator.w3.org/check?output=soap12&uri=https://w3c-validators.github.io/w3c_validators/invalid_markup_4.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 30 Oct 2016 17:10:37 GMT
+      Server:
+      - Apache
+      X-W3c-Validator-Recursion:
+      - '1'
+      X-W3c-Validator-Status:
+      - Invalid
+      X-W3c-Validator-Errors:
+      - '1'
+      X-W3c-Validator-Warnings:
+      - '0'
+      Content-Type:
+      - application/soap+xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 30 Oct 2016 17:10:38 GMT
+recorded_with: VCR 3.0.3

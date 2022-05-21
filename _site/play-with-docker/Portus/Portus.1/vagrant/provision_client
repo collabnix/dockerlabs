@@ -1,0 +1,29 @@
+#!/bin/bash
+
+## Install the registry
+zypper ar -f http://download.opensuse.org/repositories/Virtualization/openSUSE_13.2 Virtualization
+zypper --gpg-auto-import-keys ref
+
+zypper -n in docker
+
+# still required because we are not using our package
+cat <<EOF > /usr/lib/systemd/system/docker.service
+[Unit]
+Description=Docker
+Requires=network.target
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/docker -d --insecure-registry registry.test.lan
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+usermod -aG docker vagrant
+
+systemctl enable docker
+systemctl start docker
+
+docker pull busybox

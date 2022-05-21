@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://validator.w3.org/check
+    body:
+      encoding: UTF-8
+      string: "--349832898984244898448024464570528145\r\nContent-Disposition: form-data;
+        name=\"fragment\"\r\n\r\n        <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML
+        4.01 Transitional//EN\">\n        <title>Test</title>\n        <body>\n        <div
+        class=\"example\">This is a test</div>\n        </body>\n\r\n--349832898984244898448024464570528145\r\nContent-Disposition:
+        form-data; name=\"output\"\r\n\r\nsoap12\r\n--349832898984244898448024464570528145--\r\n"
+    headers:
+      Content-Type:
+      - multipart/form-data; boundary=349832898984244898448024464570528145
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 30 Oct 2016 16:47:17 GMT
+      Server:
+      - Apache/2.4.10 (Debian)
+      X-W3c-Validator-Recursion:
+      - '1'
+      X-W3c-Validator-Status:
+      - Valid
+      X-W3c-Validator-Errors:
+      - '0'
+      X-W3c-Validator-Warnings:
+      - '2'
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/soap+xml; charset=UTF-8
+      Strict-Transport-Security:
+      - max-age=15552015; preload
+      Public-Key-Pins:
+      - pin-sha256="cN0QSpPIkuwpT6iP2YjEo1bEwGpH/yiUn6yhdy+HNto="; pin-sha256="WGJkyYjx1QMdMe0UqlyOKXtydPDVrk7sl2fV+nNm1r4=";
+        pin-sha256="LrKdTxZLRTvyHM4/atX2nquX9BeHRZMCxg3cf4rhc2I="; max-age=864000
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\">\n<env:Body>\n<m:markupvalidationresponse
+        env:encodingStyle=\"http://www.w3.org/2003/05/soap-encoding\" xmlns:m=\"http://www.w3.org/2005/10/markup-validator\">\n
+        \   \n    <m:uri>upload://Form Submission</m:uri>\n    <m:checkedby>http://validator.w3.org/</m:checkedby>\n
+        \   <m:doctype>-//W3C//DTD HTML 4.01 Transitional//EN</m:doctype>\n    <m:charset>utf-8</m:charset>\n
+        \   <m:validity>true</m:validity>\n    <m:warnings>\n        <m:warningcount>2</m:warningcount>\n
+        \       <m:warninglist>\n           \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+        \ <m:warning><m:messageid>W27</m:messageid><m:message>No Character encoding
+        declared at document level</m:message></m:warning>\n\n\n  <m:warning><m:messageid>W28</m:messageid><m:message>Using
+        Direct Input mode: UTF-8 character encoding assumed</m:message></m:warning>\n\n\n\n\n\n\n
+        \       </m:warninglist>\n    </m:warnings>\n    <m:errors>\n        <m:errorcount>0</m:errorcount>\n
+        \       <m:errorlist>\n\n        </m:errorlist>\n    </m:errors>\n</m:markupvalidationresponse>\n</env:Body>\n</env:Envelope>\n"
+    http_version: 
+  recorded_at: Sun, 30 Oct 2016 16:47:17 GMT
+recorded_with: VCR 3.0.3

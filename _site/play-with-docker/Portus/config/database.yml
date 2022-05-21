@@ -1,0 +1,38 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+<% if ENV['COMPOSE'] %>
+  host: <%= ENV['PORTUS_DB_HOST'] %>
+  username: root
+  password: portus
+<% end %>
+
+development:
+  <<: *default
+  database: portus_development
+
+staging:
+  <<: *default
+  database: portus_staging
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: portus_test
+
+production:
+  <<: *default
+  <% if ENV["PORTUS_PRODUCTION_HOST"] %>
+  host:     <%= ENV["PORTUS_PRODUCTION_HOST"] %>
+  <% end %>
+  <% if ENV["PORTUS_PRODUCTION_USERNAME"] %>
+  username: <%= ENV["PORTUS_PRODUCTION_USERNAME"] %>
+  <% end %>
+  <% if ENV["PORTUS_PRODUCTION_PASSWORD"] %>
+  password: <%= ENV["PORTUS_PRODUCTION_PASSWORD"] %>
+  <% end %>
+  <% if ENV["PORTUS_PRODUCTION_DATABASE"] %>
+  database: <%= ENV["PORTUS_PRODUCTION_DATABASE"] %>
+  <% end %>

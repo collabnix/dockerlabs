@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Docker - Intermediate Track - Docker Networking</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Docker - Intermediate Track - Docker Networking" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="collabnix DockerLab Docker - Intermediate Track" />
+<meta property="og:description" content="collabnix DockerLab Docker - Intermediate Track" />
+<link rel="canonical" href="http://localhost:4000/intermediate/dockercontainernetworking.html" />
+<meta property="og:url" content="http://localhost:4000/intermediate/dockercontainernetworking.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Docker - Intermediate Track - Docker Networking" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"collabnix DockerLab Docker - Intermediate Track","headline":"Docker - Intermediate Track - Docker Networking","url":"http://localhost:4000/intermediate/dockercontainernetworking.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+   
+
+    <header class="page-header" role="banner">
+      <center><a href="http://dockerlabs.collabnix.com"><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png"></a></center>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
+     <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
+      <h1 class="project-name">Docker - Intermediate Track - Docker Networking</h1>
+      <h2 class="project-tagline">collabnix | DockerLab | Docker - Intermediate Track</h2> 
+      
+      
+        <a href="https://launchpass.com/collabnix" class="btn">Join Slack</a>
+     
+      
+        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">Docker Cheatsheet</a>
+     
+        
+        <a href="https://collabnix.com/docker-compose-cheatsheet/" class="btn">Docker Compose Cheatsheet</a>
+     
+          
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      
+      <h1 id="docker-networking">Docker Networking</h1>
+
+<p>For Docker containers to communicate with each other and the outside world via the host machine, there has to be a layer of networking involved. Docker supports different types of networks, each fit for certain use cases.</p>
+
+<h2 id="what-are-different-types-of-networking-in-docker">What are different types of Networking in Docker</h2>
+
+<p>Docker comes with network drivers geared towards different use cases. Docker’s networking subsystem is pluggable, using drivers.</p>
+
+<h3 id="what-is-docker0-in-terms-of-docker-networking">What is <code class="language-plaintext highlighter-rouge">docker0</code> in terms of Docker Networking</h3>
+
+<p>When Docker is installed, a default <strong>bridge</strong> network named <strong>docker0</strong> is created. Each new Docker container is automatically attached to this network, unless a custom network is specified.</p>
+
+<p>Besides <strong>docker0</strong>, two other networks get created automatically by Docker: <strong>host</strong>(no isolation between host and containers on this network, to the outside world they are on the same network) and <strong>none</strong>(attached containers run on container-specific network stack)</p>
+
+<ol>
+  <li>
+    <h3 id="host-networks">Host networks</h3>
+  </li>
+</ol>
+
+<p>Using host network driver for a container, that container’s network stack is not isolated from the Docker host, and use the host’s networking directly.
+Host is only available for swarm services on <strong><em>Docker 17.06 and higher</em></strong>.
+The host networking driver only works on Linux hosts, and is not supported on Docker for Mac, Docker for Windows, or Docker EE for Windows Server.</p>
+
+<ol>
+  <li>
+    <h3 id="bridge-networks">Bridge networks</h3>
+  </li>
+</ol>
+
+<p>The default network driver. If you don’t specify a driver, this is the type of network you are creating. Bridge networks are usually used when your applications run in standalone containers that need to communicate. A bridge network uses a software bridge which allows containers connected to the same bridge network to communicate, while providing isolation from containers which are not connected to that bridge network.</p>
+
+<ol>
+  <li>
+    <h3 id="macvlan-networks">Macvlan networks</h3>
+  </li>
+</ol>
+
+<p>Legacy applications expect to be directly connected to the physical network, rather than routed through the Docker host’s network stack. Macvlan networks assign a MAC address to a container, making it appear as a physical device on your network. The Docker daemon routes traffic to containers by their MAC addresses. We need to designate a physical interface on our Docker host to use for the Macvlan, as well as the subnet and gateway of the Macvlan.</p>
+
+<ol>
+  <li>
+    <h3 id="none-networks">None networks</h3>
+    <p>This mode will not configure any IP to the container and doesn’t have any access to the external network as well as to other containers. It does have the loopback address and can be used for running batch jobs.</p>
+  </li>
+  <li>
+    <h3 id="overlay-networks">Overlay networks</h3>
+    <p>You have multiple docker host running containers in which each docker host has its own internal private bridge network allowing the containers to communicate with each other however, containers across the host has no way to communicate with each other unless you publish the port on those containers and set up some kind of routing yourself. This is where <code class="language-plaintext highlighter-rouge">Overlay network</code> comes into play. With docker swarm you can create an overlay network which will create an internal private network that spans across all the nodes participating in the swarm network as we could attach a container or service to this network using the network option while creating a service. So, the containers across the nodes can communicate over this overlay network.</p>
+  </li>
+</ol>
+
+<h2 id="few-basic-commands">Few Basic commands</h2>
+
+<h3 id="1-how-to-assign-static-ip-address-to-a-container">1. How to assign Static IP address to a Container</h3>
+
+<ul>
+  <li>Create a new bridge network with your subnet and gateway for your ip block</li>
+</ul>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker network create --subnet 198.0.125.0/24 --gateway 198.0.125.254 mystaticip
+</code></pre></div></div>
+
+<ul>
+  <li>Run a nginx container with a specific ip in that block</li>
+</ul>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker run --rm -it --net mystaticip --ip 198.0.125.2 nginx
+</code></pre></div></div>
+
+<ul>
+  <li>Curl the ip</li>
+</ul>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl 198.0.125.2
+</code></pre></div></div>
+
+<h3 id="2-how-to-expose-container-port-on-host">2. How to Expose Container Port on Host</h3>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker run -d -p 80:80 nginx
+</code></pre></div></div>
+
+<ul>
+  <li>If you have multiple interface, then you will need to provide specific IP. Example:-</li>
+</ul>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker run -p 127.0.0.1:$HOSTPORT:$CONTAINERPORT --name CONTAINER -t image_name
+</code></pre></div></div>
+
+<h3 id="3-networking-containers-on-multiple-hosts-with-docker-network-work">3. Networking Containers on Multiple Hosts with Docker Network work</h3>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;&amp;
+
+curl -L $base/docker-machine-$(uname -s)-$(uname -m) &gt;/tmp/docker-machine &amp;&amp;
+
+sudo install /tmp/docker-machine /usr/local/bin/docker-machine
+</code></pre></div></div>
+
+    
+      
+      <footer class="site-footer">
+  
+     
+              <h3> Practice Docker Tutorial </h3>
+        <button> <a href=" https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386"> free Ubuntu VM </a></button>
+    
+        <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div><script src="https://hackr.io/widget.js?v=1.0"></script>
+        
+              
+       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+         <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
+<!-- End of HubSpot Embed Code -->
+         <div id="wcb" class="carbonbadge"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
+        </span> 
+      </footer>
+    </main>
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

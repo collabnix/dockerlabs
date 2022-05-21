@@ -1,0 +1,46 @@
+global:
+  scrape_interval:     30s
+  evaluation_interval: 30s
+
+  labels:
+    cluster: swarm
+    replica: "1"
+
+  # Attach these labels to any time series or alerts when communicating with
+  # external systems (federation, remote storage, Alertmanager).
+  external_labels:
+    monitor: 'prometheus-swarm'
+
+rule_files:
+  - "alert.rules_nodes"
+  - "alert.rules_tasks"
+  - "alert.rules_service-groups"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    dns_sd_configs:
+    - names:
+      - 'tasks.prometheus'
+      type: 'A'
+      port: 9090
+
+  - job_name: 'cadvisor'
+    dns_sd_configs:
+    - names:
+      - 'tasks.cadvisor'
+      type: 'A'
+      port: 8080
+
+  - job_name: 'node-exporter'
+    dns_sd_configs:
+    - names:
+      - 'tasks.node-exporter'
+      type: 'A'
+      port: 9100
+
+  - job_name: 'docker-exporter'
+    dns_sd_configs:
+    - names:
+      - 'tasks.docker-exporter'
+      type: 'A'
+      port: 4999

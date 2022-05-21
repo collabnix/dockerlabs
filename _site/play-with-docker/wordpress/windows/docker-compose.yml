@@ -1,0 +1,31 @@
+version: "3"
+
+
+services:
+
+  redis:
+    image: redis:3.2.100-nanoserver
+  networks:
+    - collabnet
+  
+      
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints: [node.platform.os == windows]
+
+  web:
+    image: radumatei/python-web
+    endpoint_mode: dnsrr
+    deploy:
+      placement:
+        constraints: [node.platform.os == linux]
+    ports:
+      - mode: host
+        target: 80
+        published: 80
+    networks:
+      - collabnet
+
+networks:
+  collabnet:

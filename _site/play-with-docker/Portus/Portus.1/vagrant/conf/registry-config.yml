@@ -1,0 +1,22 @@
+version: 0.1
+loglevel: debug
+storage:
+  filesystem:
+    rootdirectory: /var/lib/docker-registry
+  delete:
+    enabled: true
+http:
+  addr: 0.0.0.0:80
+auth:
+  token:
+    realm: http://portus.test.lan/v2/token
+    service: registry.test.lan
+    issuer: portus.test.lan
+    rootcertbundle: /etc/registry/portus.crt
+notifications:
+  endpoints:
+    - name: portus
+      url: http://portus.test.lan/v2/webhooks/events
+      timeout: 500ms
+      threshold: 5
+      backoff: 1s

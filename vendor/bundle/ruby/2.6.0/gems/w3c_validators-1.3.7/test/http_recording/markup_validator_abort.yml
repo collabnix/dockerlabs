@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://validator.w3.org/check?debug=1&output=soap12&uri=https://w3c-validators.github.io/w3c_validators/invalid_encoding.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 30 Oct 2016 17:10:41 GMT
+      Server:
+      - Apache
+      X-W3c-Validator-Recursion:
+      - '1'
+      X-W3c-Validator-Status:
+      - Abort
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/soap+xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version='1.0' encoding=\"utf-8\"?>\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\"\n
+        \           xmlns:m='http://www.w3.org/2005/10/markup-validator'>\n  <env:Body>\n
+        \  <env:Fault>\n     <env:Code>\n       <env:Value>env:Sender</env:Value>\n
+        \      <env:Subcode>\n        <env:Value>m:Exception</env:Value>\n       </env:Subcode>\n
+        \    </env:Code>\n\n\n\n\n\n\n     <env:Reason>\n\t<env:Text xml:lang=\"en-US\">Incorrect
+        Bytes detected</env:Text>\n     </env:Reason>\n     <env:Detail>\n       <m:messageid>fatal_byte_error</m:messageid>\n
+        \      <m:errordetail xml:lang=\"en-US\">\n        Sorry, I am unable to validate
+        this document because on line\n        8.\n        it contained one or more
+        bytes that I cannot interpret as\n        utf-8\n        (in other words,
+        the bytes found are not valid values in the specified\n        Character Encoding).
+        Please check both the content of the file and the\n        character encoding
+        indication.\n\t</m:errordetail>\n     </env:Detail>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+        \  </env:Fault>\n </env:Body>\n</env:Envelope>\n"
+    http_version: 
+  recorded_at: Sun, 30 Oct 2016 17:10:42 GMT
+recorded_with: VCR 3.0.3

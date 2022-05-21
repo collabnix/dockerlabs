@@ -1,0 +1,46 @@
+I"�<h1 id="accessing-the-container-shell">Accessing the Container Shell</h1>
+
+<h2 id="tested-infrastructure">Tested Infrastructure</h2>
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+<h2 id="pre-requisite">Pre-requisite</h2>
+
+<ul>
+  <li>Create an account with <a href="https://hub.docker.com">DockerHub</a></li>
+  <li>Open <a href="https://labs.play-with-docker.com/">PWD</a> Platform on your browser</li>
+  <li>Click on <strong>Add New Instance</strong> on the left side of the screen to bring up Alpine OS instance on the right side</li>
+</ul>
+
+<h2 id="create-ubuntu-container">Create Ubuntu Container</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -dit ubuntu 
+</code></pre></div></div>
+
+<h2 id="accessing-the-container-shell-1">Accessing the container shell</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker exec -t &lt;container-id&gt; bash
+</code></pre></div></div>
+
+<h2 id="accesssing-the-container-shell">Accesssing the container shell</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker attach &lt;container-id&gt;
+
+</code></pre></div></div>
+
+<p><a href="http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html">Proceed » Running a Command inside running Container</a></p>
+:ET

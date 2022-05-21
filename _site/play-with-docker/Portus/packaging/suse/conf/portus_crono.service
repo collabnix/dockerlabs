@@ -1,0 +1,11 @@
+[Unit]
+Description=A time-based background job scheduler daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/portus_crono
+ExecReload=/usr/bin/kill -s SIGHUP $MAINPID
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

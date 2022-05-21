@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title> Programming in Go </title>
+
+		<meta name="description" content="ENGINEITOPS">
+		<meta name="author" content="SANGAM BIRADAR">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Programming in Go </h1>
+					<h3></h3>
+					<a href="https://engineitops.github.io">
+					<img data-src="/slides/img/logo/ic_launcher.png"> 
+					<p>
+						<small>Speaker- <a href="https://www.linkedin.com/in/sangambiradar14/">SANGAM BIRADAR</a> and <a href="https://sangam14.github.io">Hire Me!</a></small>
+						<div align='center'><a href='http://online-visit-counter.com/'><img src='http://online-visit-counter.com/cg.php?t=MTQzNTgxOA==' border='0' alt='page visit count'></a><BR><a href='http://online-visit-counter.com/'>Visitor Counter</a><div style="visibility: hidden; display: none;"><a href="https://www.creativealif.com/ar/">العربية لوجو ديزاين السعودية</a></div></div>
+					</p>
+				</section>
+
+				<section>
+					<h2>Programming in Go</h2>
+					<p>
+						Golang Series by Sangam Biradar 
+					</p>
+				</section>
+					
+			         <section>
+					
+					<p>
+						Tested Infrastructure
+
+                                                <table class="tg">
+                                             <tr>
+                                            <th class="tg-yw4l"><b>Platform</b></th>
+                                            <th class="tg-yw4l"><b>Number of Instance</b></th>
+                                            <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+                                            </tr>
+                                            <tr>
+                                            <td class="tg-yw4l"><b> Play with GO</b></td>
+                                            <td class="tg-yw4l"><b>1</b></td>
+                                            <td class="tg-yw4l"><b>5 min</b></td>
+    
+                                            </tr>
+  
+                                            </table>
+					</p>
+				</section>
+				<section>
+					<section id="fragments">
+						<h2>Pre-requisite</h2>
+	
+						<p class="fragment">Open <a href="https://play.golang.org">[PWG]</a> Platform on your browser</p>
+						
+						
+					</section>
+				
+			       </section>
+				<section>
+					<p> Chapter 1.Programming in Go </p>
+				</section>
+				<section>
+					<p> Lets Start With First Hello world - Golang </p>
+				</section>
+				<section>
+					<p> Getting Start with Golang </p>
+				</section>
+						<section>
+					<h2>PWG <a href="https://play.golang.org">[PWG]</a> Platform on your browser</p>
+						</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+					
+					
+					
+		package main
+                import "fmt"
+                func main() {
+	        fmt.Println("Hello world!")
+                }			
+
+
+                               
+                                
+				
+					</code></pre>
+					<p> copy the above code in PWG <a href="https://play.golang.org/p/lLJK7euS0R6">ready Platform</a>.</p>
+				</section>
+        			<section>
+              
+              
+                A complete program is created by linking a single, unimported package called the main package with all the packages it imports,
+        transitively. The main package must have package name main and declare a function main that takes no
+        arguments and returns no value
+					</p>
+					
+					<pre><code class="hljs" data-trim contenteditable>
+
+                             func main() { … }
+				
+					</code></pre>
+				
+				</section>
+				<section>
+        <p>
+      Program execution begins by initializing the main package and then invoking the function main.
+      When that function invocation returns, the program exits. It does not wait for other (non-main) goroutines to complete.
+        </p>
+					</section>
+          	<section>
+            <p>
+				
+Go: Meaning of the ‘fmt’ package acronym
+
+fmt is short for format.
+
+Package fmt implements formatted I/O with functions analogous to C’s printf and scanf. 
+The format ‘verbs’ are derived from C’s but are simpler.</p>
+	</section>
+		<section>
+			<p> 1. Numeral Systems (Decimal) - Programming in GO </p>
+		</section>
+		<section>
+			
+		    <h2> PWG <a href="https://play.golang.org">[PWG]</a> Platform on your browser</p>
+						</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+					
+
+                                 package main
+
+                                 import "fmt"
+
+                                 func main() {
+	                         fmt.Println(42)
+                                 }
+				
+					</code></pre>
+					<p> copy the above code in PWG <a href="https://play.golang.org/p/2yuamYe-4mD">ready Platform</a>.</p>
+				</section>
+	
+	     <section>
+			<p> 2. Numeral Systems (binary) - Programming in GO </p>
+		</section>
+		<section>
+			
+		    <h2> PWG <a href="https://play.golang.org">[PWG]</a> Platform on your browser</p>
+						</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+					
+package main
+
+import "fmt"
+
+func main() {
+ fmt.printf("%d - %b \n", 42, 42)
+}
+				
+					</code></pre>
+					<p> copy the above code in PWG <a href="https://play.golang.org/p/tCTXTZ-b1g0">ready Platform</a>.</p>
+				</section>
+	<section>
+              
+              
+                in above program the annotation verb %b formats a number in binary ex:- which represent 101010 ( base 2 format) and 
+		the annotation verb %d formats a number in base 10 ex:which represent 42 ( base 10 format)
+
+integer cheatsheet for fmt:
+					</p>
+					
+					<pre><code class="hljs" data-trim contenteditable>
+
+%b	base 2
+%c	the character represented by the corresponding Unicode code point
+%d	base 10
+%o	base 8
+%q	a single-quoted character literal safely escaped with Go syntax.
+%x	base 16, with lower-case letters for a-f
+%X	base 16, with upper-case letters for A-F
+%U	Unicode format: U+1234; same as "U+%04X"
+				
+					</code></pre>
+				
+				</section>
+                          <section>
+				 3. numeral systems(hexadecimal) - Programming in GO
+				  
+		          </section>	
+                <section>
+			
+		    <h2> PWG <a href="https://play.golang.org">[PWG]</a> Platform on your browser</p>
+						</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+					
+   package main
+
+        import "fmt"
+
+        func main() {
+	        //	fmt.Printf("%d - %b - %x \n", 42, 42, 42)
+	       //	fmt.Printf("%d - %b - %#x \n", 42, 42, 42)
+	      //	fmt.Printf("%d - %b - %#X \n", 42, 42, 42)
+	        fmt.Printf("%d \t %b \t %#X \n", 42, 42, 42)
+       }
+				
+					</code></pre>
+					<p> copy the above code in PWG <a href="https://play.golang.org/p/iiqU8CDZ1qQ">ready Platform</a>.</p>
+				</section>
+	 <section>
+			
+		 <h2>
+integer to hexadecimal cheatsheet:</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+					
+  
+%x	base 16, with lower-case letters for a-f
+%x	base 16, with upper-case letters for a-f
+				
+					</code></pre>
+					<p> in above program the annotation verb %x formats a number in hexadecimal  Ex:- which represent 0X2A   ( base 16 format)
+
+
+</p>
+				</section>
+                               <section>
+				 4. numeral systems(using loop) - Programming in GO
+	                Print decimal,binary,hexadecimal number from 10 to 15 using loop
+				  
+		          </section>	
+                       <section>
+			
+		    <h2> PWG <a href="https://play.golang.org">[PWG]</a> Platform on your browser</p>
+						</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+					
+ package main
+
+import "fmt"
+
+func main() {
+	for i := 1; i < 16; i++ {
+		fmt.Printf("%d \t %b \t %x \n", i, i, i)
+	}
+}
+
+				
+					</code></pre>
+					<p> copy the above code in PWG <a href="https://play.golang.org/p/TxcV48laVMk">ready Platform</a>.</p>
+				</section>
+
+
+	<section>
+					<section id="fragments">
+		<p class="fragment">if your new to loop in go so lets see some detailing of for loop in go:</p>
+		<p class="fragment">go has only one looping construct, the for loop.</p>
+		<p class="fragment">the init statement: executed before the first iteration </p>
+		<p class="fragment">the condition expression: evaluated before every iteration  </p>
+		<p class="fragment">the post statement: executed at the end of every iteration. 
+the init statement will often be a short variable declaration, and the variables declared there are visible only in the scope of the for statement.
+  </p>
+						
+					</section>
+		
+				
+			       </section>
+<section>
+		<section id="fragments">
+	
+<p class="fragment">the loop will stop iterating once the boolean condition evaluates to false. </p>
+						
+					</section>
+		
+				
+			       </section>
+<section>
+		<section id="fragments">
+		<p class="fragment">note: unlike other languages like c, java, or javascript there are no parentheses surrounding 
+the three components of the for statement and the braces { } are always required.</p>
+		<p class="fragment">
+as we seen decimal,binary and hexadecimal programs in go , in this above program using loop 
+you can print n number that convert number to any numeral system ( refer integer cheatsheet 
+fmt) to convert number into different fmt format.quick using simple go program.</p>
+						
+					</section>
+				</section>
+
+
+
+<section>
+	<p> 5. numeral systems(UTF-8)- Programming in GO </p>
+</section>	
+<section>
+		<section id="fragments">
+		<p class="fragment">UTF 8 = Unicode Transformation Format – 8-bit
+
+UTF8 is a character encoding where is assigns 1,112,064 characters a binary number that is from 1 byte (8 bits) to 4 bytes (32 bits) long.
+</p>
+						
+					</section>
+				
+			       </section>
+
+<section>
+		<section id="fragments">
+
+		<p class="fragment">Why is it necessary? Well, our computers use binary to store data. So inside a computer information is a sequence of 0’s and 1’s. 
+When you are writing a text file on your computer the computer needs to store that in binary code (in 0’s and 1’s). But what would the character 'a' represent in binary? 
+Short answer is whatever you want it to be. That is why we have UTF8 (and ASCII before it), it provides a standard that says the letter 'a' will take
+the value of 01100010 in binary. It allows us to say this file is stored with the UTF8 encoding,so the binary code must be interpreted with that in mind. </p>
+						
+					</section>
+				
+			       </section>
+<section>
+			
+		    <h2> PWG <a href="https://play.golang.org">[PWG]</a> Platform on your browser</p>
+						</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+					
+package main
+
+import "fmt"
+
+func main() {
+	for i := 60; i < 122; i++ {
+		fmt.Printf("%d \t %b \t %x \t %q \n", i, i, i, i)
+	}
+}
+				
+					</code></pre>
+					<p> copy the above code in PWG <a href="https://play.golang.org/p/pCHwUKHN9tq">ready Platform</a>.</p>
+				</section>
+<section>
+	<p>
+as we seen decimal,binary and hexadecimal programs in Go , in this above UTF-8 program annotaition %q is used for UTF-8 character in coding. Note:-UTF-8 has been the dominant character encoding for 
+the World Wide Web since 2009, and as of March 2018 accounts for 91.0% of all Web pages. The Internet Mail Consortium(IMC) recommended that all e-mail programs be able to display and create mail using UTF-8, 
+and the W3C recommends UTF-8 as the default encoding in XML and HTML
+	</p>
+		
+			</section>
+<section>
+					<p> Chapter 2.Programming in Go - starting date 2 feb 19</p>
+</section>
+		
+		
+		<section>
+		  <p> check out on daily morning 8.OO AM for more update or <h3>visit to my blog </h3>
+					<a href="https://engineitops.github.io">
+					<img data-src="/slides/img/logo/ic_launcher.png"> 
+			</a> </p>
+		</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

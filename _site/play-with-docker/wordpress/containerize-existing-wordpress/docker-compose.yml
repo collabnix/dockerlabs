@@ -1,0 +1,12 @@
+version: '3'
+services:
+  wp:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_PASSWORD: mysql123
+  mysql:
+    image: "mysql:5.7"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql123

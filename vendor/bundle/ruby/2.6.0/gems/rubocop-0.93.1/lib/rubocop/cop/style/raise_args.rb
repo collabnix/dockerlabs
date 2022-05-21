@@ -1,0 +1,133 @@
+# frozen_string_literal: true
+
+module RuboCop
+  module Cop
+    module Style
+      # This cop checks the args passed to `fail` and `raise`. For exploded
+      # style (default), it recommends passing the exception class and message
+      # to `raise`, rather than construct an instance of the error. It will
+      # still allow passing just a message, or the construction of an error
+      # with more than one argument.
+      #
+      # The exploded style works identically, but with the addition that it
+      # will also suggest constructing error objects when the exception is
+      # passed multiple arguments.
+      #
+      # @example EnforcedStyle: exploded (default)
+      #   # bad
+      #   raise StandardError.new("message")
+      #
+      #   # good
+      #   raise StandardError, "message"
+      #   fail "message"
+      #   raise MyCustomError.new(arg1, arg2, arg3)
+      #   raise MyKwArgError.new(key1: val1, key2: val2)
+      #
+      # @example EnforcedStyle: compact
+      #   # bad
+      #   raise StandardError, "message"
+      #   raise RuntimeError, arg1, arg2, arg3
+      #
+      #   # good
+      #   raise StandardError.new("message")
+      #   raise MyCustomError.new(arg1, arg2, arg3)
+      #   fail "message"
+      class RaiseArgs < Base
+        include ConfigurableEnforcedStyle
+        extend AutoCorrector
+
+        EXPLODED_MSG = 'Provide an exception class and message ' \
+          'as arguments to `%<method>s`.'
+        COMPACT_MSG = 'Provide an exception object ' \
+          'as an argument to `%<method>s`.'
+
+        RESTRICT_ON_SEND = %i[raise fail].freeze
+
+        def on_send(node)
+          return unless node.command?(:raise) || node.command?(:fail)
+
+          case style
+          when :compact
+            check_compact(node)
+          when :exploded
+            check_exploded(node)
+          end
+        end
+
+        private
+
+        def correction_compact_to_exploded(node)
+          exception_node, _new, message_node = *node.first_argument
+
+          arguments =
+            [exception_node, message_node].compact.map(&:source).join(', ')
+
+          if node.parent && requires_parens?(node.parent)
+            "#{node.method_name}(#{arguments})"
+          else
+            "#{node.method_name} #{arguments}"
+          end
+        end
+
+        def correction_exploded_to_compact(node)
+          exception_node, *message_nodes = *node.arguments
+          return node.source if message_nodes.size > 1
+
+          argument = message_nodes.first.source
+
+          if node.parent && requires_parens?(node.parent)
+            "#{node.method_name}(#{exception_node.const_name}.new(#{argument}))"
+          else
+            "#{node.method_name} #{exception_node.const_name}.new(#{argument})"
+          end
+        end
+
+        def check_compact(node)
+          if node.arguments.size > 1
+            add_offense(node, message: format(COMPACT_MSG, method: node.method_name)) do |corrector|
+              replacement = correction_exploded_to_compact(node)
+
+              corrector.replace(node, replacement)
+            end
+          else
+            correct_style_detected
+          end
+        end
+
+        def check_exploded(node)
+          return correct_style_detected unless node.arguments.one?
+
+          first_arg = node.first_argument
+
+          return unless first_arg.send_type? && first_arg.method?(:new)
+          return if acceptable_exploded_args?(first_arg.arguments)
+
+          add_offense(node, message: format(EXPLODED_MSG, method: node.method_name)) do |corrector|
+            replacement = correction_compact_to_exploded(node)
+
+            corrector.replace(node, replacement)
+          end
+        end
+
+        def acceptable_exploded_args?(args)
+          # Allow code like `raise Ex.new(arg1, arg2)`.
+          return true if args.size > 1
+
+          # Disallow zero arguments.
+          return false if args.empty?
+
+          arg = args.first
+
+          # Allow code like `raise Ex.new(kw: arg)`.
+          # Allow code like `raise Ex.new(*args)`.
+          arg.hash_type? || arg.splat_type?
+        end
+
+        def requires_parens?(parent)
+          parent.and_type? || parent.or_type? ||
+            parent.if_type? && parent.ternary?
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://jigsaw.w3.org/css-validator/validator
+    body:
+      encoding: UTF-8
+      string: "--349832898984244898448024464570528145\r\nContent-Disposition: form-data;
+        name=\"profile\"\r\n\r\ncss3\r\n--349832898984244898448024464570528145\r\nContent-Disposition:
+        form-data; name=\"text\"\r\n\r\n/* one error, no warnings */\nbody { margin:
+        blue; }\r\n--349832898984244898448024464570528145\r\nContent-Disposition:
+        form-data; name=\"output\"\r\n\r\nsoap12\r\n--349832898984244898448024464570528145--\r\n"
+    headers:
+      Content-Type:
+      - multipart/form-data; boundary=349832898984244898448024464570528145
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Date:
+      - Fri, 10 Aug 2018 19:59:18 GMT
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Language:
+      - en
+      Content-Type:
+      - application/soap+xml;charset=utf-8
+      Server:
+      - Jigsaw/2.3.0-beta4
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - content-type,accept-charset
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS
+      Access-Control-Max-Age:
+      - '600'
+      X-W3c-Validator-Errors:
+      - '1'
+      X-W3c-Validator-Status:
+      - Invalid
+      Strict-Transport-Security:
+      - max-age=15552015; includeSubDomains; preload
+      Public-Key-Pins:
+      - pin-sha256="cN0QSpPIkuwpT6iP2YjEo1bEwGpH/yiUn6yhdy+HNto="; pin-sha256="WGJkyYjx1QMdMe0UqlyOKXtydPDVrk7sl2fV+nNm1r4=";
+        pin-sha256="LrKdTxZLRTvyHM4/atX2nquX9BeHRZMCxg3cf4rhc2I="; max-age=864000
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: "<?xml version='1.0' encoding=\"utf-8\"?>\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\">\n
+        \   <env:Body>\n        <m:cssvalidationresponse\n            env:encodingStyle=\"http://www.w3.org/2003/05/soap-encoding\"\n
+        \           xmlns:m=\"http://www.w3.org/2005/07/css-validator\">\n            <m:uri>TextArea</m:uri>\n
+        \           <m:checkedby>http://jigsaw.w3.org/css-validator/</m:checkedby>\n
+        \           <m:csslevel>css3</m:csslevel>\n            <m:date>2018-08-10T07:59:18Z</m:date>\n
+        \           <m:validity>false</m:validity>\n            <m:result>\n                <m:errors
+        xml:lang=\"en\">\n                    <m:errorcount>1</m:errorcount>\n                                                                    \n
+        \               <m:errorlist>\n                    <m:uri>file://localhost/TextArea</m:uri>\n
+        \                           \n                        <m:error>\n                            <m:line>2</m:line>\n
+        \                           <m:errortype>parse-error</m:errortype>\n                            <m:context>body</m:context>
+        \       \n                            <m:errorsubtype>\n                                exp\n
+        \                           </m:errorsubtype>\n                            <m:skippedstring>\n
+        \                               blue\n                            </m:skippedstring>\n
+        \                           <m:type>value</m:type>\n        \n                            <m:message>\n
+        \       \n                                Value Error :  margin (nullbox.html#propdef-margin)\n
+        \       \n                                &#8220;blue&#8221; is not a &#8220;margin&#8221;
+        value : \n                            </m:message>\n                        </m:error>\n
+        \           \n                    </m:errorlist>\n        \n                </m:errors>\n
+        \               <m:warnings xml:lang=\"en\">\n                    <m:warningcount>0</m:warningcount>\n
+        \               </m:warnings>\n            </m:result>\n        </m:cssvalidationresponse>\n
+        \   </env:Body>\n</env:Envelope>\n\n"
+    http_version: 
+  recorded_at: Fri, 10 Aug 2018 19:59:18 GMT
+recorded_with: VCR 3.0.3

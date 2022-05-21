@@ -1,0 +1,39 @@
+.panel.panel-default
+  .panel-heading
+    h5 <b>Edit</b> #{@user.display_username}
+  .panel-body
+    = form_for [:admin, @user], html: {class: 'form-horizontal', role: 'form'} do |f|
+      .form-group
+        = f.label :email, {class: 'control-label col-md-2'}
+        .col-md-7
+          = f.email_field(:email, class: 'form-control', required: true, autofocus: true)
+
+      - if APP_CONFIG.enabled?("display_name")
+        .form-group
+          = f.label :display_name, {class: 'control-label col-md-2'}
+          .col-md-7
+            = f.text_field(:display_name, class: 'form-control')
+
+      .form-group
+        .col-md-offset-2.col-md-7
+          = f.submit('Update', class: 'btn btn-primary')
+
+.panel.panel-default
+  .panel-heading
+    h5 <b>Remove</b> #{@user.display_username}
+  .panel-body
+    = form_for @user, url: admin_user_path(@user), method: :delete, html: {id: "delete_user_#{@user.id}", class: 'form-horizontal', role: "form"} do |f|
+      .form-group
+        .col-md-offset-2.col-md-7
+          p
+            | As an administrator, you can remove this user. That being said, be aware that doing this has its consequences:
+          ul
+            li
+              | The namespace and the repositories of this user won't be removed. You will still be able to access them and manage them.
+            li
+              | The user will be lost forever, so you won't be able to recover the data.
+          p
+            | With this in mind, if you want to remove this user, just click the button below.
+      .form-group
+        .col-md-offset-2.col-md-7
+          = f.submit('Remove', class: 'btn btn-danger')

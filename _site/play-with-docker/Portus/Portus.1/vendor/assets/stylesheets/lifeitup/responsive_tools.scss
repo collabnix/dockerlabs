@@ -1,0 +1,50 @@
+@media (max-width: $screen-tablet) {
+  body:not([class="login"]) {
+    .container-fluid {
+      padding-left: 0px;
+      aside ul li.active .list-selected {
+        display: none;
+      }
+    }
+  }
+}
+
+//icons in alerts
+@media (max-width: $screen-sm-max) {
+  .alert-icon {
+    .fa {
+      //.fa-lg;
+      font-size: 1.3em;
+    }
+  }
+  .login-picture {
+    width: 180px;
+    margin: 0 0 3em 0;
+  }
+}
+@media (min-width: $screen-sm-min) {
+  .alert-icon {
+    .fa {
+      //.fa-2x;
+      font-size: 2em;
+    }
+  }
+}
+@media (min-width: $screen-md-min) {
+  .alert-icon {
+    .fa {
+      //.fa-3x;
+      font-size: 3em
+    }
+  }
+}
+@media (max-width: $screen-sm-max) {
+  body:not([class*="login"]) footer {
+    .aside-footer {
+      display: none;
+    }
+    .container-footer {
+      margin-left: 0px;
+    }
+  }
+}

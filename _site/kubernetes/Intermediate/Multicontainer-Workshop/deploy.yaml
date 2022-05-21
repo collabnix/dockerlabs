@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+  labels:
+    app: demo
+    name: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: web
+  template:
+    metadata:
+      labels:
+        name: web
+    spec:
+      containers:
+        - name: redis
+          image: redis
+          ports:
+            - containerPort: 6379
+              name: redis
+              protocol: TCP
+        - name: python
+          image: sangam14/py-red-sql
+          env:
+            - name: "REDIS_HOST"
+              value: "localhost"
+          ports:
+            - containerPort: 5000
+              name: http
+              protocol: TCP

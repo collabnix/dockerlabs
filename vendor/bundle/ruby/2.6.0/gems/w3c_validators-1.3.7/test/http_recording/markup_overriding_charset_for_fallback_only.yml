@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://validator.w3.org/check?output=soap12&uri=https://w3c-validators.github.io/w3c_validators/markup_overriding_charset_for_fallback_only.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 30 Oct 2016 17:10:30 GMT
+      Server:
+      - Apache
+      X-W3c-Validator-Recursion:
+      - '1'
+      X-W3c-Validator-Status:
+      - Invalid
+      X-W3c-Validator-Errors:
+      - '1'
+      X-W3c-Validator-Warnings:
+      - '0'
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/soap+xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\">\n<env:Body>\n<m:markupvalidationresponse
+        env:encodingStyle=\"http://www.w3.org/2003/05/soap-encoding\" xmlns:m=\"http://www.w3.org/2005/10/markup-validator\">\n
+        \   \n    <m:uri>https://w3c-validators.github.io/w3c_validators/markup_overriding_charset_for_fallback_only.html</m:uri>\n
+        \   <m:checkedby>https://validator.w3.org/</m:checkedby>\n
+        \   <m:doctype>-//W3C//DTD XHTML 1.0 Transitional//EN</m:doctype>\n    <m:charset>utf-8</m:charset>\n
+        \   <m:validity>false</m:validity>\n    <m:errors>\n        <m:errorcount>1</m:errorcount>\n
+        \       <m:errorlist>\n          \n            <m:error>\n                <m:line>8</m:line>\n
+        \               <m:col>12</m:col>\n                <m:message>there is no
+        attribute &quot;unknown&quot;</m:message>\n                <m:messageid>108</m:messageid>\n
+        \               <m:explanation>  <![CDATA[\n                      <p class=\"helpwanted\">\n
+        \     <a\n        href=\"feedback.html?uri=https%3A%2F%2Fw3c-validators.github.io%2Fw3c_validators%2Fmarkup_overriding_charset_for_fallback_only.html;errmsg_id=108#errormsg\"\n\ttitle=\"Suggest
+        improvements on this error message through our feedback channels\" \n      >&#x2709;</a>\n
+        \   </p>\n\n    <div class=\"ve mid-108\">\n    <p>\n      You have used the
+        attribute named above in your document, but the\n      document type you are
+        using does not support that attribute for this\n      element. This error
+        is often caused by incorrect use of the \"Strict\"\n      document type with
+        a document that uses frames (e.g. you must use\n      the \"Transitional\"
+        document type to get the \"target\" attribute), or\n      by using vendor
+        proprietary extensions such as \"marginheight\" (this\n      is usually fixed
+        by using CSS to achieve the desired effect instead).\n    </p>\n    <p>\n
+        \     This error may also result if the element itself is not supported in\n
+        \     the document type you are using, as an undefined element will have no\n
+        \     supported attributes; in this case, see the element-undefined error\n
+        \     message for further information.\n    </p>\n    <p>\n      How to fix:
+        check the spelling and case of the element and attribute, \n      (Remember
+        XHTML is all lower-case) and/or \n      check that they are both allowed in
+        the chosen document type, and/or\n      use CSS instead of this attribute.
+        If you received this error when using the \n      &lt;embed&gt; element to
+        incorporate flash media in a Web page, see the \n      <a href=\"docs/help.html#faq-flash\">FAQ
+        item on valid flash</a>.\n    </p>\n  </div>\n\n                  ]]>\n                </m:explanation>\n
+        \               <m:source><![CDATA[&#60;p unknown=<strong title=\"Position
+        where error was detected.\">&#34;</strong>true&#34;&#62;Invalid! markup_overriding_charset_for_fallback_only&#60;/p&#62;]]></m:source>\n
+        \           </m:error>\n           \n        </m:errorlist>\n    </m:errors>\n
+        \   <m:warnings>\n        <m:warningcount>0</m:warningcount>\n        <m:warninglist>\n
+        \       \n        \n        </m:warninglist>\n    </m:warnings>\n</m:markupvalidationresponse>\n</env:Body>\n</env:Envelope>\n"
+    http_version: 
+  recorded_at: Sun, 30 Oct 2016 17:10:30 GMT
+recorded_with: VCR 3.0.3

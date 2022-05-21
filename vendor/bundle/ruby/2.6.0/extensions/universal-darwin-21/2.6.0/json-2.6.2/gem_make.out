@@ -1,0 +1,13 @@
+current directory: /Users/ajeetraina/21may/dockerlabs/vendor/bundle/ruby/2.6.0/gems/json-2.6.2/ext/json
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20220521-21032-8cpb3x.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ajeetraina/21may/dockerlabs/vendor/bundle/ruby/2.6.0/gems/json-2.6.2/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/ajeetraina/21may/dockerlabs/vendor/bundle/ruby/2.6.0/gems/json-2.6.2/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/ajeetraina/21may/dockerlabs/vendor/bundle/ruby/2.6.0/gems/json-2.6.2/ext/json
+make "DESTDIR=" install

@@ -1,0 +1,45 @@
+version: 0.1
+loglevel: info
+storage:
+  filesystem:
+    rootdirectory: /var/lib/docker-registry
+  delete:
+    enabled: true
+http:
+<% if @options["local-registry"] %>
+  addr: :5000
+<% else %>
+  addr: :5000 # or even <%= @options["secure"] ? ":443" : ":80" %> if you are running on a dedicated host
+<% end %>
+<% if @options["secure"] %>
+  tls:
+<% if @options["local-registry"] %>
+    certificate: /etc/registry/ssl.crt/portus.crt
+    key: /srv/Portus/config/server.key
+<% else %>
+    certificate: /etc/registry/ssl.crt/<DISTRIBUTION HOST CERTIFICATE>.crt
+    key: /etc/registry/<DISTRIBUTION HOST KEY>.key
+<% end %>
+<% end %>
+
+auth:
+  token:
+    realm: <%= @options["secure"] ? "https" : "http"%>://<%= HOSTNAME %>/v2/token
+<% if @options["local-registry"] %>
+    service: <%= HOSTNAME %>:5000
+    issuer: <%= HOSTNAME %>
+    rootcertbundle: /etc/registry/ssl.crt/portus.crt
+<% else %>
+    service: <DISTRIBUTION HOSTNAME>:5000 # no need to add the port # when listening over http or https
+    issuer: <%= HOSTNAME %>
+    rootcertbundle: /etc/registry/ssl.crt/portus.crt # remember to copy Portus' crt file from Portus' host
+<% end %>
+
+notifications:
+  endpoints:
+    - name: portus
+      url: <%= @options["secure"] ? "https" : "http"%>://<%= HOSTNAME %>/v2/webhooks/events
+      timeout: 500ms
+      threshold: 5
+      backoff: 1s
+

@@ -1,0 +1,77 @@
+version: '3'
+
+networks:
+    local-bridge:
+        driver: bridge
+
+services:
+    php_5_6:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: php_5_6
+      tty: true
+      working_dir: /var/www
+      volumes:
+        - ./src/:/var/www
+        - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      networks:
+        - local-bridge
+
+    composer:
+      container_name: composer
+      image: composer:latest
+      command: ["composer","install"]
+      depends_on:
+        - php_5_6
+      volumes:
+        - ./src/code:/app
+      restart: always
+      networks:
+        - local-bridge
+    
+    nginx:
+      image: nginx:alpine
+      container_name: nginx
+      tty: true
+      volumes:
+        - ./src/:/var/www
+        - ./nginx/conf.d/:/etc/nginx/conf.d/
+      ports:
+        - 8080:80
+      networks:
+        - local-bridge
+
+    mysql:
+      image: mysql:5.7.22
+      container_name: mysql
+      restart: unless-stopped
+      tty: true
+      ports:
+        - "4306:3306"
+      volumes:
+        - ./mysql:/var/lib/mysql
+      environment:
+        MYSQL_DATABASE: qwerty
+        MYSQL_USER: homestead
+        MYSQL_PASSWORD: secret
+        MYSQL_ROOT_PASSWORD: secret
+        SERVICE_TAGS: dev
+        SERVICE_NAME: mysql
+      networks:
+        - local-bridge
+
+    phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      restart: always
+      container_name: phpmyadmin
+      depends_on:
+        - mysql
+      ports:
+        - "8081:80"
+      environment:
+        PMA_HOST: mysql
+        MYSQL_ROOT_PASSWORD: secret
+      networks:
+        - local-bridge
+

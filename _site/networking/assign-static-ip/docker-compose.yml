@@ -1,0 +1,17 @@
+version: '2'
+services:
+  nginx:
+    image: nginx
+    container_name: nginx-container
+    networks:
+      static-network:
+        ipv4_address: 100.98.26.182
+    ports:
+      - "80:80"
+
+networks:
+  static-network:
+    ipam:
+      config:
+        - subnet: 100.98.26.0/24
+          ip_range: 100.98.26.180/24

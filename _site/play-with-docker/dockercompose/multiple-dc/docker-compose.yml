@@ -1,0 +1,11 @@
+web:
+  image: nginx:latest
+  links:
+    - db
+    - cache
+
+db:
+  image: postgres:latest
+
+cache:
+  image: redis:latest

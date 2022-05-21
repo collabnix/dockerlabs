@@ -1,0 +1,90 @@
+<html>
+<head>
+  <link rel="stylesheet" media="all" href="landing.css" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <style>
+    #wrapper {
+      width: -moz-fit-content;
+      width: -webkit-fit-content;
+      width: fit-content;
+      margin: auto;
+    }
+
+    .code {
+      font-size: 11px;
+      margin-left: 25px;
+    }
+
+    .block {
+      margin: 10px 0px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="wrapper">
+  <h1>Welcome to the Portus Appliance!</h1>
+
+  <div class="block">
+    <p>This appliance is meant to be used as a demo for Portus.</p>
+    <ul>
+      <li>Portus targets version 2 of the Docker registry API.</li>
+      <li>It aims to act both as an authoritzation server and as a user interface for the next generation of the Docker registry.</li>
+    </ul>
+
+    <p>
+      Portus works with SSL. In order to verify it, you'll need the <a href="__HOSTNAME__-ca.crt">root certificate</a>.
+      Add this certificate to your system certificates.
+      <br />
+      If you are running SUSE linux, you can do that by:
+    </p>
+
+    <span class="code">$ cp __HOSTNAME__-ca.crt /etc/pki/trust/anchors/ && update-ca-certificates</span>
+  </div>
+
+  <div class="block">
+    <p>Example of usage:</p>
+
+    <ul>
+      <li>Add yourself as admin</li>
+      <li>Add registry as __HOSTNAME__:5000</li>
+      <li>Download certificate to /etc/docker/certs.d/__HOSTNAME__:5000</li>
+    </ul>
+
+    <p>And then execute the following commands:</p>
+
+    <span class="code">$ docker login __HOSTNAME__:5000</span><br />
+    <span class="code">$ docker pull busybox</span><br />
+    <span class="code">$ docker tag -f busybox __HOSTNAME__:5000/busybox</span><br />
+    <span class="code">$ docker push __HOSTNAME__:5000/busybox</span><br />
+  </div>
+
+  <p>If you want to change the hostname, run:</p>
+
+  <span class="code">$ /etc/init.d/portus-firstboot SERVERNAME</span><br />
+
+  <div class="block">
+    <p>If you want to use your certificates, upload them to:</p>
+
+    <ul>
+      <li>/etc/apache2/ssl.crt/SERVERNAME-server.crt</li>
+      <li>/etc/apache2/ssl.key/SERVERNAME-server.key</li>
+      <li>/etc/apache2/ssl.crt/SERVERNAME-ca.crt</li>
+    </ul>
+    <p>and then run:</p>
+
+    <span class="code">$ /etc/init.d/portus-firstboot SERVERNAME</span>
+  </div>
+
+  <div class="block">
+    For more information, you can <a href="http://port.us.org/documentation.html">read the documentation</a>.
+
+    <br />
+    Enjoy!
+  </div>
+
+    <a class="block btn btn-primary" href="https://__HOSTNAME__">Go to your Portus instance</a>
+</div>
+
+</body>
+</html>

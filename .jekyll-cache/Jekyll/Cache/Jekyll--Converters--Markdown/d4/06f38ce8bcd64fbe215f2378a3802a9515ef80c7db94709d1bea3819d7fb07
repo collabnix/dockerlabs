@@ -1,0 +1,8 @@
+I"k<h1 id="similarity-between-docker--vm">Similarity between Docker &amp; VM</h1>
+
+<p>Docker containers might look very similar to Virtual Machines, especially for those who come from VMware Virtualization Background. Few of the interesting similarities between Docker &amp; Virtual Machines are listed below:</p>
+
+<p><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/docker/images/vm-docker6.png" alt="Component View" /></p>
+
+<p><a href="https://collabnix.github.io/dockerlabs/beginners/difference-vm-containers.html">Proceed » Difference between Container &amp; Virtual Machine</a></p>
+:ET

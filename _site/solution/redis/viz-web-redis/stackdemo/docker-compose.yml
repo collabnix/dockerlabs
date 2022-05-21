@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    image: ajeetraina/redis-flask-demo
+    build: .
+    ports:
+      - "8000:8000"
+  redis:
+    image: redis:6.0-rc1

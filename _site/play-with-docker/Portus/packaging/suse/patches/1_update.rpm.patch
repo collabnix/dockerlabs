@@ -1,0 +1,132 @@
+diff --git a/config/environments/production.rb b/config/environments/production.rb
+index 2a796a6..8ae1fd4 100644
+--- a/config/environments/production.rb
++++ b/config/environments/production.rb
+@@ -1,3 +1,6 @@
++require_relative "../../lib/portus/ldap"
++require_relative "../../lib/portus/migrate"
++
+ Rails.application.configure do
+   # Settings specified here will take precedence over those in config/application.rb.
+ 
+@@ -83,10 +86,11 @@ Rails.application.configure do
+     config.after_initialize do
+       begin
+         ActiveRecord::Migrator.migrate(Rails.root.join("db/migrate"), nil)
++        Portus::Migrate.update_personal_namespaces!
++        Portus::Migrate.update_ldap_names! if Portus::LDAP.enabled?
+       rescue
+         $stderr.puts "Error running migration! Please review database configuration"
+       end
+     end
+   end
+-
+ end
+diff --git a/lib/portus/migrate.rb b/lib/portus/migrate.rb
+index b8af3b6..7a2ff8e 100644
+--- a/lib/portus/migrate.rb
++++ b/lib/portus/migrate.rb
+@@ -53,5 +53,40 @@ module Portus
+ 
+       APP_CONFIG[key]["value"]
+     end
++
++    def self.update_personal_namespaces!
++      ActiveRecord::Base.transaction do
++        User.all.find_each do |u|
++          namespace = Namespace.find_by(name: u.username)
++          raise "There is no valid personal namespace for #{u.username}!" if namespace.nil?
++          u.update_attributes(namespace: namespace)
++        end
++      end
++    end
++
++    def self.update_ldap_names!
++      Rails.logger.info "Users to be updated:"
++
++      count = 0
++      User.all.find_each do |u|
++        if !u.ldap_name.blank? && u.ldap_name != u.username
++          Rails.logger.info "- username: #{u.username}\t<=>\tldapname: #{u.ldap_name}"
++          count += 1
++        end
++      end
++
++      if count == 0
++        Rails.logger.info "None. Doing nothing..."
++        return
++      end
++
++      ActiveRecord::Base.transaction do
++        User.all.find_each do |u|
++          if !u.ldap_name.blank? && u.ldap_name != u.username
++            u.update_attributes!(username: u.ldap_name)
++          end
++        end
++      end
++    end
+   end
+ end
+diff --git a/lib/tasks/migrate.rake b/lib/tasks/migrate.rake
+index f569de5..47c68c1 100644
+--- a/lib/tasks/migrate.rake
++++ b/lib/tasks/migrate.rake
+@@ -1,3 +1,5 @@
++require_relative "../portus/migrate"
++
+ # :nocov:
+ namespace :migrate do
+   # NOTE: this is only available from 2.0.x -> 2.1.x.
+@@ -6,13 +8,7 @@ namespace :migrate do
+   # on).
+   desc "Update personal namespaces"
+   task update_personal_namespaces: :environment do
+-    ActiveRecord::Base.transaction do
+-      User.all.find_each do |u|
+-        namespace = Namespace.find_by(name: u.username)
+-        raise "There is no valid personal namespace for #{u.username}!" if namespace.nil?
+-        u.update_attributes(namespace: namespace)
+-      end
+-    end
++    Portus::Migrate.update_personal_namespaces!
+   end
+ 
+   # NOTE: this is only available from 2.0.x -> 2.1.x.
+@@ -22,21 +18,7 @@ namespace :migrate do
+   desc "Update LDAP user names"
+   task update_ldap_names: :environment do
+     unless APP_CONFIG.enabled?("ldap")
+-      puts "This only applies to LDAP setups..."
+-      exit 0
+-    end
+-
+-    puts "Users to be updated:"
+-    count = 0
+-    User.all.find_each do |u|
+-      if !u.ldap_name.blank? && u.ldap_name != u.username
+-        puts "- username: #{u.username}\t<=>\tldapname: #{u.ldap_name}"
+-        count += 1
+-      end
+-    end
+-
+-    if count == 0
+-      puts "None. Doing nothing..."
++      Rails.logger.info "This only applies to LDAP setups..."
+       exit 0
+     end
+ 
+@@ -46,13 +28,7 @@ namespace :migrate do
+       exit 0 if opt != "y" && opt != "Y" && opt != "yes"
+     end
+ 
+-    ActiveRecord::Base.transaction do
+-      User.all.find_each do |u|
+-        if !u.ldap_name.blank? && u.ldap_name != u.username
+-          u.update_attributes!(username: u.ldap_name)
+-        end
+-      end
+-    end
++    Portus::Migrate.update_ldap_names!
+   end
+ end
+ # :nocov:

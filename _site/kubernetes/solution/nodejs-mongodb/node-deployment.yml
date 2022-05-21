@@ -1,0 +1,26 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: node
+spec:
+  selector:
+    matchLabels:
+      app: node
+      tier: backend
+  replicas: 9
+  template:
+    metadata:
+      labels:
+        app: node
+        tier: backend
+    spec:
+      containers:
+        - name: node
+          image: adnanrahic/boilerplate-api:latest
+          ports:
+            - containerPort: 3000
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1

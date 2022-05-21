@@ -1,0 +1,16 @@
+<% if @webhook.errors.any? %>
+  $('#alert p').html("<%= escape_javascript(raw(@webhook.errors.full_messages.join('<br/>'))) %>");
+  $('#alert').fadeIn();
+<% else %>
+  $('#update_webhook_<%= @webhook.id %>').toggle()
+  $('.webhook_information').toggle();
+
+  var el = $(".button_edit_webhook i.fa");
+  el.removeClass('fa-close');
+  el.addClass('fa-pencil');
+
+  $('.webhook_information .panel-body').html("<%= escape_javascript(render partial: "detail", locals: {webhook: @webhook}) %>");
+  $('#alert p').html("Webhook '<%= @webhook.host %>' has been updated successfully");
+  $('#alert').fadeIn();
+  $('.webhook_information .panel-heading h5 strong').text("<%= @webhook.host %> ")
+<% end %>

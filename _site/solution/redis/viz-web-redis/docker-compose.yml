@@ -1,0 +1,47 @@
+version: "3"
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: ajeetraina/redis-flask
+    build:
+      context: ./stackdemo
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 5
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+    ports:
+      - "8000:8000"
+    networks:
+      - webnet
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+  redis:
+    image: redis:6.0-rc1
+    ports:
+      - "6379:6379"
+    volumes:
+      - data:/home/docker/data
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    command: redis-server --appendonly yes
+    networks:
+      - webnet
+networks:
+  webnet:
+volumes:
+  data:

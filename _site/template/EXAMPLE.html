@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Beginners Track - template</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Beginners Track - template" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="collabnix DockerLab Docker - Beginners Track" />
+<meta property="og:description" content="collabnix DockerLab Docker - Beginners Track" />
+<link rel="canonical" href="http://localhost:4000/template/EXAMPLE.html" />
+<meta property="og:url" content="http://localhost:4000/template/EXAMPLE.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Beginners Track - template" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"collabnix DockerLab Docker - Beginners Track","headline":"Beginners Track - template","url":"http://localhost:4000/template/EXAMPLE.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+   
+
+    <header class="page-header" role="banner">
+      <center><a href="http://dockerlabs.collabnix.com"><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png"></a></center>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
+     <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
+      <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
+      <h1 class="project-name">Beginners Track - template</h1>
+      <h2 class="project-tagline">collabnix | DockerLab | Docker - Beginners Track</h2> 
+      
+      
+        <a href="https://launchpass.com/collabnix" class="btn">Join Slack</a>
+     
+      
+        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">Docker Cheatsheet</a>
+     
+        
+        <a href="https://collabnix.com/docker-compose-cheatsheet/" class="btn">Docker Compose Cheatsheet</a>
+     
+          
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      
+      <p>Note: readme.md / dir file name must be like this ` ex:docker_beginner_track `[don’t add spaces]</p>
+
+<p>if your not able to understant how to contribute ? please dm in collabnix slack #issue channel</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+title: Track name 
+description: collabnix | DockerLab | Docker/k8s - track name 
+---
+</code></pre></div></div>
+<p>Note: add above code top of the(in header) readme.md</p>
+
+<h1 id="demonstrating-hello-world-example">Demonstrating Hello World Example</h1>
+
+<h2 id="tested-infrastructure">Tested Infrastructure</h2>
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+<h2 id="pre-requisite">Pre-requisite</h2>
+
+<ul>
+  <li>Create an account with <a href="https://hub.docker.com">DockerHub</a></li>
+  <li>Open <a href="https://labs.play-with-docker.com/">PWD</a> Platform on your browser</li>
+  <li>Click on <strong>Add New Instance</strong> on the left side of the screen to bring up Alpine OS instance on the right side</li>
+</ul>
+
+<h2 id="running-hello-world-example">Running Hello World Example</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker run hello-world
+
+</code></pre></div></div>
+
+<p>If you want to add some img to readme.md make sure it will be like ‘https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b301_helloworld.png’ raw format. you will get file link from download button.</p>
+
+<p><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/beginners/images/b301_helloworld.png" alt="alt text" /></p>
+
+<h2 id="explanation">Explanation</h2>
+
+<p>This image is a prime example of using the scratch image effectively. See hello.c in https://github.com/docker-library/hello-world for the source code of the hello binary included in this image.</p>
+
+<p>So what’s happened here? We’ve called the docker run command, which is responsible for launching containers.</p>
+
+<p>The argument hello-world is the name of the image someone created on dockerhub for us. It will first search for “hello-world” image locally and then search in Dockerhub.</p>
+
+<p>Once the image has been downloaded, Docker turns the image into a running container and executes it.</p>
+
+<h2 id="did-you-know">Did you Know?</h2>
+
+<ol>
+  <li>The Hello World Docker Image is only 1.84 KB size.</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.18 ~
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              4ab4c602aa5e        6 weeks ago         1.84kB
+</code></pre></div></div>
+
+<ol>
+  <li>While running <code class="language-plaintext highlighter-rouge">docker ps</code> command, it doesn’t display any running container. Reason - It gets executed once and exit immediately.</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS
+      PORTS               NAMES
+</code></pre></div></div>
+
+<ol>
+  <li>You can use <code class="language-plaintext highlighter-rouge">docker inspect &lt;imagename&gt;</code> command to inspect about this particular Docker Image.</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker inspect 4ab
+[
+    {
+        "Id": "sha256:4ab4c602aa5eed5528a6620ff18a1dc4faef0e1ab3a5eddeddb410714478c67f",
+        "RepoTags": [
+            "hello-world:latest"
+        ],
+        "RepoDigests": [
+            "hello-world@sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2018-09-07T19:25:39.809797627Z",
+        "Container": "15c5544a385127276a51553acb81ed24a9429f9f61d6844db1fa34f46348e420",
+        "ContainerConfig": {
+            "Hostname": "15c5544a3851",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"/hello\"]"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:9a5813f1116c2426ead0a44bbec252bfc5c3d445402cc1442ce9194fc1397027",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "DockerVersion": "17.06.2-ce",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/hello"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:9a5813f1116c2426ead0a44bbec252bfc5c3d445402cc1442ce9194fc1397027",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1840,
+        "VirtualSize": 1840,
+        "GraphDriver": {
+            "Data": {
+                "MergedDir": "/var/lib/docker/overlay2/e494ae30abc49ad403ef5c2a32bcb894629ea4da6d4d226fbca70d27ed9a74d8/merged",
+                "UpperDir": "/var/lib/docker/overlay2/e494ae30abc49ad403ef5c2a32bcb894629ea4da6d4d226fbca70d27ed9a74d8/diff",
+                "WorkDir": "/var/lib/docker/overlay2/e494ae30abc49ad403ef5c2a32bcb894629ea4da6d4d226fbca70d27ed9a74d8/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:428c97da766c4c13b19088a471de6b622b038f3ae8efa10ec5a37d6d31a2df0b"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
+</code></pre></div></div>
+
+<h2 id="maintained-by">Maintained by:</h2>
+<p>Ajeet Singh Raina</p>
+
+<p><a href="https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html">Next: Working with Docker Images</a></p>
+
+    
+      
+      <footer class="site-footer">
+  
+     
+              <h3> Practice Docker Tutorial </h3>
+        <button> <a href=" https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386"> free Ubuntu VM </a></button>
+    
+        <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div><script src="https://hackr.io/widget.js?v=1.0"></script>
+        
+              
+       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+         <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
+<!-- End of HubSpot Embed Code -->
+         <div id="wcb" class="carbonbadge"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
+        </span> 
+      </footer>
+    </main>
+    <!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

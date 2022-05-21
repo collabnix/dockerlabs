@@ -1,0 +1,196 @@
+I"%<h1 id="manage-and-monitor-your-docker-containers-with-dry-tool-in-5-min">Manage and Monitor Your Docker Containers with Dry Tool in 5 Min</h1>
+
+<p>If you are looking out for a tool which can manage Docker &amp; Docker Swarm, you really need to try out “Dry” tool. With close to 1500 stars in short span of time, this tool is a terminal application to manage both Docker Host &amp; Docker Swarm Mode.It shows information about Containers, Images and Networks, and, if running a Swarm cluster, it shows information about Nodes, Service, Stacks and the rest of Swarm constructs. It can be used with both local or remote Docker daemons.</p>
+
+<p>Besides showing information, it can be used to manage Docker. Most of the commands that the official Docker CLI provides, are available in dry with the same behaviour. also, it can also be used as a monitoring tool for Docker containers.Dry can be installed as a single binary and does not require external libraries.</p>
+
+<p>Under this tutorial, I will show you how to get started with this tool to manage and monitor your Docker containers</p>
+
+<h2 id="tested-infrastructure">Tested Infrastructure</h2>
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l"><b>Platform</b></th>
+    <th class="tg-yw4l"><b>Number of Instance</b></th>
+    <th class="tg-yw4l"><b>Reading Time</b></th>
+    
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Play with Docker</b></td>
+    <td class="tg-yw4l"><b>1</b></td>
+    <td class="tg-yw4l"><b>5 min</b></td>
+    
+  </tr>
+  
+</table>
+
+<h2 id="pre-requisite">Pre-requisite</h2>
+
+<ul>
+  <li>Create an account with <a href="https://hub.docker.com">DockerHub</a></li>
+  <li>Open <a href="https://labs.play-with-docker.com/">PWD</a> Platform on your browser</li>
+  <li>Click on <strong>Add New Instance</strong> on the left side of the screen to bring up Alpine OS instance on the right side</li>
+</ul>
+
+<h2 id="running-multiple-containers-in-an-interactive-and-detached-mode">Running Multiple containers in an interactive and detached mode.</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+57c14dd66db0: Pull complete
+Digest: sha256:7964ad52e396a6e045c39b5a44438424ac52e12e4d5a25d94895f2058cb863a0
+Status: Downloaded newer image for busybox:latest
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker pull hello-world
+Using default tag: latest
+latest: Pulling from library/hello-world
+1b930d010525: Pull complete
+Digest: sha256:2557e3c07ed1e38f26e389462d03ed943586f744621577a99efb77324b0fe535
+Status: Downloaded newer image for hello-world:latest
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker run -t -d busybox
+7c96cde9894fd9ff42d1c3638cad65cf306cb2757b3925a925f4d421a510a79f
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker run -t -d hello-world
+7a4198a31f61c380ddbe3b06eeb313da74de3d232727b0325937434900e8be8d
+</code></pre></div></div>
+
+<h2 id="verifying-if-containers-are-up-and-running">Verifying if containers are Up and Running:</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker ps
+
+</code></pre></div></div>
+<h2 id="verifying-the-exited-containers">Verifying the exited containers</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker ps -a
+</code></pre></div></div>
+
+<h2 id="observe-the-below-results">Observe the below results:</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS      PORTS               NAMES
+7c96cde9894f        busybox             "sh"                3 minutes ago       Up 3 minutes                          romantic_greider
+[node1] (local) root@192.168.0.33 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS             PORTS               NAMES
+7a4198a31f61        hello-world         "/hello"            3 minutes ago       Exited (0) 3 minutes ago                       stupefied_tu
+7c96cde9894f        busybox             "sh"                3 minutes ago       Up 3 minutes                                 romantic_greider
+
+</code></pre></div></div>
+
+<h1 id="direct-method">Direct method</h1>
+
+<h2 id="running-dry-tool-in-a-single-shot">Running Dry tool in a single Shot</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker run -it -v /var/run/docker.sock:/var/run/docker.sock moncho/dry
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[node1] (local) root@192.168.0.33 ~
+$ docker run -it -v /var/run/docker.sock:/var/run/docker.sock moncho/dry
+Unable to find image 'moncho/dry:latest' locally
+latest: Pulling from moncho/dry
+4fe2ade4980c: Pull complete
+e9c4f9f2a7e3: Pull complete
+28bab79b92a9: Pull complete
+Digest: sha256:ad57f88f39fd910cc42e9416594dd2cf92ae561ddd914fd1c333f989a8d5bd4b
+Status: Downloaded newer image for moncho/dry:latest
+
+</code></pre></div></div>
+
+<h2 id="interacting-with-docker-containers">Interacting with Docker Containers:</h2>
+
+<p>Use the navigation keys mentioned below to interact with the terminal.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[H]:Help [Q]:Quit | [F1]:Sort [F2]:Toggle Show Containers [F5]:Refresh [%]:Filter |
+[m]:Monitor mode [2]:Images [3]:Networks [4]:Nodes [5]:Services | [Enter]:Commands 
+
+</code></pre></div></div>
+
+<h3 id="select-any-container-from-the-list-and-hit-enter-to-open-the-options">Select any container from the list and hit [enter] to open the options:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fetch logs
+Inspect container
+Kill container
+Remove container
+Restart
+Show image history
+Stats + Top
+Stop
+
+</code></pre></div></div>
+<h2 id="verifying-the-results">Verifying the Results</h2>
+
+<p><img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/pic2.png" alt="" /></p>
+
+<h2 id="2interacting-with-docker-images">2.Interacting with Docker images:</h2>
+
+<p><img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture1.png" alt="" /></p>
+
+<ul>
+  <li>Press [2] to switch to Docker images. It will show a list of your Docker images.</li>
+  <li>Select any image from the list and hit [enter] to show the details of the selected image.</li>
+</ul>
+
+<p>You can use the shortcuts in Dry:<br />
+“Ctrl + D” to remove dangling. It is equivalent to docker volume rm with the flag dangling=true <br />
+“Ctrl + E” to remove image. It is equivalent to docker rmi. <br />
+“CTRL + F” to force remove. It is equivalent to docker rmi –force <br /></p>
+
+<h2 id="3interacting-with-docker-networks">3.Interacting with Docker Networks:</h2>
+
+<p><img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture1.png" alt="" /></p>
+
+<ul>
+  <li>Press [3] to switch to Docker networks. It will show a list of your active Docker networks.</li>
+  <li>Select any network from the list and hit [enter] to fetch and show the details of the selected network. The output will look similar to the below:</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture3.png" alt="" /></p>
+
+<h1 id="manual-method">Manual method</h1>
+
+<p>Download the latest version of Dry :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://github.com/moncho/dry/releases/download/v0.9-beta.3/dry-linux-amd64
+
+</code></pre></div></div>
+<h2 id="moving-the-file-to-usrlocalbindry">Moving the file to /usr/local/bin/dry</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mv dry-linux-amd64 /usr/local/bin/dry
+
+</code></pre></div></div>
+<h2 id="providing-the-access-permissions">Providing the access permissions.</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chmod 755 /usr/local/bin/dry
+
+</code></pre></div></div>
+<h2 id="check-the-version-of-dry">Check the version of Dry:</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dry -v
+
+</code></pre></div></div>
+
+<p>Next, time to tun dry. 
+Type dry in the command and hit [enter].</p>
+
+<p>You should get the similar output where your containers are running.
+<img src="https://raw.githubusercontent.com/sangam14/Docker-Containers-with-Dry-Tool/master/Picture1.png" alt="" /></p>
+
+<h1 id="reference">Reference:</h1>
+
+<ul>
+  <li>https://github.com/moncho/dry</li>
+</ul>
+
+<h2 id="contributor--">Contributor -</h2>
+
+<p><a href="mailto:smbiradar14@gmail.com">Sangam biradar</a> -https://engineitops.com</p>
+
+:ET

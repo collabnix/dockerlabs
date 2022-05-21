@@ -1,0 +1,80 @@
+.panel.panel-default
+  .panel-heading
+    h5 New Registry
+  .panel-body
+    p
+      | Portus needs the information from the form below in order to fetch
+        information from your registry and keep everything up to date
+        (e.g. so tags are added after users push to the registry). Make sure that:
+
+    ul
+      li If you check the SSL checkbox, SSL is properly configured on both sides.
+      li You include the port to the hostname (e.g. "registry.test.lan:5000").
+
+    p
+      | <span>If you have any doubts about this, just check our </span>
+      a href="http://port.us.org/documentation.html" target="_blank" documentation
+      | . <span>In particular, make sure to check </span>
+      a href="http://port.us.org/docs/Configuring-Portus.html" target="_blank" how to configure Portus
+      | <span> and </span>
+      a href="http://port.us.org/docs/Configuring-the-registry.html" target="_blank" how to configure your private registry
+      | .
+
+    br
+
+    = form_for @registry, url: admin_registries_path, html: {class: 'form-horizontal', role: 'form'} do |f|
+      .form-group
+        = f.label :name, {class: 'control-label col-md-2'}
+        .col-md-7
+          - if params[:name]
+            = f.text_field(:name, class: 'form-control', value: params[:name], required: true, autofocus: true)
+          - else
+            = f.text_field(:name, class: 'form-control', required: true, autofocus: true)
+      .form-group
+        = f.label :hostname, {class: 'control-label col-md-2'}
+        .col-md-7
+          - if params[:hostname]
+            = f.text_field(:hostname, class: 'form-control', value: params[:hostname], placeholder: 'registry.test.lan:5000', required: true)
+          - else
+            = f.text_field(:hostname, class: 'form-control', placeholder: 'registry.test.lan:5000', required: true)
+      .form-group
+        = f.label :use_ssl, "Use SSL", {class: 'control-label col-md-2', title: 'Set this to enable SSL in the communication between Portus and the Registry'}
+        .col-md-7
+          - if params[:use_ssl] == "true"
+            = f.check_box(:use_ssl, checked: true)
+          - else
+            = f.check_box(:use_ssl)
+      div.collapse#advanced
+        .form-group
+          = f.label :external_hostname, "External Registry Name", {class:'control-label col-md-2', title: 'Set this if the name that clients use to communicate with the registry is different than the name that Portus uses to connect'}
+          .col-md-7
+            - if params[:external_hostname]
+              = f.text_field(:external_hostname, class: 'form-control', value: params[:external_hostname], placeholder: '(Optional)', required: false)
+            - else
+              = f.text_field(:external_hostname, class: 'form-control', placeholder: '(Optional)', required: false)
+            span.help-block
+              | Portus uses the hostname field to communicate with the registry,
+                but this may be on an internal network and inaccessible to the
+                client.
+                Clients may connect to the registry by a name different to the
+                hostname above, for example if it is behind a reverse proxy.
+                This field must be set to prevent Portus from ignoring registry
+                events originating from this external hostname.
+      - unless flash[:alert].nil? || flash[:alert].empty?
+        .form-group.has-error
+          = label_tag :force, "Skip remote checks", {class: 'control-label col-md-2', title: "Force the creation of the registry, even if it's not reachable."}
+          .col-md-7
+            = check_box_tag(:force)
+      .form-group
+        .col-md-offset-2.col-md-7
+          div.btn-toolbar role='toolbar'
+            div.btn-group role='group'
+              = f.submit('Create', class: 'btn btn-primary')
+            div.btn-group role='group'
+              span data-toggle='collapse' data-target='#advanced'
+                button.btn.btn-primary#advancedButton type='button' data-toggle='button' aria-expanded='false' aria-controls='advanced' Show Advanced
+                javascript:
+                  $('#advancedButton').click(function() {
+                    $(this).text($(this).text() == 'Show Advanced' ? 'Hide Advanced' : 'Show Advanced');
+                  });
+

@@ -1,0 +1,16 @@
+
+ALERT high_cpu_usage_on_container
+  IF sum(rate(container_cpu_usage_seconds_total{container_label_com_docker_swarm_task_name=~".+"}[5m])) by (container_label_com_docker_swarm_task_name,instance) * 100 > 200
+  FOR 5m
+  ANNOTATIONS {
+      summary = "HIGH CPU USAGE WARNING: TASK '{{ $labels.container_label_com_docker_swarm_task_name }}' on '{{ $labels.instance }}'",
+      description = "{{ $labels.container_label_com_docker_swarm_task_name }} is using a LOT of CPU. CPU usage is {{ humanize $value}}%.",
+  }
+
+ALERT container_eating_memory
+  IF sum(container_memory_rss{container_label_com_docker_swarm_task_name=~".+"}) by (instance,name) > 2500000000
+  FOR 5m
+  ANNOTATIONS {
+      summary = "HIGH MEMORY USAGE WARNING: TASK '{{ $labels.container_label_com_docker_swarm_task_name }}' on '{{ $labels.instance }}'",
+      description = "{{ $labels.container_label_com_docker_swarm_task_name }} is eating up a LOT of memory. Memory consumption of {{ $labels.container_label_com_docker_swarm_task_name }} is at {{ humanize $value}}.",
+  }

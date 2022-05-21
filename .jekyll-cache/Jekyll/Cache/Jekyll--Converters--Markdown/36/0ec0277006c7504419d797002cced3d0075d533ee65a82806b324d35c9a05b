@@ -1,0 +1,101 @@
+I"<h1 id="getting-started-with-kubernetes">Getting Started with Kubernetes</h1>
+
+<ul>
+  <li><a href="./beginners/what-is-kubernetes/README.md#what-is-kubernetes">What is Kubernetes &amp; Why is it damn popular?</a></li>
+  <li><a href="./beginners/what-is-kubernetes/README.md#what-is-k8s-made-up-of">Deep Dive into Kubernetes Architecture</a></li>
+</ul>
+
+<h2 id="kubernetes-core-concept">Kubernetes Core Concept</h2>
+
+<ul>
+  <li><a href="./beginners/k8s-core-concepts.md">Kubernetes Developer Concept</a></li>
+  <li><a href="./beginners/Install-and-configure-a-multi-master-Kubernetes-cluster-with-kubeadm.md">Install and configure a multi-master Kubernetes cluster with kubeadm</a></li>
+  <li><a href="./beginners/what-is-kubect.md">Understanding the kubectl</a></li>
+  <li>Single and multi-node clusters</li>
+  <li><a href="./beginners/Kubernetes_Control_Plane.md">Examining the control plane</a><br /></li>
+  <li>Persisting changes in etcd</li>
+  <li>Syncing changes with RAFT</li>
+  <li>Event-based architecture</li>
+  <li>Understanding the kubelet</li>
+  <li>Verifying “no single point of failure”</li>
+  <li>Setting up a multi-master cluster</li>
+  <li>Investigating multi-master setup in EKS</li>
+  <li>Exploring multi-master setup in Monzo</li>
+  <li><a href="./beginners/Install-and-configure-a-multi-master-Kubernetes-cluster-with-kubeadm.md">Creating a 3 node cluster with kubeadm</a></li>
+  <li>Installing an overlay network</li>
+  <li><a href="./beginners/Installing-Nginx-Ingress-controller.md">Installing an Ingress controller</a></li>
+  <li>Exploring the API without kubectl</li>
+  <li>Taking down the cluster one node at the time</li>
+  <li><a href="./beginners/k8s-cluster-backup-easy-way.md">Kubernetes Cluster Backup</a></li>
+</ul>
+
+<h1 id="installation--getting-started">Installation &amp; Getting Started</h1>
+
+<h2 id="bare-metal">Bare Metal:</h2>
+
+<ul>
+  <li><a href="./beginners/install/ubuntu/18.04/install-k8s.md#how-to-setup-3-node-kubernetes-cluster-on-bare-metal-system-using-metallb">How to setup 3 Node Kubernetes Cluster on Bare Metal System using MetalLB?</a><br /></li>
+</ul>
+
+<h2 id="demo-environment">Demo Environment</h2>
+
+<ul>
+  <li><a href="./beginners/getting-started-on-pwk.md">Getting Started with 5 Node Kubernetes Cluster on Play with Kubernetes Platform</a></li>
+</ul>
+
+<h2 id="cloud-environment">Cloud Environment</h2>
+
+<ul>
+  <li><a href="./beginners/install-k8s-on-GCP-platform.md">Google Cloud Platform</a></li>
+</ul>
+
+<h2 id="iot-platform">IoT Platform</h2>
+
+<ul>
+  <li><a href="">K3s on Raspberry Pi</a></li>
+</ul>
+
+<h2 id="kubernetes-workshop">Kubernetes Workshop</h2>
+
+<ul>
+  <li><a href="./beginners/workshop/lab00-running-nginx-pod/README.md">Lab #00: Running Nginx Pod</a><br /></li>
+  <li><a href="./beginners/workshop/lab01-creating-nginx-pod/README.md">Lab #01: Creating Nginx Pod</a><br /></li>
+  <li><a href="./beginners/workshop/lab02-deleting-pod">Lab #02: Deleting Nginx Pod</a><br /></li>
+  <li><a href="./beginners/workshop/lab03-creating-deployment-3replicas-nginx/README.md">Lab #03: Creating a Deployment with 3 replicas of NGINX service</a><br /></li>
+  <li><a href="./beginners/workshop/lab04-scaling-the-deployment/README.md">Lab #04: Scaling the Deployment</a><br /></li>
+</ul>
+
+<h2 id="k3s-on-bare-metal">K3s on Bare Metal</h2>
+
+<ul>
+  <li><a href="https://github.com/collabnix/dockerlabs/blob/master/kubernetes/install/k3s/install-on-ubuntu01804.md">Installing K3s on Ubuntu 18.04</a></li>
+</ul>
+
+<h2 id="helm">Helm</h2>
+
+<ul>
+  <li><a href="https://collabnix.com/installing-helm-to-deploy-kubernetes-applications-on-docker-enterprise-2-0-made-easy/">Installing Helm to deploy Kubernetes Applications on Docker Enterprise 2.0 Made Easy</a></li>
+  <li><a href="https://collabnix.com/building-helm-chart-for-kubernetes-cluster-running-on-docker-enterprise-2-0-using-docker-app-0-6-0/">Building Helm Chart for Kubernetes Cluster running on Docker Enterprise 2.0 using Docker-app 0.6.0</a></li>
+  <li><a href="https://collabnix.com/kubernetes-hands-on-lab-4-deploy-application-stack-using-helm-on-play-with-kubernetes-platform/">Kubernetes Hands-on Lab #4 – Deploy Prometheus Stack using Helm on Play with Kubernetes Platform</a></li>
+  <li><a href="https://collabnix.com/installing-helm-to-deploy-kubernetes-applications-on-docker-enterprise-2-0-made-easy/">Installing Helm to deploy Kubernetes Applications on Docker Enterprise 2.0 Made Easy</a></li>
+</ul>
+
+<h2 id="prometheus">Prometheus</h2>
+
+<ul>
+  <li><a href="./beginners/Kubernetes_monitoring_alerting/Prometheus_Monitoring_On_Kubernetes_Cluster.md">How To Setup Prometheus Monitoring On Kubernetes Cluster</a></li>
+  <li><a href="./beginners/Kubernetes_monitoring_alerting/alert_manager_on_K8.md">Setting up Alert Manager on Kubernetes</a></li>
+  <li><a href="https://developer.sh/posts/prometheus-self-discovery">Prometheus Self Discovery on Kubernetes</a></li>
+</ul>
+
+<h2 id="contributors">Contributors</h2>
+
+<ul>
+  <li><a href="mailto:karangandhi0007@gmail.com">Karan Singh</a></li>
+  <li><a href="mailto:ajeetraina@gmail.com">Ajeet Singh Raina</a></li>
+  <li><a href="mailto:smbiradar14@gmail.com">Sangam Biradar</a></li>
+  <li><a href="mailto:sappal.tushar@gmail.com">Tushar Sappal</a></li>
+  <li><a href="https://www.linkedin.com/in/apurvabhandari-linux">Apurva Bhandari</a></li>
+  <li><a href="mailto:saiyam911@gmail.com">Saiyam Pathak</a></li>
+</ul>
+:ET

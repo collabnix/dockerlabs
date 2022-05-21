@@ -1,0 +1,47 @@
+.TH PORTUSCTL 1 "portusctl User manuals" "SUSE LLC." "AUGUST 2016"
+.SH NAME
+.PP
+portusctl logs \- Fetch all the logs produced by Portus
+.SH SYNOPSIS
+.PP
+\fBportusctl exec\fP <command> [arguments...]
+.SH DESCRIPTION
+.PP
+The \fBexec\fP command allows administrators to execute any command from within
+the same environment as Portus.
+.SH EXAMPLES
+.PP
+The \fBexec\fP command might come in handy when you want to execute some
+administrative command in the same context as Portus. For example, if you want
+to take a closer look at the current state of Portus, you can perform the
+following:
+.PP
+.RS
+.nf
+$ portusctl exec rails c
+.fi
+.RE
+.PP
+This will put you inside of a Ruby on Rails console with Portus' code loaded in
+it. This way, you will be able to perform deeper inspections like:
+.PP
+.RS
+.nf
+> puts Team.find_by(name: "myteam").namespaces
+.fi
+.RE
+.PP
+However, if you are not that experienced with Ruby on Rails and you want to
+check the database directly as Portus sees it, you can perform:
+.PP
+.RS
+.nf
+$ portusctl exec rails db
+.fi
+.RE
+.PP
+With the command above, you will be able to access a MariaDB prompt that is
+connected to the database that Portus is using.
+.SH HISTORY
+.PP
+August 2016, created by Miquel Sabaté Solà \[la]msabate@suse.com\[ra]

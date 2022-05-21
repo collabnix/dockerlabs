@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web
+  labels:
+    env: dev
+    role: web
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      role: web
+  template:
+    metadata:
+      labels:
+        role: web
+    spec:
+      containers:
+      - name: testnginx
+        image: nginx

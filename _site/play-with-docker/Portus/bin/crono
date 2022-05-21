@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -x
+
+_timeout=150
+_count=0
+_status=0
+
+# Use portusctl if available. When installing the RPM, bundle might be in an
+# unknown path otherwise.
+if stat /usr/sbin/portusctl &> /dev/null; then
+    cmd_prefix="portusctl exec"
+else
+    cmd_prefix="bundle exec"
+fi
+
+# Try to start crono as many times as needed so it can connect to the DB.
+while [ "$_count" -le "$_timeout" ]; do
+    $cmd_prefix crono
+    _status=$?
+    if [ -z $_status ]; then
+        echo "Crono terminated successfully"
+        exit 0
+    fi
+    if [ "$_status" -ge "128" ]; then
+        echo "Signal $((_status-128)) received"
+        exit $_status
+    fi
+
+    # There has been a failure, increment the count and sleep.
+    echo "Crono terminated with status: $_status. Trying again in 10 seconds."
+    sleep 10
+    _count=$((_count+10))
+done
+
+# After trying 15 times we couldn't make it, just quit.
+echo "Cannot start crono in any way. Check the logs..."
+exit $_status

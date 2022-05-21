@@ -1,0 +1,15 @@
+<% if @comment.errors.any? %>
+  $('#float-alert p').html("<%= escape_javascript(@comment.errors.full_messages.join('<br/>')) %>");
+<% else %>
+  <% if @repository.comments.count == 1 %>
+    $(".comment_string").text(" Comment");
+    $(".container-full").text("")
+  <% elsif @repository.comments.count == 2 %>
+    $(".comment_string").text(" Comments");
+  <% end %>
+  $(".number_of_comments").text("<%= escape_javascript(@repository.comments.count.to_s) %>");
+  $("<%= escape_javascript(render @comment) %>").appendTo(".container-full");
+  $('#float-alert p').html("Comment was posted successfully");
+  $('#write_comment_form').fadeOut();
+<% end %>
+$('#float-alert').fadeIn(setTimeOutAlertDelay());

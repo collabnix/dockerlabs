@@ -1,0 +1,30 @@
+section.row-0
+  .center-panel
+    .col-md-4.col-sm-2.col-xs-1
+    .col-md-4.col-sm-8.col-xs-10.text-center
+      = render 'shared/notifications'
+      = image_tag 'layout/portus-logo-login-page.png', class: 'login-picture'
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = f.text_field :username, class: 'input form-control input-lg first', placeholder: 'Username', autofocus: true, required: true
+        = f.password_field :password, class: 'input form-control input-lg last', placeholder: 'Password', autocomplete: false, required: true
+        = f.button id: "login-btn", class: 'classbutton btn btn-primary btn-block btn-lg' do
+          - if Portus::LDAP.enabled?
+            i.fa.fa-check
+            ' LDAP Login
+          - else
+            i.fa.fa-check
+            ' Login
+
+        .row
+          - if signup_enabled?
+            .col-sm-6.create-new-account
+              = link_to 'Create a new account', new_user_registration_path, class: 'btn btn-link'
+            .col-sm-6.forgot-password
+              = link_to "I forgot my password", new_user_password_path, class: 'btn btn-link'
+          - elsif !Portus::LDAP.enabled?
+            .forgot-password
+              = link_to "I forgot my password", new_user_password_path, class: 'btn btn-link'
+        - if show_first_user_alert?
+          .alert.alert-info
+            strong Note:
+            |  The first user to be created will have admin permissions !

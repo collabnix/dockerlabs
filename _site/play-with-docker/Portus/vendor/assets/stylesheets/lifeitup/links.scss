@@ -1,0 +1,22 @@
+a.add-more {
+  background: $add-more-media-background;
+  border: $add-more-media-border;
+  border-radius: $border-radious;
+  color: $add-more-media-color;
+  display: inline-block;
+  height: $max-image-size;
+  margin: .5em .5em 0 0;
+  padding: 3.5em 0 0 0;
+  text-align: center;
+  vertical-align: top;
+  width: $max-image-size;
+}
+a.add-more:hover {
+  background: $add-more-media-background-hover;
+  border: $add-more-media-border-hover;
+  color: $add-more-media-color-hover;
+}
+
+a[tabindex="0"] {
+  cursor: pointer;
+}
