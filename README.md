@@ -55,6 +55,33 @@
 - [Docker Interview Questions](./docker/docker-interview-questions.md)
 
 
+## Docker Desktop for Mac
+
+
+- [Install Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
+- [Networking features in Docker Desktop for Mac](https://docs.docker.com/desktop/mac/networking/)
+- [Disk utilization in Docker for Mac](https://docs.docker.com/desktop/mac/space/)
+- [Logs and Troubleshooting](https://docs.docker.com/desktop/mac/troubleshoot/)
+- [Docker Desktop for Apple silicon](https://docs.docker.com/desktop/mac/apple-silicon/)
+- [Leverage multi-CPU architecture support](https://docs.docker.com/desktop/multi-arch/)
+
+## Docker Desktop for Linux
+
+- [Install Docker Desktop on Linux](https://docs.docker.com/desktop/linux/install/)
+- [Install Docker Desktop on Debian](https://docs.docker.com/desktop/linux/install/debian/)
+- [Install Docker Desktop on Fedora](https://docs.docker.com/desktop/linux/install/fedora/)
+- [Install Docker Desktop on Ubuntu](https://docs.docker.com/desktop/linux/install/ubuntu/)
+- [Install Docker Desktop on Arch-based distributions](https://docs.docker.com/desktop/linux/install/archlinux/)
+- [Networking features in Docker Desktop for Linux](https://docs.docker.com/desktop/linux/networking/)
+- [Disk utilization in Docker for Linux](https://docs.docker.com/desktop/linux/space/)
+
+### Docker Desktop for Windows
+
+- [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/)
+- [Networking features in Docker Desktop for Windows](https://docs.docker.com/desktop/windows/networking/)
+- [Docker Desktop WSL 2 backend](https://docs.docker.com/desktop/windows/wsl/)
+- [Logs and troubleshooting](https://docs.docker.com/desktop/windows/troubleshoot/)
+
 
 # 🗃️ Docker Ready-to-use Sample Application
 
