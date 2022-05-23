@@ -5,6 +5,7 @@
 ![forks](https://img.shields.io/github/forks/collabnix/dockerlabs)
 ![issues](https://img.shields.io/github/issues/collabnix/dockerlabs)
 ![Twitter](https://img.shields.io/twitter/follow/collabnix?style=social)
+![GitHub contributors](https://img.shields.io/github/contributors/collabnix/dockerlabs)
 ![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)
 
 
