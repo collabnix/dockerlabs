@@ -4,7 +4,8 @@
 ![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)<br>
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
 ![forks](https://img.shields.io/github/forks/collabnix/dockerlabs)
-![issues](https://img.shields.io/github/issues/collabnix/dockerlabs)<br>
+![issues](https://img.shields.io/github/issues/collabnix/dockerlabs)
+![GitHub Workflow](https://img.shields.io/github/workflow/status/collabnix/dockerlabs/Jekyll%20site%20CI)<br>
 ![GitHub contributors](https://img.shields.io/github/contributors/collabnix/dockerlabs)
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/collabnix)
 ![Twitter](https://img.shields.io/twitter/follow/collabnix?style=social)
