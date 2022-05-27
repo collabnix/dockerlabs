@@ -1,12 +1,13 @@
 ## 🏗️ Docker Labs  - The #1 Docker Tutorials and Free Resources for all Levels
 
 
+![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)<br>
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
 ![forks](https://img.shields.io/github/forks/collabnix/dockerlabs)
-![issues](https://img.shields.io/github/issues/collabnix/dockerlabs)
-![Twitter](https://img.shields.io/twitter/follow/collabnix?style=social)
+![issues](https://img.shields.io/github/issues/collabnix/dockerlabs)<br>
 ![GitHub contributors](https://img.shields.io/github/contributors/collabnix/dockerlabs)
-![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)
+![GitHub Sponsors](https://img.shields.io/github/sponsors/collabnix)
+![Twitter](https://img.shields.io/twitter/follow/collabnix?style=social)
 
 
 ![My image](https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/dockerlabs.jpeg)
