@@ -127,7 +127,7 @@ OPTIONS:
 Used to validate the compose file
 
 NOTE:
-Run this command in direcotry where docker-compose.yml file is located.
+Run this command in directory where docker-compose.yml file is located.
 
 ```
 docker-compose config
