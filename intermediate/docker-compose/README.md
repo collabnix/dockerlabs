@@ -1,6 +1,6 @@
 # Docker compose
 
-Docker compose is a tool built by docker to ease the task to creating and configring multiple containers in a development environment counter-part of docker-compose for prodcution environment is `docker swarm`. Docker compose takes as input a `YAML` configuration file and creates the resources (*containers*, *networks*, *volumes* etc.) by communicating with the docker daemon through docker api.
+Docker compose is a tool built by docker to ease the task to creating and configuring multiple containers in a development environment counter-part of docker-compose for prodcution environment is `docker swarm`. Docker compose takes as input a `YAML` configuration file and creates the resources (*containers*, *networks*, *volumes* etc.) by communicating with the docker daemon through docker api.
 
 
 # Introduction to Compose
