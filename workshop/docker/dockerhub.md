@@ -1,6 +1,6 @@
 # How to create Dockerhub Account
 
-### Open https://hub.docker.com and click on "Sign Up" for DockerHub
+### Open [https://hub.docker.com](https://dockr.ly/3Q0iiPA) and click on "Sign Up" for DockerHub
 
 ![My image](https://github.com/collabnix/dockerlabs/blob/master/workshop/docker/dockerhub1.png)
 
