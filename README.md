@@ -153,11 +153,11 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 
 
 
-### 👥 Governance
+# 👥 Governance
 
 Dockerlabs is an independent community project founded by [Ajeet Singh Raina](https://github.com/ajeetraina), a [Docker Captain from India](https://www.docker.com/captains/ajeet-singh-raina) & Docker Community Leader which is now being built & shaped by a growing community of contributors across the globe.
 
-### Core Contributors
+# Core Contributors
 
 | [<img src="https://avatars1.githubusercontent.com/u/313480?s=400&v=4" width="48px;" alt="Ajeet Singh Raina"/><br /><sub><b> Ajeet Singh Raina</b></sub>](https://github.com/ajeetraina)<br /> | [<img src="https://avatars1.githubusercontent.com/u/21982562?s=460&v=4" width="48px;" alt="Sangam Biradar"/><br /><sub><b>Sangam Biradar</b></sub>](https://github.com/sangam14)<br /> | [<img src="https://avatars0.githubusercontent.com/u/7204666?s=400&v=4" width="48px;" alt="Savio Mathew"/><br /><sub><b>Savio Mathew</b></sub>](https://github.com/saviovettoor)<br /> | [<img src="https://avatars1.githubusercontent.com/u/8190114?s=400&v=4" width="48px;" alt="Saiyam Pathak"/><br /><sub><b>Saiyam Pathak</b></sub>](https://github.com/saiyam1814)<br /> | [<img src="https://avatars2.githubusercontent.com/u/38501348?s=400&v=4" width="48px;" alt="Apurva Bhandari"/><br /><sub><b>Apurva Bhandari</b></sub>](https://github.com/apurvabhandari)<br /> | [<img src="https://avatars2.githubusercontent.com/u/25828217?s=400&v=4" width="48px;" alt="Sarkar Tathagata"/><br /><sub><b>Sarkar Tathagata</b></sub>](https://github.com/amitatha82)<br /> | [<img src="https://avatars2.githubusercontent.com/u/33524591?s=400&v=4" width="48px;" alt="Prashansa K"/><br /><sub><b>Prashansa K</b></sub>](https://github.com/Prashansa-K)<br /> |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -165,7 +165,7 @@ Dockerlabs is an independent community project founded by [Ajeet Singh Raina](ht
 
 
 
-### 🚀 How to Contribute
+# 🚀 How to Contribute
 
 Thank you so much for showing your interest in contributing to [Dockerlabs](https://github.com/collabnix/dockerlabs) tutorials.
 
@@ -174,7 +174,7 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 
 
-## License
+# License
 
 [Apache License 2.0](./LICENSE.md)
 
