@@ -113,14 +113,14 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 
 
 
-### 🧐 Monitoring
+# Monitoring
 
 
 | Prometheus |
 |:-------------|
 | [Docker + Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md) | <br>
 
-### 📝 Logging
+# Logging
 
 | Elastic |
 |:-------------|
@@ -128,14 +128,14 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 | [Elasticsearch + Logstash + Kibana](https://github.com/docker/awesome-compose/tree/master/elasticsearch-logstash-kibana) | <br>
 
 
-### 🧪 Testing Tools
+# Testing Tools
 
 | Apache JMeter |
 |:-------------|
 | [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md) | <br>
 
 
-### 🌐 Networking
+# Networking
 
 | MacVLAN |
 |:-------------|
@@ -143,7 +143,7 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 | [Docker + Docker Compose & IPv6](./play-with-docker/ipv6/README.md) | <br>
 
 
-### 🔐 Security
+# Security
 
 | Docker Security |
 |:-------------|
