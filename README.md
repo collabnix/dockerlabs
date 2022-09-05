@@ -57,50 +57,98 @@
 We recommend you to visit [Docker Awesome Compose Repository](https://github.com/docker/awesome-compose) in order to find the Compose files for running sample apps
 
  
-### 🔖 Web Framework
+# 🔖 Web Framework
 
-- [WordPress + MySQL + Docker Swarm](./solution/wordpress/README.md)
-- [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md)
-- [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md)
-- [Docker + Voting App](./play-with-docker/example-voting-app/README.md)
-- [Spring + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/spring-postgres) 
-- [React + Nginx](https://github.com/docker/awesome-compose/tree/master/react-nginx)
-- [Python + Flask + Redis](https://github.com/docker/awesome-compose/tree/master/flask-redis) 
-- [React + Spring + MySQL](https://github.com/docker/awesome-compose/tree/master/react-java-mysql) 
-- [React + Express + MySQL](https://github.com/docker/awesome-compose/tree/master/react-express-mysql) 
-- [React + Express + MongoDB](https://github.com/docker/awesome-compose/tree/master/react-express-mongodb) 
-- [React + Rust + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/react-rust-postgres) 
-- [NGINX + Flask + MongoDB](https://github.com/docker/awesome-compose/tree/master/nginx-flask-mongo) 
-- [Go + NGINX + MySQL](https://github.com/docker/awesome-compose/tree/master/nginx-golang-mysql) 
-- [Go + NGINX + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/nginx-golang-postgres) 
-- [Java Spark + MySQL](https://github.com/docker/awesome-compose/tree/master/sparkjava-mysql) 
-- [NGINX + ASP.NET + MySQL`](https://github.com/docker/awesome-compose/tree/master/nginx-aspnet-mysql)
+
+| Python/Django      | 
+|:-------------|
+| [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md) | 
+| [Python + Flask + Redis](https://github.com/docker/awesome-compose/tree/master/flask-redis) |<br>
+
+<br>
+
+| Reactjs     | 
+|:-------------|
+| [React + Spring + MySQL](https://github.com/docker/awesome-compose/tree/master/react-java-mysql) |
+| [React + Express + MySQL](https://github.com/docker/awesome-compose/tree/master/react-express-mysql) | 
+| [React + Express + MongoDB](https://github.com/docker/awesome-compose/tree/master/react-express-mongodb) | 
+| [React + Rust + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/react-rust-postgres)  |
+| [React + Nginx](https://github.com/docker/awesome-compose/tree/master/react-nginx) |<br>
+
+<br>
+
+| Golang     | 
+|:-------------|
+| [Go + NGINX + MySQL](https://github.com/docker/awesome-compose/tree/master/nginx-golang-mysql)  | 
+| [Go + NGINX + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/nginx-golang-postgres)  |
+| [Docker + Gomodule](./beginners/httpserver_go_module_and_docker.md) |
+
+<br>
+
+
+| Java / Spring Boot   | 
+|:-------------|
+| [Spring + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/spring-postgres)  |
+| [Java Spark + MySQL](https://github.com/docker/awesome-compose/tree/master/sparkjava-mysql) | <br> 
+
+<br>
+
+
+# Database
+
+
+| PostgreSQL |
+|:-------------|
+| [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md) |  <br>
+
+
+| MongoDB|
+|:-------------|
+| [NGINX + Flask + MongoDB](https://github.com/docker/awesome-compose/tree/master/nginx-flask-mongo) |  <br>
+
+
+| MySQL |
+|:-------------|
+| [NGINX + ASP.NET + MySQL`](https://github.com/docker/awesome-compose/tree/master/nginx-aspnet-mysql) | <br>
+
+
 
 ### 🧐 Monitoring
 
-- [Docker + Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md)
+
+| Prometheus |
+|:-------------|
+| [Docker + Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md) | <br>
 
 ### 📝 Logging
 
-- [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md)
-- [Elasticsearch + Logstash + Kibana](https://github.com/docker/awesome-compose/tree/master/elasticsearch-logstash-kibana) 
+| Elastic |
+|:-------------|
+| [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md) |
+| [Elasticsearch + Logstash + Kibana](https://github.com/docker/awesome-compose/tree/master/elasticsearch-logstash-kibana) | <br>
 
 
 ### 🧪 Testing Tools
 
-- [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md)
+| Apache JMeter |
+|:-------------|
+| [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md) | <br>
 
 
 ### 🌐 Networking
 
-- [Docker + MacVLAN](./play-with-docker/macvlan/README.md)
-- [Docker + Docker Compose & IPv6](./play-with-docker/ipv6/README.md)
+| MacVLAN |
+|:-------------|
+| [Docker + MacVLAN](./play-with-docker/macvlan/README.md) |
+| [Docker + Docker Compose & IPv6](./play-with-docker/ipv6/README.md) | <br>
 
 
 ### 🔐 Security
 
-- [Introduction to Docker Security]((./advanced/workshop/README.md) )
-- [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md)
+| Docker Security |
+|:-------------|
+| [Introduction to Docker Security]((./advanced/workshop/README.md) )|
+| [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md) | <br>
 
 
 
