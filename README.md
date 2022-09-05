@@ -48,7 +48,7 @@
 - [Docker Interview Questions](./docker/docker-interview-questions.md)
 
 
-# 🗃️ Ready-to-use Sample Application
+# 🗃️ Sample Application
 
 We recommend you to visit [Docker Awesome Compose Repository](https://github.com/docker/awesome-compose) in order to find the Compose files for running sample apps
 
