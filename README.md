@@ -24,21 +24,25 @@
 - [Play with Docker Platform](https://labs.play-with-docker.com/) 
 
 
-## 📝 Getting Started in 3 Simple Steps
+## 📝 Join our Slack Community
 
 - Join 7000+ DevOps Engineers today via [Community Slack](https://launchpass.com/collabnix)
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 -  Click and Follow us over Twitter [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
 
-## 📌 Docker Hands-on Workshop/Labs (Practical)
+## 📌 Workshop/Labs (Hands-On Practical Labs)
 
-- [Getting Started: Why, What & How about Docker?](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html)
-- [Docker for Beginner](./workshop/docker/README.md) - (Docker Image, Container, Dockerfile, Volumes, Networking)
-- [Docker for Intermediate](./intermediate/workshop/README.md) - (Docker Compose, Docker Swarm, Advanced Networking)
-- [Docker for Advanced Users](./advanced/workshop/README.md) - (🔒️ Docker Security, Content Trust, Image Scanning, Swarm Mode Security)
 
-## 🔥 A Journey from Docker Fundamentals to Expert (Theoretical)
+| Title       | Topics Covered         | Labs |
+|:-------------|:------------------|:------|
+| [Getting Started](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html) | Why, What & How about Docker? | | 
+| [Docker for Beginner](./workshop/docker/README.md)  | Docker Image, Container, Dockerfile, Volumes, Networking | 40  |
+| [Docker for Intermediate](./intermediate/workshop/README.md) | Docker Image, Container, Dockerfile, Volumes, Networking | 50 |
+| [Docker for Advanced Users](./advanced/workshop/README.md) | 🔒️ Docker Security, Content Trust, Image Scanning, Swarm Mode Security | 31 |
+
+
+## 🔥 Concepts and Terminologies (Beginners to Advance)
 
 - [Docker for Beginners](./beginners/README.md)
 - [Docker for Intermediate](./intermediate/README.md)
@@ -48,7 +52,7 @@
 - [Docker Interview Questions](./docker/docker-interview-questions.md)
 
 
-# 🗃️ Sample Application
+# 🗃️ Sample App
 
 We recommend you to visit [Docker Awesome Compose Repository](https://github.com/docker/awesome-compose) in order to find the Compose files for running sample apps
 
