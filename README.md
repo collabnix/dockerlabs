@@ -1,4 +1,4 @@
-## 🏗️ Docker Labs  - The #1 Docker Tutorials and Free Lab Resources for all Levels
+# 🏗️ Docker Labs  - The #1 Docker Tutorials and Free Lab Resources for all Levels
 
 
 ![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)
@@ -18,20 +18,20 @@
 - Well tested on Docker Desktop  and can be run on Browser (no Infrastructure required)
 
 
-## 🚀 Tested Platform 
+# 🚀 Tested Platform 
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - [Play with Docker Platform](https://labs.play-with-docker.com/) 
 
 
-## 📝 Join our Slack Community
+# 📝 Join our Slack Community
 
 - Join 7000+ DevOps Engineers today via [Community Slack](https://launchpass.com/collabnix)
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 -  Click and Follow us over Twitter [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
 
-## 📌 Workshop/Labs (Hands-On Practical Labs)
+# 📌 Workshop/Labs (Hands-On Practical Labs)
 
 
 | Title       | Topics Covered         | Labs |
@@ -42,7 +42,7 @@
 | [Docker for Advanced](./advanced/workshop/README.md) | Docker Security, Content Trust, Image Scanning, Swarm Mode Security | 31 |
 
 
-## 🔥 Concepts and Terminologies (Beginners to Advance)
+# 🔥 Concepts and Terminologies (Beginners to Advance)
 
 - [Docker for Beginners](./beginners/README.md)
 - [Docker for Intermediate](./intermediate/README.md)
