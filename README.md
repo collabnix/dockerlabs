@@ -60,20 +60,20 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 #  Web Framework
 
 
-| Python/Django      | 
+| Python/Django  | 
 |:-------------|
 | [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md) | 
-| [Python + Flask + Redis](https://github.com/docker/awesome-compose/tree/master/flask-redis) |<br>
+| [Python + Flask + Redis](https://github.com/docker/awesome-compose/tree/master/flask-redis) |
 
 <br>
 
-| Reactjs     | 
+| Reactjs  | 
 |:-------------|
 | [React + Spring + MySQL](https://github.com/docker/awesome-compose/tree/master/react-java-mysql) |
 | [React + Express + MySQL](https://github.com/docker/awesome-compose/tree/master/react-express-mysql) | 
 | [React + Express + MongoDB](https://github.com/docker/awesome-compose/tree/master/react-express-mongodb) | 
 | [React + Rust + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/react-rust-postgres)  |
-| [React + Nginx](https://github.com/docker/awesome-compose/tree/master/react-nginx) |<br>
+| [React + Nginx](https://github.com/docker/awesome-compose/tree/master/react-nginx) |
 
 <br>
 
@@ -104,12 +104,12 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 
 | MongoDB|
 |:-------------|
-| [NGINX + Flask + MongoDB](https://github.com/docker/awesome-compose/tree/master/nginx-flask-mongo) |  <br>
+| [NGINX + Flask + MongoDB](https://github.com/docker/awesome-compose/tree/master/nginx-flask-mongo) |  
 
 
 | MySQL |
 |:-------------|
-| [NGINX + ASP.NET + MySQL`](https://github.com/docker/awesome-compose/tree/master/nginx-aspnet-mysql) | <br>
+| [NGINX + ASP.NET + MySQL`](https://github.com/docker/awesome-compose/tree/master/nginx-aspnet-mysql) | 
 
 
 
@@ -118,21 +118,20 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 
 | Prometheus |
 |:-------------|
-| [Docker + Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md) | <br>
+| [Docker + Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md) | 
 
 # Logging
 
 | Elastic |
 |:-------------|
 | [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md) |
-| [Elasticsearch + Logstash + Kibana](https://github.com/docker/awesome-compose/tree/master/elasticsearch-logstash-kibana) | <br>
-
+| [Elasticsearch + Logstash + Kibana](https://github.com/docker/awesome-compose/tree/master/elasticsearch-logstash-kibana) | 
 
 # Testing Tools
 
 | Apache JMeter |
 |:-------------|
-| [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md) | <br>
+| [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md) | 
 
 
 # Networking
@@ -140,7 +139,7 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 | MacVLAN |
 |:-------------|
 | [Docker + MacVLAN](./play-with-docker/macvlan/README.md) |
-| [Docker + Docker Compose & IPv6](./play-with-docker/ipv6/README.md) | <br>
+| [Docker + Docker Compose & IPv6](./play-with-docker/ipv6/README.md) | 
 
 
 # Security
@@ -148,7 +147,7 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 | Docker Security |
 |:-------------|
 | [Introduction to Docker Security]((./advanced/workshop/README.md) )|
-| [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md) | <br>
+| [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md) | 
 
 
 
