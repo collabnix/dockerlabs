@@ -98,13 +98,17 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 
 | PostgreSQL |
 |:-------------|
-| [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md) |  <br>
+| [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md) |  
+
+<br>
 
 
 | MongoDB|
 |:-------------|
 | [NGINX + Flask + MongoDB](https://github.com/docker/awesome-compose/tree/master/nginx-flask-mongo) |  
 
+
+<br>
 
 | MySQL |
 |:-------------|
