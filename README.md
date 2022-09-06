@@ -88,7 +88,7 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 | Java / Spring Boot   | 
 |:-------------|
 | [Spring + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/spring-postgres)  |
-| [Java Spark + MySQL](https://github.com/docker/awesome-compose/tree/master/sparkjava-mysql) | <br> 
+| [Java Spark + MySQL](https://github.com/docker/awesome-compose/tree/master/sparkjava-mysql) | 
 
 <br>
 
