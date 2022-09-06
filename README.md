@@ -1,5 +1,4 @@
-# 🏗️ Docker Labs  - The #1 Docker Tutorials and Free Lab Resources for all Levels
-
+# 🏗️ Getting Started with Docker
 
 ![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
