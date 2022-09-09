@@ -31,3 +31,7 @@ Back in 2016, Docker started working with Google on “containerd”: a containe
 ## 5. What if I need to bind-mount the Docker socket in my container in a remote Kubernetes cluster?
 
 Provided the Docker engine is still installed on the Kubernetes worker node, the Docker socket can be bind-mounted as before. It’s not necessary for the remote Kubernetes cluster to use the Docker runtime.
+
+## 6. As a developer using Docker Desktop, do I need to care which container runtime implementation is used in production?
+
+No, the container “runtime” is an implementation detail of Kubernetes and you don’t need to think about it. There is no need to rebuild any images or containers. Docker pioneered the industry-standard OCI specifications to ensure that containers can run anywhere on any runtime. 
