@@ -47,7 +47,7 @@ Once you run the above command, you might see containers coming up and running. 
 
 ```
 "DisallowedHost at /
-Invalid HTTP_HOST header: 'ip172-19-0-28-bfn8rk49cs9g00f9usn0-8000.direct.labs.play-with-docker.com'. You may need to add 'ip172-19-0-28-bfn8rk49cs9g00f9usn0-8000.direct.labs.play-with-docker.com' to ALLOWED_HOSTS."
+Invalid HTTP_HOST header: 'ip172-19-0-28-bfn8rk49cs9g00f9usn0-8080.direct.labs.play-with-docker.com'. You may need to add 'ip172-19-0-28-bfn8rk49cs9g00f9usn0-8000.direct.labs.play-with-docker.com' to ALLOWED_HOSTS."
 ```
  
 To fix this issue, follow the below steps:
@@ -69,7 +69,7 @@ To fix this issue, follow the below steps:
 Inside composeexample/settings.py, Add below line at the end of the file. please change FQDN,IP according to your system.
 
 ```
-ALLOWED_HOSTS = ['ip172-18-0-11-bfleibmac3u0009ab2vg-8000.direct.labs.play-with-docker.com', 'localhost', '127.0.0.1', '198.211.99.20']
+ALLOWED_HOSTS = ['ip172-18-0-11-bfleibmac3u0009ab2vg-8080.direct.labs.play-with-docker.com', 'localhost', '127.0.0.1', '198.211.99.20']
 ```
 
 Edit the composeexample/settings.py file and Replace the DATABASES = ... with the following and save the file
