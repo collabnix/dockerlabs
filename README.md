@@ -1,4 +1,4 @@
-# 🏗️ Getting Started with Docker
+# 🏗️ Getting Started with Docker | Docker Tutorials
 
 ![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
