@@ -103,7 +103,7 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 | MongoDB|
 |:-------------|
 | [NGINX + Flask + MongoDB](https://github.com/docker/awesome-compose/tree/master/nginx-flask-mongo) |  
-
+| [NodeJS + MongoDB](https://github.com/collabnix/dockerlabs/tree/master/solution/node-mongo-docker) |
 
 <br>
 
