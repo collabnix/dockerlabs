@@ -11,7 +11,8 @@ The example that follows uses a simple React application that is first developed
 
 Here’s an example of a `Dockerfile.build`, `Dockerfile.main` and `Dockerfile` which adhere to the builder pattern above:
 
-Dockerfile.build
+`Dockerfile.build`
+
 ```
 FROM node:12.13.0-alpine
 WORKDIR /app
@@ -21,7 +22,8 @@ COPY . .
 RUN npm run build
 ```
 
-Dockerfile.main
+`Dockerfile.main`
+
 ```
 FROM nginx
 EXPOSE 3000
@@ -29,7 +31,8 @@ COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY /app/build /usr/share/nginx/html
 ```
 
-Build.sh
+`Build.sh`
+
 ```
 #!/bin/sh
 echo Building myimage/react:build
@@ -47,11 +50,12 @@ echo Building myimage/react:latest
 docker build --no-cache -t myimage/react:latest . -f Dockerfile.main
 ```
 
-###How to Use Multistage Builds in Docker 
+### How to Use Multistage Builds in Docker 
 
 You use numerous `FROM` statements in your Dockerfile while performing multi-stage builds.Each `FROM` command can start a new stage of the build and may use a different base.Artifacts can be copied selectively from one stage to another, allowing you to remove anything unwanted from the final image.Let's modify the `Dockerfile` from the preceding section to use multi-stage builds to demonstrate how this works. 
 
-Dockerfile
+`Dockerfile`
+
 ```
 FROM node:12.13.0-alpine as build
 WORKDIR /app
@@ -66,6 +70,9 @@ COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/build /usr/share/nginx/html
 ```
 
+Here only one Dockerfile is required.Additionally, you don't require a separate build script.Simply run `docker build .` 
+
+There are two `FROM` commands in this `Dockerfile`, and each one represents a different build step.In this phase, the application is created and stored in the directory that the `WORKDIR` command specifies.The Nginx image is first pulled from Docker Hub to begin the second stage.The revised virtual server configuration is then copied to replace the stock Nginx configuration.then, the image created by the prior stage is utilised to copy only the production-related application code using the `COPY -from` command. 
 
 
 
