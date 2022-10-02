@@ -3,7 +3,7 @@
 
 ### Before Multistage Build
 
-Keeping the image size small is one of the most difficult aspects of creating images.Every Dockerfile command adds a layer to the image, therefore before adding the next layer, remember to remove any artefacts you don't need.Traditionally, writing an extremely effective Dockerfile required using shell tricks and other logic to keep the layers as compact as possible and to make sure that each layer only included the items it required from the previous layer and nothing else.
+Keeping the image size small is one of the most difficult aspects of creating images.Every Dockerfile command adds a layer to the image, therefore before adding the next layer, remember to remove any artifacts you don't need.Traditionally, writing an extremely effective Dockerfile required using shell tricks and other logic to keep the layers as compact as possible and to make sure that each layer only included the items it required from the previous layer and nothing else.
 
 In reality, it was rather typical to use one Dockerfile for development (which included everything required to build your application) and a slimmed-down one for production (which only included your application and precisely what was required to run it).The "builder pattern" has been applied to this.It is not ideal to keep two Dockerfiles up to date.
 
@@ -14,7 +14,7 @@ Here’s an example of a `Dockerfile.build`, `Dockerfile.main` and `Dockerfile` 
 `Dockerfile.build`
 
 ```
-FROM node:12.13.0-alpine
+FROM node:alpine3.15
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
@@ -52,12 +52,12 @@ docker build --no-cache -t myimage/react:latest . -f Dockerfile.main
 
 ### How to Use Multistage Builds in Docker 
 
-You use numerous `FROM` statements in your Dockerfile while performing multi-stage builds.Each `FROM` command can start a new stage of the build and may use a different base.Artifacts can be copied selectively from one stage to another, allowing you to remove anything unwanted from the final image.Let's modify the `Dockerfile` from the preceding section to use multi-stage builds to demonstrate how this works. 
+In **Docker Engine 17.05**, multi-stage build syntax was included. You use numerous `FROM` statements in your Dockerfile while performing multi-stage builds.Each `FROM` command can start a new stage of the build and may use a different base.Artifacts can be copied selectively from one stage to another, allowing you to remove anything unwanted from the final image.Let's modify the `Dockerfile` from the preceding section to use multi-stage builds to demonstrate how this works. 
 
 `Dockerfile`
 
 ```
-FROM node:12.13.0-alpine as build
+FROM node:alpine3.15 as build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
@@ -74,9 +74,22 @@ Here only one Dockerfile is required.Additionally, you don't require a separate 
 
 There are two `FROM` commands in this `Dockerfile`, and each one represents a different build step.In this phase, the application is created and stored in the directory that the `WORKDIR` command specifies.The Nginx image is first pulled from Docker Hub to begin the second stage.The revised virtual server configuration is then copied to replace the stock Nginx configuration.then, the image created by the prior stage is utilised to copy only the production-related application code using the `COPY -from` command. 
 
+The stages are not named by default; instead, you refer to them by their integer number, which starts at 0 for the first `FROM` command.However, you can give your stages names by following the `FROM` instruction with an `AS <NAME>`.Here we used `build` as a name.By naming the stages and using the names in the `COPY` command, this example enhances the prior one.This means that the `COPY` remains intact even if the instructions in your `Dockerfile` are later rearranged. 
 
+### Repurpose an earlier stage as a new stage. 
 
+The `FROM` command allows you to continue where a previous stage ended by referring to it.For instance: 
+```
+FROM alpine:latest AS builder
+...
+...
 
+FROM builder AS build1
+...
+...
 
-
+FROM builder AS build2
+...
+...
+```
 
