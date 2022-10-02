@@ -1,45 +1,49 @@
 
-# Leveraging Docker Multi-Stage Builds Feature to optimize Dockerfiles/Images
+# Building Dockerfiles in Multistage Build
 
+Keeping the image size small is one of the most difficult aspects of creating images.Every Dockerfile command adds a layer to the image, therefore before adding the next layer, remember to remove any artefacts you don't need.Traditionally, writing an extremely effective Dockerfile required using shell tricks and other logic to keep the layers as compact as possible and to make sure that each layer only included the items it required from the previous layer and nothing else.
 
-Multi-stage builds are a new feature requiring **Docker 17.05** or higher on the daemon and client. It's useful in building complex/multi step image while keeping them easy to read and maintain.
+In reality, it was rather typical to use one Dockerfile for development (which included everything required to build your application) and a slimmed-down one for production (which only included your application and precisely what was required to run it).The "builder pattern" has been applied to this.It is not ideal to keep two Dockerfiles up to date. So to solve this isssue,In Docker Engine version 17.05, multi-stage build syntax was introduced.  
 
-Keeping the image size down is one of the challenging task while building image. Each instruction in Dockerfile adds a layer to the image.
-Also, you need to remember to clean up any dependency/artifactory you don't need later. Earlier you might have used shell scripts
-to keep layers light as much as possible. Using shell scripts, tricks to write a really efficient Dockerfile is a painful task.
+The example that follows uses a simple React application that is first developed and then has its static content served by a Nginx virtual server.The two Dockerfiles that were utilized to produce the optimized image are listed below.You'll also see a shell script that illustrates the Docker CLI instructions that must be executed to achieve this result.
 
+Here’s an example of a `Dockerfile.build`, `Dockerfile.main` and `Dockerfile` which adhere to the builder pattern above:
 
-## What exactly is Multi-Stage Builds? 
-
-In simple terms: you can use end result (for ex: binary/executable file) of one stage into another stage without worrying about dependencies used to build that binary/executable file. 
-
-## How does it work?
-
-With Multi-stage builds, you can have multiple `FROM` statement in a single Dockerfile. Each `FROM` statement contributes to one stage.
-First stage starts from number `0`.
-
+Dockerfile.build
 ```
-FROM mhart/alpine-node:10  #stage 0
-
-....
-...
-
-FROM alpine:3.7 #stage 1
+FROM node:12.13.0-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 ```
 
-Here order of stage matters as the first stage will always be `0`. Another way is to give name to the `stage` by using `AS`.
-In that case you don't have to worry about order.
-
-
+Dockerfile.main
 ```
-FROM mhart/alpine-node:10 AS nodebuilder
-
-....
-...
-
-FROM alpine:3.7 AS builder
+FROM nginx
+EXPOSE 3000
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY /app/build /usr/share/nginx/html
 ```
 
+Build.sh
+```
+#!/bin/sh
+echo Building myimage/react:build
+
+docker build -t myimage:build . -f Dockerfile.build
+
+docker create --name extract myimage:build
+
+docker cp extract:/app/build ./app
+
+docker rm -f extract
+
+echo Building myimage/react:latest
+
+docker build --no-cache -t myimage/react:latest . -f Dockerfile.main
+```
 # Demonstrating Multi-Stage Builds
 
 ## Tested Infrastructure
