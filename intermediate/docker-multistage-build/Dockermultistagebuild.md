@@ -46,3 +46,30 @@ echo Building myimage/react:latest
 
 docker build --no-cache -t myimage/react:latest . -f Dockerfile.main
 ```
+
+###How to Use Multistage Builds in Docker 
+
+You use numerous `FROM` statements in your Dockerfile while performing multi-stage builds.Each `FROM` command can start a new stage of the build and may use a different base.Artifacts can be copied selectively from one stage to another, allowing you to remove anything unwanted from the final image.Let's modify the `Dockerfile` from the preceding section to use multi-stage builds to demonstrate how this works. 
+
+Dockerfile
+```
+FROM node:12.13.0-alpine as build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM nginx
+EXPOSE 3000
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/build /usr/share/nginx/html
+```
+
+
+
+
+
+
+
+
