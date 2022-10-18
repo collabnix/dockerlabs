@@ -4,7 +4,7 @@
 
 ### Pre-requisite:
 
-- [Creating Your DockerHub Account](https://github.com/collabnix/dockerlabs/blob/master/workshop/docker/dockerhub.md)
+- [Creating Your DockerHub Account](https://dockerlabs.collabnix.com/workshop/docker/dockerhub)
 
 ### Getting Started with Docker Image
 
@@ -83,5 +83,3 @@
    - [Lab #8: Configure NAT for external connectivity](http://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-4-configure-nat-for-external-connectivity)
  
  
-
-
