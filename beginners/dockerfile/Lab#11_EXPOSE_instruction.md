@@ -33,7 +33,7 @@ The `EXPOSE` instruction expose a port, the protocol can be UDP or TCP associate
 - Inspecting the EXPOSE port in the image
 - Publish all exposed port
 
-### Create an image with VOLUME instruction
+### Create an image with EXPOSE instruction
 Dockerfile
 ```
 FROM nginx:alpine
