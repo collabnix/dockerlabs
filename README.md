@@ -171,7 +171,7 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 [Guide to submitting your own tutorial](./CONTRIBUTING.md)<br>
 [Template for writing Tutorial Page](./template/EXAMPLE.md)
 
-# Join Discord Channel
+# Join Collabnix Discord Server
 
 
 
