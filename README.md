@@ -171,7 +171,11 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 [Guide to submitting your own tutorial](./CONTRIBUTING.md)<br>
 [Template for writing Tutorial Page](./template/EXAMPLE.md)
 
+# Join Discord Channel
 
+![Discord Banner 2](https://discordapp.com/api/guilds/1020180904129335379/widget.png?style=banner2)
+        
+       
 
 # License
 
