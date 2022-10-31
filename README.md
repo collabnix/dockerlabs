@@ -173,9 +173,11 @@ Thank you so much for showing your interest in contributing to [Dockerlabs](http
 
 # Join Discord Channel
 
-![Discord Banner 2](https://discordapp.com/api/guilds/1020180904129335379/widget.png?style=banner2)
-        
-       
+
+
+
+[![Title](https://user-images.githubusercontent.com/34368930/198940642-50d0e7f0-c670-4800-b0ea-5b95d56aaf0e.png)](https://discord.gg/ztZpXzjSmF)
+  
 
 # License
 
