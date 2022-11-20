@@ -35,3 +35,14 @@
 - Beta Features
 
 <img width="1307" alt="image" src="https://user-images.githubusercontent.com/34368930/202894538-466ddc33-82ee-489c-87f9-e88ee242b5f2.png">
+
+- Kubernetes
+
+<img width="1290" alt="image" src="https://user-images.githubusercontent.com/34368930/202894560-85187611-4dfd-467d-90c3-1daf802427bf.png">
+
+
+- Extensions
+
+<img width="1285" alt="image" src="https://user-images.githubusercontent.com/34368930/202894569-59daa2fe-24d8-486d-8772-0e0ba27bfb02.png">
+
+
