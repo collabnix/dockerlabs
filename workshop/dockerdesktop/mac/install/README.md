@@ -20,5 +20,9 @@
 
 4. Select **Accept** to continue. Docker Desktop starts after you accept the terms.
 
+<img width="755" alt="image" src="https://user-images.githubusercontent.com/34368930/202894350-6d196b43-89cb-4a4b-af03-57d822bcc3db.png">
+
+
+
     
 
