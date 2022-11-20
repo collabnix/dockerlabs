@@ -36,6 +36,7 @@
 | [Docker for Beginner](./workshop/docker/README.md)  | Docker Image, Container, Dockerfile, Volumes, Networking | 40  |
 | [Docker for Intermediate](./intermediate/workshop/README.md) | Docker Compose, Swarm, Advanced Networking | 50 |
 | [Docker for Advanced](./advanced/workshop/README.md) | Docker Security, Content Trust, Image Scanning, Swarm Mode Security | 31 |
+| [Docker Desktop](./workshop/dockerdesktop/README.md) | Docker Dashboard, Dev Environments, Extensions | 5 |
 
 
 # 🔥 Concepts and Terminologies (Beginners to Advance)
