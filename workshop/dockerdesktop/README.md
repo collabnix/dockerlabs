@@ -1,6 +1,10 @@
 ## Docker Desktop 101
 
 
+### Pre-requisite:
+
+- [Creating Your DockerHub Account](https://dockerlabs.collabnix.com/workshop/docker/dockerhub)
+
 ## Getting Started with Docker Desktop 
 
 - [Installing Docker Desktop for Mac](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/install/README.md)
