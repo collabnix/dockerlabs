@@ -3,7 +3,7 @@
 
 ## Getting Started with Docker Desktop 
 
-- [Installing Docker Desktop for Mac](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/README.md)
+- [Installing Docker Desktop for Mac](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/install/README.md)
 - [Installing Docker Desktop forLinux](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/linux/README.md) 
 - [Installing Docker Desktop for Windows](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/windows/README.md)
 
