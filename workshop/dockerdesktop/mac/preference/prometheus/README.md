@@ -25,7 +25,7 @@ Docker exposes Prometheus-compatible metrics on port 9323. This support is only 
 
 ![image](https://user-images.githubusercontent.com/34368930/205006568-86f172ef-c72a-4c8b-b019-41d66d3c97c5.png)
 
-```{
+
 
 5. Show the complete list of metrics using curl http://localhost:9323/metrics
 
