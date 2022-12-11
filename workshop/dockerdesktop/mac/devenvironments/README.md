@@ -17,6 +17,13 @@ Let us understand Docker Dev Environments by quickly test driving Slack Clone pr
 
 ## Getting Started
 
+
+- [Using Dashboard UI](https://github.com/collabnix/dockerlabs/edit/master/workshop/dockerdesktop/mac/devenvironments/README.md#using-dashboard-ui)
+- [Using CLI]()
+
+
+## Using Dashboard UI
+
 You can locate Dev Environments by 
 accessing the left pane of the Docker dashboard.
 
