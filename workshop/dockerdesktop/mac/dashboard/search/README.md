@@ -129,8 +129,8 @@ Let's assume that we have the following document in the form of JSON:
 
 ```
 {
-    "name": "Docker Developer Meetup",
-    "city": "Bangalore",
+    "name": "Docker Meetup",
+    "city": "Singapore",
     "country": "India",
     "gps": {
         "lat": 12.9716,
@@ -146,8 +146,8 @@ In the MongoDB shell, run the following operation:
 ```
 db.meetup.insertOne(
   {
-    "name": "Docker Developer Meetup",
-    "city": "Bangalore",
+    "name": "Docker Meetup",
+    "city": "Singapore",
     "country": "India",
     "gps": {
         "lat": 12.9716,
