@@ -25,5 +25,15 @@
 - [Prometheus & Docker Desktop](https://github.com/collabnix/dockerlabs/tree/master/workshop/dockerdesktop/mac/preference/prometheus)
 
 
+### Kubernetes
+
+- TBD
+
+
+### Docker Extensions
+
+- TBD
+
+
 
 
