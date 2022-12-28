@@ -17,7 +17,7 @@
 - [Using Docker Preference](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/preference/README.md)
   - [VirtioFS](https://github.com/collabnix/dockerlabs/tree/master/workshop/dockerdesktop/mac/dashboard/virtiofs/README.md)
 - [Using Docker Dashboard](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/dashboard/README.md)
-  - [Search Capabilities]()
+  - [Search Capabilities](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/dashboard/search/README.md)
 - [Using Docker Dev Environments](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/devenvironments/README.md)
 - [Using Docker Extensions](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/extensions/README.md) 
 
