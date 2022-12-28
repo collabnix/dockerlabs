@@ -17,7 +17,7 @@
 - [Using Docker Preference](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/preference/README.md)
 - [Using Docker Dashboard](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/dashboard/README.md)
 - [Using Docker Dev Environments](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/devenvironments/README.md)
-- [Using Docker Extensions]() 
+- [Using Docker Extensions](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/extensions/README.md) 
 
 
 ### Monitoring
