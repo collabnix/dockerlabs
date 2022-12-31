@@ -16,6 +16,6 @@ To display the Docker menu, right-click on the whale menu icon. It displays the 
 - Docker Hub
 - Extensions
 - Kubernetes
-- Pause
+- [Pause](https://github.com/collabnix/dockerlabs/tree/master/workshop/dockerdesktop/mac/menu/pause#pause-docker-desktop)
 - Restart
 - Quit Docker Desktop
