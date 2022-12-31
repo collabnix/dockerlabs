@@ -16,6 +16,7 @@ Cheatsheets can be particularly helpful when learning a new tool or technology, 
   - 🧪 [Image Transfer Commands](#image-transfer-commands)
   - 🏗️ [Builder Main Commands](#builder-main-commands)
   - ⚙️ [The Docker CLI](#the-docker-cli)
+-  🧑‍🤝‍🧑 [Contributors](#contributors)
 - 💬 [Support and Community](#support-and-community)
 - 👉 [References](#references)
 
@@ -559,7 +560,11 @@ If you do get enough interest to contributer to this Cheat Sheet, the community 
 Feel free to raise PR and get your favorite Cheat Sheet added to the list via [PR](https://github.com/collabnix/dockerlabs/pulls), or you can connect to us either on Slack or Discord server.
 
 
-  
+
+## Other Cheat Sheets
+
+- [Kubectl Cheat Sheet](https://collabnix.com/kubectl-cheatsheet/)
+- [Docker Compose Cheat Sheet](https://dockerlabs.collabnix.com/intermediate/docker-compose/compose-cheatsheet.html)
 
 
 
