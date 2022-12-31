@@ -22,6 +22,9 @@ Cheatsheets can be particularly helpful when learning a new tool or technology, 
 
 ## Basic Docker CLIs 
 
+Here's the list of the basic Docker commands that works on both Docker Desktop as well as Docker Engine:
+
+
 ![full](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet8.png)
 
 <br>
@@ -29,31 +32,50 @@ Cheatsheets can be particularly helpful when learning a new tool or technology, 
 
 ## Container Management CLIs
 
+Here's the list of the Docker commands that manages Docker images and containers flawlessly:
+
 <br>
 
 
 ![container_management](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet1.png)
 
 ## Inspecting The Container 
+
+Here's the list of the basic Docker commands that helps you inspect the containers seamlessly:
+
 <br>
 
 ![Inspecting The Container](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet3.png)
 
 ## Interacting with Container
+
+Do you want to know how to access the containers? Check out these fundamental commands:
+
+
 ![Interacting with Container1](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet4.png)
 
 ## Image Management Commands 
+
+Here's the list of Docker commands that helps you manage the Docker Images:
+
 <br>
 
  ![image management commands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet5.png)
  
 ## Image Transfer Commands 
+
+Here's the list of Docker image transfer commands:
+
  <br>
  
  ![Image Transfer Comnands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png)
 
 
 ## Builder Main Commands
+
+Want to know how to build Docker Image? Do check out the list of Image Build Commands:
+
+
 <br>
 
 ![Builder Main Commands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet7.png)
@@ -64,7 +86,6 @@ Cheatsheets can be particularly helpful when learning a new tool or technology, 
 
 ## The Docker CLI 
 
-<br>
 
 Manage images
 -------------
