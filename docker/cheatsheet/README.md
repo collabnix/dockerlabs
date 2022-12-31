@@ -528,7 +528,7 @@ docker kill $(docekr ps -q )
 
 ## Contributors
 
-[Sangam biradar](https://twitter.com/BiradarSangam) - Docker Community Leader 
+[Sangam biradar](https://twitter.com/BiradarSangam) - Docker Community Leader <br>
 [Ajeet Singh Raina](https://twitter.com/ajeetsraina) - Docker Captain, Collabnix
 
 
