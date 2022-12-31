@@ -147,7 +147,7 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 
 | Docker Security |
 |:-------------|
-| [Introduction to Docker Security]((./advanced/workshop/README.md) )|
+| [Introduction to Docker Security]((./advanced/workshop/README.md)|
 | [Running Containers as ROOT](./security/Running-Containers-as-ROOT.md) | 
 
 
