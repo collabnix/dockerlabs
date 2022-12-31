@@ -4,8 +4,6 @@ A cheatsheet is a concise summary of important information that is meant to be u
 
 Cheatsheets can be particularly helpful when learning a new tool or technology, as they provide a convenient way to quickly look up and remind oneself of key concepts and commands. They can also be useful for experienced users who need to recall a specific command or option but may not remember all the details.
 
-<br> <br> 
-
 
 ## Table of Contents
 
@@ -20,8 +18,6 @@ Cheatsheets can be particularly helpful when learning a new tool or technology, 
   - ⚙️ [The Docker CLI](#the-docker-cli)
 - 💬 [Support and Community](#support-and-community)
 - 👉 [References](#references)
-
-
 
 
 ## Basic Docker CLIs 
@@ -539,10 +535,9 @@ docker kill $(docekr ps -q )
 ## Support and Community
 
 If you do get enough interest to contributer to this Cheat Sheet, the community at Collabnix is available to support you.
-Feel free to raise PR and get your favorite Cheat Sheet added to the list (https://github.com/collabnix/dockerlabs/pulls), or you can connect to us either on Slack or Discord server.
+Feel free to raise PR and get your favorite Cheat Sheet added to the list via [PR](https://github.com/collabnix/dockerlabs/pulls), or you can connect to us either on Slack or Discord server.
 
 
-[![Title](https://user-images.githubusercontent.com/34368930/198940642-50d0e7f0-c670-4800-b0ea-5b95d56aaf0e.png)](https://discord.gg/ztZpXzjSmF)
   
 
 
