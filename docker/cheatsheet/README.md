@@ -6,7 +6,25 @@ Cheatsheets can be particularly helpful when learning a new tool or technology, 
 
 <br> <br> 
 
-## Complete Docker CLI 
+
+## Table of Contents
+
+- [Categories](#categories)
+  - 🐳 [Basic Docker CLIs](#basic-docker-clis)
+  - 🧰 [Container Management CLIs](#container-management-clis)
+  - 🧑‍💻 [Inspecting the Container](#inspecting-the-container)
+  - 🧑‍💻 [Interacting with Container](#interacting-with-container)
+  - 🫙 [Image Management Commands ](#image-management-commands)
+  - 🧪 [Image Transfer Commands](#image-transfer-commands)
+  - 🏗️ [Builder Main Commands](#builder-main-commands)
+  - ⚙️ [The Docker CLI](#the-docker-cli)
+- 💬 [Support and Community](#support-and-community)
+- 👉 [References](#references)
+
+
+
+
+## Basic Docker CLIs 
 
 ![full](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet8.png)
 
@@ -512,8 +530,25 @@ docker kill $(docekr ps -q )
 ```
 
 
-## Contributor - 
+## Contributors
 
 [Sangam biradar](https://twitter.com/BiradarSangam) - Docker Community Leader 
+[Ajeet Singh Raina](https://twitter.com/ajeetsraina) - Docker Captain, Collabnix
+
+
+## Support and Community
+
+If you do get enough interest to contributer to this Cheat Sheet, the community at Collabnix is available to support you.
+Feel free to raise PR and get your favorite Cheat Sheet added to the list (https://github.com/collabnix/dockerlabs/pulls), or you can connect to us either on Slack or Discord server.
+
+
+[![Title](https://user-images.githubusercontent.com/34368930/198940642-50d0e7f0-c670-4800-b0ea-5b95d56aaf0e.png)](https://discord.gg/ztZpXzjSmF)
+  
+
+
+
+
+
+
 
 
