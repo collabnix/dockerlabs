@@ -30,7 +30,7 @@
 
 ### Kubernetes
 
-- TBD
+- [Deploy Java App on Kubernetes using Docker Desktop](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/kubernetes/java/hello-world/README.md)
 
 
 ### Docker Extensions
