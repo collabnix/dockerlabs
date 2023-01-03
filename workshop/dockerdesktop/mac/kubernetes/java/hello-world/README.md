@@ -44,6 +44,13 @@ docker build -t ajeetraina/helloworldjava .
 Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
 ```
 
+## Pushing the Docker Image to Docker Hub
+
+```
+docker push ajeetraina/helloworldjava:latest
+```
+
+
 ## Creating a Kubernetes deployment 
 
 Now it's time to create a Kubernetes deployment for the application using the kubectl command
@@ -53,5 +60,10 @@ Now it's time to create a Kubernetes deployment for the application using the ku
 kubectl create deployment hello-kubernetes --image=ajeetraina/helloworldjava:latest
 deployment.apps/hello-kubernetes created
 ```
+
+The container runs and gets exited immediately
+
+<img width="1261" alt="image" src="https://user-images.githubusercontent.com/313480/210351979-58064514-9dce-4975-84ce-1766bb59b5d9.png">
+
 
 
