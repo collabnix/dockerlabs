@@ -12,4 +12,4 @@
 
 ## Java Apps
 
-- [How to run Hello World Java App on Kubernetes on Docker Desktop for Mac]()
+- [How to run Hello World Java App on Kubernetes](https://github.com/collabnix/dockerlabs/tree/master/workshop/dockerdesktop/mac/kubernetes/java/hello-world/README.md)
