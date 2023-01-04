@@ -13,7 +13,7 @@
 - [Installing Docker Desktop for Windows](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/windows/README.md)
 
 
-### Docker Dashboard Labs
+## Docker Dashboard Labs
 
 - [Using Docker Preference](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/preference/README.md)
   - [VirtioFS](https://github.com/collabnix/dockerlabs/tree/master/workshop/dockerdesktop/mac/dashboard/virtiofs/README.md)
@@ -23,18 +23,18 @@
 - [Using Docker Extensions](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/extensions/README.md) 
 
 
-### Monitoring
+## Monitoring
 
 - [Prometheus & Docker Desktop](https://github.com/collabnix/dockerlabs/tree/master/workshop/dockerdesktop/mac/preference/prometheus)
 
 
-### Kubernetes
+## Kubernetes
 
 - [Deploy Java App on Kubernetes using Docker Desktop](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/kubernetes/java/hello-world/README.md)
 - [Deploy a Sample Nginx-based HelloWhale App on Kubernetes](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/kubernetes/hellowhale/README.md)
 
 
-### Docker Extensions
+## Docker Extensions
 
 - [RedisInsight Docker Extension](https://github.com/collabnix/dockerlabs/tree/master/workshop/dockerdesktop/mac/extensions/redisinsight/README.md)
 - [Mongo Express Docker Extension](https://github.com/collabnix/dockerlabs/tree/master/workshop/dockerdesktop/mac/extensions/mongo-express/README.md)
