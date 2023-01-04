@@ -31,6 +31,7 @@
 ### Kubernetes
 
 - [Deploy Java App on Kubernetes using Docker Desktop](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/kubernetes/java/hello-world/README.md)
+- [Deploy a Sample Nginx-based HelloWhale App on Kubernetes](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/kubernetes/hellowhale/README.md)
 
 
 ### Docker Extensions
