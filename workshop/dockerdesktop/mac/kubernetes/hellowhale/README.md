@@ -54,3 +54,9 @@ NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/hellowhale   1/1     1            1           14h
 ajeetraina@Docker-Ajeet-Singh-Rainas-MacBook-Pro ddextension % 
 ```
+
+Open https://localhost:80 to access Hello Whale Sample app.
+
+
+<img width="736" alt="image" src="https://user-images.githubusercontent.com/313480/210483625-289f4127-98f3-4fca-8bba-79f82f370d71.png">
+
