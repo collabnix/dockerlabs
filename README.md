@@ -110,8 +110,8 @@
    - [Lab #7: Test Network Connectivity](http://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-3-test-network-connectivity)
    - [Lab #8: Configure NAT for external connectivity](http://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-4-configure-nat-for-external-connectivity)
  
- # Docker Workshop for Intermediate Users
 
+## Docker Workshop for Intermediate Users
 
 
 ### Docker Compose
