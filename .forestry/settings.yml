@@ -6,7 +6,7 @@ webhook_url:
 sections:
 - type: jekyll-pages
   label: Pages
-  create: all
+  create: documents
 - type: jekyll-posts
   label: Posts
   create: all
