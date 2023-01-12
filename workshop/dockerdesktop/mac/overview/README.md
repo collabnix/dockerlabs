@@ -1,10 +1,35 @@
-# Overview of Docker Desktop Internals
+# Overview of Docker Desktop for Mac
 
-- An Easy-to-install application for your Mac, Linux, or Windows environment.
-- Enables you to build and share containerized applications and microservices.
-- Provides a simple interface that enables you to manage your containers, applications, and images directly from your machine without having to use the CLI to perform core actions.
-- A tool for developing and running Docker containers on a Mac. 
-- Provides a native Mac application that includes all of the necessary tools to build, run, and manage Docker containers.
+- Docker Desktop is a full development platform for creating containerized apps
+- It runs on a LinuxKit VM and NOT on VirtualBox or VMware Fusion.
+- It embeds a hypervisor called xhyve(a lightweight OS X virtualization solution) -  a  Linux distribution which runs on LinuxKit and filesystem & network sharing that is much more Mac native.
+- It is a Mac native application, that you install in `/Applications`.
+- At installation time, it creates symlinks in /usr/local/bin for docker & docker-compose and others, to the commands in the application bundle, in /Applications/Docker.app/Contents/Resources/bin
+
+
+```
+ pwd
+/Applications/Docker.app/Contents/Resources/bin
+ bin % tree -L 1
+.
+├── com.docker.cli
+├── com.docker.vpnkit
+├── docker
+├── docker-compose
+├── docker-compose-v1
+├── docker-credential-desktop
+├── docker-credential-ecr-login
+├── docker-credential-osxkeychain
+├── docker-index
+├── hub-tool
+└── kubectl
+
+1 directory, 10 files
+osxkeychain	kubectl
+docker				docker-credential-desktop	docker-index
+```
+
+
 
 
 ## What does it use?
