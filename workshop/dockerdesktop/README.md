@@ -7,10 +7,11 @@
 
 ## Getting Started with Docker Desktop 
 
-- [Installing Docker Desktop for Mac](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/install/README.md)
-  - [Cheat Sheet](https://github.com/collabnix/dockerlabs/tree/master/workshop/dockerdesktop/mac/cheatsheet/README.md)
-- [Installing Docker Desktop for Linux](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/linux/README.md) 
-- [Installing Docker Desktop for Windows](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/windows/README.md)
+- [Docker Desktop for Mac](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/install/README.md)
+   - [Overview](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/overview/README.md)
+   - [Internals](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/mac/overview/README.md)
+- [Docker Desktop for Linux](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/linux/README.md) 
+- [Docker Desktop for Windows](https://github.com/collabnix/dockerlabs/blob/master/workshop/dockerdesktop/windows/README.md)
 
 
 ## Docker Dashboard Labs
