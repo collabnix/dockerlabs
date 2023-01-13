@@ -1,5 +1,7 @@
 # Installing Docker Desktop for Mac
 
+Docker Desktop is free for small businesses (fewer than 250 employees AND less than $10 million in annual revenue), personal use, education, and non-commercial open-source projects. Otherwise, it requires a paid subscription for professional use. Paid subscriptions are also required for government entities. When downloading and installing Docker Desktop, you are asked to agree to the Docker Subscription Service Agreement
+
 
 ## Download Docker Desktop for Mac
 
