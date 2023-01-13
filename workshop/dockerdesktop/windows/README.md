@@ -2,6 +2,14 @@
 
 Docker Desktop is a one-click-install application for your Windows environment that enables you to build and share containerized applications and microservices.
 
+## Running Linux containers on Windows
+
+Windows Subsystem for Linux is a feature of Windows that allows developers to run a Linux environment without the need for a separate virtual machine or dual booting. There are two versions of WSL: WSL 1 and WSL 2.
+
+WSL 2 primary goals are to increase file system performance, as well as adding full system call compatibility. This new architecture changes how these Linux binaries interact with Windows and your computer's hardware, but still provides the same user experience as in WSL 1 (the current widely available version). 
+
+WSL 2 is only available in Windows 11 or Windows 10, Version 1903, Build 18362 or later. 
+
 ## Architecture of Docker Desktop for Windows
 
 
