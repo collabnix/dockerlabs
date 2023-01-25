@@ -22,7 +22,7 @@ GEM
       execjs
     coffee-script-source (1.11.1)
     colorator (1.1.0)
-    commonmarker (0.23.4)
+    commonmarker (0.23.7)
     concurrent-ruby (1.1.10)
     dnsruby (1.61.9)
       simpleidn (~> 0.1)
@@ -249,6 +249,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.6-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.6-x86_64-linux)
+      racc (~> 1.4)
     octokit (4.22.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -312,6 +314,7 @@ GEM
 
 PLATFORMS
   universal-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   github-pages
