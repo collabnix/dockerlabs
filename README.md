@@ -38,7 +38,7 @@
 | [Docker for Intermediate](./intermediate/workshop/README.md) | Docker Compose, Swarm, Advanced Networking | 50 |
 | [Docker for Advanced](./advanced/workshop/README.md) | Docker Security, Content Trust, Image Scanning, Swarm Mode Security | 31 |
 | [Docker Desktop](./workshop/dockerdesktop/README.md) | Docker Dashboard, Dev Environments, Extensions | 5 |
-| [Docker for Data Scientists](./workshop/machinelearning/README.md) | AI/ML | 1| 
+| [Docker in Data Science](./workshop/datascience/README.md)| AI/ML | 1| 
 
 
 ## Docker WorkShop for Beginners 
