@@ -38,7 +38,19 @@
 | [Docker for Intermediate](./intermediate/workshop/README.md) | Docker Compose, Swarm, Advanced Networking | 50 |
 | [Docker for Advanced](./advanced/workshop/README.md) | Docker Security, Content Trust, Image Scanning, Swarm Mode Security | 31 |
 | [Docker Desktop](./workshop/dockerdesktop/README.md) | Docker Dashboard, Dev Environments, Extensions | 5 |
-| [Docker in Data Science](./workshop/datascience/README.md)| AI/ML | 1| 
+| [Docker for Data Scientists](./workshop/datascience/README.md)| AI/ML | 1| 
+
+# Language-specific Labs and Tutorials
+
+| Title       | Topics Covered         | Labs |
+|:-------------|:------------------|:------|
+| [Docker for Python Developers](./workshop/python/README.md) | |
+| [Docker for .NET Developers](./workshop/dotnet/README.md) | |
+| [Docker for Rust Developers](./workshop/rust/README.md) | |
+| [Docker for Java Developers](./workshop/java/README.md) | |
+| [Docker for PHP Developers](./workshop/php/README.md) | |
+| [Docker for Node Developers](./workshop/node/README.md) | |
+| [Docker for Go Developers](./workshop/go/README.md) | |
 
 
 ## Docker WorkShop for Beginners 
