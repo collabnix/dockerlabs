@@ -1,1 +1,1 @@
-# Docker in Data Science
+# Docker for Data Scientists
