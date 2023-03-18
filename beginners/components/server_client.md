@@ -30,7 +30,7 @@ Now, we understand what client and server means in computing. Let's dive into wh
 *Image courtesy: https://www.xenonstack.com/blog/docker-application-solutions/*
 
 # Docker Server
-Docker as we all know by does all things contatiners. It provides a container runtime, It is manages contianer storage, networks, image builds and many other services. No doubt it requries compute power to perform all these tasks.
+Docker as we all know by does all things containers. It provides a container runtime, It is manages containers storage, networks, image builds and many other services. No doubt it requries compute power to perform all these tasks.
 Docker server is nothing but a compute instance (VM, Personal Computer etc.) which is responsible for runing docker daemon process which in turn manages all the services provided by docker.
 
 # Docker client
