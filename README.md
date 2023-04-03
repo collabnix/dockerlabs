@@ -39,6 +39,7 @@
 | [Docker for Advanced](./advanced/workshop/README.md) | Docker Security, Content Trust, Image Scanning, Swarm Mode Security | 31 |
 | [Docker Desktop](./workshop/dockerdesktop/README.md) | Docker Dashboard, Dev Environments, Extensions | 5 |
 | [Docker for Data Scientists](./workshop/datascience/README.md)| AI/ML | 1| 
+| [Docker for IoT](./workshop/iot/README.md) | IoT | 1|
 
 # Language-specific Labs and Tutorials
 
