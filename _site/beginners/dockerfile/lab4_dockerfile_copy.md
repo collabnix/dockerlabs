@@ -1,5 +1,5 @@
 # Lab #3: Create an image with COPY instruction
-The COPY instruction copies files or directories from source and adds them to the filesystem of the container at destinatio.
+The COPY instruction copies files or directories from source and adds them to the filesystem of the container at destination.
 
 Two form of COPY instruction
 ```
