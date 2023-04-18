@@ -74,7 +74,7 @@ Here's the list of Docker image transfer commands:
 
  <br>
  
- ![Image Transfer Comnands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png)
+ ![Image Transfer Commands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png)
 
 
 ## Builder Main Commands
@@ -504,8 +504,8 @@ services:
       - "somehost:192.168.1.100"
 ```
 
-### sevices 
-To view list of all the services runnning in swarm 
+### services 
+To view list of all the services running in swarm 
 
 ```
 docker service ls 
@@ -549,7 +549,7 @@ docker stack rm stack_name
 ```
 To kill all running containers 
 ```
-docker kill $(docekr ps -q ) 
+docker kill $(docker ps -q ) 
 ```
 
 
@@ -561,7 +561,7 @@ docker kill $(docekr ps -q )
 
 ## Support and Community
 
-If you do get enough interest to contributer to this Cheat Sheet, the community at Collabnix is available to support you.
+If you do get enough interest to contribute to this Cheat Sheet, the community at Collabnix is available to support you.
 Feel free to raise PR and get your favorite Cheat Sheet added to the list via [PR](https://github.com/collabnix/dockerlabs/pulls), or you can connect to us either on Slack or Discord server.
 
 
