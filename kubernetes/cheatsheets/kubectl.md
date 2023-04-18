@@ -96,7 +96,7 @@ cat pod.json | kubectl create -f -
 # Edit the data in docker-registry.yaml in JSON using the v1 API format then create the resource using the edited data.
 kubectl create -f docker-registry.yaml --edit --output-version=v1 -o json
 
-# Create all the resources avaibale in the folder 
+# Create all the resources available in the folder 
 kubeclt create -f <folder_name>
 ```
 
@@ -325,7 +325,7 @@ kubectl set sa -f nginx-deployment.yaml serviceaccount1 --local --dry-run -o yam
 
 ### Autoscale
 
-Creates an autoscaler that automatically chooses and sets the number of pods that run in a kubernetes cluste
+Creates an autoscaler that automatically chooses and sets the number of pods that run in a kubernetes cluster
 
 ```bash
 # Auto scale a deployment "foo", with the number of pods between 2 and 10, no target CPU utilization specified so a default autoscaling policy will be used:
