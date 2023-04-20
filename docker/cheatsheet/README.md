@@ -21,6 +21,7 @@ Cheatsheets can be particularly helpful when learning a new tool or technology, 
   - 🧪 [Image Transfer Commands](#image-transfer-commands)
   - 🏗️ [Builder Main Commands](#builder-main-commands)
   - ⚙️ [The Docker CLI](#the-docker-cli)
+  - 🧰 [Docker Security](#docker-security)
 -  🧑‍🤝‍🧑 [Contributors](#contributors)
 - 💬 [Support and Community](#support-and-community)
 - 👉 [References](#references)
@@ -551,6 +552,55 @@ To kill all running containers
 ```
 docker kill $(docekr ps -q ) 
 ```
+
+## Docker Security
+
+### Docker Scout
+
+Command line tool for Docker Scout:
+
+```
+docker scout
+```
+
+Analyzes a software artifact for vulnerabilities
+
+```
+docker scout cves [OPTIONS] IMAGE|DIRECTORY|ARCHIVE
+```
+
+Display vulnerabilities from a docker save tarball
+
+```
+ docker save redis > redis.tar
+```
+
+Display vulnerabilities from an OCI directory
+
+```
+skopeo copy --override-os linux docker://alpine oci:redis
+```
+
+Export vulnerabilities to a SARIF JSON file
+
+```
+docker scout cves --format sarif --output redis.sarif.json redis
+```
+
+Comparing two images
+
+```
+docker scout compare --to redis:6.0 redis:6-bullseye
+```
+
+Displaying the Quick Overview of an Image
+
+```
+docker scout quickview redis:6.0
+```
+
+
+
 
 
 ## Contributors
