@@ -31,3 +31,11 @@ Conclusion
 ----------
 
 In conclusion, Docker offers several benefits in AI, including reproducibility, portability, scalability, and security. Using Docker in AI is relatively simple and involves building a Docker image that contains the software stack required for the machine learning model, training the model, and deploying it using a production Docker image. By leveraging the benefits of Docker, data scientists can improve their workflow, reduce the risk of errors, and accelerate the deployment of machine learning models.
+
+Docker in AI 101
+----------
+
+
+### Niche Use Cases
+
+- [Lab01 - Federated Learning](https://github.com/collabnix/dockerlabs/blob/master/workshop/ai/usecases/federated-learning/README.md)
