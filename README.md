@@ -38,21 +38,19 @@
 | [Docker for Intermediate](./intermediate/workshop/README.md) | Docker Compose, Swarm, Advanced Networking | 50 |
 | [Docker for Advanced](./advanced/workshop/README.md) | Docker Security, Content Trust, Image Scanning, Swarm Mode Security | 31 |
 | [Docker Desktop](./workshop/dockerdesktop/README.md) | Docker Dashboard, Dev Environments, Extensions | 5 |
-| [Docker for Data Scientists](./workshop/datascience/README.md)| AI/ML | 1| 
-| [Docker for AI](./workshop/ai/README.md)| AI/ML | 1| 
-| [Docker for IoT](./workshop/iot/README.md) | IoT | 1|
 
-# Language-specific Labs and Tutorials
+
+
+# Latest Docker Features and Demos
 
 | Title       | Topics Covered         | Labs |
 |:-------------|:------------------|:------|
-| [Docker for Python Developers](./workshop/python/README.md) | |
-| [Docker for .NET Developers](./workshop/dotnet/README.md) | |
-| [Docker for Rust Developers](./workshop/rust/README.md) | |
-| [Docker for Java Developers](./workshop/java/README.md) | |
-| [Docker for PHP Developers](./workshop/php/README.md) | |
-| [Docker for Node Developers](./workshop/node/README.md) | |
-| [Docker for Go Developers](./workshop/go/README.md) | |
+| [Docker Scout](https://github.com/docker/scout-cli) | Scout CLI, Scout Sample Demo| 2 |
+| [Docker init](https://github.com/dockersamples/docker-init-demos) | Dockerfile, Compose, Python, Go, Rust, Node  | 5|
+| [Docker init for Python](https://github.com/dockersamples/docker-init-demos/tree/main/python) | Dockerfile, Compose, Python | 1|
+| [Docker init for Go](https://github.com/dockersamples/docker-init-demos/tree/main/go) |Dockerfile, Compose, Go | 1|
+| [Docker init for Rust](https://github.com/dockersamples/docker-init-demos/tree/main/rust) |Dockerfile, Compose, Rust | 1|
+| [Compose Watch](https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch)| Compose, Sync, Rebuild|1 |
 
 
 ## Docker WorkShop for Beginners 
