@@ -41,16 +41,16 @@
 
 
 
-# Latest Docker Features and Demos
+# Latest Docker Desktop Features and Demos
 
-| Title       | Topics Covered         | Labs |
-|:-------------|:------------------|:------|
-| [Docker Scout](https://github.com/docker/scout-cli) | Scout CLI, Scout Sample Demo| 2 |
-| [Docker init](https://github.com/dockersamples/docker-init-demos) | Dockerfile, Compose, Python, Go, Rust, Node  | 5|
-| [Docker init for Python](https://github.com/dockersamples/docker-init-demos/tree/main/python) | Dockerfile, Compose, Python | 1|
-| [Docker init for Go](https://github.com/dockersamples/docker-init-demos/tree/main/go) |Dockerfile, Compose, Go | 1|
-| [Docker init for Rust](https://github.com/dockersamples/docker-init-demos/tree/main/rust) |Dockerfile, Compose, Rust | 1|
-| [Compose Watch](https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch)| Compose, Sync, Rebuild|1 |
+| Title       | Topics Covered         | Category | Labs |
+|:-------------|:------------------|:------|:------|
+| [Docker Scout](https://github.com/docker/scout-cli) | Scout CLI, Scout Sample Demo| Security | 2 |
+| [Docker init](https://github.com/dockersamples/docker-init-demos) | Dockerfile, Compose, Python, Go, Rust, Node | Developer Tools | 5|
+| [Docker init for Python](https://github.com/dockersamples/docker-init-demos/tree/main/python) | Dockerfile, Compose, Python | Developer Tools| 1|
+| [Docker init for Go](https://github.com/dockersamples/docker-init-demos/tree/main/go) |Dockerfile, Compose, Go | Developer Tools | 1|
+| [Docker init for Rust](https://github.com/dockersamples/docker-init-demos/tree/main/rust) |Dockerfile, Compose, Rust | Developer Tools | 1|
+| [Compose Watch](https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch)| Compose, Sync, Rebuild| Developer Tools | 1 |
 
 
 ## Docker WorkShop for Beginners 
