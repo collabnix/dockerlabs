@@ -51,7 +51,7 @@
 | [Docker init for Go](https://github.com/dockersamples/docker-init-demos/tree/main/go) |Dockerfile, Compose, Go | Developer Tools | 1|
 | [Docker init for Rust](https://github.com/dockersamples/docker-init-demos/tree/main/rust) |Dockerfile, Compose, Rust | Developer Tools | 1|
 | [Compose Watch](https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch)| Compose, Sync, Rebuild| Developer Tools | 1 |
-
+| [Compose Include](https://github.com/ajeetraina/compose-include) | Compose, Include | Developer Tools | 1 |
 
 ## Docker WorkShop for Beginners 
 
