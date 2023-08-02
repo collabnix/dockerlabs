@@ -1,6 +1,5 @@
 # 🏗️ Getting Started with Docker 
 
-![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
 ![Discord](https://img.shields.io/discord/1020180904129335379)
 ![GitHub contributors](https://img.shields.io/github/contributors/collabnix/dockerlabs)
