@@ -52,6 +52,15 @@
 | [Compose Watch](https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch)| Compose, Sync, Rebuild| Developer Tools | 1 |
 | [Compose Include](https://github.com/ajeetraina/compose-include) | Compose, Include | Developer Tools | 1 |
 
+
+## Industry Use cases
+
+| Title       | Topics Covered         | Category | Labs |
+|:-------------|:------------------|:------|:------|
+| [Docker for AI](https://github.com/collabnix/workshop/ai) | Docker for Data Scientist | 1 |
+
+
+
 ## Docker WorkShop for Beginners 
 
 
