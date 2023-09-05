@@ -27,7 +27,7 @@
 - circle-ci and github account 
 
 
-## Continous Integration Pipeline - (Without Docker)
+## Continuous Integration Pipeline - (Without Docker)
 
 For the purpose of virtualization, we uses virtual machine technology. This technology actually reduces concentration risk when deploy in the right configurations. You can always achieve more failures using fewer x physical machines and hosting more than x virtual machines that are networked to watch each other and take over in the event of partner machines failure.
 
@@ -82,7 +82,7 @@ output:
 
 As shown above, we can save key and value by clicking "Save" button. 
 
-## Integrating Cirecle-ci (Before Docker)
+## Integrating Circle-ci (Before Docker)
 
 Make sure you add circle-ci config file under .circleci/... as shown under the example https://github.com/sangam14/dockerapp1/tree/master/.circleci
 
@@ -122,16 +122,16 @@ jobs:
 ```
 
 As shown above,  make sure to add environment variable like  $DOCKER_HUB_EMAIL, $DOCKER_HUB_USER_ID,$DOCKER_HUB_PWD
-Once you get circleci job running sucessfully, it should automatically be deployed on DockerHub repository. 
+Once you get circleci job running successfully, it should automatically be deployed on DockerHub repository. 
 
-Login to the circl-ci account https://circleci.com using github. Select project which you want to deploy. 
+Login to the circle-ci account https://circleci.com using github. Select project which you want to deploy. 
 
 ![add_project](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-26%20at%207.49.53%20AM.png)
 
-Go to the setting of the project in circleci dashboard and add the environment veriable which declared in .circleci/config.yml file io.
+Go to the setting of the project in circleci dashboard and add the environment variable which declared in .circleci/config.yml file io.
 You can also provide Github SSH permission.
 
-![envn_var](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-26%20at%207.50.31%20AM.png)
+![env_var](https://github.com/sangam14/dockerapp1/blob/master/Screenshot%202018-10-26%20at%207.50.31%20AM.png)
 
 Next, Run the build and it will perform following steps one by one {if it encounter any error, you should see red-colored messages )
 <br>
