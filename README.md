@@ -39,6 +39,7 @@ Ensure that you're on "new" branch.
 ```
  pip install mkdocs
  pip install material
+ pip install mkdocs-material
 ```
 
 
