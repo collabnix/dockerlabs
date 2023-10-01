@@ -1,6 +1,5 @@
 # 🏗️ Getting Started with Docker 
 
-![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=collabnix.dockerlabs)
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
 ![Discord](https://img.shields.io/discord/1020180904129335379)
 ![GitHub contributors](https://img.shields.io/github/contributors/collabnix/dockerlabs)
@@ -16,13 +15,13 @@
 
 # 🚀 Tested Platform 
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- [Play with Docker Platform](https://labs.play-with-docker.com/) 
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) 
 
 
-# 📝 Join our Slack Community
+# 📝 Join our Community
 
-- Join 7000+ DevOps Engineers today via [Community Slack](https://launchpass.com/collabnix)
+- Join 8700+ DevOps Engineers today via [Community Slack](https://launchpass.com/collabnix)
+- Join 2000+ [Discord members](https://discord.gg/QEkCXAXYSe)
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 -  Click and Follow us over Twitter [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
@@ -37,6 +36,31 @@
 | [Docker for Intermediate](./intermediate/workshop/README.md) | Docker Compose, Swarm, Advanced Networking | 50 |
 | [Docker for Advanced](./advanced/workshop/README.md) | Docker Security, Content Trust, Image Scanning, Swarm Mode Security | 31 |
 | [Docker Desktop](./workshop/dockerdesktop/README.md) | Docker Dashboard, Dev Environments, Extensions | 5 |
+
+
+
+# Latest Docker Desktop Features and Demos
+
+| Title       | Topics Covered         | Category | Labs |
+|:-------------|:------------------|:------|:------|
+| [Docker Scout](https://github.com/collabnix/docker-scout-community) | Scout CLI, Scout Sample Demo| Security | 2 |
+| [Docker init](https://github.com/dockersamples/docker-init-demos) | Dockerfile, Compose, Python, Go, Rust, Node | Developer Tools | 5|
+| [Docker init for Python](https://github.com/dockersamples/docker-init-demos/tree/main/python) | Dockerfile, Compose, Python | Developer Tools| 1|
+| [Docker init for Go](https://github.com/dockersamples/docker-init-demos/tree/main/go) |Dockerfile, Compose, Go | Developer Tools | 1|
+| [Docker init for Rust](https://github.com/dockersamples/docker-init-demos/tree/main/rust) |Dockerfile, Compose, Rust | Developer Tools | 1|
+| [Compose Watch](https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch)| Compose, Sync, Rebuild| Developer Tools | 1 |
+| [Compose Include](https://github.com/ajeetraina/compose-include) | Compose, Include | Developer Tools | 1 |
+
+
+## Industry Use cases
+
+| Title       | Topics Covered         | Labs |
+|:-------------|:------------------|:------|
+| [Docker for AI](https://github.com/collabnix/dockerlabs/tree/master/workshop/ai) | Docker for Data Scientist | 1 |
+| Docker for Gaming | Gaming | Not Started|
+| Docker for Financial Service | - | Not Started|
+| Docker for Healthcare | - | Not Started|
+
 
 
 ## Docker WorkShop for Beginners 
