@@ -15,8 +15,7 @@
 
 # 🚀 Tested Platform 
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- [Play with Docker Platform](https://labs.play-with-docker.com/) 
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) 
 
 
 # 📝 Join our Community
