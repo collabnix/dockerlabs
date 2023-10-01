@@ -21,6 +21,7 @@ Cheatsheets can be particularly helpful when learning a new tool or technology, 
   - 🧪 [Image Transfer Commands](#image-transfer-commands)
   - 🏗️ [Builder Main Commands](#builder-main-commands)
   - ⚙️ [The Docker CLI](#the-docker-cli)
+  - 🧰 [Docker Security](#docker-security)
 -  🧑‍🤝‍🧑 [Contributors](#contributors)
 - 💬 [Support and Community](#support-and-community)
 - 👉 [References](#references)
@@ -74,7 +75,7 @@ Here's the list of Docker image transfer commands:
 
  <br>
  
- ![Image Transfer Comnands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png)
+ ![Image Transfer Commands](https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png)
 
 
 ## Builder Main Commands
@@ -504,8 +505,8 @@ services:
       - "somehost:192.168.1.100"
 ```
 
-### sevices 
-To view list of all the services runnning in swarm 
+### services 
+To view list of all the services running in swarm 
 
 ```
 docker service ls 
@@ -549,8 +550,57 @@ docker stack rm stack_name
 ```
 To kill all running containers 
 ```
-docker kill $(docekr ps -q ) 
+docker kill $(docker ps -q ) 
 ```
+
+## Docker Security
+
+### Docker Scout
+
+Command line tool for Docker Scout:
+
+```
+docker scout
+```
+
+Analyzes a software artifact for vulnerabilities
+
+```
+docker scout cves [OPTIONS] IMAGE|DIRECTORY|ARCHIVE
+```
+
+Display vulnerabilities from a docker save tarball
+
+```
+ docker save redis > redis.tar
+```
+
+Display vulnerabilities from an OCI directory
+
+```
+skopeo copy --override-os linux docker://alpine oci:redis
+```
+
+Export vulnerabilities to a SARIF JSON file
+
+```
+docker scout cves --format sarif --output redis.sarif.json redis
+```
+
+Comparing two images
+
+```
+docker scout compare --to redis:6.0 redis:6-bullseye
+```
+
+Displaying the Quick Overview of an Image
+
+```
+docker scout quickview redis:6.0
+```
+
+
+
 
 
 ## Contributors
@@ -561,7 +611,7 @@ docker kill $(docekr ps -q )
 
 ## Support and Community
 
-If you do get enough interest to contributer to this Cheat Sheet, the community at Collabnix is available to support you.
+If you do get enough interest to contribute to this Cheat Sheet, the community at Collabnix is available to support you.
 Feel free to raise PR and get your favorite Cheat Sheet added to the list via [PR](https://github.com/collabnix/dockerlabs/pulls), or you can connect to us either on Slack or Discord server.
 
 
