@@ -2,7 +2,7 @@
 
 It is the usual requirement of a developer to copy a few files into the docker image so that every container spawned from this image has the required files.
 
-Docker allows us to do this using two isntructions in a Dockerfile: 
+Docker allows us to do this using two instructions in a Dockerfile: 
 
 - ADD 
 - COPY
@@ -114,7 +114,7 @@ Also, when you need to keep the tar archive intact, use COPY instead of ADD.
 
 Remote file downloading via ADD is also discouraged in best practices. It is recommended to use curl or wget commands using RUN instruction.
 
-So, preferrably, ADD should be used only for auto-tar extraction capabilities. 
+So, preferably, ADD should be used only for auto-tar extraction capabilities. 
  
 ### Contributor
 

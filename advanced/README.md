@@ -17,7 +17,7 @@ description: collabnix | DockerLab | Docker - Advanced Track
 [How to protect the Docker daemon socket]<br>
 [How to build security into the container pipeline]<br>
 [Docker Security - An Easy Way](./security/README.md)<br>
-[How Docker bypasses Linux Auditing Mechnism?](./security/ByPassing-Linux-Security-Audit.md)
+[How Docker bypasses Linux Auditing Mechanism?](./security/ByPassing-Linux-Security-Audit.md)
 
 ## Docker Monitoring
 

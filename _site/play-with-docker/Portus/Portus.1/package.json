@@ -15,7 +15,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.6",
+    "bootstrap-sass": "^3.4.1",
     "compression-webpack-plugin": "^0.3.2",
     "jquery": "^3.5.0",
     "jquery-ujs": "^1.2.1",

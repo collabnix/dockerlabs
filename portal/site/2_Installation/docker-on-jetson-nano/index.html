@@ -1,0 +1,2127 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://dockerlabs.collabnix.com/2_Installation/docker-on-jetson-nano/">
+      
+      
+        <link rel="prev" href="../docker-on-raspberrypi/">
+      
+      
+        <link rel="next" href="../../3_Docker-For-Beginners/1_Getting-Started-with-Docker-Hub/docker-hub/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.15">
+    
+    
+      
+        <title>Installing Docker on NVIDIA Jetson - Collabnix</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started-with-nvidia-jetson-nano" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Collabnix" class="md-header__button md-logo" aria-label="Collabnix" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 20q-2.28 0-3.89-1.57Q1 16.85 1 14.58q0-1.95 1.17-3.48 1.18-1.53 3.08-1.95.63-2.3 2.5-3.72Q9.63 4 12 4q2.93 0 4.96 2.04Q19 8.07 19 11q1.73.2 2.86 1.5 1.14 1.28 1.14 3 0 1.88-1.31 3.19T18.5 20Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Collabnix
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installing Docker on NVIDIA Jetson
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Collabnix" class="md-nav__button md-logo" aria-label="Collabnix" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 20q-2.28 0-3.89-1.57Q1 16.85 1 14.58q0-1.95 1.17-3.48 1.18-1.53 3.08-1.95.63-2.3 2.5-3.72Q9.63 4 12 4q2.93 0 4.96 2.04Q19 8.07 19 11q1.73.2 2.86 1.5 1.14 1.28 1.14 3 0 1.88-1.31 3.19T18.5 20Z"/></svg>
+
+    </a>
+    Collabnix
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-desktop-for-linux/" class="md-nav__link">
+        Installing Docker Desktop for Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-desktop-for-windows/" class="md-nav__link">
+        Installing Docker Desktop for Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-desktop-for-mac/" class="md-nav__link">
+        Installing Docker Desktop for Mac
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-on-raspberrypi/" class="md-nav__link">
+        Installing Docker on Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Installing Docker on NVIDIA Jetson
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Installing Docker on NVIDIA Jetson
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intent" class="md-nav__link">
+    Intent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-your-jetson-nano" class="md-nav__link">
+    Preparing Your Jetson Nano
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing Your Jetson Nano">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparing-your-raspberry-pi-flashing-jetson-sd-card-image" class="md-nav__link">
+    1. Preparing Your Raspberry Pi Flashing Jetson SD Card Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuda-compiler-and-libraries" class="md-nav__link">
+    CUDA Compiler and Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devicequery" class="md-nav__link">
+    DeviceQuery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-verifying-if-it-is-shipped-with-docker-binaries" class="md-nav__link">
+    2. Verifying if it is shipped with Docker Binaries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-checking-docker-runtime" class="md-nav__link">
+    3. Checking Docker runtime
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-docker-compose-on-nvidia-jetson-nano" class="md-nav__link">
+    Installing Docker Compose on NVIDIA Jetson Nano
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identify-the-jetson-board" class="md-nav__link">
+    Identify the Jetson board
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-latest-version-of-cuda" class="md-nav__link">
+    Install the latest version of CUDA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-docker-runtime" class="md-nav__link">
+    Verify Docker runtime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-gpu-support" class="md-nav__link">
+    Testing GPU Support
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing GPU Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-devicequery-on-docker-with-gpu-support" class="md-nav__link">
+    Running deviceQuery on Docker with GPU support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-directory" class="md-nav__link">
+    Create a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-the-sample-files" class="md-nav__link">
+    Copy the sample files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dockerfile" class="md-nav__link">
+    Create a Dockerfile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-the-script" class="md-nav__link">
+    Execute the script
+  </a>
+  
+    <nav class="md-nav" aria-label="Execute the script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-3-running-devicequery-on-the-k3s-cluster" class="md-nav__link">
+    Test 3: Running deviceQuery on the K3s cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Docker for Beginners
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docker for Beginners
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Getting Started with Docker Hub
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started with Docker Hub
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/1_Getting-Started-with-Docker-Hub/docker-hub/" class="md-nav__link">
+        Creating Your Docker Hub Account
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Getting Started with Docker Image
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started with Docker Image
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/2_Getting-Started-With-Docker-Image/hello-world/" class="md-nav__link">
+        Running Hello World Example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/2_Getting-Started-With-Docker-Image/working-with-docker-image/" class="md-nav__link">
+        Working with Docker Image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/2_Getting-Started-With-Docker-Image/saving-images-and-containers/" class="md-nav__link">
+        Saving Images and Containers as tar files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/2_Getting-Started-With-Docker-Image/building-first-alpine/" class="md-nav__link">
+        Building Your First Alpine Docker Image
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          Getting started with Dockerfile
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started with Dockerfile
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/1_Writing-dockerfile/" class="md-nav__link">
+        Writing a dockerfile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/2_Layering-Dockerfile/" class="md-nav__link">
+        Layering a dockerfile
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          Labs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Labs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/3_Lab1_dockerfile_git/" class="md-nav__link">
+        Installing Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/4_Lab2_Create-an-image-with-ADD-instruction/" class="md-nav__link">
+        ADD Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/5_Lab3_dockerfile_copy/" class="md-nav__link">
+        COPY Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/6_Lab4_cmd/" class="md-nav__link">
+        CMD Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/7_Lab5_Entrypoint/" class="md-nav__link">
+        Entrypoint Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/7_Lab5_Entrypoint/" class="md-nav__link">
+        Workdir Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/9_Lab8_run/" class="md-nav__link">
+        Run Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/10_Lab9_arg/" class="md-nav__link">
+        Arg Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/10_Lab11_volume.mdd" class="md-nav__link">
+        Volume Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/11_Lab10_env/" class="md-nav__link">
+        Env Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/12_Lab11_expose_instruction/" class="md-nav__link">
+        Expose Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/13_Lab12_label/" class="md-nav__link">
+        Label Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/14_Lab13_onbuild/" class="md-nav__link">
+        Onbuild Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/15_Lab14_healthcheck/" class="md-nav__link">
+        Healthcheck Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/16_Lab15-Create-an-image-with-SHELL-instruction/" class="md-nav__link">
+        Create-an-image-with-SHELL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/17_Lab16-Entrypoint-instruction/" class="md-nav__link">
+        Entrypoint-instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/18_Lab17-user/" class="md-nav__link">
+        User Instruction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/19_lab18_dockerfile_python/" class="md-nav__link">
+        Hello Python Script Instruction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          Accessing And Managing Docker Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Accessing And Managing Docker Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_Accessing-And-Managing-Docker-Container/Accessing-The-Container-Shell.md" class="md-nav__link">
+        Accessing The Container Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_Accessing-And-Managing-Docker-Container/Managing-Docker-Containers.md" class="md-nav__link">
+        Managing Docker Containers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_Accessing-And-Managing-Docker-Container/Running-A-Command-Inside-Running-Container.md" class="md-nav__link">
+        Running A Command Inside Running Container
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Docker for Intermediate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Docker for Intermediate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_Docker-for-Intermediate/1_Docker_Compose/" class="md-nav__link">
+        Overview of Docker Compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_Docker-for-Intermediate/2_Dockerfile-vs-DockerCompose/" class="md-nav__link">
+        Dockerfile vs Docker Compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4_Docker-for-Intermediate/3_Docker-Compose-Installation/" class="md-nav__link">
+        Docker Compose Installation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Docker for Advanced
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Docker for Advanced
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview of Docker Security:6_Docker-For-Advanced" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Sample Apps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sample Apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WordPress + Nginx:7_Docker_Apps" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intent" class="md-nav__link">
+    Intent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-your-jetson-nano" class="md-nav__link">
+    Preparing Your Jetson Nano
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing Your Jetson Nano">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparing-your-raspberry-pi-flashing-jetson-sd-card-image" class="md-nav__link">
+    1. Preparing Your Raspberry Pi Flashing Jetson SD Card Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuda-compiler-and-libraries" class="md-nav__link">
+    CUDA Compiler and Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devicequery" class="md-nav__link">
+    DeviceQuery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-verifying-if-it-is-shipped-with-docker-binaries" class="md-nav__link">
+    2. Verifying if it is shipped with Docker Binaries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-checking-docker-runtime" class="md-nav__link">
+    3. Checking Docker runtime
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-docker-compose-on-nvidia-jetson-nano" class="md-nav__link">
+    Installing Docker Compose on NVIDIA Jetson Nano
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identify-the-jetson-board" class="md-nav__link">
+    Identify the Jetson board
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-latest-version-of-cuda" class="md-nav__link">
+    Install the latest version of CUDA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-docker-runtime" class="md-nav__link">
+    Verify Docker runtime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-gpu-support" class="md-nav__link">
+    Testing GPU Support
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing GPU Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-devicequery-on-docker-with-gpu-support" class="md-nav__link">
+    Running deviceQuery on Docker with GPU support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-directory" class="md-nav__link">
+    Create a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-the-sample-files" class="md-nav__link">
+    Copy the sample files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dockerfile" class="md-nav__link">
+    Create a Dockerfile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-the-script" class="md-nav__link">
+    Execute the script
+  </a>
+  
+    <nav class="md-nav" aria-label="Execute the script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-3-running-devicequery-on-the-k3s-cluster" class="md-nav__link">
+    Test 3: Running deviceQuery on the K3s cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="getting-started-with-nvidia-jetson-nano">Getting Started with NVIDIA Jetson Nano</h1>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/212855112-8895c2f4-6aba-4724-9185-b866e369de95.png" /></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#Intent">Intent</a></li>
+<li><a href="#hardware">Hardware</a></li>
+<li><a href="#Software">Software</a></li>
+<li><a href="#preparing-your-jetson-nano">Preparing Your Jetson Nano</a></li>
+<li><a href="#1-flashing-sd-card-image">Flashing SD card image</a></li>
+<li><a href="#2-verifying-if-it-is-shipped-with-docker-binaries">Vefifying Docker Binaries</a></li>
+</ol>
+<h2 id="intent">Intent</h2>
+<p>Everything and anything you want to know about NVIDIA Jetson Nano, Docker &amp; K3s support</p>
+<h2 id="hardware">Hardware</h2>
+<ul>
+<li>Jetson Nano</li>
+<li>A Camera Module</li>
+<li>A 5V 4Ampere Charger</li>
+<li>64GB SD card</li>
+</ul>
+<h2 id="software">Software</h2>
+<ul>
+<li>Jetson SD card image from https://developer.nvidia.com/embedded/downloads</li>
+<li>Etcher software installed on your system</li>
+</ul>
+<h2 id="preparing-your-jetson-nano">Preparing Your Jetson Nano</h2>
+<h3 id="1-preparing-your-raspberry-pi-flashing-jetson-sd-card-image">1. Preparing Your Raspberry Pi Flashing Jetson SD Card Image</h3>
+<ul>
+<li>Unzip the SD card image</li>
+<li>Insert SD card into your system. </li>
+<li>Bring up Etcher tool and select the target SD card to which you want to flash the image.</li>
+</ul>
+<p><img alt="image" src="https://user-images.githubusercontent.com/34368930/212854917-8ead3f07-03f4-4189-8eb0-dbbcaed4ee7f.png" /></p>
+<pre><code>sudo lshw -C system
+pico2                       
+    description: Computer
+    product: NVIDIA Jetson Nano Developer Kit
+    serial: 1422919082257
+    width: 64 bits
+    capabilities: smp cp15_barrier setend swp
+</code></pre>
+<h3 id="cuda-compiler-and-libraries">CUDA Compiler and Libraries</h3>
+<pre><code>ajeetraina@ajeetraina-desktop:~/meetup$ nvcc --version
+-bash: nvcc: command not found
+ajeetraina@ajeetraina-desktop:~/meetup$ export PATH=${PATH}:/usr/local/cuda/bin
+ajeetraina@ajeetraina-desktop:~/meetup$ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda/lib64
+ajeetraina@ajeetraina-desktop:~/meetup$ source ~/.bashrc
+ajeetraina@ajeetraina-desktop:~/meetup$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2019 NVIDIA Corporation
+Built on Wed_Oct_23_21:14:42_PDT_2019
+Cuda compilation tools, release 10.2, V10.2.89
+</code></pre>
+<h3 id="devicequery">DeviceQuery</h3>
+<pre><code>$ pwd
+
+/usr/local/cuda/samples/1_Utilities/deviceQuery
+sudo make
+</code></pre>
+<pre><code>ajeetraina@ajeetraina-desktop:/usr/local/cuda/samples/1_Utilities/deviceQuery$ sudo make
+/usr/local/cuda-10.2/bin/nvcc -ccbin g++ -I../../common/inc  -m64    -gencode arch=compute_30,code=sm_30 -gencode arch=compute_32,code=sm_32 -gencode arch=compute_53,code=sm_53 -gencode arch=compute_61,code=sm_61 -gencode arch=compute_62,code=sm_62 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_72,code=sm_72 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_75,code=compute_75 -o deviceQuery.o -c deviceQuery.cpp
+/usr/local/cuda-10.2/bin/nvcc -ccbin g++   -m64      -gencode arch=compute_30,code=sm_30 -gencode arch=compute_32,code=sm_32 -gencode arch=compute_53,code=sm_53 -gencode arch=compute_61,code=sm_61 -gencode arch=compute_62,code=sm_62 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_72,code=sm_72 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_75,code=compute_75 -o deviceQuery deviceQuery.o
+mkdir -p ../../bin/aarch64/linux/release
+cp deviceQuery ../../bin/aarch64/linux/release
+ajeetraina@ajeetraina-desktop:/usr/local/cuda/samples/1_Utilities/deviceQuery$ ls
+Makefile  NsightEclipse.xml  deviceQuery  deviceQuery.cpp  deviceQuery.o  readme.txt
+ajeetraina@ajeetraina-desktop:/usr/local/cuda/samples/1_Utilities/deviceQuery$ ./deviceQuery
+./deviceQuery Starting...
+
+ CUDA Device Query (Runtime API) version (CUDART static linking)
+
+Detected 1 CUDA Capable device(s)
+
+Device 0: &quot;NVIDIA Tegra X1&quot;
+  CUDA Driver Version / Runtime Version          10.2 / 10.2
+  CUDA Capability Major/Minor version number:    5.3
+  Total amount of global memory:                 3956 MBytes (4148387840 bytes)
+  ( 1) Multiprocessors, (128) CUDA Cores/MP:     128 CUDA Cores
+  GPU Max Clock rate:                            922 MHz (0.92 GHz)
+  Memory Clock rate:                             13 Mhz
+  Memory Bus Width:                              64-bit
+  L2 Cache Size:                                 262144 bytes
+  Maximum Texture Dimension Size (x,y,z)         1D=(65536), 2D=(65536, 65536), 3D=(4096, 4096, 4096)
+  Maximum Layered 1D Texture Size, (num) layers  1D=(16384), 2048 layers
+  Maximum Layered 2D Texture Size, (num) layers  2D=(16384, 16384), 2048 layers
+  Total amount of constant memory:               65536 bytes
+  Total amount of shared memory per block:       49152 bytes
+  Total number of registers available per block: 32768
+  Warp size:                                     32
+  Maximum number of threads per multiprocessor:  2048
+  Maximum number of threads per block:           1024
+  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)
+  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)
+  Maximum memory pitch:                          2147483647 bytes
+  Texture alignment:                             512 bytes
+  Concurrent copy and kernel execution:          Yes with 1 copy engine(s)
+  Run time limit on kernels:                     Yes
+  Integrated GPU sharing Host Memory:            Yes
+  Support host page-locked memory mapping:       Yes
+  Alignment requirement for Surfaces:            Yes
+  Device has ECC support:                        Disabled
+  Device supports Unified Addressing (UVA):      Yes
+  Device supports Compute Preemption:            No
+  Supports Cooperative Kernel Launch:            No
+  Supports MultiDevice Co-op Kernel Launch:      No
+  Device PCI Domain ID / Bus ID / location ID:   0 / 0 / 0
+  Compute Mode:
+     &lt; Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) &gt;
+
+deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.2, CUDA Runtime Version = 10.2, NumDevs = 1
+Result = PASS
+</code></pre>
+<h3 id="2-verifying-if-it-is-shipped-with-docker-binaries">2. Verifying if it is shipped with Docker Binaries</h3>
+<pre><code>ajeetraina@ajeetraina-desktop:~$ sudo docker version
+[sudo] password for ajeetraina: 
+Client:
+ Version:           19.03.6
+ API version:       1.40
+ Go version:        go1.12.17
+ Git commit:        369ce74a3c
+ Built:             Fri Feb 28 23:47:53 2020
+ OS/Arch:           linux/arm64
+ Experimental:      false
+
+Server:
+ Engine:
+  Version:          19.03.6
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.12.17
+  Git commit:       369ce74a3c
+  Built:            Wed Feb 19 01:06:16 2020
+  OS/Arch:          linux/arm64
+  Experimental:     false
+ containerd:
+  Version:          1.3.3-0ubuntu1~18.04.2
+  GitCommit:        
+ runc:
+  Version:          spec: 1.0.1-dev
+  GitCommit:        
+ docker-init:
+  Version:          0.18.0
+  GitCommit:       
+</code></pre>
+<h3 id="3-checking-docker-runtime">3. Checking Docker runtime</h3>
+<p>Starting with JetPack 4.2, NVIDIA has introduced a container runtime with Docker integration. This custom runtime enables Docker containers to access the underlying GPUs available in the Jetson family.</p>
+<pre><code>pico@pico1:/tmp/docker-build$ sudo nvidia-docker version
+NVIDIA Docker: 2.0.3
+Client:
+ Version:           19.03.6
+ API version:       1.40
+ Go version:        go1.12.17
+ Git commit:        369ce74a3c
+ Built:             Fri Feb 28 23:47:53 2020
+ OS/Arch:           linux/arm64
+ Experimental:      false
+
+Server:
+ Engine:
+  Version:          19.03.6
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.12.17
+  Git commit:       369ce74a3c
+  Built:            Wed Feb 19 01:06:16 2020
+  OS/Arch:          linux/arm64
+  Experimental:     false
+ containerd:
+  Version:          1.3.3-0ubuntu1~18.04.2
+  GitCommit:        
+ runc:
+  Version:          spec: 1.0.1-dev
+  GitCommit:        
+ docker-init:
+  Version:          0.18.0
+  GitCommit:
+</code></pre>
+<h2 id="installing-docker-compose-on-nvidia-jetson-nano">Installing Docker Compose on NVIDIA Jetson Nano</h2>
+<p>Jetson Nano doesnt come with Docker Compose installed by default. You will need to install it first:</p>
+<pre><code>export DOCKER_COMPOSE_VERSION=1.27.4
+sudo apt-get install libhdf5-dev
+sudo apt-get install libssl-dev
+sudo pip3 install docker-compose==&quot;${DOCKER_COMPOSE_VERSION}&quot;
+apt install python3
+apt install python3-pip
+pip install docker-compose
+</code></pre>
+<pre><code>docker-compose version
+docker-compose version 1.26.2, build unknown
+docker-py version: 4.3.1
+CPython version: 3.6.9
+OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+</code></pre>
+<p>Next, add default runtime for NVIDIA:</p>
+<p>Edit /etc/docker/daemon.json</p>
+<pre><code>{
+    &quot;runtimes&quot;: {
+        &quot;nvidia&quot;: {
+            &quot;path&quot;: &quot;/usr/bin/nvidia-container-runtime&quot;,
+            &quot;runtimeArgs&quot;: []
+        }
+    },
+
+    &quot;default-runtime&quot;: &quot;nvidia&quot;,
+    &quot;node-generic-resources&quot;: [ &quot;NVIDIA-GPU=0&quot; ]
+}
+
+</code></pre>
+<p>Restart the Docker Daemon</p>
+<pre><code>systemctl restart docker
+</code></pre>
+<h2 id="identify-the-jetson-board">Identify the Jetson board</h2>
+<pre><code>pico@pico1:~$ git clone https://github.com/jetsonhacks/jetsonUtilities
+Cloning into 'jetsonUtilities'...
+remote: Enumerating objects: 123, done.
+remote: Counting objects: 100% (39/39), done.
+remote: Compressing objects: 100% (30/30), done.
+remote: Total 123 (delta 15), reused 23 (delta 8), pack-reused 84
+Receiving objects: 100% (123/123), 32.87 KiB | 5.48 MiB/s, done.
+Resolving deltas: 100% (49/49), done.
+pico@pico1:~$ cd jetson
+-bash: cd: jetson: No such file or directory
+pico@pico1:~$ cd jetsonUtilities/
+</code></pre>
+<pre><code>pico@pico1:~/jetsonUtilities$ ls
+LICENSE  README.md  jetsonInfo.py  scripts
+
+pico@pico1:~/jetsonUtilities$ python3 jetsonInfo.py 
+NVIDIA Jetson Nano (Developer Kit Version)
+ L4T 32.4.4 [ JetPack 4.4.1 ]
+   Ubuntu 18.04.5 LTS
+   Kernel Version: 4.9.140-tegra
+ CUDA 10.2.89
+   CUDA Architecture: 5.3
+ OpenCV version: 4.1.1
+   OpenCV Cuda: NO
+ CUDNN: 8.0.0.180
+ TensorRT: 7.1.3.0
+ Vision Works: 1.6.0.501
+ VPI: 4.4.1-b50
+ Vulcan: 1.2.70
+</code></pre>
+<h2 id="install-the-latest-version-of-cuda">Install the latest version of CUDA</h2>
+<pre><code>wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/sbsa/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda-repo-ubuntu1804-11-3-local_11.3.1-465.19.01-1_arm64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-3-local_11.3.1-465.19.01-1_arm64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-3-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
+</code></pre>
+<h2 id="verify-docker-runtime">Verify Docker runtime</h2>
+<pre><code>docker info | grep runtime
+ Runtimes: nvidia runc io.containerd.runc.v2 io.containerd.runtime.v1.linux
+</code></pre>
+<h2 id="testing-gpu-support">Testing GPU Support</h2>
+<p>We’ll use the deviceQuery NVIDIA test application (included in L4T) to check that we can access the GPU in the cluster. First, we’ll create a Docker image with the appropriate software, run it directly as Docker, then run it using containerd ctr and finally on the Kubernetes cluster itself.</p>
+<h3 id="running-devicequery-on-docker-with-gpu-support">Running deviceQuery on Docker with GPU support</h3>
+<h3 id="create-a-directory">Create a directory</h3>
+<pre><code>mkdir test
+cd test
+</code></pre>
+<h3 id="copy-the-sample-files">Copy the sample files</h3>
+<p>Copy the demos where deviceQuery is located to the working directory where the Docker image will be created:</p>
+<pre><code>cp -R /usr/local/cuda/samples .
+</code></pre>
+<h3 id="create-a-dockerfile">Create a Dockerfile</h3>
+<pre><code>FROM nvcr.io/nvidia/l4t-base:r32.5.0
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends make g++
+COPY ./samples /tmp/samples
+WORKDIR /tmp/samples/1_Utilities/deviceQuery
+RUN make clean &amp;&amp; make
+CMD [&quot;./deviceQuery&quot;]
+</code></pre>
+<pre><code>sudo docker build -t ajeetraina/jetson_devicequery . -f Dockerfile
+</code></pre>
+<pre><code>pico@pico2:~/test$ sudo docker run --rm --runtime nvidia ajeetraina/jetson_devicequery:latest
+./deviceQuery Starting...
+
+ CUDA Device Query (Runtime API) version (CUDART static linking)
+
+Detected 1 CUDA Capable device(s)
+
+Device 0: &quot;NVIDIA Tegra X1&quot;
+  CUDA Driver Version / Runtime Version          10.2 / 10.2
+  CUDA Capability Major/Minor version number:    5.3
+  Total amount of global memory:                 3963 MBytes (4155383808 bytes)
+  ( 1) Multiprocessors, (128) CUDA Cores/MP:     128 CUDA Cores
+  GPU Max Clock rate:                            922 MHz (0.92 GHz)
+  Memory Clock rate:                             13 Mhz
+  Memory Bus Width:                              64-bit
+  L2 Cache Size:                                 262144 bytes
+  Maximum Texture Dimension Size (x,y,z)         1D=(65536), 2D=(65536, 65536), 3D=(4096, 4096, 4096)
+  Maximum Layered 1D Texture Size, (num) layers  1D=(16384), 2048 layers
+  Maximum Layered 2D Texture Size, (num) layers  2D=(16384, 16384), 2048 layers
+  Total amount of constant memory:               65536 bytes
+  Total amount of shared memory per block:       49152 bytes
+  Total number of registers available per block: 32768
+  Warp size:                                     32
+  Maximum number of threads per multiprocessor:  2048
+  Maximum number of threads per block:           1024
+  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)
+  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)
+  Maximum memory pitch:                          2147483647 bytes
+  Texture alignment:                             512 bytes
+  Concurrent copy and kernel execution:          Yes with 1 copy engine(s)
+  Run time limit on kernels:                     Yes
+  Integrated GPU sharing Host Memory:            Yes
+  Support host page-locked memory mapping:       Yes
+  Alignment requirement for Surfaces:            Yes
+  Device has ECC support:                        Disabled
+  Device supports Unified Addressing (UVA):      Yes
+  Device supports Compute Preemption:            No
+  Supports Cooperative Kernel Launch:            No
+  Supports MultiDevice Co-op Kernel Launch:      No
+  Device PCI Domain ID / Bus ID / location ID:   0 / 0 / 0
+  Compute Mode:
+     &lt; Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) &gt;
+
+deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.2, CUDA Runtime Version = 10.2, NumDevs = 1
+Result = PASS
+</code></pre>
+<p>Test 2: Running deviceQuery on containerd with GPU support</p>
+<p>Since K3s uses containerd as its runtime by default, we will use the ctr command line to test and deploy the deviceQuery image we pushed on containerd with this script:</p>
+<pre><code>#!/bin/bash
+IMAGE=ajeetraina/jetson_devicequery:latest
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+ctr i pull docker.io/${IMAGE}
+ctr run --rm --gpus 0 --tty docker.io/${IMAGE} deviceQuery
+</code></pre>
+<h2 id="execute-the-script">Execute the script</h2>
+<pre><code>sudo sh usectr.sh
+</code></pre>
+<pre><code>sudo sh usectr.sh 
+docker.io/ajeetraina/jetson_devicequery:latest:                                   resolved       |++++++++++++++++++++++++++++++++++++++| 
+manifest-sha256:dfeaad4046f78871d3852e5d5fb8fa848038c57c34c6554c6c97a00ba120d550: done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:4438ebff930fb27930d802553e13457783ca8a597e917c030aea07f8ff6645c0:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:b1cdeb9e69c95684d703cf96688ed2b333a235d5b33f0843663ff15f62576bd4:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:bf60857fb4964a3e3ce57a900bbe47cd1683587d6c89ecbce4af63f98df600aa:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:0aac5305d11a81f47ed76d9663a8d80d2963b61c643acfce0515f0be56f5e301:    done           |++++++++++++++++++++++++++++++++++++++| 
+config-sha256:37987db6d6570035e25e713f41e665a6d471d25056bb56b4310ed1cb1d79a100:   done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:f0f57d03cad8f8d69b1addf90907b031ccb253b5a9fc5a11db83c51aa311cbfb:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:08c23323368d4fde5347276d543c500e1ff9b712024ca3f85172018e9440d8b0:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:04da93b342eb651d6b94c74a934a3290697573a907fa0a06067b538095601745:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:f84ceb6e8887e9b3b454813459ee97c2b9730869dbd37d4cca4051958b7a5a36:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:93752947af53e2a3225e145b359b956df36e20521b5dde0fe6d3fb92fd2a9538:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:b235194751dee33624fc154603f7e25ecdfbb02538fb7d55fa796df9afa95fee:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:905b1329c1d473c79650e33b882d980b3522fb72e58ecd3456c4fb3c4039fe92:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:8931d5ba88b488c949f77f990e8f9198b153ceb71afd0369eac9c39beb38f2d6:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:cfb2938be99fb944fe31165bdf44532a5536865ce53b12eb7758d1e2a51ad33e:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:606a67bb8db9a1111022bdc6406442e11c1a66653136c5c777114bf67b61038a:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:2f37138d1c8ac71d9314a0f8996ba69579bbc6ee6a57440557bc7eef486ed292:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:9ce7ce1da17c2b8149573d1d73132f61a73083f0cd498eeb7a0da404fd77db14:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:a36863a728ec9221c83c745f40511946dfd63beca0f10c9afcc774ef7a98e420:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:86dd6e5994e2c15f2783d8d543327479ccee7f3b20023dd962fdb9a211071e16:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:f5299db1221c515de91f59d84b79f2f839f9c94a5d0cc7fad04134e23ec9b88a:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:15a5811e1a7bf377cbac066b04e0b36b4c1a41ca63eb3c67c17b734577f6beea:    done           |++++++++++++++++++++++++++++++++++++++| 
+layer-sha256:cb893097de39451407d7167b312ec56eaea80baa041877af8239dbe833fa044b:    done           |++++++++++++++++++++++++++++++++++++++| 
+elapsed: 81.4s                                                                    total:  305.5  (3.8 MiB/s)                                       
+unpacking linux/arm64/v8 sha256:dfeaad4046f78871d3852e5d5fb8fa848038c57c34c6554c6c97a00ba120d550...
+
+done
+
+./deviceQuery Starting...
+
+ CUDA Device Query (Runtime API) version (CUDART static linking)
+
+Detected 1 CUDA Capable device(s)
+
+Device 0: &quot;NVIDIA Tegra X1&quot;
+  CUDA Driver Version / Runtime Version          10.2 / 10.2
+  CUDA Capability Major/Minor version number:    5.3
+  Total amount of global memory:                 3963 MBytes (4155383808 bytes)
+  ( 1) Multiprocessors, (128) CUDA Cores/MP:     128 CUDA Cores
+  GPU Max Clock rate:                            922 MHz (0.92 GHz)
+  Memory Clock rate:                             13 Mhz
+  Memory Bus Width:                              64-bit
+  L2 Cache Size:                                 262144 bytes
+  Maximum Texture Dimension Size (x,y,z)         1D=(65536), 2D=(65536, 65536), 3D=(4096, 4096, 4096)
+  Maximum Layered 1D Texture Size, (num) layers  1D=(16384), 2048 layers
+  Maximum Layered 2D Texture Size, (num) layers  2D=(16384, 16384), 2048 layers
+  Total amount of constant memory:               65536 bytes
+  Total amount of shared memory per block:       49152 bytes
+  Total number of registers available per block: 32768
+  Warp size:                                     32
+  Maximum number of threads per multiprocessor:  2048
+  Maximum number of threads per block:           1024
+  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)
+  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)
+  Maximum memory pitch:                          2147483647 bytes
+  Texture alignment:                             512 bytes
+  Concurrent copy and kernel execution:          Yes with 1 copy engine(s)
+  Run time limit on kernels:                     Yes
+  Integrated GPU sharing Host Memory:            Yes
+  Support host page-locked memory mapping:       Yes
+  Alignment requirement for Surfaces:            Yes
+  Device has ECC support:                        Disabled
+  Device supports Unified Addressing (UVA):      Yes
+  Device supports Compute Preemption:            No
+  Supports Cooperative Kernel Launch:            No
+  Supports MultiDevice Co-op Kernel Launch:      No
+  Device PCI Domain ID / Bus ID / location ID:   0 / 0 / 0
+  Compute Mode:
+     &lt; Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) &gt;
+
+deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.2, CUDA Runtime Version = 10.2, NumDevs = 1
+Result = PASS
+
+
+</code></pre>
+<h3 id="test-3-running-devicequery-on-the-k3s-cluster">Test 3: Running deviceQuery on the K3s cluster</h3>
+<pre><code>pico@pico2:~/test$ cat pod_deviceQuery.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devicequery
+spec:
+  containers:
+    - name: nvidia
+      image: ajeetraina/jetson_devicequery:latest
+
+      command: [ &quot;./deviceQuery&quot; ]
+pico@pico2:~/test$
+</code></pre>
+<pre><code>sudo KUBECONFIG=/etc/rancher/k3s/k3s.yaml kubectl apply -f ./pod_deviceQuery.yaml
+pod/devicequery created
+</code></pre>
+<pre><code>pico@pico2:~/test$ sudo KUBECONFIG=/etc/rancher/k3s/k3s.yaml kubectl describe pod devicequery
+Name:         devicequery
+Namespace:    default
+Priority:     0
+Node:         pico4/192.168.1.163
+Start Time:   Sun, 13 Jun 2021 09:16:44 -0700
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+Status:       Pending
+IP:           
+IPs:          &lt;none&gt;
+Containers:
+  nvidia:
+    Container ID:  
+    Image:         ajeetraina/jetson_devicequery:latest
+    Image ID:      
+    Port:          &lt;none&gt;
+    Host Port:     &lt;none&gt;
+    Command:
+      ./deviceQuery
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Environment:    &lt;none&gt;
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mcrmv (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-mcrmv:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       &lt;nil&gt;
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              &lt;none&gt;
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  78s   default-scheduler  Successfully assigned default/devicequery to pico4
+  Normal  Pulling    77s   kubelet            Pulling image &quot;ajeetraina/jetson_devicequery:latest&quot;
+pico@pico2:~/test$
+</code></pre>
+<pre><code>cat pod_deviceQuery_jetson4.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devicequery
+spec:
+  nodeName: pico4
+  containers:
+    - name: nvidia
+      image: ajeetraina/jetson_devicequery:latest
+      command: [ &quot;./deviceQuery&quot; ]
+pico@pico2:~/test$ 
+</code></pre>
+<pre><code>pico@pico2:~/test$ sudo KUBECONFIG=/etc/rancher/k3s/k3s.yaml kubectl describe pod devicequery
+Name:         devicequery
+Namespace:    default
+Priority:     0
+Node:         pico4/192.168.1.163
+Start Time:   Sun, 13 Jun 2021 09:16:44 -0700
+Labels:       &lt;none&gt;
+Annotations:  &lt;none&gt;
+Status:       Running
+IP:           10.42.1.3
+IPs:
+  IP:  10.42.1.3
+Containers:
+  nvidia:
+    Container ID:  containerd://fd502d6bfa55e2f80b2d50bc262e6d6543fd8d09e9708bb78ecec0b2e09621c3
+    Image:         ajeetraina/jetson_devicequery:latest
+    Image ID:      docker.io/ajeetraina/jetson_devicequery@sha256:dfeaad4046f78871d3852e5d5fb8fa848038c57c34c6554c6c97a00ba120d550
+    Port:          &lt;none&gt;
+    Host Port:     &lt;none&gt;
+    Command:
+      ./deviceQuery
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    1
+      Started:      Sun, 13 Jun 2021 09:21:50 -0700
+      Finished:     Sun, 13 Jun 2021 09:21:50 -0700
+    Ready:          False
+    Restart Count:  5
+    Environment:    &lt;none&gt;
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mcrmv (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-mcrmv:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       &lt;nil&gt;
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              &lt;none&gt;
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  7m51s                  default-scheduler  Successfully assigned default/devicequery to pico4
+  Normal   Pulled     5m45s                  kubelet            Successfully pulled image &quot;ajeetraina/jetson_devicequery:latest&quot; in 2m5.699757621s
+  Normal   Pulled     5m43s                  kubelet            Successfully pulled image &quot;ajeetraina/jetson_devicequery:latest&quot; in 1.000839703s
+  Normal   Pulled     5m29s                  kubelet            Successfully pulled image &quot;ajeetraina/jetson_devicequery:latest&quot; in 967.072951ms
+  Normal   Pulled     4m59s                  kubelet            Successfully pulled image &quot;ajeetraina/jetson_devicequery:latest&quot; in 1.025604394s
+  Normal   Created    4m59s (x4 over 5m45s)  kubelet            Created container nvidia
+  Normal   Started    4m59s (x4 over 5m45s)  kubelet            Started container nvidia
+  Warning  BackOff    4m20s (x8 over 5m42s)  kubelet            Back-off restarting failed container
+  Normal   Pulling    2m47s (x6 over 7m51s)  kubelet            Pulling image &quot;ajeetraina/jetson_devicequery:latest&quot;
+</code></pre>
+<pre><code>pico@pico2:~/test$ sudo KUBECONFIG=/etc/rancher/k3s/k3s.yaml kubectl apply -f ./pod_deviceQuery_jetson4.yaml
+pod/devicequery configured
+</code></pre>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2014 - 2023 Collabnix
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/collabnix" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ajeetsraina" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
