@@ -53,7 +53,7 @@ We are going to build an nginx image with custome page
 
 #### Setup environment:
 ```
-$ mkdir docker-compose/build
+$ mkdir -p docker-compose/build
 $ cd docker-compose/build
 ```
 
