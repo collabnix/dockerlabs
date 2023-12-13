@@ -65,7 +65,7 @@
 
 | Title       | Topics Covered         | Labs |
 |:-------------|:------------------|:------|
-| [Docker for AI](https://github.com/collabnix/dockerlabs/tree/master/workshop/ai) | Docker for Data Scientist | 1 |
+| [Docker for AI](https://www.docker.com/products/ai-ml-development/) | Docker for Data Scientist | 1 |
 | Docker for Gaming | Gaming | Not Started|
 | Docker for Financial Service | - | Not Started|
 | Docker for Healthcare | - | Not Started|
