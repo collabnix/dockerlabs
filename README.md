@@ -59,6 +59,7 @@
 | [Docker init for PHP](https://github.com/dockersamples/docker-init-demos/tree/main/php/app) | Dockerfile, Compose, PHP | Developer Tools | 1|
 | [Compose Watch](https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch)| Compose, Sync, Rebuild| Developer Tools | 1 |
 | [Compose Include](https://github.com/ajeetraina/compose-include) | Compose, Include | Developer Tools | 1 |
+| [Compose Profile](https://github.com/ajeetraina/compose-demos/blob/main/wordpress/profile/README.md) | Compose, Profile, Staging, Prod | Developer Tools | 1 |
 
 
 ## Industry Use cases
