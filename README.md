@@ -50,6 +50,7 @@
 | Title       | Topics Covered         | Category | Labs |
 |:-------------|:------------------|:------|:------|
 | [Docker Scout](https://github.com/collabnix/docker-scout-community) | Scout CLI, Scout Sample Demo| Security | 2 |
+| [Docker Extensions](https://github.com/collabnix/docker-community-extensions) | Docker Extensions | Development Tools | 1 |
 | [Docker init](https://github.com/dockersamples/docker-init-demos) | Dockerfile, Compose, Python, Go, Rust, Node | Developer Tools | 5|
 | [Docker init for Python](https://github.com/dockersamples/docker-init-demos/tree/main/python) | Dockerfile, Compose, Python | Developer Tools| 1|
 | [Docker init for Go](https://github.com/dockersamples/docker-init-demos/tree/main/go) |Dockerfile, Compose, Go | Developer Tools | 1|
