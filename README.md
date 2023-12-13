@@ -66,9 +66,9 @@
 | Title       | Topics Covered         | Labs |
 |:-------------|:------------------|:------|
 | [Docker for AI](https://www.docker.com/products/ai-ml-development/) | Docker for Data Scientist | 1 |
-| Docker for Gaming | Gaming | Not Started|
+| [Docker for Leading IDEs](https://www.docker.com/products/ide/) | Developer IDEs | Not Started|
 | Docker for Financial Service | - | Not Started|
-| Docker for Healthcare | - | Not Started|
+| [Docker for Healthcare](https://collabnix.com/5-benefits-of-docker-for-the-healthcare-industry/) | - | Not Started|
 
 
 
