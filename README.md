@@ -12,19 +12,24 @@
 - Over 500+ Highly Interactive Docker Tutorials and Guides
 - Well tested on Docker Desktop  and can be run on Browser (no Infrastructure required)
 
-
-# 🚀 Tested Platform 
-
-- [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- [Play with Docker](https://play-with-docker.com)
-
-
 # 📝 Join our Community
 
 - Join 8700+ DevOps Engineers today via [Community Slack](https://launchpass.com/collabnix)
 - Join 2000+ [Discord members](https://discord.gg/QEkCXAXYSe)
 - Fork, Contribute & Share via [DockerLabs GITHUB Repository](https://github.com/collabnix/dockerlabs)
 -  Click and Follow us over Twitter [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
+
+# Featured Blog Posts and Articles
+
+- [A First Look at Docker Scout – A Software Supply Chain Security for Developers](https://collabnix.com/a-first-look-at-docker-scout-a-software-supply-chain-security-for-developers/)
+- [Getting Started with GenAI Stack powered with Docker, LangChain, Neo4j and Ollama](https://collabnix.com/getting-started-with-genai-stack-powered-with-docker-langchain-neo4j-and-ollama/)
+- [Docker Init for Go Developers](https://collabnix.com/docker-init-for-go-developers/)
+- [What is Docker Compose Include and What problem does it solve?](https://collabnix.com/what-is-docker-compose-include-and-what-problem-does-it-solve/)
+- [Leveraging Compose Profiles for Dev, Prod, Test, and Staging Environments](https://collabnix.com/leveraging-compose-profiles-for-dev-prod-test-and-staging-environments/)
+- [What is Docker Compose Watch and what problem does it solve?](https://collabnix.com/what-is-docker-compose-watch-and-what-problem-does-it-solve/)
+- [What is Resource Saver Mode in Docker Desktop and what problem does it solve?](https://collabnix.com/what-is-resource-saver-mode-in-docker-desktop-and-what-problem-does-it-solve/)
+- [🐳 Boost Your Docker Workflow: Introducing Docker Init for Python Developers 🚀](https://collabnix.com/%f0%9f%90%b3-boost-your-docker-workflow-introducing-docker-init-for-python-developers-%f0%9f%9a%80/)
+- [How to Integrate Docker Scout with GitHub Actions](https://collabnix.com/how-to-integrate-docker-scout-with-github-actions/)
 
 
 # 📌 Workshop/Labs (Hands-On Practical Labs)
