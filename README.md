@@ -55,6 +55,8 @@
 | [Docker init for Python](https://github.com/dockersamples/docker-init-demos/tree/main/python) | Dockerfile, Compose, Python | Developer Tools| 1|
 | [Docker init for Go](https://github.com/dockersamples/docker-init-demos/tree/main/go) |Dockerfile, Compose, Go | Developer Tools | 1|
 | [Docker init for Rust](https://github.com/dockersamples/docker-init-demos/tree/main/rust) |Dockerfile, Compose, Rust | Developer Tools | 1|
+| [Docker init for ASP.NET](https://github.com/dockersamples/docker-init-demos/tree/main/dotnet) | Dockerfile, Compose, .NET | Developer Tools | 1|
+| [Docker init for PHP](https://github.com/dockersamples/docker-init-demos/tree/main/php/app) | Dockerfile, Compose, PHP | Developer Tools | 1|
 | [Compose Watch](https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch)| Compose, Sync, Rebuild| Developer Tools | 1 |
 | [Compose Include](https://github.com/ajeetraina/compose-include) | Compose, Include | Developer Tools | 1 |
 
