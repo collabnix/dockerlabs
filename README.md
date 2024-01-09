@@ -405,7 +405,7 @@ This is a curated list of Docker Scout related resources. It is not an official 
 ### [Download Docker Scout Cheatsheet Now!!](https://www.docker.com/resources/scout-cheat-sheet/) ![badge](https://img.shields.io/badge/-new-green) 
 
 
-# Blogs
+# Scout Blogs
 
 - [Skout - Docker Scout for Your Kubernetes](https://collabnix.com/docker-scout-for-your-kubernetes-cluster/)
 - [Enhancing Your GitHub Workflow with Docker Scout](https://www.felipecruz.es/enhancing-your-github-workflow-with-docker-scout/)  ![badge](https://img.shields.io/badge/-new-green) 
@@ -428,7 +428,7 @@ This is a curated list of Docker Scout related resources. It is not an official 
 
 
 
-# Tutorials
+# Scout Tutorials
 
 - [Docker Scout quickstart](https://docs.docker.com/scout/quickstart/)
 - [Docker Scout Advanced image analysis](https://docs.docker.com/scout/advanced-image-analysis/)
@@ -441,19 +441,19 @@ This is a curated list of Docker Scout related resources. It is not an official 
 - [Docker Scout Integration with SonarQube](https://docs.docker.com/scout/integrations/code-quality/sonarqube/) ![badge](https://img.shields.io/badge/-new-green) 
 
 
-## GitHub Sample projects
+## GitHub Sample projects for Scout
 
 - [Scout Action](https://github.com/docker/scout-action) ![badge](https://img.shields.io/badge/-new-green) 
 - [Scout CLI](https://github.com/docker/scout-cli)
 
 
-## Case Studies
+## Scout Case Studies
 
 - [How JW Player Secured 300 Repos in an Hour with Docker Scout](https://www.docker.com/blog/how-jw-player-secured-300-repos-in-an-hour-with-docker-scout/) ![badge](https://img.shields.io/badge/-new-green)
 - [Sysdig and Docker Forge Alliance to Accelerate Cloud-Native Security](https://medium.com/@seifeddinerajhi/sysdig-and-docker-forge-alliance-to-accelerate-cloud-native-security-16f6fec74327)
 
 
-# Featured Videos
+# Scout Featured Videos
 
 | Docker Scout: Securing The Complete Software Supply Chain (DockerCon 2023) | Cut Through Vulnerability Noise with Runtime Insights (DockerCon 2023)   |
 | ------------------------------------------------ | ---------------------------------------------------- |
