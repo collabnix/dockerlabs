@@ -401,18 +401,8 @@ We recommend you to visit [Docker Awesome Compose Repository](https://github.com
 
 This is a curated list of Docker Scout related resources. It is not an official list, but a community effort to help people find the best stuff for Docker Scout in 2023 and beyond. 
 
-This comprehensive list is maintained by Docker Captain [Ajeet Singh Raina](https://twitter.com/ajeetsraina) and his [Collabnix community](https://collabnix.com). The aim is to highlight the most valuable and relevant resources for Docker Scout users. This could include the latest updates, tools, tutorials, and other materials that the community finds particularly useful.
-
-# 📝 Join our Community
-
-- Join 9000+ DevOps Engineers today via [Community Slack](https://launchpass.com/collabnix)
-- Join our [Discord Server](https://discord.gg/QEkCXAXYSe)
-- Fork, Contribute & Share via [Scout GITHUB Repository](https://github.com/collabnix/docker-scout-community)
--  Click and Follow us over Twitter [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40collabnix)](https://twitter.com/collabnix)
 
 ### [Download Docker Scout Cheatsheet Now!!](https://www.docker.com/resources/scout-cheat-sheet/) ![badge](https://img.shields.io/badge/-new-green) 
-
-
 
 
 # Blogs
