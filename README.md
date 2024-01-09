@@ -21,6 +21,7 @@
 
 # Featured Blog Posts and Articles
 
+- [Docker GenAI Stack on Windows using Docker Desktop](https://collabnix.com/docker-genai-stack-on-windows-using-docker-desktop/)
 - [A First Look at Docker Scout – A Software Supply Chain Security for Developers](https://collabnix.com/a-first-look-at-docker-scout-a-software-supply-chain-security-for-developers/)
 - [Getting Started with GenAI Stack powered with Docker, LangChain, Neo4j and Ollama](https://collabnix.com/getting-started-with-genai-stack-powered-with-docker-langchain-neo4j-and-ollama/)
 - [Docker Init for Go Developers](https://collabnix.com/docker-init-for-go-developers/)
