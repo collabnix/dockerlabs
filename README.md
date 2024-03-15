@@ -38,7 +38,8 @@
 
 | Title       | Topics Covered         | Labs |
 |:-------------|:------------------|:------|
-| [Getting Started](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html) | Why, What & How about Docker?(slides) | - | 
+| [Getting Started](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html) | Why, What & How about Docker?(slides) | - |
+| [Docker Core Concepts](https://github.com/collabnix/dockerlabs/tree/master/beginners/README.md) | Concepts of Docker Image, Containers, Multi-container apps | - | 
 | [Docker for Beginner](./workshop/docker/README.md)  | Docker Image, Container, Dockerfile, Volumes, Networking | 40  |
 | [Docker for Intermediate](./intermediate/workshop/README.md) | Docker Compose, Swarm, Advanced Networking | 50 |
 | [Docker for Advanced](./advanced/workshop/README.md) | Docker Security, Content Trust, Image Scanning, Swarm Mode Security | 31 |
