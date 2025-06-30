@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -18,11 +19,8 @@ import {
 import LabCard from '@/components/LabCard';
 import { LabMetadata, LabCategory } from '@/types/lab';
 
-interface LabsPageProps {
-  onLabSelect: (lab: LabMetadata) => void;
-}
-
-const LabsPage: React.FC<LabsPageProps> = ({ onLabSelect }) => {
+const LabsPage: React.FC = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
@@ -39,7 +37,7 @@ const LabsPage: React.FC<LabsPageProps> = ({ onLabSelect }) => {
           description: 'Learn the basics of Docker by running your first container with the classic hello-world image.',
           category: 'beginners',
           difficulty: 1,
-          duration: '10 minutes',
+          duration: '5-10 minutes',
           tags: ['basics', 'getting-started', 'containers'],
           lastUpdated: '2024-06-30',
           featured: true
@@ -142,6 +140,10 @@ const LabsPage: React.FC<LabsPageProps> = ({ onLabSelect }) => {
     return matchesSearch && matchesCategory;
   });
 
+  const handleLabSelect = (lab: LabMetadata) => {
+    navigate(`/labs/${lab.id}`);
+  };
+
   const getIcon = (iconName: string) => {
     const icons = {
       BookOpen: BookOpen,
@@ -186,7 +188,7 @@ const LabsPage: React.FC<LabsPageProps> = ({ onLabSelect }) => {
                 <LabCard
                   key={lab.id}
                   lab={lab}
-                  onClick={() => onLabSelect(lab)}
+                  onClick={() => handleLabSelect(lab)}
                 />
               ))}
             </div>
@@ -251,7 +253,7 @@ const LabsPage: React.FC<LabsPageProps> = ({ onLabSelect }) => {
                         <LabCard
                           key={lab.id}
                           lab={lab}
-                          onClick={() => onLabSelect(lab)}
+                          onClick={() => handleLabSelect(lab)}
                         />
                       ))}
                     </div>
@@ -286,7 +288,7 @@ const LabsPage: React.FC<LabsPageProps> = ({ onLabSelect }) => {
                       <LabCard
                         key={lab.id}
                         lab={lab}
-                        onClick={() => onLabSelect(lab)}
+                        onClick={() => handleLabSelect(lab)}
                       />
                     ))}
                 </div>
