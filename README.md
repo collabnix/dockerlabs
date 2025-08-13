@@ -14,7 +14,7 @@
 
 ## ⭐ Star History
 
-If this repo helped you learn Docker, please star it! ⭐
+If this repo helped you in your Docker journey, please star it! ⭐
 
 [![Star History Chart](https://api.star-history.com/svg?repos=collabnix/dockerlabs&type=Date)](https://star-history.com/#collabnix/dockerlabs&Date)
 
