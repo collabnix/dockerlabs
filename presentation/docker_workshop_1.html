@@ -1096,7 +1096,7 @@ RUN chmod 600 /hello/hello/hello.txt
 <section>
  <p> Layer ID <br>
 
-Each instruction the Dockerfile generates a layer. Each of this layer has a randomly generated unique ID. This ID can be seen at the time of build. See the image next slide 
+Each instruction in the Dockerfile generates a layer. Each of this layer has a randomly generated unique ID. This ID can be seen at the time of build. See the image next slide 
 	</p> 
 </section>	
 <section>
@@ -1356,7 +1356,7 @@ ADD http://www.vlsitechnology.org/pharosc_8.4.tar.gz .
 	<p> Build Docker Image </p> 
 	<pre><code class="hljs" data-trim contenteditable>
 
-docker build -t saiyam911/alpine-add . -f <name of dockerfile>
+docker build -t saiyam911/alpine-add . -f [name of dockerfile]
 
 	</code></pre>	
 	<p> Tagging image as labs-git </p> 
