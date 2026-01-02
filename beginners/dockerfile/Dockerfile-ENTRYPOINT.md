@@ -96,8 +96,8 @@ Hi, your ENTRYPOINT instruction in Shell Form !
 
 ### Override the existing ENTRYPOINT
 ```
-$ docker container run --entrypoint "/bin/echo" entrypoint:v2 "Hello, Welocme to Docker Meetup! "
-Hello, Welocme to Docker Meetup! 
+$ docker container run --entrypoint "/bin/echo" entrypoint:v2 "Hello, Welcome to Docker Meetup! "
+Hello, Welcome to Docker Meetup! 
 ```
 ## Contributor 
 [Savio Mathew](https://www.linkedin.com/in/saviovettoor)

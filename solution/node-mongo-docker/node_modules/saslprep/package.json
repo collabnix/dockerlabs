@@ -1,0 +1,72 @@
+{
+  "name": "saslprep",
+  "version": "1.0.3",
+  "description": "SASLprep: Stringprep Profile for User Names and Passwords, rfc4013.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run unit-test",
+    "lint": "npx eslint --quiet .",
+    "unit-test": "npx jest",
+    "gen-code-points": "node generate-code-points.js > code-points.mem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reklatsmasters/saslprep.git"
+  },
+  "keywords": [
+    "sasl",
+    "saslprep",
+    "stringprep",
+    "rfc4013",
+    "4013"
+  ],
+  "author": "Dmitry Tsvettsikh <me@reklatsmasters.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reklatsmasters/saslprep/issues"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "homepage": "https://github.com/reklatsmasters/saslprep#readme",
+  "devDependencies": {
+    "@nodertc/eslint-config": "^0.2.1",
+    "eslint": "^5.16.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3"
+  },
+  "dependencies": {
+    "sparse-bitfield": "^3.0.3"
+  },
+  "eslintConfig": {
+    "extends": "@nodertc",
+    "rules": {
+      "camelcase": "off",
+      "no-continue": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "test/*.js"
+        ],
+        "env": {
+          "jest": true
+        },
+        "rules": {
+          "require-jsdoc": "off"
+        }
+      }
+    ]
+  },
+  "jest": {
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "testMatch": [
+      "**/test/*.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
+  }
+}

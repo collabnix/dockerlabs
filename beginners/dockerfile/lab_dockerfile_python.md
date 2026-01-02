@@ -82,7 +82,7 @@ ADD a.py /home/a.py
 ```
 
 We will place our hello.py and a.py files in the newly created directory itself (/test). ADD command would copy it from /test (current working directory) of host system
-to container's filesystem at /home. The destination directories in the container would be create incase they don't exist.
+to container's filesystem at /home. The destination directories in the container would be created incase they don't exist.
 
 Code for hello.py:
 ```

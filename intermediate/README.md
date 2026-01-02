@@ -64,9 +64,6 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 - [Docker Service Inspection Filtering & Template Engine under Swarm Mode](http://collabnix.com/understanding-swarm-mode-filtering/)
 
 
-## Docker Swarm - Logging Solutions
-
-- [Service Logs with Docker Swarm]
 
 ## Docker Swarm - Networking Solution
 
@@ -76,40 +73,21 @@ description: collabnix | DockerLab | Docker - Intermediate Track
 - [What’s new in Docker 1.12 Scheduling? – Part-I](http://collabnix.com/whats-new-in-docker-1-12-scheduling-part-i/)
 - [What’s new in Docker 1.12.0 Load-Balancing feature?](http://collabnix.com/whats-new-in-docker-1-12-0-load-balancing/)
 
-## Docker Swarm - Updates & Rollback
-
-
-- Service Rollback with Docker Swarm
-
 
 ## Docker Swarm - High Availability, Placement & Constraints
 
 - [Implementing High Availability with Docker Swarm](./Implementing_High_Availability_with_Docker_Swarm.md)
 - [Secrets Management with Docker Swarm](https://medium.com/acmvit/docker-secret-in-out-94c66eb4376b)
-- Scheduling Placement with Docker Swarm
-
-## Docker Swarm - HealthCheck Solution
-
-- Health Aware Orchestration with Docker Swarm
-
-
-## Docker Swarm - Security
-
-
-- TLS and Certificate Authority with Docker Swarm
 
 
 
 ## Docker Desktop for Mac
 
-- Install Docker Desktop<br>
-- Win container Deploy ,Login,exit container<br>
-- List, Start, Stop, restart containers<br>
-- Where containers are stored<br>
-[Working with container hostnames]()<br>
-[Working on multiple containers]()<br>
-[Container inspect]()<br>
-[Deleting containers]()<br>
+- [Install Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
+- [Networking features in Docker Desktop for Mac](https://docs.docker.com/desktop/mac/networking/)
+- [Disk utilization in Docker for Mac](https://docs.docker.com/desktop/mac/space/)
+- [Logs and troubleshooting](https://docs.docker.com/desktop/mac/troubleshoot/)
+- [Docker Desktop for Apple silicon](https://docs.docker.com/desktop/mac/apple-silicon/)
 
 ## Introduction to Docker Application Packages
 

@@ -8,9 +8,9 @@
 Containers are just a linux processes running in the namespace of the underlying kernel and can be checkpointed in the form of images. Such images i.e. metadata of the checkpointed container can be copied into the another containers and can be restored there hence resuming the previously checkpointed task in the namespace of another container. 
 Docker comes with the inbuilt features of checkpointing the running containers which can be performed on play-on-docker platform with some modifications on the running docker daemon.
 
-Docker checkpoint/restore features are backed by the seperate project called Checkpoint and Restore in Userspace and abbreviated as CRIU. This project deals with checkpoint and restore of the containers as well as container migration. CRIU implements various protocols for live migration of containers i.e. lazy migration, diskless migration, zero downtime migration, etc.
+Docker checkpoint/restore features are backed by the separate project called Checkpoint and Restore in Userspace and abbreviated as CRIU. This project deals with checkpoint and restore of the containers as well as container migration. CRIU implements various protocols for live migration of containers i.e. lazy migration, diskless migration, zero downtime migration, etc.
 
-For more information regarding criu project, you can visit the following link and they have seperate mailing list if you want to contribute to it. 
+For more information regarding criu project, you can visit the following link and they have separate mailing list if you want to contribute to it. 
 
 - [CRIU Project](https://criu.org/Main_Page) <br>
 
@@ -59,7 +59,7 @@ Now if you check the log file of container you can see the integer incrementing 
 
 
 Docker also has feature to migrate task form one containers to another containers form which we can checkpoint the currently running container.
-The checkpointed metadata of the container can be stored into specific location of contaienr with the help of --checkpoint-dir option. Later  the stored metadata can be pointed form another contaienr and restore the task but unfortunately docker has removed this functionality and exported to the Moby project for further experimentation. 
+The checkpointed metadata of the container can be stored into specific location of container with the help of --checkpoint-dir option. Later  the stored metadata can be pointed form another container and restore the task but unfortunately docker has removed this functionality and exported to the Moby project for further experimentation. 
 
 
 

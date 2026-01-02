@@ -1,0 +1,10 @@
+docker build -t data_science_image . 
+docker run -it data_science_image 
+docker build -t myimage:1.0
+python  script_1.py 
+docker exec -it <container_name> python /path/to/code_1.py
+docker login 
+docker tag data_science_image collabnix12/data_science_image:v1.0 
+docker push collabnix12/data_science_image:v1.0 
+docker pull collabnix12/data_science_image:v1.0 
+docker run -it collabnix12/data_science_image:v1.0 

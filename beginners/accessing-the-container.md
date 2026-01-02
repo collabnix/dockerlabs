@@ -41,7 +41,7 @@ docker run -dit ubuntu
 ## Accessing the container shell
 
 ```
-docker exec -t <container-id> bash
+docker exec -ti <container-id> bash
 ```
 
 ## Accesssing the container shell

@@ -1,0 +1,80 @@
+site_name: Collabnix
+site_url: https://dockerlabs.collabnix.com/
+# Copyright
+copyright: Copyright &copy; 2014 - 2023 Collabnix
+nav:
+  - Home: index.md
+  - Installation:
+      - Installing Docker Desktop for Linux: 2_Installation/docker-desktop-for-linux.md
+      - Installing Docker Desktop for Windows: 2_Installation/docker-desktop-for-windows.md
+      - Installing Docker Desktop for Mac: 2_Installation/docker-desktop-for-mac.md
+      - Installing Docker on Raspberry Pi: 2_Installation/docker-on-raspberrypi.md
+      - Installing Docker on NVIDIA Jetson: 2_Installation/docker-on-jetson-nano.md
+  - Docker for Beginners:
+      - Getting Started with Docker Hub:
+          - Creating Your Docker Hub Account: 3_Docker-For-Beginners/1_Getting-Started-with-Docker-Hub/docker-hub.md
+      - Getting Started with Docker Image:
+          - Running Hello World Example: 3_Docker-For-Beginners/2_Getting-Started-With-Docker-Image/hello-world.md
+          - Working with Docker Image: 3_Docker-For-Beginners/2_Getting-Started-With-Docker-Image/working-with-docker-image.md
+          - Saving Images and Containers as tar files: 3_Docker-For-Beginners/2_Getting-Started-With-Docker-Image/saving-images-and-containers.md
+          - Building Your First Alpine Docker Image: 3_Docker-For-Beginners/2_Getting-Started-With-Docker-Image/building-first-alpine.md
+      - Getting started with Dockerfile:
+          - Writing a dockerfile: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/1_Writing-dockerfile.md
+          - Layering a dockerfile: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/2_Layering-Dockerfile.md 
+      - Labs:
+          - Installing Git: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/3_Lab1_dockerfile_git.md 
+          - ADD Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/4_Lab2_Create-an-image-with-ADD-instruction.md
+          - COPY Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/5_Lab3_dockerfile_copy.md
+          - CMD Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/6_Lab4_cmd.md
+          - Entrypoint Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/7_Lab5_Entrypoint.md
+          - Workdir Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/7_Lab5_Entrypoint.md
+          - Run Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/9_Lab8_run.md
+          - Arg Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/10_Lab9_arg.md
+          - Volume Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/10_Lab11_volume.mdd
+          - Env Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/11_Lab10_env.md
+          - Expose Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/12_Lab11_expose_instruction.md
+          - Label Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/13_Lab12_label.md
+          - Onbuild Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/14_Lab13_onbuild.md
+          - Healthcheck Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/15_Lab14_healthcheck.md
+          - Create-an-image-with-SHELL: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/16_Lab15-Create-an-image-with-SHELL-instruction.md
+          - Entrypoint-instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/17_Lab16-Entrypoint-instruction.md
+          - User Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/18_Lab17-user.md
+          - Hello Python Script Instruction: 3_Docker-For-Beginners/3_Getting-Started-with-Dockerfile/19_lab18_dockerfile_python.md
+      - Accessing And Managing Docker Containers:
+          - Accessing The Container Shell: 4_Accessing-And-Managing-Docker-Container/Accessing-The-Container-Shell.md
+          - Managing Docker Containers: 4_Accessing-And-Managing-Docker-Container/Managing-Docker-Containers.md
+          - Running A Command Inside Running Container: 4_Accessing-And-Managing-Docker-Container/Running-A-Command-Inside-Running-Container.md
+  - Docker for Intermediate:
+          - Overview of Docker Compose: 4_Docker-for-Intermediate/1_Docker_Compose.md
+          - Dockerfile vs Docker Compose: 4_Docker-for-Intermediate/2_Dockerfile-vs-DockerCompose.md
+          - Docker Compose Installation: 4_Docker-for-Intermediate/3_Docker-Compose-Installation.md
+  - Docker for Advanced:
+          - Overview of Docker Security:6_Docker-For-Advanced
+  - Sample Apps:
+          - WordPress + Nginx:7_Docker_Apps
+          
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+# Customization
+extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/collabnix
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ajeetsraina
+
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: cyan
+  font:
+    text: Ubuntu
+  icon:
+    logo: material/cloud
+

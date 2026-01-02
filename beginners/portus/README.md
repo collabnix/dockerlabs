@@ -57,6 +57,12 @@ docker run -d \
 git clone https://github.com/SUSE/Portus
 ```
 
+## Change directory into the cloned folder
+
+```
+cd Portus
+```
+
 ## Bring up Portus Application
 
 ```
