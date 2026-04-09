@@ -342,6 +342,8 @@ body {
   font-size: .8rem;
 }
 
+.carbonbadge { display: inline-block; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .project-name    { font-size: 1.7rem; }
