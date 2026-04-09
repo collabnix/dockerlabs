@@ -2,3 +2,361 @@
 ---
 
 @import 'jekyll-theme-cayman';
+
+/* ============================================================
+   DockerLabs – Modern Refresh
+   Docker brand palette
+     Primary blue  : #2496ED
+     Dark navy     : #0B1A2B
+     Accent cyan   : #00B4D8
+     Light bg      : #F4F8FB
+     Card border   : #DDE6EF
+   ============================================================ */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  --docker-blue:   #2496ED;
+  --docker-navy:   #0B1A2B;
+  --docker-cyan:   #00B4D8;
+  --docker-light:  #F4F8FB;
+  --docker-border: #DDE6EF;
+  --text-primary:  #1A2636;
+  --text-muted:    #5A7184;
+  --radius:        10px;
+  --shadow-sm:     0 2px 8px rgba(36,150,237,.12);
+  --shadow-md:     0 6px 24px rgba(36,150,237,.18);
+  --transition:    .25s ease;
+}
+
+/* ---------- Base Reset / Typography ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--docker-light);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* ---------- Page Header (hero) ---------- */
+.page-header {
+  background: linear-gradient(135deg, var(--docker-navy) 0%, #0f2d52 55%, #1a4a7a 100%);
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle diagonal stripe overlay */
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,.025) 40px,
+    rgba(255,255,255,.025) 80px
+  );
+  pointer-events: none;
+}
+
+/* Docker whale logo */
+.page-header img {
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.35));
+  transition: transform var(--transition);
+}
+.page-header img:hover { transform: scale(1.05); }
+
+/* github-button badges row */
+.page-header .github-button-row {
+  margin: 1.2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .6rem;
+}
+
+/* Project name */
+.project-name {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -.5px;
+  color: #fff;
+  margin: .75rem 0 .4rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+
+/* Tagline */
+.project-tagline {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,.78);
+  font-weight: 400;
+  max-width: 640px;
+  margin: 0 auto 1.6rem;
+}
+
+/* CTA buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .55rem 1.3rem;
+  margin: .3rem .2rem;
+  border-radius: 6px;
+  font-size: .88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.3);
+  backdrop-filter: blur(4px);
+}
+.btn:hover {
+  background: var(--docker-blue);
+  border-color: var(--docker-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(36,150,237,.4);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------- Main Content Area ---------- */
+.main-content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+  background: #fff;
+  border-left: 1px solid var(--docker-border);
+  border-right: 1px solid var(--docker-border);
+  min-height: 60vh;
+}
+
+/* ---------- Headings ---------- */
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4 {
+  color: var(--docker-navy);
+  font-weight: 700;
+}
+
+.main-content h1 {
+  font-size: 2rem;
+  border-bottom: 3px solid var(--docker-blue);
+  padding-bottom: .4rem;
+  margin-top: 2rem;
+}
+
+.main-content h2 {
+  font-size: 1.55rem;
+  border-bottom: 1px solid var(--docker-border);
+  padding-bottom: .3rem;
+  margin-top: 2rem;
+}
+
+.main-content h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Links ---------- */
+.main-content a {
+  color: var(--docker-blue);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.main-content a:hover {
+  color: var(--docker-cyan);
+  text-decoration: underline;
+}
+
+/* ---------- Tables ---------- */
+.main-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.4rem 0;
+  font-size: .92rem;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.main-content table thead tr {
+  background: var(--docker-blue);
+  color: #fff;
+}
+
+.main-content table th {
+  padding: .7rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+.main-content table td {
+  padding: .65rem 1rem;
+  border-bottom: 1px solid var(--docker-border);
+  vertical-align: top;
+}
+
+.main-content table tbody tr:nth-child(even) {
+  background: #f7fbff;
+}
+
+.main-content table tbody tr:hover {
+  background: #e8f4fd;
+  transition: background var(--transition);
+}
+
+/* ---------- Code Blocks ---------- */
+.main-content pre {
+  background: var(--docker-navy);
+  color: #e2f0fb;
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  overflow-x: auto;
+  font-size: .87rem;
+  line-height: 1.6;
+  border-left: 4px solid var(--docker-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.main-content code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: .87em;
+  background: #e8f3fc;
+  color: #0d4a80;
+  padding: .15em .4em;
+  border-radius: 4px;
+}
+
+.main-content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* ---------- Blockquotes ---------- */
+.main-content blockquote {
+  border-left: 4px solid var(--docker-blue);
+  margin: 1.2rem 0;
+  padding: .8rem 1.2rem;
+  background: #f0f8ff;
+  color: var(--text-muted);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+}
+
+/* ---------- Horizontal Rule ---------- */
+.main-content hr {
+  border: none;
+  border-top: 2px solid var(--docker-border);
+  margin: 2rem 0;
+}
+
+/* ---------- Images ---------- */
+.main-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Badges / Shields ---------- */
+.main-content img[src*="shields.io"],
+.main-content img[src*="img.shields"],
+.main-content img[src*="badge"],
+.main-content img[src*="star-history"] {
+  box-shadow: none;
+  border-radius: 4px;
+}
+
+/* ---------- Lists ---------- */
+.main-content ul li,
+.main-content ol li {
+  margin: .3rem 0;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--docker-navy);
+  color: rgba(255,255,255,.75);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  font-size: .88rem;
+  border-top: 3px solid var(--docker-blue);
+}
+
+.site-footer h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: .8rem;
+}
+
+.site-footer a {
+  color: var(--docker-cyan);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.site-footer button {
+  background: var(--docker-blue);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: .5rem 1.2rem;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.site-footer button:hover {
+  background: var(--docker-cyan);
+  transform: translateY(-2px);
+}
+.site-footer button a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.site-footer iframe {
+  max-width: 100%;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+}
+
+.site-footer-owner,
+.site-footer-credits {
+  display: block;
+  margin-top: .8rem;
+  color: rgba(255,255,255,.5);
+  font-size: .8rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .project-name    { font-size: 1.7rem; }
+  .project-tagline { font-size: 1rem; }
+  .main-content    { padding: 1.5rem 1rem 2rem; }
+  .main-content h1 { font-size: 1.5rem; }
+  .main-content h2 { font-size: 1.25rem; }
+  .btn             { font-size: .82rem; padding: .45rem 1rem; }
+  .page-header     { padding: 2.5rem 1rem 2rem; }
+}
+
+@media (max-width: 480px) {
+  .project-name    { font-size: 1.4rem; }
+  .main-content table { font-size: .8rem; }
+  .main-content table th,
+  .main-content table td { padding: .5rem .6rem; }
+}
+

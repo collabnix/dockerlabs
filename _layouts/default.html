@@ -15,77 +15,72 @@
 
 {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
+    <meta name="theme-color" content="#2496ED">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-   
 
     <header class="page-header" role="banner">
-      <center><a href="http://dockerlabs.collabnix.com"><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png"></a></center>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
-     <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
+      <a href="http://dockerlabs.collabnix.com">
+        <img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png" alt="DockerLabs Logo">
+      </a>
+
+      <div class="github-button-row">
+        <a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
+        <a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
+        <a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
+        <a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
+      </div>
+
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2> 
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+
       {% if site.github.is_project_page %}
-        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+        <a href="{{ site.github.repository_url }}" class="btn">&#128279; View on GitHub</a>
       {% endif %}
       {% if site.show_downloads %}
-        <a href="https://join.slack.com/t/collabnix/shared_invite/zt-1gank9ask-YM4ZbCtRq2id9G2o01ItgA" class="btn">Join Slack</a>
-     {% endif %}
-      {% if site.show_downloads %}
-        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">Docker Cheatsheet</a>
-     {% endif %}
-        {% if site.show_downloads %}
-        <a href="https://collabnix.com/docker-compose-cheatsheet/" class="btn">Docker Compose Cheatsheet</a>
-     {% endif %}
-        {% if site.show_downloads %}
-        <a href="https://twitter.com/collabnix" class="btn">Follow us on Twitter</a>
-     {% endif %}
-          
+        <a href="https://launchpass.com/collabnix" class="btn">&#128172; Join Slack</a>
+        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">&#128203; Docker Cheatsheet</a>
+        <a href="https://collabnix.com/docker-compose-cheatsheet/" class="btn">&#128203; Compose Cheatsheet</a>
+        <a href="https://twitter.com/collabnix" class="btn">&#128038; Follow on Twitter</a>
+      {% endif %}
     </header>
 
     <main id="content" class="main-content" role="main">
-      
-      {{ content }}
-    
-      
-      <footer class="site-footer">
-        
-       
-     
-              <h3> Practice Docker Tutorial </h3>
-        <button> <a href=" https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386"> free Ubuntu VM </a></button>
-    
-        <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div><script src="https://hackr.io/widget.js?v=1.0"></script>
-        {% if site.github.is_project_page %}
-        <h3> Join Collabnix Discord Channel </h3>
-        
-       <iframe src="https://discordapp.com/widget?id=1020180904129335379&theme=dark" width="830" height="500" allowtransparency="true" frameborder="0"></iframe>
-       <a class="twitter-timeline" data-width="1200" data-height="500" href="https://twitter.com/collabnix?ref_src=twsrc%5Etfw">Tweets by collabnix</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-             
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
+      {{ content }}
+
+      <footer class="site-footer">
+        <h3>&#127381; Practice Docker Tutorials</h3>
+        <button><a href="https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386">Launch Free Ubuntu VM</a></button>
+
+        <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div>
+        <script src="https://hackr.io/widget.js?v=1.0"></script>
+
+        {% if site.github.is_project_page %}
+        <h3>&#128172; Join Collabnix Discord</h3>
+        <iframe src="https://discordapp.com/widget?id=1020180904129335379&theme=dark" width="830" height="500" allowtransparency="true" frameborder="0" title="Collabnix Discord"></iframe>
+
+        <a class="twitter-timeline" data-width="1200" data-height="500" href="https://twitter.com/collabnix?ref_src=twsrc%5Etfw">Tweets by collabnix</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <span class="site-footer-owner">
+          <a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.
+        </span>
         {% endif %}
-              {% if site.show_downloads %}  
-      {% endif %}
-       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
-         <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
-<!-- End of HubSpot Embed Code -->
-         <div id="wcb" class="carbonbadge"></div>
-<script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
-        </span> 
+
+        <span class="site-footer-credits">
+          Generated by <a href="https://pages.github.com">GitHub Pages</a> &bull;
+          <div id="wcb" class="carbonbadge" style="display:inline-block;"></div>
+          <script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
+        </span>
+
+        <!-- HubSpot Embed -->
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
       </footer>
     </main>
-    <!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>

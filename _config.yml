@@ -1,3 +1,5 @@
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-cayman
+title: DockerLabs – Docker & Kubernetes Learning Hub
+description: A free, community-driven learning platform with 500+ Docker & Kubernetes tutorials for all skill levels.
