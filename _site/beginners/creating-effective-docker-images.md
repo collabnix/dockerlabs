@@ -1,1 +1,0 @@
-# Creating Effective Docker Images

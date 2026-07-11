@@ -1,1 +1,0 @@
-## Docker for Go Developers

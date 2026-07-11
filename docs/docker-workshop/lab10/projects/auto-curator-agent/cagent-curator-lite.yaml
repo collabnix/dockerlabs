@@ -1,0 +1,123 @@
+#!/usr/bin/env cagent run
+version: "3"
+
+# =============================================================================
+# Awesome Docker cagent - Auto Curator Agent (LITE)
+# =============================================================================
+# Optimized for GitHub Models FREE TIER (8,000 token input limit per request)
+#
+# Key differences from full version:
+#   - Skills DISABLED (saves ~2,500 tokens per request)
+#   - Instructions trimmed (essential rules inlined)
+#   - Uses gpt-4o-mini for sub-agents (better token efficiency)
+#   - max_tokens reduced to stay within limits
+#
+# Usage:
+#   export GITHUB_TOKEN=your_github_pat  # needs repo + models:read
+#   cagent run ./cagent-curator-lite.yaml "Find new cagent blog posts"
+# =============================================================================
+
+providers:
+  github:
+    api_type: openai_chatcompletions
+    base_url: https://models.github.ai/inference
+    token_key: GITHUB_TOKEN
+
+models:
+  smart:
+    provider: github
+    model: openai/gpt-4o
+    max_tokens: 4096
+
+  fast:
+    provider: github
+    model: openai/gpt-4o-mini
+    max_tokens: 2048
+
+agents:
+  # ---------------------------------------------------------------------------
+  # ROOT: Curator Coordinator
+  # ---------------------------------------------------------------------------
+  root:
+    model: smart
+    description: Coordinates maintenance of collabnix/awesome-docker-cagent.
+    instruction: |
+      You curate the awesome-docker-cagent list at github.com/collabnix/awesome-docker-cagent.
+
+      WORKFLOW: discoverer finds resources → validator checks them → you format entries → publisher creates PR.
+
+      TABLE FORMATS (use exactly):
+      - Blogs: | [Title](URL) | Source | Description |
+      - Projects: | [name](URL) | Description | Author |
+      - MCP servers: | [name](URL) | Description | XXX⭐ |
+
+      SECTIONS: Official Resources, cagent+MCP, cagent+DMR, cagent+IDE, cagent+RAG, General Resources, GitHub Sample Projects, MCP Servers, Featured Videos.
+
+      RULES: Only cagent-specific content (not generic Docker). Add entries at END of relevant table. Never reorder existing entries. Quality score 3+/5 only.
+
+    sub_agents: [discoverer, validator, publisher]
+    toolsets:
+      - type: filesystem
+      - type: think
+      - type: mcp
+        ref: docker:github
+
+  # ---------------------------------------------------------------------------
+  # DISCOVERER: Finds new resources
+  # ---------------------------------------------------------------------------
+  discoverer:
+    model: fast
+    description: Searches web and GitHub for new Docker cagent resources.
+    instruction: |
+      Search for new Docker cagent resources. Use these queries:
+      - Blogs: "docker cagent" blog, site:dev.to cagent, site:docker.com/blog cagent
+      - Repos: search GitHub for "cagent" in name/description, topic:docker-cagent
+      - MCP: "mcp-server docker", "type: mcp" in YAML files
+      - Videos: "docker cagent" site:youtube.com
+
+      For each find, report: Title, URL, Source, Description, Suggested section.
+      Check the current README first to avoid duplicates.
+
+    toolsets:
+      - type: mcp
+        ref: docker:duckduckgo
+      - type: fetch
+      - type: mcp
+        ref: docker:github
+
+  # ---------------------------------------------------------------------------
+  # VALIDATOR: Checks links and quality
+  # ---------------------------------------------------------------------------
+  validator:
+    model: fast
+    description: Validates URLs and content quality for the awesome list.
+    instruction: |
+      For each URL: fetch it, verify it loads (200=✅, 404=❌, 301=⚠️ update URL).
+      For GitHub repos: check if archived, check last commit date, note star count.
+      Content must mention "cagent" specifically (not just generic Docker).
+      Report: ✅ VALID, ⚠️ WARNING, ❌ BROKEN, or 🚫 REJECTED with reason.
+
+    toolsets:
+      - type: fetch
+      - type: mcp
+        ref: docker:github
+
+  # ---------------------------------------------------------------------------
+  # PUBLISHER: Creates PRs
+  # ---------------------------------------------------------------------------
+  publisher:
+    model: fast
+    description: Creates branches and PRs to update the awesome list.
+    instruction: |
+      To publish changes to collabnix/awesome-docker-cagent:
+      1. Read current README.md (get its SHA for updates)
+      2. Create branch: curator/add-resources-YYYY-MM-DD
+      3. Update README.md with new entries in correct sections
+      4. Create PR with clear title and change list
+
+      CRITICAL: Add entries at END of tables. Never overwrite existing content.
+      Include file SHA when updating to avoid conflicts.
+
+    toolsets:
+      - type: mcp
+        ref: docker:github

@@ -1,9 +1,0 @@
-You just installed Portus for the first time.
-
-You can configure Portus by running:
-  portusctl setup
-
-This tool will setup all the components required to run Portus.
-
-A list of parameters to be used during the setup phase can be obtained running:
-  portusctl help setup

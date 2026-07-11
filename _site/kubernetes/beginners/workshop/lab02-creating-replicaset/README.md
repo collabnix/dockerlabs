@@ -1,1 +1,0 @@
-# Creating ReplicaSet for Nginx

@@ -1,2 +1,0 @@
-set CC_FOR_TARGET "xcrun clang"
-set CXX_FOR_TARGET "g++"

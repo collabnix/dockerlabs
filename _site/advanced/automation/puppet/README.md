@@ -1,1 +1,0 @@
-# Docker, Terraform and Puppet

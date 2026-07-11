@@ -1,0 +1,55 @@
+#!/usr/bin/env cagent run
+version: "2"
+
+# =============================================================================
+# Bug Investigator - Local Version (Docker Model Runner)
+# =============================================================================
+# Runs entirely locally using Docker Model Runner - NO API KEYS NEEDED!
+# Perfect for:
+#   - Offline development
+#   - Privacy-sensitive environments
+#   - Learning without API costs
+#
+# Prerequisites:
+#   - Docker Desktop with Model Runner enabled
+#   - Pull model: docker model pull ai/gemma3:2B-Q4_0
+#
+# Usage:
+#   cagent run ./cagent-local.yaml
+# =============================================================================
+
+models:
+  local-model:
+    provider: dmr
+    model: ai/gemma3:2B-Q4_0
+    max_tokens: 4096
+    # Alternative models:
+    # model: ai/llama3.2:3B-Q4_0    # Larger, more capable
+    # model: ai/qwen2.5:3B-Q4_0     # Good for code
+
+agents:
+  # ---------------------------------------------------------------------------
+  # ROOT AGENT: Bug Investigator (Simplified for local model)
+  # ---------------------------------------------------------------------------
+  root:
+    model: local-model
+    description: Debugging assistant that helps fix code issues
+    instruction: |
+      You are a helpful debugging assistant. When a developer shares an error:
+
+      1. **Analyze** the error message and stack trace
+      2. **Identify** the root cause
+      3. **Explain** what went wrong in simple terms
+      4. **Provide** a working fix with code
+
+      Be concise. Focus on actionable solutions.
+
+      When you need to think through complex problems, use the think tool.
+      Use the filesystem to read code files if needed.
+
+    toolsets:
+      - type: filesystem
+      - type: builtin
+        name: think
+      - type: builtin
+        name: todo

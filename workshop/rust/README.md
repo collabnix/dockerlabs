@@ -1,1 +1,0 @@
-## Docker for Rust Developers
