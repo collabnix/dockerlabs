@@ -97,10 +97,9 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'workshopSidebar',
+            to: '/cheatsheets',
+            label: 'Cheatsheets',
             position: 'left',
-            label: '🚀 Modern Docker Workshop',
           },
           {
             href: 'https://collabnix.com',
