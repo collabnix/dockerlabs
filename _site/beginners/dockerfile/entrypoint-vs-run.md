@@ -25,6 +25,75 @@
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
 
+## CMD vs Entrypoint
+
+In order to understand the dfference between CMD and ENTRYPOINT, let us first look at CMD.
+
+When building a Dockerfile, the CMD instruction specifies the default program that will execute once the container runs.
+
+Let's understand with the following Dockerfile:
+
+```
+FROM ubuntu:20.10
+RUN    apt-get update
+CMD ["echo", "Hello, Ubuntu"]
+```
+
+The CMD instruction in the file above echoes the message Hello, Ubuntu when the container is started without a CLI argument.
+Let's build it:
+
+```
+docker build -t greeting .
+```
+
+The above command will build a Docker image by name "greeting". Let's run the Docker container:
+
+```
+docker run greeting hostname
+```
+
+As a CMD default command gets overridden, the above command will run the container and display the hostname, thereby ignoring the echo instruction in the Dockerfile with the following output:
+
+```
+ 7145eerey430
+```
+
+Now let's replace CMD with Entrypoint and see the difference:
+
+```
+FROM ubuntu:20.10
+RUN    apt-get update
+ENTRYPOINT ["echo", "Hello, Ubuntu"]
+```
+
+The above Dockerfile uses an ENTRYPOINT instruction that echoes Hello, Ubuntu when the container is running.
+
+Let's build it:
+
+```
+docker build -t greeting .
+```
+
+
+When building this image, the daemon looks for the ENTRYPOINT instruction and specifies it as a default program that will run with or without a command-line input.
+
+When running a Docker container using the greeting Docker image without command line arguments, the default ENTRYPOINT instructions are executed, echoing Hello, Ubuntu.
+
+In case additional command-line arguments are introduced through the CLI, the ENTRYPOINT is not ignored. Instead, the command line parameters are appended as arguments for the ENTRYPOINT command, i.e.:
+
+```
+docker run greeting hostname
+```
+
+will execute the ENTRYPOINT, echoing Hello, Ubuntu then displaying the hostname to return the following output:
+
+```
+Hello, Ubuntu  7145eerey430
+````
+
+
+Example #2
+
 ## What is ENTRYPOINT meant for?
 
 ENTRYPOINT is meant to provide the executable while CMD is to pass the default arguments to the executable.
