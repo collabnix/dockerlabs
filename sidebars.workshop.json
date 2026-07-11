@@ -1,0 +1,810 @@
+[
+  {
+    "type": "doc",
+    "label": "👋 Getting Started",
+    "id": "docker-workshop/index"
+  },
+  {
+    "type": "doc",
+    "label": "Prerequisites",
+    "id": "docker-workshop/prereq/prereq"
+  },
+  {
+    "type": "category",
+    "label": "Docker 101",
+    "collapsed": true,
+    "items": [
+      {
+        "type": "category",
+        "label": "Inner-Loop Development Workflow",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Inner vs Outer Loop",
+            "id": "docker-workshop/lab1/overview"
+          },
+          {
+            "type": "doc",
+            "label": "What is a Container",
+            "id": "docker-workshop/lab1/what-is-a-container"
+          },
+          {
+            "type": "doc",
+            "label": "Running Postgres Containers",
+            "id": "docker-workshop/lab1/postgres"
+          },
+          {
+            "type": "doc",
+            "label": "Docker Workflow",
+            "id": "docker-workshop/lab1/docker-workflow"
+          },
+          {
+            "type": "doc",
+            "label": "docker init",
+            "id": "docker-workshop/lab1/docker-init"
+          },
+          {
+            "type": "doc",
+            "label": "Compose Watch",
+            "id": "docker-workshop/lab1/compose-watch"
+          },
+          {
+            "type": "doc",
+            "label": "Best Practices",
+            "id": "docker-workshop/lab1/best-practices"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Product Catalog — Sample App",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/product-catalog/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Prerequisites",
+            "id": "docker-workshop/product-catalog/prereq"
+          },
+          {
+            "type": "doc",
+            "label": "Tech Stack",
+            "id": "docker-workshop/product-catalog/tech-stack"
+          },
+          {
+            "type": "doc",
+            "label": "Develop",
+            "id": "docker-workshop/product-catalog/develop"
+          },
+          {
+            "type": "doc",
+            "label": "Test",
+            "id": "docker-workshop/product-catalog/test"
+          },
+          {
+            "type": "doc",
+            "label": "Build",
+            "id": "docker-workshop/product-catalog/build"
+          },
+          {
+            "type": "doc",
+            "label": "Secure",
+            "id": "docker-workshop/product-catalog/secure"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Docker and AI",
+    "collapsed": true,
+    "items": [
+      {
+        "type": "category",
+        "label": "Docker Agent",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/lab10/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Getting Started",
+            "id": "docker-workshop/lab10/getting-started"
+          },
+          {
+            "type": "category",
+            "label": "Concepts",
+            "collapsed": true,
+            "items": [
+              {
+                "type": "doc",
+                "label": "Autonomy",
+                "id": "docker-workshop/lab10/concept/autonomy/autonomy"
+              },
+              {
+                "type": "doc",
+                "label": "Perception",
+                "id": "docker-workshop/lab10/concept/perception/perception"
+              },
+              {
+                "type": "doc",
+                "label": "Reasoning",
+                "id": "docker-workshop/lab10/concept/reasoning/reasoning"
+              },
+              {
+                "type": "doc",
+                "label": "Action",
+                "id": "docker-workshop/lab10/concept/action/action"
+              },
+              {
+                "type": "doc",
+                "label": "Goal-Oriented",
+                "id": "docker-workshop/lab10/concept/goal/goal"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Tools",
+            "collapsed": true,
+            "items": [
+              {
+                "type": "doc",
+                "label": "memory",
+                "id": "docker-workshop/lab10/tools/memory"
+              },
+              {
+                "type": "doc",
+                "label": "think",
+                "id": "docker-workshop/lab10/tools/think"
+              },
+              {
+                "type": "doc",
+                "label": "todo",
+                "id": "docker-workshop/lab10/tools/todo"
+              },
+              {
+                "type": "doc",
+                "label": "shell",
+                "id": "docker-workshop/lab10/tools/shell"
+              },
+              {
+                "type": "doc",
+                "label": "filesystem",
+                "id": "docker-workshop/lab10/tools/filesystem"
+              },
+              {
+                "type": "doc",
+                "label": "environment",
+                "id": "docker-workshop/lab10/tools/environment"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Integration",
+            "collapsed": true,
+            "items": [
+              {
+                "type": "doc",
+                "label": "Model Context Protocol",
+                "id": "docker-workshop/lab10/integration/mcp"
+              },
+              {
+                "type": "doc",
+                "label": "Docker Model Runner",
+                "id": "docker-workshop/lab10/integration/dmr"
+              },
+              {
+                "type": "doc",
+                "label": "RAG",
+                "id": "docker-workshop/lab10/integration/rag"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Projects",
+            "collapsed": true,
+            "items": [
+              {
+                "type": "doc",
+                "label": "A Simple Pirate Agent",
+                "id": "docker-workshop/lab10/projects/pirate"
+              },
+              {
+                "type": "doc",
+                "label": "Learning Agent with Alloy Models",
+                "id": "docker-workshop/lab10/projects/alloy"
+              },
+              {
+                "type": "doc",
+                "label": "Developer Agent with Tools",
+                "id": "docker-workshop/lab10/projects/dev"
+              },
+              {
+                "type": "doc",
+                "label": "Financial Analysis Team",
+                "id": "docker-workshop/lab10/projects/financial"
+              },
+              {
+                "type": "doc",
+                "label": "Docker Expert Team",
+                "id": "docker-workshop/lab10/projects/docker-expert"
+              },
+              {
+                "type": "doc",
+                "label": "Bug Investigator",
+                "id": "docker-workshop/lab10/projects/bug-investigator/bug-investigator"
+              },
+              {
+                "type": "doc",
+                "label": "Auto-Curator Agent",
+                "id": "docker-workshop/lab10/projects/auto-curator-agent/auto-curator-agent"
+              }
+            ]
+          },
+          {
+            "type": "doc",
+            "label": "Sharing Agents",
+            "id": "docker-workshop/lab10/sharing"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Docker Model Runner",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/lab4/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Getting Started",
+            "id": "docker-workshop/lab4/getting-started"
+          },
+          {
+            "type": "doc",
+            "label": "Product Catalog Chatbot",
+            "id": "docker-workshop/lab4/projects/catalog-chatbot"
+          },
+          {
+            "type": "doc",
+            "label": "GenAI Chatbot",
+            "id": "docker-workshop/lab4/projects/genai-chatbot"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "MCP Catalog and Toolkit",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/lab5/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Getting Started",
+            "id": "docker-workshop/lab5/getting-started"
+          },
+          {
+            "type": "doc",
+            "label": "Visual Chatbot",
+            "id": "docker-workshop/lab5/projects/visual-chatbot/visual-chatbot"
+          },
+          {
+            "type": "doc",
+            "label": "Your First MCP Server",
+            "id": "docker-workshop/lab5/projects/visual-chatbot/mcp"
+          },
+          {
+            "type": "doc",
+            "label": "GitHub MCP + Claude Desktop",
+            "id": "docker-workshop/lab5/projects/GitHub-Claude"
+          },
+          {
+            "type": "doc",
+            "label": "Docker MCP + Gordon",
+            "id": "docker-workshop/lab5/projects/Docker-CLI-With-Gordon"
+          },
+          {
+            "type": "doc",
+            "label": "Docker MCP + VS Code",
+            "id": "docker-workshop/lab5/projects/Docker-CLI-With-VSCode"
+          },
+          {
+            "type": "doc",
+            "label": "GitHub MCP + Gordon",
+            "id": "docker-workshop/lab5/projects/GitHub-MCP-Gordon"
+          },
+          {
+            "type": "doc",
+            "label": "Kubernetes MCP + Claude",
+            "id": "docker-workshop/lab5/projects/Kubernetes-MCP"
+          },
+          {
+            "type": "doc",
+            "label": "Slack MCP + Claude",
+            "id": "docker-workshop/lab5/projects/Slack-MCP-With-Claude"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Agentic Compose",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/lab6/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Getting Started",
+            "id": "docker-workshop/lab6/getting-started"
+          },
+          {
+            "type": "category",
+            "label": "DevDuck",
+            "collapsed": true,
+            "items": [
+              {
+                "type": "doc",
+                "label": "Overview",
+                "id": "docker-workshop/lab6/projects/devduck/overview"
+              },
+              {
+                "type": "doc",
+                "label": "Prerequisite",
+                "id": "docker-workshop/lab6/projects/devduck/prereq"
+              },
+              {
+                "type": "doc",
+                "label": "Getting Started",
+                "id": "docker-workshop/lab6/projects/devduck/getting-started"
+              },
+              {
+                "type": "doc",
+                "label": "Local Agent Interaction",
+                "id": "docker-workshop/lab6/projects/devduck/local-agent"
+              },
+              {
+                "type": "doc",
+                "label": "Cerebras Interaction",
+                "id": "docker-workshop/lab6/projects/devduck/cerebras-interaction"
+              }
+            ]
+          },
+          {
+            "type": "doc",
+            "label": "Agentic Product Catalog",
+            "id": "docker-workshop/lab6/projects/agentic-catalog"
+          },
+          {
+            "type": "doc",
+            "label": "Hackathon Recommender",
+            "id": "docker-workshop/lab6/projects/hackathon-recommender"
+          },
+          {
+            "type": "doc",
+            "label": "A2A Multi-Agent Fact Checker",
+            "id": "docker-workshop/lab6/projects/a2a-multi-agent-fact-checker"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Docker Sandboxes",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/lab8/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Getting Started",
+            "id": "docker-workshop/lab8/getting-started"
+          },
+          {
+            "type": "doc",
+            "label": "Why Agents Need Governance",
+            "id": "docker-workshop/lab8/projects/why-governance"
+          },
+          {
+            "type": "doc",
+            "label": "Your First Sandbox",
+            "id": "docker-workshop/lab8/projects/first-sandbox"
+          },
+          {
+            "type": "doc",
+            "label": "The Isolation Proof",
+            "id": "docker-workshop/lab8/projects/isolation-proof"
+          },
+          {
+            "type": "doc",
+            "label": "Reviewing Agent Changes",
+            "id": "docker-workshop/lab8/projects/reviewing-agent-changes"
+          },
+          {
+            "type": "doc",
+            "label": "Secrets Without Exposure",
+            "id": "docker-workshop/lab8/projects/secrets"
+          },
+          {
+            "type": "doc",
+            "label": "1Password Credential Injection",
+            "id": "docker-workshop/lab8/projects/1password-credentials"
+          },
+          {
+            "type": "doc",
+            "label": "Network Policy",
+            "id": "docker-workshop/lab8/projects/network-policy"
+          },
+          {
+            "type": "doc",
+            "label": "Branch Mode",
+            "id": "docker-workshop/lab8/projects/branch-mode"
+          },
+          {
+            "type": "doc",
+            "label": "Parallel Agents",
+            "id": "docker-workshop/lab8/projects/parallel-agents"
+          },
+          {
+            "type": "doc",
+            "label": "Running Open-Source Models",
+            "id": "docker-workshop/lab8/projects/local-models"
+          },
+          {
+            "type": "doc",
+            "label": "AI Governance at Scale",
+            "id": "docker-workshop/lab8/projects/governance-summary"
+          },
+          {
+            "type": "doc",
+            "label": "DevBoard",
+            "id": "docker-workshop/lab8/projects/devboard"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "AI Governance",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Setup",
+            "id": "docker-workshop/ai-governance/setup"
+          },
+          {
+            "type": "doc",
+            "label": "Why AI Governance",
+            "id": "docker-workshop/ai-governance/introduction"
+          },
+          {
+            "type": "doc",
+            "label": "The Policy Model",
+            "id": "docker-workshop/ai-governance/policy-model"
+          },
+          {
+            "type": "doc",
+            "label": "Network Enforcement Demo",
+            "id": "docker-workshop/ai-governance/network-demo"
+          },
+          {
+            "type": "doc",
+            "label": "Filesystem Enforcement Demo",
+            "id": "docker-workshop/ai-governance/filesystem-demo"
+          },
+          {
+            "type": "doc",
+            "label": "MCP Hands-On",
+            "id": "docker-workshop/ai-governance/mcp-hands-on"
+          },
+          {
+            "type": "doc",
+            "label": "Observability",
+            "id": "docker-workshop/ai-governance/observability"
+          },
+          {
+            "type": "doc",
+            "label": "What's Next",
+            "id": "docker-workshop/ai-governance/whats-next"
+          },
+          {
+            "type": "category",
+            "label": "Sandbox Kits",
+            "collapsed": true,
+            "items": [
+              {
+                "type": "doc",
+                "label": "Introduction to Kits",
+                "id": "docker-workshop/ai-governance/kits/intro"
+              },
+              {
+                "type": "doc",
+                "label": "Your First Mixin Kit",
+                "id": "docker-workshop/ai-governance/kits/first-mixin"
+              },
+              {
+                "type": "doc",
+                "label": "Network & Credentials",
+                "id": "docker-workshop/ai-governance/kits/network-and-creds"
+              },
+              {
+                "type": "doc",
+                "label": "Fork an Agent Kit",
+                "id": "docker-workshop/ai-governance/kits/agent-kit"
+              },
+              {
+                "type": "doc",
+                "label": "Stacking & Community Kits",
+                "id": "docker-workshop/ai-governance/kits/stacking-and-community"
+              },
+              {
+                "type": "doc",
+                "label": "Summary & Next Steps",
+                "id": "docker-workshop/ai-governance/kits/summary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Docker and Security",
+    "collapsed": true,
+    "items": [
+      {
+        "type": "category",
+        "label": "Container Security",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/security/container-security/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Setup",
+            "id": "docker-workshop/security/container-security/setup"
+          },
+          {
+            "type": "doc",
+            "label": "Surface the Problem",
+            "id": "docker-workshop/security/container-security/surface-the-problem"
+          },
+          {
+            "type": "doc",
+            "label": "BP#1: Minimal Base Images",
+            "id": "docker-workshop/security/container-security/minimal-base-images"
+          },
+          {
+            "type": "doc",
+            "label": "BP#2: Multi-Stage Builds",
+            "id": "docker-workshop/security/container-security/multi-stage-builds"
+          },
+          {
+            "type": "doc",
+            "label": "BP#3: Non-Root User",
+            "id": "docker-workshop/security/container-security/non-root-user"
+          },
+          {
+            "type": "doc",
+            "label": "BP#4: Read-Only + Drop Capabilities",
+            "id": "docker-workshop/security/container-security/readonly-capabilities"
+          },
+          {
+            "type": "doc",
+            "label": "BP#6-8: Secrets & Limiting Tools",
+            "id": "docker-workshop/security/container-security/secrets-and-tools"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Docker Scout (Reactive)",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/security/scout-reactive/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Continuous Scanning",
+            "id": "docker-workshop/security/scout-reactive/continuous-scanning"
+          },
+          {
+            "type": "doc",
+            "label": "CI Integration",
+            "id": "docker-workshop/security/scout-reactive/ci-integration"
+          },
+          {
+            "type": "doc",
+            "label": "Recommendations & Comparisons",
+            "id": "docker-workshop/security/scout-reactive/recommendations"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "DHI (Pro-active)",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/security/dhi-proactive/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Migrate to DHI",
+            "id": "docker-workshop/security/dhi-proactive/migration"
+          },
+          {
+            "type": "doc",
+            "label": "Attestations & Scanner Integration",
+            "id": "docker-workshop/security/dhi-proactive/attestations"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Docker Hardened Images",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Overview",
+            "id": "docker-workshop/lab9/dhi/overview"
+          },
+          {
+            "type": "doc",
+            "label": "Getting Started",
+            "id": "docker-workshop/lab9/dhi/getting-started"
+          },
+          {
+            "type": "doc",
+            "label": "Image Scanning",
+            "id": "docker-workshop/lab9/dhi/image-scanning"
+          },
+          {
+            "type": "doc",
+            "label": "Switch to DHI",
+            "id": "docker-workshop/lab9/dhi/switch-to-dhi"
+          },
+          {
+            "type": "doc",
+            "label": "Compliance & Attestations",
+            "id": "docker-workshop/lab9/dhi/compliance"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Supply Chain with dhictl",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "label": "Introduction & Setup",
+            "id": "docker-workshop/dhictl/introduction"
+          },
+          {
+            "type": "doc",
+            "label": "Meet the Product Catalog",
+            "id": "docker-workshop/dhictl/product-catalog"
+          },
+          {
+            "type": "doc",
+            "label": "Introducing Vulnerabilities",
+            "id": "docker-workshop/dhictl/introducing-vulnerabilities"
+          },
+          {
+            "type": "doc",
+            "label": "Browsing the DHI Catalog",
+            "id": "docker-workshop/dhictl/browsing-catalog"
+          },
+          {
+            "type": "doc",
+            "label": "Migrating to a Hardened Image",
+            "id": "docker-workshop/dhictl/migrating"
+          },
+          {
+            "type": "doc",
+            "label": "Supply Chain & dhictl Capabilities",
+            "id": "docker-workshop/dhictl/supply-chain"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Docker Offload",
+    "collapsed": true,
+    "items": [
+      {
+        "type": "doc",
+        "label": "Overview",
+        "id": "docker-workshop/lab7/overview"
+      },
+      {
+        "type": "doc",
+        "label": "Getting Started",
+        "id": "docker-workshop/lab7/getting-started"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Kubernetes 101",
+    "collapsed": true,
+    "items": [
+      {
+        "type": "doc",
+        "label": "Introduction & Your Cluster",
+        "id": "docker-workshop/kubernetes-101/overview"
+      },
+      {
+        "type": "doc",
+        "label": "Pods",
+        "id": "docker-workshop/kubernetes-101/pods"
+      },
+      {
+        "type": "doc",
+        "label": "Deployments",
+        "id": "docker-workshop/kubernetes-101/deployments"
+      },
+      {
+        "type": "doc",
+        "label": "Services",
+        "id": "docker-workshop/kubernetes-101/services"
+      },
+      {
+        "type": "doc",
+        "label": "Scaling & Rolling Updates",
+        "id": "docker-workshop/kubernetes-101/scaling-and-updates"
+      },
+      {
+        "type": "doc",
+        "label": "Exposing Your App with Ingress",
+        "id": "docker-workshop/kubernetes-101/ingress"
+      },
+      {
+        "type": "doc",
+        "label": "Bonus: Compose Bridge",
+        "id": "docker-workshop/kubernetes-101/compose-bridge"
+      },
+      {
+        "type": "doc",
+        "label": "Bonus: GenAI on Kubernetes",
+        "id": "docker-workshop/kubernetes-101/genai-on-kubernetes"
+      }
+    ]
+  }
+]

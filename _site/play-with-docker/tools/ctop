@@ -1,4 +1,0 @@
-# How to install ctop on PWD instance:
-
-$ pip install --upgrade pip
-$ pip install ctop

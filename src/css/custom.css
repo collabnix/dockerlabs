@@ -1,0 +1,56 @@
+/**
+ * DockerLabs theme — Docker-blue, modern, high-contrast.
+ */
+
+:root {
+  --ifm-color-primary: #1d63ed; /* Docker blue */
+  --ifm-color-primary-dark: #1858d8;
+  --ifm-color-primary-darker: #1653cc;
+  --ifm-color-primary-darkest: #1245a8;
+  --ifm-color-primary-light: #3a78ef;
+  --ifm-color-primary-lighter: #4a82f0;
+  --ifm-color-primary-lightest: #7099f4;
+
+  --ifm-code-font-size: 92%;
+  --ifm-font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --ifm-heading-font-weight: 700;
+  --docusaurus-highlighted-code-line-bg: rgba(29, 99, 237, 0.1);
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #64a0ff;
+  --ifm-color-primary-dark: #4189ff;
+  --ifm-color-primary-darker: #2f7dff;
+  --ifm-color-primary-darkest: #0a5cf5;
+  --ifm-color-primary-light: #87b7ff;
+  --ifm-color-primary-lighter: #99c3ff;
+  --ifm-color-primary-lightest: #cfe1ff;
+  --ifm-background-color: #0b1020;
+  --ifm-background-surface-color: #121a30;
+  --docusaurus-highlighted-code-line-bg: rgba(100, 160, 255, 0.15);
+}
+
+.navbar__title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Give the "Modern Docker Workshop" nav item a subtle emphasis */
+.navbar__item[href*='docker-workshop'] {
+  font-weight: 700;
+}
+
+.markdown img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.4rem;
+}
+
+/* Admonitions a touch tighter */
+.theme-admonition {
+  border-radius: 8px;
+}

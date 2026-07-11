@@ -1,0 +1,151 @@
+#!/usr/bin/env cagent run
+version: "3"
+
+# =============================================================================
+# Awesome Docker cagent - Auto Curator Agent (FULL)
+# =============================================================================
+# Full version with skills enabled. Requires paid GitHub Models or another
+# provider with higher token limits (>8K input tokens per request).
+#
+# For GitHub Models free tier, use cagent-curator-lite.yaml instead.
+#
+# Usage:
+#   export GITHUB_TOKEN=your_github_token
+#   cagent run ./cagent-curator.yaml "Find new cagent blog posts from the last week"
+# =============================================================================
+
+providers:
+  github:
+    api_type: openai_chatcompletions
+    base_url: https://models.github.ai/inference
+    token_key: GITHUB_TOKEN
+
+models:
+  smart:
+    provider: github
+    model: openai/gpt-4o
+    max_tokens: 8192
+
+  fast:
+    provider: github
+    model: openai/gpt-4o-mini
+    max_tokens: 4096
+
+agents:
+  root:
+    model: smart
+    skills: true
+    description: |
+      Coordinates maintenance of the awesome-docker-cagent list at
+      github.com/collabnix/awesome-docker-cagent. Discovers new resources,
+      validates links, and submits PRs.
+    instruction: |
+      You are the curator of the awesome-docker-cagent list, a community-maintained
+      collection of Docker cagent resources hosted at:
+      https://github.com/collabnix/awesome-docker-cagent
+
+      ## Your Responsibilities
+
+      1. **Discover** new cagent resources by delegating to the `discoverer` agent
+      2. **Validate** links and content quality via the `validator` agent
+      3. **Format** entries correctly using the awesome-list-format skill
+      4. **Submit** changes via the `publisher` agent as GitHub PRs
+
+      ## Workflow for Finding New Resources
+
+      1. Delegate to `discoverer` to search for new blogs, repos, videos, MCP servers
+      2. Delegate to `validator` to check each URL is live and content is relevant
+      3. Format validated resources into the correct markdown table format
+      4. Delegate to `publisher` to create a branch and PR with the additions
+
+      ## Quality Standards
+      - Only include resources specifically about Docker cagent (not generic Docker)
+      - Prefer official sources, well-known tech blogs, and active GitHub repos
+      - Exclude paywalled content, spam, or low-quality posts
+      - Repos should have meaningful content (not just a fork or empty README)
+
+      ## Repository Details
+      - Owner: collabnix
+      - Repo: awesome-docker-cagent
+      - Main file: README.md
+      - Default branch: main
+
+    sub_agents: [discoverer, validator, publisher]
+    toolsets:
+      - type: filesystem
+      - type: think
+      - type: todo
+      - type: mcp
+        ref: docker:github
+
+  discoverer:
+    model: smart
+    skills: true
+    description: |
+      Searches the web and GitHub for new Docker cagent resources including
+      blog posts, tutorials, sample projects, MCP servers, and videos.
+    instruction: |
+      You are a research specialist focused on discovering new Docker cagent resources.
+
+      Search for: "docker cagent" blog, cagent multi-agent, cagent MCP,
+      cagent docker model runner, cagent yaml agent.
+
+      Sources: docker.com/blog, dev.to, medium.com, dzone.com, collabnix.com, hashnode.
+
+      For GitHub: search repos with "cagent" in name/description, topic docker-cagent.
+
+      For each resource provide: Title, URL, Source/Author, Description,
+      Suggested category, Why it's worth including.
+
+      Always check against current README.md to avoid duplicates.
+
+    toolsets:
+      - type: mcp
+        ref: docker:duckduckgo
+      - type: fetch
+      - type: filesystem
+      - type: mcp
+        ref: docker:github
+
+  validator:
+    model: fast
+    skills: true
+    description: |
+      Validates URLs, checks content relevance, and ensures resources
+      meet the awesome list quality standards.
+    instruction: |
+      For each URL: fetch and check response (200=✅, 404=❌, 301=⚠️).
+      For GitHub repos: check archived status, last commit date, star count.
+      Content must mention "cagent" specifically (not just generic Docker).
+      Report: ✅ VALID, ⚠️ WARNING, ❌ BROKEN, or 🚫 REJECTED with reason.
+
+    toolsets:
+      - type: filesystem
+      - type: fetch
+      - type: think
+      - type: mcp
+        ref: docker:github
+
+  publisher:
+    model: smart
+    skills: true
+    description: |
+      Creates GitHub branches and pull requests to update the
+      awesome-docker-cagent README.md with new resources.
+    instruction: |
+      Publish changes to collabnix/awesome-docker-cagent via GitHub PRs.
+
+      1. Read current README.md (get its SHA)
+      2. Create branch: curator/add-resources-YYYY-MM-DD
+      3. Update README.md with new entries in correct sections
+      4. Create PR with clear title and change list
+
+      Follow the awesome-list-format skill for table syntax.
+      Add entries at END of relevant tables. Never overwrite existing entries.
+      Include file SHA when updating.
+
+    toolsets:
+      - type: filesystem
+      - type: think
+      - type: mcp
+        ref: docker:github

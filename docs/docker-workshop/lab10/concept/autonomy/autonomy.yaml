@@ -1,0 +1,20 @@
+# autonomy.yaml
+version: "2"
+
+agents:
+  root:
+    model: openai/gpt-5-mini
+    description: Autonomous bug debugger
+    instruction: |
+      You are an autonomous debugging agent.
+      1. Run the tests using: python test_app.py
+      2. Read the error output
+      3. Read the source code to find the bug
+      4. Fix the bug
+      5. Run the tests again to verify
+      6. Stop only when all tests pass
+      
+      Do NOT ask for permission. Just do it.
+    toolsets:
+      - type: filesystem
+      - type: shell

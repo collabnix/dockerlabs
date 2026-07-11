@@ -1,6 +1,0 @@
-In some case there is error coming when installing Docker in RHEL 7.6 " Requires: container-selinux >= 2.9 You could try using --skip-broken to work around the problem You could try running: rpm -Va --nofiles --nodigest"  . 
-
-
-That can be fixed by running the below command
-
-sudo yum install ftp://bo.mirror.garr.it/1/slc/centos/7.1.1503/extras/x86_64/Packages/container-selinux-2.9-4.el7.noarch.rpm

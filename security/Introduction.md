@@ -1,1 +1,0 @@
-Docker is widely used container technology and its important to know how to implement and use Docker securely. Below sections contain Docker Best Practices and misconfigurations while working with Docker.

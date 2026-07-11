@@ -1,7 +1,0 @@
-version: "3.7"
-services:
-  webapp:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: webapp:v1

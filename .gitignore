@@ -1,3 +1,17 @@
 .vscode/
 **/.DS_Store
 .idea
+
+# Docusaurus / Node
+/node_modules
+/build
+/.docusaurus
+.env.local
+npm-debug.log*
+
+# Legacy Jekyll artifacts (do not re-commit)
+_site/
+vendor/
+.jekyll-cache/
+.sass-cache/
+.bundle/

@@ -1,9 +1,0 @@
-#!/bin/bash
-
-export RAILS_ENV=production
-export GEM_PATH=/srv/Portus/vendor/bundle/ruby/2.1.0/
-export BUNDLER_BIN=/srv/Portus/vendor/bundle/ruby/2.1.0/bin/bundler.ruby2.1
-export RUBYLIB=$(ls -d /srv/Portus/vendor/bundle/ruby/2.1.0/gems/bundler*)/lib/
-
-cd /srv/Portus
-$BUNDLER_BIN exec packaging/suse/portusctl/bin/portusctl "$@"

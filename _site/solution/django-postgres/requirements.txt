@@ -1,2 +1,0 @@
-Django==2.2.24
-psycopg2
