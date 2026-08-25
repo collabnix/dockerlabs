@@ -12,12 +12,6 @@
 - Over 500+ Highly Interactive Docker Tutorials and Guides
 - Well tested on Docker Desktop  and can be run on Browser (no Infrastructure required)
 
-## ⭐ Star History
-
-If this repo helped you in your Docker journey, please star it! ⭐
-
-[![Star History Chart](https://api.star-history.com/svg?repos=collabnix/dockerlabs&type=Date)](https://star-history.com/#collabnix/dockerlabs&Date)
-
 
 # 📝 Join our Community
 
