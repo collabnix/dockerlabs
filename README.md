@@ -41,7 +41,7 @@
 
 | Title       | Topics Covered         | Labs |
 |:-------------|:------------------|:------|
-| [Getting Started](http://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html) | Why, What & How about Docker?(slides) | - |
+| [Getting Started](https://dockerlabs.collabnix.com/docker/Docker_VIT_Intro/Docker_VIT_Intro.html) | Why, What & How about Docker?(slides) | - |
 | [Docker Core Concepts](https://github.com/collabnix/dockerlabs/tree/master/beginners/README.md) | Concepts of Docker Image, Containers, Multi-container apps | - | 
 | [Docker for Beginner](./workshop/docker/README.md)  | Docker Image, Container, Dockerfile, Volumes, Networking | 40  |
 | [Docker for Intermediate](./intermediate/workshop/README.md) | Docker Compose, Swarm, Advanced Networking | 50 |
@@ -93,15 +93,15 @@
 
 - [Running Hello World Example](https://collabnix.github.io/dockerlabs/beginners/helloworld/) 
 - [Working with Docker Image](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html)
-- [Saving Images and Containers as Tar Files for Sharing](http://dockerlabs.collabnix.com/beginners/saving-images-as-tar/)
+- [Saving Images and Containers as Tar Files for Sharing](https://dockerlabs.collabnix.com/beginners/saving-images-as-tar/)
 - [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
 
 
 ## Accessing & Managing Docker Container
 
-- [Accessing the Container Shell](http://dockerlabs.collabnix.com/beginners/accessing-the-container.html)<br>
-- [Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)<br>
-- [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)<br>
+- [Accessing the Container Shell](https://dockerlabs.collabnix.com/beginners/accessing-the-container.html)<br>
+- [Running a Command inside running Container](https://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)<br>
+- [Managing Docker Containers](https://dockerlabs.collabnix.com/beginners/managing-containers.html)<br>
 
 ## Getting Started with Dockerfile
 
@@ -141,15 +141,15 @@
 
 ## Docker Networking
 
- - [The docker network Command](http://dockerlabs.collabnix.com/beginners/using-docker-network.html)<br>
- - [Lab #1: Listing the Networks](http://dockerlabs.collabnix.com/networking/A1-network-basics.html#step-2-list-networks)
- - [Lab #2: Inspecting a Network](http://dockerlabs.collabnix.com/networking/A1-network-basics.html#step-3-inspect-a-network)
- - [Lab #3: List network driver plugins](http://dockerlabs.collabnix.com/networking/A1-network-basics.html#step-4-list-network-driver-plugins)
- - [Lab #4: Docker Bridge Networking](http://dockerlabs.collabnix.com/networking/A2-bridge-networking.html)
-   - [Lab #5: Basics of Docker Bridge Networking](http://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-1-the-default-bridge-network)
-   - [Lab #6: Connect a Docker container to bridge network](http://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-2-connect-a-container)
-   - [Lab #7: Test Network Connectivity](http://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-3-test-network-connectivity)
-   - [Lab #8: Configure NAT for external connectivity](http://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-4-configure-nat-for-external-connectivity)
+ - [The docker network Command](https://dockerlabs.collabnix.com/beginners/using-docker-network.html)<br>
+ - [Lab #1: Listing the Networks](https://dockerlabs.collabnix.com/networking/A1-network-basics.html#step-2-list-networks)
+ - [Lab #2: Inspecting a Network](https://dockerlabs.collabnix.com/networking/A1-network-basics.html#step-3-inspect-a-network)
+ - [Lab #3: List network driver plugins](https://dockerlabs.collabnix.com/networking/A1-network-basics.html#step-4-list-network-driver-plugins)
+ - [Lab #4: Docker Bridge Networking](https://dockerlabs.collabnix.com/networking/A2-bridge-networking.html)
+   - [Lab #5: Basics of Docker Bridge Networking](https://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-1-the-default-bridge-network)
+   - [Lab #6: Connect a Docker container to bridge network](https://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-2-connect-a-container)
+   - [Lab #7: Test Network Connectivity](https://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-3-test-network-connectivity)
+   - [Lab #8: Configure NAT for external connectivity](https://dockerlabs.collabnix.com/networking/A2-bridge-networking.html#step-4-configure-nat-for-external-connectivity)
  
 
 ## Docker Workshop for Intermediate Users
@@ -158,34 +158,34 @@
 ### Docker Compose
 
 - [Compose101 Slides](https://www.slideshare.net/ajeetraina/introduction-to-docker-compose-docker-intermediate-workshop)
-- [Introduction to Docker Compose](http://dockerlabs.collabnix.com/intermediate/docker-compose/)
-- [Dockerfile Vs Docker compose ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Difference_between_dockerfile_and_docker_compose.html)
-- [How to Install Docker Compose? ](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/How_to_Install_Docker_Compose.html)
+- [Introduction to Docker Compose](https://dockerlabs.collabnix.com/intermediate/docker-compose/)
+- [Dockerfile Vs Docker compose ](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Difference_between_dockerfile_and_docker_compose.html)
+- [How to Install Docker Compose? ](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/How_to_Install_Docker_Compose.html)
 
-     - [Lab #1: `version` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/version_Command.html)<br>
-     - [Lab #2: `help` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/help_command.html)<br>
-     - [Lab #3: `Config` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/config_command.html)<br>
-     - [Lab #4: `Build` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231_Build_Command.html)<br>
-     - [Lab #5: `Pull` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pull_command.html)<br>
-     - [Lab #6: `Push` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/push_command.html)<br>
-     - [Lab #7: `up` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/up_command.html)<br>
-     - [Lab #8: `Images` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/images_command.html)<br>
-     - [Lab #9: `ps` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/ps_command.html)<br>
-     - [Lab #10: `Stop` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/stop_command.html)<br>
-     - [Lab #11: `Start` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/start_command.html)<br>
-     - [Lab #12: `Restart` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/restart_command.html)<br>
-     - [Lab #13: `pause` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pause_command.html)<br>
-     - [Lab #14: `Unpause` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/unpause_command.html)<br>
-     - [Lab #15: `Logs` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/logs_command.html)<br>
-     - [Lab #16: `Port` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/port_command.html)<br>
-     - [Lab #17: `Run` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/run_command.html)<br>
-     - [Lab #18: `Scale` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/scale_command.html)<br>
-     - [Lab #19: `Exec` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234_Exec_Command.html)<br>
-     - [Lab #20: `Kill` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%237_Kill_Command.html)<br>
-     - [Lab #21: `Rm` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/rm_command.html)<br>
-     - [Lab #22: `Down` Command](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/down_command.html)<br>
-- [Create first docker compose file with ngnix and mysql](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Create_first_docker-compose_file_with_ngnix_and_mysql.html)<br>
-- [Use JSON instead of YAML compose file in Docker?](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%2324_Use_JSON_instead_of_YAML_compose_file_in_Docker.html)<br>
+     - [Lab #1: `version` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/version_Command.html)<br>
+     - [Lab #2: `help` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/help_command.html)<br>
+     - [Lab #3: `Config` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/config_command.html)<br>
+     - [Lab #4: `Build` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%231_Build_Command.html)<br>
+     - [Lab #5: `Pull` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pull_command.html)<br>
+     - [Lab #6: `Push` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/push_command.html)<br>
+     - [Lab #7: `up` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/up_command.html)<br>
+     - [Lab #8: `Images` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/images_command.html)<br>
+     - [Lab #9: `ps` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/ps_command.html)<br>
+     - [Lab #10: `Stop` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/stop_command.html)<br>
+     - [Lab #11: `Start` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/start_command.html)<br>
+     - [Lab #12: `Restart` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/restart_command.html)<br>
+     - [Lab #13: `pause` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/pause_command.html)<br>
+     - [Lab #14: `Unpause` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/unpause_command.html)<br>
+     - [Lab #15: `Logs` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/logs_command.html)<br>
+     - [Lab #16: `Port` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/port_command.html)<br>
+     - [Lab #17: `Run` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/run_command.html)<br>
+     - [Lab #18: `Scale` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/scale_command.html)<br>
+     - [Lab #19: `Exec` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%234_Exec_Command.html)<br>
+     - [Lab #20: `Kill` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%237_Kill_Command.html)<br>
+     - [Lab #21: `Rm` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/rm_command.html)<br>
+     - [Lab #22: `Down` Command](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/down_command.html)<br>
+- [Create first docker compose file with ngnix and mysql](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Create_first_docker-compose_file_with_ngnix_and_mysql.html)<br>
+- [Use JSON instead of YAML compose file in Docker?](https://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Lab_%2324_Use_JSON_instead_of_YAML_compose_file_in_Docker.html)<br>
 - [A Simple Wordpress Application running on Single Node using Docker Compose](https://github.com/collabnix/dockerlabs/blob/master/intermediate/workshop/DockerCompose/single-node-wordpress.md)
 
 
@@ -193,34 +193,34 @@
 
 ### Introduction to Docker Swarm
 
-- [What is Docker Swarm](http://dockerlabs.collabnix.com/intermediate/workshop/what-is-docker-swarm.html)<br>
-- [Docker Swarm : Terminology](http://dockerlabs.collabnix.com/intermediate/workshop/Docker-Swarm-Terminology.html)
+- [What is Docker Swarm](https://dockerlabs.collabnix.com/intermediate/workshop/what-is-docker-swarm.html)<br>
+- [Docker Swarm : Terminology](https://dockerlabs.collabnix.com/intermediate/workshop/Docker-Swarm-Terminology.html)
 
 ### Docker Services | Scaling | Draining Node | Rescheduling Containers
 
-- [Creating 5-Node Docker Swarm Cluster](http://dockerlabs.collabnix.com/intermediate/workshop/getting-started-with-swarm.html)<br>
-- [Lab #1: Creating Overlay Network](http://dockerlabs.collabnix.com/intermediate/workshop/lab1-docker-network-overlay.html)<br>
-- [Lab #2: Deploy Services ](http://dockerlabs.collabnix.com/intermediate/workshop/lab2-deploy-services.html)<br>
-- [Lab #3: Inspecting Docker Swarm Service States](http://dockerlabs.collabnix.com/intermediate/workshop/lab3-inspect-services.html)<br>
-- [Lab #4: Scaling Docker Swarm Services](http://dockerlabs.collabnix.com/intermediate/workshop/lab4-scaling-services.html)<br>
-- [Lab #5: Deploy the application components as Docker services ](http://dockerlabs.collabnix.com/intermediate/workshop/lab5-deploy-app-component-as-docker-services.html)<br>
-- [Lab #6: Drain a node and reschedule the containers](http://dockerlabs.collabnix.com/intermediate/workshop/lab6-drain-a-node-reschedule.html)<br>
-- [Lab #7: Cleaning Up ](http://dockerlabs.collabnix.com/intermediate/workshop/lab7-cleaning-up.html)<br>
+- [Creating 5-Node Docker Swarm Cluster](https://dockerlabs.collabnix.com/intermediate/workshop/getting-started-with-swarm.html)<br>
+- [Lab #1: Creating Overlay Network](https://dockerlabs.collabnix.com/intermediate/workshop/lab1-docker-network-overlay.html)<br>
+- [Lab #2: Deploy Services ](https://dockerlabs.collabnix.com/intermediate/workshop/lab2-deploy-services.html)<br>
+- [Lab #3: Inspecting Docker Swarm Service States](https://dockerlabs.collabnix.com/intermediate/workshop/lab3-inspect-services.html)<br>
+- [Lab #4: Scaling Docker Swarm Services](https://dockerlabs.collabnix.com/intermediate/workshop/lab4-scaling-services.html)<br>
+- [Lab #5: Deploy the application components as Docker services ](https://dockerlabs.collabnix.com/intermediate/workshop/lab5-deploy-app-component-as-docker-services.html)<br>
+- [Lab #6: Drain a node and reschedule the containers](https://dockerlabs.collabnix.com/intermediate/workshop/lab6-drain-a-node-reschedule.html)<br>
+- [Lab #7: Cleaning Up ](https://dockerlabs.collabnix.com/intermediate/workshop/lab7-cleaning-up.html)<br>
 
 # Docker Networking - II
 
 ### Overlay Networking
 
-   - [Lab #1: Docker Overlay Networking](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%231:Docker_Overlay_Networking.html)<br>
-   - [Lab #2: Create an overlay network](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%232_Create_an_overlay_network.html)<br>
-   - [Lab #3: Create a service](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%233_Create_a_service.html)<br>
-   - [Lab #4: Test Service Discovery](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%235_Test_Service_Discovery.html)
-   - [Lab #5: Test Routing Mesh](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%236:Test_Routing_Mesh.html)<br>
-   - [Lab #6: Test standalone containersinOverlayNetwork](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%238_%20Test_standalone_containers_in_OverlayNetwork.html)
+   - [Lab #1: Docker Overlay Networking](https://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%231:Docker_Overlay_Networking.html)<br>
+   - [Lab #2: Create an overlay network](https://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%232_Create_an_overlay_network.html)<br>
+   - [Lab #3: Create a service](https://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab_%233_Create_a_service.html)<br>
+   - [Lab #4: Test Service Discovery](https://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%235_Test_Service_Discovery.html)
+   - [Lab #5: Test Routing Mesh](https://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%236:Test_Routing_Mesh.html)<br>
+   - [Lab #6: Test standalone containersinOverlayNetwork](https://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%238_%20Test_standalone_containers_in_OverlayNetwork.html)
 
 ### Implementing MacVLAN
 
-- [Lab #7: Getting Started with MacVLAN](http://dockerlabs.collabnix.com/intermediate/workshop/networking/lab7-macvlan.html)<br>
+- [Lab #7: Getting Started with MacVLAN](https://dockerlabs.collabnix.com/intermediate/workshop/networking/lab7-macvlan.html)<br>
 
 
 # Docker Workshop for Advance Users
@@ -229,57 +229,57 @@
 
 ## Docker Content Trust
 
-- [Lab01 - Pulling images by tag](http://dockerlabs.collabnix.com/advanced/security/trust/README.html#tag)
-- [Lab02 - Pulling images by digest](http://dockerlabs.collabnix.com/advanced/security/trust/README.html#digest)
-- [Lab03 - Docker Content Trust](http://dockerlabs.collabnix.com/advanced/security/trust/README.html#trust)
-- [Lab04 - Official Images](http://dockerlabs.collabnix.com/advanced/security/trust/README.html#official)
-- [Lab05 - Extra for experts](http://dockerlabs.collabnix.com/advanced/security/trust/README.html#extra)
-- [Lab06 - Enable Docker Content Trust](http://dockerlabs.collabnix.com/advanced/security/trust-basics/#enable_dct)
-- [Lab07 - Push & Sign an Image](http://dockerlabs.collabnix.com/advanced/security/trust-basics/#push)
-- [Lab08 - Cleaning Up](http://dockerlabs.collabnix.com/advanced/security/trust-basics/#clean)
+- [Lab01 - Pulling images by tag](https://dockerlabs.collabnix.com/advanced/security/trust/README.html#tag)
+- [Lab02 - Pulling images by digest](https://dockerlabs.collabnix.com/advanced/security/trust/README.html#digest)
+- [Lab03 - Docker Content Trust](https://dockerlabs.collabnix.com/advanced/security/trust/README.html#trust)
+- [Lab04 - Official Images](https://dockerlabs.collabnix.com/advanced/security/trust/README.html#official)
+- [Lab05 - Extra for experts](https://dockerlabs.collabnix.com/advanced/security/trust/README.html#extra)
+- [Lab06 - Enable Docker Content Trust](https://dockerlabs.collabnix.com/advanced/security/trust-basics/#enable_dct)
+- [Lab07 - Push & Sign an Image](https://dockerlabs.collabnix.com/advanced/security/trust-basics/#push)
+- [Lab08 - Cleaning Up](https://dockerlabs.collabnix.com/advanced/security/trust-basics/#clean)
 
 
 ## Docker Secrets Management
 
-- [Lab01- Create a Secret](http://dockerlabs.collabnix.com/advanced/security/secrets/#create)
-- [Lab02 - Manage Secrets](http://dockerlabs.collabnix.com/advanced/security/secrets/#manage)
-- [Lab03 - Access the secret within an app](http://dockerlabs.collabnix.com/advanced/security/secrets/#use)
-- [Lab04 - Clean-up](http://dockerlabs.collabnix.com/advanced/security/secrets/#clean)
+- [Lab01- Create a Secret](https://dockerlabs.collabnix.com/advanced/security/secrets/#create)
+- [Lab02 - Manage Secrets](https://dockerlabs.collabnix.com/advanced/security/secrets/#manage)
+- [Lab03 - Access the secret within an app](https://dockerlabs.collabnix.com/advanced/security/secrets/#use)
+- [Lab04 - Clean-up](https://dockerlabs.collabnix.com/advanced/security/secrets/#clean)
 
 
 
 ## Docker Secret Management with UCP
 
-- [Lab01 - Create a Secret](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#secret)
-- [Lab02 - Deploy an App](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#deploy)
-- [Lab03 - Test the App](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#test)
-- [Lab04 - View the Secret](http://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#view)
+- [Lab01 - Create a Secret](https://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#secret)
+- [Lab02 - Deploy an App](https://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#deploy)
+- [Lab03 - Test the App](https://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#test)
+- [Lab04 - View the Secret](https://dockerlabs.collabnix.com/advanced/security/secrets-ddc/#view)
 
 
 ## Docker Network Security 
 
-- [Lab01 - Create an encrypted overlay network](http://dockerlabs.collabnix.com/advanced/security/networking/#network_create)
-- [Lab02 - List networks](http://dockerlabs.collabnix.com/advanced/security/networking/#list_networks)
-- [Lab03 - Deploy a service](http://dockerlabs.collabnix.com/advanced/security/networking/#deploy_service)
-- [Lab04 - Clean-up](http://dockerlabs.collabnix.com/advanced/security/networking/#clean)
+- [Lab01 - Create an encrypted overlay network](https://dockerlabs.collabnix.com/advanced/security/networking/#network_create)
+- [Lab02 - List networks](https://dockerlabs.collabnix.com/advanced/security/networking/#list_networks)
+- [Lab03 - Deploy a service](https://dockerlabs.collabnix.com/advanced/security/networking/#deploy_service)
+- [Lab04 - Clean-up](https://dockerlabs.collabnix.com/advanced/security/networking/#clean)
 
 
 ## Security Scanning
 
-- [Lab01 - Create a private Hub repo](http://dockerlabs.collabnix.com/advanced/security/scanning/#repo)
-- [Lab02 - Pull an image](http://dockerlabs.collabnix.com/advanced/security/scanning/#pull)
-- [Lab03 - Tag and push an image](http://dockerlabs.collabnix.com/advanced/security/scanning/#tag_push)
-- [Lab04 - View scan results](http://dockerlabs.collabnix.com/advanced/security/scanning/#results)
-- [Lab05 - Clean-up](http://dockerlabs.collabnix.com/advanced/security/scanning/#clean)
+- [Lab01 - Create a private Hub repo](https://dockerlabs.collabnix.com/advanced/security/scanning/#repo)
+- [Lab02 - Pull an image](https://dockerlabs.collabnix.com/advanced/security/scanning/#pull)
+- [Lab03 - Tag and push an image](https://dockerlabs.collabnix.com/advanced/security/scanning/#tag_push)
+- [Lab04 - View scan results](https://dockerlabs.collabnix.com/advanced/security/scanning/#results)
+- [Lab05 - Clean-up](https://dockerlabs.collabnix.com/advanced/security/scanning/#clean)
 
 ## Swarm Mode Security
 
-- [Lab01- Create a new Swarm](http://dockerlabs.collabnix.com/advanced/security/swarm/#swarm_init)
-- [Lab02 - Add a new Manager](http://dockerlabs.collabnix.com/advanced/security/swarm/#add_mgr)
-- [Lab03 - Add a new Worker](http://dockerlabs.collabnix.com/advanced/security/swarm/#add_wrkr)
-- [Lab04 - Rotate Join Keys](http://dockerlabs.collabnix.com/advanced/security/swarm/#rotate_join)
-- [Lab05 - View certificates](http://dockerlabs.collabnix.com/advanced/security/swarm/#certs)
-- [Lab06 - Rotate certificates](http://dockerlabs.collabnix.com/advanced/security/swarm/#rotate_certs)
+- [Lab01- Create a new Swarm](https://dockerlabs.collabnix.com/advanced/security/swarm/#swarm_init)
+- [Lab02 - Add a new Manager](https://dockerlabs.collabnix.com/advanced/security/swarm/#add_mgr)
+- [Lab03 - Add a new Worker](https://dockerlabs.collabnix.com/advanced/security/swarm/#add_wrkr)
+- [Lab04 - Rotate Join Keys](https://dockerlabs.collabnix.com/advanced/security/swarm/#rotate_join)
+- [Lab05 - View certificates](https://dockerlabs.collabnix.com/advanced/security/swarm/#certs)
+- [Lab06 - Rotate certificates](https://dockerlabs.collabnix.com/advanced/security/swarm/#rotate_certs)
 
 # 🔥 Concepts and Terminologies (Beginners to Advance)
 
