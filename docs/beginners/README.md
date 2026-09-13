@@ -6,6 +6,12 @@ description: collabnix | DockerLab | Docker - Beginners Track
 
 # Beginners Track
 
+# Quick Reference
+
+- [Docker Quick Reference Cheat Sheet](./docker-quick-reference.md)
+- [Docker Troubleshooting Guide](./docker-troubleshooting.md)
+- [Dockerfile Best Practices](./dockerfile-best-practices.md)
+
 # Introduction to Docker 
 
 - [What is Docker?](./docker/what-is-docker.md)
