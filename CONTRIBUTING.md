@@ -1,51 +1,105 @@
+# Contributing to DockerLabs
 
-## Guidelines for Contributing
+Thank you for your interest in contributing to DockerLabs! This guide will help you get started.
 
-### How can I get involved?
+## How to Get Involved
 
-There are 5 golden steps to get involved - 
+1. **Join the Community**
+   - Join our [Slack community](https://collabnix.slack.com) to connect with other contributors
+   - Introduce yourself in the #general channel
+   - Browse channels like #docker-networking, #docker-volumes, #docker101
 
-- [Slack](https://collabnix.slack.com) is the best place to keep up to date with the project and to get help contributing. Here we exchange ideas, ask questions and chat about Dockerlabs.
+2. **Find Your Area of Interest**
+   - Browse the [DockerLabs documentation](https://dockerlabs.collabnix.com/)
+   - Check out [open issues](https://github.com/collabnix/dockerlabs/issues) for areas that need help
+   - Look for outdated content, broken links, or missing tutorials
 
-- Ping [Ajeet S Raina](https://github.com/ajeetraina) with your email address so that an invite can be sent out. Once invite is received via email, click on the link to get connected to contributors, enthusiast and active community members.
+## Ways to Contribute
 
-- Introduce yourself to the Slack Group as soon as you join the Slack Channel.
+### Documentation Improvements
+- Fix typos and grammar errors
+- Update outdated Docker commands or versions
+- Add missing examples or explanations
+- Improve existing tutorials with clearer steps
 
-- Search for channels(like #docker-networking, #docker-volumes, #docker101 etc.) and join the channel.
+### New Content
+- Write beginner-friendly Docker tutorials
+- Create hands-on labs for specific Docker features
+- Add real-world use cases and examples
+- Contribute Docker Compose examples
 
-- Show your interest by choosing the topic of your interest and start contributing.
+### Bug Fixes
+- Fix broken links in documentation
+- Correct incorrect commands or configurations
+- Update deprecated Docker features
 
-## How can I contribute?
+## Contribution Process
 
-Contributing towards DockerLabs is simple and all you need is follow the below golden rules -
+### 1. Fork the Repository
+```bash
+# Fork on GitHub, then clone your fork
+git clone https://github.com/YOUR_USERNAME/dockerlabs.git
+cd dockerlabs
 
-* Say "Hi" to all Slack members with your short introduction
-* Search for your favourite Slack Channel and join accordingly.
-* Fork this Repository - https://github.com/collabnix/dockerlabs
-* Find your area of interest.
+# Add upstream remote
+git remote add upstream https://github.com/collabnix/dockerlabs.git
+```
 
-* Submit your tutorial for DockerLabs(preferrably on Play with Docker Platform)
-  - [Example](https://github.com/collabnix/dockerlabs/blob/master/play-with-docker/wordpress/example1/README.md)
-*  Create Pull Request
-* Using Play with Docker Platform to build Docker Ready Solution
-* Fork the Repository and Create pull requests
-* Test and verify tutorials submitted by community users
-* Get involved in design reviews and technical proof-of-concepts (PoCs)
-* Manage, triage and research Issues and Pull Requests
-* Engage with the growing community by providing technical support on Slack/GitHub
-* Create docs, guides and write blogs to share
-* In case you find any technical issues or need help from fellow contributor, feel free to post your query under #issues channel under Slack.
+### 2. Create a Branch
+```bash
+# Create a new branch for your changes
+git checkout -b fix/your-description
 
-#### Wait..I have a question, a suggestion or need help
+# Or for new features
+git checkout -b feat/your-description
+```
 
-If you have a simple question you can [join the Slack community](https://collabnix.slack.com) and ask there. 
+### 3. Make Your Changes
+- Keep changes focused and small
+- Follow the existing documentation style
+- Add links to your new content in the appropriate README files
 
-### I am new to GitHub. Is it possible for me to contribute?
+### 4. Submit a Pull Request
+```bash
+# Commit your changes
+git add .
+git commit -m "Brief description of changes"
 
-Yes, you can still submit your tutorial to us. One of us will review and add it on behalf of you.
-But it is highly recommended to learn [GitHub](https://guides.github.com/activities/hello-world/) so that it saves lot of time in uploading your tutorial.
+# Push to your fork
+git push origin your-branch-name
+```
+
+Then create a Pull Request on GitHub with:
+- A clear title describing the change
+- A brief description of what you changed and why
+- Reference any related issues (e.g., "Fixes #123")
+
+## Style Guidelines
+
+### Documentation
+- Use clear, concise language
+- Include code examples where appropriate
+- Use proper Markdown formatting
+- Add frontmatter for Docusaurus pages:
+  ```yaml
+  ---
+  layout: default
+  title: Your Title
+  description: collabnix | DockerLab | Your Description
+  ---
+  ```
+
+### Code Examples
+- Use working, tested examples
+- Include comments explaining key concepts
+- Show expected output when helpful
+
+## Getting Help
+
+- **Questions?** Ask in the [Slack community](https://collabnix.slack.com)
+- **Issues?** Open a [GitHub issue](https://github.com/collabnix/dockerlabs/issues)
+- **New to GitHub?** Check out [GitHub's guide](https://guides.github.com/activities/hello-world/)
 
 ## License
 
-This project is licensed under the [MIT](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md) License.
-
+By contributing to DockerLabs, you agree that your contributions will be licensed under the [MIT License](https://github.com/collabnix/dockerlabs/blob/master/LICENSE.md).
