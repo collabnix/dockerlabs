@@ -299,7 +299,7 @@ In this step we'll show how a custom AppArmor profile could have protected Docke
 
    It may take a minute or two to bring the application up. Once the application is up you will need to hit the <Return> key to bring the prompt to the foreground.
 
-   You may need to install `docker-compose` to complete this step. If your lab machine does not already have Docker Compose isntalled, you can install it with the following commands `sudo apt-get update` and `sudo apt-get install docker-compose`.
+   You may need to install `docker-compose` to complete this step. If your lab machine does not already have Docker Compose installed, you can install it with the following commands `sudo apt-get update` and `sudo apt-get install docker-compose`.
 
    ```
    $ docker-compose up &
