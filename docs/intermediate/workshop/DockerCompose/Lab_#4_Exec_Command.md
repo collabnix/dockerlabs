@@ -43,7 +43,7 @@ Options include:<br/>
 - Click on **Add New Instance** on the left side of the screen to bring up Alpine OS instance on the right side
 
 
-#### Setup enviroment
+#### Setup environment
 ```
 $ mkdir app
 $ cd app
