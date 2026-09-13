@@ -270,7 +270,7 @@ ExecStart=/usr/local/bin/etcd \
   --peer-client-cert-auth \
   --client-cert-auth \
   --initial-advertise-peer-urls https://10.10.10.90:2380 \
-  --listen-peer-urls https://10.10.40.10:2380 \
+  --listen-peer-urls https://10.10.10.90:2380 \
   --listen-client-urls https://10.10.10.90:2379,http://127.0.0.1:2379 \
   --advertise-client-urls https://10.10.10.90:2379 \
   --initial-cluster-token etcd-cluster-0 \
