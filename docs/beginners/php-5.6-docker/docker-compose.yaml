@@ -62,7 +62,7 @@ services:
         - local-bridge
 
     phpmyadmin:
-      image: phpmyadmin/phpmyadmin
+      image: phpmyadmin
       restart: always
       container_name: phpmyadmin
       depends_on:
