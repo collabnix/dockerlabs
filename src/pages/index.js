@@ -42,6 +42,44 @@ const HIGHLIGHTS = [
   },
 ];
 
+// Latest videos from the Collabnix YouTube channel.
+// To add a new video, put it at the top of this list with its YouTube ID
+// (the part after "watch?v=" in the URL) and its title.
+const VIDEOS = [
+  {id: 'xGC16tIvXwM', title: 'Docker Cloud Sandbox CLI Cheatsheet'},
+  {id: 'h_cCNr6CYfQ', title: "Docker Containers vs Docker Sandboxes: What's the Real Difference?"},
+  {id: 'bvzrnPq9C58', title: 'How Secrets Work in Docker Sandboxes: Local vs Cloud'},
+];
+
+function VideoGrid({items}) {
+  return (
+    <div className="row">
+      {items.map((v) => (
+        <div key={v.id} className="col col--4">
+          <a
+            className={styles.videoCard}
+            href={`https://www.youtube.com/watch?v=${v.id}`}
+            target="_blank"
+            rel="noopener noreferrer">
+            <div className={styles.videoThumb}>
+              <img
+                src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
+                alt=""
+                loading="lazy"
+              />
+              <span className={styles.videoPlay} aria-hidden="true" />
+            </div>
+            <div className={styles.videoBody}>
+              <div className={styles.videoTitle}>{v.title}</div>
+              <span className={styles.videoCta}>Watch on YouTube →</span>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <header className={styles.hero}>
@@ -113,6 +151,28 @@ export default function Home() {
         </section>
 
         <section className={clsx(styles.section, styles.altSection)}>
+          <div className="container">
+            <h2 className={styles.sectionTitle}>🎬 Latest Videos</h2>
+            <p className={styles.sectionSubtitle}>
+              Fresh tutorials on Docker Sandboxes, from the{' '}
+              <a href="https://www.youtube.com/@collabnix" target="_blank" rel="noopener noreferrer">
+                Collabnix YouTube channel
+              </a>
+            </p>
+            <VideoGrid items={VIDEOS} />
+            <div style={{textAlign: 'center'}}>
+              <a
+                className="button button--lg button--outline button--primary"
+                href="https://www.youtube.com/@collabnix"
+                target="_blank"
+                rel="noopener noreferrer">
+                See all videos on YouTube →
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.section}>
           <div className="container" style={{textAlign: 'center', maxWidth: 720}}>
             <h2 className={styles.sectionTitle}>Runs on your machine — no playground required</h2>
             <p className={styles.sectionSubtitle}>
